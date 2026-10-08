@@ -15,33 +15,39 @@ export function aggregate(ctx:Context){
  const t=rows.reduce((a,c)=>{const r=ctx.period==='지난주'?c.previous:c;return {spend:a.spend+r.spend,revenue:a.revenue+r.revenue,conversions:a.conversions+r.conversions,clicks:a.clicks+r.clicks};},{spend:0,revenue:0,conversions:0,clicks:0});
  return {...t,roas:ratio(t.revenue,t.spend),cpa:ratio(t.spend,t.conversions),cvr:ratio(t.conversions,t.clicks)};
 }
-export type Analysis={kind:string;title:string;conclusion:string;scope:Context;facts:{label:string;value:string;formula:string}[];hypothesis:string;actions:string[];choices:string[];followups:string[]};
-// ponytail: rule-based scenario simulation; Cloud integration should replace this with schema-validated LLM output.
+export type Analysis={title:string;conclusion:string;scope:Context;sections:{title:string;paragraphs:string[]}[];rows:{name:string;spend:string;revenue:string;change:string;roas:string;cvr:string}[];closing:string;followups:string[]};
+const amount=(n:number)=>`${(n/10000).toLocaleString('ko-KR',{maximumFractionDigits:1})}만원`;
+const rate=(n:number|null)=>`${((n??0)*100).toFixed(2)}%`;
+// ponytail: curated demo reports from weekly aggregates, not unrestricted LLM answers. Replace this boundary when connecting a model.
 export function analyze(question:string,ctx:Context):Analysis{
  const q=question.trim(),scope={...ctx};
- if(/메타|meta/i.test(q))scope.channel='Meta Ads';else if(/구글|google/i.test(q))scope.channel='Google Ads';else if(/네이버|naver/i.test(q))scope.channel='Naver';else if(/카카오|kakao/i.test(q))scope.channel='Kakao';else if(/전체|채널별/.test(q))scope.channel='전체 채널';
+ if(/메타|meta/i.test(q))scope.channel='Meta Ads';else if(/구글|google/i.test(q))scope.channel='Google Ads';else if(/네이버|naver/i.test(q))scope.channel='Naver';else if(/카카오|kakao/i.test(q))scope.channel='Kakao';else if(/전체|채널별|종합/.test(q))scope.channel='전체 채널';
  if(/지난주/.test(q)&&!/비교|대비/.test(q))scope.period='지난주';if(/이번\s?주/.test(q))scope.period='이번 주';
- const a:Analysis={kind:'performance',title:'성과 변화 분석',conclusion:'',scope,facts:[],hypothesis:'',actions:[],choices:[],followups:['채널별로 비교해줘','전환이 어디서 줄었어?','팀에 공유할 요약 만들어줘']};
- if(!/성과|매출|광고|예산|전환|roas|cpa|채널|메타|구글|네이버|카카오|요약|보고|비교|왜|떨어|문제|망|분석|비용|클릭/i.test(q)){return {...a,kind:'clarify',title:'어떤 업무를 도와드릴까요?',conclusion:'성과 점검, 원인 탐색, 예산 검토 중 먼저 할 일을 골라주세요.',choices:['이번 주 성과 점검해줘','ROAS 왜 떨어졌어?','예산 어디에 더 써야 해?']};}
- if(/망했|개판|뭐가\s?문제|잘\s?안|잘\s?되고/.test(q)&&!/roas|cpa|전환|매출/i.test(q))return {...a,kind:'clarify',title:'판단 기준을 먼저 정할게요',conclusion:`${scope.channel} · ${scope.period} 기준으로 볼게요. 어떤 지표가 가장 중요한가요?`,choices:['ROAS 기준으로 분석해줘','CPA 기준으로 분석해줘','전환수 기준으로 분석해줘']};
- if(/내년|확실|보장|경쟁사|소재별|연령별|어제|오늘|지난달|이번달/.test(q))return {...a,kind:'unavailable',title:'현재 근거로는 답하기 어렵습니다',conclusion:'이 데모에는 두 주간의 채널별 집계만 있습니다. 요청한 기간·세부 차원 또는 확정적인 예측은 제공할 수 없습니다.',actions:['현재 제공된 주간·채널별 성과로 범위를 좁혀주세요.'],choices:['이번 주 성과 점검해줘','채널별로 비교해줘']};
+ const a:Analysis={title:'마케팅 성과 종합 분석',conclusion:'',scope,sections:[],rows:[],closing:'',followups:[]};
+ if(/내년|보장|경쟁사|소재별|연령별|어제|오늘|지난달|이번달/.test(q))return {...a,title:'요청한 분석 범위 확인',conclusion:'현재 화면의 두 주간 채널 집계만으로는 요청한 기간이나 세부 항목을 분석할 수 없습니다.',sections:[{title:'현재 확인할 수 있는 내용',paragraphs:['주간 매출·광고비·구매 전환·클릭을 기준으로 성과 변화, 변화가 큰 채널, 예산 검토 우선순위를 설명할 수 있습니다. 소재·연령별 성과와 미래 매출은 해당 데이터 없이 추정하지 않겠습니다.']}],closing:'현재 화면의 성과를 종합 분석해 달라고 요청하면 제공된 범위에서 보고서를 작성하겠습니다.'};
+ if(!/성과|매출|광고|예산|전환|roas|cpa|채널|메타|meta|구글|google|네이버|naver|카카오|kakao|요약|보고|비교|왜|떨어|문제|망|분석|비용|클릭|종합|개판|대응|조치|추천|어떻게/i.test(q))return {...a,title:'분석 요청 확인',conclusion:'현재 마케팅 화면을 기준으로 성과와 대응 방향을 분석할 수 있습니다.',sections:[{title:'분석 범위',paragraphs:['“이번 주 성과를 종합 분석해줘” 또는 “예산을 어떻게 조정해야 해?”처럼 요청해 주세요. 현재 기간과 채널을 기준으로 문제, 영향, 결론, 권고 행동을 한 번에 정리하겠습니다.']}],closing:''};
  const now=aggregate(scope),before=aggregate({...scope,period:'지난주'}),compare=scope.period==='이번 주';
- const roas=now.roas??0,cpa=now.cpa??0;
- a.facts=[{label:'ROAS',value:`${roas.toFixed(2)}배`,formula:`${money(now.revenue)} ÷ ${money(now.spend)}`},{label:'CPA',value:money(cpa),formula:`${money(now.spend)} ÷ ${now.conversions.toLocaleString()}건`},{label:'전환수',value:`${now.conversions.toLocaleString()}건`,formula:compare?`지난주 ${before.conversions.toLocaleString()}건 대비 ${pct(delta(now.conversions,before.conversions))}`:'이전 주의 비교 데이터 없음'}];
- a.conclusion=compare?`${scope.channel} ROAS는 ${roas.toFixed(2)}배로 지난주 대비 ${pct(delta(roas,before.roas??0))}입니다. ${scope.channel==='전체 채널'?'Meta Ads의 매출 감소를 우선 확인하세요.':`전환수는 ${pct(delta(now.conversions,before.conversions))} 변했습니다.`}`:`${scope.channel}의 지난주 ROAS는 ${roas.toFixed(2)}배, CPA는 ${money(cpa)}입니다. 그 이전 주 데이터가 없어 증감 판단은 보류합니다.`;
- a.hypothesis='채널 집계만으로 소재 피로도·타기팅·랜딩페이지 문제를 확정할 수 없습니다. 전환 감소 구간과 운영 변경 이력을 함께 검토해야 합니다.';
- a.actions=[`${scope.channel==='전체 채널'?'Meta Ads':scope.channel}의 캠페인·소재·랜딩 변경 이력을 확인하세요.`,'같은 귀속 기준에서 비교한 뒤 작은 실험으로 원인 가설을 검증하세요.'];
- if(/예산|더\s?써|배분/.test(q)){a.kind='budget';a.title='예산 배분 검토';const best=channels.filter(c=>scope.channel==='전체 채널'||c.name===scope.channel).map(c=>({name:c.name,r:scope.period==='지난주'?c.previous:c})).sort((a,b)=>b.r.revenue/b.r.spend-a.r.revenue/a.r.spend)[0];a.conclusion=`${best.name}의 관측 ROAS는 ${(best.r.revenue/best.r.spend).toFixed(2)}배입니다. 목표 효율과 추가 집행 여력을 확인한 뒤 소규모 예산 배분 실험을 검토하세요.`;a.hypothesis='평균 ROAS가 높아도 추가 예산의 효율이 같다는 보장은 없습니다. 한계 효율·집행 여력이 없어 최적 배분과 예상 매출을 단정하지 않습니다.';a.actions=['목표 ROAS·CPA와 변경 가능한 예산 상한을 정하세요.','합의된 한도 안에서 배분 실험을 하고 전환 지연을 고려해 결과를 비교하세요.'];}
- else if(/전환|클릭|퍼널/.test(q)&&!/cpa/i.test(q)){a.kind='funnel';a.title='전환 흐름 분석';a.conclusion=`클릭 ${now.clicks.toLocaleString()}회 중 ${now.conversions.toLocaleString()}건이 전환됐습니다. 클릭→전환율은 ${((now.cvr??0)*100).toFixed(2)}%입니다.${compare?` 지난주 ${((before.cvr??0)*100).toFixed(2)}%와 비교하세요.`:''}`;a.hypothesis='클릭→전환 집계는 확인할 수 있지만 상품 조회·장바구니·결제 단계 데이터가 없어 세부 이탈 지점은 알 수 없습니다.';a.actions=['전환율이 낮아진 채널의 랜딩·오퍼·운영 변경을 검토하세요.','세부 퍼널 데이터가 제공되면 단계별 이탈률로 가설을 좁히세요.'];}
- else if(/요약|보고|공유/.test(q)){a.kind='summary';a.title='팀 공유용 성과 브리핑';a.actions=['성과 변화와 확인이 필요한 가설을 함께 공유하세요.','검증 담당자와 다음 확인 시점을 정하세요.'];}
- else if(/cpa/i.test(q)){a.title='전환 비용 분석';a.conclusion=`${scope.channel} CPA는 ${money(cpa)}입니다.${compare?` 지난주 대비 ${pct(delta(cpa,before.cpa??0))}, 전환수는 ${pct(delta(now.conversions,before.conversions))} 변했습니다.`:' 이전 기간 데이터가 없어 증감 판단은 보류합니다.'}`;}
+ const selected=channels.filter(c=>scope.channel==='전체 채널'||scope.channel===c.name);
+ a.rows=selected.map(c=>{const r=compare?c:c.previous;return {name:c.name,spend:amount(r.spend),revenue:amount(r.revenue),change:compare?`${c.revenue-c.previous.revenue>0?'+':''}${amount(c.revenue-c.previous.revenue)}`:'—',roas:`${(r.revenue/r.spend).toFixed(2)}배`,cvr:rate(r.conversions/r.clicks)};});
+ if(!compare){a.conclusion=`${scope.channel}의 지난주 매출은 ${amount(now.revenue)}, 광고비는 ${amount(now.spend)}, 광고비 대비 매출은 ${(now.roas??0).toFixed(2)}배입니다. 이전 주 데이터가 없어 개선·악화 판단은 할 수 없습니다.`;a.sections=[{title:'성과 현황',paragraphs:[`클릭 ${now.clicks.toLocaleString()}회에서 구매 전환 ${now.conversions.toLocaleString()}건이 발생했습니다. 클릭 대비 구매 전환율은 ${rate(now.cvr)}, 구매 1건당 광고비는 ${money(now.cpa??0)}입니다.`,`채널별 수익률의 차이는 관측할 수 있지만, 광고 목적·고객 구성·귀속 기준이 같아야 직접 비교할 수 있습니다.`]},{title:'종합 판단과 권고',paragraphs:['현재 수치는 한 주의 현황입니다. 목표 효율과 비교 기간 없이 성과가 나쁘다고 판단하거나 예산을 변경할 근거는 부족합니다. 이번 주 데이터를 함께 비교해 변화가 생긴 채널부터 확인하는 것이 다음 순서입니다.']}];a.closing='이번 주로 기간을 바꾸면 두 기간의 차이와 채널별 영향을 분석할 수 있습니다.';return a;}
+ a.conclusion=`${scope.channel} 매출은 ${amount(now.revenue)}로 지난주 대비 ${pct(delta(now.revenue,before.revenue))}, 광고비는 ${amount(now.spend)}로 ${pct(delta(now.spend,before.spend))}입니다. 광고비 대비 매출은 ${(before.roas??0).toFixed(2)}배에서 ${(now.roas??0).toFixed(2)}배로 변했습니다.`;
+ a.sections.push({title:'1. 무엇이 달라졌나',paragraphs:[`구매 전환은 ${before.conversions.toLocaleString()}건에서 ${now.conversions.toLocaleString()}건으로 ${pct(delta(now.conversions,before.conversions))} 변했습니다. 클릭은 ${before.clicks.toLocaleString()}회에서 ${now.clicks.toLocaleString()}회로 ${pct(delta(now.clicks,before.clicks))} 변했고, 클릭 대비 구매 전환율은 ${rate(before.cvr)}에서 ${rate(now.cvr)}입니다.`,`구매 1건당 광고비는 ${money(before.cpa??0)}에서 ${money(now.cpa??0)}로 ${pct(delta(now.cpa??0,before.cpa??0))} 변했습니다. 이 지표와 매출을 함께 봐야 구매 수 감소와 구매당 매출 감소를 구분할 수 있습니다.`]});
+ const diagnosis:Record<string,string[]>={
+ 'Meta Ads':['Meta Ads가 가장 먼저 점검할 구간입니다. 광고비는 1,600만원에서 1,800만원으로 12.5% 늘었지만, 매출은 6,400만원에서 4,500만원으로 29.7% 줄었습니다. 구매 1건당 광고비도 12,500원에서 20,000원으로 60.0% 상승했습니다.','클릭은 40,000회에서 45,000회로 늘었지만 전환율이 3.20%에서 2.00%로 떨어지면서 구매는 1,280건에서 900건으로 줄었습니다. 구매당 매출은 두 기간 모두 5만원입니다. 따라서 집계상 매출 감소는 구매 건수 감소로 설명되며, 유입 부족보다 클릭 이후 구매 전환과 유입 구성 변화가 우선 점검 대상입니다.','전환율이 지난주 수준이었다면 같은 45,000클릭에서 1,440건이 계산됩니다. 실제 900건과의 차이 540건은 전환율 차이를 설명하는 비교값입니다. 회복 가능한 구매 수나 예상 매출을 뜻하지는 않습니다.'],
+ 'Google Ads':['Google Ads는 같은 광고비 1,400만원으로 매출이 6,300만원에서 7,000만원으로 11.1% 증가했습니다. 클릭은 28,000회로 같고 구매가 1,260건에서 1,400건으로 늘어, 전환율은 4.50%에서 5.00%로 개선됐습니다.','구매당 매출은 5만원으로 같고, 광고비 대비 매출은 4.50배에서 5.00배로 높아졌습니다. 관측된 개선은 구매 건수 증가에서 나왔습니다. 다만 브랜드 검색·리타기팅 비중이나 귀속 변경을 확인하지 않았으므로 이를 광고 자체의 순증 효과로 확정할 수는 없습니다.'],
+ 'Naver':['Naver는 광고비 800만원, 매출 3,200만원, 구매 800건으로 두 기간 모두 같습니다. 전환율은 3.33%, 구매 1건당 광고비는 10,000원, 광고비 대비 매출은 4.00배입니다.','이번 집계에서 전체 매출 감소를 설명하는 채널은 아닙니다. 현재 집행을 유지하며 다른 채널의 문제를 먼저 점검하는 것이 합리적입니다. 수치가 안정적이라는 사실만으로 확대 여력이 있다고 판단하지는 않습니다.'],
+ 'Kakao':['Kakao는 클릭 10,000회와 구매 160건, 광고비 200만원이 두 기간 모두 같습니다. 그런데 매출은 700만원에서 400만원으로 42.9% 감소했습니다.','구매 전환율과 구매 비용이 그대로이므로, Meta와 달리 구매 건수 감소가 핵심은 아닙니다. 구매당 매출이 43,750원에서 25,000원으로 하락했습니다. 구매 상품 구성·할인·취소 및 환불 반영·매출 귀속 변경을 먼저 확인해야 합니다.']};
+ a.sections.push({title:'2. 주요 영향과 채널별 진단',paragraphs:scope.channel==='전체 채널'?['전체 매출은 1,500만원 감소했습니다. Meta Ads에서 1,900만원, Kakao에서 300만원 줄었고 Google Ads의 700만원 증가가 일부를 상쇄했습니다. Naver는 변동이 없습니다. Meta의 감소액은 전체 순감소액의 126.7%이며, 다른 채널의 증가로 상쇄되기 때문에 100%를 넘습니다.',...selected.flatMap(c=>diagnosis[c.name])]:diagnosis[scope.channel]??[]});
+ const all=scope.channel==='전체 채널',budget=/예산|배분|더\s?써/.test(q),funnel=/전환|클릭|퍼널/.test(q);
+ if(budget)a.title='예산 조정 검토 보고서';else if(funnel)a.title='구매 전환 종합 분석';else if(/요약|보고|공유/.test(q))a.title='주간 마케팅 성과 보고';
+ const recommendations:Record<string,string[]>={
+ 'Meta Ads':['Meta Ads의 추가 증액은 우선 보류하고, 두 기간의 캠페인별 클릭·구매 전환을 같은 귀속 기준으로 비교하세요. 전환율 하락이 특정 캠페인에 집중되는지, 여러 캠페인에 공통으로 나타나는지부터 구분해야 합니다.','광고 유입 구성과 소재·오퍼 변경 이력, 모바일 랜딩 및 결제 오류, 전환 추적 누락을 차례로 확인하세요. 현재 집계로 소재 피로도나 랜딩 문제를 확정할 수 없습니다. 문제가 확인된 구간에 한해 수정하고, 전환 집계가 충분히 반영된 뒤 같은 기준으로 재평가하세요.'],
+ 'Google Ads':['Google Ads는 현재 집행을 유지하고 확대 후보로 검토하세요. 브랜드 검색 의존도·캠페인별 효율·추가 집행 여력·이익 기준의 목표 효율을 확인한 뒤, 합의된 소규모 증액 실험으로 추가 광고비의 성과를 따로 측정하세요. 평균 수익률 5배를 추가 예산에도 그대로 적용하면 안 됩니다.'],
+ 'Naver':['Naver는 현재 예산과 운영을 유지하며 목표 효율 이탈 여부를 모니터링하세요. 변화가 없는 채널을 먼저 조정하기보다 성과가 크게 바뀐 채널에 조사 시간을 쓰는 편이 이번 분석에 맞습니다.'],
+ 'Kakao':['Kakao는 전환 개선보다 구매당 매출 검증이 먼저입니다. 두 기간의 주문 상품·할인·취소 및 환불·매출 집계 기준을 비교하세요. 상품 구성 변화라면 이익을 함께 보고, 추적이나 집계 문제라면 데이터 수정 후 예산 판단을 다시 해야 합니다.']};
+ a.sections.push({title:'3. 종합 결론',paragraphs:[all?'전체 성과 하락을 모든 채널의 공통 문제로 볼 근거는 없습니다. 우선순위는 Meta의 구매 전환 하락, 다음은 Kakao의 구매당 매출 하락입니다. Google은 개선됐고 Naver는 안정적이므로 채널별로 다른 대응이 필요합니다.':scope.channel==='Meta Ads'?'핵심은 더 많은 클릭을 확보하는 것이 아니라 늘어난 유입이 구매로 이어지지 않는 구간을 확인하는 것입니다. 추가 광고비 투입보다 전환율 하락의 범위를 좁히는 작업을 우선해야 합니다.':scope.channel==='Kakao'?'구매 수가 같아도 매출은 줄 수 있습니다. 이번 변화는 구매당 매출 하락으로 설명되므로 구매 전환 문제와 분리해서 대응해야 합니다.':scope.channel==='Google Ads'?'동일 광고비에서 구매가 늘어난 개선입니다. 현재 운영을 유지할 근거는 있지만, 추가 집행의 성과까지 확인된 것은 아닙니다.':'현재 집계상 변화가 없어 유지·관찰이 우선입니다. 목표 달성 여부와 확대 판단에는 별도 기준이 필요합니다.',budget?'현재 데이터로 최적 예산 배분액이나 추가 매출을 계산할 수는 없습니다. 목표 수익성·채널별 확대 여력·추가 집행의 효율이 없기 때문입니다. 지금 제안할 수 있는 것은 조정의 우선순위와 검증 순서입니다.':'위 설명은 주간 집계의 변화와 산술적 분해입니다. 원인 확정에는 운영 이력과 더 세부적인 데이터가 필요합니다.']});
+ a.sections.push({title:'4. 추천 행동과 확인 기준',paragraphs:(all?['Meta Ads','Kakao','Google Ads','Naver']:selected.map(c=>c.name)).flatMap(n=>recommendations[n])});
+ a.closing=all?'이번 주 의사결정은 전 채널 일괄 감액보다 Meta 전환 점검과 Kakao 매출 검증에 집중하는 것이 적절합니다. Google의 확대는 조건을 확인한 실험으로 접근하고, 결과가 나오면 다음 예산 조정에 반영하세요.':'먼저 위 점검을 통해 집계 변화의 원인을 좁히고, 수정 전후 성과를 같은 기간·귀속 기준으로 비교한 뒤 집행을 조정하세요.';
+ a.followups=all?['Meta Ads의 구매 전환 하락을 자세히 분석해줘','예산 조정 우선순위를 보고해줘']:['전체 채널 성과를 종합 분석해줘'];
  return a;
 }
-export const scenarios=[
- {group:'모호한 질문',question:'요즘 광고 개판인데 뭐가 문제야?',expected:'판단할 지표를 먼저 확인',kind:'clarify'},
- {group:'원인 탐색',question:'ROAS 왜 떨어졌어?',expected:'관측 데이터와 원인 가설 구분',kind:'performance'},
- {group:'의사결정',question:'예산 어디에 더 써야 해?',expected:'효율 비교와 배분 실험 제안',kind:'budget'},
- {group:'범위 지정',question:'메타 전환이 어디서 줄었어?',expected:'Meta 범위 적용·없는 단계 고지',kind:'funnel'},
- {group:'업무 공유',question:'팀에 공유할 요약 만들어줘',expected:'결론 → 근거 → 다음 액션',kind:'summary'},
- {group:'근거 부족',question:'내년 매출 확실하게 예측해줘',expected:'수치 생성 없이 데이터 한계 안내',kind:'unavailable'},
-];
