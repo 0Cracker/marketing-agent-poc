@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {aggregate,analyze,ratio,scenarios} from '../lib/marketing.ts';
+const ctx={channel:'전체 채널',period:'이번 주'};
+const totals=aggregate(ctx);
+assert.equal(totals.spend,42000000);
+assert.equal(totals.revenue,151000000);
+assert.equal(totals.conversions,3260);
+assert.equal(totals.roas,151000000/42000000);
+assert.equal(totals.cpa,42000000/3260);
+assert.equal(ratio(4,0),null);
+for(const s of scenarios)assert.equal(analyze(s.question,ctx).kind,s.kind,s.question);
+assert.equal(analyze('메타 ROAS 왜 떨어졌어?',ctx).scope.channel,'Meta Ads');
+assert.match(analyze('메타 ROAS 왜 떨어졌어?',ctx).conclusion,/-37.5%/);
+assert.equal(analyze('지난주 성과 분석해줘',ctx).scope.period,'지난주');
+assert.match(analyze('지난주 성과 분석해줘',ctx).conclusion,/보류/);
+assert.match(analyze('예산 어디에 더 써야 해?',ctx).hypothesis,/보장은 없습니다/);
+assert.equal(analyze('오늘 광고 성과 알려줘',ctx).kind,'unavailable');
+console.log('PASS: aggregate KPIs, zero denominator, 6 scenarios, context, evidence limits');

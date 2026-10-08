@@ -1,3 +1,36 @@
 # Marketing Canvas · Agent PoC
 
-Marketing dashboard side chat and evidence-based analysis canvas demo. Full source upload follows.
+기존 서비스 화면 옆에서 대화하고, 차트와 데이터 근거를 분석 캔버스로 펼치는 마케팅 업무 UX 데모.
+
+## 실행
+
+Node.js 22.13 이상과 pnpm을 사용합니다.
+
+```sh
+pnpm install
+pnpm dev
+pnpm test
+pnpm build
+```
+
+배포는 `dist/`의 정적 파일만으로 동작합니다. API 키, 광고 계정, 데이터 수집, 실제 LLM 연결은 필요하지 않습니다.
+
+## 데모 동선
+
+1. 기간과 채널을 선택합니다.
+2. 사이드 챗에서 추천 질문을 선택하거나 직접 입력합니다.
+3. 결론과 핵심 지표를 확인합니다. 모호한 질문에는 지표 선택 버튼이 나옵니다.
+4. ‘차트와 근거 보기’로 캔버스를 열어 관측·가설·다음 액션을 확인합니다.
+5. 상단 ‘시나리오’에서 여섯 유형의 실무 질문을 테스트합니다.
+
+## 적용한 구성
+
+React + Vite + Tailwind CSS, 번들에 제공된 shadcn/ui Button·Chart, Recharts. frontend-design 스킬의 정보 계층·색상·레이아웃 원칙을 적용했습니다. 21st MCP는 연결하지 않았습니다.
+
+## 범위와 한계
+
+샘플 데이터 기반의 규칙형 응답 시뮬레이션입니다. 자연어 모델의 이해력·정확도 평가는 아직 하지 않았습니다. 임의 질문을 모두 처리하지 않으며 키워드로 데모 의도를 분류합니다. 2026년 10월 11일까지의 미래 수치도 가상 데이터입니다.
+
+채널 집계는 `lib/marketing.ts`, 대화·캔버스는 `app/page.tsx`, 스타일은 `app/marketing.css`에 있습니다. 차트와 비율은 코드에서 계산하며, 비율을 행별로 단순 평균하지 않습니다.
+
+Cloud 팀의 모델 연결 지침과 응답 계약은 [docs/agent-contract.md](docs/agent-contract.md)를 참고하세요. 데이터 수집은 이번 PoC 범위에서 제외합니다.
