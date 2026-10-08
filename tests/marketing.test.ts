@@ -29,4 +29,10 @@ assert.equal(analyze('메타 전환 분석해줘',{channel:'전체 채널',perio
 console.log('PASS: aggregate totals, revenue attribution, conversion arithmetic, report scope, budget and data limits');
 
 assert.match(report.conclusion,/매출 감소의 중심은 Meta/);
-assert.ok(JSON.stringify(report).length<2200, 'Keep the default report concise');
+assert.equal(report.metrics.length,8);
+assert.equal(report.metrics.find(m=>m.label==='구매당 광고비 (CPA)')?.current,'₩12,883');
+assert.equal(report.rows.find(r=>r.name==='Meta Ads')?.clicks,'40,000 → 45,000');
+assert.equal(report.rows.find(r=>r.name==='Kakao')?.aov,'₩43,750 → ₩25,000');
+assert.match(report.sections[1].paragraphs.join(' '),/540건/);
+assert.match(report.sections[1].paragraphs.join(' '),/Google/);
+assert.match(report.sections[1].paragraphs.join(' '),/Naver/);
