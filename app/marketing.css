@@ -19,3 +19,5 @@
 @media(max-width:760px){.workspace,.workspace.chat-open,.workspace.chat-open.chat-wide{grid-template-columns:1fr}.assistant-panel{width:100%}.chat-scroll{padding:22px 20px}.assistant-header{padding:0 14px}.assistant-header small{font-size:11px;max-width:200px}.analysis-answer{font-size:15px}.analysis-answer h2{font-size:20px}.analysis-lead{font-size:15px}.chat-welcome{padding-top:20px}.chat-welcome h2{font-size:24px}}
 
 .analysis-table{min-width:380px}.answer-actions{margin:0;padding-left:21px}.answer-actions li+li{margin-top:12px}.analysis-closing{background:none;border-top:1px solid #e5eaf3;border-radius:0;padding:14px 0 0;color:#748298;font-size:13px;font-weight:400;line-height:1.75}
+
+.metrics-comparison{min-width:420px}.metrics-comparison td:first-child{white-space:normal;min-width:100px}.channel-comparison{min-width:700px}.channel-evidence{margin-top:22px}.channel-evidence h4{font-size:14px;margin:0 0 4px;color:#344c70}.table-period-note{font-size:12px;color:#8491a4}.channel-evidence .analysis-table-scroll{margin-top:10px}
