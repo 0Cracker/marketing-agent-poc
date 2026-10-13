@@ -35,12 +35,16 @@ yarn-error.log*
 .vercel
 
 # typescript
+*.tsbuildinfo
 next-env.d.ts
 /dist/
 /.wrangler/
-# Checkout-local execution profile and tool state; never publish them.
+# Checkout-local execution profile and tool state; publish only the iteration-log skill.
 /.sites-runtime/
-/.agents/
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/poc-iteration-log/
 /.codex/
 /outputs/
 /work/
