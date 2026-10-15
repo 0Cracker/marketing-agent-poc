@@ -1,0 +1,2835 @@
+{
+  "version": "MC-1.0.0",
+  "layer": "D003B",
+  "status": "specification_only",
+  "record_total": 1652,
+  "identity_policy": "P-ID",
+  "observation_identity": "source namespace/type/record_id/fieldPath/resolved metric version; market_total uses scope/month/coverage/revision plus all field paths",
+  "time_policy": "P-TIME",
+  "provenance_policy": "source artifact hash, record ID, fieldPath, availableAt, mapping/code version; no new facts",
+  "on_error": "quarantine with record+field+reason; never fill missing or name-match",
+  "metrics": {
+    "market_units": {
+      "iri": "https://example.org/marketing/metric-market_units",
+      "version": "1.0.0",
+      "source_type": "T03",
+      "source_path": "$.units_sold",
+      "definition": "market_units; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/market_units/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "market_sales": {
+      "iri": "https://example.org/marketing/metric-market_sales",
+      "version": "1.0.0",
+      "source_type": "T03",
+      "source_path": "$.sales_value",
+      "definition": "market_sales; semantics.md의 정의 그룹을 적용",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/market_sales/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "market_total": {
+      "iri": "https://example.org/marketing/metric-market_total",
+      "version": "1.0.0",
+      "source_type": "T03",
+      "source_path": "$.market_total_value",
+      "definition": "국가·월의 기타 포함 모의 시장분모; 제품 반복 제거",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "deduplicate_scope_then_sum",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/market_total/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "ad_impressions": {
+      "iri": "https://example.org/marketing/metric-ad_impressions",
+      "version": "1.0.0",
+      "source_type": "T13",
+      "source_path": "$.impressions",
+      "definition": "ad_impressions; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + account + metric + attribution settings + validity",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/ad_impressions/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "ad_clicks": {
+      "iri": "https://example.org/marketing/metric-ad_clicks",
+      "version": "1.0.0",
+      "source_type": "T13",
+      "source_path": "$.clicks",
+      "definition": "ad_clicks; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + account + metric + attribution settings + validity",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/ad_clicks/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "ad_conversions": {
+      "iri": "https://example.org/marketing/metric-ad_conversions",
+      "version": "1.0.0",
+      "source_type": "T13",
+      "source_path": "$.conversions",
+      "definition": "ad_conversions; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + account + metric + attribution settings + validity",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/ad_conversions/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "ad_spend": {
+      "iri": "https://example.org/marketing/metric-ad_spend",
+      "version": "1.0.0",
+      "source_type": "T13",
+      "source_path": "$.spend",
+      "definition": "ad_spend; semantics.md의 정의 그룹을 적용",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + account + metric + attribution settings + validity",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/ad_spend/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "ad_value": {
+      "iri": "https://example.org/marketing/metric-ad_value",
+      "version": "1.0.0",
+      "source_type": "T13",
+      "source_path": "$.attributed_revenue",
+      "definition": "모의 광고 귀속 구매 가치; 주문 매출 아님",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + account + metric + attribution settings + validity",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/ad_value/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_gross_units": {
+      "iri": "https://example.org/marketing/metric-own_gross_units",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.gross_units",
+      "definition": "own_gross_units; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_gross_units/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_returned_units": {
+      "iri": "https://example.org/marketing/metric-own_returned_units",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.returned_units",
+      "definition": "own_returned_units; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_returned_units/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_net_units": {
+      "iri": "https://example.org/marketing/metric-own_net_units",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.net_units",
+      "definition": "own_net_units; semantics.md의 정의 그룹을 적용",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_net_units/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_gross_sales": {
+      "iri": "https://example.org/marketing/metric-own_gross_sales",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.gross_sales",
+      "definition": "own_gross_sales; semantics.md의 정의 그룹을 적용",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_gross_sales/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_returns_value": {
+      "iri": "https://example.org/marketing/metric-own_returns_value",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.returns_value",
+      "definition": "own_returns_value; semantics.md의 정의 그룹을 적용",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_returns_value/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "own_net_sales": {
+      "iri": "https://example.org/marketing/metric-own_net_sales",
+      "version": "1.0.0",
+      "source_type": "H01",
+      "source_path": "$.net_sales",
+      "definition": "own_net_sales; semantics.md의 정의 그룹을 적용",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "sum_disjoint_same_definition",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/own_net_sales/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "offer_price": {
+      "iri": "https://example.org/marketing/metric-offer_price",
+      "version": "1.0.0",
+      "source_type": "T08",
+      "source_path": "$.price",
+      "definition": "판매처·제품·시점의 세금/배송 미확인 표시가격",
+      "unit": "currency",
+      "datatype": "decimal",
+      "aggregation": "snapshot_no_sum",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B money 2 decimals; KRW/JPY .00",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/offer_price/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "inventory_quantity": {
+      "iri": "https://example.org/marketing/metric-inventory_quantity",
+      "version": "1.0.0",
+      "source_type": "T22",
+      "source_path": "$.available_quantity",
+      "definition": "자사 위치·제품·시점의 판매가능 수량",
+      "unit": "count",
+      "datatype": "decimal",
+      "aggregation": "snapshot_no_sum",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/inventory_quantity/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "review_rating": {
+      "iri": "https://example.org/marketing/metric-review_rating",
+      "version": "1.0.0",
+      "source_type": "T24",
+      "source_path": "$.rating_value",
+      "definition": "해당 리뷰 척도의 별점; 감성 아님",
+      "unit": "rating_point",
+      "datatype": "decimal",
+      "aggregation": "non_additive",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B integer",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/review_rating/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    },
+    "promotion_discount": {
+      "iri": "https://example.org/marketing/metric-promotion_discount",
+      "version": "1.0.0",
+      "source_type": "T09",
+      "source_path": "$.discount_ratio",
+      "definition": "모의 행사 조건의 할인 비율",
+      "unit": "ratio",
+      "datatype": "decimal",
+      "aggregation": "non_additive",
+      "sign_policy": "nonnegative_D003B; source-specific_elsewhere",
+      "precision": "D003B exact 0.1",
+      "origin": "simulated; isSynthetic independent",
+      "comparison_gate": "P-COMPARE",
+      "source_definition_key": "source namespace + metric + coverage + version",
+      "iri_role": "definition family; do not bind every source observation to this family IRI as if definitions were equal",
+      "resolved_iri_template": "https://example.org/marketing/metric/promotion_discount/{sha256(canonical-source-definition-key)}/1.0.0",
+      "binding_rule": "resolve source_definition_key to exact namespace/account/coverage/attribution/effective-settings/version, then bind observation metric; unresolved key blocks comparable calculation"
+    }
+  },
+  "types": [
+    {
+      "type": "T01",
+      "rows": 6,
+      "row_grain": "product catalog",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_name",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Product/m:label",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.brand_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:brand/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "deduplicate exact B1/B2/B3; trace all inputs",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.brand_name",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Brand/m:label",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; conflict quarantine",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.brand_role",
+          "source_schema": {
+            "enum": [
+              "own",
+              "competitor"
+            ]
+          },
+          "required": true,
+          "target": "m:brandRole",
+          "metric_id": null,
+          "role": "context",
+          "rule": "role in D003B catalog; not rigid class",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.category_name",
+          "source_schema": {
+            "const": "샴푸"
+          },
+          "required": true,
+          "target": "m:category",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.comparison_group",
+          "source_schema": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          },
+          "required": true,
+          "target": "m:comparisonGroup",
+          "metric_id": null,
+          "role": "context",
+          "rule": "A/B scope member condition, not competition edge",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.volume_ml",
+          "source_schema": {
+            "const": 300
+          },
+          "required": true,
+          "target": "m:volumeMl",
+          "metric_id": null,
+          "role": "context",
+          "rule": "decimal ml; no Variant synthesis",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.description_ko",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:definition",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve source product text, not claim of efficacy",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.applicable_countries",
+          "source_schema": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "KR",
+                "JP",
+                "US"
+              ]
+            },
+            "minItems": 3,
+            "maxItems": 3,
+            "uniqueItems": true
+          },
+          "required": true,
+          "target": "m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "catalog applicability array; country scope only on measurements",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.valid_from",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:validInterval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "open end; validity metadata, no guessed end",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "rows": 432,
+      "row_grain": "country/product/month",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_start",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_end_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:endDateExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.units_sold",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 5000
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "market_units",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.sales_value",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "market_sales",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.market_total_value",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "market_total",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath; deduplicate country/month/coverage/definition, provenance of all repeats",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.currency",
+          "source_schema": {
+            "enum": [
+              "KRW",
+              "JPY",
+              "USD"
+            ]
+          },
+          "required": true,
+          "target": "m:currency",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no FX",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.coverage_text",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:MarketScope/m:coverageText",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve exact scope and denominator coverage; not complete real market",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "rows": 6,
+      "row_grain": "country/campaign/configuration",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.campaign_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Campaign/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact campaign ID namespace D003B/Campaign",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.campaign_name",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:label",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.platform",
+          "source_schema": {
+            "enum": [
+              "모의 검색",
+              "모의 소셜"
+            ]
+          },
+          "required": true,
+          "target": "m:platform",
+          "metric_id": null,
+          "role": "context",
+          "rule": "mock search/social, not real vendor",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.channel",
+          "source_schema": {
+            "enum": [
+              "search",
+              "social"
+            ]
+          },
+          "required": true,
+          "target": "m:channel",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.target_product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:promotes",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact P1A; no purchased-product link",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.valid_from",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:validInterval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.valid_to_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:validInterval/m:endDateExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.conversion_name",
+          "source_schema": {
+            "const": "구매"
+          },
+          "required": true,
+          "target": "m:conversionName",
+          "metric_id": null,
+          "role": "context",
+          "rule": "mock purchase definition",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.attribution_model",
+          "source_schema": {
+            "const": "마지막 클릭"
+          },
+          "required": true,
+          "target": "m:attributionModel",
+          "metric_id": null,
+          "role": "context",
+          "rule": "mock last-click, not vendor guarantee",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.attribution_window_days",
+          "source_schema": {
+            "const": 7
+          },
+          "required": true,
+          "target": "m:attributionWindowDays",
+          "metric_id": null,
+          "role": "context",
+          "rule": "mock 7; only D003B",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "rows": 312,
+      "row_grain": "country/campaign/month baseline or day detail",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.campaign_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Campaign/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact campaign ID namespace D003B/Campaign",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_start",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_end_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:endDateExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.grain",
+          "source_schema": {
+            "enum": [
+              "month",
+              "day"
+            ]
+          },
+          "required": true,
+          "target": "m:interval/m:grain",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve month/day",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.series_role",
+          "source_schema": {
+            "enum": [
+              "baseline",
+              "detail"
+            ]
+          },
+          "required": true,
+          "target": "m:seriesRole",
+          "metric_id": null,
+          "role": "context",
+          "rule": "baseline/detail disjoint selection P-REVISION",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.impressions",
+          "source_schema": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "ad_impressions",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.clicks",
+          "source_schema": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "ad_clicks",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.conversions",
+          "source_schema": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "ad_conversions",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.spend",
+          "source_schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]{2}$",
+                "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "ad_spend",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.attributed_revenue",
+          "source_schema": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]{2}$",
+                "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "ad_value",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.currency",
+          "source_schema": {
+            "enum": [
+              "KRW",
+              "JPY",
+              "USD"
+            ]
+          },
+          "required": true,
+          "target": "m:currency",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no FX",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.availability",
+          "source_schema": {
+            "enum": [
+              "complete",
+              "missing"
+            ]
+          },
+          "required": true,
+          "target": "m:availability or sellerStatus",
+          "metric_id": null,
+          "role": "context",
+          "rule": "T13 complete→present, missing→missing; T08 preserve sellerStatus separately from price presence",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "H01",
+      "rows": 144,
+      "row_grain": "country/own product/month",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_start",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.period_end_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:endDateExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive local date",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.gross_units",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 50,
+            "maximum": 800
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_gross_units",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.returned_units",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_returned_units",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.net_units",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_net_units",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.gross_sales",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_gross_sales",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.returns_value",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_returns_value",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.net_sales",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "own_net_sales",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.currency",
+          "source_schema": {
+            "enum": [
+              "KRW",
+              "JPY",
+              "USD"
+            ]
+          },
+          "required": true,
+          "target": "m:currency",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no FX",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "rows": 504,
+      "row_grain": "country/product/seller/instant",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.seller_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:seller/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "namespace D003B/Seller, exact",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.seller_name",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Seller/m:label",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; not identity",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.observed_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:instant/m:timestamp",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve snapshot",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.price",
+          "source_schema": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$",
+            "description": "비음수 소수 문자열. KRW/JPY는 .00, USD는 센트 단위. HALF_UP 반올림."
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "offer_price",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.currency",
+          "source_schema": {
+            "enum": [
+              "KRW",
+              "JPY",
+              "USD"
+            ]
+          },
+          "required": true,
+          "target": "m:currency",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no FX",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.availability",
+          "source_schema": {
+            "enum": [
+              "in_stock",
+              "out_of_stock",
+              "unknown"
+            ]
+          },
+          "required": true,
+          "target": "m:availability or sellerStatus",
+          "metric_id": null,
+          "role": "context",
+          "rule": "T13 complete→present, missing→missing; T08 preserve sellerStatus separately from price presence",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.tax_included",
+          "source_schema": {
+            "type": "null"
+          },
+          "required": true,
+          "target": "m:taxIncluded",
+          "metric_id": null,
+          "role": "context",
+          "rule": "null→absence + original field null metadata; unknown; no false",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.shipping_included",
+          "source_schema": {
+            "type": "null"
+          },
+          "required": true,
+          "target": "m:shippingIncluded",
+          "metric_id": null,
+          "role": "context",
+          "rule": "null→absence + original field null metadata; unknown; no false",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "rows": 168,
+      "row_grain": "country/own product/location/instant",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.location_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:location/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "namespace D003B/Location, exact",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.location_name",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Location/m:label",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; not identity",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.observed_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:instant/m:timestamp",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve snapshot",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_quantity",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "inventory_quantity",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.sellable_status",
+          "source_schema": {
+            "enum": [
+              "in_stock",
+              "out_of_stock"
+            ]
+          },
+          "required": true,
+          "target": "m:sellerStatus",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve inventory state, no movements reconstruction",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "rows": 72,
+      "row_grain": "product/country/review",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.review_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Review/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "namespace D003B/Review",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.written_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:instant/m:timestamp",
+          "metric_id": null,
+          "role": "context",
+          "rule": "written, not available",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.language",
+          "source_schema": {
+            "const": "ko"
+          },
+          "required": true,
+          "target": "m:language",
+          "metric_id": null,
+          "role": "context",
+          "rule": "ko synthetic original; not translation",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.body_text",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:bodyText",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve verbatim; no extraction now",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.rating_value",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "review_rating",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.rating_scale_max",
+          "source_schema": {
+            "const": 5
+          },
+          "required": true,
+          "target": "m:ratingScaleMax",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve 5",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.verified_purchase",
+          "source_schema": {
+            "type": "null"
+          },
+          "required": true,
+          "target": "m:verifiedPurchase",
+          "metric_id": null,
+          "role": "context",
+          "rule": "null→absence + original field null metadata; unknown; no false",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "rows": 1,
+      "row_grain": "country/product/seller/promotion interval",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.promotion_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Event/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact ID",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.seller_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:seller/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "namespace D003B/Seller, exact",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.start_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:startAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive event wall time",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.end_at_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:endAtExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive event wall time",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.discount_ratio",
+          "source_schema": {
+            "const": 0.1
+          },
+          "required": true,
+          "target": "m:Observation/m:value",
+          "metric_id": "promotion_discount",
+          "role": "measurement",
+          "rule": "one metric per observation; decimal exact; missing has no value; preserve fieldPath",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.conditions_ko",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Claim/m:claimText",
+          "metric_id": null,
+          "role": "context",
+          "rule": "source statement not causal effect",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "rows": 1,
+      "row_grain": "country/product/location/change instant",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.product_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Product/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact confirmed ID, namespace D003B/Product",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.change_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Event/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact ID",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.location_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:location/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "namespace D003B/Location, exact",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.changed_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:instant/m:timestamp",
+          "metric_id": null,
+          "role": "context",
+          "rule": "change occurrence",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.changed_field",
+          "source_schema": {
+            "const": "available_quantity"
+          },
+          "required": true,
+          "target": "m:changeField",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.before_value",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:beforeValue",
+          "metric_id": null,
+          "role": "context",
+          "rule": "state in log, not new historical snapshot",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.after_value",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:afterValue",
+          "metric_id": null,
+          "role": "context",
+          "rule": "state in log, match same-time T22 after approval",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reason_ko",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:Claim/m:claimText",
+          "metric_id": null,
+          "role": "context",
+          "rule": "log reason is claim",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "rows": 6,
+      "row_grain": "country/campaign/collection run",
+      "mappings": [
+        {
+          "path": "$.record_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:recordId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve; namespace=D003B/type",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.is_synthetic",
+          "source_schema": {
+            "const": true
+          },
+          "required": true,
+          "target": "m:isSynthetic",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve true, distinct from originKind=simulated",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.source_file",
+          "source_schema": {
+            "const": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl"
+          },
+          "required": true,
+          "target": "m:SourceArtifact/m:path",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve path; hash from manifest only after approval confirm",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.available_at",
+          "source_schema": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"
+          },
+          "required": true,
+          "target": "m:SourceRecord/m:availableAt",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve timestamp/offset; P-ASOF",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.reporting_timezone",
+          "source_schema": {
+            "enum": [
+              "Asia/Seoul",
+              "Asia/Tokyo",
+              "America/New_York"
+            ]
+          },
+          "required": true,
+          "target": "m:timezone",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve IANA; T01 catalog KR timestamp does not restrict applicable countries",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.campaign_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:subject or m:Campaign/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact campaign ID namespace D003B/Campaign",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.country_code",
+          "source_schema": {
+            "enum": [
+              "KR",
+              "JP",
+              "US"
+            ]
+          },
+          "required": true,
+          "target": "m:MarketScope/m:country",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve, no global currency/timezone inference",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.run_id",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": true,
+          "target": "m:CollectionRun/m:sourceId",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exact run ID",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.expected_start",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:startDate",
+          "metric_id": null,
+          "role": "context",
+          "rule": "inclusive expected window",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.expected_end_exclusive",
+          "source_schema": {
+            "type": "string",
+            "format": "date"
+          },
+          "required": true,
+          "target": "m:interval/m:endDateExclusive",
+          "metric_id": null,
+          "role": "context",
+          "rule": "exclusive expected window",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.expected_count",
+          "source_schema": {
+            "const": 28
+          },
+          "required": true,
+          "target": "m:expectedCount",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve 28",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.received_count",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:receivedCount",
+          "metric_id": null,
+          "role": "context",
+          "rule": "count actual received not normalized rows",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.missing_count",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": true,
+          "target": "m:missingCount",
+          "metric_id": null,
+          "role": "context",
+          "rule": "count missed dates",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.missing_dates",
+          "source_schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "uniqueItems": true
+          },
+          "required": true,
+          "target": "m:reason",
+          "metric_id": null,
+          "role": "context",
+          "rule": "preserve array as source metadata, no invented observations",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        },
+        {
+          "path": "$.status",
+          "source_schema": {
+            "enum": [
+              "success",
+              "partial"
+            ]
+          },
+          "required": true,
+          "target": "m:availability",
+          "metric_id": null,
+          "role": "context",
+          "rule": "success→complete collection; partial→partial; distinct Observation availability",
+          "loss": "none if original record/field path and lexical value retained; RDF null represented by absence plus original null marker",
+          "evidence": "D003B batch.schema.json / generate.mjs / manifest; not a vendor schema"
+        }
+      ]
+    }
+  ]
+}

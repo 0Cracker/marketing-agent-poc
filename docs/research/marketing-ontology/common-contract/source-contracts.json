@@ -1,0 +1,363 @@
+{
+  "version": "MC-1.0.0",
+  "status": "contracts_only_no_connector",
+  "common_gate": "P-ID P-TIME P-VALUE P-MONEY P-COMPARE P-COVERAGE P-ASOF; every mandatory context resolved before transformation",
+  "sources": [
+    {
+      "id": "SRC-SEARCH",
+      "source": "Google Ads campaign reporting, candidate v22; API not called",
+      "status": "blocked_until_settings_confirmed",
+      "grain": "customer + campaign + segments.date + selected non-overlapping segments",
+      "version": "v22 field page inspected; supported runtime version must be pinned at implementation",
+      "identity": "customer.id + campaign.id, not campaign.name; separate source/integrated IDs",
+      "fields": [
+        {
+          "path": "customer.id",
+          "datatype": "string/int64",
+          "target": "Campaign.identifierNamespace",
+          "rule": "scope by customer; preserve decimal integer lexical",
+          "evidence_level": "official",
+          "required": true
+        },
+        {
+          "path": "campaign.id",
+          "datatype": "int64",
+          "target": "Campaign.sourceId",
+          "rule": "exact, external product mapping required",
+          "evidence_level": "official",
+          "required": true
+        },
+        {
+          "path": "segments.date",
+          "datatype": "date",
+          "target": "TimeInterval.startDate",
+          "rule": "next local date as end; confirm customer timezone",
+          "evidence_level": "official",
+          "required": true
+        },
+        {
+          "path": "metrics.impressions",
+          "datatype": "int64",
+          "target": "ad_impressions",
+          "rule": "count; absent ≠0",
+          "evidence_level": "official",
+          "required": true
+        },
+        {
+          "path": "metrics.clicks",
+          "datatype": "int64",
+          "target": "ad_clicks",
+          "rule": "source clicks definition; no cross-platform equality",
+          "evidence_level": "official",
+          "required": true
+        },
+        {
+          "path": "metrics.cost_micros",
+          "datatype": "int64",
+          "target": "ad_spend",
+          "rule": "exact /1000000 currency units, preserve micros; no premature minor-unit rounding",
+          "evidence_level": "official+design",
+          "required": true
+        },
+        {
+          "path": "metrics.conversions",
+          "datatype": "double",
+          "target": "ad_conversions",
+          "rule": "decimal; record conversion action selection/include setting and attribution",
+          "evidence_level": "official+design",
+          "required": true
+        },
+        {
+          "path": "metrics.conversions_value",
+          "datatype": "double",
+          "target": "ad_value",
+          "rule": "already reported value, no micros division; currency/value configuration required",
+          "evidence_level": "official+design",
+          "required": true
+        },
+        {
+          "path": "customer.currency_code",
+          "datatype": "string",
+          "target": "currency",
+          "rule": "must obtain account metadata",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "customer.time_zone",
+          "datatype": "string",
+          "target": "timezone",
+          "rule": "must obtain account metadata",
+          "evidence_level": "design",
+          "required": true
+        }
+      ],
+      "mandatory_context": [
+        "request/query and API version",
+        "account currency/timezone",
+        "conversion action ids + included actions",
+        "attribution model + window + effective settings dates",
+        "interaction-date vs conversion-date metric selection",
+        "product crosswalk confirmed IDs",
+        "coverage/availableAt/revision"
+      ],
+      "return_policy": "advertising value adjustments are not order refunds; confirmation required",
+      "unknowns": [
+        "actual authorized account and query compatibility",
+        "country represents reporting segment vs account country",
+        "conversion settings history",
+        "value tax/refund/adjustment basis"
+      ],
+      "references": [
+        "https://developers.google.com/google-ads/api/docs/reporting/overview",
+        "https://developers.google.com/google-ads/api/fields/v22/metrics"
+      ]
+    },
+    {
+      "id": "SRC-SOCIAL",
+      "source": "Meta Ads Insights; official SDK fields only",
+      "status": "blocked_until_semantics_and_version_confirmed",
+      "version": "SDK main inspected 2026-10-14; commit/API version unpinned",
+      "grain": "account/campaign/date window/request breakdown tuple; overlapping totals forbidden",
+      "identity": "account_id + campaign_id, product mapping separately confirmed",
+      "fields": [
+        {
+          "path": "account_id",
+          "datatype": "string",
+          "target": "Campaign.identifierNamespace",
+          "rule": "exact account",
+          "evidence_level": "official-code",
+          "required": true
+        },
+        {
+          "path": "campaign_id",
+          "datatype": "string",
+          "target": "Campaign.sourceId",
+          "rule": "exact campaign",
+          "evidence_level": "official-code",
+          "required": true
+        },
+        {
+          "path": "date_start",
+          "datatype": "string",
+          "target": "TimeInterval.startDate",
+          "rule": "date boundary semantics pending",
+          "evidence_level": "official-code",
+          "required": true
+        },
+        {
+          "path": "date_stop",
+          "datatype": "string",
+          "target": "TimeInterval.endDateExclusive",
+          "rule": "inclusive/exclusive not confirmed by SDK; do not transform until confirmed",
+          "evidence_level": "official-code+pending",
+          "required": true
+        },
+        {
+          "path": "impressions",
+          "datatype": "string",
+          "target": "ad_impressions",
+          "rule": "parse exact integer after schema confirmation",
+          "evidence_level": "official-code+design",
+          "required": true
+        },
+        {
+          "path": "clicks",
+          "datatype": "string",
+          "target": "ad_clicks",
+          "rule": "all clicks distinct from inline_link_clicks/outbound_clicks",
+          "evidence_level": "official-code+design",
+          "required": true
+        },
+        {
+          "path": "spend",
+          "datatype": "string",
+          "target": "ad_spend",
+          "rule": "candidate decimal currency units, no Google micros scaling; unit must be confirmed",
+          "evidence_level": "official-code+pending",
+          "required": true
+        },
+        {
+          "path": "account_currency",
+          "datatype": "string",
+          "target": "currency",
+          "rule": "preserve account currency",
+          "evidence_level": "official-code",
+          "required": true
+        },
+        {
+          "path": "actions[*].action_type",
+          "datatype": "string",
+          "target": "MetricDefinition.definition",
+          "rule": "explicit selected action types; purchase variants not silently summed",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "actions[*].value",
+          "datatype": "decimal-string",
+          "target": "ad_conversions",
+          "rule": "only matching action_type + exact attribution window; no absent=0",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "action_values[*].value",
+          "datatype": "decimal-string",
+          "target": "ad_value",
+          "rule": "matching action_type/window with conversion definition",
+          "evidence_level": "design",
+          "required": true
+        }
+      ],
+      "mandatory_context": [
+        "API version + SDK commit",
+        "report level + breakdowns + time_increment",
+        "account timezone",
+        "click definition",
+        "action_type selector",
+        "action report time and click/view attribution windows",
+        "effective adset attribution settings",
+        "currency/value/refund basis",
+        "product crosswalk",
+        "availableAt/revision/coverage"
+      ],
+      "return_policy": "action value not own sales/refunds; keep separate",
+      "unknowns": [
+        "date_stop inclusivity",
+        "spend scale and actions nested schema/types",
+        "supported breakdowns and attribution defaults",
+        "account settings and query access"
+      ],
+      "references": [
+        "https://raw.githubusercontent.com/facebook/facebook-python-business-sdk/main/facebook_business/adobjects/adsinsights.py"
+      ]
+    },
+    {
+      "id": "SRC-OWN-SALES",
+      "source": "Monthly own sales export; D003B H01 mock profile, actual report supplier unselected",
+      "status": "D003B_profile_defined_actual_report_pending",
+      "version": "H01 D003B-1.0.0; real export version pending",
+      "grain": "source/shop/product/country/local month/currency/revision",
+      "identity": "shop namespace + product id + report period + revision; no order reconstruction",
+      "fields": [
+        {
+          "path": "$.product_id",
+          "datatype": "string",
+          "target": "Product.sourceId",
+          "rule": "confirmed product crosswalk",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.country_code",
+          "datatype": "string",
+          "target": "MarketScope.country",
+          "rule": "market location basis must be confirmed",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.period_start",
+          "datatype": "date",
+          "target": "TimeInterval.startDate",
+          "rule": "inclusive local month",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.period_end_exclusive",
+          "datatype": "date",
+          "target": "TimeInterval.endDateExclusive",
+          "rule": "exclusive next local month",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.gross_units",
+          "datatype": "integer/decimal",
+          "target": "own_gross_units",
+          "rule": "D003B integer; real return/quantity policy required",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.returned_units",
+          "datatype": "integer/decimal",
+          "target": "own_returned_units",
+          "rule": "D003B same-month positive return quantity",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.net_units",
+          "datatype": "integer/decimal",
+          "target": "own_net_units",
+          "rule": "D003B gross-returned; actual net policy must be confirmed",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.gross_sales",
+          "datatype": "decimal-string",
+          "target": "own_gross_sales",
+          "rule": "exact source currency decimal",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.returns_value",
+          "datatype": "decimal-string",
+          "target": "own_returns_value",
+          "rule": "D003B same period return value, no individual refund",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.net_sales",
+          "datatype": "decimal-string",
+          "target": "own_net_sales",
+          "rule": "D003B gross-returns; real adjustment policy required",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.currency",
+          "datatype": "string",
+          "target": "currency",
+          "rule": "shop vs presentment currency distinguished",
+          "evidence_level": "design",
+          "required": true
+        },
+        {
+          "path": "$.available_at",
+          "datatype": "datetime",
+          "target": "SourceRecord.availableAt",
+          "rule": "report publication/receipt distinct from measurement",
+          "evidence_level": "design",
+          "required": true
+        }
+      ],
+      "mandatory_context": [
+        "shop/report identifier and version",
+        "report timezone + month boundary",
+        "gross/net scope: discount/tax/shipping/cancellation",
+        "return/refund posting vs original sale period",
+        "late adjustments + revision policy",
+        "currency and sign/precision",
+        "coverage and product identity"
+      ],
+      "return_policy": "mock: same-month returned units/value subtracted once. Actual: confirm cash refund vs returned quantity, tax/shipping/discount, delayed refunds/cancellations; block until determined",
+      "unknowns": [
+        "actual source report schema",
+        "tax/shipping/discount handling",
+        "late refund attribution",
+        "FX/adjustment/cancellation basis"
+      ],
+      "references": [
+        "../batches/D003B/batch.schema.json",
+        "https://shopify.dev/docs/api/admin-graphql/latest/objects/Order"
+      ]
+    }
+  ]
+}
