@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@/*": [
-        "./*"
+        "./frontend/*"
       ]
     },
     "types": [
@@ -34,11 +34,11 @@
     "allowImportingTsExtensions": true
   },
   "include": [
-    "app/**/*.tsx",
-    "components/**/*.tsx",
-    "lib/**/*.ts",
+    "frontend/app/**/*.tsx",
+    "frontend/components/**/*.tsx",
+    "frontend/lib/**/*.ts",
     "tests/**/*.ts",
-    "src/**/*.tsx"
+    "frontend/src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

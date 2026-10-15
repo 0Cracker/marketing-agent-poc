@@ -93,7 +93,7 @@ export type DemoCase = {
  budget:null|{total:number;currentCti:number;currentM:number;competitorImpressions:number;expectedImpressions:number;expectedM:number;expectedCti:number;assumption:string;curves:({budget:number}&Record<string,number>)[];rows:{name:string;current:number;recommended:number;min:number;max:number;k:number;q:number;currentImpressions:number;expectedImpressions:number}[]};
 };
 export const demoCases: DemoCase[] = `;
-writeFileSync(new URL('../lib/demo-scenarios.ts',import.meta.url),header+JSON.stringify(result,null,2)+';\n'+`
+writeFileSync(new URL('../frontend/lib/demo-scenarios.ts',import.meta.url),header+JSON.stringify(result,null,2)+';\n'+`
 export const componentNames = ['검색 관심', '긍정 리뷰', '디지털 참여', '광고 노출'];
 export const componentWeights = [.35, .25, .20, .20];
 export type QuestionLevel = 'lookup' | 'diagnosis' | 'action';
