@@ -1,0 +1,562 @@
+{
+  "batch": "D003B",
+  "command": "node docs/research/marketing-ontology/batches/D003B/run.mjs",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "01 유형별 건수·총합·정확한 조합",
+      "status": "pass",
+      "detail": {
+        "T01": 6,
+        "T03": 432,
+        "T12": 6,
+        "T13": 312,
+        "H01": 144,
+        "T08": 504,
+        "T22": 168,
+        "T24": 72,
+        "T09": 1,
+        "T35": 1,
+        "T36": 6
+      }
+    },
+    {
+      "name": "02 JSON Schema·자료형·필수·추가 필드 금지",
+      "status": "pass",
+      "detail": "Draft 2020-12 메타스키마·11유형 컴파일·format assertion·1,652 인스턴스"
+    },
+    {
+      "name": "03 ID 유일성",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "04 제품·캠페인·국가·판매처·위치 참조",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "05 브랜드·규격·비교군 일관성",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "06 국가·통화·시간대·DST·기간 경계",
+      "status": "pass",
+      "detail": "미국 날짜별 -04:00/-05:00 IANA round-trip 통과; 현지 달력 기준"
+    },
+    {
+      "name": "07 전년 동월·동일 분기·기준 변동",
+      "status": "pass",
+      "detail": [
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P1A",
+          "previous": 5400,
+          "current": 5670,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P1B",
+          "previous": 5700,
+          "current": 5985,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P2A",
+          "previous": 6000,
+          "current": 6300,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P2B",
+          "previous": 6300,
+          "current": 6615,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P3A",
+          "previous": 6600,
+          "current": 6930,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "KR",
+          "product": "P3B",
+          "previous": 6900,
+          "current": 7245,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P1A",
+          "previous": 5829,
+          "current": 4995,
+          "change": -0.1430777148739063
+        },
+        {
+          "type": "H01",
+          "country": "JP",
+          "product": "P1A",
+          "previous": 1608,
+          "current": 1377,
+          "change": -0.14365671641791045
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P1B",
+          "previous": 5850,
+          "current": 6144,
+          "change": 0.050256410256410255
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P2A",
+          "previous": 5535,
+          "current": 6765,
+          "change": 0.22222222222222232
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P2B",
+          "previous": 6450,
+          "current": 6774,
+          "change": 0.050232558139534866
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P3A",
+          "previous": 6750,
+          "current": 7089,
+          "change": 0.05022222222222217
+        },
+        {
+          "type": "T03",
+          "country": "JP",
+          "product": "P3B",
+          "previous": 7050,
+          "current": 7404,
+          "change": 0.050212765957446726
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P1A",
+          "previous": 5700,
+          "current": 5985,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P1B",
+          "previous": 6000,
+          "current": 6300,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P2A",
+          "previous": 6300,
+          "current": 6615,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P2B",
+          "previous": 6600,
+          "current": 6930,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P3A",
+          "previous": 6900,
+          "current": 7245,
+          "change": 0.050000000000000044
+        },
+        {
+          "type": "T03",
+          "country": "US",
+          "product": "P3B",
+          "previous": 7200,
+          "current": 7560,
+          "change": 0.050000000000000044
+        }
+      ]
+    },
+    {
+      "name": "08 판매·반품·순판매·금액 산식",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "09 시장 분모·기타 금액·분자",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "10 광고 정수·금액·기본 범위·전환 저하",
+      "status": "pass",
+      "detail": [
+        {
+          "campaign": "C-JP-search",
+          "normal_cvr": 0.027777777777777776,
+          "low_cvr": 0
+        },
+        {
+          "campaign": "C-JP-social",
+          "normal_cvr": 0.02905982905982906,
+          "low_cvr": 0
+        }
+      ]
+    },
+    {
+      "name": "11 월/일 부분합·잔여분·비율 재계산·주간 partial",
+      "status": "pass",
+      "detail": [
+        {
+          "campaign": "C-KR-search",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020053763440860215,
+          "cvr": 0.029490616621983913,
+          "roas": 0.8847184986595175
+        },
+        {
+          "campaign": "C-KR-search",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.02004829817287101,
+          "cvr": 0.029545454545454545,
+          "roas": 0.8863636363636364
+        },
+        {
+          "campaign": "C-KR-search",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.019967237791650064,
+          "cvr": 0.031042128603104215,
+          "roas": 0.9312638580931264
+        },
+        {
+          "campaign": "C-KR-search",
+          "week_start": "2026-08-24",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.019994795281054824,
+          "cvr": 0.028199566160520606,
+          "roas": 0.8459869848156182
+        },
+        {
+          "campaign": "C-KR-search",
+          "residual_days": 3,
+          "residual": {
+            "impressions": 9000,
+            "clicks": 180,
+            "conversions": 6
+          },
+          "monthly_availability": "complete"
+        },
+        {
+          "campaign": "C-KR-social",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.02001547089537807,
+          "cvr": 0.033816425120772944,
+          "roas": 1.0144927536231885
+        },
+        {
+          "campaign": "C-KR-social",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.02003975715897491,
+          "cvr": 0.032171581769437,
+          "roas": 0.9651474530831099
+        },
+        {
+          "campaign": "C-KR-social",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020000952426306014,
+          "cvr": 0.030952380952380953,
+          "roas": 0.9285714285714286
+        },
+        {
+          "campaign": "C-KR-social",
+          "week_start": "2026-08-24",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020035326772646984,
+          "cvr": 0.0327455919395466,
+          "roas": 0.982367758186398
+        },
+        {
+          "campaign": "C-KR-social",
+          "residual_days": 3,
+          "residual": {
+            "impressions": 9000,
+            "clicks": 180,
+            "conversions": 6
+          },
+          "monthly_availability": "complete"
+        },
+        {
+          "campaign": "C-JP-search",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.0200294686435215,
+          "cvr": 0.027586206896551724,
+          "roas": 0.8275862068965517
+        },
+        {
+          "campaign": "C-JP-search",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020013371963449968,
+          "cvr": 0.008908685968819599,
+          "roas": 0.267260579064588
+        },
+        {
+          "campaign": "C-JP-search",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.019902861366276,
+          "cvr": 0.01856763925729443,
+          "roas": 0.5570291777188329
+        },
+        {
+          "campaign": "C-JP-search",
+          "week_start": "2026-08-24",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.0199610967024824,
+          "cvr": 0.027842227378190254,
+          "roas": 0.8352668213457076
+        },
+        {
+          "campaign": "C-JP-search",
+          "residual_days": 3,
+          "residual": {
+            "impressions": 9000,
+            "clicks": 180,
+            "conversions": 6
+          },
+          "monthly_availability": "complete"
+        },
+        {
+          "campaign": "C-JP-social",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020007129489350326,
+          "cvr": 0.028953229398663696,
+          "roas": 0.8685968819599109
+        },
+        {
+          "campaign": "C-JP-social",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020015034767900772,
+          "cvr": 0.009389671361502348,
+          "roas": 0.28169014084507044
+        },
+        {
+          "campaign": "C-JP-social",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.019977323038712812,
+          "cvr": 0.021621621621621623,
+          "roas": 0.6486486486486487
+        },
+        {
+          "campaign": "C-JP-social",
+          "week_start": "2026-08-24",
+          "status": "partial",
+          "known_count": 5,
+          "ctr": 0.02003013939470049,
+          "cvr": 0.02821316614420063,
+          "roas": 0.8463949843260188
+        },
+        {
+          "campaign": "C-JP-social",
+          "residual_days": 5,
+          "residual": {
+            "impressions": 15000,
+            "clicks": 300,
+            "conversions": 10
+          },
+          "monthly_availability": "complete"
+        },
+        {
+          "campaign": "C-US-search",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.01994475396788239,
+          "cvr": 0.028169014084507043,
+          "roas": 0.8450704225352113
+        },
+        {
+          "campaign": "C-US-search",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.019991860820022384,
+          "cvr": 0.03307888040712468,
+          "roas": 0.9923664122137404
+        },
+        {
+          "campaign": "C-US-search",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.01996545417598049,
+          "cvr": 0.027989821882951654,
+          "roas": 0.8396946564885496
+        },
+        {
+          "campaign": "C-US-search",
+          "week_start": "2026-08-24",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.01999808630753038,
+          "cvr": 0.03349282296650718,
+          "roas": 1.0047846889952152
+        },
+        {
+          "campaign": "C-US-search",
+          "residual_days": 3,
+          "residual": {
+            "impressions": 9000,
+            "clicks": 180,
+            "conversions": 6
+          },
+          "monthly_availability": "complete"
+        },
+        {
+          "campaign": "C-US-social",
+          "week_start": "2026-08-03",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020077852898996107,
+          "cvr": 0.03571428571428571,
+          "roas": 1.0714285714285714
+        },
+        {
+          "campaign": "C-US-social",
+          "week_start": "2026-08-10",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020015826467439372,
+          "cvr": 0.03255813953488372,
+          "roas": 0.9767441860465116
+        },
+        {
+          "campaign": "C-US-social",
+          "week_start": "2026-08-17",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.01992690131677765,
+          "cvr": 0.032663316582914576,
+          "roas": 0.9798994974874372
+        },
+        {
+          "campaign": "C-US-social",
+          "week_start": "2026-08-24",
+          "status": "complete",
+          "known_count": 7,
+          "ctr": 0.020012156917753775,
+          "cvr": 0.030373831775700934,
+          "roas": 0.9112149532710281
+        },
+        {
+          "campaign": "C-US-social",
+          "residual_days": 3,
+          "residual": {
+            "impressions": 9000,
+            "clicks": 180,
+            "conversions": 6
+          },
+          "monthly_availability": "complete"
+        }
+      ]
+    },
+    {
+      "name": "12 할인 기간·가격·원복",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "13 품절·회복·상태·변경 로그",
+      "status": "pass",
+      "detail": "통과"
+    },
+    {
+      "name": "14 누락 날짜·null·수신/정규화 행 계수",
+      "status": "pass",
+      "detail": "168 상세 정규화 행 중 실제 수신 166, 누락 2. 전환 0과 null 구별"
+    },
+    {
+      "name": "15 리뷰·한국어·문장/측면·별점·범위·구매 인증",
+      "status": "pass",
+      "detail": "검토한 한국어 문장 템플릿 6종과 실제 72행 대조. 실명·상표·의학 효능 없음 수동 검토 병행; 감성/측면 주석은 원천에 없음"
+    },
+    {
+      "name": "16 가상 표시·파일 출처·확보 시각·최소 화폐 단위",
+      "status": "pass",
+      "detail": "T09는 행사 첫 가격 관측과 함께 09:05 확보로 둠; 추가 사건 없음"
+    },
+    {
+      "name": "17 재생성 원천 바이트·SHA-256",
+      "status": "pass",
+      "detail": {
+        "T01": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+        "T03": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+        "T12": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+        "T13": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+        "H01": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+        "T08": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+        "T22": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+        "T24": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+        "T09": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+        "T35": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+        "T36": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+      }
+    },
+    {
+      "name": "18 기존 파일/삭제·HEAD·refs·staged diff 보존",
+      "status": "pass",
+      "detail": "초기 파일 170개 중 승인/작업 문서 4개만 갱신 허용. Git 이력·인덱스 변경 없음."
+    }
+  ]
+}
