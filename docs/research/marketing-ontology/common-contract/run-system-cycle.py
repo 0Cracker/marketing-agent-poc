@@ -38,8 +38,8 @@ def invoke(name, command, report_path=None, timeout=900):
             result = json.loads(process.stdout)
         d004_names = {'spec', 'D004_small', 'D004_full', 'independent_calculation',
                       'calculation_replay', 'calculation_replay_equality', 'input_immutability'}
-        d004_checks = result.get('checks', [])
-        d004_pass = (len(d004_checks) == 7 and {c.get('name') for c in d004_checks} == d004_names
+        d004_checks = result.get('checks', []) if name == 'D004' else []
+        d004_pass = (isinstance(d004_checks, list) and len(d004_checks) == 7 and {c.get('name') for c in d004_checks} == d004_names
                      and all(c['status'] == 'pass' for c in d004_checks))
         declared = result.get('status', 'pass' if name == 'D004' and d004_pass else 'not_run')
         if name == 'D005' and declared == 'pass':
@@ -120,7 +120,9 @@ def self_check():
     assert completion([{**c, 'result': {}} if c['name'] == 'dictionary' else c for c in good], True, True) == 'not_run'
     assert completion([{**c, 'result': {}} if c['name'] == 'logic' else c for c in good], True, True) == 'not_run'
     assert completion([{**c, 'result': {}} if c['name'] == 'questions' else c for c in good], True, True) == 'not_run'
-    return {'status': 'pass', 'checks': 9}
+    assert invoke('completion_protocol', [sys.executable, '-c', 'print(\'{"status":"pass","checks":1648}\')'])['status'] == 'pass'
+    assert invoke('D004', [sys.executable, '-c', 'print(\'{"checks":7}\')'])['status'] == 'not_run'
+    return {'status': 'pass', 'checks': 11}
 
 
 def main():
@@ -232,9 +234,11 @@ def main():
     report['52_tests'] = questions.get('test_status_counts', {'pass': 0, 'fail': 0, 'not_run': 52})
     dictionary = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'dictionary')
     model = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'logic')
-    report['meaning_review'] = {'design_review': 'see question-execution.md', 'independent_business_review': dictionary.get('field_review', {}).get('status', 'not_run'),
-                                'business_definition_review': 'confirmed_by_user_decisions_2A_3A',
-                                'decision_record': 'meaning-decisions-20261016.json',
+    report['meaning_review'] = {'design_review': 'see question-execution.md', 'field_review_status': dictionary.get('field_review', {}).get('status', 'not_run'),
+                                'field_review_kind': dictionary.get('field_review', {}).get('kind'),
+                                'human_direct_field_review': False if args.completion else dictionary.get('field_review', {}).get('human_confirmed'),
+                                'business_definition_review': 'delegated_ai_review' if args.completion else 'confirmed_by_user_decisions_2A_3A',
+                                'decision_record': 'completion-delegation-20261016.json' if args.completion else 'meaning-decisions-20261016.json',
                                 'actual_provider_mapping': 'out_of_scope', 'actual_data_fit': 'out_of_scope',
                                 'open_issues': dictionary.get('gap_groups', []),
                                 'OOPS': {'status': model.get('checks', {}).get('OOPS', {}).get('status', 'not_run'),
