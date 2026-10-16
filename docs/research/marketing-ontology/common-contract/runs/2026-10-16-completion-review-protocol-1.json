@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "review_fields": 345,
+  "protocol_checks": [
+    "complete inventory",
+    "missing",
+    "duplicate",
+    "forged",
+    "stale"
+  ],
+  "available_at_before_checks": 816,
+  "available_at_exact_checks": 816,
+  "domain": {
+    "status": "pass",
+    "source_records": 528,
+    "observations": 138,
+    "metric_values_requeried": 138,
+    "existing_domain_SHACL": "pass",
+    "negative_wrong_numeric_value": "detected",
+    "triples": 7577,
+    "graph_sha256": "77fbf8d0f1223346bc77ef00d7b1a678e7929f3c318d1f0b5a397dae6d61bd84",
+    "scope": "SourceRecord/artifact lineage, metric definitions, observations, subject/scope/period; other fields use explicit canonical contract and independent semantic checks"
+  }
+}

@@ -8,8 +8,14 @@ export function loadSupplement(file,approvalFile,inputHashes){
  if(!file&&!approvalFile)return {patches:new Map(),files:[],rows:0,fields:0};
  assert.ok(file&&approvalFile,'supplement and explicit approval record required together');
  const data=JSON.parse(fs.readFileSync(file)),approval=JSON.parse(fs.readFileSync(approvalFile));
- assert.equal(approval.approved,true);assert.equal(approval.source,'explicit_human_response');
- assert.ok(approval.user_message);assert.equal(approval.supplement_sha256,sha(file));
+ assert.equal(approval.approved,true);
+ if(approval.source==='delegated_execution'){
+  const authority=JSON.parse(fs.readFileSync(approval.authority_file));
+  assert.equal(sha(approval.authority_file),approval.authority_sha256);
+  assert.equal(authority.source,'explicit_human_response');assert.equal(authority.approved,true);
+  assert.ok(authority.user_message&&authority.actions.includes('synthetic_supplement'));
+ }else {assert.equal(approval.source,'explicit_human_response');assert.ok(approval.user_message);}
+ assert.equal(approval.supplement_sha256,sha(file));
  assert.equal(data.version,'D005-CANONICAL-SUPPLEMENT-1');
  assert.ok(Object.keys(data.input_sha256).length,'supplement input lock required');
  for(const [path,hash] of Object.entries(data.input_sha256))assert.equal(inputHashes[path],hash,'supplement input changed: '+path);
@@ -20,9 +26,10 @@ export function loadSupplement(file,approvalFile,inputHashes){
   patches.set(row.record_id,row.fields);fields+=Object.keys(row.fields).length;
  }
  assert.equal(approval.record_count,patches.size);assert.equal(approval.field_count,fields);
- return {patches,files:[file,approvalFile],rows:patches.size,fields};
+ const metadata=new Map(data.records.map(r=>[r.record_id,r.field_metadata||{}]));
+ return {patches,metadata,files:[file,approvalFile,...(approval.authority_file?[approval.authority_file]:[])],rows:patches.size,fields};
 }
-export function applySupplement(record,lineage,fields){
+export function applySupplement(record,lineage,fields,metadata={}){
  if(!fields)return;
  const protectedRoots=new Set(['record_id','dataset_type','scope_id','scenario_id','is_synthetic','value_origin','provenance','quality','temporal','related_record_ids']);
  for(const [pointer,value] of Object.entries(fields)){
@@ -34,7 +41,8 @@ export function applySupplement(record,lineage,fields){
   for(const part of parts.slice(0,-1)){assert.ok(Object.hasOwn(parent,part),'supplement parent path missing');parent=parent[part];assert.ok(parent&&typeof parent==='object');}
   const key=parts.at(-1);assert.ok(!Object.hasOwn(parent,key),'supplement cannot overwrite existing values');
   parent[key]=structuredClone(value);
-  lineage.push({target:pointer,sources:['approved-supplement:'+record.record_id+pointer],rule:'explicitly-approved-missing-field'});
+  lineage.push({target:pointer,sources:['approved-supplement:'+record.record_id+pointer,...(metadata[pointer]?.sources||[])],
+   rule:metadata[pointer]?.rule||'explicitly-approved-missing-field',...metadata[pointer]});
  }
 }
 export function selfCheck(){

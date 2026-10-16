@@ -48,7 +48,15 @@ def main():
     supplements = {}
     if args.supplement:
         approval = json.loads(args.supplement_approval_record.read_text(encoding='utf-8'))
-        assert approval['approved'] is True and approval['source'] == 'explicit_human_response' and approval['user_message']
+        assert approval['approved'] is True
+        if approval['source'] == 'delegated_execution':
+            authority_path = Path(approval['authority_file'])
+            assert hashlib.sha256(authority_path.read_bytes()).hexdigest() == approval['authority_sha256']
+            authority = json.loads(authority_path.read_text(encoding='utf-8'))
+            assert authority['source'] == 'explicit_human_response' and authority['approved'] and authority['user_message']
+            assert 'synthetic_supplement' in authority['actions']
+        else:
+            assert approval['source'] == 'explicit_human_response' and approval['user_message']
         assert approval['supplement_sha256'] == hashlib.sha256(args.supplement.read_bytes()).hexdigest()
         supplement = json.loads(args.supplement.read_text(encoding='utf-8'))
         supplements = {r['record_id']: r['fields'] for r in supplement['records']}
@@ -83,6 +91,18 @@ def main():
                     reference_sets.setdefault(key, set()).add(value)
     parent_reviews = {r['record_id']: r for r in map(json.loads, (parents / 'T24.jsonl').read_text(encoding='utf-8').splitlines())}
     parent_products = {r['record_id']: r for r in map(json.loads, (parents / 'T01.jsonl').read_text(encoding='utf-8').splitlines())}
+    completion_result = {'status': 'not_run'}
+    domain_result = {'status': 'not_run'}
+    if args.supplement:
+        from completion_semantics import verify
+        decoded_sources = [r['source'] for r in rows]
+        decoded_sources += [{'metadata': x['metadata'], 'payload': oracle.decode(x['payload'], defs[x['metadata']['dataset_type']], x['source_profile'])}
+                            for x in raw.values() if x['metadata']['dataset_type'] == 'T01']
+        decoded_sources += [{'metadata': {'dataset_type': 'PARENT_T24', 'record_id': r['record_id']}, 'payload': r} for r in parent_reviews.values()]
+        registry = json.loads((HERE / 'completion-definitions.json').read_text(encoding='utf-8'))
+        completion_result = verify(rows, decoded_sources, supplement, registry, hashlib.sha256((BATCH / 'generate.mjs').read_bytes()).hexdigest())
+        from canonical_domain import project
+        domain_result, domain_graph = project(rows, registry)
     customers, model_definitions = {}, {}
     for x in raw.values():
         typ = x['metadata']['dataset_type']
@@ -211,12 +231,15 @@ def main():
     assert conforms, text
     print(json.dumps({'status': 'pass', **counters, 'typed_relations': relations, 'triples': len(graph),
                       'shacl': 'pass', 'domain_shacl': 'existing D005 domain regression remains separately required',
-                      'source_decoding': 'independent Python decoder', 'persistent_RDF_files': 0}, ensure_ascii=False))
+                      'source_decoding': 'independent Python decoder', 'completion_semantics': completion_result,
+                      'canonical_domain': domain_result,
+                      'persistent_RDF_files': 0}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
     try:
         main()
     except Exception as exc:
-        print(json.dumps({'status': 'fail', 'reason': type(exc).__name__ + ': ' + str(exc)}, ensure_ascii=False))
+        import traceback
+        print(json.dumps({'status': 'fail', 'reason': type(exc).__name__ + ': ' + str(exc), 'traceback': traceback.format_exc()}, ensure_ascii=False))
         raise SystemExit(1)

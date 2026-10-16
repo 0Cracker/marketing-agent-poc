@@ -1,0 +1,10 @@
+{
+  "source": "delegated_execution",
+  "approved": true,
+  "authority_file": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-delegation-20261016.json",
+  "authority_sha256": "f058264a4e3ed91f2bddb93d20d4e6d8dec6b578151f2e97d7f86d1f7909d6e9",
+  "supplement_sha256": "d3f5ee3c12f2bba348fd67f631f65c661442b9d67aa3ad01b98dc7d0168c9003",
+  "record_count": 330,
+  "field_count": 816,
+  "human_reviewed_bytes": false
+}

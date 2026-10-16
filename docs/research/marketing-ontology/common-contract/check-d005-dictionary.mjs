@@ -8,6 +8,7 @@ import {fileURLToPath} from 'node:url';
 import {normalize,schemas,ajvInstance,here as batch,root} from '../batches/D005/contract.mjs';
 import {convert,mappingVersion} from './d005-canonical.mjs';
 import {loadSupplement,applySupplement} from './canonical-supplement.mjs';
+import {validateReview} from './completion-review.mjs';
 
 const here=path.dirname(fileURLToPath(import.meta.url));
 const option=k=>process.argv.includes(k)?process.argv[process.argv.indexOf(k)+1]:undefined;
@@ -24,15 +25,15 @@ const inputs=[schemaPath,fileURLToPath(import.meta.url),path.join(here,'d005-can
  path.join(batch,'oracle.py'),path.join(batch,'generate.mjs'),path.join(batch,'README.md'),path.join(here,'../temporal-design.md'),
  path.join(here,'../data-proposal.md'),path.join(here,'meaning-decisions-20261016.json'),...sourcePaths,...parentPaths];
 inputs.push(path.join(here,'canonical-supplement.mjs'));
+inputs.push(path.join(here,'completion-review.mjs'));
+for(const name of ['build-canonical-completion.mjs','completion-definitions.json','completion_semantics.py','canonical_domain.py'])if(fs.existsSync(path.join(here,name)))inputs.push(path.join(here,name));
 const hashes=Object.fromEntries(inputs.map(p=>[p,sha(p)]));
 const reviewPath=option('--field-review-record');
 let reviewRecord=null;
 if(reviewPath){
  reviewRecord=JSON.parse(fs.readFileSync(reviewPath));
- assert.equal(reviewRecord.source,'explicit_human_response');assert.equal(reviewRecord.approved,true);assert.ok(reviewRecord.user_message);
- assert.equal(reviewRecord.schema_sha256,hashes[schemaPath]);assert.equal(reviewRecord.mapping_sha256,hashes[path.join(here,'d005-canonical.mjs')]);
- assert.equal(reviewRecord.type_fields,335);assert.equal(reviewRecord.common_fields,10);assert.equal(reviewRecord.unresolved_meaning_issues,0);
  inputs.push(reviewPath);hashes[reviewPath]=sha(reviewPath);
+ inputs.push(reviewRecord.authority_file);hashes[reviewRecord.authority_file]=sha(reviewRecord.authority_file);
 }
 const supplement=loadSupplement(option('--supplement'),option('--supplement-approval-record'),hashes);
 for(const file of supplement.files){inputs.push(file);hashes[file]=sha(file);}
@@ -60,7 +61,7 @@ for(const r of decoded.filter(r=>r.metadata.dataset_type==='T30'&&r.payload.reco
 const summaries=new Map(),rows=[],gaps=new Map();
 for(const source of decoded.filter(r=>r.metadata.dataset_type!=='T01')){
  const type=source.metadata.dataset_type,{record,lineage,retained_source_fields,original_value_origin}=convert(source,canonical,context);
- applySupplement(record,lineage,supplement.patches.get(record.record_id));
+ applySupplement(record,lineage,supplement.patches.get(record.record_id),supplement.metadata?.get(record.record_id));
  const validate=ajv.compile({$ref:`canonical#/$defs/${type}`}),ok=validate(record),errors=structuredClone(validate.errors||[]);
  if(!summaries.has(type))summaries.set(type,{type,rows:0,canonical_conforming:0,mappings:{},missing:{},incompatible:{},rows_with_gaps:[]});
  const s=summaries.get(type);s.rows++;if(ok)s.canonical_conforming++;
@@ -101,6 +102,11 @@ const fieldReview=[...summaries.keys()].flatMap(type=>Object.entries(canonical.$
   gap_categories:[...new Set(affected.map(g=>g.category))],human_confirmed:false};
 }));
 assert.equal(fieldReview.length,335);
+const commonReview=commonFields.map(field=>({field,meaning:canonical.$defs.T02.properties[field].description,
+ rules:[...new Set(rows.flatMap(r=>r.lineage.filter(m=>m.target==='/'+field).map(m=>m.rule)))],
+ sources:[...new Set(rows.flatMap(r=>r.lineage.filter(m=>m.target==='/'+field).flatMap(m=>m.sources)))],
+ mapped_instances:rows.filter(r=>field in r.record).length,human_confirmed:false}));
+if(reviewRecord)validateReview(reviewRecord,fieldReview,commonReview,hashes[schemaPath],hashes[path.join(here,'d005-canonical.mjs')]);
 const complete=conforming===528&&readback.status==='pass'&&!changed.length&&reviewRecord;
 const status=changed.length||conforming!==528||readback.status==='fail'?'fail':complete?'pass':'not_run';
 const report={mapping_version:mappingVersion,status,audit_execution:readback.status,
@@ -111,11 +117,9 @@ const report={mapping_version:mappingVersion,status,audit_execution:readback.sta
  {name:'unchanged_inputs',status:changed.length?'fail':'pass'},{name:'independent_source_RDF_SHACL_readback',status:readback.status}],
  gap_groups:[...gaps.values()],gap_group_count:gaps.size,
  field_review:{type_field_occurrences:335,common_field_definitions:10,fields:fieldReview,
-  common_fields:commonFields.map(field=>({field,rules:[...new Set(rows.flatMap(r=>r.lineage.filter(m=>m.target==='/'+field).map(m=>m.rule)))],
-   mapped_instances:rows.filter(r=>field in r.record).length,human_confirmed:Boolean(reviewRecord),
-   basis:'explicit D005 metadata, source artifacts, declared sample and temporal design; available_at is never collected_at'})),
+  common_fields:commonReview,
   unresolved_fields:fieldReview.filter(f=>f.status==='unresolved').length,unresolved_groups:gaps.size,
-  status:gaps.size||!reviewRecord?'pending':'pass',confirmation_record:reviewPath||null,
+  status:gaps.size||!reviewRecord?'pending':'pass',confirmation_record:reviewPath||null,review_kind:reviewRecord?'delegated_ai_review':null,human_confirmed:false,
   actual_provider_mapping:'out_of_scope',actual_data_fit:'out_of_scope'},
  lineage:rows.map(r=>({record_id:r.record.record_id,schema_conforming:r.schema_conforming,fields:r.lineage,
   retained_source_fields:r.retained_source_fields,original_value_origin:r.original_value_origin})),
