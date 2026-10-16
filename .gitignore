@@ -48,3 +48,7 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Python validation caches are local build artifacts.
+__pycache__/
+*.py[cod]

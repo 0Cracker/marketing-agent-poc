@@ -1,0 +1,2 @@
+# Validation manifests hash exact bytes; checkout must not rewrite line endings.
+/docs/research/marketing-ontology/** -text
