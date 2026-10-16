@@ -1,0 +1,731 @@
+{
+  "at": "2026-10-15T07:32:14.096Z",
+  "url": "http://127.0.0.1:5174/workbench",
+  "types": [
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "ready",
+      "type": "T03 소매·시장 측정"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T04 구매·사용 패널미생성"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T10 공개 경쟁 광고미생성"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T11 기사·발표·사건미생성"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T15 경매 경쟁미생성"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T33 공표 통계미생성"
+    },
+    {
+      "domain": "시장·경쟁",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T34 날씨·휴일·시즌미생성"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "ready",
+      "type": "T24 리뷰 원문"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T25 리뷰 주제·감성미생성"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T05 검색 관심미생성"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T06 키워드 수요·비용미생성"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T26 문의·CS미생성"
+    },
+    {
+      "domain": "브랜드·소비자",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T32 설문·브랜드 리프트미생성"
+    },
+    {
+      "domain": "광고·소재",
+      "overflow": false,
+      "state": "ready",
+      "type": "T13 광고 성과"
+    },
+    {
+      "domain": "광고·소재",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T14 광고 세그먼트미생성"
+    },
+    {
+      "domain": "광고·소재",
+      "overflow": false,
+      "state": "ready",
+      "type": "T12 운영 설정"
+    },
+    {
+      "domain": "광고·소재",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T16 소재·메시지미생성"
+    },
+    {
+      "domain": "웹·전환",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T07 자연 검색 유입미생성"
+    },
+    {
+      "domain": "웹·전환",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T17 웹·앱 이벤트미생성"
+    },
+    {
+      "domain": "웹·전환",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T18 구매 단계미생성"
+    },
+    {
+      "domain": "웹·전환",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T37 사이트 품질·장애미생성"
+    },
+    {
+      "domain": "매출·고객5",
+      "tab": "판매 요약",
+      "type": "H01",
+      "state": "ready"
+    },
+    {
+      "domain": "매출·고객",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T19 주문 상품 행미생성"
+    },
+    {
+      "domain": "매출·고객",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T20 취소·반품·환불미생성"
+    },
+    {
+      "domain": "매출·고객",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T21 원가·마진 조건미생성"
+    },
+    {
+      "domain": "매출·고객",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T30 고객 코호트·영업 기회미생성"
+    },
+    {
+      "domain": "매출·고객",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T31 CRM 캠페인미생성"
+    },
+    {
+      "domain": "상품·유통",
+      "overflow": false,
+      "state": "ready",
+      "type": "T08 가격 스냅샷"
+    },
+    {
+      "domain": "상품·유통",
+      "overflow": false,
+      "state": "ready",
+      "type": "T09 프로모션"
+    },
+    {
+      "domain": "상품·유통",
+      "overflow": false,
+      "state": "ready",
+      "type": "T22 재고"
+    },
+    {
+      "domain": "상품·유통",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T23 유통·배송미생성"
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T27 공개 콘텐츠·반응미생성"
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T28 댓글·언급미생성"
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T29 크리에이터 협업미생성"
+    },
+    {
+      "domain": "예산·실험",
+      "overflow": false,
+      "state": "예산안·모형·정책 데이터가 아직 없습니다",
+      "type": "T39 반응 모형·예산안미생성"
+    },
+    {
+      "domain": "예산·실험",
+      "overflow": false,
+      "state": "예산안·모형·정책 데이터가 아직 없습니다",
+      "type": "T38 실험 설계·결과미생성"
+    },
+    {
+      "domain": "예산·실험",
+      "overflow": false,
+      "state": "예산안·모형·정책 데이터가 아직 없습니다",
+      "type": "T40 목표·집행 정책미생성"
+    },
+    {
+      "domain": "기준·품질",
+      "overflow": false,
+      "state": "ready",
+      "type": "T36 수집·계측"
+    },
+    {
+      "domain": "기준·품질",
+      "overflow": false,
+      "state": "ready",
+      "type": "T35 운영 변경"
+    },
+    {
+      "domain": "기준·품질",
+      "overflow": false,
+      "state": "ready",
+      "type": "T01 제품·변형"
+    },
+    {
+      "domain": "기준·품질",
+      "overflow": false,
+      "state": "이 유형의 데이터는 아직 생성되지 않았습니다",
+      "type": "T02 외부 ID·별칭미생성"
+    }
+  ],
+  "responsive": [
+    {
+      "chartColumns": "1091.33px 545.672px",
+      "height": 1080,
+      "scrollWidth": 1905,
+      "sidebar": 216,
+      "visibleRows": 10,
+      "width": 1920
+    },
+    {
+      "chartColumns": "771.328px 385.656px",
+      "height": 900,
+      "scrollWidth": 1425,
+      "sidebar": 216,
+      "visibleRows": 7,
+      "width": 1440
+    },
+    {
+      "chartColumns": "664.656px 332.344px",
+      "height": 800,
+      "scrollWidth": 1265,
+      "sidebar": 216,
+      "visibleRows": 4,
+      "width": 1280
+    },
+    {
+      "chartColumns": "729px",
+      "height": 1024,
+      "scrollWidth": 753,
+      "sidebar": 216,
+      "visibleRows": 1,
+      "width": 768
+    },
+    {
+      "chartColumns": "351px",
+      "height": 844,
+      "scrollWidth": 375,
+      "sidebar": 216,
+      "visibleRows": 0,
+      "width": 390
+    }
+  ],
+  "layouts": [
+    {
+      "domain": "시장·경쟁",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 785,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "브랜드·소비자",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 878,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "광고·소재",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1037,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "웹·전환",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 390
+    },
+    {
+      "domain": "매출·고객",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 767,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "상품·유통",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1011,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 390
+    },
+    {
+      "domain": "예산·실험",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 390
+    },
+    {
+      "domain": "기준·품질",
+      "height": 844,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 921,
+        "width": 349
+      },
+      "width": 390
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 785,
+        "width": 727
+      },
+      "width": 768
+    },
+    {
+      "domain": "브랜드·소비자",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 878,
+        "width": 727
+      },
+      "width": 768
+    },
+    {
+      "domain": "광고·소재",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1037,
+        "width": 727
+      },
+      "width": 768
+    },
+    {
+      "domain": "웹·전환",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 768
+    },
+    {
+      "domain": "매출·고객",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 767,
+        "width": 727
+      },
+      "width": 768
+    },
+    {
+      "domain": "상품·유통",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1011,
+        "width": 727
+      },
+      "width": 768
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 768
+    },
+    {
+      "domain": "예산·실험",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 768
+    },
+    {
+      "domain": "기준·품질",
+      "height": 1024,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 921,
+        "width": 742
+      },
+      "width": 768
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1007,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "브랜드·소비자",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1007,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "광고·소재",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1037,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "웹·전환",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1280
+    },
+    {
+      "domain": "매출·고객",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1007,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "상품·유통",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1011,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1280
+    },
+    {
+      "domain": "예산·실험",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1280
+    },
+    {
+      "domain": "기준·품질",
+      "height": 800,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1007,
+        "width": 1007
+      },
+      "width": 1280
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1167,
+        "width": 1167
+      },
+      "width": 1440
+    },
+    {
+      "domain": "브랜드·소비자",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1167,
+        "width": 1167
+      },
+      "width": 1440
+    },
+    {
+      "domain": "광고·소재",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1182,
+        "width": 1182
+      },
+      "width": 1440
+    },
+    {
+      "domain": "웹·전환",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1440
+    },
+    {
+      "domain": "매출·고객",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1182,
+        "width": 1182
+      },
+      "width": 1440
+    },
+    {
+      "domain": "상품·유통",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1182,
+        "width": 1182
+      },
+      "width": 1440
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1440
+    },
+    {
+      "domain": "예산·실험",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1440
+    },
+    {
+      "domain": "기준·품질",
+      "height": 900,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1182,
+        "width": 1182
+      },
+      "width": 1440
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1647,
+        "width": 1647
+      },
+      "width": 1920
+    },
+    {
+      "domain": "브랜드·소비자",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1647,
+        "width": 1647
+      },
+      "width": 1920
+    },
+    {
+      "domain": "광고·소재",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1662,
+        "width": 1662
+      },
+      "width": 1920
+    },
+    {
+      "domain": "웹·전환",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1920
+    },
+    {
+      "domain": "매출·고객",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1662,
+        "width": 1662
+      },
+      "width": 1920
+    },
+    {
+      "domain": "상품·유통",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1662,
+        "width": 1662
+      },
+      "width": 1920
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1920
+    },
+    {
+      "domain": "예산·실험",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": null,
+      "width": 1920
+    },
+    {
+      "domain": "기준·품질",
+      "height": 1080,
+      "overflow": false,
+      "tableScroll": {
+        "scroll": 1662,
+        "width": 1662
+      },
+      "width": 1920
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "Agent opens with no prepared analysis",
+    "Esc restores invoking button focus",
+    "mobile focus trap Shift+Tab",
+    "390 full width / 1920 400px dock / 1440 420px overlay",
+    "country US switches to USD",
+    "product/brand filter keeps market denominator",
+    "search all rows and parent/child retention",
+    "keyboard Enter sorts",
+    "CSV all 10 rows in visible group sort order",
+    "three advertising column sets",
+    "campaign expansion",
+    "daily social SVG paths split and Aug26/27 null data table",
+    "July review and price empty messages",
+    "A/B price group",
+    "price unknown means 미확인",
+    "chart bar opens evidence",
+    "missing quality cell links T36 and T13",
+    "raw JSON copy verified record ID",
+    "evidence navigation retains JP/2026-08",
+    "approval and execute disabled"
+  ],
+  "production": {
+    "workbench": true,
+    "ctiRoot": true,
+    "overlayWidth": 420,
+    "errorLogs": [],
+    "ctiHeading": "성과 대시보드"
+  }
+}
