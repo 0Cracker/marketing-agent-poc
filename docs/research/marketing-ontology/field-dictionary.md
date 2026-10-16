@@ -1,4 +1,6 @@
-# 데이터 유형별 필드·스키마 사전
+# 데이터 유형별 공통 데이터 명세
+
+2026-10-16 현재 연결: [공통 데이터 명세 완성 기록](common-contract/completion-execution.md)과 [커밋 후 통합 검증](common-contract/runs/2026-10-16-completion-system-3.json)을 따른다. 이 문서 전체 유형 중 D005 대상 30종의335필드와 공통10정의는 AI 위임 검토·528행 적합 검사를 통과했다. 나머지 모든 유형을 이번에 새로 검토했다는 뜻은 아니다. 아래 날짜와 설계 초안 설명은 작성 당시 이력이며 필드 정의 자체는 보존한다.
 
 2026-10-13. 상태: 설계 초안. 데이터 레코드·예시값을 생성하지 않았다. [공통 규격](schema-contract.md), [원천 근거](data-source-register.md), [JSON Schema](schemas/marketing-records.schema.json)를 함께 읽는다.
 

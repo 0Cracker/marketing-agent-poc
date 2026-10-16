@@ -1,4 +1,6 @@
-# 공통 데이터 규격과 연결 계약
+# 공통 데이터 명세와 연결 계약
+
+2026-10-16 현재 연결: [완성 실행 기록](common-contract/completion-execution.md)과 [커밋 후 통합 검증](common-contract/runs/2026-10-16-completion-system-3.json)은 승인된 D005 30종528행의 공통 데이터 명세·위임 검토·모델·기존 질문 회귀 `pass / complete`다. 원천별 A/B/C 해독 다음의 명시적 매핑·파생·별도 보완으로 연결하며 기존 JSON Schema와 원천은 보존했다. 아래 미실행·초안 설명은 당시 이력이다.
 
 2026-10-14 최신 연결: [MC-1.0.0 스키마 대응표](common-contract/schema-crosswalk.md)와 [D003B 전수 필드 매핑](common-contract/d003b-mapping.json)을 추가했다. 기존 JSON Schema는 보존한다. RDF 표현과 SHACL 명세 검사 결과는 [실행 기록](common-contract/validation.md)에 있으며 원천 변환·적재는 승인/실행되지 않았다.
 

@@ -84,3 +84,11 @@ $ontologyPython = 'C:\Users\박시형\.cache\codex-runtimes\codex-primary-runtim
 공통 데이터 명세만 확인하려면 기존 `check-d005-dictionary.mjs`에 `--supplement completion-values.json`, `--supplement-approval-record completion-values-authorization.json`, `--field-review-record completion-field-review.json`과 Python·tools·새 output 경로를 전달한다. 경로는 실행 디렉터리 기준이다. 모델만 확인하려면 위 모델 명령에 `--oops-review-record`와 실제 `completion-oops-review.json` 경로를 전달한다. 기존 output은 덮어쓸 수 없으며 매번 새 이름을 사용한다.
 
 [명세 반복 실행](runs/2026-10-16-completion-repeat-1.json)은 값·상태·계보·RDF hash가 같았다. 명령에서 상대경로와 절대경로를 다르게 전달한 메타데이터만 경로 정규화 후 비교한다. [모델 반복 실행](runs/2026-10-16-completion-logic-repeat-1.json)은 HermiT와 OOPS 결과가 각각 같았다. 모델·엔진·근거 입력을 수정하면 기존 비적용 기록은 그대로 재사용할 수 없으며 검사와 근거 검토를 다시 실행해야 한다.
+
+커밋 `3ee92a9`의 [전체 재실행](runs/2026-10-16-completion-system-3.json)도7게이트 pass·시스템 complete다. [명세 재실행2](runs/2026-10-16-completion-repeat-2.json)는 이번에는 경로 정규화 없이 전체 보고서가 같다. OOPS 결과도 같고 HermiT는 상위 클래스 출력의 줄 순서만 달라 추론 집합과 상태를 비교했다. 원시 출력은 보존한다.
+
+검토 기록의 위조·누락 거부는 다음처럼 재검사한다. 이 명령은 실제 스캔 결과를 재생하는 protocol 시험이며 Java 스캔 자체는 위 전체/모델 명령으로 실행한다.
+
+```powershell
+& $ontologyPython docs/research/marketing-ontology/common-contract/check-model-review-protocol.py --tools ../ontology-validation-tools --scan-report docs/research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3-logic.json --output docs/research/marketing-ontology/common-contract/runs/model-review-protocol-new.json
+```

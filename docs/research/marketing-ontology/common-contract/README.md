@@ -1,6 +1,6 @@
 # 마케팅 공통 의미 규약 MC-1.0.0
 
-현재 결과: [공통 데이터 명세 완성 기록](completion-execution.md)과 [통합 검증](runs/2026-10-16-completion-system-2.json)은 `pass / complete`다. 528/528행 적합·345필드 위임 검토·816설정 독립 검산, 기존 52시험·682검증과 D004·D005·HermiT를 통과했다. OOPS 원시 지적 106개는 개별 근거 있는 비적용으로 처리해 미해결 0개다. 사람의 직접 검토·모든 OWL 설계의 보편적 무결성을 뜻하지 않는다. [재실행 안내](local-validation.md)를 따른다.
+현재 결과: [공통 데이터 명세 완성 기록](completion-execution.md)과 [통합 검증](runs/2026-10-16-completion-system-3.json)은 `pass / complete`다. 528/528행 적합·345필드 위임 검토·816설정 독립 검산, 기존 52시험·682검증과 D004·D005·HermiT를 통과했다. OOPS 원시 지적 106개는 개별 근거 있는 비적용으로 처리해 미해결 0개다. 사람의 직접 검토·모든 OWL 설계의 보편적 무결성을 뜻하지 않는다. [재실행 안내](local-validation.md)를 따른다.
 
 아래는 위임 이전 실행 이력이다. 과거 ‘공통 사전’ 표현과 0행·198행 적합·106개 미해결 수치를 현재 결과로 읽지 않는다. [이전 통합 회귀](runs/2026-10-16-canonical-system-2.json)는 당시 `fail / incomplete`였으며 과거 보고서를 덮어쓰지 않았다.
 
