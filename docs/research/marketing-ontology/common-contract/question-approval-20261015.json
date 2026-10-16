@@ -1,0 +1,9 @@
+{
+  "scope_id": "CQ52-READONLY-1",
+  "scope_sha256": "8ad1eee69777a848e4f0c5b05546cded121e2a599f174432d94c34fc2d88e8fe",
+  "approved": true,
+  "source": "explicit_human_response",
+  "user_message": "기존 데이터 재사용 승인할게. 필요한데이터는 계획먼저 세우고 더 생성하도록해",
+  "recorded_at": "2026-10-15T14:34:11Z",
+  "boundary": "Existing D003B 1652-row question reuse and existing approved D005 regression only. Additional source/annotation/fault inputs require a concrete proposal before separate approval."
+}
