@@ -1,0 +1,17 @@
+{
+  "family": "SUIT Variable",
+  "version": "2.0.5",
+  "source": "https://github.com/sun-typeface/SUIT/releases/tag/v2.0.5",
+  "files": [
+    {
+      "name": "SUIT-Variable.woff2",
+      "bytes": 624536,
+      "sha256": "aa894a204d5a6fbae259dac6868d350cbd373a390caee0313f92946af741df23"
+    },
+    {
+      "name": "SUIT-LICENSE.txt",
+      "bytes": 4380,
+      "sha256": "30d101ee3c35ef629d622d933d261a27b2f60223e0a3b0f36791e569c2b9daa9"
+    }
+  ]
+}
