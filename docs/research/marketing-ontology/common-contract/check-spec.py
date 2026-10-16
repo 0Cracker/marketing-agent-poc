@@ -4,6 +4,7 @@ import hashlib
 import importlib.metadata
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -30,6 +31,27 @@ tests = read('tests.json')
 selection = read('batch-selection.json')
 contracts = read('source-contracts.json')
 source_schema = json.loads((here.parent / 'batches/D003B/batch.schema.json').read_text(encoding='utf-8-sig'))
+
+def field_semantics_check():
+    result = subprocess.run([sys.executable, str(here / 'build-field-semantics.py'), '--check'],
+                            capture_output=True, text=True, encoding='utf-8', timeout=30)
+    assert result.returncode == 0, result.stderr or result.stdout
+    inventory = read('field-semantics.json')
+    assert inventory['totals'] == {'types': 40, 'common_fields': 10,
+                                   'type_field_occurrences': 457, 'historical_specific_fields': 7}
+    fields = inventory['common'] + [f for t in inventory['types'] for f in t['fields']] + inventory['historical_report']['fields']
+    assert len(fields) == 474
+    assert all(f['meaning'] and f['concept'] and f['role'] and f['status'] and f['source_validation'] for f in fields)
+    assert all(f['source_validation'] == '원천 확인 대기' for f in fields)
+    assert inventory['review_summary']['individually_reviewed_fields'] == 0
+    assert all(f['review_status'] == 'pending_field_review' and len(f['required_review']) == 7 for f in fields)
+    assert all(t['row_grain_contract'] != '원천 확인 대기' and t['schema_required_fields'] for t in inventory['types'])
+    ontology_text = (here / 'ontology.ttl').read_text(encoding='utf-8')
+    classes = set(re.findall(r'^m:([A-Za-z]+) rdf:type owl:Class', ontology_text, re.M))
+    assert all(f['concept'][2:] in classes for f in fields)
+    return {'type_fields': 457, 'common_fields': 10, 'H01_specific_fields': 7,
+            'design_entries': len(fields), 'source_validated_fields': 0}
+check('40-type field semantics coverage and declared concept references', field_semantics_check)
 
 def mapping_check():
     types = {d['type']: d for d in mapping['types']}
@@ -157,6 +179,26 @@ try:
                     assert other not in parents|{c},'explicit disjoint ancestor '+str(c)
         return 'No declared subclass cycles/disjoint ancestors; HermiT satisfiability not run'
     check('Declared hierarchy/disjointness structure',logic_structure)
+    def rl_entailment_check():
+        # Definition-only OWL RL check; this does not replace an OWL DL reasoner.
+        from owlrl import DeductiveClosure, OWLRL_Semantics
+        inferred = Graph()
+        inferred += ontology
+        DeductiveClosure(OWLRL_Semantics).expand(inferred)
+        expected = [(m.Product,m.Subject), (m.Variant,m.Subject),
+                    (m.Category,m.Entity), (m.Promotion,m.Event), (m.Brand,m.Entity),
+                    (m.Observation,m.Entity), (m.SourceRecord,m.Entity),
+                    (m.Transformation,Namespace('http://www.w3.org/ns/prov#').Activity)]
+        for child, parent in expected:
+            assert (child,RDFS.subClassOf,parent) in inferred, (child,parent)
+        classes = set(ontology.subjects(RDF.type,OWL.Class))
+        for child in classes:
+            assert (child,RDFS.subClassOf,OWL.Nothing) not in inferred, str(child)
+            if child in [m.Product,m.Campaign,m.Claim,m.Hypothesis]:
+                assert (child,RDFS.subClassOf,m.Observation) not in inferred, str(child)
+        return {'expected_entailments':len(expected),'unsatisfiable_named_classes':0,
+                'scope':'OWL RL TBox only; OWL DL consistency not run'}
+    check('OWL RL definition entailments and detected contradictions',rl_entailment_check)
 except ImportError as exc:
     checks.append({'name':'RDFLib/pySHACL checks','status':'not_run','detail':str(exc)})
 

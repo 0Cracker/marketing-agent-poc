@@ -24,6 +24,29 @@ _:p3 sh:path m:brand .
 _:p3 sh:minCount "1"^^xsd:integer .
 _:p3 sh:maxCount "1"^^xsd:integer .
 _:p3 sh:class m:Brand .
+m:VariantShape rdf:type sh:NodeShape .
+m:VariantShape sh:targetClass m:Variant .
+m:VariantShape sh:property _:variantId .
+_:variantId sh:path m:sourceId .
+_:variantId sh:minCount 1 .
+_:variantId sh:maxCount 1 .
+_:variantId sh:datatype xsd:string .
+m:VariantShape sh:property _:variantOf .
+_:variantOf sh:path m:variantOf .
+_:variantOf sh:minCount 1 .
+_:variantOf sh:maxCount 1 .
+_:variantOf sh:class m:Product .
+m:CategoryShape rdf:type sh:NodeShape .
+m:CategoryShape sh:targetClass m:Category .
+m:CategoryShape sh:property _:categoryId .
+_:categoryId sh:path m:sourceId .
+_:categoryId sh:minCount 1 .
+_:categoryId sh:maxCount 1 .
+_:categoryId sh:datatype xsd:string .
+m:ProductShape sh:property _:productCategory .
+_:productCategory sh:path m:inCategory .
+_:productCategory sh:maxCount 1 .
+_:productCategory sh:class m:Category .
 m:BrandShape rdf:type sh:NodeShape .
 m:BrandShape sh:targetClass m:Brand .
 m:BrandShape sh:property _:p4 .
@@ -309,6 +332,8 @@ _:q67 sh:message "P-VALUE: 비present에는 reason이 필요하다" .
 _:q67 sh:select "PREFIX m: <https://example.org/marketing/> SELECT $this WHERE { $this m:availability ?s . FILTER(?s != \"present\") FILTER NOT EXISTS { $this m:reason ?r } }" .
 m:ProvenanceShape rdf:type sh:NodeShape .
 m:ProvenanceShape sh:targetClass m:Product .
+m:ProvenanceShape sh:targetClass m:Variant .
+m:ProvenanceShape sh:targetClass m:Category .
 m:ProvenanceShape sh:targetClass m:Brand .
 m:ProvenanceShape sh:targetClass m:Campaign .
 m:ProvenanceShape sh:targetClass m:Seller .
@@ -317,6 +342,7 @@ m:ProvenanceShape sh:targetClass m:MarketScope .
 m:ProvenanceShape sh:targetClass m:Observation .
 m:ProvenanceShape sh:targetClass m:Review .
 m:ProvenanceShape sh:targetClass m:Event .
+m:ProvenanceShape sh:targetClass m:Promotion .
 m:ProvenanceShape sh:targetClass m:Claim .
 m:ProvenanceShape sh:targetClass m:EvidenceSpan .
 m:ProvenanceShape sh:property _:p68 .
@@ -343,6 +369,10 @@ _:p71 sh:datatype xsd:string .
 _:p71 sh:pattern "^[0-9a-f]{64}$" .
 m:SourceRecordShape rdf:type sh:NodeShape .
 m:SourceRecordShape sh:targetClass m:SourceRecord .
+m:SourceRecordShape sh:property _:sourceContext .
+_:sourceContext sh:path m:sourceContext .
+_:sourceContext sh:maxCount 1 .
+_:sourceContext sh:datatype xsd:string .
 m:SourceRecordShape sh:property _:p72 .
 _:p72 sh:path m:artifact .
 _:p72 sh:minCount "1"^^xsd:integer .
@@ -353,6 +383,12 @@ _:p73 sh:path m:recordId .
 _:p73 sh:minCount "1"^^xsd:integer .
 _:p73 sh:maxCount "1"^^xsd:integer .
 _:p73 sh:datatype xsd:string .
+m:SourceRecordShape sh:property _:sourceLine .
+_:sourceLine sh:path m:sourceLine .
+_:sourceLine sh:minCount 1 .
+_:sourceLine sh:maxCount 1 .
+_:sourceLine sh:datatype xsd:integer .
+_:sourceLine sh:minInclusive 1 .
 m:SourceRecordShape sh:property _:p74 .
 _:p74 sh:path m:identifierNamespace .
 _:p74 sh:minCount "1"^^xsd:integer .
@@ -565,3 +601,10 @@ _:p118 sh:nodeKind sh:IRI .
 m:AnalysisResultShape sh:sparql _:q119 .
 _:q119 sh:message "answered는 입력 근거가 필요하다" .
 _:q119 sh:select "PREFIX m: <https://example.org/marketing/> SELECT $this WHERE { $this m:resultStatus \"answered\" . FILTER NOT EXISTS { $this m:input ?i } }" .
+m:PromotionShape rdf:type sh:NodeShape .
+m:PromotionShape sh:targetClass m:Promotion .
+m:PromotionShape sh:property _:promotionType .
+_:promotionType sh:path m:promotionType .
+_:promotionType sh:maxCount 1 .
+_:promotionType sh:datatype xsd:string .
+_:promotionType sh:in ("percent_discount" "amount_discount" "bundle" "coupon" "shipping" "other") .
