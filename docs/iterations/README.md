@@ -1,5 +1,7 @@
 # 버전별 개선 일지
 
+2026-10-16 회고: [v0.2.0 더블 다이아몬드·AI 협업 기록](v0.2.0-double-diamond.md)에 11개 커밋의 문제·정의·시도·검증·미해결과 사용자 지시의 확인 범위를 정리했다. [AI 활용 교훈001](../ai-lessons/lesson-001.md)은 승인·독립 검산·사전 설명·완료 판정·로컬 도구·Git 보존의 시행착오를 별도로 다룬다. 현재 미완료 상태를 바꾸는 새 기능 검증이나 신규 데이터 작업은 아니다.
+
 2026-10-16 로컬 검증 후속: [v0.2.0 기록](v0.2.0.md#10-로컬-oops사전-변환-후속--2026-10-16)에 OOPS 격리 설치·외부 전송 제거·명시적 사전 변환과 [최종 회귀](../research/marketing-ontology/common-contract/runs/2026-10-16-canonical-system-2.json)를 연결했다.52시험/682검증·D004·D005·HermiT pass, 사전198/528행 스키마 적합·OOPS106개 잔여로 전체는fail/incomplete다. 새 가상값0·원천/Git 보존이며330행816개 필드 보완안은 별도 승인 대기다. 아래는 이전 이력이다.
 
 2026-10-16 선택 반영 후: [구조 결정](../research/marketing-ontology/common-contract/structure-decision-20261016.md)과 [재검증](../research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1.json)을 기존 v0.2.0에 기록했다. 질문52/52·assertion682개·반올림 경계7개 및 기존 회귀pass, 새 전역 사전 게이트fail로 시스템은incomplete다. 추가 원천0·입력/Git 보존, OOPS 외부 재전송은 자동 심사 차단이다. 아래는 선택 전 이력이다.
