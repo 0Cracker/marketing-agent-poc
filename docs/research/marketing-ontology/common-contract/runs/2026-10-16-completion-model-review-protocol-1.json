@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "scope": "review protocol replay of real scanner result; Java scanner NOT executed in this check",
+  "actual_scan_report": "2026-10-16-completion-logic-repeat-1.json",
+  "actual_scan_report_sha256": "23d6bd97f08525406161c8939a574c430833b5c947b040f697945815059dc208",
+  "source_rows_created": 0,
+  "checks": [
+    {
+      "case": "valid",
+      "status": "pass",
+      "valid_review": "accepted"
+    },
+    {
+      "case": "human-forgery",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS delegated review authority missing"
+    },
+    {
+      "case": "stale-model",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS review must explicitly identify the current model and scanner"
+    },
+    {
+      "case": "missing-finding",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS review must match every current finding exactly"
+    },
+    {
+      "case": "changed-proof-hash",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "missing or changed alternative validation evidence"
+    },
+    {
+      "case": "wrong-proof-target",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "alternative evidence does not test this model finding"
+    },
+    {
+      "case": "stale-proof-input",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "alternative evidence inputs changed"
+    }
+  ],
+  "scanner_protocol": {
+    "status": "pass",
+    "checks": 8
+  }
+}
