@@ -245,3 +245,11 @@ OWL/SHACL에 원천 별도 ID가 있을 때만 쓸 Variant·Category와 Promotio
 [로컬 실행 안내](common-contract/local-validation.md)대로 공식 커밋·JDK/Maven·의존성을 격리 설치하고 외부 REST 실행을 제거했다. 소켓 차단 아래 정의만 검사하며 오프라인 도구 시험33개를 통과했다. 원본·중간 실패와 최소 패치를 보존했다. [최종 통합 회귀](common-contract/runs/2026-10-16-canonical-system-2.json)는52시험/682검증·D004·D005·HermiT pass, 실행 입력 변경0·Git HEAD/refs/index 보존이다. 사전·OOPS 각각의 별도 재실행 결과도 일치했다.
 
 사전은198/528행 스키마 적합이며 업무 의미 전체 확인과 구분한다. 잔여330행·63그룹과OOPS106개 지적으로 전체는fail/incomplete다. [보완 제안](common-contract/canonical-followup-20261016.md)에330행816개 필드 설정·T31 해석과 정확한 대상 ID를 정리했다. 신규 가상값은 생성하지 않았다. [OOPS19속성 추가 검토](common-contract/runs/2026-10-16-oops-context-review-1.json)의 D003B 직접 사용 부재를 전체 미사용이나 예외 승인으로 확대하지 않았다. 실제 공급자·UI·Git 발행은 범위 밖으로 유지했다.
+
+## 2026-10-16 공통 데이터 명세 완성과 AI 위임 후속
+
+사용자가 의미 판단·기존 정보 매핑/파생·필요 가상 보완·근거 있는 모델 수정·dev 단계별 커밋을 위임했다. [위임 기록](common-contract/completion-delegation-20261016.json), [완성 실행 기록](common-contract/completion-execution.md)을 따른다. 공통 명세가 D005 이전부터 존재한 이력과 원천별 어댑터 연결 부족을 구분했다. 330행816설정은 파생228·정의336·가상 가정252건이며 새 원천행은0이다. 기존 원천·manifest·원래52시험과 스키마를 보존했다.
+
+[통합 실행](common-contract/runs/2026-10-16-completion-system-2.json)은528/528행·335+10필드 위임 검토·816설정 독립 검산과 기존52시험/682검증·D004·D005·HermiT 통과로 `pass / complete`다. OOPS 원시106개는 실제 배치 사용·하위 속성·79개 SHACL shape·역방향 조회·정정판 방향성을 개별 검사해 근거 있는 비적용106개·미해결0개로 판정했다. 외부 통신 시도0건이며 지적이 모델 수정으로 사라졌다는 뜻은 아니다.
+
+T29 검산기의 관측 중복 집계, D006 전체 시간대 식별자 충돌, Decimal fixture·RDFS 자료형 파생 오탐, 통합 보고서 형식 오류를 수정하고 실패 이력을 보존했다. 보완 가용시점과 과거 사건/확보시각을 분리했다. [더블 다이아몬드](../../iterations/v0.2.0-double-diamond.md), [AI 활용 교훈](../../ai-lessons/lesson-001.md), [기존 일지12절](../../iterations/v0.2.0.md)에 사용자 지시·AI 판단·검증·커밋을 연결했다. 사람의 개별 검토나 실제 공급자 검증으로 확대하지 않는다.

@@ -1,4 +1,4 @@
-# 로컬 OOPS·공통 사전 검증
+# 로컬 OOPS·공통 데이터 명세 검증
 
 OOPS는 로컬 Java 도구로 설치하고 기존 Python 실행기에서 호출한다. 모델 검사에는 외부 REST 경로나 자동 원격 대체가 없다. 원천 자료·리뷰·인스턴스는 OOPS에 전달하지 않는다. 도구 설치만으로 모델 적합이나 시스템 전체 완료를 선언하지 않는다.
 
@@ -44,7 +44,9 @@ node docs/research/marketing-ontology/common-contract/check-d005-dictionary.mjs 
 
 `--oops-artifact-lock`으로 별도 설치 잠금 파일을 지정할 수 있다. `--oops-local`을 생략하면 OOPS는 미실행이며 전체 완료로 판정하지 않는다. 과거 `--oops`/`--oops-approval-record` 외부 전송 옵션은 지원하지 않는다.
 
-## 원천 변환과 후속 승인
+## 원천 변환과 후속 승인 — 위임 이전 이력
+
+이 절의 미승인·미생성 설명은 당시 상태다. 현재는 아래 ‘공통 데이터 명세 완성 위임’ 절과 별도 위임·보완·검토 기록을 적용한다. 과거 승인 자체를 소급 변경하지 않았다.
 
 `d005-canonical.mjs`는 D005 A/B/C 해독 다음 단계의 명시적 변환만 담당한다. 원천·manifest·스키마·원래 52시험은 유지한다. 공통 provenance/temporal/quality, 반개방 기간, 이름/배열 차이, 원천·부모에 근거한 참조를 변환한다. 목적 필드별 계보와 변환하지 못한 원천 필드를 보고서에 남긴다. 원천 `value_origin`도 별도 보존하며 가상 주석을 사람 검토·LLM 추출로 표시하지 않는다.
 
@@ -58,8 +60,27 @@ node docs/research/marketing-ontology/common-contract/check-d005-dictionary.mjs 
 
 전체 실행기는 필수 게이트 누락·실패·미실행·사전/의미/OOPS 미완료를 구분한다. 통과 0, 실패 1, 미실행 2를 반환하며 필수 조건을 모두 충족할 때만 `system_validation=complete`로 기록한다. 실제 공급자 적합성은 범위 밖이다.
 
-## 최종 구현 검증 — 2026-10-16
+## 위임 이전 구현 검증 — 2026-10-16
 
 [최종 통합 회귀](runs/2026-10-16-canonical-system-2.json)는 52시험·682개 assertion, D004·D005 회귀와 HermiT를 통과했다. 실행 중 입력 변경은 0건이며 Git HEAD·refs·index를 보존했다. 사전은 198/528행 스키마 적합이며 업무 의미 확인까지 완료됐다는 뜻은 아니다. 330행·63그룹의 부족과 OOPS 106개 지적으로 전체 판정은 `fail / incomplete`다.
 
 독립 [사전 재실행](runs/2026-10-16-canonical-repeat-1.json)은 최종 통합의 사전 보고서와 모든 값·상태·계보가 일치했다. [모델 재실행](runs/2026-10-16-oops-local-repeat-1.json)의 OOPS 결과도 최종 통합 결과와 완전히 같았다. 27개 적용 규칙 실행, 6개 근거 있는 비적용, 외부 통신 시도 0건을 확인했다. 지적을 승인된 예외로 바꾸지는 않았다.
+
+## 공통 데이터 명세 완성 위임을 포함한 전체 실행
+
+원천·manifest와 과거 실행 보고서는 그대로 보존한다. 별도 `completion-values.json`은 원천 정보 파생·정의 확정·가상 가정을 구분하며 `completion-values-authorization.json`이 사용자 위임과 파일 hash를 연결한다. 모든 보완 필드는 보완 작성시각부터 가용하며 원래 사건·확보시각은 별도로 유지한다. 과거 시점용 소비자는 `completion-review.mjs`의 `availableCompletion(fields, metadata, asOf)`로 가용 필드만 선택해야 한다. 기존 질문 실행에는 새 보완값을 혼입하지 않는다.
+
+```powershell
+$ontologyPython = 'C:\Users\박시형\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+& $ontologyPython docs/research/marketing-ontology/common-contract/run-system-cycle.py --tools ../ontology-validation-tools --completion --output docs/research/marketing-ontology/common-contract/runs/completion-new-run.json
+```
+
+`--completion`은 보완·위임 검토·OOPS 검토·기존 질문 승인 경로와 로컬 모델 검사를 함께 설정한다. CLI에 명시한 개별 경로는 유지한다. 현재 실행기는 기존 질문 protocol, 보완 protocol, D004, D005, 공통 데이터 명세, 모델, 질문의7게이트를 요구한다. 보완 protocol은345개 필드 inventory·불완전/위조 검토 거부·가용시각 직전/정각을 포함한다.
+
+새 검토는 `delegated_ai_review`이며 `human_confirmed=false`다. 사람의 개별 필드 검토나 과거 주석의 사람 검토 완료를 뜻하지 않는다. OOPS 원시 지적과 근거 있는 비적용 후 미해결 수는 별도로 기록한다. 비적용은 현재 모델·엔진·정확한 지적·대체 검사의 내용과 현 입력 hash가 맞아야 적용된다. 과거 승인 원문과 실행 보고서를 새 용어·HEAD로 소급 수정하지 않는다.
+
+[실제 통합 실행](runs/2026-10-16-completion-system-2.json)은 7개 게이트 `pass`, 시스템 `complete`다. 명세 528/528행·335+10필드 위임 검토·816설정 독립 검산, 기존 52/682·D004·D005·HermiT를 통과했고 실행 중 입력·현재 Git 변경은 0건이다. OOPS는 27개 적용 규칙 실행·6개 프로필 비적용, 원시 지적 106개·개별 근거 비적용 106개·미해결 0개·외부 통신 시도 0건이다. 적용 규칙의 오류나 누락을 통과로 바꾸지 않는다.
+
+공통 데이터 명세만 확인하려면 기존 `check-d005-dictionary.mjs`에 `--supplement completion-values.json`, `--supplement-approval-record completion-values-authorization.json`, `--field-review-record completion-field-review.json`과 Python·tools·새 output 경로를 전달한다. 경로는 실행 디렉터리 기준이다. 모델만 확인하려면 위 모델 명령에 `--oops-review-record`와 실제 `completion-oops-review.json` 경로를 전달한다. 기존 output은 덮어쓸 수 없으며 매번 새 이름을 사용한다.
+
+[명세 반복 실행](runs/2026-10-16-completion-repeat-1.json)은 값·상태·계보·RDF hash가 같았다. 명령에서 상대경로와 절대경로를 다르게 전달한 메타데이터만 경로 정규화 후 비교한다. [모델 반복 실행](runs/2026-10-16-completion-logic-repeat-1.json)은 HermiT와 OOPS 결과가 각각 같았다. 모델·엔진·근거 입력을 수정하면 기존 비적용 기록은 그대로 재사용할 수 없으며 검사와 근거 검토를 다시 실행해야 한다.

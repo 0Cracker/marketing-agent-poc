@@ -1,5 +1,7 @@
 # AI 활용 교훈
 
+2026-10-16 후속: [Lesson 001](lesson-001.md)에 공통 데이터 명세 용어·실제 Git 도입 이력, 명시적 AI 위임, 가용시점·독립 검산·시간대 식별자·OOPS 대체 검증·통합 파서의 오류와 교정을 추가했다. 해당 프로젝트의 실제 검증 근거이며 다른 프로젝트 일반화 상태는 계속 ‘검증 중’이다.
+
 실제 시행착오에서 재사용할 원칙을 얻었을 때 [Lesson 템플릿](../../.agents/skills/poc-iteration-log/assets/lesson-template.md)을 복사해 `lesson-NNN.md`를 만든다. [운영 절차](../DEVELOPMENT-WORKFLOW.md)를 따르며 관찰된 결과와 일반화가 필요한 원칙을 구분한다.
 
 | 주제 | Lesson·제목 | 검증 상태 | 관련 버전 | 핵심 원칙 |
