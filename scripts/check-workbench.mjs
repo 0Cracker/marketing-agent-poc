@@ -13,7 +13,7 @@ for(const [name,info] of Object.entries(manifest.files)){
 }
 const server=await createServer({configFile:false,root:process.cwd()+'/frontend',server:{middlewareMode:true},optimizeDeps:{noDiscovery:true},appType:'custom'});
 try{
- const {source,buildModel,typeMap,sortRows,ratio,csv}=await server.ssrLoadModule('/workbench/adapter.ts');
+ const {source,buildModel,typeMap,sortRows,ratio,csv,format,product}=await server.ssrLoadModule('/workbench/adapter.ts');
  assert.equal(Object.values(source).reduce((n,r)=>n+r.length,0),1652);assert.equal(source.T24.length,72);assert.equal(typeMap.types.length,40);assert.equal(typeMap.types.filter(t=>t.availability==='D003B').length,10);
  const cases=[];
  for(const country of ['JP','KR','US'])for(const month of ['2025-08','2026-07','2026-08','2026-09']){
@@ -31,6 +31,23 @@ try{
   }
   assert.equal(ad.metrics.length,4);assert(!ad.metrics.some(m=>m.label==='ROAS'));
   cases.push({country,month,currency:market.currency,market:market.metrics.map(m=>({label:m.label,value:m.value})),sales:sales.metrics.map(m=>({label:m.label,value:m.value})),ad:ad.rows.filter(r=>!r.child).map(r=>r.values)});
+ }
+ for(const country of ['JP','KR','US']){
+  const review=buildModel('T24',country,'2026-08');assert.equal(review.charts[0].kind,'rating-profile');
+  const distribution=review.charts[1];assert.equal(distribution.kind,'pie');
+  assert.equal(distribution.data.reduce((n,r)=>n+r.values.count,0),8);
+  assert(distribution.data.flatMap(r=>r.source).every(r=>product(r.product_id).brand_id==='B1'));
+  assert.deepEqual(distribution.data.map(r=>r.values.count),[2,0,4,2,0]);
+  assert(!format(1845000,'money',review.currency,true).includes(review.currency));
+  for(const row of review.charts[0].data){
+   const stars=[1,2,3,4,5],v=row.values;
+   assert.equal(stars.reduce((n,s)=>n+v['star'+s],0),v.count);
+   assert.equal(stars.reduce((n,s)=>n+s*v['star'+s],0)/v.count,v.rating);
+   assert(Math.abs(stars.reduce((n,s)=>n+v['star'+s+'Pct'],0)-100)<1e-10);
+  }
+  const ad=buildModel('T13',country,'2026-08');
+  assert.deepEqual(ad.metrics.slice(1).map(m=>[m.label,m.unit]),[['노출수','회'],['클릭수','회'],['전환수','건']]);
+  assert.equal(buildModel('T03',country,'2026-08').charts[1].kind,'columns');
  }
  const daily=buildModel('T13','JP','2026-08',{grain:'day',media:'C-JP-social'});
  const line=daily.charts[0].data;assert.equal(line.length,28);

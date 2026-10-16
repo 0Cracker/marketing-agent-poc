@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-16T05:32:42.940Z",
+  "desktop": {
+    "colors": [
+      "#7762B8",
+      "#D5D0E4",
+      "#EDB78D"
+    ],
+    "emphasis": [
+      {
+        "label": "3점 · 50% · 4개 · 근거 보기",
+        "transform": "translate(160,115)"
+      }
+    ],
+    "labels": [
+      "5점25%",
+      "3점50%",
+      "2점25%"
+    ],
+    "legend": "5점4점3점2점1점"
+  },
+  "mobile": {
+    "documentWidth": 305,
+    "overflow": false,
+    "width": 320
+  },
+  "keyboardTooltip": "5점 리뷰 2개 · 자사 표본 8개 중 25%",
+  "sourceRecords": 2
+}
