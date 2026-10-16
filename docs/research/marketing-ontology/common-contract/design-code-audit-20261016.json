@@ -1,0 +1,5800 @@
+{
+  "scope": "30 D005 types; T01 support excluded",
+  "method": "declared source/common schema inventory and existing documented row semantics; per-type meaning remains a human review task",
+  "input_sha256": {
+    "docs/research/marketing-ontology/field-dictionary.md": "03cbae32ea1dd600300da6a92d39c9312b2dfc4b73cdc8a9f479121934d6859f",
+    "docs/research/marketing-ontology/batches/D005/contract.mjs": "0c802a6f363c080ca11c76bdcd0f872f3ffb02773326f139eed7116718ed0021",
+    "docs/research/marketing-ontology/batches/D005/validate.mjs": "2090af302cad36d2c8a57da143c650e55c9161e87b2aa25d055aee7a78810db3",
+    "docs/research/marketing-ontology/batches/D005/oracle.py": "75299ad07ddeec9cca9dae0162d63b00e79ee8726c2284f2eb30545d24ed9b8b",
+    "docs/research/marketing-ontology/common-contract/field-semantics.json": "5f5b7b85486a7dd779e4c5c3dd1fe117fef39b0b661f7b9bc410d2c98b7472f7"
+  },
+  "types": [
+    {
+      "type": "T02",
+      "source_rows": 60,
+      "row_semantics": "원천코드→Variant, confirmed/candidate와 유효구간 구분; 명칭 유사성 확정 금지",
+      "payload_variants": [
+        {
+          "required": [
+            "mapping_kind",
+            "external_system",
+            "external_value",
+            "entity_ref",
+            "match_status",
+            "period",
+            "evidence"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "mapping_kind": {
+                "enum": [
+                  "external_id",
+                  "name_alias"
+                ]
+              },
+              "external_system": {
+                "type": "string",
+                "minLength": 1
+              },
+              "external_value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "entity_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "match_status": {
+                "enum": [
+                  "confirmed",
+                  "candidate"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "mapping_kind",
+              "external_system",
+              "external_value",
+              "entity_ref",
+              "match_status",
+              "period",
+              "evidence"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "mapping_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "entity_type",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "entity_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "external_system",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "external_value",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "country_code",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "match_status",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "valid_from",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "evidence",
+          "requirement": "조건부",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "entity_type",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "language",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "valid_from",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T04",
+      "source_rows": 18,
+      "row_semantics": "기간·패널·대상별 표본/응답수, 분모 동일 범위에서 비율",
+      "payload_variants": [
+        {
+          "required": [
+            "panel_id",
+            "subject_ref",
+            "period",
+            "sample_size",
+            "positive_responses",
+            "positive_rate",
+            "weighting_method"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "panel_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "subject_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "sample_size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "positive_responses": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "positive_rate": {
+                "type": "number"
+              },
+              "weighting_method": {
+                "enum": [
+                  "unweighted"
+                ]
+              }
+            },
+            "required": [
+              "panel_id",
+              "subject_ref",
+              "period",
+              "sample_size",
+              "positive_responses",
+              "positive_rate",
+              "weighting_method"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "panel_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "cohort_id",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "subject_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "sample_size",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "weighting_method",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "measures",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "cohort_id",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "measures",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T05",
+      "source_rows": 36,
+      "row_semantics": "query/정규화창별 0–100 지수",
+      "payload_variants": [
+        {
+          "required": [
+            "query_id",
+            "term",
+            "normalization_scope",
+            "period",
+            "index_value",
+            "search_surface"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "query_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "term": {
+                "type": "string",
+                "minLength": 1
+              },
+              "normalization_scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "index_value": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "search_surface": {
+                "enum": [
+                  "모의 검색"
+                ]
+              }
+            },
+            "required": [
+              "query_id",
+              "term",
+              "normalization_scope",
+              "period",
+              "index_value",
+              "search_surface"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "query_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "term_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "term_kind",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "index_value",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "index_definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "normalization_scope",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "search_surface",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "term_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "term_kind",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "index_definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T06",
+      "source_rows": 18,
+      "row_semantics": "키워드·언어·기간별 추정 검색수, 입찰 금액·통화/상하한",
+      "payload_variants": [
+        {
+          "required": [
+            "keyword",
+            "language",
+            "period",
+            "estimated_searches",
+            "competition_level",
+            "competition_index",
+            "bid_lower",
+            "bid_upper"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "keyword": {
+                "type": "string",
+                "minLength": 1
+              },
+              "language": {
+                "enum": [
+                  "ko"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "estimated_searches": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "competition_level": {
+                "enum": [
+                  "medium"
+                ]
+              },
+              "competition_index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "bid_lower": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "bid_upper": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "keyword",
+              "language",
+              "period",
+              "estimated_searches",
+              "competition_level",
+              "competition_index",
+              "bid_lower",
+              "bid_upper"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "keyword",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "geo_target_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "estimated_searches",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "competition_level",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "network_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "geo_target_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "network_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T07",
+      "source_rows": 24,
+      "row_semantics": "site/page/query/device/기간별 노출·클릭·평균순위; null query 보존",
+      "payload_variants": [
+        {
+          "required": [
+            "site_ref",
+            "page_ref",
+            "query",
+            "device",
+            "period",
+            "impressions",
+            "clicks",
+            "average_position"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "site_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "page_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "query": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "device": {
+                "enum": [
+                  "mobile"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "impressions": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "clicks": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "average_position": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "site_ref",
+              "page_ref",
+              "query",
+              "device",
+              "period",
+              "impressions",
+              "clicks",
+              "average_position"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "site_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "query",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "page_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "device",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "search_type",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "clicks",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "impressions",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "aggregation_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "search_type",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "aggregation_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T10",
+      "source_rows": 12,
+      "row_semantics": "공개 광고별 advertiser와 관측/최초/최종 발견 시각",
+      "payload_variants": [
+        {
+          "required": [
+            "public_ad_id",
+            "advertiser_ref",
+            "observed_at",
+            "first_seen",
+            "last_seen",
+            "format",
+            "creative_text"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "public_ad_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "advertiser_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "first_seen": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "last_seen": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "format": {
+                "enum": [
+                  "text"
+                ]
+              },
+              "creative_text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "public_ad_id",
+              "advertiser_ref",
+              "observed_at",
+              "first_seen",
+              "last_seen",
+              "format",
+              "creative_text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "advertiser_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "public_ad_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "observed_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "format",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "creative_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "media_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "served_regions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "coverage_text",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "media_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "served_regions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "coverage_text",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T11",
+      "source_rows": 6,
+      "row_semantics": "문서·발행·사건 시각·대상·중복 그룹",
+      "payload_variants": [
+        {
+          "required": [
+            "document_id",
+            "publisher",
+            "published_at",
+            "event_time",
+            "body_text",
+            "subject_refs",
+            "duplicate_group"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "publisher": {
+                "type": "string",
+                "minLength": 1
+              },
+              "published_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "event_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "body_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "subject_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "duplicate_group": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "document_id",
+              "publisher",
+              "published_at",
+              "event_time",
+              "body_text",
+              "subject_refs",
+              "duplicate_group"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "document_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "publisher",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "published_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "title",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "body_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "subject_refs",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "title",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T14",
+      "source_rows": 24,
+      "row_semantics": "campaign/부모행/기간/device별 분할 지표; 부모 합계와 대사",
+      "payload_variants": [
+        {
+          "required": [
+            "campaign_ref",
+            "parent_record_id",
+            "period",
+            "device",
+            "metrics",
+            "split_basis"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "campaign_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "parent_record_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "device": {
+                "enum": [
+                  "mobile",
+                  "desktop"
+                ]
+              },
+              "metrics": {
+                "type": "object",
+                "properties": {
+                  "impressions": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "clicks": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "conversions": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "spend": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      "currency": {
+                        "enum": [
+                          "KRW",
+                          "JPY",
+                          "USD"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "currency"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "attributed_revenue": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      "currency": {
+                        "enum": [
+                          "KRW",
+                          "JPY",
+                          "USD"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "currency"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "impressions",
+                  "clicks",
+                  "conversions",
+                  "spend",
+                  "attributed_revenue"
+                ],
+                "additionalProperties": false
+              },
+              "split_basis": {
+                "enum": [
+                  "synthetic_partition"
+                ]
+              }
+            },
+            "required": [
+              "campaign_ref",
+              "parent_record_id",
+              "period",
+              "device",
+              "metrics",
+              "split_basis"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "campaign_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "breakdown_dimensions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "report_definition_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "metrics",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "audience_basis",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "breakdown_dimensions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "report_definition_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "audience_basis",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T15",
+      "source_rows": 12,
+      "row_semantics": "캠페인·경쟁 도메인·기간별 경매 비율, 분모 미제공",
+      "payload_variants": [
+        {
+          "required": [
+            "campaign_ref",
+            "competitor_domain",
+            "period",
+            "impression_share",
+            "overlap_rate",
+            "denominator_status"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "campaign_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "competitor_domain": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "impression_share": {
+                "type": "number"
+              },
+              "overlap_rate": {
+                "type": "number"
+              },
+              "denominator_status": {
+                "enum": [
+                  "not_provided"
+                ]
+              }
+            },
+            "required": [
+              "campaign_ref",
+              "competitor_domain",
+              "period",
+              "impression_share",
+              "overlap_rate",
+              "denominator_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "campaign_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "competitor_domain",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "report_surface",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "impression_share",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "threshold_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "report_surface",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "threshold_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T16",
+      "source_rows": 12,
+      "row_semantics": "creative/version·campaign·product·유효기간",
+      "payload_variants": [
+        {
+          "required": [
+            "creative_id",
+            "version",
+            "campaign_ref",
+            "product_refs",
+            "format",
+            "message_text",
+            "period"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "creative_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "version": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "campaign_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "product_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "format": {
+                "enum": [
+                  "text"
+                ]
+              },
+              "message_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "creative_id",
+              "version",
+              "campaign_ref",
+              "product_refs",
+              "format",
+              "message_text",
+              "period"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "creative_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "version",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "product_refs",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "format",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "message_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "valid_from",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "media_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "annotation_evidence",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "valid_from",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "media_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "annotation_evidence",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T17",
+      "source_rows": 24,
+      "row_semantics": "event/session/site/page·동의 상태",
+      "payload_variants": [
+        {
+          "required": [
+            "event_id",
+            "event_time",
+            "event_name",
+            "site_ref",
+            "session_ref",
+            "page_ref",
+            "device",
+            "consent_state"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "event_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "event_name": {
+                "enum": [
+                  "page_view",
+                  "consent_update"
+                ]
+              },
+              "site_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "session_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "page_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "device": {
+                "enum": [
+                  "mobile"
+                ]
+              },
+              "consent_state": {
+                "enum": [
+                  "granted",
+                  "denied"
+                ]
+              }
+            },
+            "required": [
+              "event_id",
+              "event_time",
+              "event_name",
+              "site_ref",
+              "session_ref",
+              "page_ref",
+              "device",
+              "consent_state"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "event_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "event_time",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "event_name",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "site_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "session_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "page_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "device",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "consent_state",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [],
+      "reconciliation_status": "same_name_inventory_matches; business_review_pending"
+    },
+    {
+      "type": "T18",
+      "source_rows": 60,
+      "row_semantics": "event+item_index 상품행, 거래·환불·Variant·Session 연결",
+      "payload_variants": [
+        {
+          "required": [
+            "event_id",
+            "event_time",
+            "session_ref",
+            "variant_ref",
+            "item_index",
+            "quantity",
+            "consent_state",
+            "measurement_basis",
+            "event_name"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "event_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "session_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "variant_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "item_index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "consent_state": {
+                "enum": [
+                  "granted",
+                  "denied"
+                ]
+              },
+              "measurement_basis": {
+                "enum": [
+                  "web_item_event"
+                ]
+              },
+              "event_name": {
+                "enum": [
+                  "view_item",
+                  "add_to_cart",
+                  "begin_checkout"
+                ]
+              }
+            },
+            "required": [
+              "event_id",
+              "event_time",
+              "session_ref",
+              "variant_ref",
+              "item_index",
+              "quantity",
+              "consent_state",
+              "measurement_basis",
+              "event_name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "event_id",
+            "event_time",
+            "session_ref",
+            "variant_ref",
+            "item_index",
+            "quantity",
+            "consent_state",
+            "measurement_basis",
+            "event_name",
+            "transaction_ref",
+            "unit_price"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "event_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "session_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "variant_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "item_index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "consent_state": {
+                "enum": [
+                  "granted",
+                  "denied"
+                ]
+              },
+              "measurement_basis": {
+                "enum": [
+                  "web_item_event"
+                ]
+              },
+              "event_name": {
+                "enum": [
+                  "purchase"
+                ]
+              },
+              "transaction_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_price": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "event_id",
+              "event_time",
+              "session_ref",
+              "variant_ref",
+              "item_index",
+              "quantity",
+              "consent_state",
+              "measurement_basis",
+              "event_name",
+              "transaction_ref",
+              "unit_price"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "event_id",
+            "event_time",
+            "session_ref",
+            "variant_ref",
+            "item_index",
+            "quantity",
+            "consent_state",
+            "measurement_basis",
+            "event_name",
+            "transaction_ref",
+            "adjustment_ref",
+            "unit_price",
+            "refund_amount"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "event_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "session_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "variant_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "item_index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "consent_state": {
+                "enum": [
+                  "granted",
+                  "denied"
+                ]
+              },
+              "measurement_basis": {
+                "enum": [
+                  "web_item_event"
+                ]
+              },
+              "event_name": {
+                "enum": [
+                  "refund"
+                ]
+              },
+              "transaction_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "adjustment_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_price": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "refund_amount": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "event_id",
+              "event_time",
+              "session_ref",
+              "variant_ref",
+              "item_index",
+              "quantity",
+              "consent_state",
+              "measurement_basis",
+              "event_name",
+              "transaction_ref",
+              "adjustment_ref",
+              "unit_price",
+              "refund_amount"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "event_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "item_index",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "event_time",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "event_name",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "variant_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "quantity",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "unit_price",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "session_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "transaction_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "measurement_basis",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [],
+      "reconciliation_status": "same_name_inventory_matches; business_review_pending"
+    },
+    {
+      "type": "T19",
+      "source_rows": 18,
+      "row_semantics": "order+line별 수량×단가−할인+세금, 거래·Variant·상태확보시각",
+      "payload_variants": [
+        {
+          "required": [
+            "order_id",
+            "line_id",
+            "transaction_ref",
+            "ordered_at",
+            "variant_ref",
+            "quantity",
+            "unit_price",
+            "line_discount",
+            "line_tax",
+            "line_gross_total",
+            "fulfilment_status",
+            "status_available_at"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "line_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "transaction_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ordered_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "variant_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "unit_price": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "line_discount": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "line_tax": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "line_gross_total": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "fulfilment_status": {
+                "enum": [
+                  "fulfilled",
+                  "shipped",
+                  "unfulfilled"
+                ]
+              },
+              "status_available_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "order_id",
+              "line_id",
+              "transaction_ref",
+              "ordered_at",
+              "variant_ref",
+              "quantity",
+              "unit_price",
+              "line_discount",
+              "line_tax",
+              "line_gross_total",
+              "fulfilment_status",
+              "status_available_at"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "order_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "line_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "variant_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "seller_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "ordered_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "customer_pseudo_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "quantity",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "unit_price",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "line_discount",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "line_tax",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "line_gross_total",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "financial_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "fulfilment_status",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "seller_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "customer_pseudo_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "financial_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T20",
+      "source_rows": 9,
+      "row_semantics": "주문행별 완료환불/보류취소, 완료시각·금액·수량",
+      "payload_variants": [
+        {
+          "required": [
+            "adjustment_id",
+            "adjustment_kind",
+            "order_ref",
+            "order_line_ref",
+            "requested_at",
+            "processed_at",
+            "quantity",
+            "refund_amount",
+            "status",
+            "reason_code",
+            "restocked"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "adjustment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "adjustment_kind": {
+                "enum": [
+                  "refund"
+                ]
+              },
+              "order_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "order_line_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "requested_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "processed_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "refund_amount": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "status": {
+                "enum": [
+                  "completed"
+                ]
+              },
+              "reason_code": {
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "restocked": {
+                "enum": [
+                  null
+                ]
+              }
+            },
+            "required": [
+              "adjustment_id",
+              "adjustment_kind",
+              "order_ref",
+              "order_line_ref",
+              "requested_at",
+              "processed_at",
+              "quantity",
+              "refund_amount",
+              "status",
+              "reason_code",
+              "restocked"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "adjustment_id",
+            "adjustment_kind",
+            "order_ref",
+            "order_line_ref",
+            "requested_at",
+            "quantity",
+            "status",
+            "reason_code",
+            "restocked"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "adjustment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "adjustment_kind": {
+                "enum": [
+                  "cancel"
+                ]
+              },
+              "order_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "order_line_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "requested_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "status": {
+                "enum": [
+                  "pending"
+                ]
+              },
+              "reason_code": {
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "restocked": {
+                "enum": [
+                  null
+                ]
+              }
+            },
+            "required": [
+              "adjustment_id",
+              "adjustment_kind",
+              "order_ref",
+              "order_line_ref",
+              "requested_at",
+              "quantity",
+              "status",
+              "reason_code",
+              "restocked"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "adjustment_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "adjustment_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "order_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "order_line_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "requested_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "quantity",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "refund_amount",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "reason_code",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "status",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [],
+      "reconciliation_status": "same_name_inventory_matches; business_review_pending"
+    },
+    {
+      "type": "T21",
+      "source_rows": 12,
+      "row_semantics": "Variant·유효구간별 단위원가/통화·회계기준",
+      "payload_variants": [
+        {
+          "required": [
+            "variant_ref",
+            "period",
+            "unit_cost",
+            "margin_definition",
+            "accounting_basis"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "variant_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "unit_cost": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "margin_definition": {
+                "enum": [
+                  "세전 상품원가"
+                ]
+              },
+              "accounting_basis": {
+                "enum": [
+                  "재입고 미확인"
+                ]
+              }
+            },
+            "required": [
+              "variant_ref",
+              "period",
+              "unit_cost",
+              "margin_definition",
+              "accounting_basis"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "variant_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "unit_cost",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "margin_definition",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "accounting_basis",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [],
+      "reconciliation_status": "same_name_inventory_matches; business_review_pending"
+    },
+    {
+      "type": "T23",
+      "source_rows": 18,
+      "row_semantics": "유통 대상/보유처 수 또는 주문 배송 상태/시각",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "product_ref",
+            "period",
+            "stockists",
+            "target_stockists"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "distribution"
+                ]
+              },
+              "product_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "stockists": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "target_stockists": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "record_kind",
+              "product_ref",
+              "period",
+              "stockists",
+              "target_stockists"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "order_ref",
+            "promised_at",
+            "status"
+          ],
+          "optional": [
+            "delivered_at",
+            "shipped_at"
+          ],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "shipment"
+                ]
+              },
+              "order_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "promised_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "status": {
+                "enum": [
+                  "delivered",
+                  "in_transit",
+                  "unshipped"
+                ]
+              },
+              "shipped_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "delivered_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "record_kind",
+              "order_ref",
+              "promised_at",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "product_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "retail_channel",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "order_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "promised_at",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "status",
+          "requirement": "조건부",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "retail_channel",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T25",
+      "source_rows": 24,
+      "row_semantics": "Review/Product·측면·감성·exact span 또는 표본 집계",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "review_ref",
+            "product_ref",
+            "aspect",
+            "sentiment",
+            "evidence_span",
+            "assessment_status"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "annotation"
+                ]
+              },
+              "review_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "product_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "aspect": {
+                "enum": [
+                  "거품",
+                  "용기",
+                  "건조감"
+                ]
+              },
+              "sentiment": {
+                "enum": [
+                  "positive",
+                  "negative"
+                ]
+              },
+              "evidence_span": {
+                "type": "object",
+                "properties": {
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "quote",
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "assessment_status": {
+                "enum": [
+                  "provided"
+                ]
+              }
+            },
+            "required": [
+              "record_kind",
+              "review_ref",
+              "product_ref",
+              "aspect",
+              "sentiment",
+              "evidence_span",
+              "assessment_status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "product_ref",
+            "aspect",
+            "sample_size",
+            "mention_count",
+            "review_refs"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "aggregate"
+                ]
+              },
+              "product_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "aspect": {
+                "enum": [
+                  "거품",
+                  "용기",
+                  "건조감"
+                ]
+              },
+              "sample_size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mention_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "review_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "record_kind",
+              "product_ref",
+              "aspect",
+              "sample_size",
+              "mention_count",
+              "review_refs"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "subject_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "aspect_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sentiment",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "definition_version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "review_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "evidence_span",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "mention_count",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "sample_size",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "assessment_status",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "subject_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "aspect_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "definition_version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T26",
+      "source_rows": 9,
+      "row_semantics": "티켓·작성시각·메시지·confirmed/unlinked 주문",
+      "payload_variants": [
+        {
+          "required": [
+            "ticket_id",
+            "created_at",
+            "message_text",
+            "link_status",
+            "order_ref"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ticket_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "message_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link_status": {
+                "enum": [
+                  "confirmed"
+                ]
+              },
+              "order_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "ticket_id",
+              "created_at",
+              "message_text",
+              "link_status",
+              "order_ref"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "ticket_id",
+            "created_at",
+            "message_text",
+            "link_status"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "ticket_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "message_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link_status": {
+                "enum": [
+                  "unlinked"
+                ]
+              }
+            },
+            "required": [
+              "ticket_id",
+              "created_at",
+              "message_text",
+              "link_status"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "ticket_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "created_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "channel",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "subject",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "message_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "status",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "link_status",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "channel",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "subject",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T27",
+      "source_rows": 12,
+      "row_semantics": "콘텐츠·발행/관측시각별 누적조회수",
+      "payload_variants": [
+        {
+          "required": [
+            "content_id",
+            "published_at",
+            "observed_at",
+            "title",
+            "description_text",
+            "view_count"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "content_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "published_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "observed_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "view_count": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "content_id",
+              "published_at",
+              "observed_at",
+              "title",
+              "description_text",
+              "view_count"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "content_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "platform",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "channel_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "published_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "observed_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "title",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "description_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "view_count",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "platform",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "channel_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T28",
+      "source_rows": 18,
+      "row_semantics": "댓글·콘텐츠·부모댓글 관계·작성시각",
+      "payload_variants": [
+        {
+          "required": [
+            "comment_id",
+            "content_ref",
+            "written_at",
+            "body_text"
+          ],
+          "optional": [
+            "parent_comment_ref"
+          ],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "comment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "content_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "written_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "body_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "parent_comment_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "comment_id",
+              "content_ref",
+              "written_at",
+              "body_text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "comment_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "content_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "written_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "body_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "language",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T29",
+      "source_rows": 3,
+      "row_semantics": "협업·계약상태·관련 콘텐츠·비용/통화",
+      "payload_variants": [
+        {
+          "required": [
+            "collaboration_id",
+            "content_refs",
+            "agreement_status",
+            "cost"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "collaboration_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "content_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "agreement_status": {
+                "enum": [
+                  "signed"
+                ]
+              },
+              "cost": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "collaboration_id",
+              "content_refs",
+              "agreement_status",
+              "cost"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "collaboration_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "creator_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "product_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "planned_period",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "message_brief",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "agreement_status",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "fee",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "creator_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "product_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "planned_period",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "message_brief",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "fee",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T30",
+      "source_rows": 9,
+      "row_semantics": "명시 고객집합/주문 기반 cohort 표본·재구매율/순액, B2B 기회 별도",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "cohort_ref",
+            "order_refs",
+            "customer_set",
+            "sample_size",
+            "repeat_purchase_rate",
+            "net_revenue"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "cohort"
+                ]
+              },
+              "cohort_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "order_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "customer_set": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "sample_size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "repeat_purchase_rate": {
+                "type": "number"
+              },
+              "net_revenue": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "record_kind",
+              "cohort_ref",
+              "order_refs",
+              "customer_set",
+              "sample_size",
+              "repeat_purchase_rate",
+              "net_revenue"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "opportunity_id",
+            "stage",
+            "population"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "opportunity"
+                ]
+              },
+              "opportunity_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stage": {
+                "enum": [
+                  "open"
+                ]
+              },
+              "population": {
+                "enum": [
+                  "separate_B2B"
+                ]
+              }
+            },
+            "required": [
+              "record_kind",
+              "opportunity_id",
+              "stage",
+              "population"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "cohort_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "sample_size",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "deal_id",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "stage",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "deal_amount",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "deal_id",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "deal_amount",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T31",
+      "source_rows": 6,
+      "row_semantics": "CRM cohort·발송/반송/유일클릭/수신거부·명시 주문",
+      "payload_variants": [
+        {
+          "required": [
+            "crm_campaign_id",
+            "cohort_ref",
+            "emails_sent",
+            "bounces",
+            "unique_clicks",
+            "unsubscribes",
+            "open_measurement_basis",
+            "linked_orders"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "crm_campaign_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "cohort_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "emails_sent": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "bounces": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "unique_clicks": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "unsubscribes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "open_measurement_basis": {
+                "enum": [
+                  "not_collected"
+                ]
+              },
+              "linked_orders": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "crm_campaign_id",
+              "cohort_ref",
+              "emails_sent",
+              "bounces",
+              "unique_clicks",
+              "unsubscribes",
+              "open_measurement_basis",
+              "linked_orders"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "crm_campaign_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "segment_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sent_at",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "emails_sent",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "bounces",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "unique_clickers",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "unsubscribes",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "open_measurement_basis",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "segment_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sent_at",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "unique_clickers",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T32",
+      "source_rows": 18,
+      "row_semantics": "연구·대상·문항/응답척도·기간·표본수/긍정수",
+      "payload_variants": [
+        {
+          "required": [
+            "study_id",
+            "subject_ref",
+            "period",
+            "question_text",
+            "response_scale",
+            "sample_size",
+            "positive_responses",
+            "sampling_method"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "study_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "subject_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "question_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "response_scale": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "sample_size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "positive_responses": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sampling_method": {
+                "enum": [
+                  "convenience"
+                ]
+              }
+            },
+            "required": [
+              "study_id",
+              "subject_ref",
+              "period",
+              "question_text",
+              "response_scale",
+              "sample_size",
+              "positive_responses",
+              "sampling_method"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "study_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "subject_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "question_text",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "measure_definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "cohort_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sample_size",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "response_scale",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "measures",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sampling_method",
+          "requirement": "필수",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "measure_definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "cohort_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "measures",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T33",
+      "source_rows": 12,
+      "row_semantics": "통계표·지역·기간·단위·revision/발행·supersedes",
+      "payload_variants": [
+        {
+          "required": [
+            "statistics_table_id",
+            "region_ref",
+            "period",
+            "value",
+            "unit",
+            "revision",
+            "published_at"
+          ],
+          "optional": [
+            "supersedes_record_id"
+          ],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "statistics_table_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "region_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "value": {
+                "type": "number"
+              },
+              "unit": {
+                "enum": [
+                  "index"
+                ]
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "published_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "supersedes_record_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "statistics_table_id",
+              "region_ref",
+              "period",
+              "value",
+              "unit",
+              "revision",
+              "published_at"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "statistics_table_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "item_code",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "region_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "value",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "unit",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "published_at",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "seasonal_adjustment",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "item_code",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "definition",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "seasonal_adjustment",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T34",
+      "source_rows": 18,
+      "row_semantics": "기상 관측소·기간·℃/mm 또는 일정",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "station_ref",
+            "period",
+            "temperature",
+            "precipitation"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "weather"
+                ]
+              },
+              "station_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "temperature": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "enum": [
+                      "℃"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "unit"
+                ],
+                "additionalProperties": false
+              },
+              "precipitation": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "enum": [
+                      "mm"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "unit"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "record_kind",
+              "station_ref",
+              "period",
+              "temperature",
+              "precipitation"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "period",
+            "title",
+            "is_public_holiday"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "schedule"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "is_public_holiday": {
+                "enum": [
+                  false
+                ]
+              }
+            },
+            "required": [
+              "record_kind",
+              "period",
+              "title",
+              "is_public_holiday"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "region_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "station_ref",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "measures",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "event_name",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "calendar_kind",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "region_ref",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "measures",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "event_name",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "calendar_kind",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T37",
+      "source_rows": 9,
+      "row_semantics": "page/device·28일 창 p75 LCP(ms) 또는 장애 시작/종료",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "page_ref",
+            "device",
+            "period",
+            "measures"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "performance"
+                ]
+              },
+              "page_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "device": {
+                "enum": [
+                  "mobile"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "measures": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "metric_id": {
+                      "enum": [
+                        "lcp_p75"
+                      ]
+                    },
+                    "value": {
+                      "type": "number"
+                    },
+                    "unit": {
+                      "enum": [
+                        "ms"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "metric_id",
+                    "value",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "record_kind",
+              "page_ref",
+              "device",
+              "period",
+              "measures"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "page_ref",
+            "device",
+            "incident_start",
+            "incident_end",
+            "status",
+            "error_text"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "incident"
+                ]
+              },
+              "page_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "device": {
+                "enum": [
+                  "mobile"
+                ]
+              },
+              "incident_start": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "incident_end": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "status": {
+                "enum": [
+                  "resolved"
+                ]
+              },
+              "error_text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "record_kind",
+              "page_ref",
+              "device",
+              "incident_start",
+              "incident_end",
+              "status",
+              "error_text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "page_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "device",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "measures",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "incident_start",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "status",
+          "requirement": "조건부",
+          "same_name_declared": true
+        }
+      ],
+      "dictionary_names_not_declared": [],
+      "reconciliation_status": "same_name_inventory_matches; business_review_pending"
+    },
+    {
+      "type": "T38",
+      "source_rows": 12,
+      "row_semantics": "별도 실험/arm별 표본·전환·기간",
+      "payload_variants": [
+        {
+          "required": [
+            "experiment_id",
+            "arm_id",
+            "period",
+            "sample_size",
+            "conversions",
+            "population"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "experiment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "arm_id": {
+                "enum": [
+                  "control",
+                  "treatment"
+                ]
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "sample_size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "conversions": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "population": {
+                "enum": [
+                  "separate_experiment"
+                ]
+              }
+            },
+            "required": [
+              "experiment_id",
+              "arm_id",
+              "period",
+              "sample_size",
+              "conversions",
+              "population"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "experiment_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "arm_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "hypothesis_text",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "assignment_method",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "assignment_unit",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "treatment_description",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "sample_size",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "hypothesis_text",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "assignment_method",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "assignment_unit",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "treatment_description",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T39",
+      "source_rows": 9,
+      "row_semantics": "미학습 모형 가정·예산 후보·상하한·정책·예측",
+      "payload_variants": [
+        {
+          "required": [
+            "record_kind",
+            "model_id",
+            "formula",
+            "trained",
+            "unit_budget",
+            "bounds"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "model"
+                ]
+              },
+              "model_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "formula": {
+                "enum": [
+                  "search/(10s)+social/(20s)"
+                ]
+              },
+              "trained": {
+                "enum": [
+                  false
+                ]
+              },
+              "unit_budget": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "bounds": {
+                "type": "object",
+                "properties": {
+                  "search": {
+                    "type": "object",
+                    "properties": {
+                      "lower": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "string",
+                            "pattern": "^-?\\d+\\.\\d{2}$"
+                          },
+                          "currency": {
+                            "enum": [
+                              "KRW",
+                              "JPY",
+                              "USD"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "amount",
+                          "currency"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "upper": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "string",
+                            "pattern": "^-?\\d+\\.\\d{2}$"
+                          },
+                          "currency": {
+                            "enum": [
+                              "KRW",
+                              "JPY",
+                              "USD"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "amount",
+                          "currency"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "lower",
+                      "upper"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "social": {
+                    "type": "object",
+                    "properties": {
+                      "lower": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "string",
+                            "pattern": "^-?\\d+\\.\\d{2}$"
+                          },
+                          "currency": {
+                            "enum": [
+                              "KRW",
+                              "JPY",
+                              "USD"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "amount",
+                          "currency"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "upper": {
+                        "type": "object",
+                        "properties": {
+                          "amount": {
+                            "type": "string",
+                            "pattern": "^-?\\d+\\.\\d{2}$"
+                          },
+                          "currency": {
+                            "enum": [
+                              "KRW",
+                              "JPY",
+                              "USD"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "amount",
+                          "currency"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "lower",
+                      "upper"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "search",
+                  "social"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "record_kind",
+              "model_id",
+              "formula",
+              "trained",
+              "unit_budget",
+              "bounds"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "required": [
+            "record_kind",
+            "model_ref",
+            "policy_ref",
+            "period",
+            "total_budget",
+            "allocations",
+            "predicted_conversions"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "record_kind": {
+                "enum": [
+                  "budget_candidate"
+                ]
+              },
+              "model_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "policy_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "total_budget": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "allocations": {
+                "type": "object",
+                "properties": {
+                  "search": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      "currency": {
+                        "enum": [
+                          "KRW",
+                          "JPY",
+                          "USD"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "currency"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "social": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "string",
+                        "pattern": "^-?\\d+\\.\\d{2}$"
+                      },
+                      "currency": {
+                        "enum": [
+                          "KRW",
+                          "JPY",
+                          "USD"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "currency"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "search",
+                  "social"
+                ],
+                "additionalProperties": false
+              },
+              "predicted_conversions": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "record_kind",
+              "model_ref",
+              "policy_ref",
+              "period",
+              "total_budget",
+              "allocations",
+              "predicted_conversions"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "record_kind",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "model_ref",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "model_version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "objective",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "assumptions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "validity_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "training_period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "formula",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "parameters",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "scenario_id_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "total_budget",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "allocations",
+          "requirement": "조건부",
+          "same_name_declared": true
+        },
+        {
+          "field": "expected_measures",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "model_version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "objective",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "assumptions",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "validity_scope",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "training_period",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "parameters",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "scenario_id_ref",
+          "requirement": "조건부",
+          "same_name_declared": false
+        },
+        {
+          "field": "expected_measures",
+          "requirement": "조건부",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    },
+    {
+      "type": "T40",
+      "source_rows": 6,
+      "row_semantics": "정책·proposed/approved·예산·기간·KPI/승인역할",
+      "payload_variants": [
+        {
+          "required": [
+            "policy_id",
+            "status",
+            "budget",
+            "period",
+            "approval_role",
+            "kpi_definition_ref"
+          ],
+          "optional": [],
+          "additional_properties": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "proposed",
+                  "approved"
+                ]
+              },
+              "budget": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?\\d+\\.\\d{2}$"
+                  },
+                  "currency": {
+                    "enum": [
+                      "KRW",
+                      "JPY",
+                      "USD"
+                    ]
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ],
+                "additionalProperties": false
+              },
+              "period": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "end": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ],
+                "additionalProperties": false
+              },
+              "approval_role": {
+                "enum": [
+                  "모의 업무 승인자"
+                ]
+              },
+              "kpi_definition_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "policy_id",
+              "status",
+              "budget",
+              "period",
+              "approval_role",
+              "kpi_definition_ref"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "registered_profiles": [
+        "A",
+        "B",
+        "C"
+      ],
+      "codec": "explicit schema-key registration; KRW/JPY minor=1, USD=100; C L/ml and s/ms=1000",
+      "schema_and_programmatic_semantics": "existing D005 validate.mjs; re-execute in integrated cycle",
+      "source_and_RDF_oracle": "existing D005 oracle.py; no JS calculation imports",
+      "business_review": "pending_user_review",
+      "actual_provider_mapping": "not_run",
+      "actual_data_fit": "not_run",
+      "dictionary_cross_reference": [
+        {
+          "field": "policy_id",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "period",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "objective",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "kpi_definition_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "product_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "budget_limit",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "allowed_channels",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "approval_role",
+          "requirement": "필수",
+          "same_name_declared": true
+        },
+        {
+          "field": "change_constraints",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "policy_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "dictionary_names_not_declared": [
+        {
+          "field": "version",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "objective",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "kpi_definition_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "product_refs",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "budget_limit",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "allowed_channels",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "change_constraints",
+          "requirement": "필수",
+          "same_name_declared": false
+        },
+        {
+          "field": "policy_status",
+          "requirement": "필수",
+          "same_name_declared": false
+        }
+      ],
+      "reconciliation_status": "unresolved_name_or_scope_differences"
+    }
+  ],
+  "code_design_review": "declaration cross-reference prepared; execution evidence tracked separately",
+  "independent_business_review": "pending_user_review",
+  "actual_provider_mapping": "not_run",
+  "actual_data_fit": "not_run",
+  "dictionary_findings": [
+    {
+      "type": "T02",
+      "required": [
+        "entity_type",
+        "valid_from"
+      ],
+      "conditional": [
+        "language"
+      ]
+    },
+    {
+      "type": "T04",
+      "required": [
+        "cohort_id",
+        "measures"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T05",
+      "required": [
+        "term_ref",
+        "term_kind",
+        "index_definition"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T06",
+      "required": [
+        "geo_target_ref",
+        "network_scope"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T07",
+      "required": [
+        "search_type",
+        "aggregation_scope"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T10",
+      "required": [
+        "served_regions",
+        "coverage_text"
+      ],
+      "conditional": [
+        "media_ref"
+      ]
+    },
+    {
+      "type": "T11",
+      "required": [
+        "language",
+        "title"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T14",
+      "required": [
+        "breakdown_dimensions",
+        "report_definition_ref",
+        "audience_basis"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T15",
+      "required": [
+        "report_surface",
+        "threshold_status"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T16",
+      "required": [
+        "language",
+        "valid_from"
+      ],
+      "conditional": [
+        "media_ref",
+        "annotation_evidence"
+      ]
+    },
+    {
+      "type": "T19",
+      "required": [
+        "seller_ref",
+        "customer_pseudo_ref",
+        "financial_status"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T23",
+      "required": [],
+      "conditional": [
+        "retail_channel"
+      ]
+    },
+    {
+      "type": "T25",
+      "required": [
+        "subject_ref",
+        "aspect_ref",
+        "definition_version"
+      ],
+      "conditional": [
+        "period"
+      ]
+    },
+    {
+      "type": "T26",
+      "required": [
+        "channel",
+        "subject",
+        "status"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T27",
+      "required": [
+        "platform",
+        "channel_ref",
+        "language"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T28",
+      "required": [
+        "language"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T29",
+      "required": [
+        "creator_ref",
+        "product_refs",
+        "planned_period",
+        "message_brief"
+      ],
+      "conditional": [
+        "fee"
+      ]
+    },
+    {
+      "type": "T30",
+      "required": [],
+      "conditional": [
+        "period",
+        "deal_id",
+        "deal_amount"
+      ]
+    },
+    {
+      "type": "T31",
+      "required": [
+        "segment_ref",
+        "sent_at",
+        "period",
+        "unique_clickers"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T32",
+      "required": [
+        "measure_definition",
+        "cohort_ref",
+        "measures"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T33",
+      "required": [
+        "item_code",
+        "definition",
+        "seasonal_adjustment"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T34",
+      "required": [
+        "region_ref"
+      ],
+      "conditional": [
+        "measures",
+        "event_name",
+        "calendar_kind"
+      ]
+    },
+    {
+      "type": "T38",
+      "required": [
+        "hypothesis_text",
+        "assignment_method",
+        "assignment_unit",
+        "treatment_description",
+        "status"
+      ],
+      "conditional": []
+    },
+    {
+      "type": "T39",
+      "required": [
+        "model_version",
+        "objective",
+        "assumptions",
+        "validity_scope"
+      ],
+      "conditional": [
+        "training_period",
+        "parameters",
+        "scenario_id_ref",
+        "expected_measures"
+      ]
+    },
+    {
+      "type": "T40",
+      "required": [
+        "version",
+        "objective",
+        "kpi_definition_refs",
+        "product_refs",
+        "budget_limit",
+        "allowed_channels",
+        "change_constraints",
+        "policy_status"
+      ],
+      "conditional": []
+    }
+  ],
+  "interpretation": "Name-level inventory only. A difference may be a missing declaration, an unregistered semantic alias or an inapplicable subtype condition. Do not infer aliases, fabricate fields or mark the full dictionary contract passed from D005 subset validation."
+}
