@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "source": "explicit_human_response",
+  "user_message": "Oops해도 돼 수락할게",
+  "recorded_at": "2026-10-15T14:15:14Z",
+  "destination": "https://oops.linkeddata.es/rest",
+  "ontology_sha256": "db48376faf94408d34b80be2cd46d753bd272761783ea35b14eab1b9a4557849",
+  "payload": "ontology.ttl definition graph only, serialized as RDF/XML in memory",
+  "exclusions": ["JSONL source records", "review source text", "RDF instance data"],
+  "question_data_reuse_approval": false
+}

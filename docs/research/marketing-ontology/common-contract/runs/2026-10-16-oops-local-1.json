@@ -1,0 +1,1263 @@
+{
+  "status": "fail",
+  "exit_code": 1,
+  "timestamp": "2026-10-16T06:12:19.723990+00:00",
+  "ontology_sha256": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+  "input_changed": false,
+  "checks": {
+    "HermiT": {
+      "status": "pass",
+      "scope": "ontology.ttl definitions only; no D003B/D005 instance reasoning",
+      "distribution": "HermiT.jar bundled in Owlready2 0.51 (modified distribution)",
+      "version": "1.3.8.1099\nHermiT is a product of Oxford University.\nVisit <http://hermit-reasoner.org/> for details.",
+      "java": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+      "jar": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\HermiT.jar",
+      "jar_sha256": "97e53f519720a0a2e328556e03b806aa239347c85e57637a935e6433ed2ad3a8",
+      "class_checks": 27,
+      "consistency": "pass",
+      "unsatisfiable_classes": [],
+      "missing_results": [],
+      "hierarchy_checks": [
+        {
+          "child": "Product",
+          "expected_super": "Subject",
+          "forbidden_super": "Campaign",
+          "status": "pass",
+          "stdout": "All super-classes of '<https://example.org/marketing/Product>':\n\thttps://example.org/marketing/Subject\n\thttp://www.w3.org/2002/07/owl#Thing\n\thttp://www.w3.org/ns/prov#Entity\n\thttps://example.org/marketing/Entity\n",
+          "stderr": ""
+        },
+        {
+          "child": "Promotion",
+          "expected_super": "Event",
+          "forbidden_super": "Product",
+          "status": "pass",
+          "stdout": "All super-classes of '<https://example.org/marketing/Promotion>':\n\thttp://www.w3.org/2002/07/owl#Thing\n\thttps://example.org/marketing/Event\n\thttp://www.w3.org/ns/prov#Entity\n\thttps://example.org/marketing/Entity\n",
+          "stderr": ""
+        }
+      ],
+      "command": [
+        "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\jdk-17.0.20.1+1-jre\\bin\\java.exe",
+        "-jar",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\HermiT.jar",
+        "--consistency=<http://www.w3.org/2002/07/owl#Thing>",
+        "--consistency=<http://www.w3.org/ns/prov#Activity>",
+        "--consistency=<http://www.w3.org/ns/prov#Entity>",
+        "--consistency=<https://example.org/marketing/AnalysisResult>",
+        "--consistency=<https://example.org/marketing/Brand>",
+        "--consistency=<https://example.org/marketing/Campaign>",
+        "--consistency=<https://example.org/marketing/Category>",
+        "--consistency=<https://example.org/marketing/Claim>",
+        "--consistency=<https://example.org/marketing/CollectionRun>",
+        "--consistency=<https://example.org/marketing/Entity>",
+        "--consistency=<https://example.org/marketing/Event>",
+        "--consistency=<https://example.org/marketing/EvidenceSpan>",
+        "--consistency=<https://example.org/marketing/Hypothesis>",
+        "--consistency=<https://example.org/marketing/Location>",
+        "--consistency=<https://example.org/marketing/MarketScope>",
+        "--consistency=<https://example.org/marketing/MetricDefinition>",
+        "--consistency=<https://example.org/marketing/Observation>",
+        "--consistency=<https://example.org/marketing/Product>",
+        "--consistency=<https://example.org/marketing/Promotion>",
+        "--consistency=<https://example.org/marketing/Review>",
+        "--consistency=<https://example.org/marketing/Seller>",
+        "--consistency=<https://example.org/marketing/SourceArtifact>",
+        "--consistency=<https://example.org/marketing/SourceRecord>",
+        "--consistency=<https://example.org/marketing/Subject>",
+        "--consistency=<https://example.org/marketing/TimeInstant>",
+        "--consistency=<https://example.org/marketing/TimeInterval>",
+        "--consistency=<https://example.org/marketing/Transformation>",
+        "--consistency=<https://example.org/marketing/Variant>",
+        "<temporary RDF/XML definition URI>"
+      ],
+      "exit_code": 0,
+      "stdout": "<http://www.w3.org/2002/07/owl#Thing> is satisfiable.\n<http://www.w3.org/ns/prov#Activity> is satisfiable.\n<http://www.w3.org/ns/prov#Entity> is satisfiable.\n<https://example.org/marketing/AnalysisResult> is satisfiable.\n<https://example.org/marketing/Brand> is satisfiable.\n<https://example.org/marketing/Campaign> is satisfiable.\n<https://example.org/marketing/Category> is satisfiable.\n<https://example.org/marketing/Claim> is satisfiable.\n<https://example.org/marketing/CollectionRun> is satisfiable.\n<https://example.org/marketing/Entity> is satisfiable.\n<https://example.org/marketing/Event> is satisfiable.\n<https://example.org/marketing/EvidenceSpan> is satisfiable.\n<https://example.org/marketing/Hypothesis> is satisfiable.\n<https://example.org/marketing/Location> is satisfiable.\n<https://example.org/marketing/MarketScope> is satisfiable.\n<https://example.org/marketing/MetricDefinition> is satisfiable.\n<https://example.org/marketing/Observation> is satisfiable.\n<https://example.org/marketing/Product> is satisfiable.\n<https://example.org/marketing/Promotion> is satisfiable.\n<https://example.org/marketing/Review> is satisfiable.\n<https://example.org/marketing/Seller> is satisfiable.\n<https://example.org/marketing/SourceArtifact> is satisfiable.\n<https://example.org/marketing/SourceRecord> is satisfiable.\n<https://example.org/marketing/Subject> is satisfiable.\n<https://example.org/marketing/TimeInstant> is satisfiable.\n<https://example.org/marketing/TimeInterval> is satisfiable.\n<https://example.org/marketing/Transformation> is satisfiable.\n<https://example.org/marketing/Variant> is satisfiable.\n",
+      "stderr": ""
+    },
+    "OOPS": {
+      "status": "fail",
+      "scan_executed": false,
+      "mode": "local",
+      "reason": "required checker incomplete: {'code': 'P06', 'title': 'Including cycles in a class hierarchy', 'status': 'not_run', 'reason': 'java.util.ConcurrentModificationException: null'}",
+      "raw": {
+        "rules": [
+          {
+            "code": "P02",
+            "title": "Creating synonyms as classes",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P03",
+            "title": "Creating the relationship \"is\" instead of using \"rdfs:subClassOf\", \"rdf:type\" or \"owl:sameAs\"",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P04",
+            "title": "Creating unconnected ontology elements",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P05",
+            "title": "Defining wrong inverse relationships",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P06",
+            "title": "Including cycles in a class hierarchy",
+            "status": "not_run",
+            "reason": "java.util.ConcurrentModificationException: null"
+          },
+          {
+            "code": "P07",
+            "title": "Merging different concepts in the same class",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P08",
+            "title": "Missing annotations",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P10",
+            "title": "Missing disjoint-ness",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P12",
+            "title": "Equivalent properties not explicitly declared",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P13",
+            "title": "Inverse relationships not explicitly declared",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P19",
+            "title": "Defining multiple domains or ranges in properties",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P20",
+            "title": "Misusing ontology annotations",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P21",
+            "title": "Using a miscellaneous class",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P22",
+            "title": "Using different naming conventions in the ontology",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P24",
+            "title": "Using recursive definitions",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P25",
+            "title": "Defining a relationship as inverse to itself",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P26",
+            "title": "Defining inverse relationships for a symmetric one",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P27",
+            "title": "Defining wrong equivalent properties",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P28",
+            "title": "Defining wrong symmetric relationships",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P29",
+            "title": "Defining wrong transitive relationships",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P30",
+            "title": "Equivalent classes not explicitly declared",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P31",
+            "title": "Defining wrong equivalent classes",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P32",
+            "title": "Several classes with the same label",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P33",
+            "title": "Creating a property chain with just one property",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P34",
+            "title": "Untyped class",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P35",
+            "title": "Untyped property",
+            "status": "pass",
+            "warnings": []
+          },
+          {
+            "code": "P36",
+            "title": "URI contains file extension",
+            "status": "not_applicable",
+            "reason": "Published ontology URL is required; this scope is a local unpublished definition graph."
+          },
+          {
+            "code": "P37",
+            "title": "Ontology not available on the Web",
+            "status": "not_applicable",
+            "reason": "Published ontology URL is required; this scope is a local unpublished definition graph."
+          },
+          {
+            "code": "P38",
+            "title": "No OWL ontology declaration",
+            "status": "not_applicable",
+            "reason": "Published ontology URL is required; this scope is a local unpublished definition graph."
+          },
+          {
+            "code": "P39",
+            "title": "Ambiguous namespace",
+            "status": "not_applicable",
+            "reason": "Published ontology URL is required; this scope is a local unpublished definition graph."
+          },
+          {
+            "code": "P40",
+            "title": "Namespace hijacking",
+            "status": "not_applicable",
+            "reason": "Published ontology URL is required; this scope is a local unpublished definition graph."
+          },
+          {
+            "code": "P41",
+            "title": "No license declared",
+            "status": "not_applicable",
+            "reason": "Upstream P41 sends ontology content to Licensius; excluded from offline execution. Local license metadata is reported separately."
+          }
+        ],
+        "findings": [
+          {
+            "code": "P04",
+            "title": "Creating unconnected ontology elements",
+            "importance": "MINOR",
+            "resources": [
+              "http://www.w3.org/ns/prov#Activity"
+            ],
+            "description": "### P04: Creating unconnected ontology elements\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@5b22b970, es.upm.fi.oeg.oops.PitfallCategory@4af46df3\n\nOntology elements (classes, object properties and datatype properties) exist in isolation, with no relation to the rest of the ontology.\n\n- http://www.w3.org/ns/prov#Activity\n"
+          },
+          {
+            "code": "P04",
+            "title": "Creating unconnected ontology elements",
+            "importance": "MINOR",
+            "resources": [
+              "http://www.w3.org/ns/prov#Entity"
+            ],
+            "description": "### P04: Creating unconnected ontology elements\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@5b22b970, es.upm.fi.oeg.oops.PitfallCategory@4af46df3\n\nOntology elements (classes, object properties and datatype properties) exist in isolation, with no relation to the rest of the ontology.\n\n- http://www.w3.org/ns/prov#Entity\n"
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "http://www.w3.org/ns/prov#wasDerivedFrom"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- http://www.w3.org/ns/prov#wasDerivedFrom\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "http://www.w3.org/ns/prov#wasGeneratedBy"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- http://www.w3.org/ns/prov#wasGeneratedBy\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/afterValue"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/afterValue\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/aggregation"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/aggregation\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/asOf"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/asOf\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/attributionModel"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/attributionModel\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/attributionWindowDays"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/attributionWindowDays\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/availability"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/availability\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/availableAt"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/availableAt\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/beforeValue"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/beforeValue\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/bodyText"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/bodyText\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/brandRole"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/brandRole\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/calendar"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/calendar\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/category"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/category\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/changeField"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/changeField\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/channel"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/channel\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/claimText"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/claimText\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/codeVersion"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/codeVersion\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/comparisonGroup"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/comparisonGroup\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/conversionName"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/conversionName\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/counters"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/counters\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/country"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/country\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/coverageText"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/coverageText\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/currency"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/currency\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/definitionVersion"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/definitionVersion\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/definition"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/definition\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/discountRatio"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/discountRatio\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/endAtExclusive"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/endAtExclusive\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/endDateExclusive"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/endDateExclusive\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/eventKind"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/eventKind\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/evidenceSpan"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/evidenceSpan\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/expectedCount"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/expectedCount\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/fieldPath"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/fieldPath\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/generatedBy"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/generatedBy\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/grain"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/grain\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/identifierNamespace"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/identifierNamespace\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/instant"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/instant\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/interval"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/interval\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/isSynthetic"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/isSynthetic\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/label"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/label\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/language"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/language\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/location"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/location\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/mappingVersion"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/mappingVersion\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/metricId"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/metricId\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/missingCount"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/missingCount\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/offsetEnd"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/offsetEnd\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/offsetStart"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/offsetStart\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/originKind"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/originKind\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/path"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/path\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/platform"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/platform\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/policyVersion"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/policyVersion\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/questionId"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/questionId\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/quote"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/quote\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/ratingScaleMax"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/ratingScaleMax\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/reason"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/reason\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/receivedCount"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/receivedCount\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/recordId"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/recordId\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/resultStatus"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/resultStatus\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/revision"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/revision\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/scope"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/scope\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/sellerStatus"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/sellerStatus\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/seller"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/seller\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/seriesRole"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/seriesRole\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/sha256"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/sha256\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/shippingIncluded"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/shippingIncluded\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/sourceId"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/sourceId\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/sourceRecord"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/sourceRecord\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/startAt"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/startAt\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/startDate"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/startDate\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/subject"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/subject\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/supports"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/supports\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/taxIncluded"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/taxIncluded\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/timestamp"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/timestamp\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/timezone"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/timezone\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/unit"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/unit\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/validInterval"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/validInterval\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/value"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/value\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/verifiedPurchase"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/verifiedPurchase\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P11",
+            "title": "Missing domain or range in properties",
+            "importance": "IMPORTANT",
+            "resources": [
+              "https://example.org/marketing/volumeMl"
+            ],
+            "description": "### P11: Missing domain or range in properties\n\nSeverity: IMPORTANT\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nObject and/or datatype properties missing domain or range (or both of them) are included in the ontology.\n\n- https://example.org/marketing/volumeMl\n\n<b>Tip:</b> Solving this pitfall may lead to new results for other pitfalls and suggestions.\nWe encourage you to solve all cases when needed, and see what else you can get from this software."
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "http://www.w3.org/ns/prov#wasDerivedFrom"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- http://www.w3.org/ns/prov#wasDerivedFrom\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "http://www.w3.org/ns/prov#wasGeneratedBy"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- http://www.w3.org/ns/prov#wasGeneratedBy\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/artifact"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/artifact\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/brand"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/brand\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/counters"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/counters\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/evidenceSpan"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/evidenceSpan\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/generatedBy"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/generatedBy\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/inCategory"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/inCategory\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/input"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/input\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/instant"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/instant\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/interval"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/interval\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/location"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/location\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/member"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/member\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/metric"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/metric\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/originalReview"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/originalReview\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/promotes"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/promotes\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/scope"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/scope\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/seller"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/seller\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/sourceRecord"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/sourceRecord\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/subject"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/subject\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/supersedes"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/supersedes\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/supports"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/supports\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/validInterval"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/validInterval\n"
+          },
+          {
+            "code": "P13-N",
+            "title": "Inverse relationships not explicitly declared - No Suggestion",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/variantOf"
+            ],
+            "description": "### P13-N: Inverse relationships not explicitly declared - No Suggestion\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/variantOf\n"
+          },
+          {
+            "code": "P13-S",
+            "title": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+            "importance": "MINOR",
+            "resources": [
+              "https://example.org/marketing/supersedes"
+            ],
+            "description": "### P13-S: Inverse relationships not explicitly declared - Symmetric or Transitive?\n\nSeverity: MINOR\nCategories: es.upm.fi.oeg.oops.PitfallCategory@7df60067, es.upm.fi.oeg.oops.PitfallCategory@31ddd4a4, es.upm.fi.oeg.oops.PitfallCategory@22d1886d\n\nThis pitfall appears when any relationship (except for those that are defined as symmetric properties using owl:SymmetricProperty) does not have an inverse relationship (owl:inverseOf) defined within the ontology.\n\n- https://example.org/marketing/supersedes\n"
+          }
+        ],
+        "catalogue_size": 33,
+        "unimplemented_rules": [
+          "C01",
+          "C09",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C23"
+        ],
+        "network_policy": "deny all socket access; remote imports disabled",
+        "blocked_network_attempts": 0,
+        "network_policy_self_check": "pass",
+        "scan_executed": false
+      }
+    }
+  },
+  "system_validation": "incomplete",
+  "instance_records_read": 0,
+  "references": [
+    "https://www.cs.ox.ac.uk/isg/tools/HermiT/command.html",
+    "https://owlready2.readthedocs.io/en/latest/reasoning.html",
+    "https://oops.linkeddata.es/webservice.html"
+  ]
+}

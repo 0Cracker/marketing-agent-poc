@@ -1,0 +1,19 @@
+{
+  "approved": false,
+  "scope_decision_5A_approved": true,
+  "execution_status": "blocked_by_automatic_approval_review",
+  "review_reason": "The review requires explicit user authorization naming the definition payload and the exact external destination; selecting 5A was not accepted as sufficient.",
+  "source": "explicit_human_response",
+  "user_message": "기존 D005 랑 지금 구조랑 뭐가 더 좋은 것 같아? 뭐가 더 나은 구조지?\n4 반올림은 그냥 가상 임의의 반올림 하면 될 것갘아. 나머지 1,2,3,5,6은 a안으로 가자",
+  "decision": "5A",
+  "destination": "https://oops.linkeddata.es/rest",
+  "ontology_sha256": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+  "payload_scope": "ontology.ttl definition graph only, serialized as RDF/XML in memory",
+  "excluded": [
+    "JSONL sources",
+    "reviews",
+    "instance RDF",
+    "provider data"
+  ],
+  "hash_binding": "Agent binds the completed definition artifact to the approved 5A correction and rescan action; this does not claim the user supplied or reviewed the hash."
+}
