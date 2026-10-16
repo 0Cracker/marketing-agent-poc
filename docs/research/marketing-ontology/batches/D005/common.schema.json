@@ -1,0 +1,5775 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T01"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "product_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "brand_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "brand_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "variant_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sku": {
+              "type": "string",
+              "minLength": 1
+            },
+            "category_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "volume": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "unit": {
+                  "enum": [
+                    "ml"
+                  ]
+                }
+              },
+              "required": [
+                "value",
+                "unit"
+              ],
+              "additionalProperties": false
+            },
+            "valid_from": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": [
+            "product_id",
+            "product_name",
+            "brand_id",
+            "brand_name",
+            "variant_id",
+            "sku",
+            "category_id",
+            "volume",
+            "valid_from"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T02"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "mapping_kind": {
+              "enum": [
+                "external_id",
+                "name_alias"
+              ]
+            },
+            "external_system": {
+              "type": "string",
+              "minLength": 1
+            },
+            "external_value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "entity_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "match_status": {
+              "enum": [
+                "confirmed",
+                "candidate"
+              ]
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "mapping_kind",
+            "external_system",
+            "external_value",
+            "entity_ref",
+            "match_status",
+            "period",
+            "evidence"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T04"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "panel_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "sample_size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "positive_responses": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "positive_rate": {
+              "type": "number"
+            },
+            "weighting_method": {
+              "enum": [
+                "unweighted"
+              ]
+            }
+          },
+          "required": [
+            "panel_id",
+            "subject_ref",
+            "period",
+            "sample_size",
+            "positive_responses",
+            "positive_rate",
+            "weighting_method"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T05"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "query_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "term": {
+              "type": "string",
+              "minLength": 1
+            },
+            "normalization_scope": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "index_value": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "search_surface": {
+              "enum": [
+                "모의 검색"
+              ]
+            }
+          },
+          "required": [
+            "query_id",
+            "term",
+            "normalization_scope",
+            "period",
+            "index_value",
+            "search_surface"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T06"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "keyword": {
+              "type": "string",
+              "minLength": 1
+            },
+            "language": {
+              "enum": [
+                "ko"
+              ]
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "estimated_searches": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "competition_level": {
+              "enum": [
+                "medium"
+              ]
+            },
+            "competition_index": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "bid_lower": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "bid_upper": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "keyword",
+            "language",
+            "period",
+            "estimated_searches",
+            "competition_level",
+            "competition_index",
+            "bid_lower",
+            "bid_upper"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T07"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "site_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "page_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "query": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "device": {
+              "enum": [
+                "mobile"
+              ]
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "impressions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "clicks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "average_position": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "site_ref",
+            "page_ref",
+            "query",
+            "device",
+            "period",
+            "impressions",
+            "clicks",
+            "average_position"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T10"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "public_ad_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "advertiser_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "first_seen": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "last_seen": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "format": {
+              "enum": [
+                "text"
+              ]
+            },
+            "creative_text": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "public_ad_id",
+            "advertiser_ref",
+            "observed_at",
+            "first_seen",
+            "last_seen",
+            "format",
+            "creative_text"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T11"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "document_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "publisher": {
+              "type": "string",
+              "minLength": 1
+            },
+            "published_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "event_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "body_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "duplicate_group": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "document_id",
+            "publisher",
+            "published_at",
+            "event_time",
+            "body_text",
+            "subject_refs",
+            "duplicate_group"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T14"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "campaign_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "device": {
+              "enum": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "metrics": {
+              "type": "object",
+              "properties": {
+                "impressions": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "clicks": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "conversions": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "spend": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                },
+                "attributed_revenue": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "impressions",
+                "clicks",
+                "conversions",
+                "spend",
+                "attributed_revenue"
+              ],
+              "additionalProperties": false
+            },
+            "split_basis": {
+              "enum": [
+                "synthetic_partition"
+              ]
+            }
+          },
+          "required": [
+            "campaign_ref",
+            "parent_record_id",
+            "period",
+            "device",
+            "metrics",
+            "split_basis"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T15"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "campaign_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "competitor_domain": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "impression_share": {
+              "type": "number"
+            },
+            "overlap_rate": {
+              "type": "number"
+            },
+            "denominator_status": {
+              "enum": [
+                "not_provided"
+              ]
+            }
+          },
+          "required": [
+            "campaign_ref",
+            "competitor_domain",
+            "period",
+            "impression_share",
+            "overlap_rate",
+            "denominator_status"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T16"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "creative_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "campaign_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "product_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "format": {
+              "enum": [
+                "text"
+              ]
+            },
+            "message_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "creative_id",
+            "version",
+            "campaign_ref",
+            "product_refs",
+            "format",
+            "message_text",
+            "period"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T17"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "event_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "event_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "event_name": {
+              "enum": [
+                "page_view",
+                "consent_update"
+              ]
+            },
+            "site_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "session_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "page_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "device": {
+              "enum": [
+                "mobile"
+              ]
+            },
+            "consent_state": {
+              "enum": [
+                "granted",
+                "denied"
+              ]
+            }
+          },
+          "required": [
+            "event_id",
+            "event_time",
+            "event_name",
+            "site_ref",
+            "session_ref",
+            "page_ref",
+            "device",
+            "consent_state"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T18"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "session_ref": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "variant_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "item_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "consent_state": {
+                  "enum": [
+                    "granted",
+                    "denied"
+                  ]
+                },
+                "measurement_basis": {
+                  "enum": [
+                    "web_item_event"
+                  ]
+                },
+                "event_name": {
+                  "enum": [
+                    "view_item",
+                    "add_to_cart",
+                    "begin_checkout"
+                  ]
+                }
+              },
+              "required": [
+                "event_id",
+                "event_time",
+                "session_ref",
+                "variant_ref",
+                "item_index",
+                "quantity",
+                "consent_state",
+                "measurement_basis",
+                "event_name"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "session_ref": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "variant_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "item_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "consent_state": {
+                  "enum": [
+                    "granted",
+                    "denied"
+                  ]
+                },
+                "measurement_basis": {
+                  "enum": [
+                    "web_item_event"
+                  ]
+                },
+                "event_name": {
+                  "enum": [
+                    "purchase"
+                  ]
+                },
+                "transaction_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_price": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "event_id",
+                "event_time",
+                "session_ref",
+                "variant_ref",
+                "item_index",
+                "quantity",
+                "consent_state",
+                "measurement_basis",
+                "event_name",
+                "transaction_ref",
+                "unit_price"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "session_ref": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "variant_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "item_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "consent_state": {
+                  "enum": [
+                    "granted",
+                    "denied"
+                  ]
+                },
+                "measurement_basis": {
+                  "enum": [
+                    "web_item_event"
+                  ]
+                },
+                "event_name": {
+                  "enum": [
+                    "refund"
+                  ]
+                },
+                "transaction_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "adjustment_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "unit_price": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                },
+                "refund_amount": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "event_id",
+                "event_time",
+                "session_ref",
+                "variant_ref",
+                "item_index",
+                "quantity",
+                "consent_state",
+                "measurement_basis",
+                "event_name",
+                "transaction_ref",
+                "adjustment_ref",
+                "unit_price",
+                "refund_amount"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T19"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "order_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "line_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "transaction_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ordered_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "variant_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "quantity": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unit_price": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "line_discount": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "line_tax": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "line_gross_total": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "fulfilment_status": {
+              "enum": [
+                "fulfilled",
+                "shipped",
+                "unfulfilled"
+              ]
+            },
+            "status_available_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "order_id",
+            "line_id",
+            "transaction_ref",
+            "ordered_at",
+            "variant_ref",
+            "quantity",
+            "unit_price",
+            "line_discount",
+            "line_tax",
+            "line_gross_total",
+            "fulfilment_status",
+            "status_available_at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T20"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "adjustment_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "adjustment_kind": {
+                  "enum": [
+                    "refund"
+                  ]
+                },
+                "order_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "order_line_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "requested_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "processed_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "refund_amount": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                },
+                "status": {
+                  "enum": [
+                    "completed"
+                  ]
+                },
+                "reason_code": {
+                  "enum": [
+                    "unknown"
+                  ]
+                },
+                "restocked": {
+                  "enum": [
+                    null
+                  ]
+                }
+              },
+              "required": [
+                "adjustment_id",
+                "adjustment_kind",
+                "order_ref",
+                "order_line_ref",
+                "requested_at",
+                "processed_at",
+                "quantity",
+                "refund_amount",
+                "status",
+                "reason_code",
+                "restocked"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "adjustment_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "adjustment_kind": {
+                  "enum": [
+                    "cancel"
+                  ]
+                },
+                "order_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "order_line_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "requested_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "status": {
+                  "enum": [
+                    "pending"
+                  ]
+                },
+                "reason_code": {
+                  "enum": [
+                    "unknown"
+                  ]
+                },
+                "restocked": {
+                  "enum": [
+                    null
+                  ]
+                }
+              },
+              "required": [
+                "adjustment_id",
+                "adjustment_kind",
+                "order_ref",
+                "order_line_ref",
+                "requested_at",
+                "quantity",
+                "status",
+                "reason_code",
+                "restocked"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T21"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "variant_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "unit_cost": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "margin_definition": {
+              "enum": [
+                "세전 상품원가"
+              ]
+            },
+            "accounting_basis": {
+              "enum": [
+                "재입고 미확인"
+              ]
+            }
+          },
+          "required": [
+            "variant_ref",
+            "period",
+            "unit_cost",
+            "margin_definition",
+            "accounting_basis"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T23"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "distribution"
+                  ]
+                },
+                "product_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "period": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "stockists": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "target_stockists": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "record_kind",
+                "product_ref",
+                "period",
+                "stockists",
+                "target_stockists"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "shipment"
+                  ]
+                },
+                "order_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "promised_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "status": {
+                  "enum": [
+                    "delivered",
+                    "in_transit",
+                    "unshipped"
+                  ]
+                },
+                "shipped_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "delivered_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "record_kind",
+                "order_ref",
+                "promised_at",
+                "status"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T25"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "annotation"
+                  ]
+                },
+                "review_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "product_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "aspect": {
+                  "enum": [
+                    "거품",
+                    "용기",
+                    "건조감"
+                  ]
+                },
+                "sentiment": {
+                  "enum": [
+                    "positive",
+                    "negative"
+                  ]
+                },
+                "evidence_span": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "assessment_status": {
+                  "enum": [
+                    "provided"
+                  ]
+                }
+              },
+              "required": [
+                "record_kind",
+                "review_ref",
+                "product_ref",
+                "aspect",
+                "sentiment",
+                "evidence_span",
+                "assessment_status"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "aggregate"
+                  ]
+                },
+                "product_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "aspect": {
+                  "enum": [
+                    "거품",
+                    "용기",
+                    "건조감"
+                  ]
+                },
+                "sample_size": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "mention_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "review_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "record_kind",
+                "product_ref",
+                "aspect",
+                "sample_size",
+                "mention_count",
+                "review_refs"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T26"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ticket_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "message_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "link_status": {
+                  "enum": [
+                    "confirmed"
+                  ]
+                },
+                "order_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "ticket_id",
+                "created_at",
+                "message_text",
+                "link_status",
+                "order_ref"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ticket_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "message_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "link_status": {
+                  "enum": [
+                    "unlinked"
+                  ]
+                }
+              },
+              "required": [
+                "ticket_id",
+                "created_at",
+                "message_text",
+                "link_status"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T27"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "content_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "published_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "view_count": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "content_id",
+            "published_at",
+            "observed_at",
+            "title",
+            "description_text",
+            "view_count"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T28"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "comment_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "content_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "written_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "body_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_comment_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "comment_id",
+            "content_ref",
+            "written_at",
+            "body_text"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T29"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "collaboration_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "content_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "agreement_status": {
+              "enum": [
+                "signed"
+              ]
+            },
+            "cost": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "collaboration_id",
+            "content_refs",
+            "agreement_status",
+            "cost"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T30"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "cohort"
+                  ]
+                },
+                "cohort_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "order_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "customer_set": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "sample_size": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "repeat_purchase_rate": {
+                  "type": "number"
+                },
+                "net_revenue": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "record_kind",
+                "cohort_ref",
+                "order_refs",
+                "customer_set",
+                "sample_size",
+                "repeat_purchase_rate",
+                "net_revenue"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "opportunity"
+                  ]
+                },
+                "opportunity_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "stage": {
+                  "enum": [
+                    "open"
+                  ]
+                },
+                "population": {
+                  "enum": [
+                    "separate_B2B"
+                  ]
+                }
+              },
+              "required": [
+                "record_kind",
+                "opportunity_id",
+                "stage",
+                "population"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T31"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "crm_campaign_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "cohort_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "emails_sent": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "bounces": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unique_clicks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unsubscribes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "open_measurement_basis": {
+              "enum": [
+                "not_collected"
+              ]
+            },
+            "linked_orders": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "crm_campaign_id",
+            "cohort_ref",
+            "emails_sent",
+            "bounces",
+            "unique_clicks",
+            "unsubscribes",
+            "open_measurement_basis",
+            "linked_orders"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T32"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "study_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "subject_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "question_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "response_scale": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            },
+            "sample_size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "positive_responses": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sampling_method": {
+              "enum": [
+                "convenience"
+              ]
+            }
+          },
+          "required": [
+            "study_id",
+            "subject_ref",
+            "period",
+            "question_text",
+            "response_scale",
+            "sample_size",
+            "positive_responses",
+            "sampling_method"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T33"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "statistics_table_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "region_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "index"
+              ]
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "published_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "supersedes_record_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "statistics_table_id",
+            "region_ref",
+            "period",
+            "value",
+            "unit",
+            "revision",
+            "published_at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T34"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "weather"
+                  ]
+                },
+                "station_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "period": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "temperature": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number"
+                    },
+                    "unit": {
+                      "enum": [
+                        "℃"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "precipitation": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number"
+                    },
+                    "unit": {
+                      "enum": [
+                        "mm"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "record_kind",
+                "station_ref",
+                "period",
+                "temperature",
+                "precipitation"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "schedule"
+                  ]
+                },
+                "period": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "is_public_holiday": {
+                  "enum": [
+                    false
+                  ]
+                }
+              },
+              "required": [
+                "record_kind",
+                "period",
+                "title",
+                "is_public_holiday"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T37"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "performance"
+                  ]
+                },
+                "page_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "device": {
+                  "enum": [
+                    "mobile"
+                  ]
+                },
+                "period": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "measures": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "metric_id": {
+                        "enum": [
+                          "lcp_p75"
+                        ]
+                      },
+                      "value": {
+                        "type": "number"
+                      },
+                      "unit": {
+                        "enum": [
+                          "ms"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "metric_id",
+                      "value",
+                      "unit"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "record_kind",
+                "page_ref",
+                "device",
+                "period",
+                "measures"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "incident"
+                  ]
+                },
+                "page_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "device": {
+                  "enum": [
+                    "mobile"
+                  ]
+                },
+                "incident_start": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "incident_end": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "status": {
+                  "enum": [
+                    "resolved"
+                  ]
+                },
+                "error_text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "record_kind",
+                "page_ref",
+                "device",
+                "incident_start",
+                "incident_end",
+                "status",
+                "error_text"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T38"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "experiment_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "arm_id": {
+              "enum": [
+                "control",
+                "treatment"
+              ]
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "sample_size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "conversions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "population": {
+              "enum": [
+                "separate_experiment"
+              ]
+            }
+          },
+          "required": [
+            "experiment_id",
+            "arm_id",
+            "period",
+            "sample_size",
+            "conversions",
+            "population"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T39"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "model"
+                  ]
+                },
+                "model_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "formula": {
+                  "enum": [
+                    "search/(10s)+social/(20s)"
+                  ]
+                },
+                "trained": {
+                  "enum": [
+                    false
+                  ]
+                },
+                "unit_budget": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                },
+                "bounds": {
+                  "type": "object",
+                  "properties": {
+                    "search": {
+                      "type": "object",
+                      "properties": {
+                        "lower": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "string",
+                              "pattern": "^-?\\d+\\.\\d{2}$"
+                            },
+                            "currency": {
+                              "enum": [
+                                "KRW",
+                                "JPY",
+                                "USD"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "currency"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "upper": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "string",
+                              "pattern": "^-?\\d+\\.\\d{2}$"
+                            },
+                            "currency": {
+                              "enum": [
+                                "KRW",
+                                "JPY",
+                                "USD"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "currency"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "lower",
+                        "upper"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "social": {
+                      "type": "object",
+                      "properties": {
+                        "lower": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "string",
+                              "pattern": "^-?\\d+\\.\\d{2}$"
+                            },
+                            "currency": {
+                              "enum": [
+                                "KRW",
+                                "JPY",
+                                "USD"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "currency"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "upper": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "string",
+                              "pattern": "^-?\\d+\\.\\d{2}$"
+                            },
+                            "currency": {
+                              "enum": [
+                                "KRW",
+                                "JPY",
+                                "USD"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "currency"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "lower",
+                        "upper"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "search",
+                    "social"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "record_kind",
+                "model_id",
+                "formula",
+                "trained",
+                "unit_budget",
+                "bounds"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "record_kind": {
+                  "enum": [
+                    "budget_candidate"
+                  ]
+                },
+                "model_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "policy_ref": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "period": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "end": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false
+                },
+                "total_budget": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "string",
+                      "pattern": "^-?\\d+\\.\\d{2}$"
+                    },
+                    "currency": {
+                      "enum": [
+                        "KRW",
+                        "JPY",
+                        "USD"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ],
+                  "additionalProperties": false
+                },
+                "allocations": {
+                  "type": "object",
+                  "properties": {
+                    "search": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "string",
+                          "pattern": "^-?\\d+\\.\\d{2}$"
+                        },
+                        "currency": {
+                          "enum": [
+                            "KRW",
+                            "JPY",
+                            "USD"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "social": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "string",
+                          "pattern": "^-?\\d+\\.\\d{2}$"
+                        },
+                        "currency": {
+                          "enum": [
+                            "KRW",
+                            "JPY",
+                            "USD"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "search",
+                    "social"
+                  ],
+                  "additionalProperties": false
+                },
+                "predicted_conversions": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "record_kind",
+                "model_ref",
+                "policy_ref",
+                "period",
+                "total_budget",
+                "allocations",
+                "predicted_conversions"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^D005-T[0-9]{2}-[0-9]{4}$"
+            },
+            "dataset_type": {
+              "enum": [
+                "T40"
+              ]
+            },
+            "country_code": {
+              "enum": [
+                "KR",
+                "JP",
+                "US",
+                "GLOBAL"
+              ]
+            },
+            "scenario_id": {
+              "enum": [
+                "D005-independent-sample"
+              ]
+            },
+            "scope_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "is_synthetic": {
+              "enum": [
+                true
+              ]
+            },
+            "value_origin": {
+              "enum": [
+                "simulation",
+                "annotation",
+                "derived",
+                "assumption",
+                "policy"
+              ]
+            },
+            "available_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reporting_timezone": {
+              "enum": [
+                "Asia/Seoul",
+                "Asia/Tokyo",
+                "America/New_York"
+              ]
+            },
+            "source_file": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parent_record_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "quality": {
+              "enum": [
+                "synthetic_sample"
+              ]
+            }
+          },
+          "required": [
+            "record_id",
+            "dataset_type",
+            "country_code",
+            "scenario_id",
+            "scope_id",
+            "is_synthetic",
+            "value_origin",
+            "available_at",
+            "reporting_timezone",
+            "source_file",
+            "parent_record_ids",
+            "quality"
+          ],
+          "additionalProperties": false
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "policy_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "proposed",
+                "approved"
+              ]
+            },
+            "budget": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "pattern": "^-?\\d+\\.\\d{2}$"
+                },
+                "currency": {
+                  "enum": [
+                    "KRW",
+                    "JPY",
+                    "USD"
+                  ]
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            "period": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "end": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "approval_role": {
+              "enum": [
+                "모의 업무 승인자"
+              ]
+            },
+            "kpi_definition_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "policy_id",
+            "status",
+            "budget",
+            "period",
+            "approval_role",
+            "kpi_definition_ref"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metadata",
+        "payload"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

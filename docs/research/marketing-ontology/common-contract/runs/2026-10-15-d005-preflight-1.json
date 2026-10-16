@@ -1,0 +1,36 @@
+{
+  "proposal": "D005-2.0.0",
+  "mode": "preflight",
+  "started_at": "2026-10-15T12:37:55.871Z",
+  "node": "v24.19.0",
+  "checks": [
+    {
+      "name": "schema_preflight",
+      "status": "pass",
+      "source_branches": 93,
+      "common_types": 31,
+      "metaschema": "pass",
+      "references": "resolved",
+      "coerceTypes": false,
+      "useDefaults": false,
+      "removeAdditional": false
+    },
+    {
+      "name": "preservation",
+      "status": "pass",
+      "original_source_files": 11,
+      "original_schema_and_tests": 2,
+      "git_head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+      "refs": "unchanged",
+      "index": "unchanged"
+    }
+  ],
+  "system_validation": "incomplete",
+  "HermiT": "not_run",
+  "OOPS": "not_run",
+  "full_52_assertions": "not_run",
+  "actual_external_source_fit": "not_run",
+  "status": "pass",
+  "finished_at": "2026-10-15T12:37:57.049Z",
+  "exit_code": 0
+}
