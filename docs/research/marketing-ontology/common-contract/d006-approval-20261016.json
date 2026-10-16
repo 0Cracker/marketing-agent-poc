@@ -1,0 +1,9 @@
+{
+  "scope_id": "D006-CQ-AB-1",
+  "scope_sha256": "7e3bd4c7ebaf45b8d7ba5642c3168bcbd7ec2fdd8f57bfa1b9374573f9e3e6cb",
+  "approved": true,
+  "source": "explicit_human_response",
+  "user_message": "데이터 승인 다 해줄개 써도 돼. 하던 일 계속 해",
+  "recorded_at": "2026-10-16T00:55:16.265262+00:00",
+  "boundary": "Approval of D006-CQ-A 3 rows/2 files/16 mutations and D006-CQ-B 53 rows/7 files/2 sellers/10 memory branches in the proposed plan; no Git mutation or external submission."
+}

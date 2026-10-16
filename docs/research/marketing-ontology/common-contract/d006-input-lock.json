@@ -1,0 +1,20 @@
+{
+  "scope_id": "D006-CQ-AB-1",
+  "generation_evidence": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-d006-cq-ab-1.json",
+  "generation_evidence_sha256": "57271c208cc27d5b54de0ffc652c934233e590c0820099662aba08063073afa6",
+  "files": {
+    "docs/research/marketing-ontology/batches/D006-CQ-A/manifest.json": "9bd28428c6c19915c94223871004f059304ca14d7ad2f96c7d506ff748b9cdab",
+    "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c",
+    "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/manifest.json": "aa8a5dea79094f7feed6597504c6476a785fb5491a711cad34380059ee76fd34",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08",
+    "docs/research/marketing-ontology/batches/D006-CQ-B/sellers.json": "dfaf02e642df66309823cb1f620e6e62a13ab444deae6d93a2c22dfb60021aff"
+  },
+  "reason": "All D006 sources/manifests/seller declarations match the first post-generation validation snapshot. No regeneration or source rewrite."
+}

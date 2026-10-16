@@ -1,0 +1,14 @@
+[
+  {
+    "seller_id": "D006B-S-A",
+    "country_code": "JP",
+    "is_synthetic": true,
+    "scope_id": "D006-CQ-B"
+  },
+  {
+    "seller_id": "D006B-S-B",
+    "country_code": "JP",
+    "is_synthetic": true,
+    "scope_id": "D006-CQ-B"
+  }
+]
