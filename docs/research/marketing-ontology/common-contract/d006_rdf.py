@@ -25,7 +25,7 @@ def leaves(value, path='$'):
         yield path, value
 
 
-def project(rows, refs, tools, validate=True):
+def project(rows, refs, tools, validate=True, *, include_graph=False):
     import sys
     sys.path.insert(0, str(tools))
     from rdflib import Graph, Literal, Namespace, RDF, XSD
@@ -79,7 +79,8 @@ def project(rows, refs, tools, validate=True):
             subject = iri('Subject', r['product_id'])
             scope = iri('MarketScope', r.get('scope_id', 'D003B-' + r['country_code']))
             interval = iri('TimeInterval', str(scope))
-            instant = iri('TimeInstant', r['written_at'])
+            # Equal offset timestamps may belong to distinct reporting calendars.
+            instant = iri('TimeInstant', r['written_at'] + '|' + r['reporting_timezone'])
             for node, cls in [(review,m.Review),(subject,m.Subject),(scope,m.MarketScope),(interval,m.TimeInterval),(instant,m.TimeInstant)]:
                 g.add((node, RDF.type, cls))
             for node in [review,scope]:
@@ -149,4 +150,6 @@ def project(rows, refs, tools, validate=True):
         if out!=rows[rid]:raise ValueError('all-field RDF readback mismatch: '+rid)
         readback[rid]=out
     graph_hash=hashlib.sha256('\n'.join(sorted(' '.join(t.n3() for t in triple) for triple in g)).encode()).hexdigest()
+    if include_graph:
+        return g
     return readback, {'conforms':True if validate else None,'records':len(readback),'triples':len(g),'sha256':graph_hash,'fields':sum(1 for _ in g.subjects(RDF.type,d.Field))}

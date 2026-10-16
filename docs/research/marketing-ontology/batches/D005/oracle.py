@@ -180,7 +180,7 @@ def independent_checks(rows, complete):
     return ledger, parents
 
 
-def rdf_check(common, raw, schemas, parents, source_text):
+def rdf_check(common, raw, schemas, parents, source_text, *, include_graph=False):
     from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, OWL, XSD
     from pyshacl import validate
     D=Namespace('urn:d005:');F=Namespace('urn:d005:field:');SH=Namespace('http://www.w3.org/ns/shacl#')
@@ -378,6 +378,8 @@ def rdf_check(common, raw, schemas, parents, source_text):
         if row['metadata']['dataset_type']=='T01':
             x=row['payload'];assert g.value(registry[('Variant',x['variant_id'])],M.variantOf)==registry[('Product',x['product_id'])]
             assert str(g.value(registry[('Product',x['product_id'])],M.name))==x['product_name']
+    if include_graph:
+        return g
     return {'status':'pass','triples':len(g),'rdf_sha256':digest,'records_read_back':len(common),'source_field_lineages':lineages,'typed_relations':relations,'declared_classes':len(set(ontology.subjects(RDF.type,OWL.Class))),'shacl':'pass','calculation_shacl':'pass','readback':'pass','base_model':'loaded_in_memory','shared_Product_Brand_Campaign_Review_IRIs':'D004_convention','candidate_identity_connections':0,'existing_reference_rows':36,'mapping_version':'D005-2.0.0-validation.1','calculation_results':calculation_results}
 
 

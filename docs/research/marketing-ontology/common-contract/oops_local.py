@@ -84,8 +84,19 @@ def scan(graph, tools, artifact_lock=None, review_record=None):
                   instance_records_read=0, integrity_checked_files=len(lock['files']))
     if review_record:
         review = json.loads(review_record.read_text(encoding='utf-8'))
-        if (review.get('approved') is not True or review.get('source') != 'explicit_human_response'
-                or not review.get('user_message') or review.get('source_commit') != COMMIT
+        if review.get('source') == 'delegated_ai_review':
+            authority_path = Path(review['authority_file'])
+            authority = json.loads(authority_path.read_text(encoding='utf-8'))
+            if (sha(authority_path) != review['authority_sha256'] or authority.get('source') != 'explicit_human_response'
+                    or not authority.get('approved') or not authority.get('user_message')
+                    or 'evidence_based_oops_review' not in authority.get('actions', []) or review.get('human_confirmed') is not False):
+                raise ValueError('OOPS delegated review authority missing')
+            shapes = Path(review['property_shapes'])
+            if sha(shapes) != review['property_shapes_sha256']:
+                raise ValueError('property-use constraints changed since review')
+        elif review.get('source') != 'explicit_human_response' or not review.get('user_message'):
+            raise ValueError('OOPS review authority missing')
+        if (review.get('approved') is not True or review.get('source_commit') != COMMIT
                 or review.get('ontology_sha256') != sha(HERE / 'ontology.ttl')):
             raise ValueError('OOPS review must explicitly identify the current model and scanner')
         entries = review.get('findings', [])
@@ -101,9 +112,22 @@ def scan(graph, tools, artifact_lock=None, review_record=None):
                 path = Path(check['report'])
                 if not path.is_file() or sha(path) != check['sha256'] or check.get('status') != 'pass':
                     raise ValueError('missing or changed alternative validation evidence')
+                proof = json.loads(path.read_text(encoding='utf-8'))
+                tests = {x['id']: x for x in proof.get('checks', [])}
+                test = tests.get(check.get('test_id'))
+                if (proof.get('status') != 'pass' or proof.get('ontology_sha256') != sha(HERE / 'ontology.ttl')
+                        or test is None or test.get('status') != 'pass' or test.get('code') != finding['code']
+                        or test.get('resource') not in finding['resources']):
+                    raise ValueError('alternative evidence does not test this model finding')
+                if any(not Path(p).is_file() or sha(Path(p)) != h for p, h in proof.get('input_sha256', {}).items()):
+                    raise ValueError('alternative evidence inputs changed')
             finding['review_state'] = 'accepted_non_application'
         result['status'] = 'pass'
         result['review_record_sha256'] = sha(review_record)
+        result['review_kind'] = review['source']
+        result['human_confirmed'] = review.get('human_confirmed', True)
+    result['raw_finding_count'] = len(result['findings'])
+    result['unresolved_finding_count'] = sum(f['review_state'] == 'pending' for f in result['findings'])
     return result
 
 
