@@ -26,7 +26,7 @@ const inputs=[schemaPath,fileURLToPath(import.meta.url),path.join(here,'d005-can
  path.join(here,'../data-proposal.md'),path.join(here,'meaning-decisions-20261016.json'),...sourcePaths,...parentPaths];
 inputs.push(path.join(here,'canonical-supplement.mjs'));
 inputs.push(path.join(here,'completion-review.mjs'));
-for(const name of ['build-canonical-completion.mjs','completion-definitions.json','completion_semantics.py','canonical_domain.py'])if(fs.existsSync(path.join(here,name)))inputs.push(path.join(here,name));
+for(const name of ['build-canonical-completion.mjs','completion-definitions.json','completion_semantics.py','canonical_domain.py','ontology.ttl','shapes.ttl','property-use-shapes.ttl'])if(fs.existsSync(path.join(here,name)))inputs.push(path.join(here,name));
 const hashes=Object.fromEntries(inputs.map(p=>[p,sha(p)]));
 const reviewPath=option('--field-review-record');
 let reviewRecord=null;
@@ -48,6 +48,7 @@ const decoded=originals.map(raw=>{assert.ok(sourceValid(raw),JSON.stringify(sour
 const products=read(parentPaths[0]),campaigns=read(parentPaths[1]),reviews=read(parentPaths[2]);
 const context={entityKinds:new Map(),reviews:new Map(reviews.map(r=>[r.record_id,r])),campaigns:new Map(),models:new Map(),
  productsByRecord:new Map(products.map(r=>[r.record_id,r])),profiles:new Map(originals.map(r=>[r.metadata.record_id,r.source_profile])),customers:new Map()};
+if(fs.existsSync(path.join(here,'completion-definitions.json')))context.definitionAvailableAt=JSON.parse(fs.readFileSync(path.join(here,'completion-definitions.json'))).created_at;
 const addKind=(id,kind)=>{if(!context.entityKinds.has(id))context.entityKinds.set(id,new Set());context.entityKinds.get(id).add(kind);};
 for(const p of products){addKind(p.product_id,'product');addKind(p.brand_id,'brand');}
 for(const r of decoded.filter(r=>r.metadata.dataset_type==='T01'))addKind(r.payload.variant_id,'variant');

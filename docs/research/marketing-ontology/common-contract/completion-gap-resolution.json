@@ -1,0 +1,1663 @@
+{
+  "status": "pass",
+  "gap_groups": 63,
+  "additional_validity_end_group": 1,
+  "assignments": 816,
+  "classifications": {
+    "derivation": 228,
+    "definition": 336,
+    "synthetic_assumption": 252
+  },
+  "groups": [
+    {
+      "type": "T04",
+      "field": "/cohort_id",
+      "record_ids": [
+        "D005-T04-0001",
+        "D005-T04-0002",
+        "D005-T04-0003",
+        "D005-T04-0004",
+        "D005-T04-0005",
+        "D005-T04-0006",
+        "D005-T04-0007",
+        "D005-T04-0008",
+        "D005-T04-0009",
+        "D005-T04-0010",
+        "D005-T04-0011",
+        "D005-T04-0012",
+        "D005-T04-0013",
+        "D005-T04-0014",
+        "D005-T04-0015",
+        "D005-T04-0016",
+        "D005-T04-0017",
+        "D005-T04-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "panel-subject-period"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T04",
+      "field": "/measures",
+      "record_ids": [
+        "D005-T04-0001",
+        "D005-T04-0002",
+        "D005-T04-0003",
+        "D005-T04-0004",
+        "D005-T04-0005",
+        "D005-T04-0006",
+        "D005-T04-0007",
+        "D005-T04-0008",
+        "D005-T04-0009",
+        "D005-T04-0010",
+        "D005-T04-0011",
+        "D005-T04-0012",
+        "D005-T04-0013",
+        "D005-T04-0014",
+        "D005-T04-0015",
+        "D005-T04-0016",
+        "D005-T04-0017",
+        "D005-T04-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "source-panel-count-and-rate"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T05",
+      "field": "/term_ref",
+      "record_ids": [
+        "D005-T05-0001",
+        "D005-T05-0002",
+        "D005-T05-0003",
+        "D005-T05-0004",
+        "D005-T05-0005",
+        "D005-T05-0006",
+        "D005-T05-0007",
+        "D005-T05-0008",
+        "D005-T05-0009",
+        "D005-T05-0010",
+        "D005-T05-0011",
+        "D005-T05-0012",
+        "D005-T05-0013",
+        "D005-T05-0014",
+        "D005-T05-0015",
+        "D005-T05-0016",
+        "D005-T05-0017",
+        "D005-T05-0018",
+        "D005-T05-0019",
+        "D005-T05-0020",
+        "D005-T05-0021",
+        "D005-T05-0022",
+        "D005-T05-0023",
+        "D005-T05-0024",
+        "D005-T05-0025",
+        "D005-T05-0026",
+        "D005-T05-0027",
+        "D005-T05-0028",
+        "D005-T05-0029",
+        "D005-T05-0030",
+        "D005-T05-0031",
+        "D005-T05-0032",
+        "D005-T05-0033",
+        "D005-T05-0034",
+        "D005-T05-0035",
+        "D005-T05-0036"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "UTF8-term-identity"
+      ],
+      "assignment_count": 36,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T05",
+      "field": "/term_kind",
+      "record_ids": [
+        "D005-T05-0001",
+        "D005-T05-0002",
+        "D005-T05-0003",
+        "D005-T05-0004",
+        "D005-T05-0005",
+        "D005-T05-0006",
+        "D005-T05-0007",
+        "D005-T05-0008",
+        "D005-T05-0009",
+        "D005-T05-0010",
+        "D005-T05-0011",
+        "D005-T05-0012",
+        "D005-T05-0013",
+        "D005-T05-0014",
+        "D005-T05-0015",
+        "D005-T05-0016",
+        "D005-T05-0017",
+        "D005-T05-0018",
+        "D005-T05-0019",
+        "D005-T05-0020",
+        "D005-T05-0021",
+        "D005-T05-0022",
+        "D005-T05-0023",
+        "D005-T05-0024",
+        "D005-T05-0025",
+        "D005-T05-0026",
+        "D005-T05-0027",
+        "D005-T05-0028",
+        "D005-T05-0029",
+        "D005-T05-0030",
+        "D005-T05-0031",
+        "D005-T05-0032",
+        "D005-T05-0033",
+        "D005-T05-0034",
+        "D005-T05-0035",
+        "D005-T05-0036"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "literal-search-term"
+      ],
+      "assignment_count": 36,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T05",
+      "field": "/index_definition",
+      "record_ids": [
+        "D005-T05-0001",
+        "D005-T05-0002",
+        "D005-T05-0003",
+        "D005-T05-0004",
+        "D005-T05-0005",
+        "D005-T05-0006",
+        "D005-T05-0007",
+        "D005-T05-0008",
+        "D005-T05-0009",
+        "D005-T05-0010",
+        "D005-T05-0011",
+        "D005-T05-0012",
+        "D005-T05-0013",
+        "D005-T05-0014",
+        "D005-T05-0015",
+        "D005-T05-0016",
+        "D005-T05-0017",
+        "D005-T05-0018",
+        "D005-T05-0019",
+        "D005-T05-0020",
+        "D005-T05-0021",
+        "D005-T05-0022",
+        "D005-T05-0023",
+        "D005-T05-0024",
+        "D005-T05-0025",
+        "D005-T05-0026",
+        "D005-T05-0027",
+        "D005-T05-0028",
+        "D005-T05-0029",
+        "D005-T05-0030",
+        "D005-T05-0031",
+        "D005-T05-0032",
+        "D005-T05-0033",
+        "D005-T05-0034",
+        "D005-T05-0035",
+        "D005-T05-0036"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "within-window-index"
+      ],
+      "assignment_count": 36,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T06",
+      "field": "/geo_target_ref",
+      "record_ids": [
+        "D005-T06-0001",
+        "D005-T06-0002",
+        "D005-T06-0003",
+        "D005-T06-0004",
+        "D005-T06-0005",
+        "D005-T06-0006",
+        "D005-T06-0007",
+        "D005-T06-0008",
+        "D005-T06-0009",
+        "D005-T06-0010",
+        "D005-T06-0011",
+        "D005-T06-0012",
+        "D005-T06-0013",
+        "D005-T06-0014",
+        "D005-T06-0015",
+        "D005-T06-0016",
+        "D005-T06-0017",
+        "D005-T06-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-country-target"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T06",
+      "field": "/network_scope",
+      "record_ids": [
+        "D005-T06-0001",
+        "D005-T06-0002",
+        "D005-T06-0003",
+        "D005-T06-0004",
+        "D005-T06-0005",
+        "D005-T06-0006",
+        "D005-T06-0007",
+        "D005-T06-0008",
+        "D005-T06-0009",
+        "D005-T06-0010",
+        "D005-T06-0011",
+        "D005-T06-0012",
+        "D005-T06-0013",
+        "D005-T06-0014",
+        "D005-T06-0015",
+        "D005-T06-0016",
+        "D005-T06-0017",
+        "D005-T06-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-search-network"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T07",
+      "field": "/search_type",
+      "record_ids": [
+        "D005-T07-0001",
+        "D005-T07-0002",
+        "D005-T07-0003",
+        "D005-T07-0004",
+        "D005-T07-0005",
+        "D005-T07-0006",
+        "D005-T07-0007",
+        "D005-T07-0008",
+        "D005-T07-0009",
+        "D005-T07-0010",
+        "D005-T07-0011",
+        "D005-T07-0012",
+        "D005-T07-0013",
+        "D005-T07-0014",
+        "D005-T07-0015",
+        "D005-T07-0016",
+        "D005-T07-0017",
+        "D005-T07-0018",
+        "D005-T07-0019",
+        "D005-T07-0020",
+        "D005-T07-0021",
+        "D005-T07-0022",
+        "D005-T07-0023",
+        "D005-T07-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-search-kind"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T07",
+      "field": "/aggregation_scope",
+      "record_ids": [
+        "D005-T07-0001",
+        "D005-T07-0002",
+        "D005-T07-0003",
+        "D005-T07-0004",
+        "D005-T07-0005",
+        "D005-T07-0006",
+        "D005-T07-0007",
+        "D005-T07-0008",
+        "D005-T07-0009",
+        "D005-T07-0010",
+        "D005-T07-0011",
+        "D005-T07-0012",
+        "D005-T07-0013",
+        "D005-T07-0014",
+        "D005-T07-0015",
+        "D005-T07-0016",
+        "D005-T07-0017",
+        "D005-T07-0018",
+        "D005-T07-0019",
+        "D005-T07-0020",
+        "D005-T07-0021",
+        "D005-T07-0022",
+        "D005-T07-0023",
+        "D005-T07-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "explicit-source-grain"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T10",
+      "field": "/served_regions",
+      "record_ids": [
+        "D005-T10-0001",
+        "D005-T10-0002",
+        "D005-T10-0003",
+        "D005-T10-0004",
+        "D005-T10-0005",
+        "D005-T10-0006",
+        "D005-T10-0007",
+        "D005-T10-0008",
+        "D005-T10-0009",
+        "D005-T10-0010",
+        "D005-T10-0011",
+        "D005-T10-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-served-region"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T10",
+      "field": "/coverage_text",
+      "record_ids": [
+        "D005-T10-0001",
+        "D005-T10-0002",
+        "D005-T10-0003",
+        "D005-T10-0004",
+        "D005-T10-0005",
+        "D005-T10-0006",
+        "D005-T10-0007",
+        "D005-T10-0008",
+        "D005-T10-0009",
+        "D005-T10-0010",
+        "D005-T10-0011",
+        "D005-T10-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "sample-coverage"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T11",
+      "field": "/title",
+      "record_ids": [
+        "D005-T11-0001",
+        "D005-T11-0002",
+        "D005-T11-0003",
+        "D005-T11-0004",
+        "D005-T11-0005",
+        "D005-T11-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "supplement-title-not-original"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T14",
+      "field": "/report_definition_ref",
+      "record_ids": [
+        "D005-T14-0001",
+        "D005-T14-0002",
+        "D005-T14-0003",
+        "D005-T14-0004",
+        "D005-T14-0005",
+        "D005-T14-0006",
+        "D005-T14-0007",
+        "D005-T14-0008",
+        "D005-T14-0009",
+        "D005-T14-0010",
+        "D005-T14-0011",
+        "D005-T14-0012",
+        "D005-T14-0013",
+        "D005-T14-0014",
+        "D005-T14-0015",
+        "D005-T14-0016",
+        "D005-T14-0017",
+        "D005-T14-0018",
+        "D005-T14-0019",
+        "D005-T14-0020",
+        "D005-T14-0021",
+        "D005-T14-0022",
+        "D005-T14-0023",
+        "D005-T14-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "parent-device-report"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T14",
+      "field": "/audience_basis",
+      "record_ids": [
+        "D005-T14-0001",
+        "D005-T14-0002",
+        "D005-T14-0003",
+        "D005-T14-0004",
+        "D005-T14-0005",
+        "D005-T14-0006",
+        "D005-T14-0007",
+        "D005-T14-0008",
+        "D005-T14-0009",
+        "D005-T14-0010",
+        "D005-T14-0011",
+        "D005-T14-0012",
+        "D005-T14-0013",
+        "D005-T14-0014",
+        "D005-T14-0015",
+        "D005-T14-0016",
+        "D005-T14-0017",
+        "D005-T14-0018",
+        "D005-T14-0019",
+        "D005-T14-0020",
+        "D005-T14-0021",
+        "D005-T14-0022",
+        "D005-T14-0023",
+        "D005-T14-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "synthetic-parent-aggregate-not-target-setting"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T15",
+      "field": "/report_surface",
+      "record_ids": [
+        "D005-T15-0001",
+        "D005-T15-0002",
+        "D005-T15-0003",
+        "D005-T15-0004",
+        "D005-T15-0005",
+        "D005-T15-0006",
+        "D005-T15-0007",
+        "D005-T15-0008",
+        "D005-T15-0009",
+        "D005-T15-0010",
+        "D005-T15-0011",
+        "D005-T15-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-auction-surface"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T15",
+      "field": "/threshold_status",
+      "record_ids": [
+        "D005-T15-0001",
+        "D005-T15-0002",
+        "D005-T15-0003",
+        "D005-T15-0004",
+        "D005-T15-0005",
+        "D005-T15-0006",
+        "D005-T15-0007",
+        "D005-T15-0008",
+        "D005-T15-0009",
+        "D005-T15-0010",
+        "D005-T15-0011",
+        "D005-T15-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "threshold-not-supplied-not-zero"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T16",
+      "field": "/valid_from",
+      "record_ids": [
+        "D005-T16-0001",
+        "D005-T16-0002",
+        "D005-T16-0003",
+        "D005-T16-0004",
+        "D005-T16-0005",
+        "D005-T16-0006",
+        "D005-T16-0007",
+        "D005-T16-0008",
+        "D005-T16-0009",
+        "D005-T16-0010",
+        "D005-T16-0011",
+        "D005-T16-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "local-midnight-validity"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T19",
+      "field": "/seller_ref",
+      "record_ids": [
+        "D005-T19-0001",
+        "D005-T19-0002",
+        "D005-T19-0003",
+        "D005-T19-0004",
+        "D005-T19-0005",
+        "D005-T19-0006",
+        "D005-T19-0007",
+        "D005-T19-0008",
+        "D005-T19-0009",
+        "D005-T19-0010",
+        "D005-T19-0011",
+        "D005-T19-0012",
+        "D005-T19-0013",
+        "D005-T19-0014",
+        "D005-T19-0015",
+        "D005-T19-0016",
+        "D005-T19-0017",
+        "D005-T19-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-country-seller"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T19",
+      "field": "/financial_status",
+      "record_ids": [
+        "D005-T19-0001",
+        "D005-T19-0002",
+        "D005-T19-0003",
+        "D005-T19-0004",
+        "D005-T19-0005",
+        "D005-T19-0006",
+        "D005-T19-0007",
+        "D005-T19-0008",
+        "D005-T19-0009",
+        "D005-T19-0010",
+        "D005-T19-0011",
+        "D005-T19-0012",
+        "D005-T19-0013",
+        "D005-T19-0014",
+        "D005-T19-0015",
+        "D005-T19-0016",
+        "D005-T19-0017",
+        "D005-T19-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "initially-paid-assumption-and-completed-refunds"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T23",
+      "field": "/retail_channel",
+      "record_ids": [
+        "D005-T23-0001",
+        "D005-T23-0002",
+        "D005-T23-0007",
+        "D005-T23-0008",
+        "D005-T23-0013",
+        "D005-T23-0014"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-retail-channel"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T23",
+      "field": "/distribution_measures",
+      "record_ids": [
+        "D005-T23-0001",
+        "D005-T23-0002",
+        "D005-T23-0007",
+        "D005-T23-0008",
+        "D005-T23-0013",
+        "D005-T23-0014"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "source-distribution-counts"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/extractor_version",
+      "record_ids": [
+        "D005-T25-0001",
+        "D005-T25-0003",
+        "D005-T25-0005",
+        "D005-T25-0007",
+        "D005-T25-0009",
+        "D005-T25-0011",
+        "D005-T25-0013",
+        "D005-T25-0015",
+        "D005-T25-0017",
+        "D005-T25-0019",
+        "D005-T25-0021",
+        "D005-T25-0023"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "existing-synthetic-generator-not-LLM-or-human"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/aspect_ref",
+      "record_ids": [
+        "D005-T25-0001",
+        "D005-T25-0002",
+        "D005-T25-0003",
+        "D005-T25-0004",
+        "D005-T25-0005",
+        "D005-T25-0006",
+        "D005-T25-0007",
+        "D005-T25-0008",
+        "D005-T25-0009",
+        "D005-T25-0010",
+        "D005-T25-0011",
+        "D005-T25-0012",
+        "D005-T25-0013",
+        "D005-T25-0014",
+        "D005-T25-0015",
+        "D005-T25-0016",
+        "D005-T25-0017",
+        "D005-T25-0018",
+        "D005-T25-0019",
+        "D005-T25-0020",
+        "D005-T25-0021",
+        "D005-T25-0022",
+        "D005-T25-0023",
+        "D005-T25-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "registered-original-aspect"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/definition_version",
+      "record_ids": [
+        "D005-T25-0001",
+        "D005-T25-0002",
+        "D005-T25-0003",
+        "D005-T25-0004",
+        "D005-T25-0005",
+        "D005-T25-0006",
+        "D005-T25-0007",
+        "D005-T25-0008",
+        "D005-T25-0009",
+        "D005-T25-0010",
+        "D005-T25-0011",
+        "D005-T25-0012",
+        "D005-T25-0013",
+        "D005-T25-0014",
+        "D005-T25-0015",
+        "D005-T25-0016",
+        "D005-T25-0017",
+        "D005-T25-0018",
+        "D005-T25-0019",
+        "D005-T25-0020",
+        "D005-T25-0021",
+        "D005-T25-0022",
+        "D005-T25-0023",
+        "D005-T25-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "new-classification-version-not-retroactive"
+      ],
+      "assignment_count": 24,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/period",
+      "record_ids": [
+        "D005-T25-0002",
+        "D005-T25-0004",
+        "D005-T25-0006",
+        "D005-T25-0008",
+        "D005-T25-0010",
+        "D005-T25-0012",
+        "D005-T25-0014",
+        "D005-T25-0016",
+        "D005-T25-0018",
+        "D005-T25-0020",
+        "D005-T25-0022",
+        "D005-T25-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "referenced-review-calendar-envelope"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/sentiment",
+      "record_ids": [
+        "D005-T25-0002",
+        "D005-T25-0004",
+        "D005-T25-0006",
+        "D005-T25-0008",
+        "D005-T25-0010",
+        "D005-T25-0012",
+        "D005-T25-0014",
+        "D005-T25-0016",
+        "D005-T25-0018",
+        "D005-T25-0020",
+        "D005-T25-0022",
+        "D005-T25-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "matching-source-annotation-only"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T25",
+      "field": "/assessment_status",
+      "record_ids": [
+        "D005-T25-0002",
+        "D005-T25-0004",
+        "D005-T25-0006",
+        "D005-T25-0008",
+        "D005-T25-0010",
+        "D005-T25-0012",
+        "D005-T25-0014",
+        "D005-T25-0016",
+        "D005-T25-0018",
+        "D005-T25-0020",
+        "D005-T25-0022",
+        "D005-T25-0024"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "provided-synthetic-annotation-not-human-reviewed"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T26",
+      "field": "/channel",
+      "record_ids": [
+        "D005-T26-0001",
+        "D005-T26-0002",
+        "D005-T26-0003",
+        "D005-T26-0004",
+        "D005-T26-0005",
+        "D005-T26-0006",
+        "D005-T26-0007",
+        "D005-T26-0008",
+        "D005-T26-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-support-channel"
+      ],
+      "assignment_count": 9,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T26",
+      "field": "/subject",
+      "record_ids": [
+        "D005-T26-0001",
+        "D005-T26-0002",
+        "D005-T26-0003",
+        "D005-T26-0004",
+        "D005-T26-0005",
+        "D005-T26-0006",
+        "D005-T26-0007",
+        "D005-T26-0008",
+        "D005-T26-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "existing-message-as-ticket-heading"
+      ],
+      "assignment_count": 9,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T26",
+      "field": "/status",
+      "record_ids": [
+        "D005-T26-0001",
+        "D005-T26-0002",
+        "D005-T26-0003",
+        "D005-T26-0004",
+        "D005-T26-0005",
+        "D005-T26-0006",
+        "D005-T26-0007",
+        "D005-T26-0008",
+        "D005-T26-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-open-not-link-status"
+      ],
+      "assignment_count": 9,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T27",
+      "field": "/platform",
+      "record_ids": [
+        "D005-T27-0001",
+        "D005-T27-0002",
+        "D005-T27-0003",
+        "D005-T27-0004",
+        "D005-T27-0005",
+        "D005-T27-0006",
+        "D005-T27-0007",
+        "D005-T27-0008",
+        "D005-T27-0009",
+        "D005-T27-0010",
+        "D005-T27-0011",
+        "D005-T27-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-video-platform"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T27",
+      "field": "/channel_ref",
+      "record_ids": [
+        "D005-T27-0001",
+        "D005-T27-0002",
+        "D005-T27-0003",
+        "D005-T27-0004",
+        "D005-T27-0005",
+        "D005-T27-0006",
+        "D005-T27-0007",
+        "D005-T27-0008",
+        "D005-T27-0009",
+        "D005-T27-0010",
+        "D005-T27-0011",
+        "D005-T27-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-country-channel"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T29",
+      "field": "/creator_ref",
+      "record_ids": [
+        "D005-T29-0001",
+        "D005-T29-0002",
+        "D005-T29-0003"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-country-creator"
+      ],
+      "assignment_count": 3,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T29",
+      "field": "/product_refs",
+      "record_ids": [
+        "D005-T29-0001",
+        "D005-T29-0002",
+        "D005-T29-0003"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-collaboration-products"
+      ],
+      "assignment_count": 3,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T29",
+      "field": "/planned_period",
+      "record_ids": [
+        "D005-T29-0001",
+        "D005-T29-0002",
+        "D005-T29-0003"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "linked-content-publication-envelope-not-original-contract"
+      ],
+      "assignment_count": 3,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T29",
+      "field": "/message_brief",
+      "record_ids": [
+        "D005-T29-0001",
+        "D005-T29-0002",
+        "D005-T29-0003"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-message-brief"
+      ],
+      "assignment_count": 3,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T30",
+      "field": "/period",
+      "record_ids": [
+        "D005-T30-0001",
+        "D005-T30-0002",
+        "D005-T30-0004",
+        "D005-T30-0005",
+        "D005-T30-0007",
+        "D005-T30-0008"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "approved-synthetic-cohort-window"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T30",
+      "field": "/deal_amount",
+      "record_ids": [
+        "D005-T30-0003",
+        "D005-T30-0006",
+        "D005-T30-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-B2B-amount-not-B2C"
+      ],
+      "assignment_count": 3,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T31",
+      "field": "/sent_at",
+      "record_ids": [
+        "D005-T31-0001",
+        "D005-T31-0002",
+        "D005-T31-0003",
+        "D005-T31-0004",
+        "D005-T31-0005",
+        "D005-T31-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-send-time"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T31",
+      "field": "/period",
+      "record_ids": [
+        "D005-T31-0001",
+        "D005-T31-0002",
+        "D005-T31-0003",
+        "D005-T31-0004",
+        "D005-T31-0005",
+        "D005-T31-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "corrected-observation-window-before-availability"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T31",
+      "field": "/unique_clickers",
+      "record_ids": [
+        "D005-T31-0001",
+        "D005-T31-0002",
+        "D005-T31-0003",
+        "D005-T31-0004",
+        "D005-T31-0005",
+        "D005-T31-0006"
+      ],
+      "prior_category": "needs_meaning",
+      "resolved_classification": "definition",
+      "rules": [
+        "distinct-recipients-within-send-synthetic-only"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T32",
+      "field": "/measure_definition",
+      "record_ids": [
+        "D005-T32-0001",
+        "D005-T32-0002",
+        "D005-T32-0003",
+        "D005-T32-0004",
+        "D005-T32-0005",
+        "D005-T32-0006",
+        "D005-T32-0007",
+        "D005-T32-0008",
+        "D005-T32-0009",
+        "D005-T32-0010",
+        "D005-T32-0011",
+        "D005-T32-0012",
+        "D005-T32-0013",
+        "D005-T32-0014",
+        "D005-T32-0015",
+        "D005-T32-0016",
+        "D005-T32-0017",
+        "D005-T32-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "source-question-response-definition"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T32",
+      "field": "/cohort_ref",
+      "record_ids": [
+        "D005-T32-0001",
+        "D005-T32-0002",
+        "D005-T32-0003",
+        "D005-T32-0004",
+        "D005-T32-0005",
+        "D005-T32-0006",
+        "D005-T32-0007",
+        "D005-T32-0008",
+        "D005-T32-0009",
+        "D005-T32-0010",
+        "D005-T32-0011",
+        "D005-T32-0012",
+        "D005-T32-0013",
+        "D005-T32-0014",
+        "D005-T32-0015",
+        "D005-T32-0016",
+        "D005-T32-0017",
+        "D005-T32-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "study-subject-period"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T32",
+      "field": "/measures",
+      "record_ids": [
+        "D005-T32-0001",
+        "D005-T32-0002",
+        "D005-T32-0003",
+        "D005-T32-0004",
+        "D005-T32-0005",
+        "D005-T32-0006",
+        "D005-T32-0007",
+        "D005-T32-0008",
+        "D005-T32-0009",
+        "D005-T32-0010",
+        "D005-T32-0011",
+        "D005-T32-0012",
+        "D005-T32-0013",
+        "D005-T32-0014",
+        "D005-T32-0015",
+        "D005-T32-0016",
+        "D005-T32-0017",
+        "D005-T32-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "survey-count-and-denominator"
+      ],
+      "assignment_count": 18,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T33",
+      "field": "/item_code",
+      "record_ids": [
+        "D005-T33-0001",
+        "D005-T33-0002",
+        "D005-T33-0003",
+        "D005-T33-0004",
+        "D005-T33-0005",
+        "D005-T33-0006",
+        "D005-T33-0007",
+        "D005-T33-0008",
+        "D005-T33-0009",
+        "D005-T33-0010",
+        "D005-T33-0011",
+        "D005-T33-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "synthetic-statistical-series"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T33",
+      "field": "/definition",
+      "record_ids": [
+        "D005-T33-0001",
+        "D005-T33-0002",
+        "D005-T33-0003",
+        "D005-T33-0004",
+        "D005-T33-0005",
+        "D005-T33-0006",
+        "D005-T33-0007",
+        "D005-T33-0008",
+        "D005-T33-0009",
+        "D005-T33-0010",
+        "D005-T33-0011",
+        "D005-T33-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "synthetic-index-definition"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T33",
+      "field": "/seasonal_adjustment",
+      "record_ids": [
+        "D005-T33-0001",
+        "D005-T33-0002",
+        "D005-T33-0003",
+        "D005-T33-0004",
+        "D005-T33-0005",
+        "D005-T33-0006",
+        "D005-T33-0007",
+        "D005-T33-0008",
+        "D005-T33-0009",
+        "D005-T33-0010",
+        "D005-T33-0011",
+        "D005-T33-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "no-seasonal-adjustment-in-source"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T34",
+      "field": "/measures",
+      "record_ids": [
+        "D005-T34-0001",
+        "D005-T34-0002",
+        "D005-T34-0003",
+        "D005-T34-0004",
+        "D005-T34-0007",
+        "D005-T34-0008",
+        "D005-T34-0009",
+        "D005-T34-0010",
+        "D005-T34-0013",
+        "D005-T34-0014",
+        "D005-T34-0015",
+        "D005-T34-0016"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "source-weather-units"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T34",
+      "field": "/calendar_kind",
+      "record_ids": [
+        "D005-T34-0005",
+        "D005-T34-0006",
+        "D005-T34-0011",
+        "D005-T34-0012",
+        "D005-T34-0017",
+        "D005-T34-0018"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "operational-schedule-not-public-holiday"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T37",
+      "field": "/measures/0/definition_version",
+      "record_ids": [
+        "D005-T37-0001",
+        "D005-T37-0002",
+        "D005-T37-0004",
+        "D005-T37-0005",
+        "D005-T37-0007",
+        "D005-T37-0008"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "LCP-p75-ms-28-day-definition"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T38",
+      "field": "/hypothesis_text",
+      "record_ids": [
+        "D005-T38-0001",
+        "D005-T38-0002",
+        "D005-T38-0003",
+        "D005-T38-0004",
+        "D005-T38-0005",
+        "D005-T38-0006",
+        "D005-T38-0007",
+        "D005-T38-0008",
+        "D005-T38-0009",
+        "D005-T38-0010",
+        "D005-T38-0011",
+        "D005-T38-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "testable-hypothesis-not-observed-result"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T38",
+      "field": "/assignment_method",
+      "record_ids": [
+        "D005-T38-0001",
+        "D005-T38-0002",
+        "D005-T38-0003",
+        "D005-T38-0004",
+        "D005-T38-0005",
+        "D005-T38-0006",
+        "D005-T38-0007",
+        "D005-T38-0008",
+        "D005-T38-0009",
+        "D005-T38-0010",
+        "D005-T38-0011",
+        "D005-T38-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-experiment-assignment"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T38",
+      "field": "/assignment_unit",
+      "record_ids": [
+        "D005-T38-0001",
+        "D005-T38-0002",
+        "D005-T38-0003",
+        "D005-T38-0004",
+        "D005-T38-0005",
+        "D005-T38-0006",
+        "D005-T38-0007",
+        "D005-T38-0008",
+        "D005-T38-0009",
+        "D005-T38-0010",
+        "D005-T38-0011",
+        "D005-T38-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-assignment-unit"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T38",
+      "field": "/treatment_description",
+      "record_ids": [
+        "D005-T38-0001",
+        "D005-T38-0002",
+        "D005-T38-0003",
+        "D005-T38-0004",
+        "D005-T38-0005",
+        "D005-T38-0006",
+        "D005-T38-0007",
+        "D005-T38-0008",
+        "D005-T38-0009",
+        "D005-T38-0010",
+        "D005-T38-0011",
+        "D005-T38-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-treatment"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T38",
+      "field": "/status",
+      "record_ids": [
+        "D005-T38-0001",
+        "D005-T38-0002",
+        "D005-T38-0003",
+        "D005-T38-0004",
+        "D005-T38-0005",
+        "D005-T38-0006",
+        "D005-T38-0007",
+        "D005-T38-0008",
+        "D005-T38-0009",
+        "D005-T38-0010",
+        "D005-T38-0011",
+        "D005-T38-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "period-ended-before-availability"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T39",
+      "field": "/model_version",
+      "record_ids": [
+        "D005-T39-0001",
+        "D005-T39-0002",
+        "D005-T39-0003",
+        "D005-T39-0004",
+        "D005-T39-0005",
+        "D005-T39-0006",
+        "D005-T39-0007",
+        "D005-T39-0008",
+        "D005-T39-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "new-model-definition-version"
+      ],
+      "assignment_count": 9,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T39",
+      "field": "/objective",
+      "record_ids": [
+        "D005-T39-0001",
+        "D005-T39-0002",
+        "D005-T39-0003",
+        "D005-T39-0004",
+        "D005-T39-0005",
+        "D005-T39-0006",
+        "D005-T39-0007",
+        "D005-T39-0008",
+        "D005-T39-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "synthetic-model-objective"
+      ],
+      "assignment_count": 9,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T39",
+      "field": "/expected_measures",
+      "record_ids": [
+        "D005-T39-0002",
+        "D005-T39-0003",
+        "D005-T39-0005",
+        "D005-T39-0006",
+        "D005-T39-0008",
+        "D005-T39-0009"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "derivation",
+      "rules": [
+        "existing-prediction-not-outcome"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T40",
+      "field": "/version",
+      "record_ids": [
+        "D005-T40-0001",
+        "D005-T40-0002",
+        "D005-T40-0003",
+        "D005-T40-0004",
+        "D005-T40-0005",
+        "D005-T40-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "synthetic-policy-version"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T40",
+      "field": "/objective",
+      "record_ids": [
+        "D005-T40-0001",
+        "D005-T40-0002",
+        "D005-T40-0003",
+        "D005-T40-0004",
+        "D005-T40-0005",
+        "D005-T40-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-policy-objective"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T40",
+      "field": "/product_refs",
+      "record_ids": [
+        "D005-T40-0001",
+        "D005-T40-0002",
+        "D005-T40-0003",
+        "D005-T40-0004",
+        "D005-T40-0005",
+        "D005-T40-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "synthetic_assumption",
+      "rules": [
+        "synthetic-policy-product"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T40",
+      "field": "/allowed_channels",
+      "record_ids": [
+        "D005-T40-0001",
+        "D005-T40-0002",
+        "D005-T40-0003",
+        "D005-T40-0004",
+        "D005-T40-0005",
+        "D005-T40-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "declared-synthetic-model-channels"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T40",
+      "field": "/change_constraints",
+      "record_ids": [
+        "D005-T40-0001",
+        "D005-T40-0002",
+        "D005-T40-0003",
+        "D005-T40-0004",
+        "D005-T40-0005",
+        "D005-T40-0006"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "explicit-mock-policy-constraints"
+      ],
+      "assignment_count": 6,
+      "status": "implemented_and_independently_checked"
+    },
+    {
+      "type": "T16",
+      "field": "/valid_to_exclusive",
+      "record_ids": [
+        "D005-T16-0001",
+        "D005-T16-0002",
+        "D005-T16-0003",
+        "D005-T16-0004",
+        "D005-T16-0005",
+        "D005-T16-0006",
+        "D005-T16-0007",
+        "D005-T16-0008",
+        "D005-T16-0009",
+        "D005-T16-0010",
+        "D005-T16-0011",
+        "D005-T16-0012"
+      ],
+      "prior_category": "needs_data",
+      "resolved_classification": "definition",
+      "rules": [
+        "local-midnight-validity"
+      ],
+      "assignment_count": 12,
+      "status": "implemented_and_independently_checked"
+    }
+  ],
+  "source_schema_preexisted_D005": true,
+  "new_source_records": 0
+}

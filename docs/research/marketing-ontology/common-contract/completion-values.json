@@ -37,8 +37,8 @@
     "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
     "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
     "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
-    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\build-canonical-completion.mjs": "2ea5f2cf041b2f08e83b0894ab5298dd100e71c26ec5a42889d8e318b9fff435",
-    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-definitions.json": "4e27a6a0bfe70f420c31d81032006881159f025255b7a898e9d1c24713ca44ad"
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\build-canonical-completion.mjs": "c4fbdadd1d4a221f7b5059f5a6db342fb14a6dd1b5b53399d5fcbc94e7aa03c7",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-definitions.json": "d5e721e25c10687910cfd65ead10a6233393959fd8ff0cc39510ca49f98de95e"
   },
   "classification_counts": {
     "derivation": 228,
@@ -52,14 +52,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.2,
             "unit": "ratio",
             "availability": "available",
@@ -80,7 +80,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -96,7 +96,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -109,14 +109,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 21,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.21,
             "unit": "ratio",
             "availability": "available",
@@ -137,7 +137,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -153,7 +153,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -166,14 +166,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 25,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.25,
             "unit": "ratio",
             "availability": "available",
@@ -194,7 +194,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -210,7 +210,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -223,14 +223,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 26,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.26,
             "unit": "ratio",
             "availability": "available",
@@ -251,7 +251,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -267,7 +267,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -280,14 +280,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 30,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.3,
             "unit": "ratio",
             "availability": "available",
@@ -308,7 +308,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -324,7 +324,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -337,14 +337,14 @@
         "/cohort_id": "panel/D005-KR-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 31,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.31,
             "unit": "ratio",
             "availability": "available",
@@ -365,7 +365,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -381,7 +381,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -394,14 +394,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 22,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.22,
             "unit": "ratio",
             "availability": "available",
@@ -422,7 +422,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -438,7 +438,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -451,14 +451,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 23,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.23,
             "unit": "ratio",
             "availability": "available",
@@ -479,7 +479,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -495,7 +495,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -508,14 +508,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 27,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.27,
             "unit": "ratio",
             "availability": "available",
@@ -536,7 +536,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -552,7 +552,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -565,14 +565,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 28,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.28,
             "unit": "ratio",
             "availability": "available",
@@ -593,7 +593,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -609,7 +609,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -622,14 +622,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 32,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.32,
             "unit": "ratio",
             "availability": "available",
@@ -650,7 +650,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -666,7 +666,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -679,14 +679,14 @@
         "/cohort_id": "panel/D005-JP-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 33,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.33,
             "unit": "ratio",
             "availability": "available",
@@ -707,7 +707,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -723,7 +723,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -736,14 +736,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 24,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.24,
             "unit": "ratio",
             "availability": "available",
@@ -764,7 +764,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -780,7 +780,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -793,14 +793,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 25,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.25,
             "unit": "ratio",
             "availability": "available",
@@ -821,7 +821,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -837,7 +837,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -850,14 +850,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 29,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.29,
             "unit": "ratio",
             "availability": "available",
@@ -878,7 +878,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -894,7 +894,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -907,14 +907,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 30,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.3,
             "unit": "ratio",
             "availability": "available",
@@ -935,7 +935,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -951,7 +951,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -964,14 +964,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 34,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.34,
             "unit": "ratio",
             "availability": "available",
@@ -992,7 +992,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1008,7 +1008,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2025-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2025-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1021,14 +1021,14 @@
         "/cohort_id": "panel/D005-US-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T04.positive_responses",
             "value": 35,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T04.positive_rate",
             "value": 0.35,
             "unit": "ratio",
             "availability": "available",
@@ -1049,7 +1049,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1065,7 +1065,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-10-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-10-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1090,7 +1090,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1147,7 +1147,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1204,7 +1204,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1261,7 +1261,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1318,7 +1318,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1375,7 +1375,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1432,7 +1432,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1489,7 +1489,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1546,7 +1546,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1603,7 +1603,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1660,7 +1660,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1717,7 +1717,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1774,7 +1774,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1831,7 +1831,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1888,7 +1888,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -1945,7 +1945,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2002,7 +2002,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2059,7 +2059,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2116,7 +2116,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2173,7 +2173,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2230,7 +2230,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2287,7 +2287,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2344,7 +2344,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2401,7 +2401,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2458,7 +2458,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2515,7 +2515,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2572,7 +2572,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2629,7 +2629,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2686,7 +2686,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2743,7 +2743,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2800,7 +2800,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-14T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-14T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2857,7 +2857,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-21T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-21T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2914,7 +2914,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-07-28T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-07-28T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -2971,7 +2971,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3028,7 +3028,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3085,7 +3085,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-25T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-25T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3862,7 +3862,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3905,7 +3905,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3948,7 +3948,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -3991,7 +3991,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4034,7 +4034,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4077,7 +4077,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4120,7 +4120,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4163,7 +4163,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4206,7 +4206,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4249,7 +4249,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4292,7 +4292,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4335,7 +4335,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4378,7 +4378,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4421,7 +4421,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4464,7 +4464,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4507,7 +4507,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4550,7 +4550,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4593,7 +4593,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4636,7 +4636,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4679,7 +4679,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4722,7 +4722,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4765,7 +4765,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4808,7 +4808,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -4851,7 +4851,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5519,7 +5519,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5560,7 +5560,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5601,7 +5601,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5642,7 +5642,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5683,7 +5683,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5724,7 +5724,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5765,7 +5765,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5806,7 +5806,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5847,7 +5847,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5888,7 +5888,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5929,7 +5929,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -5970,7 +5970,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6011,7 +6011,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6052,7 +6052,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6093,7 +6093,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6134,7 +6134,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6175,7 +6175,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6216,7 +6216,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6257,7 +6257,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6298,7 +6298,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6339,7 +6339,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6380,7 +6380,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6421,7 +6421,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -6462,7 +6462,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-05T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-05T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8218,14 +8218,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 40,
             "unit": "count",
             "availability": "available",
@@ -8260,7 +8260,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8273,14 +8273,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 30,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 60,
             "unit": "count",
             "availability": "available",
@@ -8315,7 +8315,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8328,14 +8328,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 40,
             "unit": "count",
             "availability": "available",
@@ -8370,7 +8370,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8383,14 +8383,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 30,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 60,
             "unit": "count",
             "availability": "available",
@@ -8425,7 +8425,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8438,14 +8438,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 40,
             "unit": "count",
             "availability": "available",
@@ -8480,7 +8480,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8493,14 +8493,14 @@
         "/retail_channel": "synthetic_retail_sample",
         "/distribution_measures": [
           {
-            "metric_id": "stockists",
+            "metric_id": "T23.stockists",
             "value": 30,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "target_stockists",
+            "metric_id": "T23.target_stockists",
             "value": 60,
             "unit": "count",
             "availability": "available",
@@ -8535,7 +8535,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-02T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-02T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8655,7 +8655,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8670,7 +8670,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8805,7 +8805,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8820,7 +8820,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8955,7 +8955,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -8970,7 +8970,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9105,7 +9105,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9120,7 +9120,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9255,7 +9255,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9270,7 +9270,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9405,7 +9405,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9420,7 +9420,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9555,7 +9555,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9570,7 +9570,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9705,7 +9705,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9720,7 +9720,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9855,7 +9855,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -9870,7 +9870,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10005,7 +10005,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10020,7 +10020,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10155,7 +10155,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10170,7 +10170,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10305,7 +10305,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10320,7 +10320,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-13T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-13T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10375,7 +10375,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10430,7 +10430,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10485,7 +10485,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10540,7 +10540,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10595,7 +10595,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10650,7 +10650,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T04:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T04:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10705,7 +10705,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10760,7 +10760,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -10815,7 +10815,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-10T17:00:00.000Z",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-10T17:00:00.000Z",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -11363,7 +11363,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-03T13:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-03T13:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -11443,7 +11443,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-03T13:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-03T13:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -11523,7 +11523,7 @@
           "datatype": "#/$defs/Period",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-03T13:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-03T13:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12179,21 +12179,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.4,
             "unit": "ratio",
             "availability": "available",
@@ -12230,7 +12230,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12246,7 +12246,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12260,21 +12260,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 25,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.5,
             "unit": "ratio",
             "availability": "available",
@@ -12311,7 +12311,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12327,7 +12327,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12341,21 +12341,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 21,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.42,
             "unit": "ratio",
             "availability": "available",
@@ -12392,7 +12392,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12408,7 +12408,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12422,21 +12422,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 26,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.52,
             "unit": "ratio",
             "availability": "available",
@@ -12473,7 +12473,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12489,7 +12489,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12503,21 +12503,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 22,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.44,
             "unit": "ratio",
             "availability": "available",
@@ -12554,7 +12554,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12570,7 +12570,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12584,21 +12584,21 @@
         "/cohort_ref": "survey/D005-KR-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 27,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.54,
             "unit": "ratio",
             "availability": "available",
@@ -12635,7 +12635,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12651,7 +12651,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12665,21 +12665,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.4,
             "unit": "ratio",
             "availability": "available",
@@ -12716,7 +12716,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12732,7 +12732,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12746,21 +12746,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 25,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.5,
             "unit": "ratio",
             "availability": "available",
@@ -12797,7 +12797,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12813,7 +12813,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12827,21 +12827,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 21,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.42,
             "unit": "ratio",
             "availability": "available",
@@ -12878,7 +12878,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12894,7 +12894,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12908,21 +12908,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 26,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.52,
             "unit": "ratio",
             "availability": "available",
@@ -12959,7 +12959,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12975,7 +12975,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -12989,21 +12989,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 22,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.44,
             "unit": "ratio",
             "availability": "available",
@@ -13040,7 +13040,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13056,7 +13056,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13070,21 +13070,21 @@
         "/cohort_ref": "survey/D005-JP-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 27,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.54,
             "unit": "ratio",
             "availability": "available",
@@ -13121,7 +13121,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13137,7 +13137,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13151,21 +13151,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 20,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.4,
             "unit": "ratio",
             "availability": "available",
@@ -13202,7 +13202,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13218,7 +13218,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13232,21 +13232,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 25,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.5,
             "unit": "ratio",
             "availability": "available",
@@ -13283,7 +13283,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13299,7 +13299,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13313,21 +13313,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 21,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.42,
             "unit": "ratio",
             "availability": "available",
@@ -13364,7 +13364,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13380,7 +13380,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13394,21 +13394,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 26,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.52,
             "unit": "ratio",
             "availability": "available",
@@ -13445,7 +13445,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13461,7 +13461,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13475,21 +13475,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 22,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.44,
             "unit": "ratio",
             "availability": "available",
@@ -13526,7 +13526,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13542,7 +13542,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-09T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-09T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13556,21 +13556,21 @@
         "/cohort_ref": "survey/D005-US-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
         "/measures": [
           {
-            "metric_id": "positive_responses",
+            "metric_id": "T32.positive_responses",
             "value": 27,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "sample_size",
+            "metric_id": "T32.sample_size",
             "value": 50,
             "unit": "count",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "positive_rate",
+            "metric_id": "T32.positive_rate",
             "value": 0.54,
             "unit": "ratio",
             "availability": "available",
@@ -13607,7 +13607,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -13623,7 +13623,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-23T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-23T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14307,14 +14307,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 25,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 0,
             "unit": "mm",
             "availability": "available",
@@ -14334,7 +14334,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14346,14 +14346,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 26,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 1,
             "unit": "mm",
             "availability": "available",
@@ -14373,7 +14373,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14385,14 +14385,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 27,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 2,
             "unit": "mm",
             "availability": "available",
@@ -14412,7 +14412,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14424,14 +14424,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 28,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 3,
             "unit": "mm",
             "availability": "available",
@@ -14451,7 +14451,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14511,14 +14511,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 26,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 0,
             "unit": "mm",
             "availability": "available",
@@ -14538,7 +14538,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14550,14 +14550,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 27,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 1,
             "unit": "mm",
             "availability": "available",
@@ -14577,7 +14577,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14589,14 +14589,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 28,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 2,
             "unit": "mm",
             "availability": "available",
@@ -14616,7 +14616,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14628,14 +14628,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 29,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 3,
             "unit": "mm",
             "availability": "available",
@@ -14655,7 +14655,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14715,14 +14715,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 27,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 0,
             "unit": "mm",
             "availability": "available",
@@ -14742,7 +14742,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-05T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-05T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14754,14 +14754,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 28,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 1,
             "unit": "mm",
             "availability": "available",
@@ -14781,7 +14781,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-06T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-06T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14793,14 +14793,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 29,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 2,
             "unit": "mm",
             "availability": "available",
@@ -14820,7 +14820,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-07T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-07T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -14832,14 +14832,14 @@
       "fields": {
         "/measures": [
           {
-            "metric_id": "temperature",
+            "metric_id": "T34.temperature",
             "value": 30,
             "unit": "℃",
             "availability": "available",
             "definition_version": "CANONICAL-SYNTHETIC-1"
           },
           {
-            "metric_id": "precipitation",
+            "metric_id": "T34.precipitation",
             "value": 3,
             "unit": "mm",
             "availability": "available",
@@ -14859,7 +14859,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-08T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-08T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15133,7 +15133,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15221,7 +15221,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15309,7 +15309,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15397,7 +15397,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15485,7 +15485,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15573,7 +15573,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15661,7 +15661,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15749,7 +15749,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15837,7 +15837,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -15925,7 +15925,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-11T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-11T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16013,7 +16013,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16101,7 +16101,7 @@
           "datatype": "string",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-08-18T12:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-08-18T12:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16156,7 +16156,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 8,
             "unit": "count",
             "availability": "available",
@@ -16207,7 +16207,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16221,7 +16221,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 7,
             "unit": "count",
             "availability": "available",
@@ -16272,7 +16272,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16327,7 +16327,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 8,
             "unit": "count",
             "availability": "available",
@@ -16378,7 +16378,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16392,7 +16392,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 7,
             "unit": "count",
             "availability": "available",
@@ -16443,7 +16443,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00+09:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00+09:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16498,7 +16498,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 8,
             "unit": "count",
             "availability": "available",
@@ -16549,7 +16549,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false
@@ -16563,7 +16563,7 @@
         "/objective": "maximize_synthetic_conversions",
         "/expected_measures": [
           {
-            "metric_id": "predicted_conversions",
+            "metric_id": "T39.predicted_conversions",
             "value": 7,
             "unit": "count",
             "availability": "available",
@@ -16614,7 +16614,7 @@
           "datatype": "array",
           "null_policy": "preserve null; never replace missing with zero",
           "reference_policy": "registered or existing source identity",
-          "available_at": "2026-09-10T01:00:00-04:00",
+          "available_at": "2026-10-16T13:58:04.510Z",
           "original_available_at": "2026-09-10T01:00:00-04:00",
           "rule_version": "CANONICAL-SYNTHETIC-1",
           "human_confirmed": false

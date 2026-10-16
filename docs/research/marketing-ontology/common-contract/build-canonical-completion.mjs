@@ -25,7 +25,7 @@ const allowed=new Map();
 for(const g of [...targets.gap_groups,...targets.additional_assignments])for(const id of g.record_ids){if(!allowed.has(id))allowed.set(id,new Set());allowed.get(id).add(g.field);}
 const createdAt=new Date().toISOString(),records=[],definitions=new Map(),counts={};
 const register=(id,kind,definition)=>{if(!definitions.has(id))definitions.set(id,{id,kind,definition,version,is_synthetic:true});return id;};
-const metric=(id,value,unit)=>({metric_id:register(id,'MetricDefinition',`${id}; ${unit}; source value preserved, no population extrapolation`),value,unit,availability:'available',definition_version:version});
+const metric=(id,value,unit)=>({metric_id:register(id,'MetricDefinition',`${id}; ${unit}; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator`),value,unit,availability:'available',definition_version:version});
 const dayAfter=d=>new Date(Date.parse(d+'T00:00:00Z')+86400000).toISOString().slice(0,10);
 const period=(start,end,zone)=>({start,end_exclusive:end,timezone:zone,grain:'custom'});
 const composite=(...values)=>values.map(v=>encodeURIComponent(typeof v==='string'?v:JSON.stringify(v))).join('/');
@@ -51,7 +51,7 @@ for(const row of rows){
   const def=schema.$defs[t].properties[pointer.split('/')[1]];
   field_metadata[pointer]={classification,rule,sources,definition:def.description,datatype:def.type||def.$ref||'conditional',
    null_policy:'preserve null; never replace missing with zero',reference_policy:'registered or existing source identity',
-   available_at:classification==='mapping'||classification==='derivation'?m.available_at:createdAt,
+   available_at:createdAt,
    original_available_at:m.available_at,rule_version:version,human_confirmed:false};
   counts[classification]=(counts[classification]||0)+1;
  };
@@ -60,7 +60,7 @@ for(const row of rows){
  const assume=(n,v,r,s)=>put(n,v,'synthetic_assumption',r,s);
  if(t==='T04'){
   derive('cohort_id',register('panel/'+composite(p.panel_id,p.subject_ref,p.period),'Cohort','Panel, subject and period identify this sample only'),'panel-subject-period',['payload.panel_id','payload.subject_ref','payload.period']);
-  derive('measures',[metric('positive_responses',p.positive_responses,'count'),metric('positive_rate',p.positive_rate,'ratio')],'source-panel-count-and-rate',['payload.positive_responses','payload.positive_rate']);
+  derive('measures',[metric('T04.positive_responses',p.positive_responses,'count'),metric('T04.positive_rate',p.positive_rate,'ratio')],'source-panel-count-and-rate',['payload.positive_responses','payload.positive_rate']);
  }
  if(t==='T05'){
   derive('term_ref',register('term/'+crypto.createHash('sha256').update(p.term).digest('hex'),'SearchTerm',p.term),'UTF8-term-identity',['payload.term']);
@@ -80,7 +80,7 @@ for(const row of rows){
   const refunds=rows.filter(r=>r.metadata.dataset_type==='T20'&&r.payload.order_ref===p.order_id&&r.payload.status==='completed'&&Date.parse(r.payload.processed_at)<=Date.parse(p.status_available_at)).reduce((s,r)=>s+toMinor(r.payload.refund_amount),0n);
   assert.ok(refunds<=gross);assume('financial_status',refunds===0n?'paid':refunds===gross?'refunded':'partially_refunded','initially-paid-assumption-and-completed-refunds',['payload.order_id','payload.status_available_at','T19.line_gross_total','T20.completed.refund_amount']);
  }
- if(t==='T23'){assume('retail_channel','synthetic_retail_sample','synthetic-retail-channel',['delegation']);derive('distribution_measures',[metric('stockists',p.stockists,'count'),metric('target_stockists',p.target_stockists,'count')],'source-distribution-counts',['payload.stockists','payload.target_stockists']);}
+ if(t==='T23'){assume('retail_channel','synthetic_retail_sample','synthetic-retail-channel',['delegation']);derive('distribution_measures',[metric('T23.stockists',p.stockists,'count'),metric('T23.target_stockists',p.target_stockists,'count')],'source-distribution-counts',['payload.stockists','payload.target_stockists']);}
  if(t==='T25'){
   define('aspect_ref',register('aspect/'+encodeURIComponent(p.aspect),'Aspect',p.aspect),'registered-original-aspect',['payload.aspect']);define('definition_version',version,'new-classification-version-not-retroactive',['payload.aspect','delegation']);
   if(p.record_kind==='annotation')define('extractor_version','D005-generator/'+sha(path.join(here,'../batches/D005/generate.mjs')),'existing-synthetic-generator-not-LLM-or-human',['D005/generate.mjs']);
@@ -111,22 +111,23 @@ for(const row of rows){
  if(t==='T32'){
   define('measure_definition',p.question_text+' / '+p.response_scale.join('·')+'; 표본 긍정 응답 비율','source-question-response-definition',['payload.question_text','payload.response_scale']);
   derive('cohort_ref',register('survey/'+composite(p.study_id,p.subject_ref,p.period),'Cohort','Convenience survey sample'),'study-subject-period',['payload.study_id','payload.subject_ref','payload.period']);
-  assert.ok(p.sample_size>0);derive('measures',[metric('positive_responses',p.positive_responses,'count'),metric('sample_size',p.sample_size,'count'),metric('positive_rate',p.positive_responses/p.sample_size,'ratio')],'survey-count-and-denominator',['payload.positive_responses','payload.sample_size']);
+  assert.ok(p.sample_size>0);derive('measures',[metric('T32.positive_responses',p.positive_responses,'count'),metric('T32.sample_size',p.sample_size,'count'),metric('T32.positive_rate',p.positive_responses/p.sample_size,'ratio')],'survey-count-and-denominator',['payload.positive_responses','payload.sample_size']);
  }
  if(t==='T33'){define('item_code','synthetic_index','synthetic-statistical-series',['payload.statistics_table_id']);define('definition','실제 통계가 아닌 가상 지역별 공표 지수','synthetic-index-definition',['payload.statistics_table_id','payload.region_ref']);define('seasonal_adjustment','not_provided','no-seasonal-adjustment-in-source',['source-schema']);}
  if(t==='T34'){
-  if(p.record_kind==='weather')derive('measures',['temperature','precipitation'].map(k=>metric(k,p[k].value,p[k].unit)),'source-weather-units',['payload.temperature','payload.precipitation']);
+  if(p.record_kind==='weather')derive('measures',['temperature','precipitation'].map(k=>metric('T34.'+k,p[k].value,p[k].unit)),'source-weather-units',['payload.temperature','payload.precipitation']);
   else define('calendar_kind','operational_schedule','operational-schedule-not-public-holiday',['payload.is_public_holiday','payload.record_kind']);
  }
  if(t==='T37')define('/measures/0/definition_version',version,'LCP-p75-ms-28-day-definition',['payload.measures']);
  if(t==='T38'){
+  metric('T38.conversions',p.conversions,'count');
   assume('hypothesis_text','가상 모집단에서 처리 집단의 전환율이 대조 집단보다 높다','testable-hypothesis-not-observed-result',['payload.population']);
   assume('assignment_method','synthetic_random_assignment','synthetic-experiment-assignment',['delegation']);assume('assignment_unit','synthetic_participant','synthetic-assignment-unit',['delegation']);assume('treatment_description','모의 안내문 변경','synthetic-treatment',['delegation']);
   assert.ok(p.period.end<=localDate(m.available_at,zone));derive('status','completed','period-ended-before-availability',['payload.period.end','metadata.available_at']);
  }
  if(t==='T39'){
   define('model_version',version,'new-model-definition-version',['payload.model_id','payload.model_ref']);define('objective','maximize_synthetic_conversions','synthetic-model-objective',['payload.formula','referenced-model.formula']);
-  if(p.record_kind==='budget_candidate')derive('expected_measures',[metric('predicted_conversions',p.predicted_conversions,'count')],'existing-prediction-not-outcome',['payload.predicted_conversions']);
+  if(p.record_kind==='budget_candidate')derive('expected_measures',[metric('T39.predicted_conversions',p.predicted_conversions,'count')],'existing-prediction-not-outcome',['payload.predicted_conversions']);
  }
  if(t==='T40'){
   define('version',version,'synthetic-policy-version',['payload.policy_id']);assume('objective','가상 전환수 비교','synthetic-policy-objective',['delegation']);assume('product_refs',['P1A'],'synthetic-policy-product',['D003B.T01.product_id']);

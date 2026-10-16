@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "independent_assignments": 816,
+  "rows": 330,
+  "classification_counts": {
+    "derivation": 228,
+    "definition": 336,
+    "synthetic_assumption": 252
+  },
+  "availability_policy": "all completion fields become available at completion creation; original event and record availability remain separate"
+}

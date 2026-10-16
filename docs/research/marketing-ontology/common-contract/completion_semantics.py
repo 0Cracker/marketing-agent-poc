@@ -23,6 +23,7 @@ def verify(rows, originals, supplement, registry, raw_generator_sha):
     classifications, verified = {}, 0
 
     def metric(name, value, unit):
+        name = t + '.' + name
         assert name in definitions and definitions[name]['kind'] == 'MetricDefinition'
         return {'metric_id': name, 'value': value, 'unit': unit, 'availability': 'available', 'definition_version': VERSION}
 
@@ -157,14 +158,17 @@ def verify(rows, originals, supplement, registry, raw_generator_sha):
         assert entry['fields'] == expected, (entry['record_id'], entry['fields'], expected)
         assert set(entry['field_metadata']) == set(expected)
         for pointer, value in expected.items():
+            if pointer.endswith(('_ref', '_refs', '/cohort_id')):
+                references = value if isinstance(value, list) else [value]
+                assert all(ref in definitions for ref in references), (entry['record_id'], pointer, references)
             meta = entry['field_metadata'][pointer]
             assert meta['classification'] in ('mapping', 'derivation', 'definition', 'synthetic_assumption')
             assert meta['sources'] and meta['rule'] and meta['human_confirmed'] is False
             assert meta['original_available_at'] == m['available_at']
-            assert meta['available_at'] == (m['available_at'] if meta['classification'] in ('mapping', 'derivation') else supplement['created_at'])
+            assert meta['available_at'] == supplement['created_at']
             classifications[meta['classification']] = classifications.get(meta['classification'], 0) + 1
             verified += 1
     assert verified == 816 and len(supplement['records']) == 330
     assert classifications == supplement['classification_counts']
     return {'status': 'pass', 'independent_assignments': verified, 'rows': 330, 'classification_counts': classifications,
-            'availability_policy': 'field metadata gates new definitions/assumptions at completion creation; original record time unchanged'}
+            'availability_policy': 'all completion fields become available at completion creation; original event and record availability remain separate'}

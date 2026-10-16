@@ -187,6 +187,9 @@ def main():
             assert record['breakdown_dimensions'] == [{'name': 'device', 'value': decoded['device']}]
         if record['dataset_type'] == 'T31':
             assert ('unique_clickers' in record) == ('/unique_clickers' in approved), 'recipient deduplication needs an approved meaning'
+        if record['dataset_type'] == 'T38':
+            assert record['outcome_measures'] == [{'metric_id': 'T38.conversions', 'value': decoded['conversions'], 'unit': 'count',
+                                                   'availability': 'available', 'definition_version': 'CANONICAL-SYNTHETIC-1'}]
         if record['dataset_type'] == 'T39' and decoded['record_kind'] == 'budget_candidate':
             assert sum(oracle.amt(x['amount']) for x in record['allocations']) == oracle.amt(record['total_budget'])
             for allocation in record['allocations']:

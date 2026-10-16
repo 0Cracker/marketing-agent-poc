@@ -18,6 +18,8 @@ def project(rows, registry):
     M = Namespace('https://example.org/marketing/')
     g = Graph()
     shapes = Graph().parse(HERE / 'shapes.ttl', format='turtle')
+    if (HERE / 'property-use-shapes.ttl').is_file():
+        shapes.parse(HERE / 'property-use-shapes.ttl', format='turtle')
     transformation = URIRef('urn:completion:transformation')
     g.add((transformation, RDF.type, M.Transformation))
     g.add((transformation, M.mappingVersion, Literal('D005-CANONICAL-1')))

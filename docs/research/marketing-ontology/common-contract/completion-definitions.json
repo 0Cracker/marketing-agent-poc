@@ -3,6 +3,104 @@
   "created_at": "2026-10-16T13:58:04.510Z",
   "definitions": [
     {
+      "id": "CANONICAL-SYNTHETIC-1",
+      "kind": "DefinitionVersion",
+      "definition": "New mapping/definition registry, not a historical provider version",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "P1A",
+      "kind": "Product",
+      "definition": "Existing D003B product identity",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "P1B",
+      "kind": "Product",
+      "definition": "Existing D003B product identity",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T04.positive_rate",
+      "kind": "MetricDefinition",
+      "definition": "T04.positive_rate; ratio; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T04.positive_responses",
+      "kind": "MetricDefinition",
+      "definition": "T04.positive_responses; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T23.stockists",
+      "kind": "MetricDefinition",
+      "definition": "T23.stockists; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T23.target_stockists",
+      "kind": "MetricDefinition",
+      "definition": "T23.target_stockists; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.positive_rate",
+      "kind": "MetricDefinition",
+      "definition": "T32.positive_rate; ratio; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.positive_responses",
+      "kind": "MetricDefinition",
+      "definition": "T32.positive_responses; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.sample_size",
+      "kind": "MetricDefinition",
+      "definition": "T32.sample_size; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T34.precipitation",
+      "kind": "MetricDefinition",
+      "definition": "T34.precipitation; mm; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T34.temperature",
+      "kind": "MetricDefinition",
+      "definition": "T34.temperature; ℃; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T38.conversions",
+      "kind": "MetricDefinition",
+      "definition": "T38.conversions; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T39.predicted_conversions",
+      "kind": "MetricDefinition",
+      "definition": "T39.predicted_conversions; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
       "id": "aspect/%EA%B1%B0%ED%92%88",
       "kind": "Aspect",
       "definition": "거품",
@@ -20,13 +118,6 @@
       "id": "aspect/%EC%9A%A9%EA%B8%B0",
       "kind": "Aspect",
       "definition": "용기",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "CANONICAL-SYNTHETIC-1",
-      "kind": "DefinitionVersion",
-      "definition": "New mapping/definition registry, not a historical provider version",
       "version": "CANONICAL-SYNTHETIC-1",
       "is_synthetic": true
     },
@@ -90,20 +181,6 @@
       "id": "geo/US",
       "kind": "GeoTarget",
       "definition": "가상 국가별 검색 타깃",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "P1A",
-      "kind": "Product",
-      "definition": "Existing D003B product identity",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "P1B",
-      "kind": "Product",
-      "definition": "Existing D003B product identity",
       "version": "CANONICAL-SYNTHETIC-1",
       "is_synthetic": true
     },
@@ -230,34 +307,6 @@
       "id": "panel/D005-US-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
       "kind": "Cohort",
       "definition": "Panel, subject and period identify this sample only",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "positive_rate",
-      "kind": "MetricDefinition",
-      "definition": "positive_rate; ratio; source value preserved, no population extrapolation",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "positive_responses",
-      "kind": "MetricDefinition",
-      "definition": "positive_responses; count; source value preserved, no population extrapolation",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "precipitation",
-      "kind": "MetricDefinition",
-      "definition": "precipitation; mm; source value preserved, no population extrapolation",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "predicted_conversions",
-      "kind": "MetricDefinition",
-      "definition": "predicted_conversions; count; source value preserved, no population extrapolation",
       "version": "CANONICAL-SYNTHETIC-1",
       "is_synthetic": true
     },
@@ -430,13 +479,6 @@
       "is_synthetic": true
     },
     {
-      "id": "sample_size",
-      "kind": "MetricDefinition",
-      "definition": "sample_size; count; source value preserved, no population extrapolation",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
       "id": "seller/D005/JP",
       "kind": "Seller",
       "definition": "가상 자사 판매처; 실제 판매처 아님",
@@ -454,13 +496,6 @@
       "id": "seller/D005/US",
       "kind": "Seller",
       "definition": "가상 자사 판매처; 실제 판매처 아님",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "stockists",
-      "kind": "MetricDefinition",
-      "definition": "stockists; count; source value preserved, no population extrapolation",
       "version": "CANONICAL-SYNTHETIC-1",
       "is_synthetic": true
     },
@@ -587,20 +622,6 @@
       "id": "survey/D005-US-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
       "kind": "Cohort",
       "definition": "Convenience survey sample",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "target_stockists",
-      "kind": "MetricDefinition",
-      "definition": "target_stockists; count; source value preserved, no population extrapolation",
-      "version": "CANONICAL-SYNTHETIC-1",
-      "is_synthetic": true
-    },
-    {
-      "id": "temperature",
-      "kind": "MetricDefinition",
-      "definition": "temperature; ℃; source value preserved, no population extrapolation",
       "version": "CANONICAL-SYNTHETIC-1",
       "is_synthetic": true
     },

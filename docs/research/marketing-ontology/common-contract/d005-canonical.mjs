@@ -129,6 +129,11 @@ export function convert(row, schema, context){
  if(type==='T34')put('region_ref',m.country_code,['metadata.country_code','metadata.scope_id'],'sample-country-region; not whole-country coverage');
  if(type==='T37'&&p.measures)put('measures',p.measures.map(m=>({...m,availability:'available'})),
   'payload.measures','provided-metric-values; definition version still required');
+ if(type==='T38'){
+  put('outcome_measures',[{metric_id:'T38.conversions',value:p.conversions,unit:'count',availability:'available',definition_version:'CANONICAL-SYNTHETIC-1'}],
+   ['payload.conversions','completion-definitions.json:T38.conversions'],'existing-experiment-conversions; not causal-lift');
+  if(context.definitionAvailableAt)lineage.at(-1).available_at=context.definitionAvailableAt;
+ }
  if(type==='T39'){
   put('record_kind',p.record_kind==='model'?'response_model':'budget_scenario','payload.record_kind','registered-model-subtype');
   if(p.model_id)put('model_ref',p.model_id,'payload.model_id','model-own-identity');

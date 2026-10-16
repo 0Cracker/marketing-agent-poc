@@ -4,7 +4,7 @@
   "authority_file": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-delegation-20261016.json",
   "authority_sha256": "f058264a4e3ed91f2bddb93d20d4e6d8dec6b578151f2e97d7f86d1f7909d6e9",
   "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
-  "mapping_sha256": "61a3aa0ee578be2d84ec7b850e732260f8947ce84feb1f3209abb242acd76b75",
+  "mapping_sha256": "f1b1456cb0dac2883d93d3cfc5b91218ab3191721668ddc74ad3ecc69e51e0e2",
   "entries": [
     {
       "key": "T02.mapping_kind",
@@ -4767,11 +4767,16 @@
     {
       "key": "T38.outcome_measures",
       "meaning": "실제형 측정 결과",
-      "rules": [],
-      "sources": [],
+      "rules": [
+        "existing-experiment-conversions; not causal-lift"
+      ],
+      "sources": [
+        "payload.conversions",
+        "completion-definitions.json:T38.conversions"
+      ],
       "status": "resolved",
       "human_confirmed": false,
-      "decision": "optional_not_supplied",
+      "decision": "mapped_or_explicitly_completed",
       "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
       "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
       "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
