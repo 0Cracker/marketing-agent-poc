@@ -24,7 +24,8 @@ def git_state():
     index = Path(read('rev-parse', '--git-path', 'index'))
     if not index.is_absolute():
         index = ROOT / index
-    return {'head': read('rev-parse', 'HEAD'), 'refs': read('show-ref'), 'index_sha256': sha(index)}
+    # Other worktrees legitimately advance unrelated branches during a long regression.
+    return {'head': read('rev-parse', 'HEAD'), 'refs': read('symbolic-ref', 'HEAD'), 'index_sha256': sha(index)}
 
 
 def invoke(name, command, report_path=None, timeout=900):
@@ -72,7 +73,7 @@ def invoke(name, command, report_path=None, timeout=900):
         return {'name': name, 'status': 'fail', 'command': command, 'reason': 'missing/invalid execution report: ' + str(exc)}
 
 
-REQUIRED_GATES = {'protocol', 'D004', 'D005', 'dictionary', 'logic', 'questions'}
+REQUIRED_GATES = {'protocol', 'completion_protocol', 'D004', 'D005', 'dictionary', 'logic', 'questions'}
 
 
 def completion(checks, inputs_preserved, git_preserved):
@@ -86,9 +87,16 @@ def completion(checks, inputs_preserved, git_preserved):
     dictionary, questions, logic = by_name['dictionary'], by_name['questions'], by_name['logic']
     if dictionary.get('rows') != 528 or dictionary.get('conforming_rows') != 528 or dictionary.get('field_review', {}).get('status') != 'pass':
         return 'not_run'
+    independent = dictionary.get('independent_readback', {})
+    if (independent.get('status') != 'pass' or independent.get('completion_semantics', {}).get('status') != 'pass'
+            or independent.get('canonical_domain', {}).get('status') != 'pass'):
+        return 'not_run'
     if questions.get('test_status_counts') != {'pass': 52, 'fail': 0, 'not_run': 0}:
         return 'not_run'
     if any(logic.get('checks', {}).get(name, {}).get('status') != 'pass' for name in ('HermiT', 'OOPS')):
+        return 'not_run'
+    oops = logic['checks']['OOPS']
+    if oops.get('scan_executed') is not True or oops.get('unresolved_finding_count') != 0:
         return 'not_run'
     return 'pass'
 
@@ -97,11 +105,12 @@ def self_check():
     good = [{'name': name, 'status': 'pass', 'result': {}} for name in sorted(REQUIRED_GATES)]
     for c in good:
         if c['name'] == 'dictionary':
-            c['result'] = {'rows': 528, 'conforming_rows': 528, 'field_review': {'status': 'pass'}}
+            c['result'] = {'rows': 528, 'conforming_rows': 528, 'field_review': {'status': 'pass'},
+                           'independent_readback': {'status': 'pass', 'completion_semantics': {'status': 'pass'}, 'canonical_domain': {'status': 'pass'}}}
         if c['name'] == 'questions':
             c['result'] = {'test_status_counts': {'pass': 52, 'fail': 0, 'not_run': 0}}
         if c['name'] == 'logic':
-            c['result'] = {'checks': {'HermiT': {'status': 'pass'}, 'OOPS': {'status': 'pass'}}}
+            c['result'] = {'checks': {'HermiT': {'status': 'pass'}, 'OOPS': {'status': 'pass', 'scan_executed': True, 'unresolved_finding_count': 0}}}
     assert completion(good, True, True) == 'pass'
     assert completion(good[:-1], True, True) == 'not_run'
     assert completion(good + [good[0]], True, True) == 'fail'
@@ -127,6 +136,7 @@ def main():
     parser.add_argument('--supplement', type=Path)
     parser.add_argument('--supplement-approval-record', type=Path)
     parser.add_argument('--field-review-record', type=Path)
+    parser.add_argument('--completion', action='store_true', help='Use the delegated completion, field review and local OOPS disposition records')
     parser.add_argument('--self-check', action='store_true')
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
@@ -137,6 +147,15 @@ def main():
         return 0
     if not args.tools or not args.output:
         parser.error('--tools and --output required')
+    if args.completion:
+        args.supplement = args.supplement or HERE / 'completion-values.json'
+        args.supplement_approval_record = args.supplement_approval_record or HERE / 'completion-values-authorization.json'
+        args.field_review_record = args.field_review_record or HERE / 'completion-field-review.json'
+        args.oops_review_record = args.oops_review_record or HERE / 'completion-oops-review.json'
+        args.question_approval_record = args.question_approval_record or HERE / 'question-approval-20261015.json'
+        if not args.additional_approval_record:
+            args.additional_approval_record = [HERE / 'd006-approval-20261016.json']
+        args.oops_local = True
     output = args.output.resolve()
     outputs = {n: output.with_name(output.stem + '-' + n.lower() + '.json') for n in ('D004', 'D005', 'dictionary', 'logic', 'questions')}
     if any(p.exists() for p in [output, *outputs.values()]):
@@ -166,12 +185,14 @@ def main():
             paths += list((HERE.parent / 'batches' / batch).rglob('*.jsonl'))
     snapshot = {str(p.resolve()): sha(p) for p in paths}
     before_git = git_state()
+    before_refs = subprocess.check_output(['git', 'show-ref'], cwd=ROOT, text=True, encoding='utf-8').strip()
     report = {'cycle': 'CQ52-integrated-v1', 'started_at': datetime.now(timezone.utc).isoformat(),
               'git_before': before_git, 'input_sha256': snapshot, 'python': sys.version,
               'checks': [], 'system_validation': 'incomplete', 'new_source_rows': 0,
               'original_tests_sha256': sha(HERE / 'tests.json')}
     commands = [
         ('protocol', [py, str(HERE / 'run-question-cycle.py'), '--self-check'], None),
+        ('completion_protocol', [shutil.which('node') or 'node', str(HERE / 'check-completion-protocol.mjs')], None),
         ('D004', [py, str(HERE / 'run-validation-cycle.py'), '--approved-d004', '--tools', str(tools), '--output', str(outputs['D004'])], outputs['D004']),
         ('D005', [shutil.which('node') or 'node', str(HERE.parent / 'batches/D005/run.mjs'), 'validate', '--python', py, '--tools', str(tools), '--output', str(outputs['D005'])], outputs['D005']),
         ('dictionary', [shutil.which('node') or 'node', str(HERE / 'check-d005-dictionary.mjs'), '--python', py, '--tools', str(tools), '--output', str(outputs['dictionary'])], outputs['dictionary']),
@@ -205,6 +226,8 @@ def main():
         print(json.dumps({'gate': name, 'status': result['status'], 'exit_code': result.get('exit_code')}, ensure_ascii=False), flush=True)
     report['changed_inputs'] = [p for p, value in snapshot.items() if sha(Path(p)) != value]
     report['git_preserved'] = git_state() == before_git
+    after_refs = subprocess.check_output(['git', 'show-ref'], cwd=ROOT, text=True, encoding='utf-8').strip()
+    report['other_worktree_ref_changes'] = sorted(set(before_refs.splitlines()) ^ set(after_refs.splitlines()))
     questions = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'questions')
     report['52_tests'] = questions.get('test_status_counts', {'pass': 0, 'fail': 0, 'not_run': 52})
     dictionary = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'dictionary')
@@ -215,7 +238,8 @@ def main():
                                 'actual_provider_mapping': 'out_of_scope', 'actual_data_fit': 'out_of_scope',
                                 'open_issues': dictionary.get('gap_groups', []),
                                 'OOPS': {'status': model.get('checks', {}).get('OOPS', {}).get('status', 'not_run'),
-                                         'unresolved_findings': model.get('checks', {}).get('OOPS', {}).get('finding_count')}}
+                                         'raw_findings': model.get('checks', {}).get('OOPS', {}).get('finding_count'),
+                                         'unresolved_findings': model.get('checks', {}).get('OOPS', {}).get('unresolved_finding_count')}}
     report['status'] = completion(report['checks'], not report['changed_inputs'], report['git_preserved'])
     report['system_validation'] = 'complete' if report['status'] == 'pass' else 'incomplete'
     report['exit_code'] = {'pass': 0, 'fail': 1, 'not_run': 2}[report['status']]

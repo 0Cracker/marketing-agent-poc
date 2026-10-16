@@ -17,7 +17,8 @@ const git=(...a)=>execFileSync('git',a,{cwd:root,encoding:'utf8'}).trim();
 const baseline=JSON.parse(fs.readFileSync(path.join(here,'initial-state.json'),'utf8'));
 // Generation stays bound to its approval baseline; read-only validation must
 // also work after commits and guard Git immutability within this execution.
-const executionGit={head:git('rev-parse','HEAD'),refs:git('show-ref'),index_sha256:fileHash(path.resolve(root,git('rev-parse','--git-path','index')))};
+const executionGit={head:git('rev-parse','HEAD'),refs:git('symbolic-ref','HEAD'),index_sha256:fileHash(path.resolve(root,git('rev-parse','--git-path','index')))};
+const otherRefsBefore=git('show-ref');
 const sortRows=rows=>[...rows].sort((a,b)=>a.metadata.record_id.localeCompare(b.metadata.record_id));
 const identity=rows=>JSON.stringify(sortRows(rows));
 function texts(rows){return Object.fromEntries([...new Set(rows.map(r=>r.metadata.dataset_type))].sort().map(t=>[t,sortRows(rows.filter(r=>r.metadata.dataset_type===t)).map(r=>JSON.stringify(r)).join('\n')+'\n']));}
@@ -30,8 +31,8 @@ function invokeOracle(source,common,complete=false,source_text=texts(source)){
 function preservation(){
  for(const [p,digest] of Object.entries(baseline.input_sha256))assert.equal(fileHash(path.join(root,p)),digest,'preserved input: '+p);
  const expected=['validate','cycle'].includes(mode)?executionGit:baseline;
- assert.equal(git('rev-parse','HEAD'),expected.head,'HEAD changed during execution');assert.equal(git('show-ref'),expected.refs,'refs changed during execution');assert.equal(fileHash(path.resolve(root,git('rev-parse','--git-path','index'))),expected.index_sha256,'index changed during execution');
- return {status:'pass',original_source_files:11,original_schema_and_tests:2,git_head:expected.head,generation_git_head:baseline.head,git_scope:['validate','cycle'].includes(mode)?'current_execution':'original_generation',refs:'unchanged',index:'unchanged'};
+ assert.equal(git('rev-parse','HEAD'),expected.head,'HEAD changed during execution');assert.equal(git(...(['validate','cycle'].includes(mode)?['symbolic-ref','HEAD']:['show-ref'])),expected.refs,'refs changed during execution');assert.equal(fileHash(path.resolve(root,git('rev-parse','--git-path','index'))),expected.index_sha256,'index changed during execution');
+ return {status:'pass',original_source_files:11,original_schema_and_tests:2,git_head:expected.head,generation_git_head:baseline.head,git_scope:['validate','cycle'].includes(mode)?'current_execution':'original_generation',refs:'current branch unchanged',other_worktree_refs_changed:otherRefsBefore!==git('show-ref'),index:'unchanged'};
 }
 function codeHashes(){return Object.fromEntries(['contract.mjs','generate.mjs','validate.mjs','oracle.py','run.mjs','source.schema.json','common.schema.json'].map(n=>[relative(path.join(here,n)),fileHash(path.join(here,n))]));}
 function unchanged(before){for(const [p,h] of Object.entries(before))assert.equal(fileHash(path.join(root,p)),h,'input changed during execution: '+p);}
