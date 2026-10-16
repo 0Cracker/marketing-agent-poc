@@ -1,5 +1,19 @@
 # 마케팅 온톨로지 조사·설계 작업
 
+2026-10-16 최신 범위: 사용자 지시로 실제 데이터 연결·공급자 파일럿·실제 자료 적합성 검증을 **프로젝트 범위 밖**으로 확정했다. 후속 과제나 완료 조건으로 요구하지 않는다. 가상 데이터 기반 사전 적합성·업무 의미·질문/정책·독립 검산과 회귀 검증을 마무리한다. 아래의 실제 공급자 후속 계획은 철회된 이력이며 [현재 결정](common-contract/structure-decision-20261016.md)을 따른다.
+
+2026-10-16 선택 반영: [D005와 공통 사전 구조 비교·결정](common-contract/structure-decision-20261016.md)에 ①②③⑤⑥ A안·④ 가상 반올림 선택을 기록했다. [재검증](common-contract/runs/2026-10-16-cq52-decisions-1.json)은 질문52/52·assertion682개·반올림 경계7개와 기존 회귀를 통과했다. 새 전역 사전 게이트는30종528행의 공통 계약 미충족으로fail이므로 시스템 전체는incomplete다. OOPS 외부 재전송은 자동 승인 심사에서 차단됐고 실제 공급자 검증은 별도 후속이다. 아래는 선택 이전 이력이다.
+
+2026-10-16 D006 최신: [통합 회귀](common-contract/runs/2026-10-16-cq52-d006-integrated-2.json)에서 **52통과/0실패/0미실행·assertion682개 pass**, 실질 답변28/보류·거부24를 확인했다. 명시 승인된 A3행/B53행·판매처 선언2건·A16변형/B10메모리검사와 D004·D005/60오류·HermiT 회귀를 실행했다. [실제 대조표](common-contract/question-readiness.md)와 [현업 확인표](common-contract/meaning-review-20261016.md)를 갱신했다. 전역 필드 계약의 명칭/범위 차이·사용자 의미 확인·OOPS 지적·실제 공급자 적합성은 남아 시스템은 incomplete다. 아래는 D006 이전 이력이다.
+
+2026-10-16 최신: 기존 데이터 재사용 승인 후 [통합 회귀](common-contract/runs/2026-10-16-cq52-integrated-local-1.json)로52시험32통과/0실패/20자료부족·assertion448개 통과(실질 답변18/보류·거부14)를 확인했다. D004·D005/오류60건·HermiT 통과, 입력/Git 보존이다. [시험 대조표](common-contract/question-readiness.md)와 [실패 수정 근거](common-contract/question-execution.md#2026-10-16-승인-후-실제-실행)를 갱신했다. OOPS 재전송은 자동 승인 검토 거절로 미실행이며 전날5종 지적은 미해결이다. 시스템은 incomplete다. [추가 자료 계획](data-proposal.md#d006-cq-a--남은-시험용-최소-자료-제안-미승인생성-0)은 정상3행/16격리분기이며 승인 전 생성0이다. 아래는 과거 이력이다.
+
+2026-10-15 OOPS 후속: 사용자 명시 승인으로 정의 온톨로지만 외부 검사했다. [실제 결과](common-contract/runs/2026-10-15-cq52-oops-approved-1.json)는 HTTP200·Important3종/Minor2종·제안1건이고 HermiT는 통과했다. [지적 검토와 승인 범위](common-contract/question-execution.md#oops-지적-검토)를 기록했다. OOPS 미실행 사유는 해소됐으나 지적은 미해결이며 시스템은 incomplete다. 질문 데이터 재사용 승인은 별개다.
+
+2026-10-15 후속: [기존52시험 대조표](common-contract/question-readiness.md)와 [실행 연결·의미 검토](common-contract/question-execution.md)를 추가했다. 32건에 정형 조회·독립 oracle·값/상태/근거/완전성 assertion 코드를 연결했고20건은 원 조건/입력 부족이다. 아직 질문 데이터 실행 검증은 하지 않았다. HermiT 정의 검사 통과, OOPS 제출 승인 미확보, 전체52시험 not_run52이며 시스템은 incomplete다.
+
+2026-10-15 최신 실행: 사용자의 명시 응답 ‘실행해’에 따라 [D005-2.0.0](data-proposal.md#d005-200--30종-신규-자료-생성규격-검증-상세-제안)의 정상534행/31파일을 생성하고 오류60케이스·독립 검산·메모리 RDF/SHACL/재조회·D004 회귀를 통과했다. [배치 실행 안내](batches/D005/README.md)와 [검증 사이클](common-contract/verification-cycle.md)에 실제 범위와 근거를 기록했다. 전체52시험·HermiT/OOPS·실제 원천/AI 검증은 미실행이며 시스템은 incomplete다.
+
 2026-10-14 최신 추가: [DB 독립 공통규약 MC-1.0.0](common-contract/README.md)에 의미 명세·Turtle/SHACL·D003B 11종 전수 매핑·3원천 계약·214행 검증 제안·핵심13질문52시험·평가표를 작성했다. 명세 검사는 통과했으며 데이터 변환/52시험·OWL DL 논리·실제 원천/현업 검증은 미실행이다. [검사 기록](common-contract/validation.md), [제안서](common-contract/validation-proposal.md)를 함께 읽는다.
 
 작성·확인: 2026-10-13 (Asia/Seoul). 기준 커밋: fb74fed8e2a34ca46f3d6026c3f52630b79057b7. 다음 발행 버전: 미확정.
