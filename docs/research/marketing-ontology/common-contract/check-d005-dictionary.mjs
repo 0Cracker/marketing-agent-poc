@@ -125,7 +125,7 @@ const report={mapping_version:mappingVersion,status,audit_execution:readback.sta
  lineage:rows.map(r=>({record_id:r.record.record_id,schema_conforming:r.schema_conforming,fields:r.lineage,
   retained_source_fields:r.retained_source_fields,original_value_origin:r.original_value_origin})),
  method:'Explicit registered mapping, unchanged full canonical schema, separate independent Python source and RDF/SHACL readback.',
- limitation:'Only schema-conforming records enter canonical RDF. Missing times, definitions, business context and clicker semantics are not fabricated. Schema pass is not complete business review.',
+ limitation:'Only schema-conforming records enter canonical RDF. Explicitly authorized synthetic assumptions remain separate from source observations; review is delegated AI judgment, not direct human field review. Schema pass alone is not complete business review.',
  types_detail:[...summaries.values()]};
 fs.mkdirSync(path.dirname(path.resolve(output)),{recursive:true});fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify({report:output,status:report.status,rows:528,conforming_rows:conforming,gap_groups:gaps.size,independent:readback.status}));

@@ -235,7 +235,7 @@ def main():
     dictionary = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'dictionary')
     model = next(c.get('result', {}) for c in report['checks'] if c['name'] == 'logic')
     report['meaning_review'] = {'design_review': 'see question-execution.md', 'field_review_status': dictionary.get('field_review', {}).get('status', 'not_run'),
-                                'field_review_kind': dictionary.get('field_review', {}).get('kind'),
+                                'field_review_kind': dictionary.get('field_review', {}).get('review_kind'),
                                 'human_direct_field_review': False if args.completion else dictionary.get('field_review', {}).get('human_confirmed'),
                                 'business_definition_review': 'delegated_ai_review' if args.completion else 'confirmed_by_user_decisions_2A_3A',
                                 'decision_record': 'completion-delegation-20261016.json' if args.completion else 'meaning-decisions-20261016.json',
