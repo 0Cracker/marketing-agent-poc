@@ -1,0 +1,10 @@
+{
+  "status": "not_run",
+  "stage": "RDF_interrupted_for_projection_fix",
+  "new_rows": 20000,
+  "independent_semantics": {
+    "status": "pass",
+    "checks": 8
+  },
+  "reason": "Operator stopped the in-progress RDF check after finding null monetary metrics could be classified as count. Source rows unchanged; no RDF pass claimed. Corrected unit mapping and date-only context will be checked in a new run."
+}

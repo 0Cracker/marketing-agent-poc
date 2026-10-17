@@ -1,0 +1,7 @@
+{"stage": "independent_semantics", "status": "pass", "checks": 9, "rows": 20000}
+{"stage": "RDF_build", "rows": 5000, "triples": 164677}
+{"stage": "RDF_build", "rows": 10000, "triples": 204716}
+{"stage": "RDF_build", "rows": 15000, "triples": 290993}
+{"stage": "RDF_build", "rows": 20000, "triples": 347113}
+{"stage": "SHACL_start", "rows": 20000, "triples": 347113, "observations": 12684}
+{"stage": "RDF_complete", "status": "pass"}

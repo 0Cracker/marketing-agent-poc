@@ -139,3 +139,9 @@ AI는 호출 코드를 읽고 소켓 차단을 실제로 확인했으며, 공개
 근거는 [후속 8단계 기록](../iterations/v0.2.0-double-diamond.md), [528행 검증](../research/marketing-ontology/common-contract/runs/2026-10-16-completion-reviewed-2.json), [모델 대체 검사](../research/marketing-ontology/common-contract/runs/2026-10-16-model-disposition-4.json), [오류 진단 이력](../research/marketing-ontology/common-contract/runs/2026-10-16-model-disposition-diagnostics-2.json)이다. 과거 원문·보고서는 보존했으며 일반 원칙의 검증 상태는 계속 ‘검증 중’이다. 프롬프트 횟수·시간 절감·다른 AI 대비 성능에 대한 인과 효과는 측정하지 않았다.
 
 문서 커밋 후 [전체 재실행3](../research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3.json)도 pass/complete다. 명세 보고서와 OOPS 결과는 반복 실행과 같았다. HermiT의 상위 클래스 줄 순서는 달랐지만 클래스 집합·상태는 같았으므로 원시 출력과 의미 결과를 구분했다. [검토 protocol](../research/marketing-ontology/common-contract/runs/2026-10-16-completion-model-review-protocol-2.json)에서는 사람 확인 위조·오래된 모델·누락 지적·변경된 근거 hash·잘못된 검사 대상·오래된 근거 입력을 거부했다. 이 protocol은 실제 Java 엔진 실행을 재생한 파서 시험이며 별도 엔진 성공으로 집계하지 않았다.
+
+## 2026-10-17 D007 확장 후속
+
+결측값의 단위를 런타임 값의 타입에서 추론하면 `spend=null`이 건수로 바뀔 수 있었다. 원천 값은 보존하고 필드 정의에서 money/score/count를 결정하도록 고쳤다. 같은 지표·정의 버전의 단위 일치를 전체 투영에서 검사하고, 실제 결측 금액 행을 사용하는 독립 검사를 추가했다. [중단 이력](../research/marketing-ontology/batches/D007/validation-2.json)과 [최종20,000행 검증](../research/marketing-ontology/batches/D007/validation-3.json)을 함께 보존했다. 스키마 적합과 의미 적합이 같은 검사가 아니라는 구체 사례다.
+
+요약의 비교 키에도 같은 필드 이름만으로는 부족했다. 독립 정규화창·실험군·척도·귀속·정정판을 분리하고 [실제 기존/신규 자료 조회](../research/marketing-ontology/batches/D007/query-validation.json)로 확인했다. [결과](../research/marketing-ontology/batches/D007/result.json)는 신규20,000행·기존52시험 회귀를 통과했지만, 기존790행의 공통 계약 차이를 해결한 것으로 표시하지 않았다. AI의 판단을 사람의 필드별 검토로 기록하지 않는 원칙도 유지한다.
