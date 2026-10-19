@@ -1,0 +1,15 @@
+✔ C01 screen context becomes explicit half-open scope without raw data (4.4196ms)
+✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (0.4831ms)
+✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (0.321ms)
+✔ C04 session token is attached to API requests, never put in body (30.3204ms)
+✔ C05 lost POST response is not automatically submitted again (1.1919ms)
+✔ C06 token rejected before mutation may refresh once after a server restart (1.8035ms)
+✔ C07 server errors remain actionable codes; no fake successful result (1.5432ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 224.1217
