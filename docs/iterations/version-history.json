@@ -1,10 +1,308 @@
 {
   "schema": "local-version-index/1",
-  "status": "checkpoint-being-recorded",
-  "versions": {
-    "v020": "d5f437727d8a704aeb296b134bebee693578e0d3",
-    "v030": "39d9339af56ac704d6adcded3722d36e79225fa8"
+  "status": "local_commits_complete_unreleased",
+  "versions": [
+    {
+      "version": "v0.2.0",
+      "start": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+      "checkpoint": "d5f437727d8a704aeb296b134bebee693578e0d3",
+      "commits": [
+        {
+          "sha": "d46b0bb5de642ddcfbbb869ce990e0474f034a95",
+          "title": "refactor: 프론트·데이터 경로 분리와 기존 문서 정리"
+        },
+        {
+          "sha": "fdfb84dacfe2c40f9d0c193f3d3ae8ce727b199d",
+          "title": "docs: 마케팅 온톨로지 조사와 데이터 승인 규약 정리"
+        },
+        {
+          "sha": "3f60679a36764e7bc8432bc2dd4b4ccfdcc6ba8d",
+          "title": "test: 승인된 D003B 원천 배치와 검증 기록 보존"
+        },
+        {
+          "sha": "2b85c51f95977a726ad9a5a0de89efb15e10cebb",
+          "title": "feat: DB 독립 마케팅 온톨로지 규약과 검증 명세 추가"
+        },
+        {
+          "sha": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+          "title": "docs: v0.2.0 목표와 v0.3.0 UI·UX 범위 기록"
+        },
+        {
+          "sha": "0f5ffe0b315e219733efa053ec475737dd4746b7",
+          "title": "chore: 검증 입력의 바이트 보존과 Python 캐시 제외 규칙 추가"
+        },
+        {
+          "sha": "6adcdcf95d0d86b1dc88072d7053fcc0a95a2b80",
+          "title": "docs: 가상 데이터 승인과 공통 규격 유지 범위 확정"
+        },
+        {
+          "sha": "12398fe38e2e63c1947c5c6a0b62186c0c57c830",
+          "title": "feat: D004 원천의 독립 검산과 RDF 반복 검증 구현"
+        },
+        {
+          "sha": "2819d0f13083fae35f34212dc166bec377000e3b",
+          "title": "feat: D005 30종 가상 원천과 변환 검증 배치 추가"
+        },
+        {
+          "sha": "b33dc5fbc20c80797484836853b979eb8d140492",
+          "title": "feat: 승인된 D006 질문 보완 자료와 생성 검증 추가"
+        },
+        {
+          "sha": "0f7560d0ff61335f69c9e3d3e94ff5925046a8a3",
+          "title": "feat: 52시험의 조회 정책과 독립 검산 실행 구현"
+        },
+        {
+          "sha": "b83fab3fdee45bb5d36c7bb64a03c794bcd532cb",
+          "title": "feat: 공통 사전 변환과 528행 적합성 검사 구현"
+        },
+        {
+          "sha": "e11f4fdec8524d6550254528964e2c1e43e78fe6",
+          "title": "feat: OOPS 로컬 설치와 오프라인 모델 검사 구현"
+        },
+        {
+          "sha": "de18368a18f2260d144331cd40f7a108cd607e14",
+          "title": "feat: 사전 모델 질문 검증을 통합하고 필수 게이트 판정"
+        },
+        {
+          "sha": "807c45d6ae971a47a61cfa4a7df03b6c82230cc3",
+          "title": "fix: 검증 기준 파일의 원본 줄바꿈 바이트 보존"
+        },
+        {
+          "sha": "6a493956f90618a1033c5b8390778babc2306253",
+          "title": "docs: 데이터 명세 보강과 검증 결과를 개발 이력에 정리"
+        },
+        {
+          "sha": "66755e0fe75d46f08596d69e26c1f66e1ca8cf86",
+          "title": "docs: 단계별 더블 다이아몬드와 AI 협업 회고 정리"
+        },
+        {
+          "sha": "647dad7540b77cdd7a971188a9c58b7869778a9d",
+          "title": "docs: 공통 데이터 명세 완성 범위와 AI 위임 기준 고정"
+        },
+        {
+          "sha": "ebd828bf87ea96208b717d18ef207ca4a8d51b4e",
+          "title": "feat: 528행 공통 데이터 명세 보완과 독립 의미 검증 완성"
+        },
+        {
+          "sha": "4f62f2b7bc836f297a9d784d818b227249e6aed9",
+          "title": "fix: 보완 가용시점과 지표 정의 및 기존 실험 결과 매핑 보강"
+        },
+        {
+          "sha": "c4a4bbd3a577081c97fca8b9a348f35cc9f61e8c",
+          "title": "feat: 속성별 대체 검증으로 로컬 모델 지적의 적용 범위 확정"
+        },
+        {
+          "sha": "a9a146ae2dd1dc2a06dd2937e74b99a8970cfa9d",
+          "title": "feat: 공통 데이터 명세 완료 실행과 작업 트리 보존 게이트 통합"
+        },
+        {
+          "sha": "0e25e12cb1a6da29f2df98e90e69d400250dc328",
+          "title": "fix: 통합 실행기의 검사 건수 형식과 위임 검토 표시 수정"
+        },
+        {
+          "sha": "7f68d502b78c65977ceedd504adc6c6f29bdf356",
+          "title": "fix: 위임 검토 유형과 가상 보완의 검증 범위 표시 정정"
+        },
+        {
+          "sha": "f00feb751cb289424d9e29a1bf3db2ab9e76ffd4",
+          "title": "test: 전체 완료 회귀와 반복 실행 및 원천 보존 근거 기록"
+        },
+        {
+          "sha": "3ee92a9c72e5c0b72c75bfc87111a6f112c27dc0",
+          "title": "docs: 공통 데이터 명세 완성과 단계별 AI 활용 및 검증 근거 정리"
+        },
+        {
+          "sha": "7de719d7cae246d42db718c50e2ca6b2373bd4c0",
+          "title": "test: 커밋 후 전체 회귀와 검토 거부 및 재현 증거 고정"
+        },
+        {
+          "sha": "7b35d09380d4eb0902af35064c8393ba8c71cc82",
+          "title": "docs: 최종 재현 결과와 공통 데이터 명세 인수인계 마무리"
+        },
+        {
+          "sha": "d0f6267c5c478ec1603183df90f2239c7aa537ce",
+          "title": "feat: 가상 데이터 2만행 확장과 공통 조회 검증 추가"
+        },
+        {
+          "sha": "d5f437727d8a704aeb296b134bebee693578e0d3",
+          "title": "docs: 데이터 기반 버전의 범위와 검증 근거 정리"
+        }
+      ]
+    },
+    {
+      "version": "v0.3.0",
+      "start": "d5f437727d8a704aeb296b134bebee693578e0d3",
+      "checkpoint": "39d9339af56ac704d6adcded3722d36e79225fa8",
+      "commits": [
+        {
+          "sha": "63f8595b9eb4fc2c58b7e3fde90326baaf9a790c",
+          "title": "feat: 확정 명세 기반 마케팅 워크벤치 구현"
+        },
+        {
+          "sha": "60db4fe5132c0181845c35a98aa81b9757a2527c",
+          "title": "fix: 검색형 필터와 글꼴 및 브랜드 제품 계층 개선"
+        },
+        {
+          "sha": "47abf00232518543e3c9522df218c05da00a66f4",
+          "title": "fix: 리뷰 시각화와 KPI 단위 및 보라색 차트 피드백 반영"
+        },
+        {
+          "sha": "bfdfaac06c14562344d2d499790cf3831daa0fa8",
+          "title": "docs: 데이터와 화면 분리 더블 다이아몬드 및 발전 과정 기록"
+        },
+        {
+          "sha": "bebea07a8b622e70c410425044ad162adf758ad9",
+          "title": "refactor: 화면 계약과 데이터 조회 계층 분리"
+        },
+        {
+          "sha": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+          "title": "feat: 국가별 비교 자료와 마케팅 화면 개선"
+        },
+        {
+          "sha": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+          "title": "refactor: CURRENT 데이터와 화면 배포 경로 통합"
+        },
+        {
+          "sha": "39d9339af56ac704d6adcded3722d36e79225fa8",
+          "title": "docs: 대시보드 버전의 변경과 검증 결과 정리"
+        }
+      ]
+    },
+    {
+      "version": "v0.4.0",
+      "start": "39d9339af56ac704d6adcded3722d36e79225fa8",
+      "checkpoint": "bed0986ec1d17e348234c77813c077c4a503d0b9",
+      "commits": [
+        {
+          "sha": "33ac0162e4ed3c27f48ccd3d199758780192888e",
+          "title": "feat: 분석과 예산 검토 에이전트 구현"
+        },
+        {
+          "sha": "275b58d31cc79c8fbd306839ec81fa394b0a0b37",
+          "title": "feat: 에이전트 HTTP와 모델 실행 연결"
+        },
+        {
+          "sha": "3e6a16830c6f2ed3180e46fc3b8d9b7e859c997b",
+          "title": "feat: 대시보드에 에이전트 통신과 응답 표시 계층 추가"
+        },
+        {
+          "sha": "d09f516e2cc11fa3f8b3471cc84e6c07a884c839",
+          "title": "feat: 대화형 패널과 근거 중심 답변 표시"
+        },
+        {
+          "sha": "0a19b14d2353d9e8a6d108046843b3c1844b6ed4",
+          "title": "fix: 통합 checkout의 원천 줄바꿈 차이를 대사에서 구분"
+        },
+        {
+          "sha": "4db82ddf0725e4f6ece4c9f8447e3733a5d329d4",
+          "title": "docs: 에이전트 작업 기록을 v0.4.0으로 분류"
+        },
+        {
+          "sha": "69d390261a6df3eca42903be618b5c103b64a29f",
+          "title": "docs: 대시보드와 데이터 통합의 작업 근거 정리"
+        },
+        {
+          "sha": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+          "title": "fix: 검증 근거의 원본 CRLF 바이트 보존"
+        },
+        {
+          "sha": "bed0986ec1d17e348234c77813c077c4a503d0b9",
+          "title": "docs: 에이전트 통합 결과와 버전 이력 정리"
+        }
+      ]
+    }
+  ],
+  "originalToIntegrated": [
+    {
+      "original": "61af9c1e0fe39fd2c441b497108493f86cf22af9",
+      "integrated": "d5f437727d8a704aeb296b134bebee693578e0d3",
+      "title": "docs: 데이터 기반 버전의 범위와 검증 근거 정리"
+    },
+    {
+      "original": "32547c9abf93dee44b13ddad68c59ecf80506231",
+      "integrated": "63f8595b9eb4fc2c58b7e3fde90326baaf9a790c",
+      "title": "feat: 확정 명세 기반 마케팅 워크벤치 구현",
+      "resolution": "CRLF 차이를 정규화하고 양쪽의 추가 기록을 모두 보존"
+    },
+    {
+      "original": "63649080c68f3da6fe3649f1eb8d69d53e0b0a3c",
+      "integrated": "60db4fe5132c0181845c35a98aa81b9757a2527c",
+      "title": "fix: 검색형 필터와 글꼴 및 브랜드 제품 계층 개선"
+    },
+    {
+      "original": "6c060f9b0cab38d9010d947f70c5b8859c7b7efd",
+      "integrated": "47abf00232518543e3c9522df218c05da00a66f4",
+      "title": "fix: 리뷰 시각화와 KPI 단위 및 보라색 차트 피드백 반영",
+      "resolution": "양쪽 독립 추가 기록 보존"
+    },
+    {
+      "original": "4d286c505e8ac659c1d839b257631ef7280f31d6",
+      "integrated": "bfdfaac06c14562344d2d499790cf3831daa0fa8",
+      "title": "docs: 데이터와 화면 분리 더블 다이아몬드 및 발전 과정 기록"
+    },
+    {
+      "original": "3f01d9e72e3aa25cd4b6641dddd92b8c97b4cf64",
+      "integrated": "bebea07a8b622e70c410425044ad162adf758ad9",
+      "title": "refactor: 화면 계약과 데이터 조회 계층 분리"
+    },
+    {
+      "original": "7f53f5212bbb1ee03ca103269a2946feb5f1e67a",
+      "integrated": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+      "title": "feat: 국가별 비교 자료와 마케팅 화면 개선"
+    },
+    {
+      "original": "2dec3032ebaa4336fbf025d08e63a21f19769033",
+      "integrated": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+      "title": "refactor: CURRENT 데이터와 화면 배포 경로 통합"
+    },
+    {
+      "original": "f16b8c1a91d0ca60290d7e66c2a1338efa803ee3",
+      "integrated": "33ac0162e4ed3c27f48ccd3d199758780192888e",
+      "title": "feat: 분석과 예산 검토 에이전트 구현"
+    },
+    {
+      "original": "490cc65c8634cb5d4a879310e8fb2b07c6f80173",
+      "integrated": "275b58d31cc79c8fbd306839ec81fa394b0a0b37",
+      "title": "feat: 에이전트 HTTP와 모델 실행 연결"
+    },
+    {
+      "original": "6d6f59c59afae120cb28a782538bc3475811df28",
+      "integrated": "3e6a16830c6f2ed3180e46fc3b8d9b7e859c997b",
+      "title": "feat: 대시보드에 에이전트 통신과 응답 표시 계층 추가"
+    },
+    {
+      "original": "70205d51874f47c72aaed308c952a2a680cf7f6d",
+      "integrated": "d09f516e2cc11fa3f8b3471cc84e6c07a884c839",
+      "title": "feat: 대화형 패널과 근거 중심 답변 표시"
+    },
+    {
+      "original": "ebac22bed63f58495b43db77e6dd7ca2e2e771c6",
+      "integrated": "0a19b14d2353d9e8a6d108046843b3c1844b6ed4",
+      "title": "fix: 통합 checkout의 원천 줄바꿈 차이를 대사에서 구분"
+    },
+    {
+      "original": "3896c620a0d94e2437780064093df64c582e03c8",
+      "integrated": "4db82ddf0725e4f6ece4c9f8447e3733a5d329d4",
+      "title": "docs: 에이전트 작업 기록을 v0.4.0으로 분류",
+      "resolution": "양쪽 독립 추가 기록 보존"
+    },
+    {
+      "original": "02a3af4d60f38b4c103601225e25a7e65274aa43",
+      "integrated": "69d390261a6df3eca42903be618b5c103b64a29f",
+      "title": "docs: 대시보드와 데이터 통합의 작업 근거 정리"
+    },
+    {
+      "original": "d0af49382e1040682d64ae7facede01606b4bb36",
+      "integrated": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+      "title": "fix: 검증 근거의 원본 CRLF 바이트 보존"
+    }
+  ],
+  "sourceBranches": {
+    "dev": "d0af49382e1040682d64ae7facede01606b4bb36",
+    "feature/workbench-evolution": "ebac22bed63f58495b43db77e6dd7ca2e2e771c6"
   },
-  "validatedCode": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
-  "note": "The v0.4.0 checkpoint SHA is recorded in a following metadata commit to avoid a self-referential commit hash."
+  "main": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+  "remoteMutations": 0,
+  "newTags": [],
+  "note": "This metadata commit records the already-created checkpoints. Existing commits and tags are preserved; the checkpoint SHA is intentionally recorded in a following commit."
 }

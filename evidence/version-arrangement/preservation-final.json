@@ -64,6 +64,8 @@
   ],
   "versions": {
     "v020": "d5f437727d8a704aeb296b134bebee693578e0d3",
-    "v030": "39d9339af56ac704d6adcded3722d36e79225fa8"
-  }
+    "v030": "39d9339af56ac704d6adcded3722d36e79225fa8",
+    "v040": "bed0986ec1d17e348234c77813c077c4a503d0b9"
+  },
+  "checkpointDocumentationCommit": "bed0986ec1d17e348234c77813c077c4a503d0b9"
 }
