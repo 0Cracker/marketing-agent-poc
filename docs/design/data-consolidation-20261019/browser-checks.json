@@ -1,0 +1,72 @@
+{
+  "pass": true,
+  "scope": "Windows Chrome desktop only, per latest user instruction; mobile testing stopped and excluded from acceptance",
+  "viewport": {
+    "width": 1125,
+    "height": 900
+  },
+  "cases": 272,
+  "groups": [
+    {
+      "selection": [
+        "국가국가별 비교",
+        "기준월2026년 08월"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가국가별 비교",
+        "기준월전체 기간"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가미국 · USD",
+        "기준월전체 기간"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가미국 · USD",
+        "기준월2026년 08월"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가한국 · KRW",
+        "기준월2026년 08월"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가한국 · KRW",
+        "기준월전체 기간"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가일본 · JPY",
+        "기준월전체 기간"
+      ],
+      "cases": 34
+    },
+    {
+      "selection": [
+        "국가일본 · JPY",
+        "기준월2026년 08월"
+      ],
+      "cases": 34
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Automated DOM chart/empty-state and document width checks; screenshots inspected separately for layout",
+    "No real market/LLM/Ads behavior inferred"
+  ]
+}
