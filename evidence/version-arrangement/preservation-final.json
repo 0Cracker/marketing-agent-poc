@@ -1,0 +1,69 @@
+{
+  "pass": true,
+  "createdAt": "2026-10-19T14:22:32.882Z",
+  "targetHead": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+  "originalFiles": 557,
+  "missingOriginalFiles": [],
+  "originalFilesChangedForOrganization": [
+    {
+      "repository": "marketing-agent-poc",
+      "file": "scripts/agent-server.mjs"
+    },
+    {
+      "repository": "marketing-agent-poc",
+      "file": "scripts/verify-current-live.mjs"
+    },
+    {
+      "repository": "marketing-agent-poc",
+      "file": "docs/iterations/README.md"
+    },
+    {
+      "repository": "marketing-agent-poc",
+      "file": "docs/iterations/v0.2.0.md"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "frontend/workbench/standard-query.ts"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/check-all-connected.mjs"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/check-data-consolidation.mjs"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/check-marketing-redesign.mjs"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/check-standard-query.mjs"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/import-all-catalog.mjs"
+    },
+    {
+      "repository": "marketing-dashboard-drafts",
+      "file": "scripts/import-standard-catalog.mjs"
+    }
+  ],
+  "unchangedOriginalDataFiles": 260,
+  "integratedImplementationMatches": 68,
+  "protectedSourceAndContractFiles": 102,
+  "potentialProviderCredentials": [],
+  "main": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+  "originalWorktreesClean": true,
+  "knownLinkToBeWritten": [],
+  "limitations": [
+    "Full ontology cycle retains original-worktree absolute paths in historical authorization/OOPS records",
+    "No new live model or real Ads call",
+    "Local node_modules uses an existing dependency junction"
+  ],
+  "versions": {
+    "v020": "d5f437727d8a704aeb296b134bebee693578e0d3",
+    "v030": "39d9339af56ac704d6adcded3722d36e79225fa8"
+  }
+}

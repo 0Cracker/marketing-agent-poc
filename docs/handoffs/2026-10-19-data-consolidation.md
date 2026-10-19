@@ -160,7 +160,7 @@ node는 사용 가능했고 npm/npx는 세션 PATH에 없어 직접 node_modules
 - [별도 Agent UI/API 연결](../design/agent-connection-20261019.md)
 - [생성/재사용 승인 기록](../research/marketing-ontology/data-proposal.md)
 - [작업 일지](../research/marketing-ontology/work-log.md)
-- [실제 시행착오](../ai-lessons/lesson-001.md)
+- [실제 시행착오](../ai-lessons/lesson-002.md)
 
 코드 진입점: frontend/workbench/connected-service.ts → standard-query.ts / connected-views.ts → marketing-summary.ts → contract.ts → charts.tsx / marketing-charts.tsx / review-profile.tsx / table.tsx / workbench.tsx. 표시·CSV는 presentation.ts, 보존 조회는 baseline-source.ts/legacy-query.ts. Agent는 agent-client.ts/agent-conversation.tsx/panel.tsx 및 vite.config.ts proxy를 읽는다.
 

@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "type": "manual-browser-observation",
+  "url": "http://127.0.0.1:5186/workbench",
+  "externalModelCalls": 0,
+  "realAdsCalls": 0,
+  "isolatedDatabase": "work/version-history-ui.sqlite (ignored)",
+  "checks": [
+    "v0.3.0 CURRENT JP market and ALL-country comparison",
+    "v0.4.0 analysis -> evidence quote -> budget -> synthetic approval -> followup invalidation",
+    "page reload restores followup and invalidated proposal",
+    "no visible alert or page horizontal overflow",
+    "same isolated SQLite DB after server process restart restores followup and invalidated proposal",
+    "D008-T25-01121 quote points to D008-T24-00561 $.body_text offsets 12..24"
+  ],
+  "notRepeated": [
+    "historical 272-screen matrix",
+    "live model calls"
+  ],
+  "note": "DOM observations through the browser tool; detailed captures remain in this task history."
+}

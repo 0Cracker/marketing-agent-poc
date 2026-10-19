@@ -353,5 +353,135 @@
     "error": null,
     "log": "current-build.txt",
     "status": "pass"
+  },
+  {
+    "name": "agent-client",
+    "root": "marketing-version-history",
+    "head": "3e6a16830c6f2ed3180e46fc3b8d9b7e859c997b",
+    "startedAt": "2026-10-19T14:13:49.650Z",
+    "finishedAt": "2026-10-19T14:13:50.038Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-client.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-client.txt",
+    "status": "pass"
+  },
+  {
+    "name": "agent-answer",
+    "root": "marketing-version-history",
+    "head": "3e6a16830c6f2ed3180e46fc3b8d9b7e859c997b",
+    "startedAt": "2026-10-19T14:13:50.042Z",
+    "finishedAt": "2026-10-19T14:13:50.319Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-answer.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-answer.txt",
+    "status": "pass"
+  },
+  {
+    "name": "agent-presentation",
+    "root": "marketing-version-history",
+    "head": "3e6a16830c6f2ed3180e46fc3b8d9b7e859c997b",
+    "startedAt": "2026-10-19T14:13:50.320Z",
+    "finishedAt": "2026-10-19T14:13:50.625Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-presentation.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-presentation.txt",
+    "status": "pass"
+  },
+  {
+    "name": "chat-types",
+    "root": "marketing-version-history",
+    "head": "d09f516e2cc11fa3f8b3471cc84e6c07a884c839",
+    "startedAt": "2026-10-19T14:13:51.209Z",
+    "finishedAt": "2026-10-19T14:14:01.847Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--incremental",
+      "false"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "chat-types.txt",
+    "status": "pass"
+  },
+  {
+    "name": "chat-build",
+    "root": "marketing-version-history",
+    "head": "d09f516e2cc11fa3f8b3471cc84e6c07a884c839",
+    "startedAt": "2026-10-19T14:14:01.852Z",
+    "finishedAt": "2026-10-19T14:14:08.731Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "chat-build.txt",
+    "status": "pass"
+  },
+  {
+    "name": "integrated-agents",
+    "root": "marketing-version-history",
+    "head": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+    "startedAt": "2026-10-19T14:16:26.398Z",
+    "finishedAt": "2026-10-19T14:16:54.757Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-agent-tdd.mjs",
+      "--output",
+      "evidence/version-arrangement/v0.4.0/agents.json"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "integrated-agents.txt",
+    "status": "pass"
+  },
+  {
+    "name": "integrated-data-agent",
+    "root": "marketing-version-history",
+    "head": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+    "startedAt": "2026-10-19T14:16:54.761Z",
+    "finishedAt": "2026-10-19T14:17:12.494Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-data-consolidation.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "integrated-data-agent.txt",
+    "status": "pass"
+  },
+  {
+    "name": "integrated-workbench-lint",
+    "root": "marketing-version-history",
+    "head": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+    "startedAt": "2026-10-19T14:17:12.495Z",
+    "finishedAt": "2026-10-19T14:17:22.095Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/eslint/bin/eslint.js",
+      "frontend/workbench"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "integrated-workbench-lint.txt",
+    "status": "pass"
   }
 ]

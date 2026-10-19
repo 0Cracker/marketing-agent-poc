@@ -1,5 +1,7 @@
 # 두 에이전트 B 흐름
 
+2026-10-19 통합본 안내: 이 worktree에서는 같은 저장소의 `scripts/current-data.mjs`와 `data/manifest.json`을 우선 읽는다. 아래 sibling 설명은 기존 두 worktree 구성도 지원하기 위한 이력이다. 로컬 버전과 재현 명령은 [버전 대응표](../docs/iterations/version-history.md)를 따른다.
+
 2026-10-19 통합 자료 연결: 기본 `scripts/agent-server.mjs`는 sibling `marketing-dashboard-drafts/data/manifest.json`과 업무 유형 JSONL을 검증해 읽는다. `MARKETING_DATA_DIR`로 통합 data/ 경로를 지정할 수 있다. 현재 논리 데이터셋은 `CURRENT`이며 원래 레코드 ID와 scope는 manifest 매핑으로 유지한다. 세션의 자료 해시가 화면과 다르거나 저장 실행의 자료 fingerprint가 바뀌면 만료/보류 처리한다. D007로 바꿔 보내는 데이터 별칭은 사용하지 않는다. 아래 D007 호출 예는 고정 회귀용으로 보존한다.
 
 이 변경은 새 관측·명세·온톨로지를 생성하지 않았다. 오프라인 전체 기간 분석은 기존 최종 사실100개 제한 안에서 선택한다. [109시험·기존 회귀·입력102파일 불변](../docs/design/agent-data-consolidation-20261019-final.json), [통합 판정·328조회·윈도우272화면·재시작 복원](../../marketing-dashboard-drafts/docs/design/data-consolidation-20261019/README.md)을 확인했다. 외부 LLM·실제 Ads는 이번 통합 검증에서 호출하지 않았다.

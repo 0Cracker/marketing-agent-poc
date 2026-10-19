@@ -1,0 +1,10 @@
+{
+  "schema": "local-version-index/1",
+  "status": "checkpoint-being-recorded",
+  "versions": {
+    "v020": "d5f437727d8a704aeb296b134bebee693578e0d3",
+    "v030": "39d9339af56ac704d6adcded3722d36e79225fa8"
+  },
+  "validatedCode": "1d88d163d83003e2ad94d3e4e4126387efd9da28",
+  "note": "The v0.4.0 checkpoint SHA is recorded in a following metadata commit to avoid a self-referential commit hash."
+}
