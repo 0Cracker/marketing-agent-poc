@@ -1,0 +1,79 @@
+vite v8.0.13 building client environment for production...
+[2K
+
+/fonts/SUIT-Variable.woff2 referenced in /fonts/SUIT-Variable.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/PretendardVariable.woff2 referenced in /fonts/PretendardVariable.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+transforming...✓ 2606 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/favicon.svg                                               0.23 kB │ gzip:   0.18 kB
+dist/window.svg                                                0.38 kB │ gzip:   0.22 kB
+dist/file.svg                                                  0.39 kB │ gzip:   0.26 kB
+dist/index.html                                                0.57 kB │ gzip:   0.44 kB
+dist/globe.svg                                                 1.03 kB │ gzip:   0.54 kB
+dist/fonts/README.md                                           1.10 kB
+dist/workbench-data/current/product-presentation.json          4.14 kB │ gzip:   0.57 kB
+dist/fonts/SUIT-LICENSE.txt                                    4.38 kB │ gzip:   1.96 kB
+dist/fonts/Pretendard-LICENSE.txt                              4.41 kB │ gzip:   1.98 kB
+dist/workbench-data/current/products.jsonl                     6.19 kB
+dist/workbench-data/current/manifest.json                      9.34 kB │ gzip:   3.16 kB
+dist/workbench-data/current/campaigns.jsonl                   17.62 kB
+dist/workbench-data/current/site-events.jsonl                 26.38 kB
+dist/workbench-data/current/creator-collaborations.jsonl      26.43 kB
+dist/workbench-data/current/budget-policies.jsonl             52.73 kB
+dist/workbench-data/current/promotions.jsonl                  67.85 kB
+dist/workbench-data/current/publications.jsonl                79.00 kB
+dist/workbench-data/current/public-statistics.jsonl           92.25 kB
+dist/workbench-data/current/creatives.jsonl                  108.54 kB
+dist/workbench-data/current/experiments.jsonl                115.92 kB
+dist/workbench-data/current/budget-models.jsonl              122.68 kB
+dist/workbench-data/current/identity-mappings.jsonl          124.74 kB
+dist/workbench-data/current/change-events.jsonl              151.99 kB
+dist/workbench-data/current/purchase-surveys.jsonl           153.92 kB
+dist/workbench-data/current/owned-content.jsonl              167.26 kB
+dist/workbench-data/current/costs.jsonl                      176.49 kB
+dist/workbench-data/current/auction-insights.jsonl           180.80 kB
+dist/workbench-data/current/brand-surveys.jsonl              187.02 kB
+dist/workbench-data/current/public-ads.jsonl                 192.66 kB
+dist/workbench-data/current/weather-calendar.jsonl           215.42 kB
+dist/workbench-data/current/refunds.jsonl                    217.80 kB
+dist/workbench-data/current/crm-performance.jsonl            259.16 kB
+dist/workbench-data/current/keyword-demand.jsonl             278.40 kB
+dist/workbench-data/current/collection-runs.jsonl            280.34 kB
+dist/workbench-data/current/search-interest.jsonl            281.23 kB
+dist/workbench-data/current/customer-cohorts.jsonl           284.19 kB
+dist/workbench-data/current/sales-reports.jsonl              301.48 kB
+dist/workbench-data/current/inventory.jsonl                  376.62 kB
+dist/workbench-data/current/customer-inquiries.jsonl         483.45 kB
+dist/workbench-data/current/organic-search.jsonl             552.44 kB
+dist/workbench-data/current/market-sales.jsonl               573.83 kB
+dist/fonts/SUIT-Variable.woff2                               624.53 kB
+dist/workbench-data/current/ad-performance.jsonl             979.37 kB
+dist/workbench-data/current/ad-breakdowns.jsonl              994.21 kB
+dist/workbench-data/current/social-comments.jsonl          1,240.10 kB
+dist/workbench-data/current/distribution-fulfilment.jsonl  1,463.94 kB
+dist/workbench-data/current/prices.jsonl                   2,002.26 kB
+dist/fonts/PretendardVariable.woff2                        2,057.68 kB
+dist/workbench-data/current/order-lines.jsonl              2,557.76 kB
+dist/workbench-data/current/reviews.jsonl                  3,174.95 kB
+dist/workbench-data/current/web-events.jsonl               5,608.82 kB
+dist/workbench-data/current/review-annotations.jsonl       6,410.96 kB
+dist/workbench-data/current/definitions.json               7,130.54 kB │ gzip:  98.60 kB
+dist/workbench-data/current/commerce-events.jsonl          8,643.78 kB
+dist/assets/workbench--N6zaQzl.css                            48.63 kB │ gzip:  10.04 kB
+dist/assets/index-JY34TKGY.css                               179.85 kB │ gzip:  28.57 kB
+dist/assets/connected-service-Bzg337PW.js                      2.32 kB │ gzip:   1.19 kB
+dist/assets/page-DDZ_4zpf.js                                 101.35 kB │ gzip:  24.71 kB
+dist/assets/workbench-kn4tHxrl.js                            184.44 kB │ gzip:  59.55 kB
+dist/assets/index-BfCB9B63.js                                192.94 kB │ gzip:  61.19 kB
+dist/assets/standard-query-CkFvJFS3.js                       236.55 kB │ gzip:  44.56 kB
+dist/assets/button-BMJjSclk.js                               416.32 kB │ gzip: 120.74 kB
+
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - rolldown:vite-resolve (44%)
+  - vite:css (43%)
+  - vite:build-html (5%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 8.74s

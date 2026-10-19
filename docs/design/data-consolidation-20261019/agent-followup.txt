@@ -1,0 +1,396 @@
+- link "본문 바로가기":
+  - /url: "#wb-content"
+- complementary:
+  - text: Marketing
+  - generic: 데이터 워크벤치
+  - generic: M
+  - generic: 마케팅 워크스페이스
+  - paragraph: 데이터 탐색
+  - navigation "도메인":
+    - button "시장·경쟁":
+      - text: 시장·경쟁
+    - button "브랜드·소비자":
+      - text: 브랜드·소비자
+    - button "광고·소재":
+      - text: 광고·소재
+    - button "웹·전환":
+      - text: 웹·전환
+    - button "매출·고객":
+      - text: 매출·고객
+    - button "상품·유통":
+      - text: 상품·유통
+    - button "소셜·콘텐츠":
+      - text: 소셜·콘텐츠
+  - button "데이터·검증 도구"
+- banner:
+  - heading "시장·경쟁" [level=1]
+  - generic: 시장 현황
+  - generic: 가상 데이터
+  - button "대화 닫기":
+    - text: 대화 닫기
+- generic: 통합 현재 자료
+- combobox "국가":
+  - generic: 국가
+  - generic: 일본 · JPY
+- combobox "카테고리":
+  - generic: 카테고리
+  - generic: 샴푸
+- combobox "기준월":
+  - generic: 기준월
+  - generic: 2026년 08월
+- combobox "비교 기준":
+  - generic: 비교 기준
+  - generic: 전년 동월
+- button "데이터 연결 현황":
+- tablist "세부 화면":
+  - tab "시장 현황" [selected]
+  - tab "구매 경험 조사"
+  - tab "경쟁사 공개 활동"
+  - tab "시장 외부 요인"
+- main:
+  - button "대시보드"
+  - button "원천 레코드"
+  - combobox "브랜드":
+    - generic: 브랜드
+    - generic: 전체 브랜드
+  - combobox "제품":
+    - generic: 제품
+    - generic: 전체 제품
+  - button "범위·품질 보기":
+  - region "요약 지표":
+    - button "시장 판매액 JPY 3905.5만":
+      - generic: 시장 판매액
+      - generic: JPY
+      - strong: 3905.5만
+    - button "자사 금액 점유율 11.8%":
+      - generic: 자사 금액 점유율
+      - strong: 11.8%
+    - button "자사 시장 판매액 JPY 460만":
+      - generic: 자사 시장 판매액
+      - generic: JPY
+      - strong: 460만
+    - button "전년 동월 점유율 차이 0.1%p":
+      - generic: 전년 동월 점유율 차이
+      - strong: 0.1%p
+  - region "자사 금액 기준 시장점유율":
+    - heading "자사 금액 기준 시장점유율" [level=2]
+    - generic: "%"
+    - button "데이터 표 보기":
+    - button "근거 보기":
+    - application:
+      - generic: "25.09"
+      - generic: "25.10"
+      - generic: "25.11"
+      - generic: "25.12"
+      - generic: "01"
+      - generic: "02"
+      - generic: "03"
+      - generic: "04"
+      - generic: "05"
+      - generic: "06"
+      - generic: "07"
+      - generic: "08"
+      - generic: "0"
+      - generic: "4"
+      - generic: "8"
+      - generic: "12"
+      - generic: "16"
+    - generic: 현재
+    - generic: 전년
+  - region "브랜드별 금액 기준 시장점유율":
+    - heading "브랜드별 금액 기준 시장점유율" [level=2]
+    - generic: "%"
+    - button "데이터 표 보기":
+    - button "근거 보기":
+    - application:
+      - generic: 기타 시장
+      - generic: 경쟁2
+      - generic: 경쟁1
+      - generic: 자사
+      - generic: "0"
+      - generic: "25"
+      - generic: "50"
+      - generic: "75"
+      - generic: "100"
+      - generic: 50.0%
+      - generic: 20.5%
+      - generic: 17.7%
+      - generic: 11.8%
+  - region "상세 데이터":
+    - heading "브랜드·제품 상세" [level=2]
+    - textbox "전체 결과 검색"
+    - button "CSV":
+      - text: CSV
+    - table:
+      - rowgroup:
+        - row "브랜드 / 제품 판매액 판매량 금액 점유율 전년 판매액 전년 점유율 점유율 차이 (%p) 근거":
+          - columnheader "브랜드 / 제품":
+            - button "브랜드 / 제품":
+              - text: 브랜드 / 제품
+          - columnheader "판매액":
+            - button "판매액":
+              - text: 판매액
+          - columnheader "판매량":
+            - button "판매량":
+              - text: 판매량
+          - columnheader "금액 점유율":
+            - button "금액 점유율":
+              - text: 금액 점유율
+          - columnheader "전년 판매액":
+            - button "전년 판매액":
+              - text: 전년 판매액
+          - columnheader "전년 점유율":
+            - button "전년 점유율":
+              - text: 전년 점유율
+          - columnheader "점유율 차이 (%p)":
+            - button "점유율 차이 (%p)":
+              - text: 점유율 차이 (%p)
+          - columnheader "근거"
+      - rowgroup:
+        - row "기타 시장 19,527,717 — 50.0% 18,964,428 50.0% 0.0 기타 시장 근거 보기":
+          - cell "기타 시장":
+            - button "기타 시장"
+          - cell "19,527,717"
+          - cell "—"
+          - cell "50.0%"
+          - cell "18,964,428"
+          - cell "50.0%"
+          - cell "0.0"
+          - cell "기타 시장 근거 보기":
+            - button "기타 시장 근거 보기": 근거 ↗
+        - row "가상 경쟁2 브랜드 7,998,984 5,264 20.5% 7,821,462 20.6% -0.1 ↓ 가상 경쟁2 브랜드 근거 보기":
+          - cell "가상 경쟁2 브랜드":
+            - button "가상 경쟁2 브랜드"
+          - cell "7,998,984"
+          - cell "5,264"
+          - cell "20.5%"
+          - cell "7,821,462"
+          - cell "20.6%"
+          - cell "-0.1 ↓":
+            - generic: "-0.1 ↓"
+          - cell "가상 경쟁2 브랜드 근거 보기":
+            - button "가상 경쟁2 브랜드 근거 보기": 근거 ↗
+        - row "가상 경쟁2 제품A 4,388,076 2,772 11.2% 3,637,638 9.6% 1.6 ↑ 가상 경쟁2 제품A 근거 보기":
+          - cell "가상 경쟁2 제품A":
+            - button "가상 경쟁2 제품A": 제품 A
+          - cell "4,388,076"
+          - cell "2,772"
+          - cell "11.2%"
+          - cell "3,637,638"
+          - cell "9.6%"
+          - cell "1.6 ↑":
+            - generic: 1.6 ↑
+          - cell "가상 경쟁2 제품A 근거 보기":
+            - button "가상 경쟁2 제품A 근거 보기": 근거 ↗
+        - row "가상 경쟁2 제품B 3,610,908 2,492 9.2% 4,183,824 11.0% -1.8 ↓ 가상 경쟁2 제품B 근거 보기":
+          - cell "가상 경쟁2 제품B":
+            - button "가상 경쟁2 제품B": 제품 B
+          - cell "3,610,908"
+          - cell "2,492"
+          - cell "9.2%"
+          - cell "4,183,824"
+          - cell "11.0%"
+          - cell "-1.8 ↓":
+            - generic: "-1.8 ↓"
+          - cell "가상 경쟁2 제품B 근거 보기":
+            - button "가상 경쟁2 제품B 근거 보기": 근거 ↗
+        - row "가상 경쟁1 브랜드 6,929,136 3,918 17.7% 6,723,789 17.7% 0.0 ↑ 가상 경쟁1 브랜드 근거 보기":
+          - cell "가상 경쟁1 브랜드":
+            - button "가상 경쟁1 브랜드"
+          - cell "6,929,136"
+          - cell "3,918"
+          - cell "17.7%"
+          - cell "6,723,789"
+          - cell "17.7%"
+          - cell "0.0 ↑":
+            - generic: 0.0 ↑
+          - cell "가상 경쟁1 브랜드 근거 보기":
+            - button "가상 경쟁1 브랜드 근거 보기": 근거 ↗
+        - row "가상 경쟁1 제품B 3,878,175 1,869 9.9% 4,235,664 11.2% -1.2 ↓ 가상 경쟁1 제품B 근거 보기":
+          - cell "가상 경쟁1 제품B":
+            - button "가상 경쟁1 제품B": 제품 B
+          - cell "3,878,175"
+          - cell "1,869"
+          - cell "9.9%"
+          - cell "4,235,664"
+          - cell "11.2%"
+          - cell "-1.2 ↓":
+            - generic: "-1.2 ↓"
+          - cell "가상 경쟁1 제품B 근거 보기":
+            - button "가상 경쟁1 제품B 근거 보기": 근거 ↗
+        - row "가상 경쟁1 제품A 3,050,961 2,049 7.8% 2,488,125 6.6% 1.3 ↑ 가상 경쟁1 제품A 근거 보기":
+          - cell "가상 경쟁1 제품A":
+            - button "가상 경쟁1 제품A": 제품 A
+          - cell "3,050,961"
+          - cell "2,049"
+          - cell "7.8%"
+          - cell "2,488,125"
+          - cell "6.6%"
+          - cell "1.3 ↑":
+            - generic: 1.3 ↑
+          - cell "가상 경쟁1 제품A 근거 보기":
+            - button "가상 경쟁1 제품A 근거 보기": 근거 ↗
+        - row "가상 자사 브랜드 4,599,597 3,032 11.8% 4,419,177 11.7% 0.1 ↑ 가상 자사 브랜드 근거 보기":
+          - cell "가상 자사 브랜드":
+            - button "가상 자사 브랜드"
+          - cell "4,599,597"
+          - cell "3,032"
+          - cell "11.8%"
+          - cell "4,419,177"
+          - cell "11.7%"
+          - cell "0.1 ↑":
+            - generic: 0.1 ↑
+          - cell "가상 자사 브랜드 근거 보기":
+            - button "가상 자사 브랜드 근거 보기": 근거 ↗
+        - row "가상 자사 제품B 3,116,362 1,831 8.0% 2,679,705 7.1% 0.9 ↑ 가상 자사 제품B 근거 보기":
+          - cell "가상 자사 제품B":
+            - button "가상 자사 제품B": 제품 B
+          - cell "3,116,362"
+          - cell "1,831"
+          - cell "8.0%"
+          - cell "2,679,705"
+          - cell "7.1%"
+          - cell "0.9 ↑":
+            - generic: 0.9 ↑
+          - cell "가상 자사 제품B 근거 보기":
+            - button "가상 자사 제품B 근거 보기": 근거 ↗
+        - row "가상 자사 제품A 1,483,235 1,201 3.8% 1,739,472 4.6% -0.8 ↓ 가상 자사 제품A 근거 보기":
+          - cell "가상 자사 제품A":
+            - button "가상 자사 제품A": 제품 A
+          - cell "1,483,235"
+          - cell "1,201"
+          - cell "3.8%"
+          - cell "1,739,472"
+          - cell "4.6%"
+          - cell "-0.8 ↓":
+            - generic: "-0.8 ↓"
+          - cell "가상 자사 제품A 근거 보기":
+            - button "가상 자사 제품A 근거 보기": 근거 ↗
+- dialog "Agent·근거 패널":
+  - banner:
+    - generic: 마케팅 AI
+    - generic: 지금 보고 있는 데이터로 함께 분석해요
+    - button "패널 닫기":
+  - generic: 시장·경쟁
+  - generic: 일본 · 2026-08
+  - tablist "Agent 패널":
+    - tab "대화" [selected]
+    - tab "근거"
+    - tab "원본"
+  - region "분석·예산 대화":
+    - generic "◉ 현재 화면 기준 6개 제품 · 2026-08":
+      - text: ◉ 현재 화면 기준
+      - generic: 6개 제품 · 2026-08
+    - region "대화 내역":
+      - generic "내 질문":
+        - paragraph: 가격 관련 지지·반대 근거를 확인해줘
+      - heading "마케팅 AI 이전 답변" [level=2]:
+        - text: 마케팅 AI
+        - generic: 이전 답변
+      - paragraph: 가격 근거가 엇갈려 영향을 확정할 수 없습니다.
+      - generic "이전 답변 상세"
+      - generic "내 질문":
+        - paragraph: 그중 가격 영향만 다시 봐줘
+      - heading "마케팅 AI 분석 완료" [level=2]:
+        - text: 마케팅 AI
+        - generic: 분석 완료
+      - paragraph: 가격 근거가 엇갈려 영향을 확정할 수 없습니다.
+      - heading "핵심 근거" [level=3]
+      - list:
+        - text: "가격: 지지 8건 · 반대 8건."
+        - button "근거 1 원문 보기": "[1]"
+        - button "근거 2 원문 보기": "[2]"
+        - listitem: 선택 범위에서 사실 18개를 반환했습니다.
+      - paragraph:
+        - generic: 한계
+        - text: 가상 표본·제한된 조회 범위의 결과입니다. 근거 건수는 효과의 크기나 신뢰도가 아니며, 인과는 입증되지 않았습니다.
+      - paragraph:
+        - generic: 다음 행동
+        - text: 같은 제품·기간의 관련 자료를 추가로 확인하세요.
+      - generic "수치·원인 후보 상세"
+      - generic "조회·판단 과정 보기"
+      - button "가격만 다시 보기"
+      - button "예산 검토로 넘기기"
+      - button "저장된 결과 확인"
+      - heading "예산 검토 기존 제안 무효" [level=2]:
+        - text: 예산 검토
+        - generic: 기존 제안 무효
+      - paragraph: 기존 제안은 무효입니다. 최신 분석으로 다시 검토하세요.
+      - paragraph: 후속 분석으로 근거가 바뀌어 기존 제안과 승인이 무효화됐습니다. 최신 분석으로 예산을 다시 검토해 주세요.
+      - paragraph:
+        - generic: 한계
+        - text: 기존 가상 시나리오의 가정 기반 계산입니다. 실제 계정의 현행·성과 예측이 아니며, 비교 수치만으로 집행을 권하지 않습니다.
+      - paragraph: "예산 시나리오 기간: 2026-08-03 ~ 2026-08-31 미포함. 아래 캠페인만 변경 대상입니다."
+      - table "캠페인별 배분 비교":
+        - caption: 캠페인별 배분 비교
+        - rowgroup:
+          - row "변경 대상 기준안 후보안":
+            - columnheader "변경 대상"
+            - columnheader "기준안"
+            - columnheader "후보안"
+        - rowgroup:
+          - row "D008-Campaign-JP-P1A-search 525,000 JPY 750,000 JPY":
+            - rowheader "D008-Campaign-JP-P1A-search"
+            - cell "525,000 JPY"
+            - cell "750,000 JPY"
+          - row "D008-Campaign-JP-P1A-social 975,000 JPY 750,000 JPY":
+            - rowheader "D008-Campaign-JP-P1A-social"
+            - cell "975,000 JPY"
+            - cell "750,000 JPY"
+      - table "같은 가정의 기준안·후보안 비교":
+        - caption: 같은 가정의 기준안·후보안 비교
+        - rowgroup:
+          - row "구분 모의 전환수":
+            - columnheader "구분"
+            - columnheader "모의 전환수"
+        - rowgroup:
+          - row "기준안 60.500000":
+            - rowheader "기준안"
+            - cell "60.500000"
+          - row "후보안 61.538462":
+            - rowheader "후보안"
+            - cell "61.538462"
+      - generic "승인 대상 배분·가정 보기"
+      - paragraph:
+        - generic: 다음 행동
+        - text: 최신 분석으로 예산을 다시 검토하세요.
+      - generic "후보·가정 변경"
+      - option "D008-T39-00004"
+      - option "D008-T39-00010" [selected]
+      - option "D008-T39-00016"
+      - option "D008-T39-00022"
+      - option "D008-T39-00028"
+      - option "D008-T39-00034"
+      - option "D008-T39-00040"
+      - option "D008-T39-00046"
+      - option "D008-T39-00052"
+      - option "D008-T39-00058"
+      - option "D008-T39-00064"
+      - option "D008-T39-00070"
+      - option "D008-ResponseModel-1" [selected]
+      - option "D008-ResponseModel-4"
+      - option "D008-ResponseModel-7"
+      - option "D008-ResponseModel-10"
+      - option "D008-ResponseModel-13"
+      - option "D008-ResponseModel-16"
+      - option "D008-ResponseModel-19"
+      - option "D008-ResponseModel-22"
+      - option "D008-ResponseModel-25"
+      - option "D008-ResponseModel-28"
+      - option "D008-ResponseModel-31"
+      - option "D008-ResponseModel-34"
+      - button "가상 변경 승인" [disabled]
+      - button "제안 거절" [disabled]
+      - button "실제 집행 미연결" [disabled]
+    - textbox "분석 질문" [active]:
+      - /placeholder: 이어서 궁금한 점을 물어보세요
+    - generic "분석 설정⌄"
+    - option "가격" [selected]
+    - option "재고"
+    - option "광고"
+    - option "계측"
+    - button "메시지 보내기" [disabled]:
+    - paragraph:
+      - text: 오프라인 데모 · 외부 LLM 미연결
+      - generic: Shift + Enter 줄바꿈
+- generic: P1A
