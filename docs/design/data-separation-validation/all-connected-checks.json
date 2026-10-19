@@ -1,0 +1,2693 @@
+{
+  "pass": true,
+  "rows": 22242,
+  "source_files": 91,
+  "batches": [
+    {
+      "id": "D003B",
+      "rows": 1652,
+      "conforming": 895
+    },
+    {
+      "id": "D005",
+      "rows": 534,
+      "conforming": 534
+    },
+    {
+      "id": "D006-CQ-A",
+      "rows": 3,
+      "conforming": 3
+    },
+    {
+      "id": "D006-CQ-B",
+      "rows": 53,
+      "conforming": 20
+    },
+    {
+      "id": "D007",
+      "rows": 20000,
+      "conforming": 20000
+    }
+  ],
+  "results": [
+    {
+      "type": "H01",
+      "rows": 288,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T01",
+      "rows": 12,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T02",
+      "rows": 168,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T03",
+      "rows": 868,
+      "contract_gaps": 436
+    },
+    {
+      "type": "T04",
+      "rows": 126,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T05",
+      "rows": 252,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T06",
+      "rows": 234,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T07",
+      "rows": 456,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T08",
+      "rows": 2020,
+      "contract_gaps": 4
+    },
+    {
+      "type": "T09",
+      "rows": 55,
+      "contract_gaps": 1
+    },
+    {
+      "type": "T10",
+      "rows": 120,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T11",
+      "rows": 60,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T12",
+      "rows": 22,
+      "contract_gaps": 10
+    },
+    {
+      "type": "T13",
+      "rows": 947,
+      "contract_gaps": 323
+    },
+    {
+      "type": "T14",
+      "rows": 696,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T15",
+      "rows": 156,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T16",
+      "rows": 84,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T17",
+      "rows": 2824,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T18",
+      "rows": 3340,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T19",
+      "rows": 1218,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T20",
+      "rows": 129,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T21",
+      "rows": 156,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T22",
+      "rows": 510,
+      "contract_gaps": 6
+    },
+    {
+      "type": "T23",
+      "rows": 918,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T24",
+      "rows": 1893,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T25",
+      "rows": 2426,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T26",
+      "rows": 189,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T27",
+      "rows": 120,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T28",
+      "rows": 558,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T29",
+      "rows": 39,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T30",
+      "rows": 153,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T31",
+      "rows": 150,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T32",
+      "rows": 126,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T33",
+      "rows": 84,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T34",
+      "rows": 186,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T35",
+      "rows": 109,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T36",
+      "rows": 226,
+      "contract_gaps": 10
+    },
+    {
+      "type": "T37",
+      "rows": 117,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T38",
+      "rows": 84,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T39",
+      "rows": 81,
+      "contract_gaps": 0
+    },
+    {
+      "type": "T40",
+      "rows": 42,
+      "contract_gaps": 0
+    }
+  ],
+  "dashboards": [
+    {
+      "country": "JP",
+      "type": "H01",
+      "charts": 2,
+      "titles": [
+        "자사 순매출",
+        "총판매액에서 순매출까지"
+      ],
+      "fields": [
+        "name",
+        "grossUnits",
+        "returnedUnits",
+        "netUnits",
+        "gross",
+        "returns",
+        "net",
+        "previous"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T01",
+      "charts": 0,
+      "titles": [],
+      "fields": [
+        "brand",
+        "name",
+        "sku",
+        "group",
+        "volume",
+        "countries",
+        "period",
+        "status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T02",
+      "charts": 2,
+      "titles": [
+        "식별자 연결 상태",
+        "연결 시스템"
+      ],
+      "fields": [
+        "name",
+        "mapping_kind",
+        "entity_ref",
+        "external_system",
+        "external_value",
+        "match_status",
+        "valid_from",
+        "entity_type",
+        "country_code",
+        "language"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T03",
+      "charts": 2,
+      "titles": [
+        "자사 금액 기준 시장점유율",
+        "브랜드별 금액 기준 시장점유율"
+      ],
+      "fields": [
+        "name",
+        "sales",
+        "units",
+        "share",
+        "previousSales",
+        "previousShare",
+        "difference"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T04",
+      "charts": 2,
+      "titles": [
+        "제품별 구매 경험 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "measures"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T05",
+      "charts": 1,
+      "titles": [
+        "자사 제품 A · 검색 관심 추이"
+      ],
+      "fields": [
+        "name",
+        "term_ref",
+        "index_value",
+        "normalization_scope",
+        "index_definition",
+        "search_surface",
+        "period",
+        "query_id",
+        "term_kind"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T06",
+      "charts": 2,
+      "titles": [
+        "검색어별 예상 수요",
+        "검색어 경쟁 수준"
+      ],
+      "fields": [
+        "name",
+        "keyword",
+        "estimated_searches",
+        "competition_level",
+        "competition_index",
+        "low_bid",
+        "high_bid",
+        "network_scope",
+        "language",
+        "geo_target_ref",
+        "period"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T07",
+      "charts": 2,
+      "titles": [
+        "기기별 검색 클릭 추이",
+        "검색 기기 구성"
+      ],
+      "fields": [
+        "name",
+        "page_ref",
+        "device",
+        "query",
+        "clicks",
+        "impressions",
+        "average_position",
+        "aggregation_scope",
+        "site_ref",
+        "period",
+        "search_type"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T08",
+      "charts": 2,
+      "titles": [
+        "제품별 판매가 추이",
+        "최근 관측일 · 제품별 판매가 범위"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "seller_ref",
+        "listed_price",
+        "availability"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T09",
+      "charts": 1,
+      "titles": [
+        "제품·판매처별 행사 조건"
+      ],
+      "fields": [
+        "name",
+        "promotion_id",
+        "product_refs",
+        "seller_ref",
+        "period",
+        "promotion_type",
+        "discount_ratio",
+        "eligibility_text"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T10",
+      "charts": 2,
+      "titles": [
+        "경쟁사별 공개 광고",
+        "광고 소재 형식"
+      ],
+      "fields": [
+        "name",
+        "public_ad_id",
+        "advertiser_ref",
+        "observed_at",
+        "format",
+        "creative_text",
+        "served_regions",
+        "coverage_text"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T11",
+      "charts": 2,
+      "titles": [
+        "발행처별 공개 자료",
+        "공개 자료 발행 추이"
+      ],
+      "fields": [
+        "name",
+        "document_id",
+        "publisher",
+        "published_at",
+        "body_text",
+        "subject_refs",
+        "language",
+        "title"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T12",
+      "charts": 1,
+      "titles": [
+        "캠페인별 운영 예산"
+      ],
+      "fields": [
+        "name",
+        "campaign_id",
+        "channel",
+        "product_refs",
+        "status",
+        "budget_amount",
+        "budget_period",
+        "target_definition",
+        "platform",
+        "account_id",
+        "objective",
+        "period",
+        "bidding_strategy",
+        "landing_ref"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T13",
+      "charts": 4,
+      "titles": [
+        "광고비",
+        "클릭률",
+        "클릭 후 전환율",
+        "ROAS"
+      ],
+      "fields": [
+        "name",
+        "media",
+        "spend",
+        "impressions",
+        "clicks",
+        "ctr",
+        "conversions",
+        "cvr",
+        "cpa",
+        "revenue",
+        "roas",
+        "status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T14",
+      "charts": 2,
+      "titles": [
+        "기기별 일간 광고비",
+        "기기별 관측 광고비"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "parent_report_ref",
+        "breakdown_dimensions",
+        "metrics",
+        "audience_basis",
+        "period"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T15",
+      "charts": 1,
+      "titles": [
+        "최근 경쟁 도메인 보고"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "competitor_domain",
+        "impression_share",
+        "overlap_rate",
+        "period",
+        "report_surface",
+        "threshold_status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T16",
+      "charts": 1,
+      "titles": [
+        "소재 형식별 버전 구성"
+      ],
+      "fields": [
+        "name",
+        "creative_id",
+        "product_refs",
+        "version",
+        "format",
+        "message_text",
+        "valid_from",
+        "valid_to_exclusive",
+        "language"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T17",
+      "charts": 2,
+      "titles": [
+        "유입 경로별 웹 활동",
+        "기기별 웹 활동"
+      ],
+      "fields": [
+        "name",
+        "event_id",
+        "event_time",
+        "event_name",
+        "session_ref",
+        "page_ref",
+        "device",
+        "consent_state",
+        "site_ref",
+        "user_pseudo_ref",
+        "traffic_source"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T18",
+      "charts": 3,
+      "titles": [
+        "상품 행동별 수량",
+        "일별 상품 구매 수량",
+        "제품별 상품 구매 수량"
+      ],
+      "fields": [
+        "name",
+        "event_time",
+        "event_name",
+        "quantity"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T19",
+      "charts": 2,
+      "titles": [
+        "일별 주문행 매출",
+        "제품별 주문행 매출"
+      ],
+      "fields": [
+        "name",
+        "order_id",
+        "line_id",
+        "ordered_at",
+        "variant_ref",
+        "quantity",
+        "unit_price",
+        "line_gross_total",
+        "financial_status",
+        "seller_ref",
+        "customer_pseudo_ref",
+        "line_discount",
+        "line_tax",
+        "fulfilment_status",
+        "transaction_ref"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T20",
+      "charts": 2,
+      "titles": [
+        "요청 종류",
+        "처리 상태"
+      ],
+      "fields": [
+        "name",
+        "adjustment_id",
+        "adjustment_kind",
+        "order_ref",
+        "processed_at",
+        "quantity",
+        "refund_amount",
+        "status",
+        "order_line_ref",
+        "requested_at",
+        "reason_code",
+        "restocked"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T21",
+      "charts": 1,
+      "titles": [
+        "제품별 최근 단위 원가"
+      ],
+      "fields": [
+        "name",
+        "variant_ref",
+        "period",
+        "unit_cost",
+        "margin_definition",
+        "accounting_basis"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T22",
+      "charts": 2,
+      "titles": [
+        "제품별 판매 가능 재고 추이",
+        "위치별 품절 관측 달력"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "location_ref",
+        "available_quantity",
+        "committed_quantity",
+        "on_hand_quantity",
+        "sellable_status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T23",
+      "charts": 1,
+      "titles": [
+        "배송 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "order_ref",
+        "status",
+        "period",
+        "promised_at",
+        "shipped_at",
+        "location_ref",
+        "delivered_at",
+        "product_ref",
+        "retail_channel",
+        "distribution_measures"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T24",
+      "charts": 2,
+      "titles": [
+        "제품별 리뷰 요약",
+        "자사 별점 분포"
+      ],
+      "fields": [
+        "date",
+        "name",
+        "rating",
+        "body",
+        "verified",
+        "language"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T25",
+      "charts": 2,
+      "titles": [
+        "리뷰 측면별 주석",
+        "문장에 표시된 의견 방향"
+      ],
+      "fields": [
+        "name",
+        "subject_ref",
+        "review_ref",
+        "aspect_ref",
+        "sentiment",
+        "evidence_span",
+        "record_kind",
+        "assessment_status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T26",
+      "charts": 3,
+      "titles": [
+        "일별 고객 문의 접수",
+        "문의 주제별 접수",
+        "문의 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "created_at",
+        "subject",
+        "channel",
+        "status",
+        "body"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T27",
+      "charts": 2,
+      "titles": [
+        "제품별 콘텐츠 조회수",
+        "플랫폼별 콘텐츠"
+      ],
+      "fields": [
+        "name",
+        "content_id",
+        "published_at",
+        "platform",
+        "channel_ref",
+        "observed_at",
+        "title",
+        "description_text",
+        "language",
+        "view_count",
+        "product_refs"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T28",
+      "charts": 1,
+      "titles": [
+        "댓글 수집 추이"
+      ],
+      "fields": [
+        "name",
+        "comment_id",
+        "content_ref",
+        "body_text",
+        "written_at",
+        "language"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T29",
+      "charts": 1,
+      "titles": [
+        "협업별 대상·비용·계약 상태"
+      ],
+      "fields": [
+        "name",
+        "collaboration_id",
+        "creator_ref",
+        "content_refs",
+        "product_refs",
+        "planned_period",
+        "message_brief",
+        "agreement_status",
+        "fee",
+        "rights_text"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T30",
+      "charts": 1,
+      "titles": [
+        "코호트별 구매·재구매 현황"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "cohort_ref",
+        "period",
+        "sample_size",
+        "acquisition_channel",
+        "net_revenue",
+        "repeat_purchase_rate"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T31",
+      "charts": 1,
+      "titles": [
+        "이메일 반응 요약"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "crm_campaign_id",
+        "segment_ref",
+        "sent_at",
+        "emails_sent",
+        "bounces",
+        "unique_clickers",
+        "unsubscribes",
+        "open_measurement_basis",
+        "unique_opens",
+        "linked_orders"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T32",
+      "charts": 2,
+      "titles": [
+        "제품별 브랜드 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "question_text",
+        "measures"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T33",
+      "charts": 1,
+      "titles": [
+        "시장 문맥 지수 추이"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "value",
+        "unit",
+        "seasonal_adjustment",
+        "statistics_table_id",
+        "item_code",
+        "region_ref",
+        "definition",
+        "published_at"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T34",
+      "charts": 2,
+      "titles": [
+        "기온 변화 · 마케팅 보조 맥락",
+        "강수량 변화"
+      ],
+      "fields": [
+        "name",
+        "region_ref",
+        "record_kind",
+        "period",
+        "station_ref",
+        "measures",
+        "observation_quality",
+        "event_name",
+        "calendar_kind"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T35",
+      "charts": 2,
+      "titles": [
+        "변경 전·후 관측 가격",
+        "변경 필드별 이력"
+      ],
+      "fields": [
+        "name",
+        "entity_ref",
+        "changed_at",
+        "changed_field",
+        "before_value",
+        "after_value",
+        "reason_text",
+        "change_id",
+        "operation",
+        "client_type"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T36",
+      "charts": 2,
+      "titles": [
+        "실행별 기대·수신·누락",
+        "수집 실행 상태"
+      ],
+      "fields": [
+        "name",
+        "run_id",
+        "target_dataset",
+        "expected_period",
+        "status",
+        "expected_count",
+        "received_count",
+        "missing_count",
+        "duplicate_count",
+        "error_code",
+        "started_at",
+        "completed_at",
+        "schema_version"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T37",
+      "charts": 2,
+      "titles": [
+        "페이지별 장애 발생·지속 시간",
+        "페이지별 가장 느린 관측 로딩 속도"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "status",
+        "measures",
+        "page_ref",
+        "device",
+        "record_kind",
+        "incident_start",
+        "incident_end",
+        "error_text"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T38",
+      "charts": 1,
+      "titles": [
+        "실험군별 관측 전환율"
+      ],
+      "fields": [
+        "name",
+        "experiment_id",
+        "arm_id",
+        "period",
+        "sample_size",
+        "assignment_method",
+        "outcome_measures",
+        "uncertainty_text",
+        "hypothesis_text",
+        "assignment_unit",
+        "treatment_description",
+        "status"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T39",
+      "charts": 1,
+      "titles": [
+        "가상 예산안 · 채널 배분과 모형 결과"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "model_ref",
+        "model_version",
+        "scenario_id_ref",
+        "formula",
+        "parameters",
+        "allocations",
+        "expected_measures",
+        "assumptions",
+        "objective",
+        "validity_scope",
+        "period",
+        "total_budget"
+      ]
+    },
+    {
+      "country": "JP",
+      "type": "T40",
+      "charts": 2,
+      "titles": [
+        "정책별 예산 한도",
+        "모의 정책 상태"
+      ],
+      "fields": [
+        "name",
+        "policy_id",
+        "period",
+        "objective",
+        "budget_limit",
+        "policy_status",
+        "allowed_channels",
+        "change_constraints",
+        "version",
+        "kpi_definition_refs",
+        "product_refs",
+        "approval_role"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "H01",
+      "charts": 2,
+      "titles": [
+        "자사 순매출",
+        "총판매액에서 순매출까지"
+      ],
+      "fields": [
+        "name",
+        "grossUnits",
+        "returnedUnits",
+        "netUnits",
+        "gross",
+        "returns",
+        "net",
+        "previous"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T01",
+      "charts": 0,
+      "titles": [],
+      "fields": [
+        "brand",
+        "name",
+        "sku",
+        "group",
+        "volume",
+        "countries",
+        "period",
+        "status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T02",
+      "charts": 2,
+      "titles": [
+        "식별자 연결 상태",
+        "연결 시스템"
+      ],
+      "fields": [
+        "name",
+        "mapping_kind",
+        "entity_ref",
+        "external_system",
+        "external_value",
+        "match_status",
+        "valid_from",
+        "entity_type",
+        "country_code",
+        "language"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T03",
+      "charts": 2,
+      "titles": [
+        "자사 금액 기준 시장점유율",
+        "브랜드별 금액 기준 시장점유율"
+      ],
+      "fields": [
+        "name",
+        "sales",
+        "units",
+        "share",
+        "previousSales",
+        "previousShare",
+        "difference"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T04",
+      "charts": 2,
+      "titles": [
+        "제품별 구매 경험 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "measures"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T05",
+      "charts": 1,
+      "titles": [
+        "자사 제품 A · 검색 관심 추이"
+      ],
+      "fields": [
+        "name",
+        "term_ref",
+        "index_value",
+        "normalization_scope",
+        "index_definition",
+        "search_surface",
+        "period",
+        "query_id",
+        "term_kind"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T06",
+      "charts": 2,
+      "titles": [
+        "검색어별 예상 수요",
+        "검색어 경쟁 수준"
+      ],
+      "fields": [
+        "name",
+        "keyword",
+        "estimated_searches",
+        "competition_level",
+        "competition_index",
+        "low_bid",
+        "high_bid",
+        "network_scope",
+        "language",
+        "geo_target_ref",
+        "period"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T07",
+      "charts": 2,
+      "titles": [
+        "기기별 검색 클릭 추이",
+        "검색 기기 구성"
+      ],
+      "fields": [
+        "name",
+        "page_ref",
+        "device",
+        "query",
+        "clicks",
+        "impressions",
+        "average_position",
+        "aggregation_scope",
+        "site_ref",
+        "period",
+        "search_type"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T08",
+      "charts": 2,
+      "titles": [
+        "제품별 판매가 추이",
+        "최근 관측일 · 제품별 판매가 범위"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "seller_ref",
+        "listed_price",
+        "availability"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T09",
+      "charts": 1,
+      "titles": [
+        "제품·판매처별 행사 조건"
+      ],
+      "fields": [
+        "name",
+        "promotion_id",
+        "product_refs",
+        "seller_ref",
+        "period",
+        "promotion_type",
+        "discount_ratio",
+        "eligibility_text"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T10",
+      "charts": 2,
+      "titles": [
+        "경쟁사별 공개 광고",
+        "광고 소재 형식"
+      ],
+      "fields": [
+        "name",
+        "public_ad_id",
+        "advertiser_ref",
+        "observed_at",
+        "format",
+        "creative_text",
+        "served_regions",
+        "coverage_text"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T11",
+      "charts": 2,
+      "titles": [
+        "발행처별 공개 자료",
+        "공개 자료 발행 추이"
+      ],
+      "fields": [
+        "name",
+        "document_id",
+        "publisher",
+        "published_at",
+        "body_text",
+        "subject_refs",
+        "language",
+        "title"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T12",
+      "charts": 1,
+      "titles": [
+        "캠페인별 운영 예산"
+      ],
+      "fields": [
+        "name",
+        "campaign_id",
+        "channel",
+        "product_refs",
+        "status",
+        "budget_amount",
+        "budget_period",
+        "target_definition",
+        "platform",
+        "account_id",
+        "objective",
+        "period",
+        "bidding_strategy",
+        "landing_ref"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T13",
+      "charts": 4,
+      "titles": [
+        "광고비",
+        "클릭률",
+        "클릭 후 전환율",
+        "ROAS"
+      ],
+      "fields": [
+        "name",
+        "media",
+        "spend",
+        "impressions",
+        "clicks",
+        "ctr",
+        "conversions",
+        "cvr",
+        "cpa",
+        "revenue",
+        "roas",
+        "status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T14",
+      "charts": 2,
+      "titles": [
+        "기기별 일간 광고비",
+        "기기별 관측 광고비"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "parent_report_ref",
+        "breakdown_dimensions",
+        "metrics",
+        "audience_basis",
+        "period"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T15",
+      "charts": 1,
+      "titles": [
+        "최근 경쟁 도메인 보고"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "competitor_domain",
+        "impression_share",
+        "overlap_rate",
+        "period",
+        "report_surface",
+        "threshold_status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T16",
+      "charts": 1,
+      "titles": [
+        "소재 형식별 버전 구성"
+      ],
+      "fields": [
+        "name",
+        "creative_id",
+        "product_refs",
+        "version",
+        "format",
+        "message_text",
+        "valid_from",
+        "valid_to_exclusive",
+        "language"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T17",
+      "charts": 2,
+      "titles": [
+        "유입 경로별 웹 활동",
+        "기기별 웹 활동"
+      ],
+      "fields": [
+        "name",
+        "event_id",
+        "event_time",
+        "event_name",
+        "session_ref",
+        "page_ref",
+        "device",
+        "consent_state",
+        "site_ref",
+        "user_pseudo_ref",
+        "traffic_source"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T18",
+      "charts": 3,
+      "titles": [
+        "상품 행동별 수량",
+        "일별 상품 구매 수량",
+        "제품별 상품 구매 수량"
+      ],
+      "fields": [
+        "name",
+        "event_time",
+        "event_name",
+        "quantity"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T19",
+      "charts": 2,
+      "titles": [
+        "일별 주문행 매출",
+        "제품별 주문행 매출"
+      ],
+      "fields": [
+        "name",
+        "order_id",
+        "line_id",
+        "ordered_at",
+        "variant_ref",
+        "quantity",
+        "unit_price",
+        "line_gross_total",
+        "financial_status",
+        "seller_ref",
+        "customer_pseudo_ref",
+        "line_discount",
+        "line_tax",
+        "fulfilment_status",
+        "transaction_ref"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T20",
+      "charts": 2,
+      "titles": [
+        "요청 종류",
+        "처리 상태"
+      ],
+      "fields": [
+        "name",
+        "adjustment_id",
+        "adjustment_kind",
+        "order_ref",
+        "processed_at",
+        "quantity",
+        "refund_amount",
+        "status",
+        "order_line_ref",
+        "requested_at",
+        "reason_code",
+        "restocked"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T21",
+      "charts": 1,
+      "titles": [
+        "제품별 최근 단위 원가"
+      ],
+      "fields": [
+        "name",
+        "variant_ref",
+        "period",
+        "unit_cost",
+        "margin_definition",
+        "accounting_basis"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T22",
+      "charts": 2,
+      "titles": [
+        "제품별 판매 가능 재고 추이",
+        "위치별 품절 관측 달력"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "location_ref",
+        "available_quantity",
+        "committed_quantity",
+        "on_hand_quantity",
+        "sellable_status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T23",
+      "charts": 1,
+      "titles": [
+        "배송 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "order_ref",
+        "status",
+        "period",
+        "promised_at",
+        "shipped_at",
+        "location_ref",
+        "delivered_at",
+        "product_ref",
+        "retail_channel",
+        "distribution_measures"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T24",
+      "charts": 2,
+      "titles": [
+        "제품별 리뷰 요약",
+        "자사 별점 분포"
+      ],
+      "fields": [
+        "date",
+        "name",
+        "rating",
+        "body",
+        "verified",
+        "language"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T25",
+      "charts": 2,
+      "titles": [
+        "리뷰 측면별 주석",
+        "문장에 표시된 의견 방향"
+      ],
+      "fields": [
+        "name",
+        "subject_ref",
+        "review_ref",
+        "aspect_ref",
+        "sentiment",
+        "evidence_span",
+        "record_kind",
+        "assessment_status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T26",
+      "charts": 3,
+      "titles": [
+        "일별 고객 문의 접수",
+        "문의 주제별 접수",
+        "문의 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "created_at",
+        "subject",
+        "channel",
+        "status",
+        "body"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T27",
+      "charts": 2,
+      "titles": [
+        "제품별 콘텐츠 조회수",
+        "플랫폼별 콘텐츠"
+      ],
+      "fields": [
+        "name",
+        "content_id",
+        "published_at",
+        "platform",
+        "channel_ref",
+        "observed_at",
+        "title",
+        "description_text",
+        "language",
+        "view_count",
+        "product_refs"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T28",
+      "charts": 1,
+      "titles": [
+        "댓글 수집 추이"
+      ],
+      "fields": [
+        "name",
+        "comment_id",
+        "content_ref",
+        "body_text",
+        "written_at",
+        "language"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T29",
+      "charts": 1,
+      "titles": [
+        "협업별 대상·비용·계약 상태"
+      ],
+      "fields": [
+        "name",
+        "collaboration_id",
+        "creator_ref",
+        "content_refs",
+        "product_refs",
+        "planned_period",
+        "message_brief",
+        "agreement_status",
+        "fee",
+        "rights_text"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T30",
+      "charts": 1,
+      "titles": [
+        "코호트별 구매·재구매 현황"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "cohort_ref",
+        "period",
+        "sample_size",
+        "acquisition_channel",
+        "net_revenue",
+        "repeat_purchase_rate"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T31",
+      "charts": 1,
+      "titles": [
+        "이메일 반응 요약"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "crm_campaign_id",
+        "segment_ref",
+        "sent_at",
+        "emails_sent",
+        "bounces",
+        "unique_clickers",
+        "unsubscribes",
+        "open_measurement_basis",
+        "unique_opens",
+        "linked_orders"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T32",
+      "charts": 2,
+      "titles": [
+        "제품별 브랜드 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "question_text",
+        "measures"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T33",
+      "charts": 1,
+      "titles": [
+        "시장 문맥 지수 추이"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "value",
+        "unit",
+        "seasonal_adjustment",
+        "statistics_table_id",
+        "item_code",
+        "region_ref",
+        "definition",
+        "published_at"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T34",
+      "charts": 2,
+      "titles": [
+        "기온 변화 · 마케팅 보조 맥락",
+        "강수량 변화"
+      ],
+      "fields": [
+        "name",
+        "region_ref",
+        "record_kind",
+        "period",
+        "station_ref",
+        "measures",
+        "observation_quality",
+        "event_name",
+        "calendar_kind"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T35",
+      "charts": 2,
+      "titles": [
+        "변경 전·후 관측 가격",
+        "변경 필드별 이력"
+      ],
+      "fields": [
+        "name",
+        "entity_ref",
+        "changed_at",
+        "changed_field",
+        "before_value",
+        "after_value",
+        "reason_text",
+        "change_id",
+        "operation",
+        "client_type"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T36",
+      "charts": 2,
+      "titles": [
+        "실행별 기대·수신·누락",
+        "수집 실행 상태"
+      ],
+      "fields": [
+        "name",
+        "run_id",
+        "target_dataset",
+        "expected_period",
+        "status",
+        "expected_count",
+        "received_count",
+        "missing_count",
+        "duplicate_count",
+        "error_code",
+        "started_at",
+        "completed_at",
+        "schema_version"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T37",
+      "charts": 2,
+      "titles": [
+        "페이지별 장애 발생·지속 시간",
+        "페이지별 가장 느린 관측 로딩 속도"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "status",
+        "measures",
+        "page_ref",
+        "device",
+        "record_kind",
+        "incident_start",
+        "incident_end",
+        "error_text"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T38",
+      "charts": 1,
+      "titles": [
+        "실험군별 관측 전환율"
+      ],
+      "fields": [
+        "name",
+        "experiment_id",
+        "arm_id",
+        "period",
+        "sample_size",
+        "assignment_method",
+        "outcome_measures",
+        "uncertainty_text",
+        "hypothesis_text",
+        "assignment_unit",
+        "treatment_description",
+        "status"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T39",
+      "charts": 1,
+      "titles": [
+        "가상 예산안 · 채널 배분과 모형 결과"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "model_ref",
+        "model_version",
+        "scenario_id_ref",
+        "formula",
+        "parameters",
+        "allocations",
+        "expected_measures",
+        "assumptions",
+        "objective",
+        "validity_scope",
+        "period",
+        "total_budget"
+      ]
+    },
+    {
+      "country": "KR",
+      "type": "T40",
+      "charts": 2,
+      "titles": [
+        "정책별 예산 한도",
+        "모의 정책 상태"
+      ],
+      "fields": [
+        "name",
+        "policy_id",
+        "period",
+        "objective",
+        "budget_limit",
+        "policy_status",
+        "allowed_channels",
+        "change_constraints",
+        "version",
+        "kpi_definition_refs",
+        "product_refs",
+        "approval_role"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "H01",
+      "charts": 2,
+      "titles": [
+        "자사 순매출",
+        "총판매액에서 순매출까지"
+      ],
+      "fields": [
+        "name",
+        "grossUnits",
+        "returnedUnits",
+        "netUnits",
+        "gross",
+        "returns",
+        "net",
+        "previous"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T01",
+      "charts": 0,
+      "titles": [],
+      "fields": [
+        "brand",
+        "name",
+        "sku",
+        "group",
+        "volume",
+        "countries",
+        "period",
+        "status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T02",
+      "charts": 2,
+      "titles": [
+        "식별자 연결 상태",
+        "연결 시스템"
+      ],
+      "fields": [
+        "name",
+        "mapping_kind",
+        "entity_ref",
+        "external_system",
+        "external_value",
+        "match_status",
+        "valid_from",
+        "entity_type",
+        "country_code",
+        "language"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T03",
+      "charts": 2,
+      "titles": [
+        "자사 금액 기준 시장점유율",
+        "브랜드별 금액 기준 시장점유율"
+      ],
+      "fields": [
+        "name",
+        "sales",
+        "units",
+        "share",
+        "previousSales",
+        "previousShare",
+        "difference"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T04",
+      "charts": 2,
+      "titles": [
+        "제품별 구매 경험 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "measures"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T05",
+      "charts": 1,
+      "titles": [
+        "자사 제품 A · 검색 관심 추이"
+      ],
+      "fields": [
+        "name",
+        "term_ref",
+        "index_value",
+        "normalization_scope",
+        "index_definition",
+        "search_surface",
+        "period",
+        "query_id",
+        "term_kind"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T06",
+      "charts": 2,
+      "titles": [
+        "검색어별 예상 수요",
+        "검색어 경쟁 수준"
+      ],
+      "fields": [
+        "name",
+        "keyword",
+        "estimated_searches",
+        "competition_level",
+        "competition_index",
+        "low_bid",
+        "high_bid",
+        "network_scope",
+        "language",
+        "geo_target_ref",
+        "period"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T07",
+      "charts": 2,
+      "titles": [
+        "기기별 검색 클릭 추이",
+        "검색 기기 구성"
+      ],
+      "fields": [
+        "name",
+        "page_ref",
+        "device",
+        "query",
+        "clicks",
+        "impressions",
+        "average_position",
+        "aggregation_scope",
+        "site_ref",
+        "period",
+        "search_type"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T08",
+      "charts": 2,
+      "titles": [
+        "제품별 판매가 추이",
+        "최근 관측일 · 제품별 판매가 범위"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "seller_ref",
+        "listed_price",
+        "availability"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T09",
+      "charts": 1,
+      "titles": [
+        "제품·판매처별 행사 조건"
+      ],
+      "fields": [
+        "name",
+        "promotion_id",
+        "product_refs",
+        "seller_ref",
+        "period",
+        "promotion_type",
+        "discount_ratio",
+        "eligibility_text"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T10",
+      "charts": 2,
+      "titles": [
+        "경쟁사별 공개 광고",
+        "광고 소재 형식"
+      ],
+      "fields": [
+        "name",
+        "public_ad_id",
+        "advertiser_ref",
+        "observed_at",
+        "format",
+        "creative_text",
+        "served_regions",
+        "coverage_text"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T11",
+      "charts": 2,
+      "titles": [
+        "발행처별 공개 자료",
+        "공개 자료 발행 추이"
+      ],
+      "fields": [
+        "name",
+        "document_id",
+        "publisher",
+        "published_at",
+        "body_text",
+        "subject_refs",
+        "language",
+        "title"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T12",
+      "charts": 1,
+      "titles": [
+        "캠페인별 운영 예산"
+      ],
+      "fields": [
+        "name",
+        "campaign_id",
+        "channel",
+        "product_refs",
+        "status",
+        "budget_amount",
+        "budget_period",
+        "target_definition",
+        "platform",
+        "account_id",
+        "objective",
+        "period",
+        "bidding_strategy",
+        "landing_ref"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T13",
+      "charts": 4,
+      "titles": [
+        "광고비",
+        "클릭률",
+        "클릭 후 전환율",
+        "ROAS"
+      ],
+      "fields": [
+        "name",
+        "media",
+        "spend",
+        "impressions",
+        "clicks",
+        "ctr",
+        "conversions",
+        "cvr",
+        "cpa",
+        "revenue",
+        "roas",
+        "status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T14",
+      "charts": 2,
+      "titles": [
+        "기기별 일간 광고비",
+        "기기별 관측 광고비"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "parent_report_ref",
+        "breakdown_dimensions",
+        "metrics",
+        "audience_basis",
+        "period"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T15",
+      "charts": 1,
+      "titles": [
+        "최근 경쟁 도메인 보고"
+      ],
+      "fields": [
+        "name",
+        "campaign_ref",
+        "competitor_domain",
+        "impression_share",
+        "overlap_rate",
+        "period",
+        "report_surface",
+        "threshold_status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T16",
+      "charts": 1,
+      "titles": [
+        "소재 형식별 버전 구성"
+      ],
+      "fields": [
+        "name",
+        "creative_id",
+        "product_refs",
+        "version",
+        "format",
+        "message_text",
+        "valid_from",
+        "valid_to_exclusive",
+        "language"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T17",
+      "charts": 2,
+      "titles": [
+        "유입 경로별 웹 활동",
+        "기기별 웹 활동"
+      ],
+      "fields": [
+        "name",
+        "event_id",
+        "event_time",
+        "event_name",
+        "session_ref",
+        "page_ref",
+        "device",
+        "consent_state",
+        "site_ref",
+        "user_pseudo_ref",
+        "traffic_source"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T18",
+      "charts": 3,
+      "titles": [
+        "상품 행동별 수량",
+        "일별 상품 구매 수량",
+        "제품별 상품 구매 수량"
+      ],
+      "fields": [
+        "name",
+        "event_time",
+        "event_name",
+        "quantity"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T19",
+      "charts": 2,
+      "titles": [
+        "일별 주문행 매출",
+        "제품별 주문행 매출"
+      ],
+      "fields": [
+        "name",
+        "order_id",
+        "line_id",
+        "ordered_at",
+        "variant_ref",
+        "quantity",
+        "unit_price",
+        "line_gross_total",
+        "financial_status",
+        "seller_ref",
+        "customer_pseudo_ref",
+        "line_discount",
+        "line_tax",
+        "fulfilment_status",
+        "transaction_ref"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T20",
+      "charts": 2,
+      "titles": [
+        "요청 종류",
+        "처리 상태"
+      ],
+      "fields": [
+        "name",
+        "adjustment_id",
+        "adjustment_kind",
+        "order_ref",
+        "processed_at",
+        "quantity",
+        "refund_amount",
+        "status",
+        "order_line_ref",
+        "requested_at",
+        "reason_code",
+        "restocked"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T21",
+      "charts": 1,
+      "titles": [
+        "제품별 최근 단위 원가"
+      ],
+      "fields": [
+        "name",
+        "variant_ref",
+        "period",
+        "unit_cost",
+        "margin_definition",
+        "accounting_basis"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T22",
+      "charts": 2,
+      "titles": [
+        "제품별 판매 가능 재고 추이",
+        "위치별 품절 관측 달력"
+      ],
+      "fields": [
+        "name",
+        "observed_at",
+        "location_ref",
+        "available_quantity",
+        "committed_quantity",
+        "on_hand_quantity",
+        "sellable_status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T23",
+      "charts": 1,
+      "titles": [
+        "배송 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "order_ref",
+        "status",
+        "period",
+        "promised_at",
+        "shipped_at",
+        "location_ref",
+        "delivered_at",
+        "product_ref",
+        "retail_channel",
+        "distribution_measures"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T24",
+      "charts": 2,
+      "titles": [
+        "제품별 리뷰 요약",
+        "자사 별점 분포"
+      ],
+      "fields": [
+        "date",
+        "name",
+        "rating",
+        "body",
+        "verified",
+        "language"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T25",
+      "charts": 2,
+      "titles": [
+        "리뷰 측면별 주석",
+        "문장에 표시된 의견 방향"
+      ],
+      "fields": [
+        "name",
+        "subject_ref",
+        "review_ref",
+        "aspect_ref",
+        "sentiment",
+        "evidence_span",
+        "record_kind",
+        "assessment_status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T26",
+      "charts": 3,
+      "titles": [
+        "일별 고객 문의 접수",
+        "문의 주제별 접수",
+        "문의 처리 상태"
+      ],
+      "fields": [
+        "name",
+        "created_at",
+        "subject",
+        "channel",
+        "status",
+        "body"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T27",
+      "charts": 2,
+      "titles": [
+        "제품별 콘텐츠 조회수",
+        "플랫폼별 콘텐츠"
+      ],
+      "fields": [
+        "name",
+        "content_id",
+        "published_at",
+        "platform",
+        "channel_ref",
+        "observed_at",
+        "title",
+        "description_text",
+        "language",
+        "view_count",
+        "product_refs"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T28",
+      "charts": 1,
+      "titles": [
+        "댓글 수집 추이"
+      ],
+      "fields": [
+        "name",
+        "comment_id",
+        "content_ref",
+        "body_text",
+        "written_at",
+        "language"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T29",
+      "charts": 1,
+      "titles": [
+        "협업별 대상·비용·계약 상태"
+      ],
+      "fields": [
+        "name",
+        "collaboration_id",
+        "creator_ref",
+        "content_refs",
+        "product_refs",
+        "planned_period",
+        "message_brief",
+        "agreement_status",
+        "fee",
+        "rights_text"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T30",
+      "charts": 1,
+      "titles": [
+        "코호트별 구매·재구매 현황"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "cohort_ref",
+        "period",
+        "sample_size",
+        "acquisition_channel",
+        "net_revenue",
+        "repeat_purchase_rate"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T31",
+      "charts": 1,
+      "titles": [
+        "이메일 반응 요약"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "crm_campaign_id",
+        "segment_ref",
+        "sent_at",
+        "emails_sent",
+        "bounces",
+        "unique_clickers",
+        "unsubscribes",
+        "open_measurement_basis",
+        "unique_opens",
+        "linked_orders"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T32",
+      "charts": 2,
+      "titles": [
+        "제품별 브랜드 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "sample_size",
+        "question_text",
+        "measures"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T33",
+      "charts": 1,
+      "titles": [
+        "시장 문맥 지수 추이"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "value",
+        "unit",
+        "seasonal_adjustment",
+        "statistics_table_id",
+        "item_code",
+        "region_ref",
+        "definition",
+        "published_at"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T34",
+      "charts": 2,
+      "titles": [
+        "기온 변화 · 마케팅 보조 맥락",
+        "강수량 변화"
+      ],
+      "fields": [
+        "name",
+        "region_ref",
+        "record_kind",
+        "period",
+        "station_ref",
+        "measures",
+        "observation_quality",
+        "event_name",
+        "calendar_kind"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T35",
+      "charts": 2,
+      "titles": [
+        "변경 전·후 관측 가격",
+        "변경 필드별 이력"
+      ],
+      "fields": [
+        "name",
+        "entity_ref",
+        "changed_at",
+        "changed_field",
+        "before_value",
+        "after_value",
+        "reason_text",
+        "change_id",
+        "operation",
+        "client_type"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T36",
+      "charts": 2,
+      "titles": [
+        "실행별 기대·수신·누락",
+        "수집 실행 상태"
+      ],
+      "fields": [
+        "name",
+        "run_id",
+        "target_dataset",
+        "expected_period",
+        "status",
+        "expected_count",
+        "received_count",
+        "missing_count",
+        "duplicate_count",
+        "error_code",
+        "started_at",
+        "completed_at",
+        "schema_version"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T37",
+      "charts": 2,
+      "titles": [
+        "페이지별 장애 발생·지속 시간",
+        "페이지별 가장 느린 관측 로딩 속도"
+      ],
+      "fields": [
+        "name",
+        "period",
+        "status",
+        "measures",
+        "page_ref",
+        "device",
+        "record_kind",
+        "incident_start",
+        "incident_end",
+        "error_text"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T38",
+      "charts": 1,
+      "titles": [
+        "실험군별 관측 전환율"
+      ],
+      "fields": [
+        "name",
+        "experiment_id",
+        "arm_id",
+        "period",
+        "sample_size",
+        "assignment_method",
+        "outcome_measures",
+        "uncertainty_text",
+        "hypothesis_text",
+        "assignment_unit",
+        "treatment_description",
+        "status"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T39",
+      "charts": 1,
+      "titles": [
+        "가상 예산안 · 채널 배분과 모형 결과"
+      ],
+      "fields": [
+        "name",
+        "record_kind",
+        "model_ref",
+        "model_version",
+        "scenario_id_ref",
+        "formula",
+        "parameters",
+        "allocations",
+        "expected_measures",
+        "assumptions",
+        "objective",
+        "validity_scope",
+        "period",
+        "total_budget"
+      ]
+    },
+    {
+      "country": "US",
+      "type": "T40",
+      "charts": 2,
+      "titles": [
+        "정책별 예산 한도",
+        "모의 정책 상태"
+      ],
+      "fields": [
+        "name",
+        "policy_id",
+        "period",
+        "objective",
+        "budget_limit",
+        "policy_status",
+        "allowed_channels",
+        "change_constraints",
+        "version",
+        "kpi_definition_refs",
+        "product_refs",
+        "approval_role"
+      ]
+    }
+  ],
+  "checks": [
+    "all physical JSONL rows reachable exactly once",
+    "5 batches selectable",
+    "790 nonconforming rows retained with original source and gaps",
+    "all record fields mapped",
+    "41 types / 3 countries visualizations",
+    "all independent context selectors checked",
+    "all-source CSV retains every filtered row",
+    "91 source file hashes unchanged"
+  ]
+}
