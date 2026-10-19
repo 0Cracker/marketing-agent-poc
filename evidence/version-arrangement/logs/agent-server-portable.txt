@@ -1,0 +1,9 @@
+✔ S01 verification database is isolated and graceful process restart preserves the same run (3752.5201ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3926.7533

@@ -1,0 +1,1025 @@
+{
+  "at": "2026-10-19T14:05:04.559Z",
+  "head": "bebea07a8b622e70c410425044ad162adf758ad9 + working tree",
+  "pass": true,
+  "total": 1652,
+  "preservation": [
+    {
+      "file": "T01.jsonl",
+      "records": 6,
+      "raw_sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+      "lf_sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+    },
+    {
+      "file": "T03.jsonl",
+      "records": 432,
+      "raw_sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+      "lf_sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+    },
+    {
+      "file": "T12.jsonl",
+      "records": 6,
+      "raw_sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+      "lf_sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+    },
+    {
+      "file": "T13.jsonl",
+      "records": 312,
+      "raw_sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+      "lf_sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+    },
+    {
+      "file": "H01.jsonl",
+      "records": 144,
+      "raw_sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+      "lf_sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+    },
+    {
+      "file": "T08.jsonl",
+      "records": 504,
+      "raw_sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+      "lf_sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+    },
+    {
+      "file": "T22.jsonl",
+      "records": 168,
+      "raw_sha256": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+      "lf_sha256": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b"
+    },
+    {
+      "file": "T24.jsonl",
+      "records": 72,
+      "raw_sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+      "lf_sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+    },
+    {
+      "file": "T09.jsonl",
+      "records": 1,
+      "raw_sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+      "lf_sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+    },
+    {
+      "file": "T35.jsonl",
+      "records": 1,
+      "raw_sha256": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+      "lf_sha256": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd"
+    },
+    {
+      "file": "T36.jsonl",
+      "records": 6,
+      "raw_sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+      "lf_sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+    }
+  ],
+  "cases": [
+    {
+      "country": "JP",
+      "month": "2025-08",
+      "currency": "JPY",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 59082699
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 10.599732419130007
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 6262608
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": null
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 1807812
+        },
+        {
+          "label": "반품금액",
+          "value": 33881
+        },
+        {
+          "label": "자사 순매출",
+          "value": 1773931
+        },
+        {
+          "label": "순판매수량",
+          "value": 1101
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 112650,
+          "impressions": 112648,
+          "clicks": 2253,
+          "ctr": 2.0000355088417012,
+          "conversions": 68,
+          "cvr": 3.0181979582778515,
+          "cpa": 1656.6176470588234,
+          "revenue": 102000,
+          "roas": 0.9054593874833555,
+          "cpc": 50,
+          "cpm": 1000.0177544208508,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 111200,
+          "impressions": 111221,
+          "clicks": 2224,
+          "ctr": 1.9996223734726357,
+          "conversions": 67,
+          "cvr": 3.012589928057554,
+          "cpa": 1659.7014925373135,
+          "revenue": 100500,
+          "roas": 0.9037769784172662,
+          "cpc": 50,
+          "cpm": 999.8111867363177,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "JP",
+      "month": "2026-07",
+      "currency": "JPY",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 62252937
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.418562854311595
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 5863332
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.9682115074732014
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 1658790
+        },
+        {
+          "label": "반품금액",
+          "value": 31575
+        },
+        {
+          "label": "자사 순매출",
+          "value": 1627215
+        },
+        {
+          "label": "순판매수량",
+          "value": 1030
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 102350,
+          "impressions": 102339,
+          "clicks": 2047,
+          "ctr": 2.0002149718093785,
+          "conversions": 61,
+          "cvr": 2.9799706888128967,
+          "cpa": 1677.8688524590164,
+          "revenue": 91500,
+          "roas": 0.8939912066438691,
+          "cpc": 50,
+          "cpm": 1000.1074859046893,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 76900,
+          "impressions": 76912,
+          "clicks": 1538,
+          "ctr": 1.9996879550655295,
+          "conversions": 46,
+          "cvr": 2.990897269180754,
+          "cpa": 1671.7391304347825,
+          "revenue": 69000,
+          "roas": 0.8972691807542262,
+          "cpc": 50,
+          "cpm": 999.8439775327648,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "JP",
+      "month": "2026-08",
+      "currency": "JPY",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 62322549
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.59879224452132
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 5982212
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -1.0009401746086866
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 1581924
+        },
+        {
+          "label": "반품금액",
+          "value": 30550
+        },
+        {
+          "label": "자사 순매출",
+          "value": 1551374
+        },
+        {
+          "label": "순판매수량",
+          "value": 965
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 93600,
+          "impressions": 93687,
+          "clicks": 1872,
+          "ctr": 1.9981427519292967,
+          "conversions": 41,
+          "cvr": 2.19017094017094,
+          "cpa": 2282.9268292682927,
+          "revenue": 61500,
+          "roas": 0.657051282051282,
+          "cpc": 50,
+          "cpm": 999.0713759646483,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 93200,
+          "impressions": 93173,
+          "clicks": 1864,
+          "ctr": 2.0005795670419544,
+          "conversions": 44,
+          "cvr": 2.3605150214592276,
+          "cpa": 2118.181818181818,
+          "revenue": 66000,
+          "roas": 0.7081545064377682,
+          "cpc": 50,
+          "cpm": 1000.2897835209772,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "JP",
+      "month": "2026-09",
+      "currency": "JPY",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 61628955
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.685586912839915
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 5969126
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.679698588123042
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 1563676
+        },
+        {
+          "label": "반품금액",
+          "value": 30460
+        },
+        {
+          "label": "자사 순매출",
+          "value": 1533216
+        },
+        {
+          "label": "순판매수량",
+          "value": 957
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 110750,
+          "impressions": 110755,
+          "clicks": 2215,
+          "ctr": 1.9999097106225452,
+          "conversions": 66,
+          "cvr": 2.979683972911964,
+          "cpa": 1678.030303030303,
+          "revenue": 99000,
+          "roas": 0.8939051918735892,
+          "cpc": 50,
+          "cpm": 999.9548553112726,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 114850,
+          "impressions": 114865,
+          "clicks": 2297,
+          "ctr": 1.999738823836678,
+          "conversions": 69,
+          "cvr": 3.0039181541140616,
+          "cpa": 1664.4927536231885,
+          "revenue": 103500,
+          "roas": 0.9011754462342185,
+          "cpc": 50,
+          "cpm": 999.8694119183389,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "KR",
+      "month": "2025-08",
+      "currency": "KRW",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 583231200
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 10.195407927422265
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 59462800
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": null
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 16371611
+        },
+        {
+          "label": "반품금액",
+          "value": 321010
+        },
+        {
+          "label": "자사 순매출",
+          "value": 16050601
+        },
+        {
+          "label": "순판매수량",
+          "value": 1001
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 901000,
+          "impressions": 90090,
+          "clicks": 1802,
+          "ctr": 2.000222000222,
+          "conversions": 54,
+          "cvr": 2.9966703662597114,
+          "cpa": 16685.185185185186,
+          "revenue": 810000,
+          "roas": 0.8990011098779135,
+          "cpc": 500,
+          "cpm": 10001.110001110002,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 1134500,
+          "impressions": 113457,
+          "clicks": 2269,
+          "ctr": 1.9998766052337007,
+          "conversions": 68,
+          "cvr": 2.9969149405024242,
+          "cpa": 16683.823529411766,
+          "revenue": 1020000,
+          "roas": 0.8990744821507272,
+          "cpc": 500,
+          "cpm": 9999.383026168503,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "KR",
+      "month": "2026-07",
+      "currency": "KRW",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 606267270
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.96790079068593
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 60432120
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.25325618758354196
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 16315808
+        },
+        {
+          "label": "반품금액",
+          "value": 310840
+        },
+        {
+          "label": "자사 순매출",
+          "value": 16004968
+        },
+        {
+          "label": "순판매수량",
+          "value": 1029
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 614500,
+          "impressions": 61435,
+          "clicks": 1229,
+          "ctr": 2.000488320989664,
+          "conversions": 37,
+          "cvr": 3.010577705451587,
+          "cpa": 16608.108108108107,
+          "revenue": 555000,
+          "roas": 0.903173311635476,
+          "cpc": 500,
+          "cpm": 10002.44160494832,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 711500,
+          "impressions": 71133,
+          "clicks": 1423,
+          "ctr": 2.0004779778724364,
+          "conversions": 43,
+          "cvr": 3.021784961349262,
+          "cpa": 16546.511627906977,
+          "revenue": 645000,
+          "roas": 0.9065354884047786,
+          "cpc": 500,
+          "cpm": 10002.38988936218,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "KR",
+      "month": "2026-08",
+      "currency": "KRW",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 607233690
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 10.032840075128242
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 60922785
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.16256785229402304
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 15883637
+        },
+        {
+          "label": "반품금액",
+          "value": 298463
+        },
+        {
+          "label": "자사 순매출",
+          "value": 15585174
+        },
+        {
+          "label": "순판매수량",
+          "value": 990
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 952500,
+          "impressions": 95190,
+          "clicks": 1905,
+          "ctr": 2.001260636621494,
+          "conversions": 57,
+          "cvr": 2.9921259842519685,
+          "cpa": 16710.526315789473,
+          "revenue": 855000,
+          "roas": 0.8976377952755905,
+          "cpc": 500,
+          "cpm": 10006.30318310747,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 892000,
+          "impressions": 89111,
+          "clicks": 1784,
+          "ctr": 2.0019975087250734,
+          "conversions": 58,
+          "cvr": 3.2511210762331837,
+          "cpa": 15379.310344827587,
+          "revenue": 870000,
+          "roas": 0.9753363228699552,
+          "cpc": 500,
+          "cpm": 10009.987543625366,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "KR",
+      "month": "2026-09",
+      "currency": "KRW",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 617437170
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 10.128845984442433
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 62539260
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": 0.4370799273250885
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 17533230
+        },
+        {
+          "label": "반품금액",
+          "value": 338404
+        },
+        {
+          "label": "자사 순매출",
+          "value": 17194826
+        },
+        {
+          "label": "순판매수량",
+          "value": 1068
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 972000,
+          "impressions": 97181,
+          "clicks": 1944,
+          "ctr": 2.000391022936582,
+          "conversions": 58,
+          "cvr": 2.983539094650206,
+          "cpa": 16758.620689655174,
+          "revenue": 870000,
+          "roas": 0.8950617283950617,
+          "cpc": 500,
+          "cpm": 10001.95511468291,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 728500,
+          "impressions": 72861,
+          "clicks": 1457,
+          "ctr": 1.999698055200999,
+          "conversions": 44,
+          "cvr": 3.0199039121482496,
+          "cpa": 16556.81818181818,
+          "revenue": 660000,
+          "roas": 0.905971173644475,
+          "cpc": 500,
+          "cpm": 9998.490276004995,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "month": "2025-08",
+      "currency": "USD",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 612216
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.984221255243247
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 61125
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": null
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 18063
+        },
+        {
+          "label": "반품금액",
+          "value": 344.3
+        },
+        {
+          "label": "자사 순매출",
+          "value": 17718.7
+        },
+        {
+          "label": "순판매수량",
+          "value": 1130
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 835,
+          "impressions": 83521,
+          "clicks": 1670,
+          "ctr": 1.9994971324577053,
+          "conversions": 50,
+          "cvr": 2.9940119760479043,
+          "cpa": 16.7,
+          "revenue": 750,
+          "roas": 0.8982035928143712,
+          "cpc": 0.5,
+          "cpm": 9.997485662288527,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 1121.5,
+          "impressions": 112131,
+          "clicks": 2243,
+          "ctr": 2.0003388893347958,
+          "conversions": 67,
+          "cvr": 2.9870708872046365,
+          "cpa": 16.738805970149254,
+          "revenue": 1005,
+          "roas": 0.896121266161391,
+          "cpc": 0.5,
+          "cpm": 10.00169444667398,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "month": "2026-07",
+      "currency": "USD",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 646717.05
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 10.099022439566111
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 65312.1
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.0044680617114192245
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 18074.89
+        },
+        {
+          "label": "반품금액",
+          "value": 335.19
+        },
+        {
+          "label": "자사 순매출",
+          "value": 17739.7
+        },
+        {
+          "label": "순판매수량",
+          "value": 1112
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 707,
+          "impressions": 70697,
+          "clicks": 1414,
+          "ctr": 2.00008486923066,
+          "conversions": 42,
+          "cvr": 2.9702970297029703,
+          "cpa": 16.833333333333332,
+          "revenue": 630,
+          "roas": 0.8910891089108911,
+          "cpc": 0.5,
+          "cpm": 10.0004243461533,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 1196.5,
+          "impressions": 119671,
+          "clicks": 2393,
+          "ctr": 1.9996490377785763,
+          "conversions": 72,
+          "cvr": 3.0087755954868367,
+          "cpa": 16.618055555555557,
+          "revenue": 1080,
+          "roas": 0.902632678646051,
+          "cpc": 0.5,
+          "cpm": 9.99824518889288,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "month": "2026-08",
+      "currency": "USD",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 633124.8
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.849314068884995
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 62358.45
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.1349071863582516
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 16860.57
+        },
+        {
+          "label": "반품금액",
+          "value": 320.11
+        },
+        {
+          "label": "자사 순매출",
+          "value": 16540.46
+        },
+        {
+          "label": "순판매수량",
+          "value": 1086
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 905,
+          "impressions": 90603,
+          "clicks": 1810,
+          "ctr": 1.997726344602276,
+          "conversions": 56,
+          "cvr": 3.0939226519337018,
+          "cpa": 16.160714285714285,
+          "revenue": 840,
+          "roas": 0.9281767955801105,
+          "cpc": 0.5,
+          "cpm": 9.98863172301138,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 914,
+          "impressions": 91367,
+          "clicks": 1828,
+          "ctr": 2.000722361465299,
+          "conversions": 60,
+          "cvr": 3.282275711159737,
+          "cpa": 15.233333333333333,
+          "revenue": 900,
+          "roas": 0.9846827133479212,
+          "cpc": 0.5,
+          "cpm": 10.003611807326497,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "month": "2026-09",
+      "currency": "USD",
+      "market": [
+        {
+          "label": "시장 판매액",
+          "value": 637591.5
+        },
+        {
+          "label": "자사 금액 점유율",
+          "value": 9.947466363651335
+        },
+        {
+          "label": "자사 시장 판매액",
+          "value": 63424.2
+        },
+        {
+          "label": "전년 동월 점유율 차이",
+          "value": -0.12136236577557291
+        }
+      ],
+      "sales": [
+        {
+          "label": "총판매액",
+          "value": 17571.78
+        },
+        {
+          "label": "반품금액",
+          "value": 340.23
+        },
+        {
+          "label": "자사 순매출",
+          "value": 17231.55
+        },
+        {
+          "label": "순판매수량",
+          "value": 1113
+        }
+      ],
+      "ad": [
+        {
+          "name": "모의 검색",
+          "media": "모의 검색",
+          "spend": 764,
+          "impressions": 76382,
+          "clicks": 1528,
+          "ctr": 2.000471315231337,
+          "conversions": 46,
+          "cvr": 3.0104712041884816,
+          "cpa": 16.608695652173914,
+          "revenue": 690,
+          "roas": 0.9031413612565445,
+          "cpc": 0.5,
+          "cpm": 10.002356576156686,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        },
+        {
+          "name": "모의 소셜",
+          "media": "모의 소셜",
+          "spend": 613,
+          "impressions": 61310,
+          "clicks": 1226,
+          "ctr": 1.9996737889414453,
+          "conversions": 37,
+          "cvr": 3.0179445350734095,
+          "cpa": 16.56756756756757,
+          "revenue": 555,
+          "roas": 0.9053833605220228,
+          "cpc": 0.5,
+          "cpm": 9.998368944707225,
+          "window": "7일 · 마지막 클릭",
+          "status": "정상"
+        }
+      ]
+    }
+  ],
+  "japan_social": {
+    "expected": 28,
+    "received": 26,
+    "missing": [
+      "2026-08-26",
+      "2026-08-27"
+    ],
+    "rate": 92.85714285714286
+  },
+  "checks": [
+    "40 types / 10 available + H01 / 30 ungenerated",
+    "market denominator once and invariant under product filter",
+    "other market retained / brand shares sum 100",
+    "3 countries / currency separation",
+    "H01 gross - returns = net",
+    "6 advertising formula checks per medium",
+    "monthly and daily isolated",
+    "null daily points on Aug 26/27",
+    "26 received rows vs 28 state rows",
+    "72 review samples / 24 Japan",
+    "price/inventory non-August empty",
+    "review missing-month message",
+    "null-last sort asc/desc / stable ID ties",
+    "CSV all matching rows"
+  ]
+}

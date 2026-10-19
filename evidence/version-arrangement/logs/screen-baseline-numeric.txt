@@ -1,0 +1,1 @@
+{"pass":true,"files":11,"total":1652,"types":40,"cases":12,"japan_social":{"expected":28,"received":26,"missing":["2026-08-26","2026-08-27"],"rate":92.85714285714286}}

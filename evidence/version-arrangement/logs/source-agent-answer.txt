@@ -1,0 +1,15 @@
+✔ answer does not promote held, paused or cancelled runs to a conclusion (3.9139ms)
+✔ superseded analysis takes priority over a successful previous status (0.4409ms)
+✔ absent evidence remains unresolved even when analysis processing finished (0.3498ms)
+✔ conflicting or one-sided evidence never establishes causation (0.5687ms)
+✔ approval and invalidation are described as state, never actual execution (0.6265ms)
+✔ a missing simulation cannot be presented as a winning budget proposal (0.322ms)
+✔ loading without brand reference data does not crash the dashboard (0.6246ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29.1485

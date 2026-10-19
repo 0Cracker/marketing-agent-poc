@@ -5,3 +5,6 @@
 /data/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /frontend/public/workbench-data/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /docs/design/data-separation-validation/d003b-baseline.json -text
+
+# Preserve historical command output without rewriting report whitespace.
+/evidence/** -text -whitespace

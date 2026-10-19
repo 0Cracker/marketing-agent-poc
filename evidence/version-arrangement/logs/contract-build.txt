@@ -1,0 +1,24 @@
+vite v8.0.13 building client environment for production...
+[2Ktransforming...✓ 2607 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                         0.57 kB │ gzip:   0.44 kB
+dist/assets/workbench-DF7sICrn.css     30.61 kB │ gzip:   6.60 kB
+dist/assets/index-B3APYu-5.css        179.67 kB │ gzip:  28.56 kB
+dist/assets/page-C4Jofv5s.js          101.36 kB │ gzip:  24.72 kB
+dist/assets/index-eOF_YuE7.js         192.89 kB │ gzip:  61.17 kB
+dist/assets/button-B7zjuSFY.js        414.81 kB │ gzip: 120.31 kB
+dist/assets/workbench-Bg857p81.js   1,119.60 kB │ gzip: 102.12 kB
+
+✓ built in 6.12s
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - rolldown:vite-resolve (31%)
+  - vite:asset (30%)
+  - vite:css (30%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
