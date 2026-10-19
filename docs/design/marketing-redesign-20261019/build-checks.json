@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-19T05:13:19.897Z",
+  "results": [
+    {
+      "name": "typecheck",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "name": "modified-eslint",
+      "exitCode": 0,
+      "output": "Pages directory cannot be found at C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\pages or C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\src\\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file."
+    },
+    {
+      "name": "agent-client-tests",
+      "exitCode": 0,
+      "output": "✔ C01 screen context becomes explicit half-open scope without raw data (6.2829ms)\n✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (0.6646ms)\n✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (0.4464ms)\n✔ C04 session token is attached to API requests, never put in body (39.3649ms)\n✔ C05 lost POST response is not automatically submitted again (0.9968ms)\n✔ C06 token rejected before mutation may refresh once after a server restart (1.4075ms)\n✔ C07 server errors remain actionable codes; no fake successful result (1.1762ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 62.202"
+    }
+  ],
+  "productionBuild": {
+    "exitCode": 0,
+    "warning": "existing >500kB chunk warning",
+    "output": "dist built in 22.99s; final command exit 0"
+  },
+  "fullWorkbenchLint": {
+    "status": "not passing",
+    "file": "frontend/workbench/agent-conversation.tsx",
+    "errors": 1,
+    "warnings": 2,
+    "preservedOtherWork": true
+  }
+}

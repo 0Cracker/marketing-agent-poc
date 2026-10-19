@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {createPortal} from 'react-dom';
-import {format,type Row} from './adapter';
+import {format} from './presentation';
+import type {Row} from './contract';
 
 // Keep perceptual lightness/chroma close; hue distinguishes the two ends of the scale.
 export const ratingColors:Record<string,string>={5:'oklch(72% 0.12 295)',4:'oklch(76% 0.10 285)',3:'oklch(80% 0.07 305)',2:'oklch(76% 0.10 340)',1:'oklch(72% 0.12 350)'};

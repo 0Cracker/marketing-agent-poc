@@ -1,0 +1,5105 @@
+{
+  "pass": true,
+  "demoRows": 30394,
+  "allVersionRows": 52636,
+  "cases": 323,
+  "distributions": [
+    {
+      "country": "KR",
+      "reviews": 560,
+      "mean": 3.601785714285714,
+      "tickets": 79,
+      "ads": 28,
+      "formats": [
+        {
+          "format": "text",
+          "count": 16
+        },
+        {
+          "format": "image",
+          "count": 7
+        },
+        {
+          "format": "video",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "country": "JP",
+      "reviews": 730,
+      "mean": 3.643835616438356,
+      "tickets": 107,
+      "ads": 41,
+      "formats": [
+        {
+          "format": "text",
+          "count": 23
+        },
+        {
+          "format": "image",
+          "count": 11
+        },
+        {
+          "format": "video",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "reviews": 1120,
+      "mean": 3.732142857142857,
+      "tickets": 200,
+      "ads": 87,
+      "formats": [
+        {
+          "format": "text",
+          "count": 37
+        },
+        {
+          "format": "image",
+          "count": 29
+        },
+        {
+          "format": "video",
+          "count": 21
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "자사 순매출",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "총판매액에서 순매출까지",
+          "kind": "waterfall",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 2
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 10,
+      "charts": [
+        {
+          "title": "자사 금액 기준 시장점유율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "브랜드별 금액 기준 시장점유율",
+          "kind": "columns",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 1
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 28,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 11,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 11
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 8,
+      "charts": [
+        {
+          "title": "광고비",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭률",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭 후 전환율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "ROAS",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 934,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 1092,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 400,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 40,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 249,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 560,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 1120,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 79,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 19,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 90,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 3,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 48
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 25,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 5
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 1
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": []
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "월별 순판매액",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 2
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "최근 관측월 · 브랜드별 시장점유율",
+          "kind": "vertical-bars",
+          "points": 4
+        },
+        {
+          "title": "제품별 시장 판매액 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 24
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 28,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 11,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 11
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 208,
+      "charts": [
+        {
+          "title": "월별 매체 광고비",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 934,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 1094,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 400,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 40,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 300,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 560,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 1120,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 79,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 19,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 90,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 3,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 48
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 25,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 5
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 12
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "자사 순매출",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "총판매액에서 순매출까지",
+          "kind": "waterfall",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 10,
+      "charts": [
+        {
+          "title": "자사 금액 기준 시장점유율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "브랜드별 금액 기준 시장점유율",
+          "kind": "columns",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 1
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 41,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 16,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 16
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 8,
+      "charts": [
+        {
+          "title": "광고비",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭률",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭 후 전환율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "ROAS",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1333,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1927,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 512,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 50,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 319,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 730,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1460,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 107,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 25
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 29,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 222,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 5,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 60
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 35,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 7
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 1
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": []
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "월별 순판매액",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "최근 관측월 · 브랜드별 시장점유율",
+          "kind": "vertical-bars",
+          "points": 4
+        },
+        {
+          "title": "제품별 시장 판매액 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 24
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 41,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 16,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 16
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 208,
+      "charts": [
+        {
+          "title": "월별 매체 광고비",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 1333,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 1929,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 512,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 22
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 50,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 372,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 730,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 1460,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 107,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 25
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 29,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 222,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 5,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 60
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 35,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 7
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 12
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "자사 순매출",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "총판매액에서 순매출까지",
+          "kind": "waterfall",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 10,
+      "charts": [
+        {
+          "title": "자사 금액 기준 시장점유율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "브랜드별 금액 기준 시장점유율",
+          "kind": "columns",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 1
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 87,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 27,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 27
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 8,
+      "charts": [
+        {
+          "title": "광고비",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭률",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "클릭 후 전환율",
+          "kind": "line",
+          "points": 12
+        },
+        {
+          "title": "ROAS",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2333,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 4029,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 800,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 80,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 497,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 1120,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2240,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 200,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 25
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 766,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 14
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 10,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 96,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 96
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 96,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 11
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 1,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 1
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": []
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "월별 순판매액",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "식별자 연결 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        },
+        {
+          "title": "연결 시스템",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "최근 관측월 · 브랜드별 시장점유율",
+          "kind": "vertical-bars",
+          "points": 4
+        },
+        {
+          "title": "제품별 시장 판매액 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 구매 경험 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "자사 제품 A · 검색 관심 추이",
+          "kind": "line",
+          "points": 12
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "검색어별 예상 수요",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "검색어 경쟁 수준",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "기기별 검색 클릭 추이",
+          "kind": "line",
+          "points": 24
+        },
+        {
+          "title": "검색 기기 구성",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "ALL",
+      "rows": 504,
+      "charts": [
+        {
+          "title": "제품별 판매가 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "최근 관측일 · 제품별 판매가 범위",
+          "kind": "range",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "ALL",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "제품·판매처별 행사 조건",
+          "kind": "comparison",
+          "points": 18
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "ALL",
+      "rows": 87,
+      "charts": [
+        {
+          "title": "경쟁사별 공개 광고",
+          "kind": "vertical-bars",
+          "points": 3
+        },
+        {
+          "title": "광고 소재 형식",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "ALL",
+      "rows": 27,
+      "charts": [
+        {
+          "title": "발행처별 공개 자료",
+          "kind": "bar",
+          "points": 3
+        },
+        {
+          "title": "공개 자료 발행 추이",
+          "kind": "line",
+          "points": 27
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "ALL",
+      "rows": 4,
+      "charts": [
+        {
+          "title": "캠페인별 운영 예산",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "ALL",
+      "rows": 208,
+      "charts": [
+        {
+          "title": "월별 매체 광고비",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "ALL",
+      "rows": 224,
+      "charts": [
+        {
+          "title": "기기별 일간 광고비",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 관측 광고비",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "최근 경쟁 도메인 보고",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "소재 형식별 버전 구성",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "ALL",
+      "rows": 2333,
+      "charts": [
+        {
+          "title": "유입 경로별 웹 활동",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "기기별 웹 활동",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "ALL",
+      "rows": 4033,
+      "charts": [
+        {
+          "title": "상품 행동별 수량",
+          "kind": "stages",
+          "points": 4
+        },
+        {
+          "title": "일별 상품 구매 수량",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 상품 구매 수량",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "ALL",
+      "rows": 800,
+      "charts": [
+        {
+          "title": "일별 주문행 매출",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "제품별 주문행 매출",
+          "kind": "bar",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "ALL",
+      "rows": 80,
+      "charts": [
+        {
+          "title": "요청 종류",
+          "kind": "donut",
+          "points": 3
+        },
+        {
+          "title": "처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "제품별 최근 단위 원가",
+          "kind": "comparison",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "ALL",
+      "rows": 112,
+      "charts": [
+        {
+          "title": "제품별 판매 가능 재고 추이",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "위치별 품절 관측 달력",
+          "kind": "calendar",
+          "points": 112
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "ALL",
+      "rows": 560,
+      "charts": [
+        {
+          "title": "배송 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "ALL",
+      "rows": 1120,
+      "charts": [
+        {
+          "title": "제품별 리뷰 요약",
+          "kind": "rating-profile",
+          "points": 6
+        },
+        {
+          "title": "자사 별점 분포",
+          "kind": "pie",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "ALL",
+      "rows": 2240,
+      "charts": [
+        {
+          "title": "리뷰 측면별 주석",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "문장에 표시된 의견 방향",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "ALL",
+      "rows": 200,
+      "charts": [
+        {
+          "title": "일별 고객 문의 접수",
+          "kind": "line",
+          "points": 25
+        },
+        {
+          "title": "문의 주제별 접수",
+          "kind": "bar",
+          "points": 5
+        },
+        {
+          "title": "문의 처리 상태",
+          "kind": "donut",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "ALL",
+      "rows": 60,
+      "charts": [
+        {
+          "title": "제품별 콘텐츠 조회수",
+          "kind": "bar",
+          "points": 6
+        },
+        {
+          "title": "플랫폼별 콘텐츠",
+          "kind": "donut",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "ALL",
+      "rows": 766,
+      "charts": [
+        {
+          "title": "댓글 수집 추이",
+          "kind": "line",
+          "points": 14
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "ALL",
+      "rows": 10,
+      "charts": [
+        {
+          "title": "협업별 대상·비용·계약 상태",
+          "kind": "comparison",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "ALL",
+      "rows": 96,
+      "charts": [
+        {
+          "title": "코호트별 구매·재구매 현황",
+          "kind": "comparison",
+          "points": 96
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "ALL",
+      "rows": 96,
+      "charts": [
+        {
+          "title": "이메일 반응 요약",
+          "kind": "stages",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "제품별 브랜드 긍정 응답",
+          "kind": "comparison",
+          "points": 6
+        },
+        {
+          "title": "제품별 긍정 응답률",
+          "kind": "bar",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "ALL",
+      "rows": 24,
+      "charts": [
+        {
+          "title": "시장 문맥 지수 추이",
+          "kind": "line",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "ALL",
+      "rows": 56,
+      "charts": [
+        {
+          "title": "기온 변화 · 마케팅 보조 맥락",
+          "kind": "line",
+          "points": 28
+        },
+        {
+          "title": "강수량 변화",
+          "kind": "line",
+          "points": 28
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "변경 전·후 관측 가격",
+          "kind": "bar",
+          "points": 36
+        },
+        {
+          "title": "변경 필드별 이력",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실행별 기대·수신·누락",
+          "kind": "bar",
+          "points": 72
+        },
+        {
+          "title": "수집 실행 상태",
+          "kind": "vertical-bars",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "ALL",
+      "rows": 48,
+      "charts": [
+        {
+          "title": "페이지별 장애 발생·지속 시간",
+          "kind": "calendar",
+          "points": 11
+        },
+        {
+          "title": "페이지별 가장 느린 관측 로딩 속도",
+          "kind": "comparison",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "실험군별 관측 전환율",
+          "kind": "vertical-bars",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "ALL",
+      "rows": 2,
+      "charts": [
+        {
+          "title": "가상 예산안 · 채널 배분과 모형 결과",
+          "kind": "comparison",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "정책별 예산 한도",
+          "kind": "bar",
+          "points": 12
+        },
+        {
+          "title": "모의 정책 상태",
+          "kind": "vertical-bars",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "type": "H01",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "H01 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "외부 ID·별칭 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "소매·시장 측정 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "구매·사용 패널 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "검색 관심 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "키워드 수요·비용 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "자연 검색 유입 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 1512,
+      "charts": [
+        {
+          "title": "가격 관측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 54,
+      "charts": [
+        {
+          "title": "프로모션 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 156,
+      "charts": [
+        {
+          "title": "공개 광고 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 54,
+      "charts": [
+        {
+          "title": "기사·발표·사건 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "운영 설정 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 348,
+      "charts": [
+        {
+          "title": "광고 성과 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 672,
+      "charts": [
+        {
+          "title": "광고 세그먼트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "경매 경쟁 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "소재·메시지 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 4600,
+      "charts": [
+        {
+          "title": "웹·앱 이벤트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 7048,
+      "charts": [
+        {
+          "title": "상품 행동 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 1712,
+      "charts": [
+        {
+          "title": "주문 상품 행 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 170,
+      "charts": [
+        {
+          "title": "취소·반품·환불 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 6,
+      "charts": [
+        {
+          "title": "원가·마진 조건 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 336,
+      "charts": [
+        {
+          "title": "재고 관측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 1065,
+      "charts": [
+        {
+          "title": "유통·배송 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 2410,
+      "charts": [
+        {
+          "title": "리뷰 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 4820,
+      "charts": [
+        {
+          "title": "리뷰 주제·감성 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 386,
+      "charts": [
+        {
+          "title": "고객 문의 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "공개 콘텐츠·반응 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 1078,
+      "charts": [
+        {
+          "title": "댓글·언급 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "크리에이터 협업 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 204,
+      "charts": [
+        {
+          "title": "고객 코호트·영업 기회 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 204,
+      "charts": [
+        {
+          "title": "CRM 캠페인 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "설문·브랜드 리프트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 3,
+      "charts": [
+        {
+          "title": "공표 통계 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 168,
+      "charts": [
+        {
+          "title": "날씨·휴일·시즌 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "운영 변경 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 216,
+      "charts": [
+        {
+          "title": "수집·계측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "사이트 품질·장애 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실험 설계·결과 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "반응 모형·예산안 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "ALL",
+      "month": "2026-08",
+      "rows": 3,
+      "charts": [
+        {
+          "title": "목표·집행 정책 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "H01",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "H01 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T02",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "외부 ID·별칭 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T03",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 432,
+      "charts": [
+        {
+          "title": "소매·시장 측정 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T04",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "구매·사용 패널 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T05",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 216,
+      "charts": [
+        {
+          "title": "검색 관심 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T06",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 216,
+      "charts": [
+        {
+          "title": "키워드 수요·비용 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T07",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 432,
+      "charts": [
+        {
+          "title": "자연 검색 유입 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T08",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 1512,
+      "charts": [
+        {
+          "title": "가격 관측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T09",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 54,
+      "charts": [
+        {
+          "title": "프로모션 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T10",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 156,
+      "charts": [
+        {
+          "title": "공개 광고 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T11",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 54,
+      "charts": [
+        {
+          "title": "기사·발표·사건 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T12",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 12,
+      "charts": [
+        {
+          "title": "운영 설정 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T13",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 624,
+      "charts": [
+        {
+          "title": "광고 성과 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T14",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 672,
+      "charts": [
+        {
+          "title": "광고 세그먼트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T15",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "경매 경쟁 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T16",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "소재·메시지 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T17",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 4600,
+      "charts": [
+        {
+          "title": "웹·앱 이벤트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T18",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 7056,
+      "charts": [
+        {
+          "title": "상품 행동 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T19",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 1712,
+      "charts": [
+        {
+          "title": "주문 상품 행 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T20",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 170,
+      "charts": [
+        {
+          "title": "취소·반품·환불 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T21",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 144,
+      "charts": [
+        {
+          "title": "원가·마진 조건 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T22",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 336,
+      "charts": [
+        {
+          "title": "재고 관측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T23",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 1232,
+      "charts": [
+        {
+          "title": "유통·배송 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T24",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 2410,
+      "charts": [
+        {
+          "title": "리뷰 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T25",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 4820,
+      "charts": [
+        {
+          "title": "리뷰 주제·감성 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T26",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 386,
+      "charts": [
+        {
+          "title": "고객 문의 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T27",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "공개 콘텐츠·반응 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T28",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 1078,
+      "charts": [
+        {
+          "title": "댓글·언급 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T29",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 18,
+      "charts": [
+        {
+          "title": "크리에이터 협업 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T30",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 204,
+      "charts": [
+        {
+          "title": "고객 코호트·영업 기회 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T31",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 204,
+      "charts": [
+        {
+          "title": "CRM 캠페인 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T32",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "설문·브랜드 리프트 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T33",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "공표 통계 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T34",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 168,
+      "charts": [
+        {
+          "title": "날씨·휴일·시즌 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T35",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "운영 변경 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T36",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 216,
+      "charts": [
+        {
+          "title": "수집·계측 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T37",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 108,
+      "charts": [
+        {
+          "title": "사이트 품질·장애 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T38",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "실험 설계·결과 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T39",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 72,
+      "charts": [
+        {
+          "title": "반응 모형·예산안 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "type": "T40",
+      "country": "ALL",
+      "month": "ALL",
+      "rows": 36,
+      "charts": [
+        {
+          "title": "목표·집행 정책 · 국가별 비교",
+          "kind": "comparison",
+          "points": 3
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "old D007 hash unchanged",
+    "country/product sample counts differ",
+    "review and text annotation source spans validated by generator",
+    "fixed status ordering in all countries",
+    "stage counts reconcile with item quantities",
+    "price line/range and stock line/calendar",
+    "incident calendar has no inferred uptime",
+    "ALL shows latest compatible business categories, original rows remain reachable",
+    "currency follows country"
+  ]
+}
