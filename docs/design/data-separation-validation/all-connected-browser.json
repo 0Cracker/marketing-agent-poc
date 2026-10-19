@@ -1,0 +1,904 @@
+{
+  "at": "2026-10-18T02:42:32.666Z",
+  "dashboards": [
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 현황",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "자사 금액 기준 시장점유율",
+        "브랜드별 금액 기준 시장점유율"
+      ],
+      "plots": 2,
+      "rows": 10
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "구매 패널",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "패널별 표본 수",
+        "패널별 긍정 응답 수"
+      ],
+      "plots": 2,
+      "rows": 6
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "공개 경쟁 광고",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "공개 광고 형식",
+        "광고주별 공개 표본"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "기사·발표·사건",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "공개 자료 발행처"
+      ],
+      "plots": 1,
+      "rows": 18
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "경매 경쟁",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "경쟁 도메인별 보고 점유율"
+      ],
+      "plots": 1,
+      "rows": 4
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "공표 통계",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "국가 문맥 지수"
+      ],
+      "plots": 1,
+      "rows": 1
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "날씨·휴일·시즌",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "일별 기온 표본",
+        "일별 강수량 표본"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 원문",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "제품별 리뷰 요약",
+        "자사 별점 분포"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 주제·감성",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "가상 규칙 주석 분포",
+        "리뷰 측면별 주석 수"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "검색 관심",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "검색 관심지수 · 동일 정규화 범위"
+      ],
+      "plots": 1,
+      "rows": 6
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "키워드 수요·비용",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "키워드별 예상 검색수",
+        "키워드 경쟁 수준"
+      ],
+      "plots": 2,
+      "rows": 6
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "VOC·문의",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "문의 주제별 접수",
+        "문의 처리 상태"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "브랜드 조사",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "조사별 표본 수",
+        "조사별 긍정 응답 수"
+      ],
+      "plots": 2,
+      "rows": 6
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "성과",
+      "type": "",
+      "charts": 4,
+      "empty": false,
+      "headings": [
+        "광고비",
+        "클릭률",
+        "클릭 후 전환율",
+        "ROAS"
+      ],
+      "plots": 4,
+      "rows": 4
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "세그먼트",
+      "type": "",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "세그먼트별 광고비"
+      ],
+      "plots": 1,
+      "rows": 25
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "운영 설정",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "캠페인별 설정 예산",
+        "캠페인 운영 상태"
+      ],
+      "plots": 2,
+      "rows": 4
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "소재",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "소재 형식별 버전",
+        "소재 버전 구성"
+      ],
+      "plots": 2,
+      "rows": 4
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "자연 검색 유입",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "페이지·기기별 검색 유입"
+      ],
+      "plots": 1,
+      "rows": 6
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "웹·앱 이벤트",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "웹 이벤트 구성",
+        "기기별 이벤트"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "구매 단계",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "상품 이벤트 구성",
+        "상품 이벤트별 수량"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "사이트 품질",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "사이트 품질 사건 상태",
+        "사이트 사건 지속 시간"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "판매 요약",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "자사 순매출",
+        "총판매액에서 순매출까지"
+      ],
+      "plots": 2,
+      "rows": 2
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "주문 상품 행",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "주문행별 금액",
+        "주문 결제 상태"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "취소·반품·환불",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "취소·반품·환불 종류",
+        "처리 상태"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "원가·마진",
+      "type": "",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "제품별 단위 원가"
+      ],
+      "plots": 1,
+      "rows": 2
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "고객",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "코호트별 표본 수",
+        "코호트별 순매출"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "CRM 캠페인",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "CRM 캠페인별 발송·반송",
+        "CRM 캠페인별 유일 클릭자"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "가격 스냅샷",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "판매처별 관측 가격",
+        "가격 관측 상태"
+      ],
+      "plots": 2,
+      "rows": 9
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "프로모션",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "프로모션 할인율"
+      ],
+      "plots": 1,
+      "rows": 18
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "재고",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "위치별 관측 재고",
+        "판매 가능 상태"
+      ],
+      "plots": 2,
+      "rows": 2
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "유통·배송",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "배송·유통 처리 상태",
+        "배송·유통 자료 종류"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "콘텐츠",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "콘텐츠별 관측 조회수",
+        "콘텐츠 플랫폼"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "댓글·언급",
+      "type": "",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "콘텐츠별 댓글 표본"
+      ],
+      "plots": 1,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "크리에이터 협업",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "협업별 계약 표기 비용",
+        "가상 협업 계약 상태"
+      ],
+      "plots": 2,
+      "rows": 12
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "예산안 비교",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "모형별 후보 총예산",
+        "후보별 모의 예상 전환수"
+      ],
+      "plots": 2,
+      "rows": 24
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "실험",
+      "type": "",
+      "charts": 1,
+      "empty": false,
+      "headings": [
+        "실험군별 관측 전환율"
+      ],
+      "plots": 1,
+      "rows": 24
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "정책·승인 검토",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "정책별 예산 한도",
+        "모의 정책 상태"
+      ],
+      "plots": 2,
+      "rows": 1
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "수집 상태",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "실행별 기대·수신·누락",
+        "수집 실행 상태"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "변경 이력",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "변경 전·후 관측 가격",
+        "변경 필드별 이력"
+      ],
+      "plots": 2,
+      "rows": 25
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "제품 기준",
+      "type": "",
+      "charts": 0,
+      "empty": false,
+      "headings": [],
+      "plots": 0,
+      "rows": 6
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "식별자 연결",
+      "type": "",
+      "charts": 2,
+      "empty": false,
+      "headings": [
+        "식별자 연결 상태",
+        "연결 시스템"
+      ],
+      "plots": 2,
+      "rows": 25
+    }
+  ],
+  "allSource": [
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 현황",
+      "type": "",
+      "count": 868,
+      "empty": false,
+      "gaps": 436
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "구매 패널",
+      "type": "",
+      "count": 126,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "공개 경쟁 광고",
+      "count": 120,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "기사·발표·사건",
+      "count": 60,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "경매 경쟁",
+      "count": 156,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "공표 통계",
+      "count": 84,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "날씨·휴일·시즌",
+      "count": 186,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 원문",
+      "count": 1893,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 주제·감성",
+      "count": 2426,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "검색 관심",
+      "count": 252,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "키워드 수요·비용",
+      "count": 234,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "VOC·문의",
+      "type": "",
+      "count": 189,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "브랜드 조사",
+      "type": "",
+      "count": 126,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "성과",
+      "type": "",
+      "count": 947,
+      "empty": false,
+      "gaps": 323
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "세그먼트",
+      "type": "",
+      "count": 696,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "운영 설정",
+      "type": "",
+      "count": 22,
+      "empty": false,
+      "gaps": 10
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "소재",
+      "type": "",
+      "count": 84,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "자연 검색 유입",
+      "count": 456,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "웹·앱 이벤트",
+      "count": 2824,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "구매 단계",
+      "type": "",
+      "count": 3340,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "사이트 품질",
+      "type": "",
+      "count": 117,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "판매 요약",
+      "type": "",
+      "count": 288,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "주문 상품 행",
+      "count": 1218,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "취소·반품·환불",
+      "count": 129,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "원가·마진",
+      "type": "",
+      "count": 156,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "고객",
+      "type": "",
+      "count": 153,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "CRM 캠페인",
+      "type": "",
+      "count": 150,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "가격 스냅샷",
+      "count": 2020,
+      "empty": false,
+      "gaps": 4
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "프로모션",
+      "count": 55,
+      "empty": false,
+      "gaps": 1
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "재고",
+      "type": "",
+      "count": 510,
+      "empty": false,
+      "gaps": 6
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "유통·배송",
+      "type": "",
+      "count": 918,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "콘텐츠",
+      "type": "",
+      "count": 120,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "댓글·언급",
+      "type": "",
+      "count": 558,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "크리에이터 협업",
+      "type": "",
+      "count": 39,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "예산안 비교",
+      "type": "",
+      "count": 81,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "실험",
+      "type": "",
+      "count": 84,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "정책·승인 검토",
+      "type": "",
+      "count": 42,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "수집 상태",
+      "type": "",
+      "count": 226,
+      "empty": false,
+      "gaps": 10
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "변경 이력",
+      "type": "",
+      "count": 109,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "제품 기준",
+      "type": "",
+      "count": 12,
+      "empty": false,
+      "gaps": 0
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "식별자 연결",
+      "type": "",
+      "count": 168,
+      "empty": false,
+      "gaps": 0
+    }
+  ],
+  "allSourceTotal": 22242,
+  "contractGapTotal": 790,
+  "batchChecks": [
+    {
+      "batchLabel": "D003B · 전체 원천",
+      "expected": 72,
+      "count": 72,
+      "empty": false
+    },
+    {
+      "batchLabel": "D006-CQ-A · 전체 원천",
+      "expected": 1,
+      "count": 1,
+      "empty": false
+    },
+    {
+      "batchLabel": "D006-CQ-B · 전체 원천",
+      "expected": 20,
+      "count": 20,
+      "empty": false
+    },
+    {
+      "batchLabel": "D005 · 전체 원천",
+      "type": "T05",
+      "count": 36,
+      "expected": 36,
+      "empty": false
+    }
+  ],
+  "experiment": {
+    "otherExperiment": false,
+    "rows": 2,
+    "selected": "실험D007-Experiment-4"
+  },
+  "chartPaginationChangedData": true,
+  "mobile": {
+    "viewport": 390,
+    "documentWidth": 375,
+    "scrollWidth": 375,
+    "metricOverflow": false
+  },
+  "original": {
+    "hasSourceProfileA": true,
+    "hasOriginalDSTBoundary": true,
+    "notWrapper": true
+  },
+  "errors": []
+}
