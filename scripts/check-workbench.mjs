@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {createServer} from 'vite';
 const base='docs/research/marketing-ontology/batches/D003B/';
@@ -61,6 +62,6 @@ try{
  assert.equal(ratio(1,0),null);
  const actualRows=buildModel('T01','JP','2026-08').rows;const withNull=actualRows.map((r,i)=>({...r,values:{...r.values,sort:i===0?null:i===1?null:i}}));for(const dir of ['asc','desc'])assert(sortRows(withNull,'sort',dir).slice(-2).every(r=>r.values.sort===null));
  assert.equal(csv(buildModel('T24','JP','2026-08'),buildModel('T24','JP','2026-08').rows).split('\r\n').length,25);
- const report={at:new Date().toISOString(),head:'e52cef6bfe54eb6f2a91a5378edda0fb9b686b90 + uncommitted workbench',pass:true,total:1652,preservation,cases,japan_social:{expected:28,received:26,missing:['2026-08-26','2026-08-27'],rate:26/28*100},checks:['40 types / 10 available + H01 / 30 ungenerated','market denominator once and invariant under product filter','other market retained / brand shares sum 100','3 countries / currency separation','H01 gross - returns = net','6 advertising formula checks per medium','monthly and daily isolated','null daily points on Aug 26/27','26 received rows vs 28 state rows','72 review samples / 24 Japan','price/inventory non-August empty','review missing-month message','null-last sort asc/desc / stable ID ties','CSV all matching rows']};
- fs.writeFileSync('docs/design/workbench-validation/numeric-checks.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:true,files:11,total:1652,types:40,cases:cases.length,japan_social:report.japan_social}));
+ const report={at:new Date().toISOString(),head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()+' + working tree',pass:true,total:1652,preservation,cases,japan_social:{expected:28,received:26,missing:['2026-08-26','2026-08-27'],rate:26/28*100},checks:['40 types / 10 available + H01 / 30 ungenerated','market denominator once and invariant under product filter','other market retained / brand shares sum 100','3 countries / currency separation','H01 gross - returns = net','6 advertising formula checks per medium','monthly and daily isolated','null daily points on Aug 26/27','26 received rows vs 28 state rows','72 review samples / 24 Japan','price/inventory non-August empty','review missing-month message','null-last sort asc/desc / stable ID ties','CSV all matching rows']};
+ fs.writeFileSync(process.argv.includes('--output')?process.argv[process.argv.indexOf('--output')+1]:'docs/design/workbench-validation/numeric-checks.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:true,files:11,total:1652,types:40,cases:cases.length,japan_social:report.japan_social}));
 }finally{await server.close();}
