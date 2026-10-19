@@ -1,0 +1,1 @@
+{"pass": true, "modelId": "D008-T39-00003", "period": {"start": "2026-08-03", "end_exclusive": "2026-08-31", "timezone": "Asia/Tokyo", "grain": "custom"}, "results": {"baseline": {"expected": "60.500000", "total": "1500000.00", "currency": ["JPY"]}, "candidate": {"expected": "61.538462", "total": "1500000.00", "currency": ["JPY"]}}}

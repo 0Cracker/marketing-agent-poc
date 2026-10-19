@@ -1,0 +1,14 @@
+{
+  "model": "gemini-3.8-flash",
+  "httpStatus": 200,
+  "expectedOutput": true,
+  "finishReason": "STOP",
+  "request": "Short non-marketing JSON connectivity check without thinkingConfig",
+  "source": "Observed tool result in this session after minimal thinking setting was rejected",
+  "usage": {
+    "promptTokenCount": 15,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 20
+  },
+  "businessDataSent": false
+}

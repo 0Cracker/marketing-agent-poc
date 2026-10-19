@@ -1,0 +1,11 @@
+{
+  "mode": "remote_model",
+  "externalModelEnabled": true,
+  "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4",
+  "dataContract": "marketing-current/1",
+  "models": {
+    "analysis": "gemini-3.5-flash-lite",
+    "budget": "gemini-3.8-flash"
+  },
+  "realAdsEnabled": false
+}

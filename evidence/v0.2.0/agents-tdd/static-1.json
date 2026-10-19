@@ -1,0 +1,9 @@
+{
+  "files": 13,
+  "findings": [],
+  "engine": "Existing ESLint 9.39.4 Linter API; no installation",
+  "rules": [
+    "no-undef",
+    "no-unused-vars"
+  ]
+}

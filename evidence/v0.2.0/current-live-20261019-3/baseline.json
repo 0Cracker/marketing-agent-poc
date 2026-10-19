@@ -1,0 +1,102 @@
+{
+  "startedAt": "2026-10-19T13:28:02.071Z",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "base": "http://127.0.0.1:8797/agent-api",
+  "origin": "http://127.0.0.1:5179",
+  "db": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\evidence\\v0.2.0\\current-live-20261019-3\\flow.sqlite",
+  "steps": [],
+  "runs": {},
+  "priorCalls": 5,
+  "modelCallCeiling": 24,
+  "node": "v24.19.0",
+  "gitBefore": [
+    {
+      "directory": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc",
+      "head": "d0f6267c5c478ec1603183df90f2239c7aa537ce",
+      "status": "## dev...origin/dev [ahead 29]\n M docs/decisions/README.md\n M docs/iterations/README.md\n M docs/iterations/v0.2.0.md\n M package.json\n?? backend/README.md\n?? backend/agent-flow.mjs\n?? backend/agent-http.mjs\n?? backend/agent-model.mjs\n?? backend/agent-runtime.mjs\n?? backend/agent-tools.mjs\n?? backend/local-planner.mjs\n?? docs/decisions/decision-002.md\n?? docs/design/\n?? evidence/v0.2.0/\n?? scripts/agent-demo.mjs\n?? scripts/agent-server.mjs\n?? scripts/check-agent-tdd.mjs\n?? scripts/check-current-live-budget.py\n?? scripts/verify-current-live.mjs\n?? tests/agents/"
+    },
+    {
+      "directory": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts",
+      "head": "4d286c505e8ac659c1d839b257631ef7280f31d6",
+      "status": "## feature/workbench-evolution\n M data/README.md\n M docs/ai-lessons/README.md\n M docs/design/dashboard-data-separation.md\n M docs/research/marketing-ontology/data-proposal.md\n M docs/research/marketing-ontology/work-log.md\n M frontend/workbench/adapter.ts\n M frontend/workbench/charts.tsx\n M frontend/workbench/panel.tsx\n M frontend/workbench/review-profile.tsx\n M frontend/workbench/table.tsx\n M frontend/workbench/workbench.css\n M frontend/workbench/workbench.tsx\n M scripts/check-workbench.mjs\n M vite.config.ts\n?? data/ad-breakdowns.jsonl\n?? data/ad-performance.jsonl\n?? data/archive/\n?? data/auction-insights.jsonl\n?? data/brand-surveys.jsonl\n?? data/budget-models.jsonl\n?? data/budget-policies.jsonl\n?? data/campaigns.jsonl\n?? data/change-events.jsonl\n?? data/collection-runs.jsonl\n?? data/commerce-events.jsonl\n?? data/costs.jsonl\n?? data/creatives.jsonl\n?? data/creator-collaborations.jsonl\n?? data/crm-performance.jsonl\n?? data/customer-cohorts.jsonl\n?? data/customer-inquiries.jsonl\n?? data/definitions.json\n?? data/distribution-fulfilment.jsonl\n?? data/experiments.jsonl\n?? data/identity-mappings.jsonl\n?? data/inventory.jsonl\n?? data/keyword-demand.jsonl\n?? data/manifest.json\n?? data/market-sales.jsonl\n?? data/migration-map.jsonl\n?? data/order-lines.jsonl\n?? data/organic-search.jsonl\n?? data/owned-content.jsonl\n?? data/prices.jsonl\n?? data/product-presentation.json\n?? data/products.jsonl\n?? data/promotions.jsonl\n?? data/provenance.jsonl\n?? data/public-ads.jsonl\n?? data/public-statistics.jsonl\n?? data/publications.jsonl\n?? data/purchase-surveys.jsonl\n?? data/refunds.jsonl\n?? data/review-annotations.jsonl\n?? data/reviews.jsonl\n?? data/sales-reports.jsonl\n?? data/search-interest.jsonl\n?? data/site-events.jsonl\n?? data/social-comments.jsonl\n?? data/weather-calendar.jsonl\n?? data/web-events.jsonl\n?? docs/ai-lessons/lesson-001.md\n?? docs/design/agent-answer-20261019/\n?? docs/design/agent-chat-20261019/\n?? docs/design/agent-connection-20261019.md\n?? docs/design/agent-ui-20261019-client-tests.txt\n?? docs/design/agent-ui-20261019-numeric-checks.json\n?? docs/design/data-consolidation-20261019/\n?? docs/design/data-separation-validation/\n?? docs/design/marketing-redesign-20261019/\n?? docs/handoffs/\n?? frontend/public/workbench-data/\n?? frontend/workbench/agent-answer.ts\n?? frontend/workbench/agent-chat.css\n?? frontend/workbench/agent-client.ts\n?? frontend/workbench/agent-conversation.css\n?? frontend/workbench/agent-conversation.tsx\n?? frontend/workbench/agent-presentation.ts\n?? frontend/workbench/agent-result.tsx\n?? frontend/workbench/baseline-source.ts\n?? frontend/workbench/connected-service.ts\n?? frontend/workbench/connected-views.ts\n?? frontend/workbench/contract.ts\n?? frontend/workbench/current-service.ts\n?? frontend/workbench/historical-connected-service.ts\n?? frontend/workbench/legacy-query.ts\n?? frontend/workbench/marketing-charts.tsx\n?? frontend/workbench/marketing-summary.ts\n?? frontend/workbench/presentation.ts\n?? frontend/workbench/screen-service.ts\n?? frontend/workbench/standard-query.ts\n?? frontend/workbench/values.ts\n?? scripts/build-comparison-demo.mjs\n?? scripts/check-all-connected.mjs\n?? scripts/check-data-consolidation.mjs\n?? scripts/check-marketing-redesign.mjs\n?? scripts/check-screen-contract.mjs\n?? scripts/check-standard-query.mjs\n?? scripts/consolidate-data.mjs\n?? scripts/current-data.mjs\n?? scripts/data-business-keys.mjs\n?? scripts/import-all-catalog.mjs\n?? scripts/import-standard-catalog.mjs\n?? scripts/verify-consolidation.mjs\n?? tests/agent-answer.test.ts\n?? tests/agent-client.test.ts\n?? tests/agent-presentation.test.ts"
+    }
+  ],
+  "dataHashes": {
+    "manifest.json": "fd2a8474fab9edc7422d5d6b2c81b6e62693443a23a5b9a3eeecb4553e1e09d1",
+    "products.jsonl": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860",
+    "identity-mappings.jsonl": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79",
+    "market-sales.jsonl": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a",
+    "purchase-surveys.jsonl": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c",
+    "search-interest.jsonl": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54",
+    "keyword-demand.jsonl": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563",
+    "organic-search.jsonl": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18",
+    "prices.jsonl": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3",
+    "promotions.jsonl": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40",
+    "public-ads.jsonl": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4",
+    "publications.jsonl": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95",
+    "campaigns.jsonl": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c",
+    "ad-performance.jsonl": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6",
+    "ad-breakdowns.jsonl": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56",
+    "auction-insights.jsonl": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2",
+    "creatives.jsonl": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55",
+    "web-events.jsonl": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114",
+    "commerce-events.jsonl": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829",
+    "order-lines.jsonl": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307",
+    "refunds.jsonl": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb",
+    "costs.jsonl": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e",
+    "inventory.jsonl": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5",
+    "distribution-fulfilment.jsonl": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2",
+    "reviews.jsonl": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2",
+    "review-annotations.jsonl": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18",
+    "customer-inquiries.jsonl": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64",
+    "owned-content.jsonl": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716",
+    "social-comments.jsonl": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4",
+    "creator-collaborations.jsonl": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e",
+    "customer-cohorts.jsonl": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754",
+    "crm-performance.jsonl": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498",
+    "brand-surveys.jsonl": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e",
+    "public-statistics.jsonl": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428",
+    "weather-calendar.jsonl": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70",
+    "change-events.jsonl": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b",
+    "collection-runs.jsonl": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27",
+    "site-events.jsonl": "f952c1d5a1b4a1a1b659ea5447e549bf212f308a70c79277dc3118e0b9853285",
+    "experiments.jsonl": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f",
+    "budget-models.jsonl": "2d3c7a5e4e8fbaa2e66fab854511a51462478b02acff9e518a31093161d3c22e",
+    "budget-policies.jsonl": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd",
+    "sales-reports.jsonl": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1",
+    "definitions.json": "c14c4e2e09b1055d2e4d7a97a513becb92631a62fdb608138fb3625fa32cb6dd",
+    "product-presentation.json": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+  },
+  "codeHashes": {
+    "marketing-agent-poc\\backend\\agent-flow.mjs": "1159e3847d4c5e003bdaeddc8d6922ac2e066a1925eef6e1c00069e68d8ad0eb",
+    "marketing-agent-poc\\backend\\agent-http.mjs": "b1f787497fd3805bd5bebc85b6e4908a248d587ebf6205d1a469345f83bafbf2",
+    "marketing-agent-poc\\backend\\agent-model.mjs": "7228dd9e9a15c409a4ce10c76933fe960cdd98302118b469f58d1a379530bd3b",
+    "marketing-agent-poc\\backend\\agent-runtime.mjs": "7e29d64d24c6d95627d8ed972e01927b80086a43e280cf7191e237826c1eea58",
+    "marketing-agent-poc\\backend\\agent-tools.mjs": "d3325d5d2fb1f541531cc54f27e46f187646cf2a9fe9ab184989d62917878b1d",
+    "marketing-agent-poc\\scripts\\agent-server.mjs": "b8f7e46d2235032eee1953fd2934e114c64d95143561485dea92dd16b7c6e45e",
+    "marketing-dashboard-drafts\\frontend\\workbench\\agent-client.ts": "1067bb9975df38708f28e4c5706ac1a53384d6928f0413d0516c10a33ac2fae8",
+    "marketing-dashboard-drafts\\frontend\\workbench\\agent-conversation.tsx": "b1515886777563ca7f3ef7fc89a07082ce60411c5641db591e178521ce681d95",
+    "marketing-dashboard-drafts\\frontend\\workbench\\agent-result.tsx": "c77d7087a602803f159f9701b01c7bb861019356c0e9c9ab446c740f7d6bcb20",
+    "marketing-dashboard-drafts\\frontend\\workbench\\current-service.ts": "c154dbff8fdeea3ec954b566f154d2c4213c4e70d4cfffb8df38183c99f2f816"
+  },
+  "existingDBHashes": {
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\work\\agent-flow.sqlite": "01af2aea3df0d20ae3296882c72c794d1a8d4785d595c30e0402eea0edfb4221",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\work\\agent-flow-live.sqlite": "ed3ddffefd06c19730d367fefe10a730ece6193bc287f25636bf033d0415c8e0"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "startedAt": "2026-10-19T13:28:02.071Z",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "base": "http://127.0.0.1:8797/agent-api",
+  "origin": "http://127.0.0.1:5179",
+  "db": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\evidence\\v0.2.0\\current-live-20261019-3\\flow.sqlite",
+  "steps": [
+    {
+      "command": "analysis",
+      "status": "pass",
+      "at": "2026-10-19T13:29:09.936Z",
+      "detail": {
+        "runId": "d35f20ac-a8bf-41ae-a71b-02c0e005ff1b",
+        "facts": 18,
+        "evidence": 22
+      }
+    },
+    {
+      "command": "followup",
+      "status": "pass",
+      "at": "2026-10-19T13:29:58.768Z",
+      "detail": {
+        "runId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+        "evidence": 22
+      }
+    },
+    {
+      "command": "budget",
+      "status": "pass",
+      "at": "2026-10-19T13:34:11.230Z",
+      "detail": {
+        "runId": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+        "status": "pending_approval",
+        "simulationId": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969"
+      }
+    },
+    {
+      "command": "approve",
+      "status": "pass",
+      "at": "2026-10-19T13:34:27.000Z",
+      "detail": {
+        "runId": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+        "userSelectedRevision": false
+      }
+    },
+    {
+      "command": "restart",
+      "status": "pass",
+      "at": "2026-10-19T13:34:46.906Z",
+      "detail": {
+        "restart": 1,
+        "runs": 4,
+        "status": "approved",
+        "zeroNewModelCalls": true,
+        "newToken": true
+      }
+    },
+    {
+      "command": "invalidate",
+      "status": "pass",
+      "at": "2026-10-19T13:35:43.780Z",
+      "detail": {
+        "runId": "e6649766-f12d-4206-a159-cfa721f001b7",
+        "proposalId": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+        "status": "invalidated"
+      }
+    },
+    {
+      "command": "restart",
+      "status": "pass",
+      "at": "2026-10-19T13:36:00.006Z",
+      "detail": {
+        "restart": 2,
+        "runs": 5,
+        "status": "invalidated",
+        "zeroNewModelCalls": true,
+        "newToken": true
+      }
+    },
+    {
+      "command": "finish",
+      "status": "pass",
+      "at": "2026-10-19T13:36:25.291Z",
+      "detail": {
+        "status": "pass",
+        "scope": {
+          "batch": "CURRENT",
+          "country": "JP",
+          "scopeId": "CURRENT-JP",
+          "productIds": [
+            "P1A",
+            "P1B",
+            "P2A",
+            "P2B",
+            "P3A",
+            "P3B"
+          ],
+          "start": "2026-08-01",
+          "end": "2026-09-01",
+          "asOf": "2026-10-19T05:06:31.333Z",
+          "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+        },
+        "modelCalls": {
+          "total": 21,
+          "current": 16,
+          "prior": 5,
+          "analysis": 11,
+          "budget": 5
+        },
+        "restarts": 2,
+        "changedDataFiles": 0,
+        "existingDBsUnchanged": true,
+        "realAdsCalls": 0,
+        "limitations": [
+          "API and database checks; Windows UI acceptance recorded separately",
+          "Only JP August 2026 representative flow; not all question quality",
+          "Model-call counts conservatively include attempts before provider HTTP requests; revision copies excluded"
+        ]
+      }
+    }
+  ],
+  "runs": {
+    "initial": "d35f20ac-a8bf-41ae-a71b-02c0e005ff1b",
+    "followup": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+    "budget": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+    "approved": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+    "final": "e6649766-f12d-4206-a159-cfa721f001b7"
+  },
+  "priorCalls": 5,
+  "modelCallCeiling": 24,
+  "modelCalls": {
+    "total": 21,
+    "current": 16,
+    "prior": 5,
+    "analysis": 11,
+    "budget": 5
+  }
+}

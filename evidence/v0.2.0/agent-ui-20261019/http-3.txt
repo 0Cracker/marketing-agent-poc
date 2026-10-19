@@ -1,0 +1,14 @@
+✔ H01 session describes offline mode and blocks foreign origins/host rebinding (71.4059ms)
+✔ H02 no token, wrong token, non-JSON and invalid JSON fail before mutation (50.9768ms)
+✔ H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed (118.8024ms)
+✔ H04 clients cannot supply approver, adapters, provider keys or arbitrary methods (77.4461ms)
+✔ H05 existing ID reload, missing ID, stale version and rejected handoff are distinct (134.4009ms)
+✔ H06 oversize requests, forged context and unissued evidence do not bypass validation (72.8356ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2694.2544

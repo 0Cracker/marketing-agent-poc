@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "restart": 2,
+  "runs": 5,
+  "status": "invalidated",
+  "zeroNewModelCalls": true,
+  "newToken": true
+}

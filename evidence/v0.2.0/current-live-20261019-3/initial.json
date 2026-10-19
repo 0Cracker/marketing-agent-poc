@@ -1,0 +1,3252 @@
+{
+  "role": "analysis",
+  "question": "일본 2026년 8월 6제품의 금액 점유율을 비교하고 P1A의 경쟁 열위와 가격 관련 지지·반대 근거를 확인해줘.",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "parentId": null,
+  "focus": "price",
+  "status": "analyzed",
+  "stage": "analysis_complete",
+  "events": [
+    {
+      "type": "scope_validated",
+      "at": "2026-10-19T13:28:45.264Z"
+    },
+    {
+      "type": "quality",
+      "at": "2026-10-19T13:28:45.310Z",
+      "available": 8166,
+      "excluded": 0,
+      "rawFallback": false,
+      "coverage": "sample"
+    },
+    {
+      "type": "tool",
+      "name": "market_compare",
+      "args": {},
+      "recordIds": [
+        "D008-T03-00277",
+        "D008-T03-00278",
+        "D008-T03-00279",
+        "D008-T03-00280",
+        "D008-T03-00281",
+        "D008-T03-00282"
+      ],
+      "at": "2026-10-19T13:28:50.975Z"
+    },
+    {
+      "type": "tool",
+      "name": "relations",
+      "args": {
+        "candidate": "price"
+      },
+      "recordIds": [
+        "D008-T25-01121",
+        "D008-T25-01133",
+        "D008-T25-01154",
+        "D008-T25-01166",
+        "D008-T25-01169",
+        "D008-T25-01190",
+        "D008-T25-01226",
+        "D008-T25-01238",
+        "D008-T25-01130",
+        "D008-T25-01142",
+        "D008-T25-01145",
+        "D008-T25-01157",
+        "D008-T25-01178",
+        "D008-T25-01181",
+        "D008-T25-01193",
+        "D008-T25-01202",
+        "D008-T08-00505",
+        "D008-T08-00506",
+        "D008-T08-00507",
+        "D008-T08-00508",
+        "D008-T08-00509",
+        "D008-T08-00510",
+        "D008-T08-00511",
+        "D008-T08-00512"
+      ],
+      "at": "2026-10-19T13:28:55.803Z"
+    },
+    {
+      "type": "output_validated",
+      "at": "2026-10-19T13:28:58.732Z"
+    }
+  ],
+  "history": [
+    {
+      "tool": "market_compare",
+      "args": {},
+      "result": {
+        "facts": [
+          {
+            "id": "D008-T03-00277.sales_value",
+            "recordId": "D008-T03-00277",
+            "field": "sales_value",
+            "value": "1483235.00",
+            "unit": "JPY",
+            "product": "P1A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00277.market_total_value",
+            "recordId": "D008-T03-00277",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P1A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00277.share",
+            "recordId": "D008-T03-00277",
+            "field": "share",
+            "value": "0.037978",
+            "unit": "ratio",
+            "product": "P1A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00278.sales_value",
+            "recordId": "D008-T03-00278",
+            "field": "sales_value",
+            "value": "3116362.00",
+            "unit": "JPY",
+            "product": "P1B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00278.market_total_value",
+            "recordId": "D008-T03-00278",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P1B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00278.share",
+            "recordId": "D008-T03-00278",
+            "field": "share",
+            "value": "0.079793",
+            "unit": "ratio",
+            "product": "P1B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00279.sales_value",
+            "recordId": "D008-T03-00279",
+            "field": "sales_value",
+            "value": "3050961.00",
+            "unit": "JPY",
+            "product": "P2A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00279.market_total_value",
+            "recordId": "D008-T03-00279",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P2A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00279.share",
+            "recordId": "D008-T03-00279",
+            "field": "share",
+            "value": "0.078119",
+            "unit": "ratio",
+            "product": "P2A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00280.sales_value",
+            "recordId": "D008-T03-00280",
+            "field": "sales_value",
+            "value": "3878175.00",
+            "unit": "JPY",
+            "product": "P2B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00280.market_total_value",
+            "recordId": "D008-T03-00280",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P2B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00280.share",
+            "recordId": "D008-T03-00280",
+            "field": "share",
+            "value": "0.099299",
+            "unit": "ratio",
+            "product": "P2B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00281.sales_value",
+            "recordId": "D008-T03-00281",
+            "field": "sales_value",
+            "value": "4388076.00",
+            "unit": "JPY",
+            "product": "P3A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00281.market_total_value",
+            "recordId": "D008-T03-00281",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P3A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00281.share",
+            "recordId": "D008-T03-00281",
+            "field": "share",
+            "value": "0.112355",
+            "unit": "ratio",
+            "product": "P3A",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00282.sales_value",
+            "recordId": "D008-T03-00282",
+            "field": "sales_value",
+            "value": "3610908.00",
+            "unit": "JPY",
+            "product": "P3B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00282.market_total_value",
+            "recordId": "D008-T03-00282",
+            "field": "market_total_value",
+            "value": "39055434.00",
+            "unit": "JPY",
+            "product": "P3B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          },
+          {
+            "id": "D008-T03-00282.share",
+            "recordId": "D008-T03-00282",
+            "field": "share",
+            "value": "0.092456",
+            "unit": "ratio",
+            "product": "P3B",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-09-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "month"
+            },
+            "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+            "classification": "observed_or_calculated",
+            "isSynthetic": true
+          }
+        ],
+        "recordIds": [
+          "D008-T03-00277",
+          "D008-T03-00278",
+          "D008-T03-00279",
+          "D008-T03-00280",
+          "D008-T03-00281",
+          "D008-T03-00282"
+        ],
+        "coverage": "sample",
+        "causalEffect": null
+      }
+    },
+    {
+      "tool": "relations",
+      "args": {
+        "candidate": "price"
+      },
+      "result": {
+        "edges": [
+          {
+            "from": "entity:D008-T25-01121",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01121"
+          },
+          {
+            "from": "entity:D008-T25-01121",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01121",
+            "evidenceId": "D008-T25-01121"
+          },
+          {
+            "from": "span:D008-T25-01121",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00561",
+            "evidenceId": "D008-T25-01121"
+          },
+          {
+            "from": "entity:D008-T25-01121",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01121",
+            "evidenceId": "D008-T25-01121"
+          },
+          {
+            "from": "D008-T25-01121",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01121"
+          },
+          {
+            "from": "entity:D008-T25-01133",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01133"
+          },
+          {
+            "from": "entity:D008-T25-01133",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01133",
+            "evidenceId": "D008-T25-01133"
+          },
+          {
+            "from": "span:D008-T25-01133",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00567",
+            "evidenceId": "D008-T25-01133"
+          },
+          {
+            "from": "entity:D008-T25-01133",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01133",
+            "evidenceId": "D008-T25-01133"
+          },
+          {
+            "from": "D008-T25-01133",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01133"
+          },
+          {
+            "from": "entity:D008-T25-01154",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01154"
+          },
+          {
+            "from": "entity:D008-T25-01154",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01154",
+            "evidenceId": "D008-T25-01154"
+          },
+          {
+            "from": "span:D008-T25-01154",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00577",
+            "evidenceId": "D008-T25-01154"
+          },
+          {
+            "from": "entity:D008-T25-01154",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01154",
+            "evidenceId": "D008-T25-01154"
+          },
+          {
+            "from": "D008-T25-01154",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01154"
+          },
+          {
+            "from": "entity:D008-T25-01166",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01166"
+          },
+          {
+            "from": "entity:D008-T25-01166",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01166",
+            "evidenceId": "D008-T25-01166"
+          },
+          {
+            "from": "span:D008-T25-01166",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00583",
+            "evidenceId": "D008-T25-01166"
+          },
+          {
+            "from": "entity:D008-T25-01166",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01166",
+            "evidenceId": "D008-T25-01166"
+          },
+          {
+            "from": "D008-T25-01166",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01166"
+          },
+          {
+            "from": "entity:D008-T25-01169",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01169"
+          },
+          {
+            "from": "entity:D008-T25-01169",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01169",
+            "evidenceId": "D008-T25-01169"
+          },
+          {
+            "from": "span:D008-T25-01169",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00585",
+            "evidenceId": "D008-T25-01169"
+          },
+          {
+            "from": "entity:D008-T25-01169",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01169",
+            "evidenceId": "D008-T25-01169"
+          },
+          {
+            "from": "D008-T25-01169",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01169"
+          },
+          {
+            "from": "entity:D008-T25-01190",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01190"
+          },
+          {
+            "from": "entity:D008-T25-01190",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01190",
+            "evidenceId": "D008-T25-01190"
+          },
+          {
+            "from": "span:D008-T25-01190",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00595",
+            "evidenceId": "D008-T25-01190"
+          },
+          {
+            "from": "entity:D008-T25-01190",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01190",
+            "evidenceId": "D008-T25-01190"
+          },
+          {
+            "from": "D008-T25-01190",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01190"
+          },
+          {
+            "from": "entity:D008-T25-01226",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01226"
+          },
+          {
+            "from": "entity:D008-T25-01226",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01226",
+            "evidenceId": "D008-T25-01226"
+          },
+          {
+            "from": "span:D008-T25-01226",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00613",
+            "evidenceId": "D008-T25-01226"
+          },
+          {
+            "from": "entity:D008-T25-01226",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01226",
+            "evidenceId": "D008-T25-01226"
+          },
+          {
+            "from": "D008-T25-01226",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01226"
+          },
+          {
+            "from": "entity:D008-T25-01238",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01238"
+          },
+          {
+            "from": "entity:D008-T25-01238",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01238",
+            "evidenceId": "D008-T25-01238"
+          },
+          {
+            "from": "span:D008-T25-01238",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00619",
+            "evidenceId": "D008-T25-01238"
+          },
+          {
+            "from": "entity:D008-T25-01238",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01238",
+            "evidenceId": "D008-T25-01238"
+          },
+          {
+            "from": "D008-T25-01238",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01238"
+          },
+          {
+            "from": "entity:D008-T25-01130",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01130"
+          },
+          {
+            "from": "entity:D008-T25-01130",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01130",
+            "evidenceId": "D008-T25-01130"
+          },
+          {
+            "from": "span:D008-T25-01130",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00565",
+            "evidenceId": "D008-T25-01130"
+          },
+          {
+            "from": "entity:D008-T25-01130",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01130",
+            "evidenceId": "D008-T25-01130"
+          },
+          {
+            "from": "D008-T25-01130",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01130"
+          },
+          {
+            "from": "entity:D008-T25-01142",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01142"
+          },
+          {
+            "from": "entity:D008-T25-01142",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01142",
+            "evidenceId": "D008-T25-01142"
+          },
+          {
+            "from": "span:D008-T25-01142",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00571",
+            "evidenceId": "D008-T25-01142"
+          },
+          {
+            "from": "entity:D008-T25-01142",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01142",
+            "evidenceId": "D008-T25-01142"
+          },
+          {
+            "from": "D008-T25-01142",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01142"
+          },
+          {
+            "from": "entity:D008-T25-01145",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01145"
+          },
+          {
+            "from": "entity:D008-T25-01145",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01145",
+            "evidenceId": "D008-T25-01145"
+          },
+          {
+            "from": "span:D008-T25-01145",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00573",
+            "evidenceId": "D008-T25-01145"
+          },
+          {
+            "from": "entity:D008-T25-01145",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01145",
+            "evidenceId": "D008-T25-01145"
+          },
+          {
+            "from": "D008-T25-01145",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01145"
+          },
+          {
+            "from": "entity:D008-T25-01157",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01157"
+          },
+          {
+            "from": "entity:D008-T25-01157",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01157",
+            "evidenceId": "D008-T25-01157"
+          },
+          {
+            "from": "span:D008-T25-01157",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00579",
+            "evidenceId": "D008-T25-01157"
+          },
+          {
+            "from": "entity:D008-T25-01157",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01157",
+            "evidenceId": "D008-T25-01157"
+          },
+          {
+            "from": "D008-T25-01157",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01157"
+          },
+          {
+            "from": "entity:D008-T25-01178",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01178"
+          },
+          {
+            "from": "entity:D008-T25-01178",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01178",
+            "evidenceId": "D008-T25-01178"
+          },
+          {
+            "from": "span:D008-T25-01178",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00589",
+            "evidenceId": "D008-T25-01178"
+          },
+          {
+            "from": "entity:D008-T25-01178",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01178",
+            "evidenceId": "D008-T25-01178"
+          },
+          {
+            "from": "D008-T25-01178",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01178"
+          },
+          {
+            "from": "entity:D008-T25-01181",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01181"
+          },
+          {
+            "from": "entity:D008-T25-01181",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01181",
+            "evidenceId": "D008-T25-01181"
+          },
+          {
+            "from": "span:D008-T25-01181",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00591",
+            "evidenceId": "D008-T25-01181"
+          },
+          {
+            "from": "entity:D008-T25-01181",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01181",
+            "evidenceId": "D008-T25-01181"
+          },
+          {
+            "from": "D008-T25-01181",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01181"
+          },
+          {
+            "from": "entity:D008-T25-01193",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01193"
+          },
+          {
+            "from": "entity:D008-T25-01193",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01193",
+            "evidenceId": "D008-T25-01193"
+          },
+          {
+            "from": "span:D008-T25-01193",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00597",
+            "evidenceId": "D008-T25-01193"
+          },
+          {
+            "from": "entity:D008-T25-01193",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01193",
+            "evidenceId": "D008-T25-01193"
+          },
+          {
+            "from": "D008-T25-01193",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01193"
+          },
+          {
+            "from": "entity:D008-T25-01202",
+            "predicate": "subject",
+            "to": "P1A",
+            "evidenceId": "D008-T25-01202"
+          },
+          {
+            "from": "entity:D008-T25-01202",
+            "predicate": "evidenceSpan",
+            "to": "span:D008-T25-01202",
+            "evidenceId": "D008-T25-01202"
+          },
+          {
+            "from": "span:D008-T25-01202",
+            "predicate": "sourceRecord",
+            "to": "D008-T24-00601",
+            "evidenceId": "D008-T25-01202"
+          },
+          {
+            "from": "entity:D008-T25-01202",
+            "predicate": "sourceRecord",
+            "to": "D008-T25-01202",
+            "evidenceId": "D008-T25-01202"
+          },
+          {
+            "from": "D008-T25-01202",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T25.jsonl",
+            "evidenceId": "D008-T25-01202"
+          },
+          {
+            "from": "entity:D008-T08-00505",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00505"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00505"
+          },
+          {
+            "from": "entity:D008-T08-00505",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00505",
+            "evidenceId": "D008-T08-00505"
+          },
+          {
+            "from": "D008-T08-00505",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00505"
+          },
+          {
+            "from": "entity:D008-T08-00506",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00506"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00506"
+          },
+          {
+            "from": "entity:D008-T08-00506",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00506",
+            "evidenceId": "D008-T08-00506"
+          },
+          {
+            "from": "D008-T08-00506",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00506"
+          },
+          {
+            "from": "entity:D008-T08-00507",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00507"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00507"
+          },
+          {
+            "from": "entity:D008-T08-00507",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00507",
+            "evidenceId": "D008-T08-00507"
+          },
+          {
+            "from": "D008-T08-00507",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00507"
+          },
+          {
+            "from": "entity:D008-T08-00508",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00508"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00508"
+          },
+          {
+            "from": "entity:D008-T08-00508",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00508",
+            "evidenceId": "D008-T08-00508"
+          },
+          {
+            "from": "D008-T08-00508",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00508"
+          },
+          {
+            "from": "entity:D008-T08-00509",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00509"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00509"
+          },
+          {
+            "from": "entity:D008-T08-00509",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00509",
+            "evidenceId": "D008-T08-00509"
+          },
+          {
+            "from": "D008-T08-00509",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00509"
+          },
+          {
+            "from": "entity:D008-T08-00510",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00510"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00510"
+          },
+          {
+            "from": "entity:D008-T08-00510",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00510",
+            "evidenceId": "D008-T08-00510"
+          },
+          {
+            "from": "D008-T08-00510",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00510"
+          },
+          {
+            "from": "entity:D008-T08-00511",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00511"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00511"
+          },
+          {
+            "from": "entity:D008-T08-00511",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00511",
+            "evidenceId": "D008-T08-00511"
+          },
+          {
+            "from": "D008-T08-00511",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00511"
+          },
+          {
+            "from": "entity:D008-T08-00512",
+            "predicate": "subject",
+            "to": "D005-V-P1A",
+            "evidenceId": "D008-T08-00512"
+          },
+          {
+            "from": "D005-V-P1A",
+            "predicate": "variantOf",
+            "to": "P1A",
+            "evidenceId": "D008-T08-00512"
+          },
+          {
+            "from": "entity:D008-T08-00512",
+            "predicate": "sourceRecord",
+            "to": "D008-T08-00512",
+            "evidenceId": "D008-T08-00512"
+          },
+          {
+            "from": "D008-T08-00512",
+            "predicate": "artifact",
+            "to": "frontend/public/workbench-data/D008/source/T08.jsonl",
+            "evidenceId": "D008-T08-00512"
+          }
+        ],
+        "records": [
+          {
+            "record_id": "D008-T25-01121",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01121",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00561",
+            "evidence_span": {
+              "record_ref": "D008-T24-00561",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 24
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00561"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01133",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01133",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00567",
+            "evidence_span": {
+              "record_ref": "D008-T24-00567",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 24
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00567"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01154",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01154",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00577",
+            "evidence_span": {
+              "record_ref": "D008-T24-00577",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 27,
+              "end_offset": 39
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00577"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01166",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01166",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00583",
+            "evidence_span": {
+              "record_ref": "D008-T24-00583",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 27,
+              "end_offset": 39
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00583"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01169",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01169",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00585",
+            "evidence_span": {
+              "record_ref": "D008-T24-00585",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 24
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00585"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01190",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01190",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00595",
+            "evidence_span": {
+              "record_ref": "D008-T24-00595",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 29,
+              "end_offset": 41
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00595"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01226",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01226",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00613",
+            "evidence_span": {
+              "record_ref": "D008-T24-00613",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 29,
+              "end_offset": 41
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00613"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01238",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01238",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "negative",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00619",
+            "evidence_span": {
+              "record_ref": "D008-T24-00619",
+              "field_path": "$.body_text",
+              "quote": "가격이 부담스러웠습니다",
+              "language": "ko",
+              "start_offset": 27,
+              "end_offset": 39
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00619"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01130",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01130",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00565",
+            "evidence_span": {
+              "record_ref": "D008-T24-00565",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 29,
+              "end_offset": 44
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00565"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01142",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01142",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00571",
+            "evidence_span": {
+              "record_ref": "D008-T24-00571",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 27,
+              "end_offset": 42
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00571"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01145",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01145",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00573",
+            "evidence_span": {
+              "record_ref": "D008-T24-00573",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 27
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00573"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01157",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01157",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00579",
+            "evidence_span": {
+              "record_ref": "D008-T24-00579",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 27
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00579"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01178",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01178",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00589",
+            "evidence_span": {
+              "record_ref": "D008-T24-00589",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 27,
+              "end_offset": 42
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00589"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01181",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01181",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00591",
+            "evidence_span": {
+              "record_ref": "D008-T24-00591",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 27
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00591"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01193",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01193",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00597",
+            "evidence_span": {
+              "record_ref": "D008-T24-00597",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 12,
+              "end_offset": 27
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00597"
+            ]
+          },
+          {
+            "record_id": "D008-T25-01202",
+            "dataset_type": "T25",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T25-01202",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T25.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "record_kind": "annotation",
+            "subject_ref": "P1A",
+            "aspect_ref": "가격",
+            "sentiment": "positive",
+            "definition_version": "D008-1",
+            "assessment_status": "provided",
+            "review_ref": "D008-T24-00601",
+            "evidence_span": {
+              "record_ref": "D008-T24-00601",
+              "field_path": "$.body_text",
+              "quote": "가격에 비해 만족스러웠습니다",
+              "language": "ko",
+              "start_offset": 29,
+              "end_offset": 44
+            },
+            "extractor_version": "D008-explicit-text-rule-1",
+            "related_record_ids": [
+              "D008-T24-00601"
+            ]
+          },
+          {
+            "record_id": "D008-T08-00505",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00505",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T22-00113",
+              "D008-T22-00141"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-03T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00506",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00506",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T22-00114",
+              "D008-T22-00142"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-04T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00507",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00507",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00115",
+              "D008-T22-00143"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-05T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00508",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00508",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00116",
+              "D008-T22-00144"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-06T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00509",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00509",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00117",
+              "D008-T22-00145"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-07T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00510",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00510",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00118",
+              "D008-T22-00146"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-08T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00511",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00511",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00119",
+              "D008-T22-00147"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-09T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          },
+          {
+            "record_id": "D008-T08-00512",
+            "dataset_type": "T08",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T08-00512",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T08.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "instant",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "timestamp_field": "observed_at"
+            },
+            "related_record_ids": [
+              "D008-T09-00019",
+              "D008-T22-00120",
+              "D008-T22-00148"
+            ],
+            "offer_id": "D008-Offer-JPP1A0",
+            "variant_ref": "D005-V-P1A",
+            "seller_ref": "D008-Seller-JP-0",
+            "observed_at": "2026-08-10T10:00:00+09:00",
+            "listed_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "regular_price": {
+              "amount": "1232.00",
+              "currency": "JPY"
+            },
+            "sale_price": {
+              "amount": "1170.00",
+              "currency": "JPY"
+            },
+            "availability": "in_stock",
+            "tax_included": null,
+            "shipping_included": null,
+            "pack_quantity": {
+              "amount": 300,
+              "unit": "ml"
+            }
+          }
+        ],
+        "recordIds": [
+          "D008-T25-01121",
+          "D008-T25-01133",
+          "D008-T25-01154",
+          "D008-T25-01166",
+          "D008-T25-01169",
+          "D008-T25-01190",
+          "D008-T25-01226",
+          "D008-T25-01238",
+          "D008-T25-01130",
+          "D008-T25-01142",
+          "D008-T25-01145",
+          "D008-T25-01157",
+          "D008-T25-01178",
+          "D008-T25-01181",
+          "D008-T25-01193",
+          "D008-T25-01202",
+          "D008-T08-00505",
+          "D008-T08-00506",
+          "D008-T08-00507",
+          "D008-T08-00508",
+          "D008-T08-00509",
+          "D008-T08-00510",
+          "D008-T08-00511",
+          "D008-T08-00512"
+        ],
+        "supportIds": [
+          "D008-T25-01121",
+          "D008-T25-01133",
+          "D008-T25-01154",
+          "D008-T25-01166",
+          "D008-T25-01169",
+          "D008-T25-01190",
+          "D008-T25-01226",
+          "D008-T25-01238"
+        ],
+        "counterIds": [
+          "D008-T25-01130",
+          "D008-T25-01142",
+          "D008-T25-01145",
+          "D008-T25-01157",
+          "D008-T25-01178",
+          "D008-T25-01181",
+          "D008-T25-01193",
+          "D008-T25-01202"
+        ],
+        "candidate": "price",
+        "ontology": {
+          "kind": "typed_projection",
+          "version": "MC-1.0.0-logic-2",
+          "sha256": "5ae6ec3d4cbe5180451aba0df038e4f8b4d92d1573d0c6f38fe015c5b4710507",
+          "predicates": [
+            "brand",
+            "variantOf",
+            "inCategory",
+            "promotes",
+            "subject",
+            "scope",
+            "member",
+            "metric",
+            "interval",
+            "instant",
+            "validInterval",
+            "sourceRecord",
+            "artifact",
+            "generatedBy",
+            "seller",
+            "location",
+            "evidenceSpan",
+            "originalReview",
+            "supports",
+            "counters",
+            "input",
+            "supersedes"
+          ]
+        },
+        "total": 747,
+        "truncated": true,
+        "coverage": "sample",
+        "causalEffect": null,
+        "limitations": [
+          "association_not_causation",
+          "bounded_sample",
+          "hypothesis_links_not_asserted_to_ontology",
+          "tax_shipping_not_assumed"
+        ]
+      }
+    }
+  ],
+  "modelCalls": 3,
+  "toolCalls": 2,
+  "issuedFacts": {
+    "D008-T03-00277.sales_value": {
+      "id": "D008-T03-00277.sales_value",
+      "recordId": "D008-T03-00277",
+      "field": "sales_value",
+      "value": "1483235.00",
+      "unit": "JPY",
+      "product": "P1A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00277.market_total_value": {
+      "id": "D008-T03-00277.market_total_value",
+      "recordId": "D008-T03-00277",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P1A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00277.share": {
+      "id": "D008-T03-00277.share",
+      "recordId": "D008-T03-00277",
+      "field": "share",
+      "value": "0.037978",
+      "unit": "ratio",
+      "product": "P1A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00278.sales_value": {
+      "id": "D008-T03-00278.sales_value",
+      "recordId": "D008-T03-00278",
+      "field": "sales_value",
+      "value": "3116362.00",
+      "unit": "JPY",
+      "product": "P1B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00278.market_total_value": {
+      "id": "D008-T03-00278.market_total_value",
+      "recordId": "D008-T03-00278",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P1B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00278.share": {
+      "id": "D008-T03-00278.share",
+      "recordId": "D008-T03-00278",
+      "field": "share",
+      "value": "0.079793",
+      "unit": "ratio",
+      "product": "P1B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00279.sales_value": {
+      "id": "D008-T03-00279.sales_value",
+      "recordId": "D008-T03-00279",
+      "field": "sales_value",
+      "value": "3050961.00",
+      "unit": "JPY",
+      "product": "P2A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00279.market_total_value": {
+      "id": "D008-T03-00279.market_total_value",
+      "recordId": "D008-T03-00279",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P2A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00279.share": {
+      "id": "D008-T03-00279.share",
+      "recordId": "D008-T03-00279",
+      "field": "share",
+      "value": "0.078119",
+      "unit": "ratio",
+      "product": "P2A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00280.sales_value": {
+      "id": "D008-T03-00280.sales_value",
+      "recordId": "D008-T03-00280",
+      "field": "sales_value",
+      "value": "3878175.00",
+      "unit": "JPY",
+      "product": "P2B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00280.market_total_value": {
+      "id": "D008-T03-00280.market_total_value",
+      "recordId": "D008-T03-00280",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P2B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00280.share": {
+      "id": "D008-T03-00280.share",
+      "recordId": "D008-T03-00280",
+      "field": "share",
+      "value": "0.099299",
+      "unit": "ratio",
+      "product": "P2B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00281.sales_value": {
+      "id": "D008-T03-00281.sales_value",
+      "recordId": "D008-T03-00281",
+      "field": "sales_value",
+      "value": "4388076.00",
+      "unit": "JPY",
+      "product": "P3A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00281.market_total_value": {
+      "id": "D008-T03-00281.market_total_value",
+      "recordId": "D008-T03-00281",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P3A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00281.share": {
+      "id": "D008-T03-00281.share",
+      "recordId": "D008-T03-00281",
+      "field": "share",
+      "value": "0.112355",
+      "unit": "ratio",
+      "product": "P3A",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00282.sales_value": {
+      "id": "D008-T03-00282.sales_value",
+      "recordId": "D008-T03-00282",
+      "field": "sales_value",
+      "value": "3610908.00",
+      "unit": "JPY",
+      "product": "P3B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00282.market_total_value": {
+      "id": "D008-T03-00282.market_total_value",
+      "recordId": "D008-T03-00282",
+      "field": "market_total_value",
+      "value": "39055434.00",
+      "unit": "JPY",
+      "product": "P3B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    },
+    "D008-T03-00282.share": {
+      "id": "D008-T03-00282.share",
+      "recordId": "D008-T03-00282",
+      "field": "share",
+      "value": "0.092456",
+      "unit": "ratio",
+      "product": "P3B",
+      "period": {
+        "start": "2026-08-01",
+        "end_exclusive": "2026-09-01",
+        "timezone": "Asia/Tokyo",
+        "grain": "month"
+      },
+      "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+      "classification": "observed_or_calculated",
+      "isSynthetic": true
+    }
+  },
+  "issuedRecords": [
+    "D008-T03-00277",
+    "D008-T03-00278",
+    "D008-T03-00279",
+    "D008-T03-00280",
+    "D008-T03-00281",
+    "D008-T03-00282",
+    "D008-T25-01121",
+    "D008-T25-01133",
+    "D008-T25-01154",
+    "D008-T25-01166",
+    "D008-T25-01169",
+    "D008-T25-01190",
+    "D008-T25-01226",
+    "D008-T25-01238",
+    "D008-T25-01130",
+    "D008-T25-01142",
+    "D008-T25-01145",
+    "D008-T25-01157",
+    "D008-T25-01178",
+    "D008-T25-01181",
+    "D008-T25-01193",
+    "D008-T25-01202",
+    "D008-T08-00505",
+    "D008-T08-00506",
+    "D008-T08-00507",
+    "D008-T08-00508",
+    "D008-T08-00509",
+    "D008-T08-00510",
+    "D008-T08-00511",
+    "D008-T08-00512"
+  ],
+  "requiredCounters": {
+    "price": [
+      "D008-T25-01130",
+      "D008-T25-01142",
+      "D008-T25-01145",
+      "D008-T25-01157",
+      "D008-T25-01178",
+      "D008-T25-01181",
+      "D008-T25-01193",
+      "D008-T25-01202"
+    ]
+  },
+  "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945",
+  "id": "d35f20ac-a8bf-41ae-a71b-02c0e005ff1b",
+  "version": 12,
+  "output": {
+    "facts": [
+      {
+        "id": "D008-T03-00277.sales_value",
+        "recordId": "D008-T03-00277",
+        "field": "sales_value",
+        "value": "1483235.00",
+        "unit": "JPY",
+        "product": "P1A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00277.market_total_value",
+        "recordId": "D008-T03-00277",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P1A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00277.share",
+        "recordId": "D008-T03-00277",
+        "field": "share",
+        "value": "0.037978",
+        "unit": "ratio",
+        "product": "P1A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00278.sales_value",
+        "recordId": "D008-T03-00278",
+        "field": "sales_value",
+        "value": "3116362.00",
+        "unit": "JPY",
+        "product": "P1B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00278.market_total_value",
+        "recordId": "D008-T03-00278",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P1B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00278.share",
+        "recordId": "D008-T03-00278",
+        "field": "share",
+        "value": "0.079793",
+        "unit": "ratio",
+        "product": "P1B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00279.sales_value",
+        "recordId": "D008-T03-00279",
+        "field": "sales_value",
+        "value": "3050961.00",
+        "unit": "JPY",
+        "product": "P2A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00279.market_total_value",
+        "recordId": "D008-T03-00279",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P2A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00279.share",
+        "recordId": "D008-T03-00279",
+        "field": "share",
+        "value": "0.078119",
+        "unit": "ratio",
+        "product": "P2A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00280.sales_value",
+        "recordId": "D008-T03-00280",
+        "field": "sales_value",
+        "value": "3878175.00",
+        "unit": "JPY",
+        "product": "P2B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00280.market_total_value",
+        "recordId": "D008-T03-00280",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P2B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00280.share",
+        "recordId": "D008-T03-00280",
+        "field": "share",
+        "value": "0.099299",
+        "unit": "ratio",
+        "product": "P2B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00281.sales_value",
+        "recordId": "D008-T03-00281",
+        "field": "sales_value",
+        "value": "4388076.00",
+        "unit": "JPY",
+        "product": "P3A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00281.market_total_value",
+        "recordId": "D008-T03-00281",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P3A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00281.share",
+        "recordId": "D008-T03-00281",
+        "field": "share",
+        "value": "0.112355",
+        "unit": "ratio",
+        "product": "P3A",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00282.sales_value",
+        "recordId": "D008-T03-00282",
+        "field": "sales_value",
+        "value": "3610908.00",
+        "unit": "JPY",
+        "product": "P3B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00282.market_total_value",
+        "recordId": "D008-T03-00282",
+        "field": "market_total_value",
+        "value": "39055434.00",
+        "unit": "JPY",
+        "product": "P3B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      },
+      {
+        "id": "D008-T03-00282.share",
+        "recordId": "D008-T03-00282",
+        "field": "share",
+        "value": "0.092456",
+        "unit": "ratio",
+        "product": "P3B",
+        "period": {
+          "start": "2026-08-01",
+          "end_exclusive": "2026-09-01",
+          "timezone": "Asia/Tokyo",
+          "grain": "month"
+        },
+        "source": "frontend/public/workbench-data/D008/source/T03.jsonl",
+        "classification": "observed_or_calculated",
+        "isSynthetic": true
+      }
+    ],
+    "hypotheses": [
+      {
+        "candidate": "price",
+        "supports": [
+          "D008-T25-01121",
+          "D008-T25-01133",
+          "D008-T25-01154",
+          "D008-T25-01166",
+          "D008-T25-01169",
+          "D008-T25-01190",
+          "D008-T25-01226",
+          "D008-T25-01238"
+        ],
+        "counters": [
+          "D008-T25-01130",
+          "D008-T25-01142",
+          "D008-T25-01145",
+          "D008-T25-01157",
+          "D008-T25-01178",
+          "D008-T25-01181",
+          "D008-T25-01193",
+          "D008-T25-01202"
+        ],
+        "causal": false,
+        "kind": "proposed_interpretation",
+        "assessment": "mixed"
+      }
+    ],
+    "recommendation": "investigate",
+    "completeness": "complete_within_selected_facts",
+    "causalEffect": null,
+    "coverage": "sample",
+    "limitations": [
+      "synthetic_sample",
+      "association_not_causation",
+      "bounded_evidence_search"
+    ]
+  },
+  "screenContext": {
+    "screenVersion": "workbench-model/1",
+    "metricLabels": [
+      "시장 판매액",
+      "자사 금액 점유율",
+      "자사 시장 판매액",
+      "전년 동월 점유율 차이"
+    ],
+    "evidenceIds": [
+      "D008-T03-00277",
+      "D008-T03-00278",
+      "D008-T03-00279",
+      "D008-T03-00280",
+      "D008-T03-00281",
+      "D008-T03-00282"
+    ],
+    "selectedTitle": "도메인 분석",
+    "excludedEvidenceIds": []
+  }
+}

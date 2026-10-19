@@ -1,0 +1,11 @@
+{
+  "status": "incomplete",
+  "modelCalls": {
+    "total": 5,
+    "analysis": 5,
+    "budget": 0
+  },
+  "initialAnalysis": "pass",
+  "followup": "held/model_failed",
+  "details": "Provider HTTP status not captured in this earlier baseline. The check command rejection is a harness input error, not an app/model failure. Original state and SQLite preserved."
+}
