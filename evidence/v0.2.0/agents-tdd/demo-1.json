@@ -1,0 +1,553 @@
+{
+  "mode": "offline_model_substitute",
+  "marketingSource": "approved_D007_read_only",
+  "newSourceRows": 0,
+  "externalModelCalls": 0,
+  "realAdsCalls": 0,
+  "analysis": {
+    "id": "ba4ed809-1831-47a7-9f66-89ca8ccc5607",
+    "status": "analyzed",
+    "scope": {
+      "batch": "D007",
+      "country": "KR",
+      "scopeId": "D007-KR-sample",
+      "productIds": [
+        "P1A",
+        "P2A"
+      ],
+      "start": "2026-08-01",
+      "end": "2026-09-01",
+      "asOf": "2026-10-18T08:56:12.031Z"
+    },
+    "output": {
+      "facts": [
+        {
+          "id": "D007-T03-00133.sales_value",
+          "recordId": "D007-T03-00133",
+          "field": "sales_value",
+          "value": "17406786.00",
+          "unit": "KRW",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00133.market_total_value",
+          "recordId": "D007-T03-00133",
+          "field": "market_total_value",
+          "value": "367676154.00",
+          "unit": "KRW",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00133.share",
+          "recordId": "D007-T03-00133",
+          "field": "share",
+          "value": "0.047343",
+          "unit": "ratio",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.sales_value",
+          "recordId": "D007-T03-00135",
+          "field": "sales_value",
+          "value": "22623986.00",
+          "unit": "KRW",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.market_total_value",
+          "recordId": "D007-T03-00135",
+          "field": "market_total_value",
+          "value": "367676154.00",
+          "unit": "KRW",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.share",
+          "recordId": "D007-T03-00135",
+          "field": "share",
+          "value": "0.061532",
+          "unit": "ratio",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        }
+      ],
+      "hypotheses": [
+        {
+          "candidate": "price",
+          "supports": [
+            "D007-T25-00034",
+            "D007-T25-00055",
+            "D007-T25-00076",
+            "D007-T25-00202",
+            "D007-T25-00223",
+            "D007-T25-00244",
+            "D007-T25-00286",
+            "D007-T25-01803"
+          ],
+          "counters": [
+            "D007-T25-00001",
+            "D007-T25-00005",
+            "D007-T25-00006",
+            "D007-T25-00009",
+            "D007-T25-00013",
+            "D007-T25-00017",
+            "D007-T25-00021",
+            "D007-T25-00025"
+          ],
+          "causal": false
+        }
+      ],
+      "recommendation": "investigate",
+      "completeness": "complete_within_selected_facts",
+      "causalEffect": null,
+      "coverage": "sample",
+      "limitations": [
+        "synthetic_sample",
+        "association_not_causation",
+        "bounded_evidence_search"
+      ]
+    },
+    "events": [
+      {
+        "type": "scope_validated",
+        "at": "2026-10-18T08:56:12.032Z"
+      },
+      {
+        "type": "quality",
+        "at": "2026-10-18T08:56:12.045Z",
+        "available": 3700,
+        "excluded": 0,
+        "rawFallback": false,
+        "coverage": "sample"
+      },
+      {
+        "type": "tool",
+        "name": "market_compare",
+        "args": {},
+        "recordIds": [
+          "D007-T03-00133",
+          "D007-T03-00135"
+        ],
+        "at": "2026-10-18T08:56:12.048Z"
+      },
+      {
+        "type": "tool",
+        "name": "relations",
+        "args": {
+          "candidate": "price"
+        },
+        "recordIds": [
+          "D007-T25-00034",
+          "D007-T25-00055",
+          "D007-T25-00076",
+          "D007-T25-00202",
+          "D007-T25-00223",
+          "D007-T25-00244",
+          "D007-T25-00286",
+          "D007-T25-01803",
+          "D007-T25-00001",
+          "D007-T25-00005",
+          "D007-T25-00006",
+          "D007-T25-00009",
+          "D007-T25-00013",
+          "D007-T25-00017",
+          "D007-T25-00021",
+          "D007-T25-00025",
+          "D007-T08-00001",
+          "D007-T08-00002",
+          "D007-T08-00003",
+          "D007-T08-00004",
+          "D007-T08-00005",
+          "D007-T08-00006",
+          "D007-T08-00007",
+          "D007-T08-00008"
+        ],
+        "at": "2026-10-18T08:56:12.055Z"
+      },
+      {
+        "type": "output_validated",
+        "at": "2026-10-18T08:56:12.058Z"
+      }
+    ]
+  },
+  "proposal": {
+    "id": "3d342f13-0d27-46b0-a086-f7379e462c38",
+    "statusAtCreation": "pending_approval",
+    "simulation": {
+      "id": "20325be32ed4e1265424261e186edff8dfa43662903f4022a97910e406935dbb",
+      "kind": "assumption_simulation",
+      "baseline": {
+        "recordId": "D007-T39-00002",
+        "allocations": [
+          {
+            "campaign_ref": "D007-Campaign-KR-P1A-search",
+            "amount": {
+              "amount": "5250000.00",
+              "currency": "KRW"
+            },
+            "lower": {
+              "amount": "1500000.00",
+              "currency": "KRW"
+            },
+            "upper": {
+              "amount": "13500000.00",
+              "currency": "KRW"
+            }
+          },
+          {
+            "campaign_ref": "D007-Campaign-KR-P1A-social",
+            "amount": {
+              "amount": "9750000.00",
+              "currency": "KRW"
+            },
+            "lower": {
+              "amount": "1500000.00",
+              "currency": "KRW"
+            },
+            "upper": {
+              "amount": "13500000.00",
+              "currency": "KRW"
+            }
+          }
+        ],
+        "total": {
+          "amount": "15000000.00",
+          "currency": "KRW"
+        },
+        "expected": "60.500000",
+        "channels": [
+          "search",
+          "social"
+        ]
+      },
+      "candidate": {
+        "recordId": "D007-T39-00008",
+        "allocations": [
+          {
+            "campaign_ref": "D007-Campaign-KR-P1A-search",
+            "amount": {
+              "amount": "7500000.00",
+              "currency": "KRW"
+            },
+            "lower": {
+              "amount": "1500000.00",
+              "currency": "KRW"
+            },
+            "upper": {
+              "amount": "13500000.00",
+              "currency": "KRW"
+            }
+          },
+          {
+            "campaign_ref": "D007-Campaign-KR-P1A-social",
+            "amount": {
+              "amount": "7500000.00",
+              "currency": "KRW"
+            },
+            "lower": {
+              "amount": "1500000.00",
+              "currency": "KRW"
+            },
+            "upper": {
+              "amount": "13500000.00",
+              "currency": "KRW"
+            }
+          }
+        ],
+        "total": {
+          "amount": "15000000.00",
+          "currency": "KRW"
+        },
+        "expected": "61.538462",
+        "channels": [
+          "search",
+          "social"
+        ]
+      },
+      "modelId": "D007-T39-00001",
+      "modelVersion": "D007-1",
+      "assumptions": [
+        "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+        "통화·기간·국가가 다른 후보를 합치지 않음"
+      ],
+      "policyId": "D007-T40-00034",
+      "approvalRole": "synthetic_analyst",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "realExecutionAllowed": false,
+      "recordIds": [
+        "D007-T39-00002",
+        "D007-T39-00008",
+        "D007-T39-00001",
+        "D007-T40-00034"
+      ],
+      "inputFingerprint": "b8675680c9c16f28ea23302e5797914e6e7b3908dfd5127fec9595fce6c1720a"
+    },
+    "statusAfterFollowup": "invalidated"
+  },
+  "followup": {
+    "id": "e011611f-acd9-458a-9ccf-ab4e9d0388f2",
+    "parentId": "ba4ed809-1831-47a7-9f66-89ca8ccc5607",
+    "status": "analyzed",
+    "output": {
+      "facts": [
+        {
+          "id": "D007-T03-00133.sales_value",
+          "recordId": "D007-T03-00133",
+          "field": "sales_value",
+          "value": "17406786.00",
+          "unit": "KRW",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00133.market_total_value",
+          "recordId": "D007-T03-00133",
+          "field": "market_total_value",
+          "value": "367676154.00",
+          "unit": "KRW",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00133.share",
+          "recordId": "D007-T03-00133",
+          "field": "share",
+          "value": "0.047343",
+          "unit": "ratio",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.sales_value",
+          "recordId": "D007-T03-00135",
+          "field": "sales_value",
+          "value": "22623986.00",
+          "unit": "KRW",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.market_total_value",
+          "recordId": "D007-T03-00135",
+          "field": "market_total_value",
+          "value": "367676154.00",
+          "unit": "KRW",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00135.share",
+          "recordId": "D007-T03-00135",
+          "field": "share",
+          "value": "0.061532",
+          "unit": "ratio",
+          "product": "P2A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Seoul",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        }
+      ],
+      "hypotheses": [
+        {
+          "candidate": "price",
+          "supports": [
+            "D007-T25-00034",
+            "D007-T25-00055",
+            "D007-T25-00076",
+            "D007-T25-00202",
+            "D007-T25-00223",
+            "D007-T25-00244",
+            "D007-T25-00286",
+            "D007-T25-01803"
+          ],
+          "counters": [
+            "D007-T25-00001",
+            "D007-T25-00005",
+            "D007-T25-00006",
+            "D007-T25-00009",
+            "D007-T25-00013",
+            "D007-T25-00017",
+            "D007-T25-00021",
+            "D007-T25-00025"
+          ],
+          "causal": false
+        }
+      ],
+      "recommendation": "investigate",
+      "completeness": "complete_within_selected_facts",
+      "causalEffect": null,
+      "coverage": "sample",
+      "limitations": [
+        "synthetic_sample",
+        "association_not_causation",
+        "bounded_evidence_search"
+      ]
+    },
+    "events": [
+      {
+        "type": "scope_validated",
+        "at": "2026-10-18T08:56:12.076Z"
+      },
+      {
+        "type": "quality",
+        "at": "2026-10-18T08:56:12.104Z",
+        "available": 3700,
+        "excluded": 0,
+        "rawFallback": false,
+        "coverage": "sample"
+      },
+      {
+        "type": "tool",
+        "name": "market_compare",
+        "args": {},
+        "recordIds": [
+          "D007-T03-00133",
+          "D007-T03-00135"
+        ],
+        "at": "2026-10-18T08:56:12.106Z"
+      },
+      {
+        "type": "tool",
+        "name": "relations",
+        "args": {
+          "candidate": "price"
+        },
+        "recordIds": [
+          "D007-T25-00034",
+          "D007-T25-00055",
+          "D007-T25-00076",
+          "D007-T25-00202",
+          "D007-T25-00223",
+          "D007-T25-00244",
+          "D007-T25-00286",
+          "D007-T25-01803",
+          "D007-T25-00001",
+          "D007-T25-00005",
+          "D007-T25-00006",
+          "D007-T25-00009",
+          "D007-T25-00013",
+          "D007-T25-00017",
+          "D007-T25-00021",
+          "D007-T25-00025",
+          "D007-T08-00001",
+          "D007-T08-00002",
+          "D007-T08-00003",
+          "D007-T08-00004",
+          "D007-T08-00005",
+          "D007-T08-00006",
+          "D007-T08-00007",
+          "D007-T08-00008"
+        ],
+        "at": "2026-10-18T08:56:12.111Z"
+      },
+      {
+        "type": "output_validated",
+        "at": "2026-10-18T08:56:12.113Z"
+      }
+    ]
+  }
+}

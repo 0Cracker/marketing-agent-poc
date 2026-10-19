@@ -1,0 +1,258 @@
+TAP version 13
+# Subtest: P01 pending approval and exact simulation survive database close/reopen
+ok 1 - P01 pending approval and exact simulation survive database close/reopen
+  ---
+  duration_ms: 641.3998
+  type: 'test'
+  ...
+# Subtest: P02 rejects invalid approval: approval_forbidden
+ok 2 - P02 rejects invalid approval: approval_forbidden
+  ---
+  duration_ms: 338.0314
+  type: 'test'
+  ...
+# Subtest: P03 rejects invalid approval: approval_expired
+ok 3 - P03 rejects invalid approval: approval_expired
+  ---
+  duration_ms: 245.6893
+  type: 'test'
+  ...
+# Subtest: P04 rejects invalid approval: version_conflict
+ok 4 - P04 rejects invalid approval: version_conflict
+  ---
+  duration_ms: 366.9447
+  type: 'test'
+  ...
+# Subtest: P05 changed scenario/assumption invalidates old approval and requires new approval
+ok 5 - P05 changed scenario/assumption invalidates old approval and requires new approval
+  ---
+  duration_ms: 198.9887
+  type: 'test'
+  ...
+# Subtest: P06 cannot submit without approval or through a live adapter
+ok 6 - P06 cannot submit without approval or through a live adapter
+  ---
+  duration_ms: 318.4639
+  type: 'test'
+  ...
+# Subtest: X01 submit once, reconcile exact applied values, then complete
+ok 7 - X01 submit once, reconcile exact applied values, then complete
+  ---
+  duration_ms: 362.5517
+  type: 'test'
+  ...
+# Subtest: X02 preflight drift invalidates approval without submission
+ok 8 - X02 preflight drift invalidates approval without submission
+  ---
+  duration_ms: 158.2832
+  type: 'test'
+  ...
+# Subtest: X03 submit timeout is unknown, blocked from retry; later reconcile can recover
+ok 9 - X03 submit timeout is unknown, blocked from retry; later reconcile can recover
+  ---
+  duration_ms: 191.9655
+  type: 'test'
+  ...
+# Subtest: X04 provider success without exact applied values is never completed
+ok 10 - X04 provider success without exact applied values is never completed
+  ---
+  duration_ms: 199.232
+  type: 'test'
+  ...
+# Subtest: X05 partial and failed results stay distinct from complete
+ok 11 - X05 partial and failed results stay distinct from complete
+  ---
+  duration_ms: 609.0314
+  type: 'test'
+  ...
+# Subtest: X06 concurrent submissions cannot perform two writes
+ok 12 - X06 concurrent submissions cannot perform two writes
+  ---
+  duration_ms: 225.9236
+  type: 'test'
+  ...
+# Subtest: X07 expired approval and changed data fingerprint block execution
+ok 13 - X07 expired approval and changed data fingerprint block execution
+  ---
+  duration_ms: 153.6668
+  type: 'test'
+  ...
+# Subtest: F01 real tools run inside bounded analysis loop, before validated finish
+ok 14 - F01 real tools run inside bounded analysis loop, before validated finish
+  ---
+  duration_ms: 207.4304
+  type: 'test'
+  ...
+# Subtest: F02 ambiguous question/scope asks for scope before model or tools
+ok 15 - F02 ambiguous question/scope asks for scope before model or tools
+  ---
+  duration_ms: 4.8817
+  type: 'test'
+  ...
+# Subtest: F03 unavailable-asOf data blocks model and returns restart conditions
+ok 16 - F03 unavailable-asOf data blocks model and returns restart conditions
+  ---
+  duration_ms: 69.9625
+  type: 'test'
+  ...
+# Subtest: F04 invalid/looping model is held at tool_forbidden
+ok 17 - F04 invalid/looping model is held at tool_forbidden
+  ---
+  duration_ms: 59.9863
+  type: 'test'
+  ...
+# Subtest: F05 invalid/looping model is held at unsupported_fact
+ok 18 - F05 invalid/looping model is held at unsupported_fact
+  ---
+  duration_ms: 62.5441
+  type: 'test'
+  ...
+# Subtest: F06 invalid/looping model is held at model_protocol
+ok 19 - F06 invalid/looping model is held at model_protocol
+  ---
+  duration_ms: 177.8515
+  type: 'test'
+  ...
+# Subtest: F07 invalid/looping model is held at tool_arguments
+ok 20 - F07 invalid/looping model is held at tool_arguments
+  ---
+  duration_ms: 51.8775
+  type: 'test'
+  ...
+# Subtest: F08 invalid/looping model is held at call_limit
+ok 21 - F08 invalid/looping model is held at call_limit
+  ---
+  duration_ms: 101.3995
+  type: 'test'
+  ...
+# Subtest: F09 causal assertion and omitted counterevidence fail output gate
+ok 22 - F09 causal assertion and omitted counterevidence fail output gate
+  ---
+  duration_ms: 190.2341
+  type: 'test'
+  ...
+# Subtest: F10 tool failure is recorded and cannot become a successful report
+ok 23 - F10 tool failure is recorded and cannot become a successful report
+  ---
+  duration_ms: 50.2842
+  type: 'test'
+  ...
+# Subtest: F11 followup preserves scope, makes new analysis, invalidates dependent proposal
+ok 24 - F11 followup preserves scope, makes new analysis, invalidates dependent proposal
+  ---
+  duration_ms: 263.3656
+  type: 'test'
+  ...
+# Subtest: F12 missing followup reference asks for clarification
+ok 25 - F12 missing followup reference asks for clarification
+  ---
+  duration_ms: 2.9234
+  type: 'test'
+  ...
+# Subtest: B04 budget handoff needs user choice, valid analysis and exact analysis version
+ok 26 - B04 budget handoff needs user choice, valid analysis and exact analysis version
+  ---
+  duration_ms: 114.1873
+  type: 'test'
+  ...
+# Subtest: B05 valid budget loop proposes versioned simulation, never automatic execution
+ok 27 - B05 valid budget loop proposes versioned simulation, never automatic execution
+  ---
+  duration_ms: 292.422
+  type: 'test'
+  ...
+# Subtest: B06 budget role cannot call analysis tools or silently switch roles
+ok 28 - B06 budget role cannot call analysis tools or silently switch roles
+  ---
+  duration_ms: 105.4403
+  type: 'test'
+  ...
+# Subtest: B07 missing simulation and invented final metrics are rejected
+ok 29 - B07 missing simulation and invented final metrics are rejected
+  ---
+  duration_ms: 93.5337
+  type: 'test'
+  ...
+# Subtest: B08 hold is a valid budget outcome and cannot enter approval
+ok 30 - B08 hold is a valid budget outcome and cannot enter approval
+  ---
+  duration_ms: 174.5129
+  type: 'test'
+  ...
+# Subtest: H01 session describes offline mode and blocks foreign origins/host rebinding
+not ok 31 - H01 session describes offline mode and blocks foreign origins/host rebinding
+  ---
+  duration_ms: 303.1509
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:16:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H02 no token, wrong token, non-JSON and invalid JSON fail before mutation
+not ok 32 - H02 no token, wrong token, non-JSON and invalid JSON fail before mutation
+  ---
+  duration_ms: 44.0516
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed
+not ok 33 - H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed
+  ---
+  duration_ms: 17.0284
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:33:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H04 clients cannot supply approver, adapters, provider keys or arbitrary methods
+not ok 34 - H04 clients cannot supply approver, adapters, provider keys or arbitrary methods
+  ---
+  duration_ms: 22.5025
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:43:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H05 existing ID reload, missing ID, stale version and rejected handoff are distinct
+not ok 35 - H05 existing ID reload, missing ID, stale version and rejected handoff are distinct
+  ---
+  duration_ms: 60.4629
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:52:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H06 oversize requests, forged context and unissued evidence do not bypass validation
+not ok 36 - H06 oversize requests, forged context and unissued evidence do not bypass validation
+  ---
+  duration_ms: 46.4012
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:63:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...
+# Subtest: H07 remote session exposes model IDs only, preserving real Ads and request boundaries
+not ok 37 - H07 remote session exposes model IDs only, preserving real Ads and request boundaries
+  ---
+  duration_ms: 10.2889
+  type: 'test'
+  location: 'C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\tests\\agents\\http.test.mjs:71:1'
+  failureType: 'testCodeFailure'
+  error: 'fetch failed'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  ...

@@ -1,2 +1,5 @@
 # Validation manifests hash exact bytes; checkout must not rewrite line endings.
 /docs/research/marketing-ontology/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve historical command output, including intentional report whitespace.
+/evidence/** -text -whitespace

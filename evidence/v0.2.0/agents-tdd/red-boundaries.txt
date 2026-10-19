@@ -1,0 +1,215 @@
+✖ A12 zero stock is observed zero, never missing or proof of full-day outage (1.7971ms)
+✖ A13 missing ad metric stays null and partial, never zero-filled (6.4832ms)
+✖ A14 listed prices retain unknown tax/shipping, never all-in purchase price (0.3053ms)
+✖ A15 boundary periods and invalid pagination fail before retrieval (2.9604ms)
+✖ F13 counterevidence cannot be bypassed by omitting the entire hypothesis (26.358ms)
+✖ F14 hypothesis cannot relabel arbitrary retrieved rows as supporting evidence (21.5414ms)
+✖ F15 explicit price focus cannot silently become a media analysis (44.6511ms)
+✔ F16 quota interruption resumes saved history after SQLite reopen (95.4452ms)
+✔ F17 resume cannot reset cumulative model-call budget (9.6779ms)
+✔ F18 cancellation while model awaits prevents further tool execution (18.3353ms)
+✔ F19 source prompt injection cannot expand role tools or mutate scope (10.5725ms)
+✖ F20 stale or superseded followup reference does not fork unnoticed (53.0173ms)
+✔ P07 rejected proposals never submit and cannot be approved afterwards (30.3907ms)
+✖ P08 corrupted proposal content cannot keep an old approval hash (36.6059ms)
+✔ P09 failed revision leaves previous proposal and approval unchanged (33.5757ms)
+✔ X08 two separate store connections still permit only one submission (184.5363ms)
+✔ X09 loss of process after persisted submit intent resumes by reconciliation only (149.9218ms)
+✖ X10 expired approval during preflight is cleared before writing (32.2367ms)
+✔ X11 preflight and status read failures have distinct safe states (64.6965ms)
+✔ X12 new analysis during preflight invalidates execution without submission (50.6593ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 10
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3197.6905
+
+✖ failing tests:
+
+test at tests\agents\recovery.test.mjs:8:1
+✖ A12 zero stock is observed zero, never missing or proof of full-day outage (1.7971ms)
+  Error: tool_forbidden
+      at requireThat (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:6:65)
+      at CatalogTools.call (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:85:5)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:9:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    code: 'tool_forbidden'
+  }
+
+test at tests\agents\recovery.test.mjs:13:1
+✖ A13 missing ad metric stays null and partial, never zero-filled (6.4832ms)
+  Error: tool_forbidden
+      at requireThat (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:6:65)
+      at CatalogTools.call (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:85:5)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:17:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'tool_forbidden'
+  }
+
+test at tests\agents\recovery.test.mjs:21:1
+✖ A14 listed prices retain unknown tax/shipping, never all-in purchase price (0.3053ms)
+  Error: tool_forbidden
+      at requireThat (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:6:65)
+      at CatalogTools.call (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:85:5)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:22:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    code: 'tool_forbidden'
+  }
+
+test at tests\agents\recovery.test.mjs:25:1
+✖ A15 boundary periods and invalid pagination fail before retrieval (2.9604ms)
+  AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+  
+  Caught error:
+  
+  Error: data_unavailable
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:26:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: data_unavailable
+        at requireThat (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:6:65)
+        at #market (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:96:36)
+        at CatalogTools.call (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-tools.mjs:88:51)
+        at type (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:26:27)
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:26:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18),
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:29:1
+✖ F13 counterevidence cannot be bypassed by omitting the entire hypothesis (26.358ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'analyzed' !== 'held'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:31:40)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'analyzed',
+    expected: 'held',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:33:1
+✖ F14 hypothesis cannot relabel arbitrary retrieved rows as supporting evidence (21.5414ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'analyzed' !== 'held'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:35:40)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'analyzed',
+    expected: 'held',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:37:1
+✖ F15 explicit price focus cannot silently become a media analysis (44.6511ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'analyzed' !== 'held'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:39:113)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'analyzed',
+    expected: 'held',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:58:1
+✖ F20 stale or superseded followup reference does not fork unnoticed (53.0173ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'analyzed'
+  - 'needs_scope'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:59:185)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'analyzed',
+    expected: 'needs_scope',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:64:1
+✖ P08 corrupted proposal content cannot keep an old approval hash (36.6059ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:65:133)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests\agents\recovery.test.mjs:79:1
+✖ X10 expired approval during preflight is cleared before writing (32.2367ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   at: '2026-10-18T00:00:00Z',
+  +   expiresAt: '2026-10-19T00:00:00Z',
+  +   inputFingerprint: 'd08e6a598c9a242ea0e73ce521b9ef7f21567c152c8f4b90000ae908b68ee5ee',
+  +   principal: {
+  +     id: 'local-test-operator',
+  +     role: 'synthetic_analyst'
+  +   },
+  +   proposalHash: 'f56f5aefe174e3c8303af5053fafaa431f87db92fd494356d5f4e0fb37865446'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:80:288)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { principal: { id: 'local-test-operator', role: 'synthetic_analyst' }, expiresAt: '2026-10-19T00:00:00Z', proposalHash: 'f56f5aefe174e3c8303af5053fafaa431f87db92fd494356d5f4e0fb37865446', inputFingerprint: 'd08e6a598c9a242ea0e73ce521b9ef7f21567c152c8f4b90000ae908b68ee5ee', at: '2026-10-18T00:00:00Z' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,30 @@
+✖ F23 support/counter conflict is visible as mixed proposed interpretation (48.1646ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2329.0274
+
+✖ failing tests:
+
+test at tests\agents\recovery.test.mjs:46:1
+✖ F23 support/counter conflict is visible as mixed proposed interpretation (48.1646ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'mixed'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/recovery.test.mjs:47:66)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'mixed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
