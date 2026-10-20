@@ -1,0 +1,69 @@
+{
+  "pass": true,
+  "dataHash": "56da2cdac07ed56062c38d225c6406a2f4a494fdbea73aed35dd2b95260fc415",
+  "purchaseEvents": 1712,
+  "refundEvents": 84,
+  "cases": [
+    {
+      "country": "KR",
+      "product": "ALL",
+      "quantity": 887,
+      "days": 28
+    },
+    {
+      "country": "KR",
+      "product": "P1A",
+      "quantity": 449,
+      "days": 28
+    },
+    {
+      "country": "KR",
+      "product": "P1B",
+      "quantity": 438,
+      "days": 28
+    },
+    {
+      "country": "JP",
+      "product": "ALL",
+      "quantity": 1206,
+      "days": 28
+    },
+    {
+      "country": "JP",
+      "product": "P1A",
+      "quantity": 667,
+      "days": 28
+    },
+    {
+      "country": "JP",
+      "product": "P1B",
+      "quantity": 539,
+      "days": 28
+    },
+    {
+      "country": "US",
+      "product": "ALL",
+      "quantity": 2002,
+      "days": 28
+    },
+    {
+      "country": "US",
+      "product": "P1A",
+      "quantity": 1048,
+      "days": 28
+    },
+    {
+      "country": "US",
+      "product": "P1B",
+      "quantity": 954,
+      "days": 28
+    }
+  ],
+  "checks": [
+    "all linked event quantities and timestamps",
+    "one purchase event per order line",
+    "daily chart parity across three countries and two products",
+    "preserved-source reproduction",
+    "current provenance hashes"
+  ]
+}

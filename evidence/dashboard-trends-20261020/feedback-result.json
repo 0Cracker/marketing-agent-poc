@@ -1,0 +1,49 @@
+{
+  "pass": true,
+  "date": "2026-10-20",
+  "branch": "feature/dashboard-trends",
+  "target": "uncommitted follow-up to four browser comments and coverage table",
+  "dataHash": "b73d88a7c893cf6ba00c8493f7049d3442178cec94cceda63c2c4d5540890875",
+  "sourceValuesChanged": false,
+  "coverageTypes": 41,
+  "coverageGroups": 133,
+  "checks": [
+    {
+      "command": "node scripts/check-dashboard-feedback.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/check-dashboard-trends.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/check-data-consolidation.mjs",
+      "exitCode": 0,
+      "queries": 328
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0
+    },
+    {
+      "command": "eslint on frontend/workbench and changed check/report scripts",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/vite/bin/vite.js build",
+      "exitCode": 0
+    }
+  ],
+  "browser": [
+    "single daily inquiry series",
+    "all five inquiry topics without paging",
+    "named synthetic advertisers",
+    "explicit synthetic index and measurement-period axis"
+  ],
+  "browserErrors": 0,
+  "warnings": [
+    "existing ESLint pages-directory warning",
+    "existing font resolution warnings"
+  ],
+  "remotePublished": false
+}
