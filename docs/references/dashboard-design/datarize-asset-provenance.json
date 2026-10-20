@@ -1,0 +1,21 @@
+{
+  "assets": [
+    {
+      "contentType": "image/avif",
+      "id": "01dfe763acc3db98",
+      "kind": "image",
+      "name": "v6J3bIEeJFo2ccdvGCyes.png",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/7cb5f771-e2c9-4d71-85a9-71fbf2839658/01dfe763acc3db98.png",
+      "url": "https://framerusercontent.com/images/v6J3bIEeJFo2ccdvGCyes.png?scale-down-to=1024&width=1752&height=1752"
+    }
+  ],
+  "directoryPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/7cb5f771-e2c9-4d71-85a9-71fbf2839658",
+  "failures": [],
+  "manifestPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/7cb5f771-e2c9-4d71-85a9-71fbf2839658/manifest.json",
+  "summary": {
+    "downloadedCount": 1,
+    "elapsedMs": 124008.78419999988,
+    "failedCount": 0,
+    "requestedCount": 1
+  }
+}

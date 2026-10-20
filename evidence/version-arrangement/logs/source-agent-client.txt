@@ -1,0 +1,16 @@
+✔ C01 screen context becomes explicit half-open scope without raw data (12.2217ms)
+✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (0.9021ms)
+✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (1.3417ms)
+✔ C04 session token is attached to API requests, never put in body (80.2835ms)
+✔ C05 lost POST response is not automatically submitted again (2.1659ms)
+✔ C06 token rejected before mutation may refresh once after a server restart (4.6198ms)
+✔ C07 server errors remain actionable codes; no fake successful result (3.6816ms)
+✔ C08 remote mode requires explicit external flag and still rejects real Ads mode (2.973ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.631

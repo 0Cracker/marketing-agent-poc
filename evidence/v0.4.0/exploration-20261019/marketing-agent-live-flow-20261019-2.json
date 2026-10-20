@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-19T05:29:07.327Z",
+  "mode": {
+    "mode": "remote_model",
+    "externalModelEnabled": true,
+    "models": {
+      "analysis": "gemini-3.5-flash-lite",
+      "budget": "gemini-3.8-flash"
+    }
+  },
+  "scope": {
+    "batch": "D007",
+    "country": "JP",
+    "scopeId": "D007-JP-sample",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T00:00:00Z"
+  },
+  "diagnostics": [
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "outputKeys": [
+        "tool",
+        "args"
+      ],
+      "outputChars": 49,
+      "usage": {
+        "promptTokenCount": 667,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 678,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 667
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "inputChars": 3213
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "outputKeys": [
+        "facts",
+        "hypotheses",
+        "recommendation"
+      ],
+      "outputChars": 494,
+      "usage": {
+        "promptTokenCount": 19490,
+        "candidatesTokenCount": 357,
+        "totalTokenCount": 19847,
+        "cachedContentTokenCount": 16297,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 19490
+          }
+        ],
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 16297
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "inputChars": 54955
+    }
+  ],
+  "analysis": {
+    "status": "held",
+    "reason": "model_failed",
+    "modelCalls": 2,
+    "events": [
+      {
+        "type": "scope_validated",
+        "at": "2026-10-19T05:28:48.415Z"
+      },
+      {
+        "type": "quality",
+        "at": "2026-10-19T05:28:48.436Z",
+        "available": 5673,
+        "excluded": 0,
+        "rawFallback": false,
+        "coverage": "sample"
+      },
+      {
+        "type": "tool",
+        "name": "relations",
+        "args": {
+          "candidate": "price"
+        },
+        "recordIds": [
+          "D007-T25-00622",
+          "D007-T25-00643",
+          "D007-T25-00664",
+          "D007-T25-00706",
+          "D007-T25-00727",
+          "D007-T25-00748",
+          "D007-T25-00790",
+          "D007-T25-00811",
+          "D007-T25-00601",
+          "D007-T25-00605",
+          "D007-T25-00609",
+          "D007-T25-00613",
+          "D007-T25-00615",
+          "D007-T25-00617",
+          "D007-T25-00621",
+          "D007-T25-00625",
+          "D007-T08-00505",
+          "D007-T08-00506",
+          "D007-T08-00507",
+          "D007-T08-00508",
+          "D007-T08-00509",
+          "D007-T08-00510",
+          "D007-T08-00511",
+          "D007-T08-00512"
+        ],
+        "at": "2026-10-19T05:28:56.159Z"
+      },
+      {
+        "type": "stopped",
+        "stage": "exploration",
+        "reason": "model_failed",
+        "at": "2026-10-19T05:29:07.326Z"
+      }
+    ]
+  },
+  "realAdsCalls": 0,
+  "newMarketingRecords": 0
+}

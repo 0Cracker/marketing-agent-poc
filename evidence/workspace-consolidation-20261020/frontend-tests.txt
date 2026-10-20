@@ -1,0 +1,28 @@
+✔ answer does not promote held, paused or cancelled runs to a conclusion (25.7885ms)
+✔ superseded analysis takes priority over a successful previous status (2.4829ms)
+✔ absent evidence remains unresolved even when analysis processing finished (1.6131ms)
+✔ conflicting or one-sided evidence never establishes causation (18.483ms)
+✔ approval and invalidation are described as state, never actual execution (0.816ms)
+✔ a missing simulation cannot be presented as a winning budget proposal (0.5371ms)
+✔ loading without brand reference data does not crash the dashboard (0.8743ms)
+✔ 503 guidance describes saved state and manual resume without hiding other errors (9.2585ms)
+✔ C01 screen context becomes explicit half-open scope without raw data (24.3612ms)
+✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (1.292ms)
+✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (0.8343ms)
+✔ C04 session token is attached to API requests, never put in body (98.4199ms)
+✔ C05 lost POST response is not automatically submitted again (2.2013ms)
+✔ C06 token rejected before mutation may refresh once after a server restart (5.8613ms)
+✔ C07 server errors remain actionable codes; no fake successful result (5.5603ms)
+✔ C08 remote mode requires explicit external flag and still rejects real Ads mode (5.0092ms)
+✔ P01 chart and formatted cards use the same approved values and reference IDs (3.3453ms)
+✔ P02 unreviewed and unclassified candidates never become evidence of no effect (1.1426ms)
+✔ P03 null is not zero; multiple months cannot become duplicated product bars (2.6184ms)
+✔ P04 summary distinguishes missing classification from a genuine zero side (2.3738ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1112.1898

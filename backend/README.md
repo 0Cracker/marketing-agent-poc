@@ -1,10 +1,12 @@
 # 두 에이전트 B 흐름
 
+2026-10-19 통합본 안내: 이 worktree에서는 같은 저장소의 `scripts/current-data.mjs`와 `data/manifest.json`을 우선 읽는다. 아래 sibling 설명은 두 worktree를 사용하던 당시 이력이다. 현재 실행은 같은 폴더의 자료만 읽는다. 로컬 버전과 재현 명령은 [버전 대응표](../docs/iterations/version-history.md)를 따른다.
+
 2026-10-20: CURRENT 가상 자료는 확보시각으로 제외하지 않으며 측정기간·국가·제품·해시는 검증한다. 채널별 Hill `slope=1` 가상 예산 모형과 원문 계수·가정을 표시한다. 모델 관측 요청은 페이지당24행을 안내하고, 503은 수동 재개할 수 있다. 백엔드126시험·실제 모델4사례·독립 예산36건의 결과와 실패·한계는 [의미 검수 반영](../docs/design/semantic-changes-20261020.md)을 따른다. 아래 기록의 asOf 제한은 과거 배치에 적용한다.
 
 2026-10-19 통합 자료 연결: 기본 `scripts/agent-server.mjs`는 sibling `marketing-dashboard-drafts/data/manifest.json`과 업무 유형 JSONL을 검증해 읽는다. `MARKETING_DATA_DIR`로 통합 data/ 경로를 지정할 수 있다. 현재 논리 데이터셋은 `CURRENT`이며 원래 레코드 ID와 scope는 manifest 매핑으로 유지한다. 세션의 자료 해시가 화면과 다르거나 저장 실행의 자료 fingerprint가 바뀌면 만료/보류 처리한다. D007로 바꿔 보내는 데이터 별칭은 사용하지 않는다. 아래 D007 호출 예는 고정 회귀용으로 보존한다.
 
-이 변경은 새 관측·명세·온톨로지를 생성하지 않았다. 오프라인 전체 기간 분석은 기존 최종 사실100개 제한 안에서 선택한다. [109시험·기존 회귀·입력102파일 불변](../docs/design/agent-data-consolidation-20261019-final.json), [통합 판정·328조회·윈도우272화면·재시작 복원](../../marketing-dashboard-drafts/docs/design/data-consolidation-20261019/README.md)을 확인했다. 외부 LLM·실제 Ads는 이번 통합 검증에서 호출하지 않았다.
+이 변경은 새 관측·명세·온톨로지를 생성하지 않았다. 오프라인 전체 기간 분석은 기존 최종 사실100개 제한 안에서 선택한다. [109시험·기존 회귀·입력102파일 불변](../docs/design/agent-data-consolidation-20261019-final.json), [통합 판정·328조회·윈도우272화면·재시작 복원](../docs/design/data-consolidation-20261019/README.md)을 확인했다. 외부 LLM·실제 Ads는 이번 통합 검증에서 호출하지 않았다.
 
 2026-10-19 실제 모델 연결 추가: `node scripts/agent-server.mjs --live`는 서버 루트 `.env.local`의 번호형 Gemini 키를 읽고, 기본 분석 Flash Lite·예산 Flash를 사용한다. 기본 명령은 기존 오프라인 모드를 유지하며 실제 Ads는 두 모드 모두 비활성이다. [실행·모델 배치·검증 기록](../docs/design/agent-live-20261019.md)을 따른다. 아래 외부 모델 미실측 설명은 최초 오프라인 구현 당시 기록이다.
 

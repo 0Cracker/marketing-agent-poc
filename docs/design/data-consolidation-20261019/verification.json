@@ -1,0 +1,113 @@
+{
+  "pass": true,
+  "date": "2026-10-19T07:39:10.750Z",
+  "node": "v24.19.0",
+  "target": "existing uncommitted tree plus data consolidation; no Git state changes",
+  "checks": [
+    {
+      "name": "screen-contract",
+      "args": [
+        "scripts/check-screen-contract.mjs"
+      ],
+      "exitCode": 0,
+      "ms": 5199,
+      "log": "screen-contract.txt"
+    },
+    {
+      "name": "standard-query",
+      "args": [
+        "scripts/check-standard-query.mjs"
+      ],
+      "exitCode": 0,
+      "ms": 15364,
+      "log": "standard-query.txt"
+    },
+    {
+      "name": "all-connected",
+      "args": [
+        "scripts/check-all-connected.mjs"
+      ],
+      "exitCode": 0,
+      "ms": 17369,
+      "log": "all-connected.txt"
+    },
+    {
+      "name": "client",
+      "args": [
+        "--experimental-strip-types",
+        "tests/agent-client.test.ts"
+      ],
+      "exitCode": 0,
+      "ms": 613,
+      "log": "client.txt"
+    },
+    {
+      "name": "answer",
+      "args": [
+        "--experimental-strip-types",
+        "tests/agent-answer.test.ts"
+      ],
+      "exitCode": 0,
+      "ms": 465,
+      "log": "answer.txt"
+    },
+    {
+      "name": "presentation",
+      "args": [
+        "--experimental-strip-types",
+        "tests/agent-presentation.test.ts"
+      ],
+      "exitCode": 0,
+      "ms": 464,
+      "log": "presentation.txt"
+    },
+    {
+      "name": "redesign",
+      "args": [
+        "scripts/check-marketing-redesign.mjs"
+      ],
+      "exitCode": 0,
+      "ms": 50759,
+      "log": "redesign.txt"
+    },
+    {
+      "name": "types",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "ms": 17771,
+      "log": "types.txt"
+    },
+    {
+      "name": "build",
+      "args": [
+        "node_modules/vite/bin/vite.js",
+        "build"
+      ],
+      "exitCode": 0,
+      "ms": 18924,
+      "log": "build.txt"
+    },
+    {
+      "name": "consolidation",
+      "args": [
+        "scripts/check-data-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "ms": 91431,
+      "log": "consolidation.txt"
+    },
+    {
+      "name": "lint",
+      "args": [
+        "node_modules/eslint/bin/eslint.js",
+        "frontend/workbench"
+      ],
+      "exitCode": 0,
+      "ms": 41800,
+      "log": "lint.txt"
+    }
+  ]
+}

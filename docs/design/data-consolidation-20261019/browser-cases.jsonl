@@ -1,0 +1,501 @@
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 현황","width":390}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"구매 경험 조사","width":390}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"고객 문의","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"브랜드 인식 조사","width":390}
+{"domain":"광고·소재","type":"default","charts":4,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"성과","width":390}
+{"domain":"광고·소재","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"세그먼트","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"운영 설정","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"소재","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"default","charts":3,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"구매 단계","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"사이트 품질","width":390}
+{"domain":"매출·고객","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"판매 요약","width":390}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"원가·마진","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"고객","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"CRM 캠페인","width":390}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"재고","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"유통·배송","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"콘텐츠","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"댓글·언급","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"크리에이터 협업","width":390}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 현황","width":390}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"구매 경험 조사","width":390}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"고객 문의","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"브랜드 인식 조사","width":390}
+{"domain":"광고·소재","type":"default","charts":4,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"성과","width":390}
+{"domain":"광고·소재","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"세그먼트","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"운영 설정","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"소재","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"default","charts":3,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"구매 단계","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"사이트 품질","width":390}
+{"domain":"매출·고객","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"판매 요약","width":390}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"원가·마진","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"고객","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"CRM 캠페인","width":390}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"재고","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"유통·배송","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"콘텐츠","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"댓글·언급","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"크리에이터 협업","width":390}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 현황","width":390}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"구매 경험 조사","width":390}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"고객 문의","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"브랜드 인식 조사","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"성과","width":390}
+{"domain":"광고·소재","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"세그먼트","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"운영 설정","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"소재","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"default","charts":3,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"구매 단계","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"사이트 품질","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"판매 요약","width":390}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"원가·마진","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"고객","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"CRM 캠페인","width":390}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"재고","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"유통·배송","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"콘텐츠","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"댓글·언급","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"크리에이터 협업","width":390}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 현황","width":390}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"구매 경험 조사","width":390}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"고객 문의","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"브랜드 인식 조사","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"성과","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"세그먼트","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"운영 설정","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"소재","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"구매 단계","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"사이트 품질","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"판매 요약","width":390}
+{"domain":"매출·고객","type":"주문 상품 행","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"원가·마진","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"고객","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"CRM 캠페인","width":390}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"재고","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"유통·배송","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"콘텐츠","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"댓글·언급","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"크리에이터 협업","width":390}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 현황","width":390}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"구매 경험 조사","width":390}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"경쟁사 공개 활동","width":390}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":375,"tab":"시장 외부 요인","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"리뷰 분석","width":390}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"검색 관심·수요","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"고객 문의","width":390}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":375,"tab":"브랜드 인식 조사","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"성과","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"세그먼트","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"운영 설정","width":390}
+{"domain":"광고·소재","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":375,"tab":"소재","width":390}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"유입","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"구매 단계","width":390}
+{"domain":"웹·전환","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":375,"tab":"사이트 품질","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"판매 요약","width":390}
+{"domain":"매출·고객","type":"주문 상품 행","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"주문·환불","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"원가·마진","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"고객","width":390}
+{"domain":"매출·고객","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":375,"tab":"CRM 캠페인","width":390}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"가격·프로모션","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"재고","width":390}
+{"domain":"상품·유통","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":375,"tab":"유통·배송","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"콘텐츠","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"댓글·언급","width":390}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":375,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":375,"tab":"크리에이터 협업","width":390}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1125,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1125,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가국가별 비교","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1125,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1125,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1125,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1125,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":4,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1125,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1125,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1125,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1125,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가미국 · USD","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1125,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1125,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":4,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1125,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1125,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1125,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1125,"filters":["국가한국 · KRW","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1125,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1125,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1125,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":4,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1125,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1125,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1125,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1125,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":4,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"광고·소재","scroll":1125,"tab":"소재","width":1125}
+{"domain":"웹·전환","type":"자연 검색 유입","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"웹·앱 이벤트","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"유입","width":1125}
+{"domain":"웹·전환","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"구매 단계","width":1125}
+{"domain":"웹·전환","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"웹·전환","scroll":1110,"tab":"사이트 품질","width":1125}
+{"domain":"매출·고객","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"판매 요약","width":1125}
+{"domain":"매출·고객","type":"주문 상품 행","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"취소·반품·환불","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"주문·환불","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1125,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1125,"tab":"원가·마진","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"고객","width":1125}
+{"domain":"매출·고객","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"매출·고객","scroll":1110,"tab":"CRM 캠페인","width":1125}
+{"domain":"상품·유통","type":"가격 스냅샷","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"프로모션","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"가격·프로모션","width":1125}
+{"domain":"상품·유통","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"재고","width":1125}
+{"domain":"상품·유통","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"상품·유통","scroll":1110,"tab":"유통·배송","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"콘텐츠","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"댓글·언급","width":1125}
+{"domain":"소셜·콘텐츠","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월2026년 08월","비교 기준전년 동월"],"heading":"소셜·콘텐츠","scroll":1110,"tab":"크리에이터 협업","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 현황","width":1125}
+{"domain":"시장·경쟁","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"구매 경험 조사","width":1125}
+{"domain":"시장·경쟁","type":"공개 경쟁 광고","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"기사·발표·사건","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"경매 경쟁","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"경쟁사 공개 활동","width":1125}
+{"domain":"시장·경쟁","type":"공표 통계","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"시장·경쟁","type":"날씨·휴일·시즌","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"시장·경쟁","scroll":1110,"tab":"시장 외부 요인","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 원문","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"리뷰 주제·감성","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"리뷰 분석","width":1125}
+{"domain":"브랜드·소비자","type":"검색 관심","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"키워드 수요·비용","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"검색 관심·수요","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":3,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"고객 문의","width":1125}
+{"domain":"브랜드·소비자","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"브랜드·소비자","scroll":1110,"tab":"브랜드 인식 조사","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"성과","width":1125}
+{"domain":"광고·소재","type":"default","charts":2,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"세그먼트","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"운영 설정","width":1125}
+{"domain":"광고·소재","type":"default","charts":1,"client":1110,"filters":["국가일본 · JPY","카테고리샴푸","기준월전체 기간","비교 기준전년 동월"],"heading":"광고·소재","scroll":1110,"tab":"소재","width":1125}

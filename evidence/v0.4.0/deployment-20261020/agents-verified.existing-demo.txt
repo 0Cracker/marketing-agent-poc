@@ -1,0 +1,1 @@
+PASS: 6 distinct cases, 18 fixed Q&A pairs, 36 monthly records, CTI/contributions/reviews/media evidence/decision contracts, chronology, one experiment and four held budgets with diminishing-return curves

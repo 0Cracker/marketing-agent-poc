@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {loadCurrentData} from '../../../marketing-dashboard-drafts/scripts/current-data.mjs';
+import {loadCurrentData} from '../../scripts/current-data.mjs';
 import {CatalogTools,budgetResponseParameters} from '../../backend/agent-tools.mjs';
 
 test('Hill channel budget model rejects incomplete, duplicate and unknown parameters',()=>{

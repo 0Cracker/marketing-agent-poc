@@ -1,0 +1,475 @@
+{
+  "pass": true,
+  "date": "2026-10-20T04:47:40.423Z",
+  "sourceRows": 108,
+  "sourcePerformanceRows": 85,
+  "groups": 12,
+  "activePerformanceRows": 12,
+  "activeIncidentRows": 23,
+  "selectionExcludedRows": 73,
+  "pendingPerformanceRows": 0,
+  "sourceAndArchiveUnchanged": true,
+  "repeatRuns": 2,
+  "deterministic": true,
+  "beforeDataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+  "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+  "selected": [
+    "D008-T37-00006",
+    "D008-T37-00007",
+    "D008-T37-00009",
+    "D008-T37-00010",
+    "D008-T37-00033",
+    "D008-T37-00034",
+    "D008-T37-00035",
+    "D008-T37-00038",
+    "D008-T37-00072",
+    "D008-T37-00073",
+    "D008-T37-00075",
+    "D008-T37-00076"
+  ],
+  "groupsDetail": [
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-KR-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Seoul"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-KR-sample"
+      },
+      "selected": "D008-T37-00006",
+      "sourceIds": [
+        "D008-T37-00006",
+        "D008-T37-00008",
+        "D008-T37-00012",
+        "D008-T37-00014",
+        "D008-T37-00018",
+        "D008-T37-00020",
+        "D008-T37-00024"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-KR-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Seoul"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-KR-sample"
+      },
+      "selected": "D008-T37-00007",
+      "sourceIds": [
+        "D008-T37-00007",
+        "D008-T37-00013",
+        "D008-T37-00019",
+        "D008-T37-00025"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-KR-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Seoul"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-KR-sample"
+      },
+      "selected": "D008-T37-00009",
+      "sourceIds": [
+        "D008-T37-00009",
+        "D008-T37-00011",
+        "D008-T37-00015",
+        "D008-T37-00017",
+        "D008-T37-00021",
+        "D008-T37-00023"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-KR-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Seoul"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-KR-sample"
+      },
+      "selected": "D008-T37-00010",
+      "sourceIds": [
+        "D008-T37-00010",
+        "D008-T37-00016",
+        "D008-T37-00022"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-JP-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Tokyo"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-JP-sample"
+      },
+      "selected": "D008-T37-00033",
+      "sourceIds": [
+        "D008-T37-00033",
+        "D008-T37-00037",
+        "D008-T37-00039",
+        "D008-T37-00043",
+        "D008-T37-00045",
+        "D008-T37-00049",
+        "D008-T37-00051",
+        "D008-T37-00055",
+        "D008-T37-00057"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-JP-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Tokyo"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-JP-sample"
+      },
+      "selected": "D008-T37-00034",
+      "sourceIds": [
+        "D008-T37-00034",
+        "D008-T37-00036",
+        "D008-T37-00040",
+        "D008-T37-00042",
+        "D008-T37-00046",
+        "D008-T37-00048",
+        "D008-T37-00052",
+        "D008-T37-00054",
+        "D008-T37-00058",
+        "D008-T37-00060"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-JP-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Tokyo"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-JP-sample"
+      },
+      "selected": "D008-T37-00035",
+      "sourceIds": [
+        "D008-T37-00035",
+        "D008-T37-00041",
+        "D008-T37-00047",
+        "D008-T37-00053",
+        "D008-T37-00059"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-JP-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "Asia/Tokyo"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-JP-sample"
+      },
+      "selected": "D008-T37-00038",
+      "sourceIds": [
+        "D008-T37-00038",
+        "D008-T37-00044",
+        "D008-T37-00050",
+        "D008-T37-00056"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-US-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "America/New_York"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-US-sample"
+      },
+      "selected": "D008-T37-00072",
+      "sourceIds": [
+        "D008-T37-00072",
+        "D008-T37-00074",
+        "D008-T37-00078",
+        "D008-T37-00080",
+        "D008-T37-00084",
+        "D008-T37-00086",
+        "D008-T37-00090",
+        "D008-T37-00092",
+        "D008-T37-00096",
+        "D008-T37-00098",
+        "D008-T37-00102",
+        "D008-T37-00104",
+        "D008-T37-00108"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-US-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "America/New_York"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-US-sample"
+      },
+      "selected": "D008-T37-00073",
+      "sourceIds": [
+        "D008-T37-00073",
+        "D008-T37-00079",
+        "D008-T37-00085",
+        "D008-T37-00091",
+        "D008-T37-00097",
+        "D008-T37-00103"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "mobile",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-US-P1A",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "America/New_York"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-US-sample"
+      },
+      "selected": "D008-T37-00075",
+      "sourceIds": [
+        "D008-T37-00075",
+        "D008-T37-00077",
+        "D008-T37-00081",
+        "D008-T37-00083",
+        "D008-T37-00087",
+        "D008-T37-00089",
+        "D008-T37-00093",
+        "D008-T37-00095",
+        "D008-T37-00099",
+        "D008-T37-00101",
+        "D008-T37-00105",
+        "D008-T37-00107"
+      ]
+    },
+    {
+      "businessKey": {
+        "dataset_type": "T37",
+        "device": "desktop",
+        "incident_end": null,
+        "incident_start": null,
+        "page_ref": "D008-LandingPage-US-P1B",
+        "period": {
+          "end_exclusive": "2026-08-31",
+          "grain": "custom",
+          "start": "2026-08-03",
+          "timezone": "America/New_York"
+        },
+        "record_kind": "performance",
+        "scenario_id": "D008-comparison-demo",
+        "scope_id": "D008-US-sample"
+      },
+      "selected": "D008-T37-00076",
+      "sourceIds": [
+        "D008-T37-00076",
+        "D008-T37-00082",
+        "D008-T37-00088",
+        "D008-T37-00094",
+        "D008-T37-00100",
+        "D008-T37-00106"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "manifestHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+      "fileHashes": {
+        "products.jsonl": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860",
+        "identity-mappings.jsonl": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79",
+        "market-sales.jsonl": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a",
+        "purchase-surveys.jsonl": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c",
+        "search-interest.jsonl": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54",
+        "keyword-demand.jsonl": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563",
+        "organic-search.jsonl": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18",
+        "prices.jsonl": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3",
+        "promotions.jsonl": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40",
+        "public-ads.jsonl": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4",
+        "publications.jsonl": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95",
+        "campaigns.jsonl": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c",
+        "ad-performance.jsonl": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6",
+        "ad-breakdowns.jsonl": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56",
+        "auction-insights.jsonl": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2",
+        "creatives.jsonl": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55",
+        "web-events.jsonl": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114",
+        "commerce-events.jsonl": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829",
+        "order-lines.jsonl": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307",
+        "refunds.jsonl": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb",
+        "costs.jsonl": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e",
+        "inventory.jsonl": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5",
+        "distribution-fulfilment.jsonl": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2",
+        "reviews.jsonl": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2",
+        "review-annotations.jsonl": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18",
+        "customer-inquiries.jsonl": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64",
+        "owned-content.jsonl": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716",
+        "social-comments.jsonl": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4",
+        "creator-collaborations.jsonl": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e",
+        "customer-cohorts.jsonl": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754",
+        "crm-performance.jsonl": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498",
+        "brand-surveys.jsonl": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e",
+        "public-statistics.jsonl": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428",
+        "weather-calendar.jsonl": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70",
+        "change-events.jsonl": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b",
+        "collection-runs.jsonl": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27",
+        "site-events.jsonl": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64",
+        "experiments.jsonl": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f",
+        "budget-models.jsonl": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc",
+        "budget-policies.jsonl": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd",
+        "sales-reports.jsonl": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1",
+        "manifest.json": "7a72f4e3858ccc44018941e3129ab78437d3b64357da477ac2595e51ceca0756",
+        "migration-map.jsonl": "bad7d3b060af3bc0442b626a2f9166de37797463c77513110df470fc0a6de92d",
+        "provenance.jsonl": "2de2b766cb47d1a8a60fcad4df2e25015e6b1eb408085c6a039c544f5306a81a",
+        "archive/pending.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "archive/source-inventory.json": "3865e57368e9a5ed33db5c7aaa394321a9a50d1a04b8f3daa1fc69a8f5e005f1"
+      },
+      "stdout": "{\"pass\":true,\"rows\":30327,\"preserved_rows\":52636,\"source_files\":131,\"decisions\":{\"independent_archive\":1446,\"nonconforming\":790,\"active\":30327,\"replaced\":20000,\"selection_excluded\":73},\"data_sha256\":\"50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5\"}"
+    },
+    {
+      "manifestHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+      "fileHashes": {
+        "products.jsonl": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860",
+        "identity-mappings.jsonl": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79",
+        "market-sales.jsonl": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a",
+        "purchase-surveys.jsonl": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c",
+        "search-interest.jsonl": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54",
+        "keyword-demand.jsonl": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563",
+        "organic-search.jsonl": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18",
+        "prices.jsonl": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3",
+        "promotions.jsonl": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40",
+        "public-ads.jsonl": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4",
+        "publications.jsonl": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95",
+        "campaigns.jsonl": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c",
+        "ad-performance.jsonl": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6",
+        "ad-breakdowns.jsonl": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56",
+        "auction-insights.jsonl": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2",
+        "creatives.jsonl": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55",
+        "web-events.jsonl": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114",
+        "commerce-events.jsonl": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829",
+        "order-lines.jsonl": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307",
+        "refunds.jsonl": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb",
+        "costs.jsonl": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e",
+        "inventory.jsonl": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5",
+        "distribution-fulfilment.jsonl": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2",
+        "reviews.jsonl": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2",
+        "review-annotations.jsonl": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18",
+        "customer-inquiries.jsonl": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64",
+        "owned-content.jsonl": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716",
+        "social-comments.jsonl": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4",
+        "creator-collaborations.jsonl": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e",
+        "customer-cohorts.jsonl": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754",
+        "crm-performance.jsonl": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498",
+        "brand-surveys.jsonl": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e",
+        "public-statistics.jsonl": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428",
+        "weather-calendar.jsonl": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70",
+        "change-events.jsonl": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b",
+        "collection-runs.jsonl": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27",
+        "site-events.jsonl": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64",
+        "experiments.jsonl": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f",
+        "budget-models.jsonl": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc",
+        "budget-policies.jsonl": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd",
+        "sales-reports.jsonl": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1",
+        "manifest.json": "7a72f4e3858ccc44018941e3129ab78437d3b64357da477ac2595e51ceca0756",
+        "migration-map.jsonl": "bad7d3b060af3bc0442b626a2f9166de37797463c77513110df470fc0a6de92d",
+        "provenance.jsonl": "2de2b766cb47d1a8a60fcad4df2e25015e6b1eb408085c6a039c544f5306a81a",
+        "archive/pending.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "archive/source-inventory.json": "3865e57368e9a5ed33db5c7aaa394321a9a50d1a04b8f3daa1fc69a8f5e005f1"
+      },
+      "stdout": "{\"pass\":true,\"rows\":30327,\"preserved_rows\":52636,\"source_files\":131,\"decisions\":{\"independent_archive\":1446,\"nonconforming\":790,\"active\":30327,\"replaced\":20000,\"selection_excluded\":73},\"data_sha256\":\"50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5\"}"
+    }
+  ]
+}

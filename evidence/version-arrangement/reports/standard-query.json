@@ -1,0 +1,882 @@
+{
+  "pass": true,
+  "selectedBatch": "D007",
+  "sourceRows": 20000,
+  "cases": 123,
+  "results": [
+    {
+      "country": "JP",
+      "type": "T01",
+      "rows": 6,
+      "columns": 8,
+      "charts": 0
+    },
+    {
+      "country": "JP",
+      "type": "T02",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T03",
+      "rows": 10,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T04",
+      "rows": 6,
+      "columns": 4,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T05",
+      "rows": 1,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T06",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T07",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T08",
+      "rows": 9,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T09",
+      "rows": 18,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T10",
+      "rows": 36,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T11",
+      "rows": 18,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T12",
+      "rows": 4,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T13",
+      "rows": 8,
+      "columns": 12,
+      "charts": 4
+    },
+    {
+      "country": "JP",
+      "type": "T14",
+      "rows": 224,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T15",
+      "rows": 4,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T16",
+      "rows": 4,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T17",
+      "rows": 933,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T18",
+      "rows": 1091,
+      "columns": 4,
+      "charts": 3
+    },
+    {
+      "country": "JP",
+      "type": "T19",
+      "rows": 400,
+      "columns": 15,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T20",
+      "rows": 40,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T21",
+      "rows": 2,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T22",
+      "rows": 2,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T23",
+      "rows": 249,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T24",
+      "rows": 600,
+      "columns": 6,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T25",
+      "rows": 600,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T26",
+      "rows": 60,
+      "columns": 6,
+      "charts": 3
+    },
+    {
+      "country": "JP",
+      "type": "T27",
+      "rows": 36,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T28",
+      "rows": 180,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T29",
+      "rows": 12,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T30",
+      "rows": 48,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T31",
+      "rows": 48,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T32",
+      "rows": 6,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T33",
+      "rows": 1,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T34",
+      "rows": 56,
+      "columns": 9,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T35",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T36",
+      "rows": 72,
+      "columns": 13,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T37",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "T38",
+      "rows": 2,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T39",
+      "rows": 2,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "JP",
+      "type": "T40",
+      "rows": 1,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "JP",
+      "type": "H01",
+      "rows": 2,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T01",
+      "rows": 6,
+      "columns": 8,
+      "charts": 0
+    },
+    {
+      "country": "KR",
+      "type": "T02",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T03",
+      "rows": 10,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T04",
+      "rows": 6,
+      "columns": 4,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T05",
+      "rows": 1,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T06",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T07",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T08",
+      "rows": 9,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T09",
+      "rows": 18,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T10",
+      "rows": 36,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T11",
+      "rows": 18,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T12",
+      "rows": 4,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T13",
+      "rows": 8,
+      "columns": 12,
+      "charts": 4
+    },
+    {
+      "country": "KR",
+      "type": "T14",
+      "rows": 224,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T15",
+      "rows": 4,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T16",
+      "rows": 4,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T17",
+      "rows": 934,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T18",
+      "rows": 1092,
+      "columns": 4,
+      "charts": 3
+    },
+    {
+      "country": "KR",
+      "type": "T19",
+      "rows": 400,
+      "columns": 15,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T20",
+      "rows": 40,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T21",
+      "rows": 2,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T22",
+      "rows": 2,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T23",
+      "rows": 249,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T24",
+      "rows": 600,
+      "columns": 6,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T25",
+      "rows": 1200,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T26",
+      "rows": 60,
+      "columns": 6,
+      "charts": 3
+    },
+    {
+      "country": "KR",
+      "type": "T27",
+      "rows": 36,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T28",
+      "rows": 180,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T29",
+      "rows": 12,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T30",
+      "rows": 48,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T31",
+      "rows": 48,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T32",
+      "rows": 6,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T33",
+      "rows": 1,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T34",
+      "rows": 56,
+      "columns": 9,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T35",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T36",
+      "rows": 72,
+      "columns": 13,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T37",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "T38",
+      "rows": 2,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T39",
+      "rows": 2,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "KR",
+      "type": "T40",
+      "rows": 1,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "KR",
+      "type": "H01",
+      "rows": 2,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T01",
+      "rows": 6,
+      "columns": 8,
+      "charts": 0
+    },
+    {
+      "country": "US",
+      "type": "T02",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T03",
+      "rows": 10,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T04",
+      "rows": 6,
+      "columns": 4,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T05",
+      "rows": 1,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T06",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T07",
+      "rows": 6,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T08",
+      "rows": 9,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T09",
+      "rows": 18,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T10",
+      "rows": 36,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T11",
+      "rows": 18,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T12",
+      "rows": 4,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T13",
+      "rows": 8,
+      "columns": 12,
+      "charts": 4
+    },
+    {
+      "country": "US",
+      "type": "T14",
+      "rows": 224,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T15",
+      "rows": 4,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T16",
+      "rows": 4,
+      "columns": 9,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T17",
+      "rows": 933,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T18",
+      "rows": 1091,
+      "columns": 4,
+      "charts": 3
+    },
+    {
+      "country": "US",
+      "type": "T19",
+      "rows": 400,
+      "columns": 15,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T20",
+      "rows": 40,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T21",
+      "rows": 2,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T22",
+      "rows": 2,
+      "columns": 7,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T23",
+      "rows": 249,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T24",
+      "rows": 600,
+      "columns": 6,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T25",
+      "rows": 600,
+      "columns": 8,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T26",
+      "rows": 60,
+      "columns": 6,
+      "charts": 3
+    },
+    {
+      "country": "US",
+      "type": "T27",
+      "rows": 36,
+      "columns": 11,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T28",
+      "rows": 180,
+      "columns": 6,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T29",
+      "rows": 12,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T30",
+      "rows": 48,
+      "columns": 8,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T31",
+      "rows": 48,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T32",
+      "rows": 6,
+      "columns": 5,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T33",
+      "rows": 1,
+      "columns": 10,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T34",
+      "rows": 56,
+      "columns": 9,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T35",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T36",
+      "rows": 72,
+      "columns": 13,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T37",
+      "rows": 36,
+      "columns": 10,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "T38",
+      "rows": 2,
+      "columns": 12,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T39",
+      "rows": 2,
+      "columns": 14,
+      "charts": 1
+    },
+    {
+      "country": "US",
+      "type": "T40",
+      "rows": 1,
+      "columns": 12,
+      "charts": 2
+    },
+    {
+      "country": "US",
+      "type": "H01",
+      "rows": 2,
+      "columns": 8,
+      "charts": 2
+    }
+  ],
+  "checks": [
+    "pinned hash",
+    "3 countries / all 40 types + H01",
+    "canonical evidence retained",
+    "market denominator once / brand shares 100",
+    "600 reviews per country / 100 per product / own 200",
+    "monthly advertising isolated from daily",
+    "price sellers remain distinct",
+    "search normalization scopes and experiment arms never averaged",
+    "annotations counted separately from reviews",
+    "as-of excludes future / empty month / invalid time rejected",
+    "sales reconciliation"
+  ]
+}

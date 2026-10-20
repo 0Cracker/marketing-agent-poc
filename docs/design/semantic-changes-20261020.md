@@ -24,16 +24,16 @@
 - 재고 조회 성공·원인 지지/반대 분류 미구현은 **자료 확인됨 · 원인 판단 미완료**로 표시한다. 자료 없음·출처 검증 실패·요청 실패와 구별하며 기존 실패 시험을 유지한다.
 - CURRENT 가상 자료는 `available_at`으로 조회를 막지 않는다. 측정기간·관측일·국가·제품·자료 해시는 유지한다. 과거 배치의 확보시각 계약은 보존한다.
 - P1A는 가상 자사 제품A의 내부 식별자다. 시장 분모와 가격 반대 근거의 의미는 유지한다.
-- T37 성능85행의12개 업무 키마다 ID 정렬 첫 행을 대표로 선택했다. 12행 활성·73행 선택 제외·장애23행 보존이다. p75 평균이나 실제 측정 진실의 추정이 아니다. 활성30,327행·보존52,636행. [선택 근거와 검증](../../../marketing-dashboard-drafts/docs/design/site-performance-conflicts-20261020.md).
+- T37 성능85행의12개 업무 키마다 ID 정렬 첫 행을 대표로 선택했다. 12행 활성·73행 선택 제외·장애23행 보존이다. p75 평균이나 실제 측정 진실의 추정이 아니다. 활성30,327행·보존52,636행. [선택 근거와 검증](site-performance-conflicts-20261020.md).
 
 ## 검증과 실제 실패
 
 - [최종 회귀 요약](../../evidence/v0.4.0/semantic-validation-20261020/result.json): 백엔드126/126, 기존 앱2검사, 화면20/20, TypeScript·Vite build 통과. 빌드의 기존 폰트 URL 경고는 런타임 해석으로 남았다.
-- [더미 확보시각246조회](../../../marketing-dashboard-drafts/evidence/site-performance-selection-20261020/availability.txt), [통합 재생성2회](../../../marketing-dashboard-drafts/evidence/site-performance-selection-20261020/combined-repeatability.json): 과거 배치 필터·원본 보존, 최종 해시 재현 통과.
+- [더미 확보시각246조회](../../evidence/site-performance-selection-20261020/availability.txt), [통합 재생성2회](../../evidence/site-performance-selection-20261020/combined-repeatability.json): 과거 배치 필터·원본 보존, 최종 해시 재현 통과.
 
 - [Hill 독립 검산](../../evidence/v0.4.0/hill-budget-20261020/report.json): 3국가36시나리오, Python Decimal 정밀도60·소수6자리 반올림 일치. 저장 예상값도 대사했다.
 - [오프라인 계약](../../evidence/v0.4.0/question-evaluation-bounded-20261020/report.json): 33/33. 질문 이해 시험과 구별한다.
-- [통합 회귀](../../../marketing-dashboard-drafts/evidence/site-performance-selection-20261020/consolidation-combined.json): 328조회와 명세·참조·발췌·통화·해시 검사 통과.
+- [통합 회귀](../../evidence/site-performance-selection-20261020/consolidation-combined.json): 328조회와 명세·참조·발췌·통화·해시 검사 통과.
 - [실제 모델 최종 평가](../../evidence/v0.4.0/live-questions-bounded-20261020/report.json): KR가격·US가격·JP재고·JP가격 후속4/4. 국가별 사실18개·원문24개·가격 반대8개·후속 부모/범위를 대사했다. 명시한 화면 scope/focus를 전달한 구조화 평가이며 자유로운 국가·기간 전환이나 설명문 품질 전반의 검증은 아니다.
 
 새 예산24회에서 최종 누적 **23회**를 사용했다. 최초 DNS 실패3회도 포함했다. 첫 네트워크 평가에서 KR/US는 통과했으나 JP가 T13 80행을 요청해 결과137,996자로 문맥 제한에 걸렸다. 모델 도구 명세의 페이지 상한을24로 줄이고 요청 초점의 관계를 먼저 조회하도록 안내한 뒤 최종4건이 통과했다. [DNS 실패](../../evidence/v0.4.0/live-questions-semantic-20261020/report.json)·[문맥 초과](../../evidence/v0.4.0/live-questions-semantic-network-20261020/report.json)는 보존했다. HTTP 요청 전에 파일에 시도를 예약하고 실패·재시작도 같은 한도에 포함한다. 이전21/24회 실행은 별개다.

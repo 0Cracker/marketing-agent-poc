@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-15T11:47:13.984Z",
+  "baseline": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90 + uncommitted work",
+  "files": [
+    {
+      "path": "ads-refined.jpg",
+      "bytes": 83987,
+      "sha256": "38a08f81c2b0bd06b38d87f227b167121aca6249d6b93e4d68ab27f6cbaab18b"
+    },
+    {
+      "path": "before-ads.jpg",
+      "bytes": 124572,
+      "sha256": "61636aeb7ae648513f74b55895919cfc243319aae7eab9caa60dcb3049c24df5"
+    },
+    {
+      "path": "before-market.jpg",
+      "bytes": 120252,
+      "sha256": "685c432f67c332fda603f2364c3c80362058c41d8173302508bd29f06f46998d"
+    },
+    {
+      "path": "brand-filter-open.jpg",
+      "bytes": 83980,
+      "sha256": "acf01f9f7d0939355b8c7efc53c179523f131f5fb7c04cbbe24c053c2dbb93fe"
+    },
+    {
+      "path": "browser-checks.json",
+      "bytes": 3590,
+      "sha256": "09a9275bbbb521c6b7d2c8ebe7307c98b2be04de3172bf6d366f6f19157dfa8a"
+    },
+    {
+      "path": "domain-0-1440.jpg",
+      "bytes": 120547,
+      "sha256": "ab363f449d56175938b08aba1e9fd3b0203566af069b4e2ff3e744229e73e1e0"
+    },
+    {
+      "path": "domain-0-390.jpg",
+      "bytes": 64815,
+      "sha256": "88334687fae804e28ebba7cfe0613ca27d5b4a2fb01ee23a2589ab0ce5759d76"
+    },
+    {
+      "path": "domain-0-768.jpg",
+      "bytes": 98394,
+      "sha256": "e6fc1df093c2e1bf7cd1c75b875ca9ba03b3382e6dd0f0420adb87c098cc3ef1"
+    },
+    {
+      "path": "domain-2-1440.jpg",
+      "bytes": 84914,
+      "sha256": "dc81c706e3c133614cbbe3c153247316ae65022959d9d2176c08485eb455bb64"
+    },
+    {
+      "path": "domain-2-390.jpg",
+      "bytes": 53762,
+      "sha256": "e0854c4ba9e1ea492c9400c445ffdbe28369df79f6205c782900288689846690"
+    },
+    {
+      "path": "domain-2-768.jpg",
+      "bytes": 83155,
+      "sha256": "ec76574b56fcd4d36462ee99afb3ecea0f07c7be65ed08c14155ca8d0ac83951"
+    },
+    {
+      "path": "domain-5-1440.jpg",
+      "bytes": 97288,
+      "sha256": "530ad1db2483905a75748b32f1c488705243699448bb97ecbb4a78fba7b378ae"
+    },
+    {
+      "path": "domain-5-390.jpg",
+      "bytes": 47043,
+      "sha256": "fc6236295693045466c308fc027000765dcfbcc5fa5472b8368d4a7082df6ecc"
+    },
+    {
+      "path": "domain-5-768.jpg",
+      "bytes": 79989,
+      "sha256": "ea77d108527a34cff36156f88bf77d0206147bacc446c58ceced88d849ddaddc"
+    },
+    {
+      "path": "filter-mobile.jpg",
+      "bytes": 26533,
+      "sha256": "56412abc38b91051484a56452cf33bcc962007626fa64c2e68a6a3d645da5cb0"
+    },
+    {
+      "path": "font-provenance.json",
+      "bytes": 450,
+      "sha256": "aeb2bc80c42c118d95061dd742e2168290efdc0804921460930222436dad6dff"
+    },
+    {
+      "path": "market-brand-hierarchy.jpg",
+      "bytes": 90311,
+      "sha256": "3ff0437e98debb14b666fc1c41aebdb593a6bedd434335ab54dc50e3868ed74b"
+    },
+    {
+      "path": "market-refined.jpg",
+      "bytes": 83998,
+      "sha256": "b84c713d7baf7b31ab139d20f91f2c5267513e2a8e86ed887ca9f73fb8425eb0"
+    },
+    {
+      "path": "numeric-checks.json",
+      "bytes": 26602,
+      "sha256": "bd48d950436c135bdd057bbf5a5238aa770b7ef6f224d0442d27cc85c5960606"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5179,
+      "sha256": "8cae6b6578aaf9d7df2b8c209c13f9744ac8013f906054f84ae398169e7101b3"
+    }
+  ],
+  "sources": [
+    {
+      "path": "frontend/workbench/adapter.ts",
+      "sha256": "3a3049d8b9fd15ca30a8fb512c4fb6dad779b7eaa8ee292628840af43f1f1cb6"
+    },
+    {
+      "path": "frontend/workbench/charts.tsx",
+      "sha256": "655a1d4da158f07dbd853f273dc1f20024fc9fda93465224237f5908cc1e5276"
+    },
+    {
+      "path": "frontend/workbench/filter.tsx",
+      "sha256": "ebe1fbede2283e1722d980c5904d711f4cd0c1bd42b0f0e061af5f7b71efa9b6"
+    },
+    {
+      "path": "frontend/workbench/table.tsx",
+      "sha256": "bb2fb7d8ed26a90bc4d9cb5912b0d09ac84ac2e365e36b03372200dd46cacdc2"
+    },
+    {
+      "path": "frontend/workbench/workbench.tsx",
+      "sha256": "810580a7b93a7f3f01d71007cf49dc3180fdd0a47bac42a87243977bf7c7cb2f"
+    },
+    {
+      "path": "frontend/workbench/workbench.css",
+      "sha256": "ed1a1459ca27e95dc64bd35c48965c476c48e00cafc467d3dbe30440642d76c6"
+    }
+  ]
+}

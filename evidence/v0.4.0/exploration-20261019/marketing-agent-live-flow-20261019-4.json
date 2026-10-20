@@ -1,0 +1,172 @@
+{
+  "at": "2026-10-19T05:32:46.611Z",
+  "mode": {
+    "mode": "remote_model",
+    "externalModelEnabled": true,
+    "models": {
+      "analysis": "gemini-3.5-flash-lite",
+      "budget": "gemini-3.8-flash"
+    }
+  },
+  "scope": {
+    "batch": "D007",
+    "country": "JP",
+    "scopeId": "D007-JP-sample",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T00:00:00Z"
+  },
+  "diagnostics": [
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "outputKeys": [
+        "tool",
+        "args"
+      ],
+      "usage": {
+        "promptTokenCount": 777,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 788,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 777
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "outputKeys": [
+        "tool",
+        "args"
+      ],
+      "usage": {
+        "promptTokenCount": 3553,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 3564,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3553
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "outputKeys": [
+        "finish"
+      ],
+      "usage": {
+        "promptTokenCount": 22377,
+        "candidatesTokenCount": 255,
+        "totalTokenCount": 22632,
+        "cachedContentTokenCount": 3841,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 22377
+          }
+        ],
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3841
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "inputFingerprint": "c6c6e64a4f221407bdd9f33987c90487020b43262b2ef78af5f92ebea9860ab1",
+  "analysis": {
+    "status": "held",
+    "reason": "counterevidence_omitted",
+    "modelCalls": 3,
+    "events": [
+      {
+        "type": "scope_validated",
+        "at": "2026-10-19T05:32:36.706Z"
+      },
+      {
+        "type": "quality",
+        "at": "2026-10-19T05:32:36.731Z",
+        "available": 5673,
+        "excluded": 0,
+        "rawFallback": false,
+        "coverage": "sample"
+      },
+      {
+        "type": "tool",
+        "name": "market_compare",
+        "args": {},
+        "recordIds": [
+          "D007-T03-00277",
+          "D007-T03-00278",
+          "D007-T03-00279",
+          "D007-T03-00280",
+          "D007-T03-00281",
+          "D007-T03-00282"
+        ],
+        "at": "2026-10-19T05:32:37.773Z"
+      },
+      {
+        "type": "tool",
+        "name": "relations",
+        "args": {
+          "candidate": "price"
+        },
+        "recordIds": [
+          "D007-T25-00622",
+          "D007-T25-00643",
+          "D007-T25-00664",
+          "D007-T25-00706",
+          "D007-T25-00727",
+          "D007-T25-00748",
+          "D007-T25-00790",
+          "D007-T25-00811",
+          "D007-T25-00601",
+          "D007-T25-00605",
+          "D007-T25-00609",
+          "D007-T25-00613",
+          "D007-T25-00615",
+          "D007-T25-00617",
+          "D007-T25-00621",
+          "D007-T25-00625",
+          "D007-T08-00505",
+          "D007-T08-00506",
+          "D007-T08-00507",
+          "D007-T08-00508",
+          "D007-T08-00509",
+          "D007-T08-00510",
+          "D007-T08-00511",
+          "D007-T08-00512"
+        ],
+        "at": "2026-10-19T05:32:42.132Z"
+      },
+      {
+        "type": "stopped",
+        "stage": "exploration",
+        "reason": "counterevidence_omitted",
+        "at": "2026-10-19T05:32:46.609Z"
+      }
+    ]
+  },
+  "sourceFingerprintUnchanged": true,
+  "realAdsCalls": 0,
+  "newMarketingRecords": 0
+}

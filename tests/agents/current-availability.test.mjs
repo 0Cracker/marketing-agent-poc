@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {loadCurrentData} from '../../../marketing-dashboard-drafts/scripts/current-data.mjs';
+import {loadCurrentData} from '../../scripts/current-data.mjs';
 import {CatalogTools,digest} from '../../backend/agent-tools.mjs';
 
 test('CURRENT dummy acquisition time never hides facts, relations, evidence or budget inputs',()=>{

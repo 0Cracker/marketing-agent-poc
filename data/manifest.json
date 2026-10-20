@@ -1,0 +1,333 @@
+{
+  "contract": "marketing-current/1",
+  "screen_contract": "workbench-model/1",
+  "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+  "source_created_at": "2026-10-19T05:06:31.333Z",
+  "rows": 30327,
+  "preserved_rows": 52636,
+  "source_files": 131,
+  "files": [
+    {
+      "type": "T01",
+      "file": "products.jsonl",
+      "rows": 6,
+      "bytes": 6196,
+      "sha256": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860"
+    },
+    {
+      "type": "T02",
+      "file": "identity-mappings.jsonl",
+      "rows": 108,
+      "bytes": 124740,
+      "sha256": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79"
+    },
+    {
+      "type": "T03",
+      "file": "market-sales.jsonl",
+      "rows": 432,
+      "bytes": 573833,
+      "sha256": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a"
+    },
+    {
+      "type": "T04",
+      "file": "purchase-surveys.jsonl",
+      "rows": 108,
+      "bytes": 153924,
+      "sha256": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c"
+    },
+    {
+      "type": "T05",
+      "file": "search-interest.jsonl",
+      "rows": 216,
+      "bytes": 281232,
+      "sha256": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54"
+    },
+    {
+      "type": "T06",
+      "file": "keyword-demand.jsonl",
+      "rows": 216,
+      "bytes": 278401,
+      "sha256": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563"
+    },
+    {
+      "type": "T07",
+      "file": "organic-search.jsonl",
+      "rows": 432,
+      "bytes": 552442,
+      "sha256": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18"
+    },
+    {
+      "type": "T08",
+      "file": "prices.jsonl",
+      "rows": 1512,
+      "bytes": 2002266,
+      "sha256": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3"
+    },
+    {
+      "type": "T09",
+      "file": "promotions.jsonl",
+      "rows": 54,
+      "bytes": 67851,
+      "sha256": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40"
+    },
+    {
+      "type": "T10",
+      "file": "public-ads.jsonl",
+      "rows": 156,
+      "bytes": 192660,
+      "sha256": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4"
+    },
+    {
+      "type": "T11",
+      "file": "publications.jsonl",
+      "rows": 54,
+      "bytes": 79009,
+      "sha256": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95"
+    },
+    {
+      "type": "T12",
+      "file": "campaigns.jsonl",
+      "rows": 12,
+      "bytes": 17624,
+      "sha256": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c"
+    },
+    {
+      "type": "T13",
+      "file": "ad-performance.jsonl",
+      "rows": 624,
+      "bytes": 979371,
+      "sha256": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6"
+    },
+    {
+      "type": "T14",
+      "file": "ad-breakdowns.jsonl",
+      "rows": 672,
+      "bytes": 994217,
+      "sha256": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56"
+    },
+    {
+      "type": "T15",
+      "file": "auction-insights.jsonl",
+      "rows": 144,
+      "bytes": 180802,
+      "sha256": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2"
+    },
+    {
+      "type": "T16",
+      "file": "creatives.jsonl",
+      "rows": 72,
+      "bytes": 108540,
+      "sha256": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55"
+    },
+    {
+      "type": "T17",
+      "file": "web-events.jsonl",
+      "rows": 4600,
+      "bytes": 5608825,
+      "sha256": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114"
+    },
+    {
+      "type": "T18",
+      "file": "commerce-events.jsonl",
+      "rows": 7056,
+      "bytes": 8643788,
+      "sha256": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829"
+    },
+    {
+      "type": "T19",
+      "file": "order-lines.jsonl",
+      "rows": 1712,
+      "bytes": 2557769,
+      "sha256": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307"
+    },
+    {
+      "type": "T20",
+      "file": "refunds.jsonl",
+      "rows": 170,
+      "bytes": 217803,
+      "sha256": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb"
+    },
+    {
+      "type": "T21",
+      "file": "costs.jsonl",
+      "rows": 144,
+      "bytes": 176496,
+      "sha256": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e"
+    },
+    {
+      "type": "T22",
+      "file": "inventory.jsonl",
+      "rows": 336,
+      "bytes": 376625,
+      "sha256": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5"
+    },
+    {
+      "type": "T23",
+      "file": "distribution-fulfilment.jsonl",
+      "rows": 1232,
+      "bytes": 1463946,
+      "sha256": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2"
+    },
+    {
+      "type": "T24",
+      "file": "reviews.jsonl",
+      "rows": 2410,
+      "bytes": 3174953,
+      "sha256": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2"
+    },
+    {
+      "type": "T25",
+      "file": "review-annotations.jsonl",
+      "rows": 4820,
+      "bytes": 6410967,
+      "sha256": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18"
+    },
+    {
+      "type": "T26",
+      "file": "customer-inquiries.jsonl",
+      "rows": 386,
+      "bytes": 483456,
+      "sha256": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64"
+    },
+    {
+      "type": "T27",
+      "file": "owned-content.jsonl",
+      "rows": 108,
+      "bytes": 167263,
+      "sha256": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716"
+    },
+    {
+      "type": "T28",
+      "file": "social-comments.jsonl",
+      "rows": 1078,
+      "bytes": 1240102,
+      "sha256": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4"
+    },
+    {
+      "type": "T29",
+      "file": "creator-collaborations.jsonl",
+      "rows": 18,
+      "bytes": 26437,
+      "sha256": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e"
+    },
+    {
+      "type": "T30",
+      "file": "customer-cohorts.jsonl",
+      "rows": 204,
+      "bytes": 284196,
+      "sha256": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754"
+    },
+    {
+      "type": "T31",
+      "file": "crm-performance.jsonl",
+      "rows": 204,
+      "bytes": 259166,
+      "sha256": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498"
+    },
+    {
+      "type": "T32",
+      "file": "brand-surveys.jsonl",
+      "rows": 108,
+      "bytes": 187028,
+      "sha256": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e"
+    },
+    {
+      "type": "T33",
+      "file": "public-statistics.jsonl",
+      "rows": 72,
+      "bytes": 92259,
+      "sha256": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428"
+    },
+    {
+      "type": "T34",
+      "file": "weather-calendar.jsonl",
+      "rows": 168,
+      "bytes": 215428,
+      "sha256": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70"
+    },
+    {
+      "type": "T35",
+      "file": "change-events.jsonl",
+      "rows": 108,
+      "bytes": 151992,
+      "sha256": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b"
+    },
+    {
+      "type": "T36",
+      "file": "collection-runs.jsonl",
+      "rows": 216,
+      "bytes": 280348,
+      "sha256": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27"
+    },
+    {
+      "type": "T37",
+      "file": "site-events.jsonl",
+      "rows": 35,
+      "bytes": 41256,
+      "sha256": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64"
+    },
+    {
+      "type": "T38",
+      "file": "experiments.jsonl",
+      "rows": 72,
+      "bytes": 115926,
+      "sha256": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f"
+    },
+    {
+      "type": "T39",
+      "file": "budget-models.jsonl",
+      "rows": 72,
+      "bytes": 160170,
+      "sha256": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc"
+    },
+    {
+      "type": "T40",
+      "file": "budget-policies.jsonl",
+      "rows": 36,
+      "bytes": 52737,
+      "sha256": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd"
+    },
+    {
+      "type": "H01",
+      "file": "sales-reports.jsonl",
+      "rows": 144,
+      "bytes": 301484,
+      "sha256": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1"
+    }
+  ],
+  "metadata": [
+    {
+      "file": "definitions.json",
+      "sha256": "c14c4e2e09b1055d2e4d7a97a513becb92631a62fdb608138fb3625fa32cb6dd"
+    },
+    {
+      "file": "product-presentation.json",
+      "sha256": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+    }
+  ],
+  "decisions": {
+    "independent_archive": 1446,
+    "nonconforming": 790,
+    "active": 30327,
+    "replaced": 20000,
+    "selection_excluded": 73
+  },
+  "scope_ids": {
+    "KR": [
+      "D008-KR-sample"
+    ],
+    "JP": [
+      "D008-JP-sample"
+    ],
+    "US": [
+      "D008-US-sample"
+    ]
+  },
+  "policy": "One current comparison scenario plus valid shared product definitions. Independent historical samples and invalid records are excluded from KPI totals; all physical inputs and per-row decisions remain archived.",
+  "period": {
+    "start": "2024-10-01",
+    "end": "2026-10-01"
+  },
+  "pending_by_type": {},
+  "data_sha256": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-20",
+  "purpose": "single-workspace-consolidation",
+  "baseMain": "ee2ca66",
+  "preservedSourceCommits": [
+    "049205440df39252e283337b621454398579d88a",
+    "6267858082ebad3f88297cf2b4b31f08a1ed49fc"
+  ],
+  "remainingWorktrees": 1,
+  "removedPlanDocuments": 7,
+  "deletedDuplicateZipFiles": 38,
+  "lessonOrder": [
+    "001: v0.2.0 data and validation",
+    "002: v0.3.0 dashboard and business meaning"
+  ],
+  "dependencyLinks": {
+    "count": 2395,
+    "broken": 0,
+    "external": 0
+  },
+  "checks": {
+    "backend": 126,
+    "frontend": 20,
+    "independentBudget": 36,
+    "dataQueries": 328,
+    "offlineContracts": 33,
+    "typescript": "pass",
+    "build": "pass",
+    "offlineServer": "pass",
+    "documentationMissingLinks": 0
+  },
+  "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+  "externalModelCalls": 0,
+  "remoteMutations": 0,
+  "limitations": [
+    "Historical Python/Java ontology cycle was not rerun; its original tool directory is retained.",
+    "New actual-model evaluation and remote deployment were not performed.",
+    "Initial checks exposed relocated dependency links and a root-level fixture path; corrected before the recorded passing checks.",
+    "Initial sandbox HTTP suite was interrupted and repeated with local loopback allowed."
+  ],
+  "originalDevelopmentRefsAndTagsPreserved": true,
+  "originalMainPreservedAsAncestor": true,
+  "localMainUpdate": "Squash of latest source commits and verified workspace cleanup; remote main unchanged"
+}

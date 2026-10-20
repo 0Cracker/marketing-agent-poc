@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {loadCurrentData,publicFiles} from '../../marketing-dashboard-drafts/scripts/current-data.mjs';
+import {loadCurrentData,publicFiles} from './current-data.mjs';
 import {CatalogTools} from '../backend/agent-tools.mjs';
 import {AgentFlow,FlowStore} from '../backend/agent-flow.mjs';
 import {createLiveRuntime} from '../backend/agent-runtime.mjs';
@@ -16,7 +16,7 @@ const pi=process.argv.indexOf('--prior-ledger');
 assert(!(resume&&pi>=0),'Resume already contains prior attempts');
 const prior=pi>=0?JSON.parse(fs.readFileSync(path.resolve(process.argv[pi+1]),'utf8')):null;
 assert(resume?fs.existsSync(path.join(output,'ledger.json')):!fs.existsSync(output),'New directory required; --resume reuses the existing call ledger');
-const root=path.resolve(import.meta.dirname,'..'),data=path.resolve(root,'../marketing-dashboard-drafts/data');
+const root=path.resolve(import.meta.dirname,'..'),data=path.resolve(root,'data');
 const {manifest,catalog}=loadCurrentData(data),records=catalog.records,raw=new Map(records.map(r=>[r.record_id,r]));
 if(prior){assert.equal(prior.ceiling,24);assert(Number.isInteger(prior.used)&&prior.used>=0&&prior.used<=24);assert.equal(prior.dataHash,manifest.data_sha256);}
 const hash=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');

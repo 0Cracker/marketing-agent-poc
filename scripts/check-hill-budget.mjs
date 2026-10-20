@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
-import {loadCurrentData} from '../../marketing-dashboard-drafts/scripts/current-data.mjs';
+import {loadCurrentData} from './current-data.mjs';
 import {CatalogTools} from '../backend/agent-tools.mjs';
 const oi=process.argv.indexOf('--output');assert(oi>=0&&process.argv[oi+1],'--output NEW_DIRECTORY required');
 const output=path.resolve(process.argv[oi+1]);assert(!fs.existsSync(output),'Evidence must not be overwritten');fs.mkdirSync(output,{recursive:true});
@@ -14,7 +14,7 @@ for(const country of ['KR','JP','US']){
  for(const candidate of inputs.scenarios){
   const simulation=tools.call('simulate',{baselineId:inputs.scenarios[0].record_id,candidateId:candidate.record_id,modelId:inputs.models[0].record_id,policyId:inputs.policies[0].record_id},scope);
   const file=path.join(output,candidate.record_id+'.json');fs.writeFileSync(file,JSON.stringify(simulation,null,2)+'\n');
-  const checked=spawnSync(process.env.PYTHON||'python',[path.join(import.meta.dirname,'check-current-live-budget.py'),file,path.resolve(import.meta.dirname,'../../marketing-dashboard-drafts/data/budget-models.jsonl')],{encoding:'utf8'});
+  const checked=spawnSync(process.env.PYTHON||'python',[path.join(import.meta.dirname,'check-current-live-budget.py'),file,path.resolve(import.meta.dirname,'../data/budget-models.jsonl')],{encoding:'utf8'});
   assert.equal(checked.status,0,checked.stdout+checked.stderr);assert.equal(Number(simulation.candidate.expected),candidate.expected_measures.find(m=>m.metric_id.endsWith('.expected_conversions')).value);
   results.push({country,candidate:candidate.record_id,...JSON.parse(checked.stdout)});
  }

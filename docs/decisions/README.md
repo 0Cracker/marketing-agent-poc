@@ -1,11 +1,11 @@
 # 기술·기획 의사결정
 
-재검토할 가치가 있는 선택만 `decision-NNN.md`에 기록한다. 작은 선택은 Iteration의 Develop에 남긴다. [기존 설계](../poc-v2-initial-design.md)·[응답 계약](../agent-contract.md)·[시나리오](../scenario-playbook.md)를 먼저 확인하고 같은 내용의 문서를 복제하지 않는다.
+재검토할 가치가 있는 선택만 `decision-NNN.md`에 기록한다. 작은 선택은 Iteration의 Develop에 남긴다. 기존 설계 (이전 파일 `poc-v2-initial-design.md`, 현재 미보존)·응답 계약 (이전 파일 `agent-contract.md`, 현재 미보존)·시나리오 (이전 파일 `scenario-playbook.md`, 현재 미보존)를 먼저 확인하고 같은 내용의 문서를 복제하지 않는다.
 
 | 번호 | 주제 | 상태 | 관련 Iteration | 문서 |
 | --- | --- | --- | --- | --- |
 | 001 | 조사 근거 연결·온톨로지·데이터 사전 승인 | 원칙 채택 / 상세 제안 | 버전 미확정, 조사 작업 | [결정](decision-001.md) |
-| 002 | 두 역할 B 흐름·Node 오프라인 TDD | B 사용자 채택 / 실행 기반 구현 판단 | v0.2.0 | [결정](decision-002.md) |
+| 002 | 두 역할 B 흐름·Node 오프라인 TDD | B 사용자 채택 / 실행 기반 구현 판단 | v0.4.0 (당시 v0.2.0) | [결정](decision-002.md) |
 
 2026-10-16 후속 적용: [D005와 공통 사전의 역할·사용자 선택](../research/marketing-ontology/common-contract/structure-decision-20261016.md). 원천 보존·공통 의미 구분 원칙을 유지하며 전역 사전 적합 게이트와 가상 반올림을 구현했다. [v0.2.0 기록](../iterations/v0.2.0.md#9-d005-역할-확정가상-반올림전역-계약-게이트--2026-10-16)에 근거와 미완료 상태를 연결했다.
 

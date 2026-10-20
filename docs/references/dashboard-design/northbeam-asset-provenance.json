@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "contentType": "image/png",
+      "id": "fb7c345112d3378e",
+      "kind": "image",
+      "name": "68b22b190ff1e0e9d005121b_Frame%20482302389-p-800.png",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/55a4acd9-74e6-4802-9bab-089dea1966ac/fb7c345112d3378e.png",
+      "url": "https://cdn.prod.website-files.com/63ce823acf939e1e64f927c4/68b22b190ff1e0e9d005121b_Frame%20482302389-p-800.png"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "5767731c8fb1cdb8",
+      "kind": "image",
+      "name": "69388392b355702a4b2e3b30_Frame%20482302965.avif",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/55a4acd9-74e6-4802-9bab-089dea1966ac/5767731c8fb1cdb8.avif",
+      "url": "https://cdn.prod.website-files.com/63ce823acf939e1e64f927c4/69388392b355702a4b2e3b30_Frame%20482302965.avif"
+    }
+  ],
+  "directoryPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/55a4acd9-74e6-4802-9bab-089dea1966ac",
+  "failures": [],
+  "manifestPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/55a4acd9-74e6-4802-9bab-089dea1966ac/manifest.json",
+  "summary": {
+    "downloadedCount": 2,
+    "elapsedMs": 311884.06480000005,
+    "failedCount": 0,
+    "requestedCount": 2
+  }
+}

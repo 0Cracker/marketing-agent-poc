@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-19",
+  "scope": "Agent answer formatting; existing uncommitted work preserved",
+  "head": "4d286c505e8ac659c1d839b257631ef7280f31d6 + working tree",
+  "checks": {
+    "answer_and_client_tests": {"pass":14,"fail":0,"log":"tests.txt"},
+    "typescript": {"exitCode":0,"command":"node node_modules/typescript/bin/tsc --noEmit --incremental false"},
+    "vite_build": {"exitCode":0,"warning":"Chunks larger than 500 kB"},
+    "existing_screen_contract": {"pass":true,"cases":496},
+    "browser": {"stored_D007_run_restored":true,"summary_visible":true,"evidence_reference_opens_original":true,"actual_tool_events_visible":true,"mobile_viewport":390,"panel_client_width":389,"panel_scroll_width":389}
+  },
+  "limits": ["Offline mode only in this verification", "No marketing source or schema changes", "No external model or Ads calls by this task", "Backend full regression not rerun", "Concurrent charts and model-connection work not attributed to this task"]
+}
