@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "tests": 18,
+  "command": "node --experimental-strip-types --test tests/agent-client.test.ts tests/agent-answer.test.ts tests/agent-presentation.test.ts",
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "build": "not_run; frontend unchanged"
+}

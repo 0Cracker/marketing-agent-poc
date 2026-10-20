@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "rules": [
+    "no-undef",
+    "no-unused-vars"
+  ],
+  "results": [
+    {
+      "file": "backend/agent-http.mjs",
+      "messages": []
+    },
+    {
+      "file": "scripts/agent-server.mjs",
+      "messages": []
+    },
+    {
+      "file": "tests/agents/http.test.mjs",
+      "messages": []
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "role": "budget",
+  "question": "Compare current and alternative synthetic budget allocations",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+  "analysisVersion": 14,
+  "status": "invalidated",
+  "stage": "proposal",
+  "events": [
+    {
+      "type": "handoff",
+      "at": "2026-10-19T13:33:19.664Z",
+      "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+      "analysisVersion": 14,
+      "userSelected": true
+    },
+    {
+      "type": "tool",
+      "name": "budget_inputs",
+      "args": {},
+      "recordIds": [
+        "D008-T39-00004",
+        "D008-T39-00010",
+        "D008-T39-00016",
+        "D008-T39-00022",
+        "D008-T39-00028",
+        "D008-T39-00034",
+        "D008-T39-00040",
+        "D008-T39-00046",
+        "D008-T39-00052",
+        "D008-T39-00058",
+        "D008-T39-00064",
+        "D008-T39-00070",
+        "D008-T39-00003",
+        "D008-T39-00009",
+        "D008-T39-00015",
+        "D008-T39-00021",
+        "D008-T39-00027",
+        "D008-T39-00033",
+        "D008-T39-00039",
+        "D008-T39-00045",
+        "D008-T39-00051",
+        "D008-T39-00057",
+        "D008-T39-00063",
+        "D008-T39-00069",
+        "D008-T40-00035"
+      ],
+      "at": "2026-10-19T13:33:24.031Z"
+    },
+    {
+      "type": "tool",
+      "name": "simulate",
+      "args": {
+        "baselineId": "D008-T39-00004",
+        "candidateId": "D008-T39-00010",
+        "modelId": "D008-T39-00003",
+        "policyId": "D008-T40-00035"
+      },
+      "recordIds": [
+        "D008-T39-00004",
+        "D008-T39-00010",
+        "D008-T39-00003",
+        "D008-T40-00035"
+      ],
+      "at": "2026-10-19T13:33:38.759Z"
+    },
+    {
+      "type": "proposal_created",
+      "at": "2026-10-19T13:33:46.832Z"
+    },
+    {
+      "type": "approved",
+      "at": "2026-10-19T13:34:21.416Z",
+      "principalId": "local-operator"
+    }
+  ],
+  "modelCalls": 3,
+  "toolCalls": 2,
+  "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945",
+  "approval": null,
+  "realExecutionAllowed": false,
+  "id": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+  "version": 9,
+  "output": {
+    "simulationId": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969",
+    "action": "reallocate"
+  },
+  "simulation": {
+    "id": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969",
+    "kind": "assumption_simulation",
+    "baseline": {
+      "recordId": "D008-T39-00004",
+      "allocations": [
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-search",
+          "amount": {
+            "amount": "525000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        },
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-social",
+          "amount": {
+            "amount": "975000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        }
+      ],
+      "total": {
+        "amount": "1500000.00",
+        "currency": "JPY"
+      },
+      "expected": "60.500000",
+      "channels": [
+        "search",
+        "social"
+      ]
+    },
+    "candidate": {
+      "recordId": "D008-T39-00010",
+      "allocations": [
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-search",
+          "amount": {
+            "amount": "750000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        },
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-social",
+          "amount": {
+            "amount": "750000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        }
+      ],
+      "total": {
+        "amount": "1500000.00",
+        "currency": "JPY"
+      },
+      "expected": "61.538462",
+      "channels": [
+        "search",
+        "social"
+      ]
+    },
+    "modelId": "D008-T39-00003",
+    "modelVersion": "D008-1",
+    "assumptions": [
+      "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+      "통화·기간·국가가 다른 후보를 합치지 않음"
+    ],
+    "policyId": "D008-T40-00035",
+    "approvalRole": "synthetic_analyst",
+    "period": {
+      "start": "2026-08-03",
+      "end_exclusive": "2026-08-31",
+      "timezone": "Asia/Tokyo",
+      "grain": "custom"
+    },
+    "realExecutionAllowed": false,
+    "recordIds": [
+      "D008-T39-00004",
+      "D008-T39-00010",
+      "D008-T39-00003",
+      "D008-T40-00035"
+    ],
+    "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945"
+  },
+  "proposalHash": "e5d0d91aee116cd859e9097e9284f7731cd2349c9ab537d855ef348b5a52313f",
+  "reason": "analysis_changed"
+}

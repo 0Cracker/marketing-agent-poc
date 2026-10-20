@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "modelCalls": {
+    "total": 21,
+    "current": 16,
+    "prior": 5,
+    "analysis": 11,
+    "budget": 5
+  },
+  "restarts": 2,
+  "changedDataFiles": 0,
+  "existingDBsUnchanged": true,
+  "realAdsCalls": 0,
+  "limitations": [
+    "API and database checks; Windows UI acceptance recorded separately",
+    "Only JP August 2026 representative flow; not all question quality",
+    "Model-call counts conservatively include attempts before provider HTTP requests; revision copies excluded"
+  ],
+  "startedAt": "2026-10-19T13:28:02.071Z",
+  "finishedAt": "2026-10-19T13:36:25.290Z"
+}

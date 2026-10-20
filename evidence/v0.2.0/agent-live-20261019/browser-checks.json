@@ -1,0 +1,55 @@
+{
+  "url": "http://127.0.0.1:5175/workbench",
+  "dataset": "D007",
+  "country": "JP",
+  "period": "2026-08",
+  "mode": "remote_model",
+  "analysis": "analyzed",
+  "returnedFacts": 6,
+  "priceEvidence": {
+    "supports": 8,
+    "counters": 8
+  },
+  "observed": [
+    "Core fact cards",
+    "Six-product market share bar chart",
+    "Cause candidate comparison with unreviewed candidates",
+    "Claim reference opens source D007-T25-00622",
+    "Source quote and source span visible"
+  ],
+  "mobile": {
+    "viewport": 390,
+    "panel": {
+      "clientWidth": 389,
+      "scrollWidth": 389
+    },
+    "conversation": {
+      "clientWidth": 342,
+      "scrollWidth": 342
+    },
+    "source": {
+      "clientWidth": 342,
+      "scrollWidth": 342
+    }
+  },
+  "screenshots": [
+    "chat-visuals.png",
+    "source-mobile.png"
+  ],
+  "limitations": [
+    "Only one analysis question tested in browser; not a user quality study",
+    "Narrative is a validated-result template, not unconstrained generated prose",
+    "External model flow exercised on synthetic D007 only"
+  ],
+  "budget": {
+    "status": "retained",
+    "baseline": "60.500000",
+    "candidate": "61.538462",
+    "approvalButtonEnabled": false,
+    "revisionControlsEnabled": true
+  },
+  "browserLogs": {
+    "errors": 0,
+    "warnings": 0
+  }
+}

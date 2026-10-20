@@ -1,0 +1,664 @@
+TAP version 13
+# Subtest: P01 pending approval and exact simulation survive database close/reopen
+ok 1 - P01 pending approval and exact simulation survive database close/reopen
+  ---
+  duration_ms: 939.712
+  type: 'test'
+  ...
+# Subtest: P02 rejects invalid approval: approval_forbidden
+ok 2 - P02 rejects invalid approval: approval_forbidden
+  ---
+  duration_ms: 156.7974
+  type: 'test'
+  ...
+# Subtest: P03 rejects invalid approval: approval_expired
+ok 3 - P03 rejects invalid approval: approval_expired
+  ---
+  duration_ms: 175.4338
+  type: 'test'
+  ...
+# Subtest: P04 rejects invalid approval: version_conflict
+ok 4 - P04 rejects invalid approval: version_conflict
+  ---
+  duration_ms: 179.5292
+  type: 'test'
+  ...
+# Subtest: P05 changed scenario/assumption invalidates old approval and requires new approval
+ok 5 - P05 changed scenario/assumption invalidates old approval and requires new approval
+  ---
+  duration_ms: 224.872
+  type: 'test'
+  ...
+# Subtest: P06 cannot submit without approval or through a live adapter
+ok 6 - P06 cannot submit without approval or through a live adapter
+  ---
+  duration_ms: 333.6161
+  type: 'test'
+  ...
+# Subtest: X01 submit once, reconcile exact applied values, then complete
+ok 7 - X01 submit once, reconcile exact applied values, then complete
+  ---
+  duration_ms: 174.5818
+  type: 'test'
+  ...
+# Subtest: X02 preflight drift invalidates approval without submission
+ok 8 - X02 preflight drift invalidates approval without submission
+  ---
+  duration_ms: 147.9529
+  type: 'test'
+  ...
+# Subtest: X03 submit timeout is unknown, blocked from retry; later reconcile can recover
+ok 9 - X03 submit timeout is unknown, blocked from retry; later reconcile can recover
+  ---
+  duration_ms: 191.3876
+  type: 'test'
+  ...
+# Subtest: X04 provider success without exact applied values is never completed
+ok 10 - X04 provider success without exact applied values is never completed
+  ---
+  duration_ms: 183.1789
+  type: 'test'
+  ...
+# Subtest: X05 partial and failed results stay distinct from complete
+ok 11 - X05 partial and failed results stay distinct from complete
+  ---
+  duration_ms: 563.9735
+  type: 'test'
+  ...
+# Subtest: X06 concurrent submissions cannot perform two writes
+ok 12 - X06 concurrent submissions cannot perform two writes
+  ---
+  duration_ms: 187.9767
+  type: 'test'
+  ...
+# Subtest: X07 expired approval and changed data fingerprint block execution
+ok 13 - X07 expired approval and changed data fingerprint block execution
+  ---
+  duration_ms: 191.0567
+  type: 'test'
+  ...
+# Subtest: F01 real tools run inside bounded analysis loop, before validated finish
+ok 14 - F01 real tools run inside bounded analysis loop, before validated finish
+  ---
+  duration_ms: 145.301
+  type: 'test'
+  ...
+# Subtest: F02 ambiguous question/scope asks for scope before model or tools
+ok 15 - F02 ambiguous question/scope asks for scope before model or tools
+  ---
+  duration_ms: 2.7541
+  type: 'test'
+  ...
+# Subtest: F03 unavailable-asOf data blocks model and returns restart conditions
+ok 16 - F03 unavailable-asOf data blocks model and returns restart conditions
+  ---
+  duration_ms: 60.3347
+  type: 'test'
+  ...
+# Subtest: F04 invalid/looping model is held at tool_forbidden
+ok 17 - F04 invalid/looping model is held at tool_forbidden
+  ---
+  duration_ms: 67.8462
+  type: 'test'
+  ...
+# Subtest: F05 invalid/looping model is held at unsupported_fact
+ok 18 - F05 invalid/looping model is held at unsupported_fact
+  ---
+  duration_ms: 157.9424
+  type: 'test'
+  ...
+# Subtest: F06 invalid/looping model is held at model_protocol
+ok 19 - F06 invalid/looping model is held at model_protocol
+  ---
+  duration_ms: 43.5373
+  type: 'test'
+  ...
+# Subtest: F07 invalid/looping model is held at tool_arguments
+ok 20 - F07 invalid/looping model is held at tool_arguments
+  ---
+  duration_ms: 68.5499
+  type: 'test'
+  ...
+# Subtest: F08 invalid/looping model is held at call_limit
+ok 21 - F08 invalid/looping model is held at call_limit
+  ---
+  duration_ms: 162.7955
+  type: 'test'
+  ...
+# Subtest: F09 causal assertion and omitted counterevidence fail output gate
+ok 22 - F09 causal assertion and omitted counterevidence fail output gate
+  ---
+  duration_ms: 213.9415
+  type: 'test'
+  ...
+# Subtest: F10 tool failure is recorded and cannot become a successful report
+ok 23 - F10 tool failure is recorded and cannot become a successful report
+  ---
+  duration_ms: 89.782
+  type: 'test'
+  ...
+# Subtest: F11 followup preserves scope, makes new analysis, invalidates dependent proposal
+ok 24 - F11 followup preserves scope, makes new analysis, invalidates dependent proposal
+  ---
+  duration_ms: 838.6063
+  type: 'test'
+  ...
+# Subtest: F12 missing followup reference asks for clarification
+ok 25 - F12 missing followup reference asks for clarification
+  ---
+  duration_ms: 4.2384
+  type: 'test'
+  ...
+# Subtest: B04 budget handoff needs user choice, valid analysis and exact analysis version
+ok 26 - B04 budget handoff needs user choice, valid analysis and exact analysis version
+  ---
+  duration_ms: 192.4498
+  type: 'test'
+  ...
+# Subtest: B05 valid budget loop proposes versioned simulation, never automatic execution
+ok 27 - B05 valid budget loop proposes versioned simulation, never automatic execution
+  ---
+  duration_ms: 313.19
+  type: 'test'
+  ...
+# Subtest: B06 budget role cannot call analysis tools or silently switch roles
+ok 28 - B06 budget role cannot call analysis tools or silently switch roles
+  ---
+  duration_ms: 188.6716
+  type: 'test'
+  ...
+# Subtest: B07 missing simulation and invented final metrics are rejected
+ok 29 - B07 missing simulation and invented final metrics are rejected
+  ---
+  duration_ms: 166.519
+  type: 'test'
+  ...
+# Subtest: B08 hold is a valid budget outcome and cannot enter approval
+ok 30 - B08 hold is a valid budget outcome and cannot enter approval
+  ---
+  duration_ms: 212.1381
+  type: 'test'
+  ...
+# Subtest: H01 session describes offline mode and blocks foreign origins/host rebinding
+ok 31 - H01 session describes offline mode and blocks foreign origins/host rebinding
+  ---
+  duration_ms: 233.1369
+  type: 'test'
+  ...
+# Subtest: H02 no token, wrong token, non-JSON and invalid JSON fail before mutation
+ok 32 - H02 no token, wrong token, non-JSON and invalid JSON fail before mutation
+  ---
+  duration_ms: 104.3848
+  type: 'test'
+  ...
+# Subtest: H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed
+ok 33 - H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed
+  ---
+  duration_ms: 398.454
+  type: 'test'
+  ...
+# Subtest: H04 clients cannot supply approver, adapters, provider keys or arbitrary methods
+ok 34 - H04 clients cannot supply approver, adapters, provider keys or arbitrary methods
+  ---
+  duration_ms: 220.1369
+  type: 'test'
+  ...
+# Subtest: H05 existing ID reload, missing ID, stale version and rejected handoff are distinct
+ok 35 - H05 existing ID reload, missing ID, stale version and rejected handoff are distinct
+  ---
+  duration_ms: 462.2608
+  type: 'test'
+  ...
+# Subtest: H06 oversize requests, forged context and unissued evidence do not bypass validation
+ok 36 - H06 oversize requests, forged context and unissued evidence do not bypass validation
+  ---
+  duration_ms: 230.7201
+  type: 'test'
+  ...
+# Subtest: H07 remote session exposes model IDs only, preserving real Ads and request boundaries
+ok 37 - H07 remote session exposes model IDs only, preserving real Ads and request boundaries
+  ---
+  duration_ms: 242.3755
+  type: 'test'
+  ...
+# Subtest: E01 end-to-end offline demo: actual catalog -> analysis -> budget -> followup invalidation
+ok 38 - E01 end-to-end offline demo: actual catalog -> analysis -> budget -> followup invalidation
+  ---
+  duration_ms: 5376.6984
+  type: 'test'
+  ...
+# Subtest: E02 exact money avoids binary float rounding and rejects invalid/missing amounts
+ok 39 - E02 exact money avoids binary float rounding and rejects invalid/missing amounts
+  ---
+  duration_ms: 2.1896
+  type: 'test'
+  ...
+# Subtest: E03 month share independently equals raw numerator / denominator
+ok 40 - E03 month share independently equals raw numerator / denominator
+  ---
+  duration_ms: 4.9074
+  type: 'test'
+  ...
+# Subtest: Q03 quality reader failure becomes explicit held state, no model call
+ok 41 - Q03 quality reader failure becomes explicit held state, no model call
+  ---
+  duration_ms: 2.8073
+  type: 'test'
+  ...
+# Subtest: B09 budget cannot finish while its referenced analysis is superseded
+ok 42 - B09 budget cannot finish while its referenced analysis is superseded
+  ---
+  duration_ms: 291.9779
+  type: 'test'
+  ...
+# Subtest: M01 gemini: API response becomes validated tool request, network stub only
+ok 43 - M01 gemini: API response becomes validated tool request, network stub only
+  ---
+  duration_ms: 80.2434
+  type: 'test'
+  ...
+# Subtest: M01 groq: API response becomes validated tool request, network stub only
+ok 44 - M01 groq: API response becomes validated tool request, network stub only
+  ---
+  duration_ms: 3.4104
+  type: 'test'
+  ...
+# Subtest: M02 no transmission opt-in means zero network calls
+ok 45 - M02 no transmission opt-in means zero network calls
+  ---
+  duration_ms: 1.8636
+  type: 'test'
+  ...
+# Subtest: M03 provider/model/key must be explicit
+ok 46 - M03 provider/model/key must be explicit
+  ---
+  duration_ms: 0.5677
+  type: 'test'
+  ...
+# Subtest: M04 provider/model/key must be explicit
+ok 47 - M04 provider/model/key must be explicit
+  ---
+  duration_ms: 2.6596
+  type: 'test'
+  ...
+# Subtest: M05 provider/model/key must be explicit
+ok 48 - M05 provider/model/key must be explicit
+  ---
+  duration_ms: 0.5389
+  type: 'test'
+  ...
+# Subtest: M06 HTTP 429 is safe failure without blind retries or key leakage
+ok 49 - M06 HTTP 429 is safe failure without blind retries or key leakage
+  ---
+  duration_ms: 1.8534
+  type: 'test'
+  ...
+# Subtest: M07 HTTP 503 is safe failure without blind retries or key leakage
+ok 50 - M07 HTTP 503 is safe failure without blind retries or key leakage
+  ---
+  duration_ms: 1.0423
+  type: 'test'
+  ...
+# Subtest: M08 HTTP 401 is safe failure without blind retries or key leakage
+ok 51 - M08 HTTP 401 is safe failure without blind retries or key leakage
+  ---
+  duration_ms: 1.0753
+  type: 'test'
+  ...
+# Subtest: M09 timeout is resumable, rather than silently dropping state
+ok 52 - M09 timeout is resumable, rather than silently dropping state
+  ---
+  duration_ms: 2.5094
+  type: 'test'
+  ...
+# Subtest: M13 structured finish permits issued facts only and preserves all returned counter references
+ok 53 - M13 structured finish permits issued facts only and preserves all returned counter references
+  ---
+  duration_ms: 6405.3245
+  type: 'test'
+  ...
+# Subtest: M10 malformed provider output rejected
+ok 54 - M10 malformed provider output rejected
+  ---
+  duration_ms: 0.9843
+  type: 'test'
+  ...
+# Subtest: M11 malformed provider output rejected
+ok 55 - M11 malformed provider output rejected
+  ---
+  duration_ms: 0.8317
+  type: 'test'
+  ...
+# Subtest: M12 malformed provider output rejected
+ok 56 - M12 malformed provider output rejected
+  ---
+  duration_ms: 1.0745
+  type: 'test'
+  ...
+# Subtest: A12 zero stock is observed zero, never missing or proof of full-day outage
+ok 57 - A12 zero stock is observed zero, never missing or proof of full-day outage
+  ---
+  duration_ms: 28.3591
+  type: 'test'
+  ...
+# Subtest: A13 missing ad metric stays null and partial, never zero-filled
+ok 58 - A13 missing ad metric stays null and partial, never zero-filled
+  ---
+  duration_ms: 37.5085
+  type: 'test'
+  ...
+# Subtest: A14 listed prices retain unknown tax/shipping, never all-in purchase price
+ok 59 - A14 listed prices retain unknown tax/shipping, never all-in purchase price
+  ---
+  duration_ms: 10.706
+  type: 'test'
+  ...
+# Subtest: A15 boundary periods and invalid pagination fail before retrieval
+ok 60 - A15 boundary periods and invalid pagination fail before retrieval
+  ---
+  duration_ms: 6.4563
+  type: 'test'
+  ...
+# Subtest: A16 ontology paths preserve SourceRecord/Artifact and Variant/Product types
+ok 61 - A16 ontology paths preserve SourceRecord/Artifact and Variant/Product types
+  ---
+  duration_ms: 19.6318
+  type: 'test'
+  ...
+# Subtest: F21 final output preserves missing facts and partial completeness
+ok 62 - F21 final output preserves missing facts and partial completeness
+  ---
+  duration_ms: 118.2692
+  type: 'test'
+  ...
+# Subtest: F22 tool-call ceiling is enforced independently of model-call ceiling
+ok 63 - F22 tool-call ceiling is enforced independently of model-call ceiling
+  ---
+  duration_ms: 43.2469
+  type: 'test'
+  ...
+# Subtest: F23 support/counter conflict is visible as mixed proposed interpretation
+ok 64 - F23 support/counter conflict is visible as mixed proposed interpretation
+  ---
+  duration_ms: 110.1574
+  type: 'test'
+  ...
+# Subtest: F13 counterevidence cannot be bypassed by omitting the entire hypothesis
+ok 65 - F13 counterevidence cannot be bypassed by omitting the entire hypothesis
+  ---
+  duration_ms: 47.9335
+  type: 'test'
+  ...
+# Subtest: F14 hypothesis cannot relabel arbitrary retrieved rows as supporting evidence
+ok 66 - F14 hypothesis cannot relabel arbitrary retrieved rows as supporting evidence
+  ---
+  duration_ms: 65.7914
+  type: 'test'
+  ...
+# Subtest: F15 explicit price focus cannot silently become a media analysis
+ok 67 - F15 explicit price focus cannot silently become a media analysis
+  ---
+  duration_ms: 133.285
+  type: 'test'
+  ...
+# Subtest: F16 quota interruption resumes saved history after SQLite reopen
+ok 68 - F16 quota interruption resumes saved history after SQLite reopen
+  ---
+  duration_ms: 285.4573
+  type: 'test'
+  ...
+# Subtest: F17 resume cannot reset cumulative model-call budget
+ok 69 - F17 resume cannot reset cumulative model-call budget
+  ---
+  duration_ms: 27.7332
+  type: 'test'
+  ...
+# Subtest: F18 cancellation while model awaits prevents further tool execution
+ok 70 - F18 cancellation while model awaits prevents further tool execution
+  ---
+  duration_ms: 63.5479
+  type: 'test'
+  ...
+# Subtest: F19 source prompt injection cannot expand role tools or mutate scope
+ok 71 - F19 source prompt injection cannot expand role tools or mutate scope
+  ---
+  duration_ms: 18.6174
+  type: 'test'
+  ...
+# Subtest: F20 stale or superseded followup reference does not fork unnoticed
+ok 72 - F20 stale or superseded followup reference does not fork unnoticed
+  ---
+  duration_ms: 97.1959
+  type: 'test'
+  ...
+# Subtest: P07 rejected proposals never submit and cannot be approved afterwards
+ok 73 - P07 rejected proposals never submit and cannot be approved afterwards
+  ---
+  duration_ms: 84.2237
+  type: 'test'
+  ...
+# Subtest: P08 corrupted proposal content cannot keep an old approval hash
+ok 74 - P08 corrupted proposal content cannot keep an old approval hash
+  ---
+  duration_ms: 81.6568
+  type: 'test'
+  ...
+# Subtest: P09 failed revision leaves previous proposal and approval unchanged
+ok 75 - P09 failed revision leaves previous proposal and approval unchanged
+  ---
+  duration_ms: 96.1571
+  type: 'test'
+  ...
+# Subtest: X08 two separate store connections still permit only one submission
+ok 76 - X08 two separate store connections still permit only one submission
+  ---
+  duration_ms: 359.0425
+  type: 'test'
+  ...
+# Subtest: X09 loss of process after persisted submit intent resumes by reconciliation only
+ok 77 - X09 loss of process after persisted submit intent resumes by reconciliation only
+  ---
+  duration_ms: 369.1879
+  type: 'test'
+  ...
+# Subtest: X10 expired approval during preflight is cleared before writing
+ok 78 - X10 expired approval during preflight is cleared before writing
+  ---
+  duration_ms: 71.3354
+  type: 'test'
+  ...
+# Subtest: X11 preflight and status read failures have distinct safe states
+ok 79 - X11 preflight and status read failures have distinct safe states
+  ---
+  duration_ms: 168.3378
+  type: 'test'
+  ...
+# Subtest: X12 new analysis during preflight invalidates execution without submission
+ok 80 - X12 new analysis during preflight invalidates execution without submission
+  ---
+  duration_ms: 97.1598
+  type: 'test'
+  ...
+# Subtest: R01 numbered keys use explicit or first numeric slot, with role models and no secret metadata
+ok 81 - R01 numbered keys use explicit or first numeric slot, with role models and no secret metadata
+  ---
+  duration_ms: 25.0915
+  type: 'test'
+  ...
+# Subtest: R02 pacing is shared by roles on one model; 429 never rotates credentials or retries
+ok 82 - R02 pacing is shared by roles on one model; 429 never rotates credentials or retries
+  ---
+  duration_ms: 12.9439
+  type: 'test'
+  ...
+# Subtest: R03 Gemma selection is explicit and rejects oversized context before network
+ok 83 - R03 Gemma selection is explicit and rejects oversized context before network
+  ---
+  duration_ms: 0.4857
+  type: 'test'
+  ...
+# Subtest: S01 scope: explicit country, products, window and asOf accepted
+ok 84 - S01 scope: explicit country, products, window and asOf accepted
+  ---
+  duration_ms: 6.5346
+  type: 'test'
+  ...
+# Subtest: S02 scope rejects {}
+ok 85 - S02 scope rejects {}
+  ---
+  duration_ms: 1.2683
+  type: 'test'
+  ...
+# Subtest: S03 scope rejects {"country":"ZZ"}
+ok 86 - S03 scope rejects {"country":"ZZ"}
+  ---
+  duration_ms: 0.3796
+  type: 'test'
+  ...
+# Subtest: S04 scope rejects {"productIds":[]}
+ok 87 - S04 scope rejects {"productIds":[]}
+  ---
+  duration_ms: 0.4253
+  type: 'test'
+  ...
+# Subtest: S05 scope rejects {"productIds":["not-a-product"]}
+ok 88 - S05 scope rejects {"productIds":["not-a-product"]}
+  ---
+  duration_ms: 1.1051
+  type: 'test'
+  ...
+# Subtest: S06 scope rejects {"start":"2026-02-30"}
+ok 89 - S06 scope rejects {"start":"2026-02-30"}
+  ---
+  duration_ms: 0.4891
+  type: 'test'
+  ...
+# Subtest: S07 scope rejects {"end":"2026-08-01"}
+ok 90 - S07 scope rejects {"end":"2026-08-01"}
+  ---
+  duration_ms: 0.4379
+  type: 'test'
+  ...
+# Subtest: S08 scope rejects {"asOf":"yesterday"}
+ok 91 - S08 scope rejects {"asOf":"yesterday"}
+  ---
+  duration_ms: 0.4014
+  type: 'test'
+  ...
+# Subtest: S09 scope rejects {"scopeId":"D007-JP-sample"}
+ok 92 - S09 scope rejects {"scopeId":"D007-JP-sample"}
+  ---
+  duration_ms: 3.898
+  type: 'test'
+  ...
+# Subtest: S10 scope rejects {"productIds":["P1A","P1A"]}
+ok 93 - S10 scope rejects {"productIds":["P1A","P1A"]}
+  ---
+  duration_ms: 0.9064
+  type: 'test'
+  ...
+# Subtest: Q01 future acquisition is unavailable, not an empty successful analysis
+ok 94 - Q01 future acquisition is unavailable, not an empty successful analysis
+  ---
+  duration_ms: 6.2347
+  type: 'test'
+  ...
+# Subtest: Q02 legacy contract gaps cannot silently enter operational observations
+ok 95 - Q02 legacy contract gaps cannot silently enter operational observations
+  ---
+  duration_ms: 6.1901
+  type: 'test'
+  ...
+# Subtest: A01 market totals and shares independently reconcile to raw records
+ok 96 - A01 market totals and shares independently reconcile to raw records
+  ---
+  duration_ms: 54.8792
+  type: 'test'
+  ...
+# Subtest: A02 relation paths use actual campaign/product and source links
+ok 97 - A02 relation paths use actual campaign/product and source links
+  ---
+  duration_ms: 10.6434
+  type: 'test'
+  ...
+# Subtest: A03 price evidence retains both positive and negative annotations
+ok 98 - A03 price evidence retains both positive and negative annotations
+  ---
+  duration_ms: 16.5951
+  type: 'test'
+  ...
+# Subtest: A04 evidence cannot cross country, product or asOf boundaries
+ok 99 - A04 evidence cannot cross country, product or asOf boundaries
+  ---
+  duration_ms: 145.3664
+  type: 'test'
+  ...
+# Subtest: A05 source spans exactly match parent review text
+ok 100 - A05 source spans exactly match parent review text
+  ---
+  duration_ms: 119.2249
+  type: 'test'
+  ...
+# Subtest: A06 tool trust boundary: execute_sql
+ok 101 - A06 tool trust boundary: execute_sql
+  ---
+  duration_ms: 2.0225
+  type: 'test'
+  ...
+# Subtest: A07 tool trust boundary: market_compare
+ok 102 - A07 tool trust boundary: market_compare
+  ---
+  duration_ms: 1.8508
+  type: 'test'
+  ...
+# Subtest: A08 tool trust boundary: relations
+ok 103 - A08 tool trust boundary: relations
+  ---
+  duration_ms: 0.9826
+  type: 'test'
+  ...
+# Subtest: A09 tool trust boundary: evidence
+ok 104 - A09 tool trust boundary: evidence
+  ---
+  duration_ms: 0.4966
+  type: 'test'
+  ...
+# Subtest: A10 tool trust boundary: evidence
+ok 105 - A10 tool trust boundary: evidence
+  ---
+  duration_ms: 0.4911
+  type: 'test'
+  ...
+# Subtest: A11 no source objects or raw records are changed by tools
+ok 106 - A11 no source objects or raw records are changed by tools
+  ---
+  duration_ms: 619.9214
+  type: 'test'
+  ...
+# Subtest: B01 budget input lists compatible, explicit synthetic models/scenarios/policies
+ok 107 - B01 budget input lists compatible, explicit synthetic models/scenarios/policies
+  ---
+  duration_ms: 17.963
+  type: 'test'
+  ...
+# Subtest: B02 simulation recalculates approved saturation formula, same assumptions for both arms
+ok 108 - B02 simulation recalculates approved saturation formula, same assumptions for both arms
+  ---
+  duration_ms: 29.8104
+  type: 'test'
+  ...
+# Subtest: B03 absent/wrong-scope model and incompatible scenario are held
+ok 109 - B03 absent/wrong-scope model and incompatible scenario are held
+  ---
+  duration_ms: 49.8855
+  type: 'test'
+  ...
+1..109
+# tests 109
+# suites 0
+# pass 109
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 81387.7268

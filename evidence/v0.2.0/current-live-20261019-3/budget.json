@@ -1,0 +1,2334 @@
+{
+  "role": "budget",
+  "question": "Compare current and alternative synthetic budget allocations",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+  "analysisVersion": 14,
+  "status": "pending_approval",
+  "stage": "proposal",
+  "events": [
+    {
+      "type": "handoff",
+      "at": "2026-10-19T13:33:19.664Z",
+      "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+      "analysisVersion": 14,
+      "userSelected": true
+    },
+    {
+      "type": "tool",
+      "name": "budget_inputs",
+      "args": {},
+      "recordIds": [
+        "D008-T39-00004",
+        "D008-T39-00010",
+        "D008-T39-00016",
+        "D008-T39-00022",
+        "D008-T39-00028",
+        "D008-T39-00034",
+        "D008-T39-00040",
+        "D008-T39-00046",
+        "D008-T39-00052",
+        "D008-T39-00058",
+        "D008-T39-00064",
+        "D008-T39-00070",
+        "D008-T39-00003",
+        "D008-T39-00009",
+        "D008-T39-00015",
+        "D008-T39-00021",
+        "D008-T39-00027",
+        "D008-T39-00033",
+        "D008-T39-00039",
+        "D008-T39-00045",
+        "D008-T39-00051",
+        "D008-T39-00057",
+        "D008-T39-00063",
+        "D008-T39-00069",
+        "D008-T40-00035"
+      ],
+      "at": "2026-10-19T13:33:24.031Z"
+    },
+    {
+      "type": "tool",
+      "name": "simulate",
+      "args": {
+        "baselineId": "D008-T39-00004",
+        "candidateId": "D008-T39-00010",
+        "modelId": "D008-T39-00003",
+        "policyId": "D008-T40-00035"
+      },
+      "recordIds": [
+        "D008-T39-00004",
+        "D008-T39-00010",
+        "D008-T39-00003",
+        "D008-T40-00035"
+      ],
+      "at": "2026-10-19T13:33:38.759Z"
+    },
+    {
+      "type": "proposal_created",
+      "at": "2026-10-19T13:33:46.832Z"
+    }
+  ],
+  "history": [
+    {
+      "tool": "budget_inputs",
+      "args": {},
+      "result": {
+        "scenarios": [
+          {
+            "record_id": "D008-T39-00004",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00004",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00003",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-1",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-1",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 60.5,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00010",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00010",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00009",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-4",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-4",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 65.15151515151516,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00016",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00016",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00015",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-7",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-7",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 67.4249530956848,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00022",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00022",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00021",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-10",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-10",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 70.73198454194136,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00028",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00028",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00027",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-13",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-13",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 75.3623188405797,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00034",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00034",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00033",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-16",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-16",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 77.05882352941177,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00040",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00040",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00039",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-19",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-19",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 80.08720930232559,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00046",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00046",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00045",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-22",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-22",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 84.72222222222223,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00052",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00052",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00051",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-25",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-25",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 85.8934169278997,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00058",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00058",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00057",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-28",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-28",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 88.67834698152733,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00064",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00064",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00063",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-31",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-31",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "750000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 93.33333333333333,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00070",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "derived_calculation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00070",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "related_record_ids": [
+              "D008-T39-00069",
+              "D008-T12-00005",
+              "D008-T12-00006"
+            ],
+            "model_ref": "D008-ResponseModel-34",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "budget_scenario",
+            "scenario_id_ref": "D008-BudgetScenario-34",
+            "period": {
+              "start": "2026-08-03",
+              "end_exclusive": "2026-08-31",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "total_budget": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allocations": [
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-search",
+                "amount": {
+                  "amount": "975000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              },
+              {
+                "campaign_ref": "D008-Campaign-JP-P1A-social",
+                "amount": {
+                  "amount": "525000.00",
+                  "currency": "JPY"
+                },
+                "lower": {
+                  "amount": "150000.00",
+                  "currency": "JPY"
+                },
+                "upper": {
+                  "amount": "1350000.00",
+                  "currency": "JPY"
+                }
+              }
+            ],
+            "expected_measures": [
+              {
+                "metric_id": "D008.expected_conversions",
+                "value": 94.02810304449649,
+                "unit": "count",
+                "availability": "available",
+                "definition_version": "D008-1"
+              }
+            ]
+          }
+        ],
+        "models": [
+          {
+            "record_id": "D008-T39-00003",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00003",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-1",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "40"
+              },
+              {
+                "name": "saturation",
+                "value": "225000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00009",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00009",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-4",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "43"
+              },
+              {
+                "name": "saturation",
+                "value": "240000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00015",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00015",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-7",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "46"
+              },
+              {
+                "name": "saturation",
+                "value": "255000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00021",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00021",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-10",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "49"
+              },
+              {
+                "name": "saturation",
+                "value": "270000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00027",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00027",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-13",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "52"
+              },
+              {
+                "name": "saturation",
+                "value": "285000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00033",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00033",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-16",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "55"
+              },
+              {
+                "name": "saturation",
+                "value": "300000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00039",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00039",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-19",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "58"
+              },
+              {
+                "name": "saturation",
+                "value": "315000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00045",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00045",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-22",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "61"
+              },
+              {
+                "name": "saturation",
+                "value": "330000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00051",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00051",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-25",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "64"
+              },
+              {
+                "name": "saturation",
+                "value": "345000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00057",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00057",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-28",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "67"
+              },
+              {
+                "name": "saturation",
+                "value": "360000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00063",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00063",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-31",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "70"
+              },
+              {
+                "name": "saturation",
+                "value": "375000"
+              }
+            ]
+          },
+          {
+            "record_id": "D008-T39-00069",
+            "dataset_type": "T39",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T39-00069",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T39.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "model",
+              "source_grain": "instant",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0
+            },
+            "model_ref": "D008-ResponseModel-34",
+            "model_version": "D008-1",
+            "objective": "maximize_synthetic_conversions",
+            "assumptions": [
+              "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+              "통화·기간·국가가 다른 후보를 합치지 않음"
+            ],
+            "validity_scope": "D008-JP-sample",
+            "record_kind": "response_model",
+            "formula": "scale * budget / (saturation + budget)",
+            "parameters": [
+              {
+                "name": "scale",
+                "value": "73"
+              },
+              {
+                "name": "saturation",
+                "value": "390000"
+              }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "record_id": "D008-T40-00035",
+            "dataset_type": "T40",
+            "scope_id": "D008-JP-sample",
+            "scenario_id": "D008-comparison-demo",
+            "is_synthetic": true,
+            "value_origin": "simulation",
+            "provenance": {
+              "system": "D008-comparison-1",
+              "collection_method": "synthetic_generation",
+              "source_record_key": "D008-T40-00035",
+              "artifact_ref": "frontend/public/workbench-data/D008/source/T40.jsonl",
+              "collected_at": "2026-10-19T05:06:31.333Z",
+              "access_class": "internal",
+              "documentation_refs": [
+                "docs/design/marketing-redesign-20261019/README.md"
+              ]
+            },
+            "quality": {
+              "availability": "available",
+              "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+              "is_partial": true
+            },
+            "temporal": {
+              "time_kind": "interval",
+              "source_grain": "custom",
+              "series_role": "detail",
+              "calendar_id": "Gregorian",
+              "reporting_timezone": "Asia/Tokyo",
+              "coverage_kind": "sample",
+              "available_at": "2026-10-19T05:06:31.333Z",
+              "revision": 0,
+              "period_field": "period"
+            },
+            "policy_id": "D008-Policy-JP",
+            "version": "12",
+            "period": {
+              "start": "2026-08-01",
+              "end_exclusive": "2026-10-01",
+              "timezone": "Asia/Tokyo",
+              "grain": "custom"
+            },
+            "objective": "가상 전환수 후보 비교",
+            "kpi_definition_refs": [
+              "D008.expected_conversions"
+            ],
+            "product_refs": [
+              "P1A",
+              "P1B"
+            ],
+            "budget_limit": {
+              "amount": "1500000.00",
+              "currency": "JPY"
+            },
+            "allowed_channels": [
+              "search",
+              "social"
+            ],
+            "approval_role": "synthetic_analyst",
+            "change_constraints": [
+              "총예산과 채널 상하한 유지",
+              "동일 통화·기간·국가만 비교",
+              "실제 집행 금지"
+            ],
+            "policy_status": "proposed"
+          }
+        ],
+        "recordIds": [
+          "D008-T39-00004",
+          "D008-T39-00010",
+          "D008-T39-00016",
+          "D008-T39-00022",
+          "D008-T39-00028",
+          "D008-T39-00034",
+          "D008-T39-00040",
+          "D008-T39-00046",
+          "D008-T39-00052",
+          "D008-T39-00058",
+          "D008-T39-00064",
+          "D008-T39-00070",
+          "D008-T39-00003",
+          "D008-T39-00009",
+          "D008-T39-00015",
+          "D008-T39-00021",
+          "D008-T39-00027",
+          "D008-T39-00033",
+          "D008-T39-00039",
+          "D008-T39-00045",
+          "D008-T39-00051",
+          "D008-T39-00057",
+          "D008-T39-00063",
+          "D008-T39-00069",
+          "D008-T40-00035"
+        ],
+        "realExecutionAllowed": false
+      }
+    },
+    {
+      "tool": "simulate",
+      "args": {
+        "baselineId": "D008-T39-00004",
+        "candidateId": "D008-T39-00010",
+        "modelId": "D008-T39-00003",
+        "policyId": "D008-T40-00035"
+      },
+      "result": {
+        "id": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969",
+        "kind": "assumption_simulation",
+        "baseline": {
+          "recordId": "D008-T39-00004",
+          "allocations": [
+            {
+              "campaign_ref": "D008-Campaign-JP-P1A-search",
+              "amount": {
+                "amount": "525000.00",
+                "currency": "JPY"
+              },
+              "lower": {
+                "amount": "150000.00",
+                "currency": "JPY"
+              },
+              "upper": {
+                "amount": "1350000.00",
+                "currency": "JPY"
+              }
+            },
+            {
+              "campaign_ref": "D008-Campaign-JP-P1A-social",
+              "amount": {
+                "amount": "975000.00",
+                "currency": "JPY"
+              },
+              "lower": {
+                "amount": "150000.00",
+                "currency": "JPY"
+              },
+              "upper": {
+                "amount": "1350000.00",
+                "currency": "JPY"
+              }
+            }
+          ],
+          "total": {
+            "amount": "1500000.00",
+            "currency": "JPY"
+          },
+          "expected": "60.500000",
+          "channels": [
+            "search",
+            "social"
+          ]
+        },
+        "candidate": {
+          "recordId": "D008-T39-00010",
+          "allocations": [
+            {
+              "campaign_ref": "D008-Campaign-JP-P1A-search",
+              "amount": {
+                "amount": "750000.00",
+                "currency": "JPY"
+              },
+              "lower": {
+                "amount": "150000.00",
+                "currency": "JPY"
+              },
+              "upper": {
+                "amount": "1350000.00",
+                "currency": "JPY"
+              }
+            },
+            {
+              "campaign_ref": "D008-Campaign-JP-P1A-social",
+              "amount": {
+                "amount": "750000.00",
+                "currency": "JPY"
+              },
+              "lower": {
+                "amount": "150000.00",
+                "currency": "JPY"
+              },
+              "upper": {
+                "amount": "1350000.00",
+                "currency": "JPY"
+              }
+            }
+          ],
+          "total": {
+            "amount": "1500000.00",
+            "currency": "JPY"
+          },
+          "expected": "61.538462",
+          "channels": [
+            "search",
+            "social"
+          ]
+        },
+        "modelId": "D008-T39-00003",
+        "modelVersion": "D008-1",
+        "assumptions": [
+          "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+          "통화·기간·국가가 다른 후보를 합치지 않음"
+        ],
+        "policyId": "D008-T40-00035",
+        "approvalRole": "synthetic_analyst",
+        "period": {
+          "start": "2026-08-03",
+          "end_exclusive": "2026-08-31",
+          "timezone": "Asia/Tokyo",
+          "grain": "custom"
+        },
+        "realExecutionAllowed": false,
+        "recordIds": [
+          "D008-T39-00004",
+          "D008-T39-00010",
+          "D008-T39-00003",
+          "D008-T40-00035"
+        ],
+        "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945"
+      }
+    }
+  ],
+  "modelCalls": 3,
+  "toolCalls": 2,
+  "issuedFacts": {},
+  "issuedRecords": [
+    "D008-T39-00004",
+    "D008-T39-00010",
+    "D008-T39-00016",
+    "D008-T39-00022",
+    "D008-T39-00028",
+    "D008-T39-00034",
+    "D008-T39-00040",
+    "D008-T39-00046",
+    "D008-T39-00052",
+    "D008-T39-00058",
+    "D008-T39-00064",
+    "D008-T39-00070",
+    "D008-T39-00003",
+    "D008-T39-00009",
+    "D008-T39-00015",
+    "D008-T39-00021",
+    "D008-T39-00027",
+    "D008-T39-00033",
+    "D008-T39-00039",
+    "D008-T39-00045",
+    "D008-T39-00051",
+    "D008-T39-00057",
+    "D008-T39-00063",
+    "D008-T39-00069",
+    "D008-T40-00035"
+  ],
+  "requiredCounters": {},
+  "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945",
+  "approval": null,
+  "realExecutionAllowed": false,
+  "id": "69578639-c622-4b4d-8800-fbd4a35c7d92",
+  "version": 7,
+  "output": {
+    "simulationId": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969",
+    "action": "reallocate"
+  },
+  "simulation": {
+    "id": "8589455a48e6c2538f707d36d3040dd7b388cb152b3f7ad3dec63e81e5040969",
+    "kind": "assumption_simulation",
+    "baseline": {
+      "recordId": "D008-T39-00004",
+      "allocations": [
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-search",
+          "amount": {
+            "amount": "525000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        },
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-social",
+          "amount": {
+            "amount": "975000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        }
+      ],
+      "total": {
+        "amount": "1500000.00",
+        "currency": "JPY"
+      },
+      "expected": "60.500000",
+      "channels": [
+        "search",
+        "social"
+      ]
+    },
+    "candidate": {
+      "recordId": "D008-T39-00010",
+      "allocations": [
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-search",
+          "amount": {
+            "amount": "750000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        },
+        {
+          "campaign_ref": "D008-Campaign-JP-P1A-social",
+          "amount": {
+            "amount": "750000.00",
+            "currency": "JPY"
+          },
+          "lower": {
+            "amount": "150000.00",
+            "currency": "JPY"
+          },
+          "upper": {
+            "amount": "1350000.00",
+            "currency": "JPY"
+          }
+        }
+      ],
+      "total": {
+        "amount": "1500000.00",
+        "currency": "JPY"
+      },
+      "expected": "61.538462",
+      "channels": [
+        "search",
+        "social"
+      ]
+    },
+    "modelId": "D008-T39-00003",
+    "modelVersion": "D008-1",
+    "assumptions": [
+      "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+      "통화·기간·국가가 다른 후보를 합치지 않음"
+    ],
+    "policyId": "D008-T40-00035",
+    "approvalRole": "synthetic_analyst",
+    "period": {
+      "start": "2026-08-03",
+      "end_exclusive": "2026-08-31",
+      "timezone": "Asia/Tokyo",
+      "grain": "custom"
+    },
+    "realExecutionAllowed": false,
+    "recordIds": [
+      "D008-T39-00004",
+      "D008-T39-00010",
+      "D008-T39-00003",
+      "D008-T40-00035"
+    ],
+    "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945"
+  },
+  "proposalHash": "e5d0d91aee116cd859e9097e9284f7731cd2349c9ab537d855ef348b5a52313f"
+}
