@@ -14,7 +14,7 @@ const eventNames:Record<string,string>={scope_validated:'범위 확인',quality:
 const toolNames:Record<string,string>={market_compare:'시장 지표 비교',relations:'관계·반대 근거 조회',evidence:'원천 확인',budget_inputs:'예산 입력 확인',simulate:'현행·대안 계산'};
 
 export function AgentConversation({screen,evidenceIds,metricLabels,selectedTitle}:{screen:ScreenSelection;evidenceIds:string[];metricLabels:string[];selectedTitle:string}){
-  const [client]=useState(()=>createAgentClient());
+  const [client]=useState(()=>createAgentClient(fetch,import.meta.env.VITE_AGENT_API_URL||'/agent-api'));
   const [question,setQuestion]=useState(''),[focus,setFocus]=useState('price');
   const [pendingQuestion,setPendingQuestion]=useState('');
   const threadRef=useRef<HTMLDivElement>(null),inputRef=useRef<HTMLTextAreaElement>(null);

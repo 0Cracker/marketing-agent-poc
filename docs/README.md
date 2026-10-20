@@ -5,6 +5,7 @@
 | 찾는 정보 | 기준 문서 |
 | --- | --- |
 | 실행과 폴더 구조 | [프로젝트 README](../README.md) |
+| Vercel main·dev와 로컬 AI 연결 | [배포 설정](deployment.md) |
 | 버전·원본 커밋·통합 이력 | [버전 대응표](iterations/version-history.md) |
 | 현재 v0.4.0 변경·검증·한계 | [v0.4.0 일지](iterations/v0.4.0.md), [10월 20일 최종 반영](design/semantic-changes-20261020.md) |
 | 데이터 기반 v0.2.0 | [일지](iterations/v0.2.0.md), [더블 다이아몬드](iterations/v0.2.0-double-diamond.md) |
