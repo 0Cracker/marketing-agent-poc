@@ -40,6 +40,12 @@ export function applyDemoOrderFlow(records){
  const byId=new Map(records.map(r=>[r.record_id,updates.get(r.record_id)||r]));
  return records.map(r=>{
   if(updates.has(r.record_id))return updates.get(r.record_id);
+  if(r.dataset_type==='T18'&&['purchase','refund'].includes(r.event_name)){
+   const parents=(r.related_record_ids||[]).map(id=>byId.get(id));
+   const parent=parents.find(p=>p?.dataset_type===(r.event_name==='purchase'?'T19':'T20'));
+   if(!parent)throw Error('Missing commerce event parent '+r.record_id);
+   return {...r,quantity:parent.quantity,event_time:r.event_name==='purchase'?parent.ordered_at:parent.processed_at||parent.requested_at};
+  }
   if(r.dataset_type!=='T30')return r;
   const parents=r.related_record_ids.map(id=>byId.get(id));
   const gross=parents.filter(p=>p.dataset_type==='T19').reduce((n,p)=>n+cents(p.line_gross_total),0n);

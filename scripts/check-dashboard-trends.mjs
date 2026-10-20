@@ -11,7 +11,7 @@ for(const r of records.filter(r=>r.dataset_type==='T23'&&r.order_ref)){const ord
 // Rerunning the projection from the preserved original must reproduce current rows.
 const provenance=fs.readFileSync('data/provenance.jsonl','utf8').trim().split(/\r?\n/).map(JSON.parse),archives=new Map();
 const provenanceById=new Map(provenance.map(p=>[p.active_id,p])),recordsById=new Map(records.map(r=>[r.record_id,r]));
-const baseline=records.map(r=>{if(!['T19','T20','T23','T30'].includes(r.dataset_type))return r;const p=provenanceById.get(r.record_id);if(!archives.has(p.archive))archives.set(p.archive,new Map(fs.readFileSync('data/'+p.archive,'utf8').trim().split(/\r?\n/).map(JSON.parse).map(r=>[r.record_id,r])));return archives.get(p.archive).get(r.record_id);});
+const baseline=records.map(r=>{if(!['T18','T19','T20','T23','T30'].includes(r.dataset_type))return r;const p=provenanceById.get(r.record_id);if(!archives.has(p.archive))archives.set(p.archive,new Map(fs.readFileSync('data/'+p.archive,'utf8').trim().split(/\r?\n/).map(JSON.parse).map(r=>[r.record_id,r])));return archives.get(p.archive).get(r.record_id);});
 assert.deepEqual(applyDemoOrderFlow(baseline),records);
 for(const p of provenance)assert.equal(sha256(JSON.stringify(recordsById.get(p.active_id))),p.record_sha256);
 const vite=await createServer({configFile:false,root:process.cwd()+'/frontend',server:{middlewareMode:true,hmr:false},optimizeDeps:{noDiscovery:true},appType:'custom'});

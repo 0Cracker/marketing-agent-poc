@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "date": "2026-10-20",
+  "base": "ef24930",
+  "cause": "T19 projection omitted materialized linked T18 purchase/refund event synchronization",
+  "changedType": "T18",
+  "changedRows": 1507,
+  "newRows": 0,
+  "newDistribution": false,
+  "dataHash": "56da2cdac07ed56062c38d225c6406a2f4a494fdbea73aed35dd2b95260fc415",
+  "checks": {
+    "linkedPurchaseEvents": 1712,
+    "linkedRefundEvents": 84,
+    "countryProductChartCases": 9,
+    "consolidationQueries": 328,
+    "sourceReproduction": true,
+    "idempotent": true,
+    "lintExitCode": 0,
+    "buildExitCode": 0
+  },
+  "browser": {
+    "country": "KR",
+    "period": "ALL",
+    "beforeQuantity": 458,
+    "afterQuantity": 887,
+    "reloaded": true
+  },
+  "remotePublished": false
+}
