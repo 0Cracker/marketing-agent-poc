@@ -1,2 +1,10 @@
 # Validation manifests hash exact bytes; checkout must not rewrite line endings.
 /docs/research/marketing-ontology/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Current manifests and archive inventories verify exact source bytes.
+/data/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/frontend/public/workbench-data/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/docs/design/data-separation-validation/d003b-baseline.json -text
+
+# Preserve historical command output without rewriting report whitespace.
+/evidence/** -text -whitespace

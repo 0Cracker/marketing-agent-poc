@@ -1,0 +1,217 @@
+{
+  "at": "2026-10-16T05:23:39.934Z",
+  "ads": [
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "22px"
+        }
+      ],
+      "documentWidth": 845,
+      "width": 860
+    },
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "22px"
+        }
+      ],
+      "documentWidth": 685,
+      "width": 700
+    },
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "21px"
+        }
+      ],
+      "documentWidth": 505,
+      "width": 520
+    },
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "21px"
+        }
+      ],
+      "documentWidth": 375,
+      "width": 390
+    },
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "21px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "21px"
+        }
+      ],
+      "documentWidth": 305,
+      "width": 320
+    },
+    {
+      "cards": [
+        {
+          "overflow": false,
+          "text": "광고비KRW184.5만",
+          "unit": "KRW",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "노출수회184,301",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "클릭수회3,689",
+          "unit": "회",
+          "valueFont": "22px"
+        },
+        {
+          "overflow": false,
+          "text": "전환수건115",
+          "unit": "건",
+          "valueFont": "22px"
+        }
+      ],
+      "documentWidth": 1202,
+      "width": 1217
+    }
+  ],
+  "pie": {
+    "distributionOverflow": false,
+    "documentWidth": 305,
+    "profileRows": [
+      {
+        "label": "가상 자사 제품A",
+        "overflow": false
+      },
+      {
+        "label": "가상 자사 제품B",
+        "overflow": false
+      },
+      {
+        "label": "가상 경쟁1 제품A",
+        "overflow": false
+      },
+      {
+        "label": "가상 경쟁1 제품B",
+        "overflow": false
+      },
+      {
+        "label": "가상 경쟁2 제품A",
+        "overflow": false
+      },
+      {
+        "label": "가상 경쟁2 제품B",
+        "overflow": false
+      }
+    ],
+    "width": 320
+  },
+  "errors": []
+}

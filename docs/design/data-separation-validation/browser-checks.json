@@ -1,0 +1,323 @@
+{
+  "at": "2026-10-18T02:13:58.131Z",
+  "walk": [
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 현황",
+      "empty": false,
+      "main": true,
+      "rows": 10
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "구매 패널",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "공개 경쟁 광고",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "기사·발표·사건",
+      "empty": false,
+      "main": true,
+      "rows": 18
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁 활동",
+      "type": "경매 경쟁",
+      "empty": false,
+      "main": true,
+      "rows": 4
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "공표 통계",
+      "empty": false,
+      "main": true,
+      "rows": 1
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "외부 환경",
+      "type": "날씨·휴일·시즌",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 원문",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰",
+      "type": "리뷰 주제·감성",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "검색 관심",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 수요",
+      "type": "키워드 수요·비용",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "VOC·문의",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "브랜드 조사",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "성과",
+      "empty": false,
+      "main": true,
+      "rows": 4
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "세그먼트",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "운영 설정",
+      "empty": false,
+      "main": true,
+      "rows": 4
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "소재",
+      "empty": false,
+      "main": true,
+      "rows": 4
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "자연 검색 유입",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "웹·앱 이벤트",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "구매 단계",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "사이트 품질",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "판매 요약",
+      "empty": false,
+      "main": true,
+      "rows": 2
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "주문 상품 행",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "취소·반품·환불",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "원가·마진",
+      "empty": false,
+      "main": true,
+      "rows": 2
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "고객",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "CRM 캠페인",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "가격 스냅샷",
+      "empty": false,
+      "main": true,
+      "rows": 9
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "프로모션",
+      "empty": false,
+      "main": true,
+      "rows": 18
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "재고",
+      "empty": false,
+      "main": true,
+      "rows": 2
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "유통·배송",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "콘텐츠",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "댓글·언급",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "크리에이터 협업",
+      "empty": false,
+      "main": true,
+      "rows": 12
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "예산안 비교",
+      "empty": false,
+      "main": true,
+      "rows": 24
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "실험",
+      "empty": false,
+      "main": true,
+      "rows": 24
+    },
+    {
+      "domain": "예산·실험",
+      "tab": "정책·승인 검토",
+      "empty": false,
+      "main": true,
+      "rows": 1
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "수집 상태",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "변경 이력",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "제품 기준",
+      "empty": false,
+      "main": true,
+      "rows": 6
+    },
+    {
+      "domain": "기준·품질",
+      "tab": "식별자 연결",
+      "empty": false,
+      "main": true,
+      "rows": 25
+    }
+  ],
+  "mobile": {
+    "cardsOverflow": false,
+    "pageWidth": 375,
+    "reviewRows": 6,
+    "width": 390
+  },
+  "canonicalPanel": {
+    "recordIds": true,
+    "sourceCount": 100,
+    "canonicalFields": true,
+    "asOf": true
+  },
+  "csv": "Browser downloaded D007-T25-JP-2026-08.csv after searching 가격; full export independently checked in query tests",
+  "returnedToD003B": true,
+  "errorsAfterFix": [],
+  "latestErrors": []
+}

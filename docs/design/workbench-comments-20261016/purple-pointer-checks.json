@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-16T05:40:58.192Z",
+  "tooltipA": {
+    "position": "fixed",
+    "x": 723,
+    "y": 435.703125
+  },
+  "tooltipB": {
+    "position": "fixed",
+    "width": 230,
+    "x": 761.015625,
+    "y": 436.46875
+  },
+  "moved": true,
+  "mobileTooltip": {
+    "bottom": 412.765625,
+    "right": 310,
+    "viewportHeight": 844,
+    "viewportWidth": 320,
+    "x": 80,
+    "y": 362.765625
+  }
+}

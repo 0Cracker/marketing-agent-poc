@@ -1,0 +1,7 @@
+✖ H01 session describes offline mode and blocks foreign origins/host rebinding (55.9925ms)
+✖ H02 no token, wrong token, non-JSON and invalid JSON fail before mutation (7.1601ms)
+✖ H03 analyze -> followup -> budget -> approve, no raw execution internals disclosed (5.9698ms)
+✖ H04 clients cannot supply approver, adapters, provider keys or arbitrary methods (4.6931ms)
+✖ H05 existing ID reload, missing ID, stale version and rejected handoff are distinct (4.5529ms)
+✖ H06 oversize requests, forged context and unissued evidence do not bypass validation (4.828ms)
+✖ H07 remote session exposes model IDs only, preserving real Ads and request boundaries (3.9604ms)

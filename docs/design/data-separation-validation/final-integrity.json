@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T02:22:32.628Z",
+  "pinned_source_drift": [],
+  "source_file_count": 45,
+  "selected_catalog_sha256": "4318b1bdfd8013a3bc58f55683ba1c53685bdbce11b4b94d3fd839b4a17727ad",
+  "catalog_hash_matches": true,
+  "browser_csv": {
+    "bytes": 33649,
+    "rows": 114,
+    "hasCanonicalReviewIds": true,
+    "hasPriceAspect": true
+  },
+  "head": "4d286c505e8ac659c1d839b257631ef7280f31d6",
+  "final_checks": {
+    "baseline_cases": 496,
+    "standard_cases": 123,
+    "browser_types": 41,
+    "typecheck_exit": 0,
+    "lint_exit": 0,
+    "build_exit": 0,
+    "schema_hash_matches": true,
+    "final_browser_title": "마케팅 데이터 워크벤치 | D007",
+    "final_screenshot": "d007-final.png"
+  }
+}

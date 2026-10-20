@@ -1,0 +1,2988 @@
+{
+  "contract": "workbench-model/1",
+  "cases": [
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "aa9482dcec7dedfda846c9c0b6c60db8486c59fec7803db0fdec3f2f7daa830e"
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "321df8b735d0066989ed143341ec697ecf07ef7126a1f642ff41ced82aa37ac0"
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "b3bc2f1fb15dd6ded861fb87f083e1b9e54aadba9beabfcb3a2847bb5a7dc94f"
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "a85c5867c52cb599ed4df3a7e514985d83b5bd90f05390aeaaaa224557c02de9"
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "9e7f23b5ff07fa5f8f454c46cdc3951d63d2a111958860ed25e86cd1336b41db"
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "5f7da6a07bd684318d23ec3b1e8413e919dda39e62b832d9720963784e4bf35f"
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "773f566e4eeb024a8efc65e98e132e3c89f2058ed2c78afddab791bbc94fe309"
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "1f0f04e09d907c561f59bc4d8445137e92c78eaf075a7df7ba5bd06194415bab"
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "b6961ccf741f0c5e149d0a11861d2b8aa2bfeedd2d6d55d9c334e5120ca0c455"
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "101fb7c6c78c7692297c62153e402aae45b6f2437025537f37c556ae76b63100"
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "d13cd63d5a70f667fa71be00e4a4c1e665b499dee45e5e901cf0ee9baa54a77f"
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "dbae4e5fdd0acb9c38c70a701070eae8cd948312039630dada8cebe31995282d"
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "92e4f5351f91ba12146ea7b3ed18dccb1cc67aedafaaae45e9717f5729c66f27"
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "39ce3a65b993938ed71d4eb1df9544e17eaad5ff062f757cd255d49bcdc7031d"
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "4d4b9efae37f1af9008b7a0b804beb750a2b61daa155d07e745b0d7682cabc21"
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "0c28af3b48027c01890150c676ec0142b3b1da8d8cdc4136abe2f4299bbc4940"
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "f06fd4bd65d7189cc1e7bf9319bf93b0487f568413c856e7f6a7c6da31d871af"
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "6e22736740375af2d090108f3b1982288286e2ab3777f2785c1262c8f7a94f7c"
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "3abbdfb67cab2455fa473a2df355fd55247568f855423460bd195b47e2dd7534"
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "034a3cbedb3c48ab4a1f6f27d85029ced0d2e7cf2ab7a6d8158d2a5ff90b6ab1"
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "68a054af1f91d1de1482b2a26ddb8b875a5a37d4c99960c6b27590d208da126d"
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "f67911f84cd220b4dc00352497433be4a5347a0f4e19da8bb6dd22477c14195a"
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "350b825b716f2068b1b39ba13d9171d69c53eabf0f551662bad6adfd66f2aa28"
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "586caa0e80b74ff0570e32b9b65e5fe36e35f43a7cb61f7ec8f882d618a873cc"
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "eec467e5ed4ebd81326b4c93612abefe091bce8ca85db07c7740194645fec4a8"
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "daeeda4f64f23a9257a879040f79e1b864e80a450ff1a8f6268cccc2c31ff05f"
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "e07ded637790621a8a65119497c5c336ffed020f70801c2604777de3bd478ae0"
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "67b7165ba0b60ab08d3856b24589059121b9e0eada67177c386bd652c604b1d6"
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "6e0817663b86046cf308a5b4b07a1de43f3d9216f9a08c0dc69e0d18869e996d"
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "b26b4d600728eb28cf61f45dd32be45eaa846dd5c51fd9611d2e240f5fbdb8ad"
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "ee859f0a90182ad1daeb5995dc4d641d08a84d9943fed54c90215121d59f36cf"
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "06770e7e7cd95c527d606d07d1abe4570cff1bed0116e8febeca83ab7225bb6b"
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "31abecddf9541076863c1f9f5625fec2b430f24203ac94c7aa94fcd69f5b5757"
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "d8f851b7ede40f0d442500baa7a3a722aeeae8b3a91844adddb780046153a1aa"
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "d375a916e0ba78b011ddbf3a0c97c47a877fed402e7701e31c9098a030e186fe"
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "c240e2b881220078388513b93dfb4113bca7aece37371533cc6dd07c50c7dea4"
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "c75f68dfb54577ce1dc9e9e84dc48a215bff6cb8f9eeab987e75fba1b8a6f2d5"
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "5fa99e4e9caf63c209d743a09c4e011fd8f1a99d3ecf3d2b4b831e7371f64c45"
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "e321c3fe7c1b358a96eafe04b63dd96cbcc85562d57d0791b7e9ceccdb298f0c"
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "5634eae4f51cbcecbabc6e0135592178356dc967eebf7aed3d00f146108d768b"
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2025-08",
+      "sha256": "497e9fc4cf4848f8bdf6fac1e1f2a1e938e529327b92c62be04aebd0d76a2dba"
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "3bca2f9e4d65d5bfd3c2d48ed4dccbdad119084b83fc64b5a4f55c1eb71790fa"
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "38dfb0a0df5af68e5f4c6a27c55824ff6d2f6c2bfec3faf2a9a471286892cb9e"
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "86d34fde7ebdcda8c38cb440721cff8f17dc694703ff16eed4ae6d39f2668cae"
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "cae2425816c9ffd2ed828d0893127e8fec88084064b240831613e27a85086225"
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "04a5b190cd334c2778bd0edb79539a2184aac826c6eddbbb1b48f2daacc50bab"
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "4b6a69bd0782e7e76db5f9b217e99c51718f05350d077ada11d5e4f29199e832"
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "5f8dd678fd92c9bc9f58f7a94b8f4ad6cbe5ee2e31e2972135f41cfd27c987f3"
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "8ab7d130bf6f2c8b50748fe77c052c1511e28cd0e1b35d61be9dbdb2a074c329"
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "e1fdd4dad8e83b4afa76792b294701cd73c12e709d5f5d2a3fed9def16a76652"
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "47e769f2786aaecb73bb948451d80f8d7678ba8cc5365b57588bd104ff64e52a"
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "2b40440a0b7260ccb04c8808ad7254cfc06b8746985b59758c2d2f19316a52be"
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "812be163f07fcc2888f4e9d7bee416dc7c5832718c51c29da2352e9ca86b4526"
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "3ebf4d26705102bbee5766918f0d3af5ce1b3a8a0469b2490bcbe5177602abbc"
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "a0fe5cf0069b8a0a054c16f1aae9879f29d5b976e95c14a4ce799494d23bb05b"
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "ae1adba8dcb262fd236ae31c00622963363f17ae6f19f278018d4b97346e5889"
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "013fc6ff675bf3f483e4c365a9be452f822c033540f53f8c69a59e5288fbad65"
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "cb30b1d58e6b66a583e295cb6afb8b84caa0d6baa5329c9f7a53543cb58e6d80"
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "877370e8d3c673e867518a8045656844197f37e99b0ea01f7959632f42c0f6e8"
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "06bbb6fe85e42e699eae93226b558a7c06985d919e66818f87bf9f4b31aa81af"
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "e9fbc6d27625e86f7269df447f5d73fe67cbb02b7cb30e809762aebb8263d447"
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "d3ae5adee93285d84cf80f3b4116ee07f897a5a29088fcd4a2b417d4e08f2042"
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "791d469965fea3aa82af3cbf4eeb4f100d12dd8083cebc4a957a3f61cc8940eb"
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "26df61b505772ae567e55cf4cc686348c1e12016638062033864c7794d225c6c"
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "e2513bfedcff4764f6e0d789f69553446116bfe8682496568eacedaf56138a87"
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "d9dbebd9970bc28f1e198ed6ea1fcb327ee811f35ddb15499537a0ab45329825"
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "8d2fff15eda2bc2dadf68e3c5e01588dab647b94f409f3b5a1e7c76dd494c92e"
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "d95b6398d86e0c9821c608cbbf11cb3b46b070edb0e38779dfbdc3b35dba2cde"
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "cb7cebd03b1108c9e6be5efb4817326af30603d3a172bd443b28247b05d7a7da"
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "38a1d3d15b33bb4287a4653041d76262889dfcbb70f94745050aee81046ed352"
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "4451923cf05b4f2d4bbd573f4914de44281086e1783c558e17f8731fbc70f055"
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "3a39fe35611cd3b3d44efe13335621d55a17fcbde13796a969c640891bf862af"
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "5cb44f1c0ba82965be800cbc852a46fd7333c5cb7973197d8b28fcc025bd03f8"
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "ce2d04bfc0b1847c83679061d7f65365242410fc30108388809111e279c600ac"
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "3cff9b7f8e5b609648528340c00f48bfe41931d57773c8e91eee9420bb8c68ac"
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "f04d36629baeede2111e264c0c9702eaa7ba71ab2ef4cf08733a06b4752bd259"
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "005b2caaa496549ea6e8d548defac8dafab0070f377e3659905c3df10c9ffdad"
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "5e75120b1ebeee8429aa878d441e47786108ee884a7bc5e4c2b592dada115a47"
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "885c172b6c8d6f74988e95d2e0435799f2a3e52f1ffa0466040f117b7eb8af40"
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "cbcc4b49ad20f61ec8f67511b6d0495818b618a3098751f6e50c1f598dcbb397"
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "9ece19057edd994a3af90e4b970d3f92adbc61240b371f7e3e14df29392b7ba6"
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2026-07",
+      "sha256": "16dfc5ae3bd2ba562c722beaab73cc44421cc581f49563a3deafe105871cbe9c"
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "f593b1cac914857da49a085ee10770afac701c2203bd82d9f4b4861658ed520a"
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "a6c186a88807f6b726d047a708b4a578bee1024fa4ca1389b0803069d948ece3"
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "ff75213233426db9e7ded613c374e9d8fce639f8bacd2a9f2e8d176608d34a06"
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "4db1ac827309ebb22b6eada5dfba675b2fae2a778af12989473a6b9d377c0287"
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "ba83ae3b169c8622785bf255d87c705ede7f1524a8191fb880c2493c513cab54"
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "d742693661da9579592bf099036ae8f2e874b46b5cdae2ee96566cf49ebaddea"
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "2b78be596b2ce275e5383d5dc93fec4d0a4605aa43949d3455f40ef376aa5061"
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "b8ebea777200fca82bf6a4cb3ae13904315c13c8f69883d04a9b66603bdecf75"
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "1f2c7dd727ed8e833807e2ad2c412207c802221883a5d7b4fb06af146a0805de"
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "1923473a4c0966a0350e266c558b45aef131fd23342420dc6e8bbfc0b8a50084"
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "327b472de6c02d5cba346283ce620370f165b0912476bf689c96d310201a0358"
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "fe2c7c2f9583d6641011aa1a92473c512ba222a589a2500307f0118bfe084e09"
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "7b377eb879727bec6d53d54c4c21de8d0552d7f053ba2ee203a48cbcacf253ea"
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "a0e6061728d0749daebbc79cc21622bf634c7c919bb9009362827a52c0834ad8"
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "5bd48f9300aa874eac4e19911818e78c928f926aae8a9680a03d7bbf98ca1f7c"
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "7b5905191be649ea6692f0a35b1e0686d6878cbde791bbbc6babd63daee3f21f"
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "5b260db1868d6822f253654766e55815d8d687979c48e45abac428f13ce552c4"
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "9e72d5d5cc26e81c32b176178df94de130621d74d07933da4bb4695ea5bff67a"
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "920c0491c68b5429352a7c26921fbe64be4a491cb7a1a582ccc89209f5361caa"
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "31321f3cc307d0645fb475556ff656f98f2f77a23615963158a574ea537f9619"
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "27c085c661fb74d76e4b4b77e608c8e4df8af384bcea76b27634a4cf6529d226"
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "06798ad22803c829b181518cb3e0347d0a6fcac2fc3f5a2f453239ba4388b369"
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "86dd3aee039dd5e512cd8a4d1ebc5156bd69e884e156bac24bbea98e2f602987"
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "6dbdebf67820bb176048c9b4130d3d602bf2f6b03aaacc1564525be71751f481"
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "7fd7642ea0ecfbf3a45ebb1f6e3a25491658071cd7ffde671f0293ecbdfc3f85"
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "cffe6e7ccfaf45127facbe82fbda0c19e42aa562e5179ebc8c0d4ce484bdab4d"
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "8fe0ca37cc9022c7cbda5e22d13dbf9f162be699a83da47f2ad9c23c47f825fb"
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "847c2b3764556d8511eecb6e224694a6fbfec18250527e8097b6048e95f3fafb"
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "66126bb15ea8c0220632ab7f0137b6e315b7bbccf98d5069e762294fbbd95bd5"
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "9f219abc124ac01adc97a501dcc4d4cbf80f875759614ad260bd4321cae6141f"
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "b6cb226000c0aa6deccb2b695116f5bed3fa5c20ad050f8c1b22b99383ab102d"
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "832cd899abb66135ec1fd8dff254c107190906a933215c883ef10e6f226a013a"
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "c8884a03c8d7fcbd5df02342b33f686730aa6764a757cf13e086f63ec8ef001f"
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "bcab6827ecda0096b243e691b6d6fe216ff908250915aef78511d4793f462e6f"
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "62e723a3b4506896da0eeff71ced0b9b65eb9bc63a7fbcf7247ab4c7549b988b"
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "1756505e15de0e288215695c8bc5b3c238b94d463bed6c742e75efbbcf7b7d3f"
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "af6753b616325071cfe419af46921e74d81861167fc1a3cf329745a7188c7244"
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "821c86905045b3550a0be2f15dcaf215add6866f405ba45998ab8a98a5a51403"
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "a91f2a37a03f48a326c866efcd6ffb1c933f6e7c48f6b7d5a03bae2ce2abc4e7"
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "5588069143c6ea903512edaeec5f485b3c6c5ecfb5cbe2d5f0b5b22a86d1ef7e"
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2026-08",
+      "sha256": "788e9b903c66f65d32142710b70632272d10ff31abba0f7ceb9b67b5b4e308cb"
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "ef858b2aa05b244849a5a1e80a916cf217a126d30b07cfb65ab79214700e117f"
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "7b2266c75f72d4993ad2141903cac9d760d7e1deafd5817f4122a5bf2186d8ca"
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "351afe03a1682e57973469f98cd5ccc7ba3e1003f1a1fb1dbc66d5dc2881094d"
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "fe7e8ca6aca84ed1956e7c86b714f4d57b4efdf5a96b052551a1ef3e9ed0ca4b"
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "064bdd6c744d363d33b156520add90cf21d43027196ae1792d861d620a439789"
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "2169f905c19dcef390964b832fd54af083b9ed88fed85502bc980676f01319e9"
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "b262cb63e7c25d9ad733249b2f6851f89be3562c4c5429cb8df94c44dffa69a5"
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "950cb6fb96f5c8bc98e0c8fdb2dc9721ee71500ffaba06190fe9293ab52a13fe"
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "5599829f760dfb925ee54f3e0391a8d621e21a74558c842156a10e4e71491b81"
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "f76c5bc2d437ec429cc50a2b6c03a89468bb3c78122c229071f90f97d0ecaa81"
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "3e7428fea7200628b855ab6e981edbdc06b7026068931392cee1db03dee873d5"
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "fc5c9dfca6c85d1cb600048f322e73ecb8469dec986fad5a731eb59dc55fa862"
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "591121eeff2c09b3867c51a65f89a04be5710a6dc0012614abe39321bd7d01a1"
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "2772f78c0064a6e9d87949d82c5a3347fdbfc212ea819b3c7cdc100625e0c3b1"
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "3bccf1c7e3cf82878c89a62bfe416366a99cd6c3fc56f903a8397b95c6142076"
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "7c24214a8346c50fc59d0132f89467f3ad4cab11efdf9d83099aaeb76ee8ed6e"
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "05531f54353734c2acb38f7032cee7136f5b6f6db6c8e3f2385997a20593da47"
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "f851adcf550f84a2369ca7d9f7831a64ba93fbabe03690c4dc7443d45e948037"
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "aaefe4cb3e3eae8142ca6b93247b7feda602bddb82ac125217bbea46f79d4897"
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "6b1694c04cba5c4acbb0cec9be978d8841c588e441f7a3d1b8b7346f96406d4f"
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "59370d724090a2fdd6af52f421b1e1a256a914303c1f7baf02d7f5b9193fbf57"
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "9d184d193c52e528fb7c824836112b14c6029e12016ee7f0cb2b1dfec4b87250"
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "d12832c41e08b482346f4d149bcd737f79c0dffaaa3482f02a29b3512f664555"
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "6fae978d436e36e0425a9ed5ddd268b3fff15cc90c02927c78c3ff469e540db9"
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "a05c127aa4d1cecbf804b42da4a943abe29ec81b3c3befed82a9d480a298f3ec"
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "7ea3b8ebc4d6f6f7437b4fc917fc276596a5e9a124a364dc7e2dc57289d17c44"
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "d75025fb543166bfcdc507e8f2fbbe3f7174618a3e68fa528be53a8f0116ee36"
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "1086bb40834b44f90c868309dcb50601d0d8e800587f8f041678b20cbc6a906a"
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "749a6556869b1655dffddbabcc1be629838a70647297a56a2325c8636ad4ffed"
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "59dea5396b66bb8e86589644800a7911a96ba59b4cff8626dfa10c8465fecc19"
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "c72b225c7f263a88cd716b470492e2c966fde3a80bbe0206c7a4b2a3b1b630c9"
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "ec018c390301136b88bf2089df7e54411d18a38eb072005b02f890405c1d4c11"
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "54391bb45ef14682e332ef57944a29ae3e909e77622c0e4b3f3d20ca5322008c"
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "2a4703a7502682a547f0176292395dcbeddd762393b984227ebbb4f47d60dda7"
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "94536d3067d1a76d8a1926a669f7204ad82d6fcc34d6d8041dc699ef620ccb0d"
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "99f6f4622b915e514cfcbe98f11b580a535f2762d750618aa6334750bcb04ecd"
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "6449ef4d6f1249109a9cbc1296c40a0e6cb8d2c1d8735b1e6c054391d6da52a8"
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "d30837967183d4a1db601e0ad9374a951273872b7b21173f3cd0a6f41b6e1be3"
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "527a528c5f9575a2bd3fc5dc79bfaa384c897fe66a89172983c60d4b8b20dc3c"
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "e358b30fd7660d500f3533d8bf0f33ef856adb51c9bf4b1b0dc8b51b20d7d073"
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2026-09",
+      "sha256": "be9c62b31fc0c1ca810fa1ce922754478f550ab5bcccd2d6d2dbb1f202b97f6e"
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "96a9031cdd5c336c495f59336f072f718c21859d0ac8c6ba8e8fe8faab136413"
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "272450034675b91537582a780e99c433b976d663a44c75972f4f46946d234ded"
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "843b19f5c4ab8587f20faad5d37b0fcc42fcbac31a98808bacd920e9615dc945"
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "8cf2eb4369c39f385c5b0d81275cc81ca2504e43a2dea9cbb5fac86fad2b80e7"
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "dc42409c33edaf08d07fd7eac4fe74af116d3a3356bc5f0aafd1910f0aef5055"
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "7f0afc41c25dc7726f4f6a92bdbca43ddd15f1fa30cb6f2be0ff7de896f5b0f8"
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "37486704ec22bf82300c1c6a87435b8ff406597fbffb8cac2fb0490ea5a35870"
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "54775dd7cd5e99c48945177adf7fb42fb885affad9e5636e59b9c353e67db260"
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "d1962525ed7ecc30d670a3b5a4e98b2de13a6613a9eeae64c7cd92ab5ecc6c5e"
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "570ced1451bcd782a7289d375eb0acdcad63009e389e95985b1b2e4f6f4a120f"
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "80ac958428614422cfbd78e8a926d9037355f1e99c5b8f43a21df0707e1353df"
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "18d5eeed39e256e4026edc692f1551cc70bc2f2469e62ca9dec179cc69b55dbe"
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "ab35426aea0e76188aeccfc0cd7f2aaee29276f689864047800e9f5496d0cf6c"
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "92465dd36de355f4aea0a8e09031c893a118e596c585bd33d1030fbee60b4341"
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "82501037eaca7d153cbffb7be4d68572a9131c25e55a87e9a27f6ee899ba85d0"
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "7092f0124b824452cede0dc1dd3d2c71d61a40e37f12ffb504c700edc3e1008b"
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "674e348dac5bd9a5610fe1d5a0a4822a2c7c271e16a7a8285ffc83497bf93b84"
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "89742dc6e3a0f46ff70d3a2d545f13699159cf7b1bb41da2372ba2d2b82adf15"
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "4a9e0b7a22cd847ddb0dd81224b8869785e139efff9cd11b8cc408a09a08b82b"
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "789d2161196eeb5d1fafa67b289e3c3f8bee85076790d5a86d4396191b8b1ec0"
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "0687d44415d22cc278a4911aa535eb614b829f23cbed4e7203f82cc0b7afc747"
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "37833303da28301425d6612472d549304d863aa43218bcf1c1d5ff236c3d785c"
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "bbda5c22c27487fc649ef03e8b591aa5907a1da661c895dc22f7603a2b283597"
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "8e428d68d9dc584400872a3f556839e78456918050f758be9c89011f762e421b"
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "9b5881143a6fc56a860537b1b98bde7c49e1324468dee291ce9c91c7f40663cb"
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "65ffb3d0cf00ba617d95d97da72e9f001afa30ecf8cb0580fa36c96a931a300a"
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "9acd33712c5f6fc64d2e211ea5e6459b2676dd999c203565694dd235f45101db"
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "c3e0bfe0c4c3cd3309d7f611e4daa1ea2657a5e9d1c06007c4fbcac7220b1f4b"
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "61514ccdad2c5ec04afe3be599513b30038c9c7a36886ed5af8b780433700804"
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "39ca5873b8bc650a21dc78db862b353ec22db8e2bd992229d534cdd086fed474"
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "db253f52e66223f55320a40c458d5a1303a7e8500159985b319a4f75aab36684"
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "2d7d3a05c1f778519a5cf5dc00da2fa9dbfc97a1a45e97d6be50726eb39028c2"
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "7c601acf84e5de95641d0ada765ba07ab4d0240a72431f9dfdeaa7b25ca50592"
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "06ad782eb87f0e7bbe2abf37807b00963595f0dafd7856ec34a22272ace3c9cb"
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "3c2a5e344d77ea749b0780b9d2935f9d03591e035273ec7d3aff0ca4d6a1ec70"
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "2771068352ddc74c369244b684ee59e097ec69fd95c5e4941220d2f30bfa2cb4"
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "6785ac76572c489b34c8d44e4d85e10ccefa1f04f70c72a556145e5a783d537a"
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "847d00c0cf98fc97bfe4237c8d9a97b34f084d8ed8fc6080951a5806dffec1d4"
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "b31446e43c429480fab3eeeafca74915c1f015302a6ab532e85513c91f797c72"
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "d5bf6bd9e50a0ba553e91f5f94b9b2f5e69e46139da26cbd9f9e4d7b18dbbebb"
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2025-08",
+      "sha256": "80b6a8cbda6a7ad6f6fec869b98b93c99bcce70affd94573d8d08894e4fbd13b"
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "c8149aa332053e0be164e42127fe52d372c5ca80282e6ac91e9864cd6032fb91"
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "9e063be0a3c98babf8c1b1199b0c6a1d0e6d3bc895afdd3e68132e84750f9cc1"
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "8a7c067db211c9c66422c79e26d42306f9b1797db2e7fdcfdcb2176b2a0fdfde"
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "0412f33e31e83d722dd8405ea0f25717bf6dcf830398477371a6d8604d8bf421"
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "2e877e2727ca55f8e970db22b23d7d544b283da81b359431599c96b7a80689ef"
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "19538f596c9de179ac7dd6e08ecd0f73d9731e94d46bdc7f80b1cfc5a368dfec"
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "c28083f8a397ff5cdfa55df43451cad70cf093b7cf284138c10efc39d795a0f3"
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "90985c1286086265488dce467af51f740aef73567eed4030740897f3264685ba"
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "05a2ad6cc3839ffd6fd276a84b9a9d3e5400c21064b9d529b617aba7c57d7f64"
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "10654f6a62cf3ae86a93a595f46ba298139b66f2e95fa4fe3ba23fd0cbee1e28"
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "5e73bf9a697e8296d9e379291bd3596cc14a0714cc5ebfd25ee4c8c5d71063be"
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "11a29cd9520aa2aecbaeb0fe5fa97c9a3a0ac390484c90cf3477c40b8b127f80"
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "31d8e7517cd2805ad1f43cf8c5a7e9f99dd0f4daf83222298d0a7872de7e98bc"
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "5282583e2019d63379b0a3e75a58973e8a8efc7b734b7086cc1c1c371305c0e6"
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "a21588f548aa200aa586977780af18dd728cb73ba1fb192480e1092502bc67dc"
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "8bebac957b6c341b78718421abd680edb425a644b47f148e5a81dc030dd6a87f"
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "940cb212371f50b44c67fe24f4ba237a7031b387751a95e7d3910cd8b8d34569"
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "c3133f88ebece96fc0227bfc39ed06479d1f42b8980053b67255fab258303df9"
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "e665707325c84bdb8bb67c44b10eae05ffaa375415abbd398cb6e6003699270a"
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "bd58b58901f174ced166208666ce301a80b1cca3c1a31b6ba0effef01591a405"
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "50c6c9d3cc7ac639b8e429b47255af8cc33f9ea5671e7aa0e937f51a5110fde4"
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "998c8c05402d03bb0fdef4c2a1c373aa2318e6bd1a7d48f0825f2db37c345dfb"
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "ca871ca6ec60ccf967ce52b0dd31499b790ab8e81fc44c15e91402c77cfca1bd"
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "9f709f87d1bfceb04c1a0f85e888d3b396ada27136523a3e11cdf87f42be1b15"
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "96bb879874d86ebff0347effc6c706eb1e54c197293ab6a6c0de74021851ac26"
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "065ea5b3ac13995e65223c973990472c9b782eafa538b9214813251fc065460b"
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "9a0f919553d738a62b8c0308084c94b89048bcf7908877d496f67327618e68bf"
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "4f8fb5874b63153bd2043baf16c75269c8b4d390560c1a455feb6142178aae92"
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "947ea519a2aa9e2960cfd61895d0bd3eac7dc12c55d28c59e83a0b58e7e15074"
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "70875acd36b453c86cd5fc4bd372909645f593e23d380a33a26050a082dce927"
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "38d84d6fc0c90f7f34813cd8b2f673a78d0e6e12939648d7ea7956e61fe77749"
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "66a0cbda05dab33898955cc7b7e25c9f16bd733bd275f9cbb9a6a4f6e9cba6fb"
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "966039a89c339e2f88f0e4036184d8f80f98552824e3d3aa7841618ee2ee54c1"
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "84fb5177cdba73f6f1e2e1127d208e2697d418f8c950c95091aa0f3dbb1c2463"
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "e90c232dacecdd9243460a8f78263ee3aabc735d82d500af465700b34b766062"
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "79f1c3ad6cac1092d20e138f178dd2b0b8d4d6d5539c0afd3f6f0c2a5a5ea04e"
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "cd824fc8c6add4725a458faabb2953c103e594359eb04b8377227909bdf2b6bf"
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "e115529c523287761c00f59e2d3ae43949e7b980fdacb8e542182bb9d3a9e4a4"
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "5557e06086d1ff9164ca35534834ebb5f6cbdda177577b773b2d07ea855cfc26"
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "23e0bd0cb6ca7bb27b5e83c5089c19a86601031dbf3738ea3808fcab0151d322"
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2026-07",
+      "sha256": "fd8a5abfea211a251c4d131c8bfe359f1061bacdd82b0e75da2000e8c1d18c05"
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "253cb0fe410bd5c5d35b7d3f7c2f8463612c59cc044d54392af4018aa8b9bb24"
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "db80e650e84e8e9d445aa8939e56d9f240fcca21c0d100625a26aa7ddd9d83e5"
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "6ef95a6143777321b02ce80b7e4c3c128a5a0cc228f5447f103d67fc41b06e29"
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1b15b01d52ea767b83bbc21543cc62846e8fe9bba44daacb90c727af4469537a"
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "a438b4b257b19faecad48116182fc52cb49f5c6d5741c6b5cc948a40094dc9be"
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "6a3e75c2f17a72f73688288e51e2aaa0b503be84add1ffe50ff7eeab2a4388e6"
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "3ef081214634067e29cc566c552da89021ca7a3f7812312658ad5ea045ab9919"
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "d8c214b93d3b7efd9c6caee1209da519921925d377ff1b3e2ae6514671cd9e1d"
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "93dfba128923762015a5945f52c46623ad824a39b016c0bcac24d8547207a144"
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1b913a1402c396621b401661c411cfe799959d6d880bad4b3fec990cc2985863"
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "f4132813c6244bd659c8bb92a6520d562edbc8e3413bfd5b291ecc92876a021f"
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "4342c9cbd34bc46f173f2dea6db60c562d399836e60dd50b7730ab7316f2a56a"
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "7f28d7b3026db83a9204df42cfd02d7c2ee5f9dc84352391603d2b669fd849d2"
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "978ebe7975f59eba7f063748cd14b2f8d6143171b58f62acd940fe5cf535f55b"
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "08381df43a937e70b5649ab9a7ad6ecc99e383de6bb87f6df7b54899ed7734e7"
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "6ccc7e5e545ac35229b16d8c513c082621fff90481dd316f27000af4e76260b0"
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "6fc1c45433b67e7e14688db4e9a91a32295ed0966787668d59298cd651ca0e2d"
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "5c6085193a2a50afa10243c2f3fa8648577f141a3494dbf376a2c42cab174dd5"
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1773785c5d7681e40865df1a4dcbcdc59f812e7bd4e841a2e9f484c8e0a82430"
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "436653cb4f261202f425216f61c3f647f7bd87ba937387205f78acfdf372a933"
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1f9a7771c87ee4c87323c2e305f8fd1fed3e49f12affbccf9fd93c31b26a6285"
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1e23f8666f943d8b35f8c908bd10a32bde8ec9b67e4c9f8577e318b8584bc3e4"
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "f06425ef1884cfbc23c1471626e4afaf59cd7bed0d4b3e266b51ee61408e6eda"
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "f165fe23398e319d1caed5479c97356846ec7b9b9ab51f87f201ad8842aad93e"
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "f84f1f2b7c228a448784e5fcba3477f55518aa6bb6424bee63a0e3690a84e427"
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "b9f7ca34d3915623001a0c36e205ea380288227497e0aa42fcf4cf7f5ab53950"
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "fbb6fc1857b010f57db14ead6f79999d54360393868c6cc12b5b672196873a8b"
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "6b5283c56b01bd540ae514f33e83a8ac9dcd73718c559b1c9591b22d486eaa18"
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "45352e529658faed3d04f0f05def6b1c075eaae77c005d8a53199d1fa4fc6b10"
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "54f47558929dee973130258ca653ca7bbfc511f3c5d6d4067127a6397cd36bfa"
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "55101a805d0bc1b52336315fe4d44d64cf7e5e3444d51654c69dbba01f20ea08"
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "0fde3b2206e0de79dc94b2ff04af5ac466e4d5dfb0db822904874725575e9659"
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "0f0d8e913370abf2b9a265c0d2d075291e199119a93b55d57317f74a4575123e"
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "32a57748a3843bbcdcf89d33f3081cc12b5cfae0d97ab88eb5753b3a7e934124"
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "be09b4f7e37db50119f0331fb3cea69e897477c6c2bf00e8bb36999edb583908"
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "88e23037c18470f855e7fdffc28bfdbda30b7fb759dab806c53ca793beccb61e"
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "f7087a77468cd94e646a757f9ae56f913376e1c2587d4aba8b0007a49c7aa749"
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "20bb7485a00ddabb0db6df33b814dbdea8807bc51931813a67cc9e057fbfe0ce"
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "1a2cd2bb1fc726b784b02656156d10142edaf7f26a6d42b1e8f99e0bad660d36"
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "adf8f5f9ce3ad2ece9754c25ed6368194e32b448367ffe3282289cf717f0ee8d"
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2026-08",
+      "sha256": "9223b8932621652b527ce779ddc39d03db42c5ea5569d0db8ad4d8a5aa2e57a2"
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "6cc3f9a254e944b84f4cb077d746e44b4cb0290eb835bfeb0d3ee4fe62b95420"
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "00055ed2b940529c94e36ad8542f34878fffc15f71314ddbbf91ca875e62d753"
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "95eb9cad8bd4072f8b2f8692ff01edcfac733694ceed8531f3414245087b9a47"
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "3f323a636a5bf23217173c526b4a30d6b072e55c5ff59044d90b8ca77a51590f"
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "58c61dd3092848462c58bd9fefc8bcf55cc140d45a150843885f7bd68c833ee5"
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "beeafa965a4b7199391fec0c4b378bee5e0f841d7aa501edcb99afaf5e3e941e"
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "eb33605146b85d3d3ed42915d7a33a9907c1c6e2678104b507e76afb55330b71"
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "bb68e1eebd6c7be8c3805caa5f621936433272d8f6c0fd4e2adc6ccb060505d7"
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "61416c5f4a55b10f811d1386edcd64cb3d7de6b64baca12000d9d3df38f68bbb"
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "fd19e0f2075205a101c63db4e4e0131c192e8e586a631d5ec90cfc9adc755ec9"
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "af3fec62e6444e1f256ab6a2b0f5f2041dd0335c3218c7747c5b22f8fe2b7afe"
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "610eb4536be858853651f8d2bf3837d83b44da29eb507489f837f54b5de886b9"
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "99c006bf132eea2264e47b65d243f7b60349cf314247441d461e8cf972128675"
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "267c2b93dbda40be30e39a9f3d82afe13f10f15eaa06c803464389489d505f14"
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "d19f421b01763faf17a002fc1dc2959c86ec3f945e421580c28dbc230467fbed"
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "8d2338cf9a8b84d924df8cd85dd8ef7bbd13fb0ba1d78937fd855b884eb5767f"
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "c99ec3f5701fd65a126d6f0243f65850df12790c4d062af7232c437e9879c735"
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "47f55dbedbd797f0778489281613367cd08d32a4e409f630cb26a0add61e7e48"
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "c8ab62028a99f661996fc47466166a6c8bac47a070f2d1e272faee68add50f72"
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "8c2021f090c13df9e4af3eebd286229490875f1bc07ff8e627e00f9a6e16ec46"
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "6de7c34bb69bb56697398330028200e276a33f7c0c43ead131c609899d2d6824"
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "e454175eedd7effd5cf856ba038c9c298f38721ea192f179da30c0bf222fe9e9"
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "4c80e2ea6085e21147ddf7a7f176c2a3bacfa42e5c5737a72b407385a81dc8dd"
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "051da509293cb1b027023af244ca99c7dd553a6045d72bf6d28e1a66fbb8501b"
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "790acfbd905836a91e3325ae6f7c812440d0bdaa14d3191f3f810c88613024e1"
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "afd5245c707edf385ff6dba2a4b9af32be8946d23a82397830ddfe34ce516863"
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "3851a5bb0009d1d8353de11dc7fdb99eb5826f90ba3d18c00ef15ea80118da46"
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "a7afbac776430e2ec24e3c85cef9f1e832fdd1cbb0b9576d23ffbec9f73544fb"
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "2dc64fe7f9b6da9d26351f3a6a689f2cda1d59eb4e77b8bb5f0a84aad6f38dc2"
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "dfeb7d35aa55cca3234c396d1749666e15ae9f8ee56abe3ad6d9127d5bad7c8f"
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "180e7784e74150742a11fe2d110e1e472fd84c691d4e6309a6519f4258e6f90e"
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "6c4a60df1ffca3a73163bb64f69b3257618132f02a21e6acfb4285a192317426"
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "b7ae7c4a93ee3343ef89c75f22558a18c4eb35e8864e8c30f3c8c699c48a6bf6"
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "6fb6f34d0d274bdfada7bc3ae9140c9a8e999bf1104b3b3a7050e1cc75ba059c"
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "b2a67aed1c8cae68d6ab9bbcd5f5b9c0c7c3024eccf9e38a59f227f5f483e70d"
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "4a6922c79a1167717713535e4dcb43dc612367051c27118c7f20dd8bcb0e149a"
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "5be0d5484f3274f25817e3b4683def352dfddd109128dc20be8fe1d416a1b66f"
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "df9568e128b6e1771aabf9459cd433f7c333cf2b457d59f69146a062dc9d33aa"
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "3799c6c0a9944207d9a6a8a8095db1d0f4d3de78b2ae8da95ed009877fe5344f"
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "c2b40b81ea4231b4c9058fad8c3625979d6e4c98532c08363aeb76ace0ef4502"
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2026-09",
+      "sha256": "630587df7a49dbec2e5471981c36d32719a260086a486d7ac8b716600674999a"
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "21f3afe3734bc0d60d5c519f22eb9da694b8d5f0081037d5ea8fc206e38c9451"
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "8d120c8194fae9f894dc4ca0e0801c074e48f7c7b735931d6d5b168a98579c3f"
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "f5ce2419c9c2ac172625945bdc678b334295fa862ef8007519682049e27284c8"
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "971ef996590bb68b889b1593a45e496d94b9e15c899b27604cea324ad260fb30"
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "b7d90d6b9cbe4e13d735b8ceba63408fd24ba0ebef1aecc492955cd99aa762e5"
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "c461272f337554fe1e6d86606d59ea115d8059e397fb4316600141702c8ea0ea"
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "d88308eb5229eaa463ddde0eb44424600aea5241b42b4c8dac01df13cbb054c1"
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "077e8e8663f057d70935b8f672536cd75c025379f7bc3b56a040cfdc0f065e30"
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "5bd2f45832f42fe47bba9f5150210e98da16786ccc3e823d0a81ac1c4313ddad"
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "7e2d4e055661e43727c529397467b9cd2f8766c132fe656397f15ac24c54ed86"
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "00f7cef046a157481c99ddc8b0beb1787a849f9d61f43ba541947d6e49026baf"
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "15f6afbd93b099f6810a137382c952fd1a7e700c1c94d5509ccc93d3d24a731e"
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "bfc3e5823fb8014d265ff92ca4ffb6b4ff33184b08c40839abef254023aea0ef"
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "7585c26f1c6b42fd857eb0f8253ea3c21c2b92e8a5d959151a7e733b06afc3f6"
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "66a66b09a10b98a0ed137d88a84c860d673243d94709067a79f0b471da3a3d3d"
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "42dd461df1f3af34d464a87fd929baa21a0fd193169fbeca7744dd3e05568780"
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "0cc450116384e44e6c3d3840074628ae7f5203b04e4242f007f090bfb4581342"
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "1eb700790b9ef9d422bf70fe5cd943f515f9dde10bb434f82e60404e1f0fea95"
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "4c70a8288a8384b51b12d1302f0125812040c9fa4f1b7f86f253c35a51d841f2"
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "1d27a4247ace4e0bdec3511fdc1d5c48a419cb15c3730151cbe076a08f18551b"
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "4b1ff0d8282d043c274fc37e3942a768a77cc67c2bb3157192e7e4659991c4d0"
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "19dde3423fc3c708685a2787c08cc674251c3d80142e87cf3696a823d016fc9f"
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "43d79cb5283a93eea35b3e70ebc6d376b38c2cf1818ce4e4eab7e381b34a95e2"
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "01dbb915a5fc2c81e8417b98bbf66752d2f7d45ff76ed69b82fc6cd78a5d4d97"
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "16ea19cc66655813d336a056bb35a3298334cdcb455cadaee7bf2cfc610d81e9"
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "5f64031bcfe2c25d19989bcd2507a34095e9e3db93789c08e98c122f0e0eee63"
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "27bdfac1d3671c7d14654dd91bfd46f146b22630a52146cbf62563a4d69dec46"
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "b04ca4a430f947ad3119fcf81b6ac54a304be59c1efe4c7268cb5dfd29dd4e53"
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "6432e501cecc2d3f6fcacca0b06ba3e9ac07b1e1715c2445f14c6dbedbc38911"
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "516021219468360bc2fda1f568d8a9883be303fe8a47120b0c89618d707dd6d8"
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "8685a152afc523ec846fcce396ce21d8c5b1ac198a393b7d2af1d9da9fd51e68"
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "f551b990616355bc17169d605df7e8409ee657d9ba77768c5ca8b6d09487a39c"
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "d133305696bc5543ada1674d11442f779c68d02db086db02d980579d8f3577c1"
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "abbab876f847400d5c68e8efb4779e6bfb8bd8882acdf2881ae9b0e645564cd8"
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "f667da8d60357b156778ba6d5d6609006430e25b2ca879838fd6c77f8e27d829"
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "7794bfa9bab94f494f09f570cb9b612843d1b9776b01c5e8fb635e47fb34a35e"
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "44354bf3bb92771c301e8888081f2520f5a954762e3e536a305f02e3e92897bb"
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "a5eea8e58c987d08899f11c54c3f51e6255a28c9d7e1df658ad958ce8df37c97"
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "470948a8484ca1befb47d196d6aa5e03149ba07d313d9defe4a2fe59f7bc411d"
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "632f8069f92121729380312163a0d8148b1e7240ffe1e72cefe23598f6b54890"
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2025-08",
+      "sha256": "3cad8f5ad6b90579b2effe89d9ed0c898e4178c3e4f0421733baef9f879c22df"
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "058f0d970f0531ceaca076955ee1e56d211be71cf533fa97ca82b349534139eb"
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "76fc41a0ea9877e5d851b385dab444bdab94f1507246732ff4bf1d62113714e8"
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "f2650cfd9eec24cc67c77a23358f370792ca9f74bda2d39c3600e7fa56d1d4a0"
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "f0ac8107cfbf026ffe09821239a8114a77752e367e098bf5621ad468dc178f1e"
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "c90efe26201583f2fefa3c1c2c368ef45c09497f6ccc6fc68855300238c4c8c5"
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "31e2b7abfbacc9a9c1b3914b50cdfd116082e0537d4311cd78726e8ebe729741"
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "15fd5ffd699b23e63eb1919197767b162d263327d0be0474eb56d1c07727bb5f"
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "50d1b2c438ee7f55cd1c291221e8b304b8f2af506a39be062b053e35ba8b75f6"
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "76f10f252200f197a9d224f4c259ee18e0fe447a3b15b9a97dcec430771d9875"
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "d54beea0c8f4d12c42a14eeff5b64a25b0b1cadcfd3c6c82e6cb4f65c3e52dc1"
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "5d4a34b4532725ad360e7dee234df0320334a45957d5c2a5df714cd7129492fc"
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "38c678e0d6425beab03d086a03924dea8ede4313e6cae271d5bf3dc0c3a4df7f"
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "65b6bd76202e6a4a42403bddf4ca8b99fed8c2557285e480ef3319f74018d6f2"
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "5a246ae007cad9bb385e368bccd955f5283d27dcac944c91e0af71c31375288e"
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "072a5471a50361f6d1d52be11d4a22401a4fdabf3bdd92ace60d701d7ff7428d"
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "f1bcc0691cce7300f5de2421ad27b87e82727fdd0b93948bbaea13ae522542b9"
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "d8f19a1c10272f428c62ac395051e39e17a03146cf5c045f5a057139de1130f6"
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "47b2e2efa0b188996cb69ced1e288f89a6aefa72f39df5b4a625b1445b1e8f5f"
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "59a535e684feca0ade6ec417493996340d5b52c45a6a4dd56a6c22af9235aa4a"
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "51fb755521995e0702939e027156c9fe9de021f1bdd44af6d6e091abe3f3bc55"
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "b3b60084cee6759478a6df76186cfd977dd8000d9fa493734f671c07fe5b8d37"
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "bdb9c749b1fc909bce96595a03c536b2276685981faf357a371c24fcd99cd90c"
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "7e1527a6d80de69192ab8545fcf71c4919c46a124818bb0959d788e79efc2b4d"
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "46161764d56924c5e45711279649a91c75317caf3f08fc97dd04a84de5a9a181"
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "92331b81e70c9b08c9ca01f95b3373a3b3c22948a4d0ef9cdc38cd3b9d76097d"
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "b83560fa2d717869bd17906616d1c0fffbe8f1e5608b21634380f55f2a7ad8fa"
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "f05da95db75ef3b4dbea06ea6ce9b15bf1948559205f53b1074126d902d19eab"
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "9f82974b8ff9b96f41d0df4bd1be862655fa9cf92ba3443dfe81fe075c70b666"
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "ca77ee6eda010ea2b59b5c3bfe1017f20f790e0975d37263e8a294e3975b68d6"
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "196d5affe6f6accbb3bbe9f7a362155e239b2f49576f4f91d1ceda6d297eb336"
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "26ce7a2ad48414631c4900b044e89c0499ce6844733967a062c8415b8e7f2900"
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "b89782f557df59bdde81f330770329b125539d55159715fed6c2f50b086cfe56"
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "4917b0b549a0e7dd79c9830ec5c85dab049b14defb5504ca2a95f7b1d7b85db3"
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "e688d7a44ffb261a9ed9b72b2cdc635b43b154bf22d764a73f51c5099062f15d"
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "e0f8a3c9f7b19a2a6c52ffd340f3a1027288f2da7661c7e036a48e569abbe5fc"
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "25532be9304cf7dd9be23a9ed573073d8da52564bcef033957f680f325a4de5e"
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "a890bb48020435f55ea4163fdf3b32d765e6184b55a3fc5315630e4bedc2ccba"
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "34bdd121f326b522a1fae1ecc53a2adee136677e6a637ce09ac6ae666794b843"
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "87e57e64568dc703f33d230079d30ec1ec067f4457a225b04603b82e88e13a42"
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "6f78d491afea395b0f2a82879df763be0039bac6ec72e865016a7a27d4ae491f"
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2026-07",
+      "sha256": "32ad245c89c5dd44513b471137a31cc5e4e0b6f782b5a4e9e64d336a852ba5b2"
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "3480c9ad0a8e46d603f8ce3c11a3db2f5b83417722a905094cc8895efe9c941e"
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "3ca06ba7fa6e71645e39dc7a59ff1454ebe4cc78b31835b154c7de9a420ea2be"
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "6dc61070a839586ac015336575b078313cd98607a0caa86fb95f7444cbde087b"
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "5e3b8e330bb65a061c0b65fc33573123c3a033d50cd47034e56a7363d7aaff80"
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "2a5237ae08a728811e5fed206efe10b7bacc2fc86b930d96faa13f848fd2515e"
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "b85d1b1f4b7642407cb1564160bc36900da4e6348b349cf049e77ebd53bb72b2"
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "dd8d365a540281fe4b5401c60787fcbf09cd657da8c057097e9bfc31756da3d5"
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "2802ff07b7d8f5410d9fb788af989fdbf62db001f326c45b44f571008786e840"
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "7009087271c2fe67d3ebf29dcd5508d8549b3f67c441bfff5bc1b2be9b9f79c3"
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "e67b62ca00b27db8de68a99159b112ada6c6355e17bf4e48b00562ebdb84c64c"
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "ae80fda1245a46b40790ec903394139981413c8d441f07b7aa5b9fb810169ea4"
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "628ee6994bd2382196e142122848dc500c52bcc6b90c35e8183197c6aa88f209"
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "7330eb21695ff6a55697815495c16d891195521d63c69b5f9c23478240b448fb"
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "b97e1e22284ef6d93a123d3c490e6d39a747f2d0875b9770820c1a35f1c6bbba"
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "d52408d6cb3ffd9694b5c4a6d738318ee0cddd988608305be9e40bc474649746"
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "0f13936534c5ef740b08575450273f48768e512e05c0627c86c8d8a2854da228"
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "65706f46822a901a5355ddee2206542ebf70a146e2c4a658f8c7145d3e383a7b"
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "fdb679ffde176269f2a45e5b5d3a7d659c7d9cb4c6b298d26ae130d6187336f7"
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "67c4e74739c22404f3392344e78d4a621ad648c504c8809efc70c929dd9d09f2"
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "d8f355aa660fe81824fbd63ad3e09e6a6645745398ce24a2e5033b00015ea8c9"
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "72ac89594893d15bbe29be664bbe619a1c84f329893c62e3953bf989016e065c"
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "c93722d8c71a8c1835ed4a4c1183ab29b88b39cddbe05ac56a8a915ff5d0499e"
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "19155bd0307bdcfe77ab9ee213c83a9cadc937f153233a6ac62af1875f7f24df"
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "823702086f1345212b457d03e2cb1dfa975def4013e8d4cca87c88a0744f933c"
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "4207e4e6520ef9660edf3c2c4eb8a6d14272dd441fbb32b9859d32677f28423f"
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "d844629f8663d57368a9ca728a8d304c60ae04d37642b8044c3fdd8c2120ecc5"
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "923305ad2263b5c85294c3872de8ae706f8927e72c9d02ddbf003e43b9e0115b"
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "e2f75094867590b6a87b6e29f98368c19559b0e52297e1d398811cf87c107396"
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "bcbbde44f0b53685036220847e9913f7e9bbf65c67beb6d2dd6f2c8500afa296"
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "5ef13e0a0240b9973899b0050440dbd5007414da0e0ee454fa672f2ae9760a1f"
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "4006236486118d4d06a7e1c91d3610c00ad392afbc41c296c926c378942e35a1"
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "38eee8fde85ff30912f7334cead207c50f8c8bac3af6c9de39577029cf34b4f8"
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "5adae7de733736a42d3945bf3d863a84b8edd3a5f383b1c6fe64540f35eb9eb1"
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "a9f5d7a6a8a7b6955e30bf29d05e1a0c572b13c329d3c00db40b0fb7abbe5b51"
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "02e9a775244a1caaa5751ef2714f68fd5cead802919a2b19b4fa44bb46c102d9"
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "b8611bc24227f4bbf9a4d1a7ac72c5e9a74df6612f42d0b4c82da48c1cbf6fa3"
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "1cbe6ba0b1bb054f0c591a582973d809f6859b70d6dfefa2b007352d241b8e59"
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "9bb90eb07747cf627adfec3c160f00e92d10ff38e45989b8d18d122f1289d56c"
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "25fc7a4ea42c8bf1c45c04b3ae7d4f2d4e0e1af58133c877d2ebdb4343c6fc65"
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "d6082ae1bfa34b00a6306bff84d2f7018b64cd719659a622930ff892c2beb886"
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2026-08",
+      "sha256": "e8275fb192c998e8e754d8e54fdf0abe2713d650dbbde9e20fc3d3fdec7c5623"
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "e48ccd96d8d9d983e301c81e5fba205deafa95cdf1daa1174aa3380b2922083a"
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "dc04bd73c0b00541e7e8e07fa773144e65eeeef519fa28566c984c03edf6d643"
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "2c1b6441cf97a54790447f70660c63493a2b67a48b4234db0cb83d35547a873b"
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "5e2bcd5ad9af4c62760bc37dd272070238c01bf5b795055202f99547b5eff404"
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "0163d0d53b055588df4902c8366b8f879621b1c20fea97d715529b9ca0c0cf18"
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "2dd2722299b1039893f7e82361363b87a6d9756cd189639083c2c89fecd11593"
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "b86aca120d10651b55df08c918c320937e9ea9e1fc3b280e5719ae5aefb334eb"
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "f704ac3c85c1d636ebc3a36c4a8125c9aff2aca9ac1d99e20aedf52cd5a8a89a"
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "f5f86a49e8c198582ba068fe67ad388707243ebd4f0b4eb3b8464fd59505ffb5"
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "4d542d4c08d7889b18b8653ca9fc78af090fe0577c362268919dc7947746c200"
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d4ef7f4b842948aa07759257e5142f29316c1eed3715a8ba2e4d8b082237f14a"
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "617e72a766bcce79a3ac282f627f64f49bafb52b1c2935edd6c5e3ac73349c69"
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "0649c61a1d6cdc50ef05b8bfdc7b78f9e90afd3d0832f4514a2d461f3bfcc9bf"
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "c0a2a8334af6bbd82f005864924b7aa7b17067693b3d97de882c82edd6838631"
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "0b65f98e99d6edf17310889a066dd70bbcb0068bf056c6eb8b9c44a68fb9d80e"
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "88af4c87422755af8bff55f71f034c45c6ef25368ea36f83650757ff19631b2b"
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "0dd12be4332fdfd636084239cae1885257bcd3061b0353546711d81f19b6830d"
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d9a905ec7bfc98eecefb47c43f676c8990d067de97f095865345100770465a59"
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "6d8c3eb4b435ff63560d4917f397f66edd47c258148f9a75c827868dd42df593"
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "7b9bd966b63b535b829018eb3da4c42d3e83f48af09ab0f0c82beabce3659cda"
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "5d479c1556f11c6111bccc7e6beeb50aa3fa7f2dc67fc0f499f9bf4ae07432eb"
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "1993a2ffb68292ddacbb549e326405e59d509695f3255fb1b1f3179bee4d5c05"
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d8947f3660bfdb3fdee25511ec60277bc51f9780251587d857b859d7a44525b3"
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d69c83075311db0cef851769b8479f50563370b8cb16f1988ff005ce509f1745"
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "e7e60475c6a88f67a6d6dc92f1b40ad8d041b7c32e95eb15c1ec18a35cbdd6f5"
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "6adc84a96ef6d2dbfbc87fae056e5e3d7842669d735c9e1f64a1131dd5cd9fbd"
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "213ff09534f94b386abc330ccdb086c69517b9524920cf4bf24368aabfca220e"
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d065facac66608f381afb322e5a2a91a0c46564763d0c115d7b0982ef1aefbe7"
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "6fa5ff6dd1c162ddb8d3b797cdec5497d6b313fb0e2da4f480a5eefc17acf694"
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "d9c4df58e03be6a909b901f55d64e6316c6ee36f14d3aff94f105eb4efbad84e"
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "8303afb4c00a91dcac670171142df8a7f949823d46ea75325c934afbfe6fc071"
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "88c33c7ad12ec7cdbf6db887674db611af8d2c00c52798ab1971b5e04efa4fe4"
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "4a7c150743bf3cf7fd17a52469289200007bb56953df35470baa05f97fca7172"
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "702d4414a39f6e7c1b29d522c2a4e78cd6b568c2081d64bf83035a88f07d5ab7"
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "86c0cb2bfa7ccc3a2572a75bd71f52862e9d8a2d26fd9910fcc95f4061536020"
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "5315c3bba29d15798880a3bef32152cf8bf99b2b6c4db9afaca8a0f014d293b8"
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "9b30a6651fa34265d1b151868033779a1e4934e7628cb5852afa8cccd3bf06e1"
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "b6011b13f59818337188b4217ece41ac534afa92b626142dd4372d062203672c"
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "de8f0be17e36a7b55e7f0140051f88084c17ec6e127441c106dce71c221afdbb"
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "0da7d1f1646408d003a0fd1168ade01c5bc42fcec94321b8a38fd7dc22b72dee"
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2026-09",
+      "sha256": "03ac7bce628dafcc0865258ef991fbea82d3684b6e6617ffbf7ca1bf85f3653b"
+    },
+    {
+      "type": "T03",
+      "options": {
+        "brand": "B1"
+      },
+      "sha256": "4c03ede47db4c6b92f6881055819fd96aa7f06d23a4bc4b0199e8608111a21df"
+    },
+    {
+      "type": "T03",
+      "options": {
+        "product": "P2A",
+        "compare": "brands"
+      },
+      "sha256": "1cc78fc54b01caa05d9f7b621db552686322b0b640b4dbe83f80440d4daa04ef"
+    },
+    {
+      "type": "T13",
+      "options": {
+        "grain": "day",
+        "media": "C-JP-social"
+      },
+      "sha256": "2ac53fe95ec37be8eb1400b8fe3f31287d1003c2632637d3e07ff4c03f8cfeeb"
+    },
+    {
+      "type": "T08",
+      "options": {
+        "observed": "2026-08-10",
+        "group": "B"
+      },
+      "sha256": "a93870b246368fd7761b4455293217fd4aedf01a07d60a5f03ed6e043d78a09b"
+    }
+  ]
+}

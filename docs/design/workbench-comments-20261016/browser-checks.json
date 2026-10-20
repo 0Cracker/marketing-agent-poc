@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-16T05:00:55.805Z",
+  "reviewMobile": {
+    "documentWidth": 375,
+    "legendVisible": true,
+    "rows": 6,
+    "width": 390
+  },
+  "reviewDesktop": {
+    "legendVisible": true,
+    "rows": 6
+  },
+  "errors": []
+}

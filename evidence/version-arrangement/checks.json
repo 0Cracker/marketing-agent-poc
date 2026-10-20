@@ -1,0 +1,357 @@
+[
+  {
+    "name": "agent-core",
+    "root": "marketing-agent-poc",
+    "head": "d0f6267c5c478ec1603183df90f2239c7aa537ce",
+    "startedAt": "2026-10-19T13:54:05.887Z",
+    "finishedAt": "2026-10-19T13:54:29.712Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--test",
+      "--test-concurrency=1",
+      "tests/agents/approval.test.mjs",
+      "tests/agents/flow.test.mjs",
+      "tests/agents/integration.test.mjs",
+      "tests/agents/recovery.test.mjs",
+      "tests/agents/tools.test.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-core.txt",
+    "status": "pass"
+  },
+  {
+    "name": "agent-model-http",
+    "root": "marketing-agent-poc",
+    "head": "d0f6267c5c478ec1603183df90f2239c7aa537ce",
+    "startedAt": "2026-10-19T13:54:29.717Z",
+    "finishedAt": "2026-10-19T13:56:29.825Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--test",
+      "--test-concurrency=1",
+      "tests/agents/http.test.mjs",
+      "tests/agents/models.test.mjs",
+      "tests/agents/runtime.test.mjs",
+      "tests/agents/server.test.mjs"
+    ],
+    "exitCode": null,
+    "error": "spawnSync C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe ETIMEDOUT",
+    "log": "agent-model-http.txt",
+    "status": "fail"
+  },
+  {
+    "name": "agent-model-http-loopback",
+    "root": "marketing-agent-poc",
+    "head": "f16b8c1a91d0ca60290d7e66c2a1338efa803ee3",
+    "startedAt": "2026-10-19T13:57:23.375Z",
+    "finishedAt": "2026-10-19T13:57:39.904Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--test",
+      "--test-concurrency=1",
+      "tests/agents/http.test.mjs",
+      "tests/agents/models.test.mjs",
+      "tests/agents/runtime.test.mjs",
+      "tests/agents/server.test.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-model-http-loopback.txt",
+    "status": "pass"
+  },
+  {
+    "name": "agent-server-portable",
+    "root": "marketing-agent-poc",
+    "head": "f16b8c1a91d0ca60290d7e66c2a1338efa803ee3",
+    "startedAt": "2026-10-19T13:58:29.580Z",
+    "finishedAt": "2026-10-19T13:58:33.743Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--test",
+      "tests/agents/server.test.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "agent-server-portable.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-contract",
+    "root": "marketing-version-history",
+    "head": "60db4fe5132c0181845c35a98aa81b9757a2527c",
+    "startedAt": "2026-10-19T14:04:12.750Z",
+    "finishedAt": "2026-10-19T14:04:13.011Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-screen-contract.mjs"
+    ],
+    "exitCode": 1,
+    "error": null,
+    "log": "screen-contract.txt",
+    "status": "fail",
+    "logAvailability": "overwritten-by-later-retry"
+  },
+  {
+    "name": "screen-contract",
+    "root": "marketing-version-history",
+    "head": "bebea07a8b622e70c410425044ad162adf758ad9",
+    "startedAt": "2026-10-19T14:04:59.386Z",
+    "finishedAt": "2026-10-19T14:05:01.457Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-screen-contract.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-contract.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-baseline-numeric",
+    "root": "marketing-version-history",
+    "head": "bebea07a8b622e70c410425044ad162adf758ad9",
+    "startedAt": "2026-10-19T14:05:01.463Z",
+    "finishedAt": "2026-10-19T14:05:04.932Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-workbench.mjs",
+      "--output",
+      "C:\\Users\\박시형\\Desktop\\Marketing\\.version-arrangement\\reports\\baseline-numeric.json"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-baseline-numeric.txt",
+    "status": "pass"
+  },
+  {
+    "name": "source-agent-client",
+    "root": "marketing-dashboard-drafts",
+    "head": "2dec3032ebaa4336fbf025d08e63a21f19769033",
+    "startedAt": "2026-10-19T14:05:20.242Z",
+    "finishedAt": "2026-10-19T14:05:20.943Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-client.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "source-agent-client.txt",
+    "status": "pass"
+  },
+  {
+    "name": "source-agent-answer",
+    "root": "marketing-dashboard-drafts",
+    "head": "2dec3032ebaa4336fbf025d08e63a21f19769033",
+    "startedAt": "2026-10-19T14:05:20.950Z",
+    "finishedAt": "2026-10-19T14:05:21.457Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-answer.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "source-agent-answer.txt",
+    "status": "pass"
+  },
+  {
+    "name": "contract-types",
+    "root": "marketing-version-history",
+    "head": "bebea07a8b622e70c410425044ad162adf758ad9",
+    "startedAt": "2026-10-19T14:05:04.934Z",
+    "finishedAt": "2026-10-19T14:05:21.825Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--incremental",
+      "false"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "contract-types.txt",
+    "status": "pass"
+  },
+  {
+    "name": "source-agent-presentation",
+    "root": "marketing-dashboard-drafts",
+    "head": "2dec3032ebaa4336fbf025d08e63a21f19769033",
+    "startedAt": "2026-10-19T14:05:21.458Z",
+    "finishedAt": "2026-10-19T14:05:21.994Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--experimental-strip-types",
+      "tests/agent-presentation.test.ts"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "source-agent-presentation.txt",
+    "status": "pass"
+  },
+  {
+    "name": "contract-build",
+    "root": "marketing-version-history",
+    "head": "bebea07a8b622e70c410425044ad162adf758ad9",
+    "startedAt": "2026-10-19T14:05:21.827Z",
+    "finishedAt": "2026-10-19T14:05:28.935Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "contract-build.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-standard-query",
+    "root": "marketing-version-history",
+    "head": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+    "startedAt": "2026-10-19T14:06:22.041Z",
+    "finishedAt": "2026-10-19T14:06:34.008Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-standard-query.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-standard-query.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-all-connected",
+    "root": "marketing-version-history",
+    "head": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+    "startedAt": "2026-10-19T14:06:34.016Z",
+    "finishedAt": "2026-10-19T14:06:50.216Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-all-connected.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-all-connected.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-marketing-redesign",
+    "root": "marketing-version-history",
+    "head": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+    "startedAt": "2026-10-19T14:06:50.217Z",
+    "finishedAt": "2026-10-19T14:07:08.419Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "scripts/check-marketing-redesign.mjs"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-marketing-redesign.txt",
+    "status": "pass"
+  },
+  {
+    "name": "comparison-types",
+    "root": "marketing-version-history",
+    "head": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+    "startedAt": "2026-10-19T14:07:08.421Z",
+    "finishedAt": "2026-10-19T14:07:22.284Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--incremental",
+      "false"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "comparison-types.txt",
+    "status": "pass"
+  },
+  {
+    "name": "comparison-build",
+    "root": "marketing-version-history",
+    "head": "bcbcd15f1272b3aa4ea8018d94bb76fbbb27baa5",
+    "startedAt": "2026-10-19T14:07:22.285Z",
+    "finishedAt": "2026-10-19T14:07:29.070Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "comparison-build.txt",
+    "status": "pass"
+  },
+  {
+    "name": "screen-current-data",
+    "root": "marketing-version-history",
+    "head": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+    "startedAt": "2026-10-19T14:08:04.855Z",
+    "finishedAt": "2026-10-19T14:08:06.973Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--input-type=module",
+      "-e",
+      "import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {loadCurrentData,sha256,publicFiles} from './scripts/current-data.mjs';import {businessKey} from './scripts/data-business-keys.mjs';const {manifest,catalog}=loadCurrentData();assert.equal(new Set(catalog.records.map(businessKey)).size,catalog.records.length);const inventory=JSON.parse(fs.readFileSync('data/archive/source-inventory.json'));for(const f of inventory){assert.equal(sha256(fs.readFileSync(path.join('data',f.archive))),f.sha256);assert.equal(sha256(fs.readFileSync(f.path)),f.sha256);}assert(!publicFiles(manifest).some(f=>f.includes('archive')||f.includes('migration')||f.includes('provenance')));console.log(JSON.stringify({pass:true,active:manifest.rows,preserved:manifest.preserved_rows,sourceFiles:inventory.length,dataHash:manifest.data_sha256,businessKeyDuplicates:0,archiveHashes:'pass'}));"
+    ],
+    "exitCode": 1,
+    "error": null,
+    "log": "screen-current-data.txt",
+    "status": "fail",
+    "logAvailability": "overwritten-by-later-retry"
+  },
+  {
+    "name": "screen-current-data",
+    "root": "marketing-version-history",
+    "head": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+    "startedAt": "2026-10-19T14:09:27.958Z",
+    "finishedAt": "2026-10-19T14:09:30.491Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "--input-type=module",
+      "-e",
+      "import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {loadCurrentData,sha256,publicFiles} from './scripts/current-data.mjs';import {businessKey} from './scripts/data-business-keys.mjs';const {manifest,catalog}=loadCurrentData();assert.equal(new Set(catalog.records.map(businessKey)).size,catalog.records.length);const inventory=JSON.parse(fs.readFileSync('data/archive/source-inventory.json'));for(const f of inventory){assert.equal(sha256(fs.readFileSync(path.join('data',f.archive))),f.sha256);const live=fs.readFileSync(f.path);if(sha256(live)!==f.sha256)assert.equal(live.toString().replaceAll('\\r\\n','\\n'),fs.readFileSync(path.join('data',f.archive),'utf8').replaceAll('\\r\\n','\\n'),f.path);}assert(!publicFiles(manifest).some(f=>f.includes('archive')||f.includes('migration')||f.includes('provenance')));console.log(JSON.stringify({pass:true,active:manifest.rows,preserved:manifest.preserved_rows,sourceFiles:inventory.length,dataHash:manifest.data_sha256,businessKeyDuplicates:0,archiveHashes:'pass'}));"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "screen-current-data.txt",
+    "status": "pass"
+  },
+  {
+    "name": "current-types",
+    "root": "marketing-version-history",
+    "head": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+    "startedAt": "2026-10-19T14:09:30.498Z",
+    "finishedAt": "2026-10-19T14:09:52.063Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--incremental",
+      "false"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "current-types.txt",
+    "status": "pass"
+  },
+  {
+    "name": "current-build",
+    "root": "marketing-version-history",
+    "head": "04d4034e18d811dc16cbe3ce61c1f61ee2732208",
+    "startedAt": "2026-10-19T14:09:52.064Z",
+    "finishedAt": "2026-10-19T14:10:00.692Z",
+    "command": "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "args": [
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "exitCode": 0,
+    "error": null,
+    "log": "current-build.txt",
+    "status": "pass"
+  }
+]
