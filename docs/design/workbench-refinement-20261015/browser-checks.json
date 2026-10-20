@@ -1,0 +1,169 @@
+{
+  "at": "2026-10-15T11:45:22.941Z",
+  "url": "http://127.0.0.1:5174/workbench",
+  "layouts": [
+    {
+      "domain": "시장·경쟁",
+      "height": 900,
+      "notes": 0,
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "domain": "광고·소재",
+      "height": 900,
+      "notes": 0,
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "domain": "상품·유통",
+      "height": 900,
+      "notes": 0,
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 1024,
+      "notes": 0,
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "domain": "광고·소재",
+      "height": 1024,
+      "notes": 0,
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "domain": "상품·유통",
+      "height": 1024,
+      "notes": 0,
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "domain": "시장·경쟁",
+      "height": 844,
+      "notes": 0,
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "domain": "광고·소재",
+      "height": 844,
+      "notes": 0,
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "domain": "상품·유통",
+      "height": 844,
+      "notes": 0,
+      "overflow": false,
+      "width": 390
+    }
+  ],
+  "domains": [
+    {
+      "domain": "시장·경쟁",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "브랜드·소비자",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "광고·소재",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "웹·전환",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "매출·고객",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "상품·유통",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "예산·실험",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    },
+    {
+      "domain": "기준·품질",
+      "emptyDetailsOpen": false,
+      "notes": 0,
+      "overflow": false
+    }
+  ],
+  "hierarchy": {
+    "brandRows": 1,
+    "foldButtons": 0,
+    "notes": 0,
+    "productRows": 2
+  },
+  "missingData": {
+    "gaps": [
+      {
+        "segments": 2,
+        "stroke": "#5B8DEF"
+      },
+      {
+        "segments": 2,
+        "stroke": "#27B3A0"
+      },
+      {
+        "segments": 2,
+        "stroke": "#E5AB4B"
+      },
+      {
+        "segments": 2,
+        "stroke": "#A288D9"
+      }
+    ],
+    "nullRows": [
+      "2026-08-26 —근거 보기",
+      "2026-08-27 —근거 보기"
+    ]
+  },
+  "interactions": [
+    "브랜드 키워드 검색·선택",
+    "US 코드 검색 및 Enter로 국가 선택",
+    "국가 변경 후 로컬 선택 초기화",
+    "기준월 2026-08 검색",
+    "Esc 후 필터 트리거로 포커스 복귀",
+    "범위·품질 아이콘에서 기존 주석·기간·원천 확인",
+    "SUIT Variable 로컬 로드",
+    "광고 네 지표 네 색상",
+    "모바일 필터 팝오버",
+    "브랜드 합계 배경과 제품 들여쓰기·접기 제거"
+  ],
+  "errors": [],
+  "interruption": "브라우저 자동 승인 검토의 사용량 제한으로 한 차례 중단. 사용자 재개 요청 후 같은 도구로 검증 완료."
+}

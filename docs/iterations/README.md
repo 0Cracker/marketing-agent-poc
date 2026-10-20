@@ -1,5 +1,7 @@
 # 버전별 개선 일지
 
+2026-10-19 로컬 정리: [버전 경계](version-boundaries.md)에 따라 v0.2.0은 데이터 기반, [v0.3.0](v0.3.0.md)은 대시보드·CURRENT 통합, v0.4.0은 에이전트 연결로 구분한다. 아래 과거 발행 상태와 작업 일지는 당시 기록이다.
+
 2026-10-17 데이터 확장: [D007 최종 결과](../research/marketing-ontology/batches/D007/result.json)는 신규 20,000행·전체 22,242행 공통 조회, 독립 검산·RDF/SHACL·재현·보존 pass다. [기존 전체 회귀](../research/marketing-ontology/common-contract/runs/2026-10-17-d007-post-generation-system-1.json)는 52시험/682검증 pass다. 기존 v0.2.0에 이어 기록하며 발행 버전·태그를 새로 만들지 않았다. 기존 790행의 공통 계약 차이와 원천 오류를 구분한다.
 
 2026-10-16 공통 데이터 명세 완성: [통합 실행](../research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3.json)은 528/528행·335+10필드 위임 검토·816설정 독립 검산, 기존 52시험/682검증·D004·D005·HermiT 통과로 `pass / complete`다. OOPS는 원시 106개·개별 근거 있는 비적용 106개·미해결 0개다. [후속 더블 다이아몬드](v0.2.0-double-diamond.md)와 [AI 교훈](../ai-lessons/lesson-001.md)에 매핑·가상 보완·가용시점·RDF·검사 오류와 교정을 기록했다. 원천·과거 보고서는 보존했으며 발행·태그는 수행하지 않았다. 아래는 이전 이력이다.

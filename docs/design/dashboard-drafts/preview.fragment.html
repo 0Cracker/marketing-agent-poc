@@ -1,0 +1,231 @@
+<div id="marketing-draft-review">
+  <div class="viz-carousel" aria-label="마케팅 대시보드 화면 초안" data-previous-label="이전 안" data-next-label="다음 안">
+    <section data-variant="통합 모니터형" aria-label="통합 모니터형 화면"><div id="monitor-draft" class="md-app md-monitor"></div></section>
+    <section data-variant="분석 워크벤치형" aria-label="분석 워크벤치형 화면" hidden><div id="workbench-draft" class="md-app md-workbench"></div></section>
+    <section data-variant="브리핑·탐색형" aria-label="브리핑·탐색형 화면" hidden><div id="brief-draft" class="md-app md-brief"></div></section>
+  </div>
+</div>
+<style>
+#marketing-draft-review{width:100%;min-width:0;color-scheme:light dark}
+#marketing-draft-review [hidden]{display:none!important}
+#marketing-draft-review .md-app{--md-bg:light-dark(#f2f5f9,#15202d);--md-panel:light-dark(#ffffff,#1c2938);--md-text:light-dark(#1e3149,#edf3fa);--md-muted:light-dark(#63758a,#aabdd1);--md-border:light-dark(#dce4ed,#36495e);--md-blue:light-dark(#3157c8,#9bb5ff);--md-soft:light-dark(#edf2fc,#263855);--md-green:light-dark(#087f70,#65cfb5);--md-orange:light-dark(#ae541c,#ffc096);--md-grid:light-dark(#e8edf4,#324254);background:var(--md-bg);color:var(--md-text);font:13px/1.55 'Pretendard','Malgun Gothic',sans-serif;min-height:850px;width:100%;max-width:1280px;margin:auto;overflow-wrap:anywhere}
+#marketing-draft-review .md-app *{box-sizing:border-box}
+#marketing-draft-review .md-app h1,#marketing-draft-review .md-app h2,#marketing-draft-review .md-app h3,#marketing-draft-review .md-app p{margin:0}
+#marketing-draft-review .md-app button,#marketing-draft-review .md-app select{font:inherit;color:inherit;cursor:var(--cursor-interaction,pointer)}
+#marketing-draft-review .md-app button:disabled{cursor:not-allowed;opacity:.55}
+#marketing-draft-review .md-topbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 24px;background:var(--md-panel);border-bottom:1px solid var(--md-border);padding-right:104px}
+#marketing-draft-review .md-mark{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;letter-spacing:-.4px}
+#marketing-draft-review .md-logo{display:grid;place-items:center;width:29px;height:29px;border-radius:7px;background:var(--md-blue);color:light-dark(#fff,#15202d);font-size:17px}
+#marketing-draft-review .md-topbar small{font-size:12px;color:var(--md-muted)}
+#marketing-draft-review .md-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--md-border);border-radius:5px;padding:3px 7px;font-size:11px;color:var(--md-muted);background:var(--md-panel)}
+#marketing-draft-review .md-layout{display:grid;grid-template-columns:minmax(0,1fr)}
+#marketing-draft-review .md-main{padding:24px;min-width:0}
+#marketing-draft-review .md-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+#marketing-draft-review .md-head h1{font-size:24px;letter-spacing:-.8px;line-height:1.3}
+#marketing-draft-review .md-sub{color:var(--md-muted);font-size:12px;margin-top:6px!important}
+#marketing-draft-review .md-filter{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+#marketing-draft-review .md-filter label{display:grid;gap:4px;font-size:11px;color:var(--md-muted)}
+#marketing-draft-review .md-filter select{padding:7px 26px 7px 9px;border:1px solid var(--md-border);border-radius:5px;background:var(--md-panel);min-height:34px;max-width:100%;color:var(--md-text)}
+#marketing-draft-review .md-tabs{display:flex;gap:5px;flex-wrap:wrap;background:var(--md-panel);padding:0 24px;border-bottom:1px solid var(--md-border)}
+#marketing-draft-review .md-tabs button{padding:13px 9px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--md-muted);white-space:nowrap;font-size:12px}
+#marketing-draft-review .md-tabs button[aria-selected=true]{color:var(--md-blue);border-bottom-color:var(--md-blue);font-weight:700}
+#marketing-draft-review .md-sourcebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;color:var(--md-muted);font-size:11px}
+#marketing-draft-review .md-dot{width:6px;height:6px;border-radius:50%;display:inline-block;background:var(--md-green)}
+#marketing-draft-review .md-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
+#marketing-draft-review .md-metric{background:var(--md-panel);border:1px solid var(--md-border);padding:15px 17px;border-radius:9px;min-width:0}
+#marketing-draft-review .md-metric>span{color:var(--md-muted);font-size:12px}
+#marketing-draft-review .md-metric strong{display:block;font-size:27px;font-weight:650;letter-spacing:-.7px;font-variant-numeric:tabular-nums;margin:9px 0 4px;overflow-wrap:normal}
+#marketing-draft-review .md-metric small{font-size:11px;color:var(--md-muted)}
+#marketing-draft-review .md-charts{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(230px,1fr);gap:16px;margin-bottom:18px}
+#marketing-draft-review .md-panel{background:var(--md-panel);border:1px solid var(--md-border);border-radius:9px;padding:18px;min-width:0}
+#marketing-draft-review .md-panel h2{font-size:14px;font-weight:650;margin-bottom:4px}
+#marketing-draft-review .md-panel h3{font-size:13px;font-weight:600}
+#marketing-draft-review .md-panel-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
+#marketing-draft-review .md-panel-head small{font-size:11px;color:var(--md-muted)}
+#marketing-draft-review .md-chart{display:block;width:100%;height:205px;overflow:visible}
+#marketing-draft-review .md-chart text{font-family:inherit;fill:var(--md-muted);font-size:11px}
+#marketing-draft-review .md-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;margin-top:6px;color:var(--md-muted)}
+#marketing-draft-review .md-key{width:14px;height:3px;display:inline-block;vertical-align:middle;margin-right:5px;background:var(--md-blue)}
+#marketing-draft-review .md-key.secondary{background:var(--md-green)}
+#marketing-draft-review .md-table-wrap{overflow-x:auto}
+#marketing-draft-review .md-table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}
+#marketing-draft-review .md-table th{color:var(--md-muted);font-size:11px;font-weight:500;border-bottom:1px solid var(--md-border);padding:10px 8px;white-space:nowrap}
+#marketing-draft-review .md-table td{padding:11px 8px;border-bottom:1px solid var(--md-border);font-variant-numeric:tabular-nums}
+#marketing-draft-review .md-table th:not(:first-child),#marketing-draft-review .md-table td:not(:first-child){text-align:right}
+#marketing-draft-review .md-table td small{display:block;color:var(--md-muted);font-size:11px}
+#marketing-draft-review .md-table tbody tr:last-child td{border-bottom:0}
+#marketing-draft-review .md-rowbar{display:flex;align-items:center;gap:9px;margin:15px 0;font-size:12px}
+#marketing-draft-review .md-rowbar>span{min-width:70px;color:var(--md-muted)}
+#marketing-draft-review .md-track{flex:1;height:8px;background:var(--md-grid);border-radius:2px}
+#marketing-draft-review .md-track i{display:block;height:100%;background:var(--md-blue);border-radius:2px}
+#marketing-draft-review .md-rowbar strong{font-weight:500;min-width:48px;text-align:right;font-variant-numeric:tabular-nums}
+#marketing-draft-review .md-note{background:var(--md-soft);border-left:3px solid var(--md-blue);padding:12px 14px;border-radius:0 5px 5px 0;margin:16px 0;font-size:12px;line-height:1.7}
+#marketing-draft-review .md-empty{padding:18px 0;border-top:1px solid var(--md-border);margin-top:16px}
+#marketing-draft-review .md-empty p{color:var(--md-muted);font-size:12px;margin-top:7px}
+#marketing-draft-review .md-quiet{color:var(--md-muted);font-size:11px}
+#marketing-draft-review .md-review{border-bottom:1px solid var(--md-border);padding:14px 0}
+#marketing-draft-review .md-review:last-child{border-bottom:0}
+#marketing-draft-review .md-review header{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--md-muted);margin-bottom:7px}
+#marketing-draft-review .md-review strong{color:var(--md-orange);font-weight:500}
+#marketing-draft-review .md-review p{font-size:13px;line-height:1.8}
+#marketing-draft-review .md-action{padding:9px 13px;background:var(--md-blue);color:light-dark(#fff,#15202d)!important;border:0;border-radius:5px}
+#marketing-draft-review .md-warning{color:var(--md-orange)}
+#marketing-draft-review .md-footer{padding:12px 24px;border-top:1px solid var(--md-border);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--md-muted)}
+#marketing-draft-review details>summary{cursor:var(--cursor-interaction,pointer);font-size:12px;color:var(--md-blue);padding:7px 0}
+#marketing-draft-review .md-context{display:none}
+#marketing-draft-review .md-workbench .md-layout{grid-template-columns:155px minmax(0,1fr)}
+#marketing-draft-review .md-workbench .md-tabs{display:flex;flex-direction:column;padding:18px 10px;gap:7px;border-bottom:0;border-right:1px solid var(--md-border)}
+#marketing-draft-review .md-workbench .md-tabs button{text-align:left;padding:11px 12px;border:0;border-radius:5px;font-size:12px;white-space:normal}
+#marketing-draft-review .md-workbench .md-tabs button[aria-selected=true]{background:var(--md-soft)}
+#marketing-draft-review .md-workbench .md-main{padding:22px 20px}
+#marketing-draft-review .md-workbench .md-metrics{gap:0;background:var(--md-panel);border-top:2px solid var(--md-blue);border-bottom:1px solid var(--md-border)}
+#marketing-draft-review .md-workbench .md-metric{border:0;border-right:1px solid var(--md-border);border-radius:0;padding:14px}
+#marketing-draft-review .md-workbench .md-metric:last-child{border:0}
+#marketing-draft-review .md-workbench .md-metric strong{font-size:23px}
+#marketing-draft-review .md-workbench .md-panel{border-radius:3px;padding:14px}
+#marketing-draft-review .md-workbench .md-charts{gap:10px;grid-template-columns:minmax(0,1.5fr) minmax(180px,1fr)}
+#marketing-draft-review .md-workbench .md-table td{padding:9px 6px}
+#marketing-draft-review .md-brief{--md-blue:light-dark(#176454,#83dbc5);--md-soft:light-dark(#edf6f3,#203b35)}
+#marketing-draft-review .md-brief .md-main{padding:26px 30px}
+#marketing-draft-review .md-brief .md-head h1{font-size:27px}
+#marketing-draft-review .md-brief .md-metrics{order:2;gap:0;border-bottom:1px solid var(--md-border);background:var(--md-panel);margin-bottom:18px}
+#marketing-draft-review .md-brief .md-metric{border:0;border-radius:0;padding:17px 19px}
+#marketing-draft-review .md-brief .md-content{display:flex;flex-direction:column}
+#marketing-draft-review .md-brief .md-note{order:0;margin-top:0;font-size:14px;padding:16px 20px}
+#marketing-draft-review .md-brief .md-charts{order:1;grid-template-columns:minmax(0,2fr) minmax(230px,1fr);gap:0;border:1px solid var(--md-border);border-radius:8px;background:var(--md-panel)}
+#marketing-draft-review .md-brief .md-charts>.md-panel{border:0;background:transparent;border-radius:0;padding:22px}
+#marketing-draft-review .md-brief .md-charts>.md-panel+ .md-panel{border-left:1px solid var(--md-border)}
+#marketing-draft-review .md-brief .md-charts .md-chart{height:235px}
+#marketing-draft-review .md-brief .md-content>.md-panel{order:3}
+#marketing-draft-review .md-brief .md-tabs button{padding-left:14px;padding-right:14px}
+@media(max-width:800px){#marketing-draft-review .md-app{min-height:1000px}#marketing-draft-review .md-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#marketing-draft-review .md-charts,#marketing-draft-review .md-workbench .md-charts,#marketing-draft-review .md-brief .md-charts{grid-template-columns:minmax(0,1fr)}#marketing-draft-review .md-brief .md-charts>.md-panel+ .md-panel{border-left:0;border-top:1px solid var(--md-border)}#marketing-draft-review .md-workbench .md-layout{grid-template-columns:125px minmax(0,1fr)}#marketing-draft-review .md-main,#marketing-draft-review .md-brief .md-main{padding:18px}#marketing-draft-review .md-metric strong{font-size:23px}}
+@media(max-width:520px){#marketing-draft-review .md-workbench .md-layout{display:block}#marketing-draft-review .md-workbench .md-tabs{flex-direction:row;flex-wrap:wrap;border-right:0;padding:8px}#marketing-draft-review .md-topbar{padding:15px;padding-right:92px}#marketing-draft-review .md-topbar small{display:none}#marketing-draft-review .md-tabs{padding:0 8px;gap:0}#marketing-draft-review .md-tabs button{padding:11px 8px}#marketing-draft-review .md-main,#marketing-draft-review .md-brief .md-main,#marketing-draft-review .md-workbench .md-main{padding:15px}#marketing-draft-review .md-head h1,#marketing-draft-review .md-brief .md-head h1{font-size:23px}#marketing-draft-review .md-head{margin-bottom:14px}#marketing-draft-review .md-filter{width:100%}#marketing-draft-review .md-filter label{flex:1;min-width:80px}#marketing-draft-review .md-filter select{width:100%;min-width:0}#marketing-draft-review .md-metric{padding:12px}#marketing-draft-review .md-metric strong{font-size:22px}#marketing-draft-review .md-panel{padding:14px}#marketing-draft-review .md-brief .md-charts>.md-panel{padding:16px}#marketing-draft-review .md-mark{font-size:14px}#marketing-draft-review .md-footer{padding:12px 15px}}
+@media(pointer:coarse){#marketing-draft-review .md-app button,#marketing-draft-review .md-app select{min-height:44px}#marketing-draft-review .md-app select{font-size:16px}}
+</style>
+<script>
+(() => {
+const root=document.getElementById('marketing-draft-review');
+const D=__D003B_DATA__;
+const domains=[['market','시장·경쟁'],['consumer','브랜드·소비자'],['ads','광고 성과'],['commerce','가격·재고'],['budget','예산·승인'],['quality','데이터 품질']];
+const names={KR:'한국',JP:'일본',US:'미국'};
+const currencies={KR:'KRW',JP:'JPY',US:'USD'};
+const labels={market:'시장과 경쟁 구도',consumer:'소비자 평가와 브랜드 반응',ads:'매체별 광고 성과',commerce:'가격과 판매 가능성',budget:'예산 배분과 실행 검토',quality:'원천과 수집 상태'};
+const sources={market:'시장 판매 · 자사 판매',consumer:'개별 제품 리뷰',ads:'광고 설정 · 광고 성과',commerce:'가격 관측 · 재고 · 행사 · 변경 기록',budget:'광고 성과 · 캠페인 설정',quality:'전체 원천 · 수집 실행 기록'};
+const prod=Object.fromEntries(D.products.map(p=>[p.product_id,p]));
+const fmt=(n,d=0)=>n==null?'—':new Intl.NumberFormat('ko-KR',{maximumFractionDigits:d,minimumFractionDigits:d}).format(n);
+const pct=(n,d=1)=>n==null?'—':fmt(n,d)+'%';
+const ratio=(a,b,m=1)=>b? a/b*m:null;
+const sum=(rows,i)=>rows.reduce((a,r)=>a+(r[i]??0),0);
+const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const shortName=id=>prod[id]?.product_name.replace('가상 ','')??id;
+const money=(n,c,compact=false)=>{if(n==null)return '—';const u=currencies[c];return compact?new Intl.NumberFormat('ko-KR',{notation:'compact',maximumFractionDigits:1}).format(n)+' '+u:fmt(n,u==='USD'?2:0)+' '+u};
+const metric=(name,value,note)=>`<section class="md-metric"><span>${name}</span><strong>${value}</strong><small>${note}</small></section>`;
+const panel=(title,sub,body)=>`<section class="md-panel"><div class="md-panel-head"><div><h2>${title}</h2><small>${sub}</small></div></div>${body}</section>`;
+const table=(headers,rows)=>`<div class="md-table-wrap"><table class="md-table"><thead><tr>${headers.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const bars=(rows,unit='%')=>rows.map(([name,v,color])=>`<div class="md-rowbar"><span>${name}</span><div class="md-track"><i style="width:${Math.min(100,v)}%;${color?'background:var(--md-green)':''}"></i></div><strong>${fmt(v,1)}${unit}</strong></div>`).join('');
+function chart(series,dates,unit){
+ const values=series.flatMap(s=>s.values.filter(v=>v!==null));
+ if(!values.length)return '<div class="md-empty"><p>선택한 범위에 표시할 관측값이 없습니다.</p></div>';
+ const max=Math.max(...values)*1.16||1;
+ const lines=series.map((s,si)=>{const pts=s.values.map((v,i)=>v===null?null:[i,v]);let path='';pts.forEach((p,i)=>{if(p)path+=(i===0||pts[i-1]===null?'M':'L')+` ${48+p[0]*292/Math.max(1,dates.length-1)} ${164-p[1]/max*135} `});return `<path d="${path}" fill="none" stroke="var(--md-${si?'green':'blue'})" stroke-width="2.4" ${si?'stroke-dasharray="5 4"':''}/>${pts.filter(Boolean).map(p=>`<circle cx="${48+p[0]*292/Math.max(1,dates.length-1)}" cy="${164-p[1]/max*135}" r="2.3" fill="var(--md-${si?'green':'blue'})"><title>${s.name} ${dates[p[0]]}: ${fmt(p[1],2)} ${unit}</title></circle>`).join('')}`}).join('');
+ const ticks=[0,max/2,max];
+ const idx=[...new Set([0,Math.floor((dates.length-1)/2),dates.length-1])];
+ return `<svg class="md-chart" viewBox="0 0 360 205" preserveAspectRatio="none" role="img" aria-label="${esc(series.map(s=>s.name).join(', '))} 추이. 단위 ${unit}"><text x="4" y="13">${unit}</text>${ticks.map(v=>`<line x1="48" y1="${164-v/max*135}" x2="340" y2="${164-v/max*135}" stroke="var(--md-grid)"/><text x="40" y="${168-v/max*135}" text-anchor="end">${new Intl.NumberFormat('ko-KR',{notation:'compact',maximumFractionDigits:1}).format(v)}</text>`).join('')}${lines}${idx.map(i=>`<text x="${48+i*292/Math.max(1,dates.length-1)}" y="190" text-anchor="${i===0?'start':i===dates.length-1?'end':'middle'}">${dates[i]}</text>`).join('')}</svg><div class="md-legend">${series.map((s,i)=>`<span><i class="md-key ${i?'secondary':''}"></i>${s.name}${i?' (점선)':''}</span>`).join('')}</div>`;
+}
+function page(state){
+ const c=state.country,month=state.month,cur=currencies[c];
+ const market=D.market.filter(r=>r[1]===c&&r[2]===month+'-01');
+ const own=market.filter(r=>prod[r[3]].brand_role==='own');
+ const monthly=D.ads.filter(r=>r[1]===c&&r[4]==='month'&&r[2]===month+'-01');
+ const reviews=D.reviews.filter(r=>r.country_code===c&&r.written_at.startsWith(month));
+ let stats='',left='',right='',records='',note='';
+ if(state.tab==='market'){
+  const total=market[0][6],self=sum(own,5),share=ratio(self,total,100);
+  const prior=D.market.filter(r=>r[1]===c&&r[2]===`${Number(month.slice(0,4))-1}${month.slice(4)}-01`&&prod[r[3]].brand_role==='own');
+  const prevShare=ratio(sum(prior,5),prior[0]?.[6],100);
+  const sales=D.sales.filter(r=>r[1]===c&&r[2]===month+'-01');
+  stats=metric('모의 시장 판매액',money(total,c,true),'선정 6제품 + 기타 제품')+metric('자사 판매액 비중',pct(share),`${fmt(share-prevShare,2)}%p · 전년 동월 대비`)+metric('자사 판매량',fmt(sum(own,4))+'개','자사 제품 A·B 합계')+metric('자사 순매출',money(sum(sales,6),c,true),'별도 자사 판매 원천');
+  const hist=D.market.filter(r=>r[1]===c&&r[2]>=`${Number(month.slice(0,4))-1}${month.slice(4)}-01`&&r[2]<=month+'-01');
+  const dates=[...new Set(hist.map(r=>r[2]))];
+  left=panel('자사 판매액 비중 추이','시장 전체 금액을 분모로 계산',chart([{name:'자사 브랜드',values:dates.map(d=>{const rr=hist.filter(r=>r[2]===d);return ratio(sum(rr.filter(r=>prod[r[3]].brand_role==='own'),5),rr[0][6],100)})}],dates.map(d=>d.slice(2,7)), '%'));
+  const br=['B1','B2','B3'].map((b,i)=>[i?'경쟁'+i:'자사',ratio(sum(market.filter(r=>prod[r[3]].brand_id===b),5),total,100),i>0]);
+  br.push(['기타',ratio(total-sum(market,5),total,100),true]);
+  right=panel('브랜드별 판매액 비중','동일 국가 · 동일 모의 유통 범위',bars(br));
+  records=panel('제품별 시장 성과','샴푸 · 300ml · A/B 비교군 구분',table(['제품','비교군','판매량','판매액','시장 내 비중'],market.map(r=>[`${shortName(r[3])}<small>${r[3]}</small>`,prod[r[3]].comparison_group,fmt(r[4]),money(r[5],c),pct(r[5]/total*100)])));
+  note=`${names[c]} 자사 판매액 비중은 ${pct(share)}입니다. 전년 동월 대비 ${fmt(share-prevShare,2)}%p 변했습니다. 경쟁사 가격·재고·리뷰를 함께 확인할 수 있습니다.`;
+ }else if(state.tab==='consumer'){
+  const ownReviews=reviews.filter(r=>prod[r.product_id].brand_role==='own');
+  const avg=ownReviews.length?ownReviews.reduce((a,r)=>a+r.rating_value,0)/ownReviews.length:null;
+  stats=metric('선택 기간 리뷰',fmt(reviews.length)+'건','6제품 · 수집된 예시 표본')+metric('자사 평균 별점',avg===null?'—':fmt(avg,2)+' / 5',`${ownReviews.length}건 · 전체 소비자 대표값 아님`)+metric('검색 관심도','미확보','검색 트렌드 원천 없음')+metric('브랜드 설문','미확보','인지도·구매 의향 원천 없음');
+  left=panel('제품별 평균 별점','동일 국가의 수집 리뷰 비교',table(['제품','평균 별점','리뷰수'],D.products.map(p=>{const rr=reviews.filter(r=>r.product_id===p.product_id);return [shortName(p.product_id),rr.length?fmt(rr.reduce((a,r)=>a+r.rating_value,0)/rr.length,2):'—',fmt(rr.length)]})));
+  right=panel('자사 별점 분포','감성 분류 대신 원천 별점 표시',ownReviews.length?bars([5,4,3,2,1].map(n=>[`${n}점`,ownReviews.filter(r=>r.rating_value===n).length/ownReviews.length*100])):'<div class="md-empty"><p>선택한 기간에 리뷰가 없습니다.</p></div>');
+  records=panel('자사 리뷰 원문','제품 A · 감성·토픽 자동 분류 미적용',reviews.filter(r=>r.product_id==='P1A').map(r=>`<article class="md-review"><header><span>${r.review_id} · ${r.written_at.slice(0,10)}</span><strong>별점 ${r.rating_value}/5</strong></header><p>${esc(r.body_text)}</p><small class="md-quiet">구매 인증: ${r.verified_purchase===null?'미확인':r.verified_purchase?'확인':'미인증'}</small></article>`).join('')||'<div class="md-empty"><p>리뷰 원천은 2026년 8월에만 있습니다.</p></div>');
+  note='리뷰 원문과 별점을 먼저 확인합니다. 검색 관심도·설문·감성 라벨은 아직 없어 수치를 표시하지 않습니다.';
+ }else if(state.tab==='ads'){
+  const spend=sum(monthly,9),revenue=sum(monthly,10),clicks=sum(monthly,7),convs=sum(monthly,8);
+  stats=metric('광고비',money(spend,c,true),`${month} 월간 완전 보고`)+metric('클릭률',pct(ratio(clicks,sum(monthly,6),100),2),'클릭 합계 ÷ 노출 합계')+metric('매체 보고 전환',fmt(convs)+'건','중복 제거 전 · 플랫폼 보고 합계')+metric('보고 전환당 비용',money(ratio(spend,convs),c),'광고비 ÷ 매체 보고 전환');
+  const daily=D.ads.filter(r=>r[1]===c&&r[4]==='day'&&r[2].startsWith(month));
+  const dates=[...new Set(daily.map(r=>r[2]))];
+  left=panel('일별 구매 전환율','8/03–8/30 상세 · 결측은 선을 끊어 표시',chart(['search','social'].map(ch=>({name:ch==='search'?'모의 검색':'모의 소셜',values:dates.map(d=>{const r=daily.find(r=>r[2]===d&&r[3]===`C-${c}-${ch}`);return !r||r[11]!=='complete'?null:ratio(r[8],r[7],100)})})),dates.map(d=>d.slice(5)), '%'));
+  right=panel('매체별 ROAS','월간 보고 기준 · 일별 상세와 중복 합산하지 않음',table(['매체','광고비','ROAS'],monthly.map(r=>[r[3].endsWith('search')?'모의 검색':'모의 소셜',money(r[9],c,true),fmt(ratio(r[10],r[9]),2)+'배']))+`<div class="md-empty"><p>${month==='2026-08'&&c==='JP'?'일본 소셜 8/26·8/27 결측. 일별 부분합으로 월 실적을 대체하지 않습니다.':'월간 보고와 상세 보고를 분리해 확인합니다.'}</p></div>`);
+  records=panel('캠페인별 성과','제품 A 구매 · 같은 전환·귀속 기준',table(['캠페인','노출','클릭','구매','CVR','ROAS'],monthly.map(r=>[`${r[3].endsWith('search')?'검색 캠페인':'소셜 캠페인'}<small>${r[3]}</small>`,fmt(r[6]),fmt(r[7]),fmt(r[8]),pct(ratio(r[8],r[7],100),2),fmt(ratio(r[10],r[9]),2)+'배'])));
+  note='광고비·귀속 매출은 국가별 통화로 표시합니다. 모의 검색·소셜 명칭을 유지하며 실제 Google·Meta 연동으로 표시하지 않습니다.';
+ }else if(state.tab==='commerce'){
+  const priceRows=D.prices.filter(r=>r[1]===c&&r[2].startsWith(month));
+  const stockRows=D.stock.filter(r=>r[1]===c&&r[2].startsWith(month)&&r[3]==='P1A');
+  const dates=stockRows.map(r=>r[2]);
+  const last=stockRows.at(-1);
+  stats=metric('자사 A 관측 재고',last?fmt(last[4])+'개':'—',last?last[2]+' 관측':'상세 원천은 2026년 8월')+metric('품절 관측',fmt(stockRows.filter(r=>r[5]==='out_of_stock').length)+'일','자사 제품 A · 일 1회 스냅샷')+metric('가격 관측',fmt(priceRows.length)+'건','6제품 · 현지 판매처')+metric('경쟁사 행사',c==='JP'&&month==='2026-08'?'10% 할인':'없음','기록된 행사만 표시');
+  left=panel('자사 제품 A 재고 추이','기록 시점의 판매 가능 수량',chart([{name:'판매 가능 수량',values:stockRows.map(r=>r[4])}],dates.map(d=>d.slice(5)), '개'));
+  const pDates=[...new Set(priceRows.map(r=>r[2]))];
+  right=panel('제품 A 가격 비교','자사와 경쟁1 · 동일 300ml',chart(['P1A','P2A'].map(p=>({name:shortName(p),values:pDates.map(d=>priceRows.find(r=>r[2]===d&&r[3]===p)?.[4]??null)})),pDates.map(d=>d.slice(5)),cur));
+  records=panel('최근 가격·재고 관측','가격 합산 없음 · 재고는 가장 최근 관측',table(['제품','관측일','가격','재고 수량'],D.products.map(p=>{const r=priceRows.filter(r=>r[3]===p.product_id).at(-1);const s=D.stock.filter(r=>r[1]===c&&r[2].startsWith(month)&&r[3]===p.product_id).at(-1);return [shortName(p.product_id),r?.[2]??'—',r?money(r[4],c):'—',s?fmt(s[4]):'미확보']})));
+  note=c==='JP'&&month==='2026-08'?'일본 경쟁1 제품 A 할인은 8/10–8/23, 자사 재고 변경 기록은 8/19에 있습니다. 광고 전환 변화와의 인과관계는 확인되지 않았습니다.':'가격·재고 상세는 2026년 8월 원천만 있습니다. 재고 스냅샷을 기간 합계로 더하지 않습니다.';
+ }else if(state.tab==='budget'){
+  const total=sum(monthly,9);
+  stats=metric('현재 집행액',money(total,c,true),'월간 광고 성과 기준')+metric('집행 매체',fmt(monthly.length)+'개','모의 검색·모의 소셜')+metric('계획 예산','미설정','배정 예산 원천 없음')+metric('예상 개선','계산 전','반응 모델·제약 미확보');
+  left=panel('현재 지출 구성','예산 배정액이 아닌 실제 집행 비중',bars(monthly.map(r=>[r[3].endsWith('search')?'모의 검색':'모의 소셜',r[9]/total*100]))+table(['매체','실제 지출','ROAS'],monthly.map(r=>[r[3].endsWith('search')?'모의 검색':'모의 소셜',money(r[9],c),fmt(ratio(r[10],r[9]),2)+'배'])));
+  right=panel('시나리오 검토','현재 확보한 데이터의 범위',`<div class="md-empty"><h3>예측·재배분안 준비 전</h3><p>계획 예산, 채널별 제한, 반응 모델이 필요합니다.</p></div><button class="md-action" type="button" disabled>집행 승인 준비 전</button>`);
+  records=panel('실행 전 확인 항목','승인·집행 기능은 화면 구조 초안',table(['항목','상태'],[['현재 실적','확보'],['총예산·채널별 최소/최대','미확보'],['예측 모델·예상 효과','미확보'],['변경 제안·승인 기록','없음']])+`<p class="md-sub">이 초안에서는 승인 상태나 예상 성과를 새로 만들지 않습니다.</p>`);
+  note='현재 지출과 효율을 비교하는 화면입니다. 예측 모델 없이 기존 ROAS에 예산을 곱해 예상 성과를 만들지 않습니다.';
+ }else{
+  const quality=D.quality.filter(r=>r.country_code===c);
+  stats=metric('전체 원천', '1,652건','3국가 전체 · 11종')+metric('선택 국가 수집',fmt(quality.reduce((n,r)=>n+r.received_count,0))+' / 56','8/03–8/30 광고 상세')+metric('광고 결측',fmt(quality.reduce((n,r)=>n+r.missing_count,0))+'건','누락을 0으로 대체하지 않음')+metric('데이터 성격','가상 원천','실제 시장·광고 계정 아님');
+  left=panel('광고 수집 상태','상세 기간 고정 · 월 선택과 무관',table(['캠페인','기대','수신','누락'],quality.map(r=>[r.campaign_id,fmt(r.expected_count),fmt(r.received_count),fmt(r.missing_count)])));
+  right=panel('미확보 데이터','새로운 수치를 생성하지 않음',`<div class="md-empty"><h3>검색·설문·예측</h3><p>검색 관심도, 인지도·구매 의향 설문, 감성 정답 라벨, 예산 반응 모델·승인 기록은 없습니다.</p></div><p class="md-quiet">데모 원천의 관측·계산과 분석 가설을 구분합니다.</p>`);
+  records=panel('원천 파일 목록','원본 11종의 건수·해시 확인',table(['원천','원본 건수','SHA-256 앞 12자리'],D.sources.map(s=>[s.file,fmt(s.records),s.sha256.slice(0,12)])));
+  note=quality.some(r=>r.missing_count)?'일본 소셜은 8/26·8/27 두 날짜가 누락되어 26/28건을 수신했습니다. 월간 완전 보고는 별도 원천입니다.':'선택 국가의 두 캠페인은 상세 기간 28일의 보고를 모두 수신했습니다. 이는 데이터 내용의 인과적 타당성을 뜻하지 않습니다.';
+ }
+ return {stats,left,right,records,note};
+}
+const settings=[{id:'monitor-draft',tab:'market',name:'통합 모니터형'},{id:'workbench-draft',tab:'ads',name:'분석 워크벤치형'},{id:'brief-draft',tab:'consumer',name:'브리핑·탐색형'}];
+function fitCharts(){
+ for(const svg of root.querySelectorAll('.md-chart')){
+  const w=svg.getBoundingClientRect().width;if(w<100)continue;
+  svg.setAttribute('viewBox',`0 0 ${w} 205`);
+  const scale=(w-68)/292,map=x=>x<=48?x:48+(x-48)*scale;
+  for(const el of svg.querySelectorAll('text,line,circle'))for(const attr of ['x','x1','x2','cx'])if(el.hasAttribute(attr)){
+   const key='data-original-'+attr;if(!el.hasAttribute(key))el.setAttribute(key,el.getAttribute(attr));
+   el.setAttribute(attr,map(Number(el.getAttribute(key))));
+  }
+  for(const path of svg.querySelectorAll('path'))path.setAttribute('transform',`translate(48 0) scale(${scale} 1) translate(-48 0)`);
+ }
+}
+for(const setting of settings){
+ const app=root.querySelector('#'+setting.id),state={...setting,country:'JP',month:'2026-08'};
+ function render(){
+  const p=page(state),uid=setting.id;
+  const nav=`<nav class="md-tabs" role="tablist" aria-label="${setting.name} 데이터 도메인">${domains.map(([id,label])=>`<button class="cursor-interaction" type="button" role="tab" id="${uid}-${id}" aria-selected="${id===state.tab}" aria-controls="${uid}-content" data-domain="${id}">${label}</button>`).join('')}</nav>`;
+  const filter=`<div class="md-filter"><label>국가<select class="cursor-interaction" aria-label="국가" data-field="country">${Object.entries(names).map(([k,v])=>`<option value="${k}" ${state.country===k?'selected':''}>${v}</option>`).join('')}</select></label><label>기준 월<select class="cursor-interaction" aria-label="기준 월" data-field="month">${['2026-07','2026-08','2026-09'].map(v=>`<option ${v===state.month?'selected':''}>${v}</option>`).join('')}</select></label></div>`;
+  const content=`<main class="md-main"><div class="md-head"><div><h1>${labels[state.tab]}</h1><p class="md-sub">${names[state.country]} · 샴푸 · 300ml · ${state.month.replace('-','년 ')}월</p></div>${filter}</div><div class="md-sourcebar"><span class="md-dot"></span><span>${sources[state.tab]}</span><span>원천 상세 보기에서 기준 확인</span></div><div id="${uid}-content" role="tabpanel" aria-labelledby="${uid}-${state.tab}" class="md-content" aria-live="polite"><div class="md-metrics">${p.stats}</div><div class="md-charts">${p.left}${p.right}</div>${setting.id==='brief-draft'?`<div class="md-note">${p.note}</div>`:''}${p.records}</div>${setting.id!=='brief-draft'?`<div class="md-note">${p.note}</div>`:''}<details><summary>원천·집계 기준</summary><p class="md-quiet">D003B 원본 11종 1,652건. 월간 2024/10–2026/09, 상세 2026/08/03–08/30. 통화 간 합산 없음. 월간·일별 중복 합산 없음. 모의 시장 전체를 분모로 사용. 미확보·결측은 그대로 표시.</p></details></main>`;
+  app.innerHTML=`<header class="md-topbar"><div class="md-mark"><span class="md-logo">M</span>마케팅 인사이트</div><small>가상 자사 브랜드</small><span class="md-pill">가상 데이터</span></header>${setting.id==='workbench-draft'?`<div class="md-layout">${nav}${content}</div>`:nav+content}<footer class="md-footer"><span>D003B · 한국 / 일본 / 미국 · 화면 구성 초안</span><span>원천 값 유지 · 실제 집행 없음</span></footer>`;
+  requestAnimationFrame(fitCharts);
+ }
+ app.addEventListener('click',e=>{const t=e.target.closest('[data-domain]');if(t){state.tab=t.dataset.domain;render();}});
+ app.addEventListener('change',e=>{if(e.target.dataset.field){state[e.target.dataset.field]=e.target.value;render();}});
+ render();
+ new ResizeObserver(fitCharts).observe(app);
+ if(globalThis.Tweak){const style={compact:false};const tweak=new Tweak({container:app,onChange:()=>app.style.setProperty('font-size',style.compact?'12px':'13px')});tweak.addToggle(style,'compact',{label:'본문 밀도 높이기'});}
+}
+})();
+</script>

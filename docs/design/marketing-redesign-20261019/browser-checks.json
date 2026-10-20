@@ -1,0 +1,444 @@
+{
+  "checkedAt": "2026-10-19T05:13:33.872Z",
+  "url": "http://127.0.0.1:5174/workbench",
+  "walkStartedAt": "2026-10-19T04:39:45.808Z",
+  "dataset": "D008",
+  "country": "KR",
+  "period": "ALL",
+  "mainScreenCount": 34,
+  "screens": [
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 현황",
+      "type": "",
+      "charts": [
+        "최근 관측월 · 브랜드별 시장점유율",
+        "제품별 시장 판매액 추이"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "구매 경험 조사",
+      "type": "",
+      "charts": [
+        "제품별 구매 경험 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁사 공개 활동",
+      "type": "공개 경쟁 광고",
+      "charts": [
+        "경쟁사별 공개 광고",
+        "광고 소재 형식"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁사 공개 활동",
+      "type": "기사·발표·사건",
+      "charts": [
+        "발행처별 공개 자료",
+        "공개 자료 발행 추이"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "경쟁사 공개 활동",
+      "type": "경매 경쟁",
+      "charts": [
+        "최근 경쟁 도메인 보고"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 외부 요인",
+      "type": "공표 통계",
+      "charts": [
+        "시장 문맥 지수 추이"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "시장·경쟁",
+      "tab": "시장 외부 요인",
+      "type": "날씨·휴일·시즌",
+      "charts": [
+        "기온 변화 · 마케팅 보조 맥락",
+        "강수량 변화"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰 분석",
+      "type": "리뷰 원문",
+      "charts": [
+        "제품별 리뷰 요약",
+        "자사 별점 분포"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "리뷰 분석",
+      "type": "리뷰 주제·감성",
+      "charts": [
+        "리뷰 측면별 주석",
+        "문장에 표시된 의견 방향"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 관심·수요",
+      "type": "검색 관심",
+      "charts": [
+        "자사 제품 A · 검색 관심 추이"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "검색 관심·수요",
+      "type": "키워드 수요·비용",
+      "charts": [
+        "검색어별 예상 수요",
+        "검색어 경쟁 수준"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "고객 문의",
+      "type": "",
+      "charts": [
+        "일별 고객 문의 접수",
+        "문의 주제별 접수",
+        "문의 처리 상태"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "브랜드·소비자",
+      "tab": "브랜드 인식 조사",
+      "type": "",
+      "charts": [
+        "제품별 브랜드 긍정 응답",
+        "제품별 긍정 응답률"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "성과",
+      "type": "",
+      "charts": [
+        "월별 매체 광고비"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "세그먼트",
+      "type": "",
+      "charts": [
+        "기기별 일간 광고비",
+        "기기별 보고 광고비"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "운영 설정",
+      "type": "",
+      "charts": [
+        "캠페인별 운영 예산"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "광고·소재",
+      "tab": "소재",
+      "type": "",
+      "charts": [
+        "소재 형식별 버전 구성"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "자연 검색 유입",
+      "charts": [
+        "기기별 검색 클릭 추이",
+        "검색 기기 구성"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "유입",
+      "type": "웹·앱 이벤트",
+      "charts": [
+        "유입 경로별 웹 활동",
+        "기기별 웹 활동"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "구매 단계",
+      "type": "",
+      "charts": [
+        "상품 행동별 수량",
+        "일별 상품 구매 수량",
+        "제품별 상품 구매 수량"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "웹·전환",
+      "tab": "사이트 품질",
+      "type": "",
+      "charts": [
+        "페이지별 장애 발생·지속 시간",
+        "페이지별 가장 느린 관측 로딩 속도"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "판매 요약",
+      "type": "",
+      "charts": [
+        "월별 순판매액"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "주문 상품 행",
+      "charts": [
+        "일별 주문행 매출",
+        "제품별 주문행 매출"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "주문·환불",
+      "type": "취소·반품·환불",
+      "charts": [
+        "요청 종류",
+        "처리 상태"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "원가·마진",
+      "type": "",
+      "charts": [
+        "제품별 최근 단위 원가"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "고객",
+      "type": "",
+      "charts": [
+        "코호트별 구매·재구매 현황"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "매출·고객",
+      "tab": "CRM 캠페인",
+      "type": "",
+      "charts": [
+        "이메일 반응 요약"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "가격 스냅샷",
+      "charts": [
+        "제품별 판매가 추이",
+        "최근 관측일 · 제품별 판매가 범위"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "가격·프로모션",
+      "type": "프로모션",
+      "charts": [
+        "제품·판매처별 행사 조건"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "재고",
+      "type": "",
+      "charts": [
+        "제품별 판매 가능 재고 추이",
+        "위치별 품절 관측 달력"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "상품·유통",
+      "tab": "유통·배송",
+      "type": "",
+      "charts": [
+        "배송 처리 상태"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "콘텐츠",
+      "type": "",
+      "charts": [
+        "제품별 콘텐츠 조회수",
+        "플랫폼별 콘텐츠"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "댓글·언급",
+      "type": "",
+      "charts": [
+        "댓글 수집 추이"
+      ],
+      "empty": false,
+      "scrollWidth": 1110,
+      "width": 1110
+    },
+    {
+      "domain": "소셜·콘텐츠",
+      "tab": "크리에이터 협업",
+      "type": "",
+      "charts": [
+        "협업별 대상·비용·계약 상태"
+      ],
+      "empty": false,
+      "scrollWidth": 1125,
+      "width": 1125
+    }
+  ],
+  "empty": 0,
+  "overflow": 0,
+  "finalLayout": {
+    "charts": [
+      "제품별 리뷰 요약",
+      "자사 별점 분포"
+    ],
+    "scrollWidth": 1110,
+    "width": 1110
+  },
+  "additionalChecks": {
+    "allDatasetUsesBusinessCharts": true,
+    "countryComparisonReviews": {
+      "KR": 560,
+      "JP": 730,
+      "US": 1120
+    },
+    "countryCommonOptionRemoved": true,
+    "fixedTicketStatusOrder": true,
+    "adAxisClipping": 0,
+    "itemSummaryEvidenceOpens": true,
+    "rawEvidenceCreatedAt": "2026-10-19T05:06:31.333Z",
+    "mobile390": {
+      "documentWidth": 375,
+      "scrollWidth": 375,
+      "stageCards": 4,
+      "calendarWidth": 321,
+      "calendarScrollWidth": 817
+    },
+    "advancedBudgetUsesComparisonTable": true,
+    "viewportOverrideReset": true
+  },
+  "console": [],
+  "limits": [
+    "D008 is a screen comparison scenario; existing Agent API supports D007 only",
+    "No deployed-site or production Agent validation"
+  ]
+}

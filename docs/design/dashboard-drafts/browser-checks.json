@@ -1,0 +1,230 @@
+{
+  "tabs": [
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 0,
+      "heading": "시장과 경쟁 구도",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "시장·경쟁"
+    },
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 0,
+      "heading": "소비자 평가와 브랜드 반응",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "브랜드·소비자"
+    },
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 0,
+      "heading": "매체별 광고 성과",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "광고 성과"
+    },
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 0,
+      "heading": "가격과 판매 가능성",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "가격·재고"
+    },
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 1,
+      "heading": "예산 배분과 실행 검토",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "예산·승인"
+    },
+    {
+      "variant": "통합 모니터형",
+      "disabledApprovals": 0,
+      "heading": "원천과 수집 상태",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "데이터 품질"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 0,
+      "heading": "시장과 경쟁 구도",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "시장·경쟁"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 0,
+      "heading": "소비자 평가와 브랜드 반응",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "브랜드·소비자"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 0,
+      "heading": "매체별 광고 성과",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "광고 성과"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 0,
+      "heading": "가격과 판매 가능성",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "가격·재고"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 1,
+      "heading": "예산 배분과 실행 검토",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "예산·승인"
+    },
+    {
+      "variant": "분석 워크벤치형",
+      "disabledApprovals": 0,
+      "heading": "원천과 수집 상태",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "데이터 품질"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 0,
+      "heading": "시장과 경쟁 구도",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "시장·경쟁"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 0,
+      "heading": "소비자 평가와 브랜드 반응",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "브랜드·소비자"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 0,
+      "heading": "매체별 광고 성과",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "광고 성과"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 0,
+      "heading": "가격과 판매 가능성",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "가격·재고"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 1,
+      "heading": "예산 배분과 실행 검토",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "예산·승인"
+    },
+    {
+      "variant": "브리핑·탐색형",
+      "disabledApprovals": 0,
+      "heading": "원천과 수집 상태",
+      "invalid": false,
+      "metrics": 4,
+      "selected": "데이터 품질"
+    }
+  ],
+  "responsive": [
+    {
+      "scrollWidth": 305,
+      "svgWidth": 205,
+      "variant": "monitor-draft",
+      "viewBox": "0 0 205 205",
+      "width": 305
+    },
+    {
+      "scrollWidth": 305,
+      "svgWidth": 205,
+      "variant": "workbench-draft",
+      "viewBox": "0 0 205 205",
+      "width": 305
+    },
+    {
+      "scrollWidth": 305,
+      "svgWidth": 201,
+      "variant": "brief-draft",
+      "viewBox": "0 0 201 205",
+      "width": 305
+    },
+    {
+      "scrollWidth": 753,
+      "svgWidth": 639,
+      "variant": "monitor-draft",
+      "viewBox": "0 0 639 205",
+      "width": 753
+    },
+    {
+      "scrollWidth": 753,
+      "svgWidth": 518,
+      "variant": "workbench-draft",
+      "viewBox": "0 0 518 205",
+      "width": 753
+    },
+    {
+      "scrollWidth": 753,
+      "svgWidth": 631,
+      "variant": "brief-draft",
+      "viewBox": "0 0 631 205",
+      "width": 753
+    },
+    {
+      "scrollWidth": 1009,
+      "svgWidth": 518.921875,
+      "variant": "monitor-draft",
+      "viewBox": "0 0 518.921875 205",
+      "width": 1009
+    },
+    {
+      "scrollWidth": 1009,
+      "svgWidth": 428.390625,
+      "variant": "workbench-draft",
+      "viewBox": "0 0 428.390625 205",
+      "width": 1009
+    },
+    {
+      "scrollWidth": 1009,
+      "svgWidth": 560.65625,
+      "variant": "brief-draft",
+      "viewBox": "0 0 560.65625 205",
+      "width": 1009
+    }
+  ],
+  "filters": [
+    {
+      "country": "KR",
+      "text": "모의 시장 판매액\n6.1억 KRW\n선정 6제품 + 기타 제품\n자사 판매액 비중\n10.0%\n-0.16%p · 전년 동월 대비\n자사 판매량\n3,885개\n자사 제품 A·B 합계\n자사 순매출\n1558.5만 KRW\n별도 자사 판매 원천\n자사 판매액 비중 추이\n시장 전체 금액을 분모로 계산\n%\n0\n6\n11.9\n25-08\n26-02\n26-08\n자사 브"
+    },
+    {
+      "country": "JP",
+      "text": "모의 시장 판매액\n6232.3만 JPY\n선정 6제품 + 기타 제품\n자사 판매액 비중\n9.6%\n-1.00%p · 전년 동월 대비\n자사 판매량\n3,713개\n자사 제품 A·B 합계\n자사 순매출\n155.1만 JPY\n별도 자사 판매 원천\n자사 판매액 비중 추이\n시장 전체 금액을 분모로 계산\n%\n0\n6.1\n12.3\n25-08\n26-02\n26-08\n자"
+    },
+    {
+      "country": "US",
+      "text": "모의 시장 판매액\n63.3만 USD\n선정 6제품 + 기타 제품\n자사 판매액 비중\n9.8%\n-0.13%p · 전년 동월 대비\n자사 판매량\n4,095개\n자사 제품 A·B 합계\n자사 순매출\n1.7만 USD\n별도 자사 판매 원천\n자사 판매액 비중 추이\n시장 전체 금액을 분모로 계산\n%\n0\n6.1\n12.2\n25-08\n26-02\n26-08\n자사 브랜"
+    },
+    {
+      "emptyJuly": true
+    }
+  ]
+}

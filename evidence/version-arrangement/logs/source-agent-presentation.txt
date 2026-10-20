@@ -1,0 +1,11 @@
+✔ P01 chart and formatted cards use the same approved values and reference IDs (2.9144ms)
+✔ P02 unreviewed and unclassified candidates never become evidence of no effect (1.3464ms)
+✔ P03 null is not zero; multiple months cannot become duplicated product bars (2.3828ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28.5865
