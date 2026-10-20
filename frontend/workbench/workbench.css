@@ -51,3 +51,5 @@
 
 /* Chart height follows semantic content; fixed cards must not clip axes or calendars. */
 .wb .wb-semantic-chart{height:auto;min-height:260px}.wb .wb-chart:not(.wb-semantic-chart):has(.recharts-bar-rectangle){height:auto;min-height:322px}.wb .wb-chart:not(.wb-semantic-chart):has(.recharts-bar-rectangle) .wb-plot{flex:none;height:240px;min-height:240px}
+
+.wb-chart-caption{margin:0 0 12px;color:#667085;font-size:12px;line-height:1.6;max-width:80ch}

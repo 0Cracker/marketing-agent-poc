@@ -16,6 +16,7 @@
 | 온톨로지·필드·시간·조회 정책 | [연구 인덱스](research/marketing-ontology/README.md), [공통 의미 규약](research/marketing-ontology/common-contract/README.md) |
 | 데이터 생성·변경 승인 | [승인 기록](research/marketing-ontology/data-proposal.md). 제안이라는 이름이어도 승인·규칙의 근거는 보존한다. |
 | 현재 데이터·해시·보존 정책 | [데이터 안내](../data/README.md) |
+| 데이터별 보유 기간·질문 범위 | [41개 유형·국가별 기간표](design/current-data-coverage.md) |
 | 설계 선택과 이유 | [결정 인덱스](decisions/README.md) |
 | 디자인·답변 예시·외부 조사 | [디자인 보드](references/dashboard-design/README.md), [답변 예시](references/marketing-agent-answer-examples-20261019.md), [API 조사](references/free-llm-api-specs-20261016.md) |
 | 검증 원본 | [Evidence 안내](../evidence/README.md), 연구 폴더의 `runs/`와 배치별 결과 |
