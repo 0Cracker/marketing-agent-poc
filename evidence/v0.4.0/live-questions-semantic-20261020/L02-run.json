@@ -1,0 +1,58 @@
+{
+  "role": "analysis",
+  "question": "미국 2026년 8월 자사와 경쟁 6제품을 같은 시장 분모로 비교하고, 가격 의견의 반대 근거도 보여줘.",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "US",
+    "scopeId": "CURRENT-US",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
+  },
+  "parentId": null,
+  "focus": "price",
+  "status": "held",
+  "stage": "exploration",
+  "events": [
+    {
+      "type": "scope_validated",
+      "at": "2026-10-20T04:38:21.723Z"
+    },
+    {
+      "type": "quality",
+      "at": "2026-10-20T04:38:21.932Z",
+      "available": 13756,
+      "excluded": 0,
+      "rawFallback": false,
+      "coverage": "sample"
+    },
+    {
+      "type": "stopped",
+      "stage": "exploration",
+      "reason": "model_failed",
+      "at": "2026-10-20T04:38:25.137Z"
+    }
+  ],
+  "history": [],
+  "modelCalls": 1,
+  "toolCalls": 0,
+  "issuedFacts": {},
+  "issuedRecords": [],
+  "requiredCounters": {},
+  "inputFingerprint": "0f023e6eaba1f6ba6a8b25f656611a618bacb9fe576342eff4ee5953ef93f695",
+  "id": "dc75f8ea-bf2d-4134-91e1-1dbac4b3cfd1",
+  "version": 7,
+  "reason": "model_failed",
+  "resumeConditions": [
+    "Resolve model_failed before continuing"
+  ]
+}

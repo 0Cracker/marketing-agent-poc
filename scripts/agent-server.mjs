@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
-// Prefer this checkout after integration; retain the original split-worktree layout.
-const {loadCurrentData}=await import(fs.existsSync(new URL('./current-data.mjs',import.meta.url))?'./current-data.mjs':'../../marketing-dashboard-drafts/scripts/current-data.mjs');
+import {loadCurrentData} from './current-data.mjs';
 import {CatalogTools} from '../backend/agent-tools.mjs';
 import {AgentFlow,FlowStore} from '../backend/agent-flow.mjs';
 import {localPlanner} from '../backend/local-planner.mjs';

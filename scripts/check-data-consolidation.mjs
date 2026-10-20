@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {createServer} from 'vite';
 import {loadCurrentData,sha256,currentDataPlugin} from './current-data.mjs';
 import {businessKey} from './data-business-keys.mjs';
-const sourceRoot=fs.existsSync(new URL('../backend/agent-tools.mjs',import.meta.url))?new URL('../',import.meta.url):new URL('../../marketing-agent-poc/',import.meta.url);
+const sourceRoot=new URL('../',import.meta.url);
 const {CatalogTools,cents}=await import(new URL('backend/agent-tools.mjs',sourceRoot));
 const {AgentFlow,FlowStore}=await import(new URL('backend/agent-flow.mjs',sourceRoot));
 const {createAgentServer}=await import(new URL('backend/agent-http.mjs',sourceRoot));

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-15",
+  "references": 40,
+  "visualCandidates": 13,
+  "embeddedImages": 16,
+  "imageFilesExist": true,
+  "rasterImageValidation": "passed",
+  "browser": {
+    "cards": 40,
+    "initialVisible": 13,
+    "loadedCoverImages": 13,
+    "allToggleCount": 40,
+    "searchNorthbeamCount": 1,
+    "selectedOnlyCount": 1,
+    "zoomDialog": "opened and verified",
+    "horizontalOverflowAtDefaultViewport": false
+  },
+  "appBuild": "not run; no app code changes",
+  "limits": [
+    "Official product graphics and live template screenshots are distinguished.",
+    "R38-R40 detail access limited.",
+    "No live-product feature or mobile-layout verification."
+  ]
+}

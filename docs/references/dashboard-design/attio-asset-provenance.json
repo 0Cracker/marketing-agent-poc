@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "contentType": "image/avif",
+      "id": "e3fa7fa041182b6d",
+      "kind": "image",
+      "name": "image",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/5998e153-894c-4b72-b05c-3de66bbefa9b/e3fa7fa041182b6d",
+      "url": "https://attio.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F234930%2F2418x948%2F5acb850c03%2Freporting-refresh-dashboard-transparent-3x.png&w=828&q=75"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "1b0b6ebd1bef11ee",
+      "kind": "image",
+      "name": "image",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/5998e153-894c-4b72-b05c-3de66bbefa9b/1b0b6ebd1bef11ee",
+      "url": "https://attio.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F234930%2F1478x800%2Fabb2878865%2Freporting-example-1-rounded.png&w=1920&q=75"
+    }
+  ],
+  "directoryPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/5998e153-894c-4b72-b05c-3de66bbefa9b",
+  "failures": [],
+  "manifestPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/5998e153-894c-4b72-b05c-3de66bbefa9b/manifest.json",
+  "summary": {
+    "downloadedCount": 2,
+    "elapsedMs": 6356.1736000000965,
+    "failedCount": 0,
+    "requestedCount": 2
+  }
+}

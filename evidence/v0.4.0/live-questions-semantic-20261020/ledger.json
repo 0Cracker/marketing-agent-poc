@@ -1,0 +1,129 @@
+{
+  "startedAt": "2026-10-20T04:38:17.433Z",
+  "ceiling": 24,
+  "used": 3,
+  "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+  "hashes": {
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\manifest.json": "7a72f4e3858ccc44018941e3129ab78437d3b64357da477ac2595e51ceca0756",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\products.jsonl": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\identity-mappings.jsonl": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\market-sales.jsonl": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\purchase-surveys.jsonl": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\search-interest.jsonl": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\keyword-demand.jsonl": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\organic-search.jsonl": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\prices.jsonl": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\promotions.jsonl": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\public-ads.jsonl": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\publications.jsonl": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\campaigns.jsonl": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\ad-performance.jsonl": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\ad-breakdowns.jsonl": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\auction-insights.jsonl": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\creatives.jsonl": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\web-events.jsonl": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\commerce-events.jsonl": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\order-lines.jsonl": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\refunds.jsonl": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\costs.jsonl": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\inventory.jsonl": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\distribution-fulfilment.jsonl": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\reviews.jsonl": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\review-annotations.jsonl": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\customer-inquiries.jsonl": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\owned-content.jsonl": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\social-comments.jsonl": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\creator-collaborations.jsonl": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\customer-cohorts.jsonl": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\crm-performance.jsonl": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\brand-surveys.jsonl": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\public-statistics.jsonl": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\weather-calendar.jsonl": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\change-events.jsonl": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\collection-runs.jsonl": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\site-events.jsonl": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\experiments.jsonl": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\budget-models.jsonl": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\budget-policies.jsonl": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\sales-reports.jsonl": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\definitions.json": "c14c4e2e09b1055d2e4d7a97a513becb92631a62fdb608138fb3625fa32cb6dd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\product-presentation.json": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\backend\\agent-flow.mjs": "e92c623bf14c834c29f6f2915aff8381932117cacf00469700967128d5f07b2a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\backend\\agent-tools.mjs": "9ccf30ed2f116817dbcc5fe113f4fed435d5b019232499dfcb17f9660bc10e0f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\backend\\agent-model.mjs": "f0227d5a5f2630963d8a8e6a6ac8db6a1420fd682d0465b6c4bb2c6525de00fc",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\backend\\agent-runtime.mjs": "7e29d64d24c6d95627d8ed972e01927b80086a43e280cf7191e237826c1eea58",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\scripts\\evaluate-live-questions.mjs": "34c1a070a69b66ea6a1fb2cc34fc4f0f70c4fc2cccde7708de4eebdb942e8f67"
+  },
+  "definitions": [
+    {
+      "id": "L01",
+      "country": "KR",
+      "focus": "price",
+      "question": "한국 2026년 8월 6제품의 금액 점유율을 비교하고, 자사 P1A의 가격 관련 지지·반대 근거를 확인해줘. 인과로 단정하지 마."
+    },
+    {
+      "id": "L02",
+      "country": "US",
+      "focus": "price",
+      "question": "미국 2026년 8월 자사와 경쟁 6제품을 같은 시장 분모로 비교하고, 가격 의견의 반대 근거도 보여줘."
+    },
+    {
+      "id": "L03",
+      "country": "JP",
+      "focus": "stock",
+      "question": "일본 2026년 8월 6제품의 시장 위치와 재고 관측을 확인해줘. 한 시점 재고를 품절 지속기간으로 해석하지 마."
+    },
+    {
+      "id": "L04",
+      "country": "JP",
+      "focus": "price",
+      "parent": "L03",
+      "question": "같은 일본·8월·6제품 범위에서 이번에는 가격 관련 지지·반대 근거를 다시 확인해줘."
+    }
+  ],
+  "attempts": [
+    {
+      "number": 1,
+      "case": "L01",
+      "at": "2026-10-20T04:38:21.058Z"
+    },
+    {
+      "number": 2,
+      "case": "L02",
+      "at": "2026-10-20T04:38:25.100Z"
+    },
+    {
+      "number": 3,
+      "case": "L03",
+      "at": "2026-10-20T04:38:29.305Z"
+    }
+  ],
+  "cases": [
+    {
+      "id": "L01",
+      "status": "fail",
+      "runId": "d4111ed7-5eb8-4244-a30a-67f1835920f7",
+      "runStatus": "held",
+      "reason": "model_failed"
+    },
+    {
+      "id": "L02",
+      "status": "fail",
+      "runId": "dc75f8ea-bf2d-4134-91e1-1dbac4b3cfd1",
+      "runStatus": "held",
+      "reason": "model_failed"
+    },
+    {
+      "id": "L03",
+      "status": "fail",
+      "runId": "11305d53-0fa3-4fd2-9865-838208012ffd",
+      "runStatus": "held",
+      "reason": "model_failed"
+    },
+    {
+      "id": "L04",
+      "status": "not_run",
+      "reason": "parent_not_analyzed"
+    }
+  ]
+}

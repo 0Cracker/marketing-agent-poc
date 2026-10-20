@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "mode": "offline_model_substitute",
+  "summary": "재고: 원인 평가 미분류",
+  "detail": "원인 평가 미분류",
+  "misleadingZeroPair": false,
+  "externalModelCalls": 0,
+  "questionUnderstanding": "not_run",
+  "humanSemanticReview": "pending"
+}

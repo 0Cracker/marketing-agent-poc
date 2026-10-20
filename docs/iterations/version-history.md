@@ -2,6 +2,12 @@
 
 v0.2.0 데이터 기반 → v0.3.0 대시보드·자료 통합 → v0.4.0 에이전트 연결로 정리했다. 이번 작업은 로컬 커밋 정리다. main·기존 태그·원격은 유지했으며 새 태그·Release는 만들지 않았다. package.json의0.1.0은 기존 패키지 메타데이터로 유지한다.
 
+## 2026-10-20 단일 작업 폴더 통합
+
+현재 작업 폴더는 `marketing-agent-poc` 하나다. main `ee2ca66`은 아래 10월 19일 통합본과 트리가 같고, 10월 20일 후속 두 커밋은 아직 포함하지 않았다. 화면·자료 `0492054`와 백엔드·예산·평가 `6267858`을 main 기반 `maintenance/single-workspace`에 순서대로 반영했다. 기존 개발 브랜치·태그·원격은 보존한다. 검증 후 통합·정리 결과를 로컬 main에 Squash Commit 하나로 반영한다. 원격 main은 `ee2ca66` 그대로다. 새 작업 폴더나 버전은 만들지 않았다.
+
+아래 체크포인트·검증은 당시 결과다. 최신 후속 결과는 [v0.4.0](v0.4.0.md)과 [최종 반영](../design/semantic-changes-20261020.md)을 따른다.
+
 ## 버전 체크포인트
 
 - v0.2.0: `d5f437727d8a704aeb296b134bebee693578e0d3` — 데이터·온톨로지·D007.
@@ -10,7 +16,7 @@ v0.2.0 데이터 기반 → v0.3.0 대시보드·자료 통합 → v0.4.0 에이
 
 전체 커밋 SHA와 버전별 범위는 [체크포인트 인덱스](version-history.json)에 있다. 버전별 범위의 커밋 수는 v0.2.0 30개, v0.3.0 8개, v0.4.0 9개다. v0.2.0에는 기존 데이터 이력29개와 경계 문서1개, v0.3.0에는 기존 화면 이력4개가 포함된다. 이 문서의 최종 SHA 기록은 체크포인트 뒤의 별도 메타데이터 커밋이다.
 
-현재 통합 경로는 marketing-version-history, 브랜치는 integration/version-history다. 원본 dev와 feature/workbench-evolution의 기존 커밋은 보존했다. cherry-pick 순서는 재현 가능한 버전 구성을 위한 사후 정리이며 실제 작업 발생 순서가 아니다.
+당시 통합 경로는 marketing-version-history, 브랜치는 integration/version-history였다. 원본 dev와 feature/workbench-evolution의 기존 커밋은 보존했다. cherry-pick 순서는 재현 가능한 버전 구성을 위한 사후 정리이며 실제 작업 발생 순서가 아니다.
 
 ## 작업별 커밋
 

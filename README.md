@@ -1,55 +1,66 @@
-# Marketing CTI · 판단과 실행 PoC
+# 마케팅 분석·예산 Agent PoC
 
-현재 로컬 버전·작업별 커밋·검증 결과는 [버전 대응표](docs/iterations/version-history.md)를 따른다. v0.2.0 데이터 기반, v0.3.0 대시보드, v0.4.0 에이전트로 구분하며 정식 발행은 수행하지 않았다.
+**작업 폴더는 이 저장소 하나다.** 프런트·백엔드·CURRENT 데이터·문서·검증 도구를 모두 여기서 실행한다. [문서 안내](docs/README.md)에서 버전·더블 다이아몬드·AI 교훈·결과 근거를 찾는다.
 
-DB·실제 AI·실제 광고 계정 없이, 준비된 원천값과 질문/응답으로 분석에서 업무 결정까지 보여주는 데스크톱 시연입니다.
+2026-10-20 정리 시작 시 main은 `ee2ca66`이었다. 후속 개발 커밋 `0492054`(화면·자료)와 `6267858`(백엔드·예산·평가)을 통합·검증하고 폴더 정리와 함께 로컬 main에 반영했다. 원격 main은 변경하지 않았다. 현재 브랜치와 미커밋 상태는 `git status`로 확인한다. 이 정리는 원격 배포나 새 버전 발행이 아니다.
 
-다음 확장을 위한 [마케팅 온톨로지 조사·설계 자료](docs/research/marketing-ontology/README.md)를 별도로 정리했습니다. 문제·질문·스키마·근거와 데이터 사전 승인 제안을 담으며, 현재 앱의 구현 완료 상태를 뜻하지 않습니다.
+가상 마케팅 자료와 채널별 Hill 모형을 사용한다. 기본 에이전트는 오프라인 대역이고, `--live`를 지정하면 실제 모델을 사용한다. 실제 광고 집행은 비활성이다. 최신 구현·실패·검증 범위는 [최종 반영 기록](docs/design/semantic-changes-20261020.md)을 따른다.
 
 ## 폴더 구조
 
 ```text
 marketing-agent-poc/
-├─ frontend/          # 프론트 코드와 정적 파일
-│  ├─ app/            # 화면·스타일·기존 레이아웃
-│  ├─ components/     # UI 컴포넌트
-│  ├─ hooks/          # React 훅
-│  ├─ lib/            # 화면 로직·기존 고정 시연 데이터
-│  ├─ src/            # Vite 진입점
-│  ├─ public/         # 아이콘 등 정적 파일
-│  ├─ vendor/         # 기존 외부 스타일
-│  └─ index.html
-├─ backend/           # 빈 폴더, .gitkeep만 포함
-├─ data/              # 기존 DB 템플릿, 실제 DB 미구축
-│  ├─ db/             # D1 연결 템플릿·빈 스키마
-│  └─ drizzle/        # 마이그레이션 메타데이터
-├─ docs/              # 설계·조사·개발 기록
-├─ tests/             # 기존 검산 테스트
-├─ scripts/           # 실행·작성 도구
-├─ build/             # 기존 호스팅 도구
-├─ examples/          # 선택적으로 참고할 예제
-└─ evidence/          # 검증 근거
+├─ frontend/       화면·차트·대화 패널
+├─ backend/        분석·예산·승인·SQLite·모델 연결
+├─ data/           CURRENT 자료·manifest·원천 보존
+├─ docs/           버전·설계·AI 교훈·연구·레퍼런스
+├─ evidence/       검증 결과·실패·캡처 원본
+├─ scripts/        실행·조회·검산 도구
+├─ tests/          회귀 검사
+├─ work/           로컬 DB·이번 실행 로그 (Git 제외)
+└─ archive/        과거 스냅샷·백업 (Git 제외)
 ```
 
-패키지·잠금 파일과 도구 설정은 루트에서 공통 관리합니다. 실행 명령도 루트에서 사용하며 빌드 결과는 기존 `dist/`에 생성합니다. `@/`는 `frontend/`를 가리킵니다. 기존 Next.js·호스팅 보조 파일은 보존하지만 현재 실행 경로는 React/Vite입니다.
-
-2026-10-14 폴더 정리: 사용자 요청으로 프론트·백엔드·데이터 영역을 분리했습니다. 백엔드 서버나 새 데이터는 만들지 않았습니다. 기존 조사 문서와 데이터 자료는 `docs/research/marketing-ontology/`에 보존합니다. 발행 버전 미확정 작업이며 기존 발행 일지·태그는 변경하지 않습니다.
+별도 프로젝트 폴더·worktree는 사용하지 않는다. 외부 Python/Java 검증 도구는 기존 상대 경로 `../ontology-validation-tools/`에 보존한다. 이 폴더는 애플리케이션 작업본이 아니며 과거 검증 재현용 설치물이다.
 
 ## 실행·검증
 
-Node.js 22.13 이상. 패키지 매니저가 있으면 pnpm dev/test/build를 사용합니다. 이 환경에서는 다음 직접 실행도 가능합니다.
+아래 명령은 모두 이 저장소 루트에서 실행한다. 현재 검증 환경은 Node 24.19.0이며 `node:sqlite`를 사용한다.
 
-~~~sh
+```powershell
+node scripts/agent-server.mjs
+# 별도 터미널
 node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5173
-node --experimental-strip-types tests/marketing.test.ts
-node --experimental-strip-types tests/demo.test.ts
+# 화면: http://127.0.0.1:5173/workbench
+```
+
+실제 모델은 기존 서버용 `.env.local` 설정을 유지하고 `node scripts/agent-server.mjs --live`로 시작한다. 모델 호출 예산은 실행 전에 정한다.
+
+```powershell
+node --test --test-concurrency=1 tests/agents/*.test.mjs
+node --experimental-strip-types --test tests/agent-client.test.ts tests/agent-answer.test.ts tests/agent-presentation.test.ts
 node node_modules/typescript/bin/tsc --noEmit --incremental false
 node node_modules/vite/bin/vite.js build
-~~~
+```
 
-폴더 정리 검증(2026-10-14, dev `fb74fed` 위 미커밋 작업 트리): 기존 테스트 2개 통과. 프론트 파일의 이동 전후 내용과 새 경로를 확인했습니다. 타입 검사·빌드는 기존 `node_modules` 링크가 이전 경로인 `Desktop/marketing-agent-poc`를 가리켜 TypeScript/Vite를 찾지 못했습니다. 의존성 설치를 복구한 환경에서 두 검증을 다시 실행해야 하며, UI 실행 검증은 미수행입니다.
+## 배포 링크
 
-## 대표 시연
+현재 배포: [마케팅 Canvas · Agent PoC](https://marketing-canvas-poc-1008.gogoseo110416586.chatgpt.site)
+
+2026-10-20 Sites 조회에서 확인한 기존 배포 주소입니다. 이 배포가 현재 Git `main` 또는 `dev`의 어느 커밋과 일치하는지는 확인하지 않았습니다.
+
+`main`과 `dev`는 별도 Sites 사이트로 나누어 고정 주소 두 개를 운영할 수 있습니다. 아래는 운영 방침이며, 브랜치별 사이트 분리와 자동 배포는 아직 설정하지 않았습니다.
+
+| 기준 브랜치 | 용도 | 전용 배포 링크 |
+| --- | --- | --- |
+| `main` | 검증·병합된 정식 버전 확인 | 미설정 |
+| `dev` | 개발 중인 변경 확인 | 미설정 |
+
+- 두 사이트는 서로 다른 `project_id`와 주소를 사용합니다. 같은 사이트에 번갈아 배포하면 기존 화면이 교체됩니다.
+- 배포할 때 해당 브랜치의 커밋을 빌드하고, 대상 사이트와 배포 커밋 SHA를 확인합니다. 브랜치에 푸시하는 것만으로 배포되는 설정은 현재 없습니다.
+- 분리 배포가 완료되면 위 표를 실제 주소로 갱신하고, 기존 배포의 역할과 각 사이트의 접근 권한을 함께 기록합니다.
+
+## 기존 CTI 고정 시연 · v0.1.0 기록
 
 A 원인 분석 → 다섯 단계의 분석 과정·원천/산식·반대 근거 → 실행안 검토 → CS/제품 조사 계획 승인 → Mock 업무 요청 등록. 이어 E를 선택하면 결측 때문에 성과·예산 판단을 보류하고 계측 복구를 요청합니다.
 
@@ -67,7 +78,6 @@ A 원인 분석 → 다섯 단계의 분석 과정·원천/산식·반대 근거
 - frontend/lib/demo-scenarios.ts: 6개 사례·18개 고정 응답·36개 월 기록·원천/검산·다섯 단계 분석·차별화된 실행안. 앱은 이 정적 콘텐츠를 표시합니다.
 - scripts/author-demo.mjs: 작성 단계 계산·콘텐츠 생성. 앱에서 호출하지 않습니다.
 - scripts/scenario-decisions.mjs: 시나리오별 판단 규칙과 실행안의 작성 원본.
-- docs/scenario-playbook.md: 수치·과정·실행안을 검토할 전체 시나리오 문서. 작성 스크립트로 함께 생성합니다.
 - tests/demo.test.ts: 수식·리뷰/매체 합계·결측·월별 사건 정합성·예산 및 대응 차별화 검산.
 
 CTI는 A+B 내 검색·긍정 리뷰·참여·노출 비중의 가중 합계(.35/.25/.20/.20)입니다. 매출·구매 확률·전체 시장 점유율·광고 효율이 아닙니다. 가중치·검토 임계값·승인 조건은 검증되지 않은 PoC 가정입니다. 산술적 변화와 원인 가설은 구분합니다.

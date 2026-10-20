@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-20",
+  "node": "v24.19.0",
+  "baseline": {
+    "agentHead": "d0af49382e1040682d64ae7facede01606b4bb36",
+    "dashboardHead": "ebac22bed63f58495b43db77e6dd7ca2e2e771c6",
+    "initialTrackedChanges": 0
+  },
+  "checks": [
+    {
+      "cwd": "marketing-agent-poc",
+      "command": "node --test --test-concurrency=1 tests/agents/*.test.mjs",
+      "environment": "sandbox default",
+      "result": "interrupted",
+      "exitCode": 1,
+      "note": "Local HTTP H01-H07 failed under sandbox; subsequent server listen waited. Interrupted and reran same command with loopback permitted."
+    },
+    {
+      "cwd": "marketing-agent-poc",
+      "command": "node --test --test-concurrency=1 tests/agents/*.test.mjs",
+      "environment": "require_escalated local loopback",
+      "exitCode": 0,
+      "total": 123,
+      "pass": 123,
+      "fail": 0
+    },
+    {
+      "cwd": "marketing-agent-poc",
+      "command": "node --test tests/agents/resilience.test.mjs",
+      "environment": "sandbox default",
+      "exitCode": 0,
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "cwd": "marketing-dashboard-drafts",
+      "command": "node --experimental-strip-types --test tests/agent-client.test.ts tests/agent-answer.test.ts tests/agent-presentation.test.ts",
+      "exitCode": 0,
+      "total": 20,
+      "pass": 20,
+      "fail": 0
+    },
+    {
+      "cwd": "marketing-dashboard-drafts",
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0
+    }
+  ],
+  "externalModelCalls": 0,
+  "realAdCalls": 0,
+  "limitations": [
+    "No new live-provider verification",
+    "No new browser screenshot or interactive acceptance check",
+    "Old held/model_failed records intentionally unchanged",
+    "Only 503 newly resumable; 500/502/504 remain held",
+    "Same AgentFlow concurrency protection only; no multiprocess resume lock added"
+  ]
+}

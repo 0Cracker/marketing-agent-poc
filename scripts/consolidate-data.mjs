@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {businessKey,businessKeys} from './data-business-keys.mjs';
+import {applyDemoBudgetModels} from './demo-budget-model.mjs';
 const root=path.resolve(import.meta.dirname,'..'),sibling=path.resolve(root,'../marketing-agent-poc');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex');
@@ -71,7 +72,26 @@ for(const e of entries){
  }else decide(e,'independent_archive','Historical independent sample/validation case with different scope; retain without combining denominators with the current comparison scenario');
 }
 const candidates=new Map();for(const r of demo.records){const key=businessKey(r);candidates.set(key,[...(candidates.get(key)||[]),r.record_id]);}
-for(const r of demo.records){const v=validRecord(r);assert(v.conforming,JSON.stringify({id:r.record_id,errors:v.errors}));const conflicts=candidates.get(businessKey(r));decide({batch:'D008',record:r,source:r},conflicts.length>1?'pending':'active',conflicts.length>1?'Ambiguous same-scope business key without sample/measurement discriminator; all conflicting rows withheld: '+conflicts.join(', '):'Existing current comparison scenario; no generated/changed observation');}
+for(const r of demo.records){
+ const v=validRecord(r);assert(v.conforming,JSON.stringify({id:r.record_id,errors:v.errors}));
+ const conflicts=candidates.get(businessKey(r));
+ // User-approved demo representative selection, not a measured/statistical aggregate.
+ if(r.dataset_type==='T37'&&r.record_kind==='performance'&&conflicts.length>1){
+  const selected=[...conflicts].sort()[0];
+  decide({batch:'D008',record:r,source:r},r.record_id===selected?'active':'selection_excluded',
+   '2026-10-20 user-approved synthetic demo representative: lexicographically first record_id per existing business key; source values unchanged; not a combined p75; selected '+selected,r.record_id===selected?undefined:selected);
+ }else decide({batch:'D008',record:r,source:r},conflicts.length>1?'pending':'active',conflicts.length>1?'Ambiguous same-scope business key without sample/measurement discriminator; all conflicting rows withheld: '+conflicts.join(', '):'Existing current comparison scenario; no generated/changed observation');
+}
+// Preserve raw source hashes and explicitly identify the approved derived model projection.
+const projected=applyDemoBudgetModels(active);
+for(let i=0;i<active.length;i++)if(projected[i]!==active[i]){
+ const r=projected[i];assert(validRecord(r).conforming,'Invalid projected model '+r.record_id);
+ active[i]=r;
+ for(const m of [migration.find(m=>m.active_id===r.record_id),provenance.find(m=>m.active_id===r.record_id)]){
+  m.record_sha256=hash(JSON.stringify(r));
+  m.transformation='2026-10-20 user-approved Hill slope=1 synthetic channel model and scenario projection; original archived source unchanged';
+ }
+}
 assert.equal(migration.length,originals.reduce((n,x)=>n+x.rows,0));
 const ids=new Set(active.map(r=>r.record_id));assert.equal(ids.size,active.length);
 const byId=new Map(active.map(r=>[r.record_id,r]));

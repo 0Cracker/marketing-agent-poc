@@ -27,6 +27,6 @@ test('R03 Gemma selection is explicit and rejects oversized context before netwo
 test('R04 verification diagnostics retain status and usage without credentials or response text',async()=>{
   const diagnostics=[];
   const runtime=createLiveRuntime({env,onDiagnostic:item=>diagnostics.push(item),fetchImpl:async()=>new Response(JSON.stringify({error:{status:'UNAVAILABLE',message:env.GEMINI_API_KEY_1}}),{status:503})});
-  await assert.rejects(runtime.model({role:'analysis'}),e=>e.code==='model_failed');
+  await assert.rejects(runtime.model({role:'analysis'}),e=>e.code==='model_unavailable');
   assert.equal(diagnostics.length,1);assert.equal(diagnostics[0].httpStatus,503);assert.equal(diagnostics[0].errorStatus,'UNAVAILABLE');assert(!JSON.stringify(diagnostics).includes('unit-test'));
 });

@@ -1,0 +1,1017 @@
+{
+  "pass": true,
+  "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5",
+  "at": "2026-10-20T04:42:18.117Z",
+  "independentOracle": "Python Decimal precision=60 ROUND_HALF_UP",
+  "cases": 36,
+  "results": [
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00002",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00008",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00014",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00020",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00026",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00032",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00038",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00044",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00050",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00056",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00062",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "KR",
+      "candidate": "D008-T39-00068",
+      "pass": true,
+      "modelId": "D008-T39-00001",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Seoul",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000000.00",
+          "currency": [
+            "KRW"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00004",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00010",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00016",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00022",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00028",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00034",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00040",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00046",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00052",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00058",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00064",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "JP",
+      "candidate": "D008-T39-00070",
+      "pass": true,
+      "modelId": "D008-T39-00003",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "1500000.00",
+          "currency": [
+            "JPY"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00006",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00012",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00018",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00024",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00030",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00036",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00042",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00048",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00054",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00060",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00066",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.190476",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    },
+    {
+      "country": "US",
+      "candidate": "D008-T39-00072",
+      "pass": true,
+      "modelId": "D008-T39-00005",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "America/New_York",
+        "grain": "custom"
+      },
+      "results": {
+        "baseline": {
+          "expected": "72.848485",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        },
+        "candidate": {
+          "expected": "76.993464",
+          "total": "15000.00",
+          "currency": [
+            "USD"
+          ]
+        }
+      }
+    }
+  ]
+}

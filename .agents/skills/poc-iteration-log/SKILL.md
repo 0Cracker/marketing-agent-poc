@@ -9,9 +9,9 @@ description: Update marketing AI PoC iteration logs, decisions, evidence links, 
 
 ## 현재 맥락 확인
 
-1. `git status --short --branch`, `git branch -avv`, `git remote -v`, `git tag -n`, `git log -10 --oneline --decorate`, 관련 `git diff`와 미추적 파일을 읽는다. 초기 상태는 [점검 문서](../../../docs/REPOSITORY-BASELINE.md)와 다를 수 있으므로 매번 실제 상태를 우선한다. 기존 미커밋 작업을 자신이 한 변경으로 기록하지 않는다.
+1. `git status --short --branch`, `git branch -avv`, `git remote -v`, `git tag -n`, `git log -10 --oneline --decorate`, 관련 `git diff`와 미추적 파일을 읽는다. 초기 상태는 [문서 안내](../../../docs/README.md)와 다를 수 있으므로 매번 실제 상태를 우선한다. 기존 미커밋 작업을 자신이 한 변경으로 기록하지 않는다.
 2. [Iteration 인덱스](../../../docs/iterations/README.md)와 현재 일지에서 버전·시작 SHA·핵심 목표를 확인한다. 여러 진행 일지가 있거나 버전이 없으면 사용자에게 버전/대상을 확인한다. 확인 전에는 기존 문서에 근거가 명확한 내용만 갱신하거나 미확정 사항을 보고한다. package.json, 문서 제목, 태그 이름만으로 새 버전을 만들지 않는다. 초기 체계 구축 자체로 가짜 버전 일지와 Lesson을 만들지 않는다.
-3. 기존 [결정](../../../docs/decisions/README.md), [Lessons](../../../docs/ai-lessons/README.md), [Evidence 규칙](../../../evidence/README.md)을 확인해 중복을 피한다. 현재 시연 계약과 고정 데이터 특성은 docs/agent-contract.md와 docs/scenario-playbook.md를 읽는다.
+3. 기존 [결정](../../../docs/decisions/README.md), [Lessons](../../../docs/ai-lessons/README.md), [Evidence 규칙](../../../evidence/README.md)을 확인해 중복을 피한다. 현재 실행 계약은 backend/README.md, 자료 특성은 data/README.md와 docs/design/semantic-changes-20261020.md를 읽는다.
 
 ## 작업 중 갱신
 

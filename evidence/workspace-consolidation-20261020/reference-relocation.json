@@ -1,0 +1,11 @@
+{
+  "files": 37,
+  "changed": [
+    {
+      "path": "README.md",
+      "before": "399452604c5f3032a41b4af1bcb876e226714729299fb988463935ed4e84b044",
+      "after": "d38c18f9da919a55991c2d6bcf18a405703e4685fdd93e909b5fe8e4178a1d08"
+    }
+  ],
+  "reason": "Markdown links rebased after relocation; image and code assets unchanged"
+}

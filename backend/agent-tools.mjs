@@ -33,6 +33,26 @@ function decimal([n,d],places=6){
 }
 const copy=x=>structuredClone(x);
 
+// Existing global parameters retain historical per-allocation semantics.
+// Channel parameters are complete pairs and cannot silently mix with defaults.
+export function budgetResponseParameters(parameters){
+  requireThat(Array.isArray(parameters)&&parameters.length>0,'model_unsupported');
+  const names=new Set(),values={};
+  for(const p of parameters){
+    requireThat(p&&typeof p.name==='string'&&!names.has(p.name)&&/^(?:(?:search|social)\.)?(?:scale|saturation)$/.test(p.name)&&typeof p.value==='string'&&/^\d+$/.test(p.value),'model_unsupported');
+    names.add(p.name);values[p.name]=p.value;
+  }
+  const valid=p=>p.scale!==undefined&&p.saturation!==undefined&&BigInt(p.scale)>0n&&BigInt(p.saturation)>0n;
+  const global={scale:values.scale,saturation:values.saturation},channels={};
+  if(names.has('scale')||names.has('saturation'))requireThat(valid(global),'model_unsupported');
+  for(const channel of ['search','social'])if(names.has(channel+'.scale')||names.has(channel+'.saturation')){
+    const p={scale:values[channel+'.scale'],saturation:values[channel+'.saturation']};requireThat(valid(p),'model_unsupported');channels[channel]=p;
+  }
+  const channelSpecific=Object.keys(channels).length>0;
+  requireThat(channelSpecific||valid(global),'model_unsupported');
+  return {global,channels,channelSpecific};
+}
+
 export class CatalogTools {
   #entries;#byId;#variants=new Map();#campaigns=new Map();#manifest;
   constructor(catalog,{manifest}={}){
@@ -68,7 +88,9 @@ export class CatalogTools {
   #scopeMatches(id,s){return this.#manifest&&s.batch==='CURRENT'?this.#manifest.scope_ids[s.country]?.includes(id):id===s.scopeId;}
   #inScope(x,s,{includeGaps=false}={}){
     const r=x.record;
-    if(x.batch!==s.batch||x.country!==s.country||!this.#scopeMatches(r.scope_id,s)||!r.is_synthetic||(!includeGaps&&!x.schema_conforming)||!stamp(r.temporal?.available_at)||Date.parse(r.temporal.available_at)>Date.parse(s.asOf))return false;
+    // CURRENT dummy acquisition times are metadata, not point-in-time eligibility.
+    const ignoreAvailableAt=this.#manifest&&s.batch==='CURRENT'&&r.is_synthetic;
+    if(x.batch!==s.batch||x.country!==s.country||!this.#scopeMatches(r.scope_id,s)||!r.is_synthetic||(!includeGaps&&!x.schema_conforming)||(!ignoreAvailableAt&&(!stamp(r.temporal?.available_at)||Date.parse(r.temporal.available_at)>Date.parse(s.asOf))))return false;
     const products=this.#products(r);if(products.length&&!products.some(p=>s.productIds.includes(p)))return false;
     if(r.temporal.reporting_timezone!==zones[s.country])return false;
     if(r.period){
@@ -195,22 +217,26 @@ export class CatalogTools {
     requireThat(baseline&&candidate&&model&&policy,'budget_incompatible');
     requireThat(JSON.stringify(baseline.period)===JSON.stringify(candidate.period)&&baseline.total_budget.currency===candidate.total_budget.currency&&baseline.total_budget.currency===policy.budget_limit.currency&&baseline.total_budget.amount===candidate.total_budget.amount,'budget_incompatible');
     requireThat(model.formula==='scale * budget / (saturation + budget)'&&model.assumptions?.length&&model.is_synthetic&&policy.is_synthetic,'model_unsupported');
-    const params=Object.fromEntries(model.parameters.map(p=>[p.name,p.value]));
-    requireThat(/^\d+$/.test(params.scale)&&/^\d+$/.test(params.saturation)&&BigInt(params.saturation)>0n,'model_unsupported');
+    const params=budgetResponseParameters(model.parameters);
     const evaluate=r=>{
-      const channels=new Set(),ids=new Set();let sum=0n,value=[0n,1n];
+      const channels=new Set(),ids=new Set(),byChannel=new Map(),campaignChannels={};let sum=0n,value=[0n,1n];
       for(const a of r.allocations){
         const campaign=this.#campaigns.get(a.campaign_ref);
         requireThat(campaign&&this.#inScope(this.#byId.get(campaign.record_id),s)&&covers({start:r.period.start,end:r.period.end_exclusive},campaign.period)&&campaign.product_refs.every(p=>s.productIds.includes(p)&&policy.product_refs.includes(p))&&policy.allowed_channels.includes(campaign.channel)&&!ids.has(a.campaign_ref),'budget_incompatible');
-        ids.add(a.campaign_ref);channels.add(campaign.channel);
+        ids.add(a.campaign_ref);channels.add(campaign.channel);campaignChannels[a.campaign_ref]=campaign.channel;
         requireThat([a.amount,a.lower,a.upper].every(v=>v.currency===r.total_budget.currency),'currency_mismatch');
         const amount=cents(a.amount.amount);requireThat(cents(a.lower.amount)<=amount&&amount<=cents(a.upper.amount),'budget_bounds');
-        sum+=amount;value=add(value,[BigInt(params.scale)*amount,BigInt(params.saturation)*100n+amount]);
+        sum+=amount;
+        if(params.channelSpecific){requireThat(params.channels[campaign.channel],'model_unsupported');byChannel.set(campaign.channel,(byChannel.get(campaign.channel)||0n)+amount);}
+        else value=add(value,[BigInt(params.global.scale)*amount,BigInt(params.global.saturation)*100n+amount]);
       }
+      // Channel maxima apply once per channel, never once per campaign.
+      for(const [channel,amount] of byChannel){const p=params.channels[channel];value=add(value,[BigInt(p.scale)*amount,BigInt(p.saturation)*100n+amount]);}
       requireThat(ids.size>0&&sum===cents(r.total_budget.amount)&&sum<=cents(policy.budget_limit.amount),'budget_total');
-      return {recordId:r.record_id,allocations:r.allocations,total:r.total_budget,expected:decimal(value),channels:[...channels]};
+      return {recordId:r.record_id,allocations:r.allocations,total:r.total_budget,expected:decimal(value),channels:[...channels],...(params.channelSpecific?{campaignChannels}:{})};
     };
     const result={kind:'assumption_simulation',baseline:evaluate(baseline),candidate:evaluate(candidate),modelId:model.record_id,modelVersion:model.model_version,assumptions:model.assumptions,
+      ...(params.channelSpecific?{formula:model.formula,parameters:model.parameters,responseAggregation:'channel'}:{}),
       policyId:policy.record_id,approvalRole:policy.approval_role,period:candidate.period,realExecutionAllowed:false,
       recordIds:[baseline.record_id,candidate.record_id,model.record_id,policy.record_id],inputFingerprint:this.fingerprint};
     requireThat(JSON.stringify(result.baseline.allocations.map(a=>a.campaign_ref).sort())===JSON.stringify(result.candidate.allocations.map(a=>a.campaign_ref).sort()),'budget_incompatible');

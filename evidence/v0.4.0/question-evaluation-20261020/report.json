@@ -1,0 +1,492 @@
+{
+  "at": "2026-10-20T01:35:58.299Z",
+  "stage": "final",
+  "mode": "offline_contract_only",
+  "warning": "localPlanner ignores question text: no LLM question-understanding pass rate",
+  "head": "d0af49382e1040682d64ae7facede01606b4bb36",
+  "codeHashes": {
+    "backend/agent-tools.mjs": "d3325d5d2fb1f541531cc54f27e46f187646cf2a9fe9ab184989d62917878b1d",
+    "backend/agent-flow.mjs": "e92c623bf14c834c29f6f2915aff8381932117cacf00469700967128d5f07b2a",
+    "backend/local-planner.mjs": "24196b7ae8144aa416f20e0e25e1898755b846a9a4d028deed526c8086b7876f",
+    "scripts/evaluate-agent-questions.mjs": "dc091bf54a7d6ea647d8280e76eca585d50b05a5e8e340acdbdacf7be5c11301"
+  },
+  "screenCodeHashes": {
+    "agent-conversation.tsx": "967edfe6baa822480d8009242b94721b264a4a12c053eab27e7a600b870e80e0",
+    "agent-client.ts": "37d97d3ea8f0837742f34994d68f4c98e642c7d6d2a738d77505427ce42fc59a"
+  },
+  "codeUnchanged": true,
+  "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4",
+  "dataFileHashes": {
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\manifest.json": "fd2a8474fab9edc7422d5d6b2c81b6e62693443a23a5b9a3eeecb4553e1e09d1",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\products.jsonl": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\identity-mappings.jsonl": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\market-sales.jsonl": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\purchase-surveys.jsonl": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\search-interest.jsonl": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\keyword-demand.jsonl": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\organic-search.jsonl": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\prices.jsonl": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\promotions.jsonl": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\public-ads.jsonl": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\publications.jsonl": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\campaigns.jsonl": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\ad-performance.jsonl": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\ad-breakdowns.jsonl": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\auction-insights.jsonl": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\creatives.jsonl": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\web-events.jsonl": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\commerce-events.jsonl": "f72f4b18dd46e784fbbedbd2ee6f5061784dc93125d137b0b3aee06e8cb15829",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\order-lines.jsonl": "fdc57bf671bccb5d8cb845d2b43207ccaceb26fffcaa462d88a0667a31b68307",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\refunds.jsonl": "89c1a890c10b4a79514cab82fc4cc29bba630fc1f532364d7ca0208c41be8ceb",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\costs.jsonl": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\inventory.jsonl": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\distribution-fulfilment.jsonl": "4b72e661d42aec0f7e3aaefe04338b96b797da90265f31cab36f9959187cb0e2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\reviews.jsonl": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\review-annotations.jsonl": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\customer-inquiries.jsonl": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\owned-content.jsonl": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\social-comments.jsonl": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\creator-collaborations.jsonl": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\customer-cohorts.jsonl": "4509bd641a59b3afb3685d5d657d6186574f1b199bfe6d67efe7cd8a4fa26754",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\crm-performance.jsonl": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\brand-surveys.jsonl": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\public-statistics.jsonl": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\weather-calendar.jsonl": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\change-events.jsonl": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\collection-runs.jsonl": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\site-events.jsonl": "f952c1d5a1b4a1a1b659ea5447e549bf212f308a70c79277dc3118e0b9853285",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\experiments.jsonl": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\budget-models.jsonl": "2d3c7a5e4e8fbaa2e66fab854511a51462478b02acff9e518a31093161d3c22e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\budget-policies.jsonl": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\sales-reports.jsonl": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\definitions.json": "c14c4e2e09b1055d2e4d7a97a513becb92631a62fdb608138fb3625fa32cb6dd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-dashboard-drafts\\data\\product-presentation.json": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+  },
+  "dataUnchanged": true,
+  "externalModelCalls": 0,
+  "newMarketingRows": 0,
+  "realAdsCalls": 0,
+  "counts": {
+    "pass": 33,
+    "fail": 0,
+    "not_run": 0
+  },
+  "pass": true,
+  "capabilityGaps": [
+    {
+      "id": "M01",
+      "status": "static_confirmed",
+      "kind": "capability_gap",
+      "question": "미국으로 바꿔서 비교해줘",
+      "fixedScreen": "JP",
+      "finding": "ask sends selected screen scope; no natural-language country routing in client or scope validation"
+    },
+    {
+      "id": "M02",
+      "status": "static_confirmed",
+      "kind": "capability_gap",
+      "question": "지난달 7월로 바꿔줘",
+      "fixedScreen": "2026-08",
+      "finding": "ask sends selected screen dates; no natural-language period routing in client or scope validation"
+    }
+  ],
+  "semanticQuality": "not_run",
+  "liveEvaluation": "not_run",
+  "uiUnderstanding": "not_run",
+  "cases": [
+    {
+      "id": "F01",
+      "label": "KR price 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "6c2043a0-d875-452b-837e-bce369a06eb5",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F02",
+      "label": "KR stock 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "c8ba805e-2a55-4355-bd16-b1972622638e",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F03",
+      "label": "KR media 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "ceb2ad52-4db2-4a53-ad32-dfd1bb27c5ad",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 4,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F04",
+      "label": "KR measurement 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "699c1439-c749-4517-9e9d-f47680df9341",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F05",
+      "label": "JP price 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "3f1dfd3c-afe4-45c9-be88-2fe7ff43ffcb",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F06",
+      "label": "JP stock 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "1e2d4862-a72d-4e6f-82cc-a328b0794705",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F07",
+      "label": "JP media 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "9b215b3b-c357-4a98-8316-e34f65ac37bb",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 4,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F08",
+      "label": "JP measurement 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "044b2bae-7429-454b-9dc5-4fce8103a5ff",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F09",
+      "label": "US price 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "9f645666-3ff0-48f8-9476-c83dffccc243",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F10",
+      "label": "US stock 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "2848ea19-546b-483d-89fe-3c12152a0903",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F11",
+      "label": "US media 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "4f3f6baa-06ce-4536-b3ac-f1375a3f6850",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 4,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "F12",
+      "label": "US measurement 명시 범위 계약",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "32f447c9-90d9-4519-99c2-d30a173ae340",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "S01",
+      "label": "제품·기간 변경 시장조회",
+      "expected": "market_success",
+      "status": "pass",
+      "detail": {
+        "facts": 3
+      }
+    },
+    {
+      "id": "S02",
+      "label": "제품·기간 변경 시장조회",
+      "expected": "market_success",
+      "status": "pass",
+      "detail": {
+        "facts": 6
+      }
+    },
+    {
+      "id": "S03",
+      "label": "제품·기간 변경 시장조회",
+      "expected": "market_success",
+      "status": "pass",
+      "detail": {
+        "facts": 18
+      }
+    },
+    {
+      "id": "S04",
+      "label": "제품·기간 변경 시장조회",
+      "expected": "market_success",
+      "status": "pass",
+      "detail": {
+        "facts": 36
+      }
+    },
+    {
+      "id": "P01",
+      "label": "명시 가격→재고 후속",
+      "expected": "analyzed",
+      "status": "pass",
+      "detail": {
+        "runId": "eb1cd087-d0ee-44b7-bfec-bc88faa61a63",
+        "status": "analyzed",
+        "reason": null,
+        "facts": 18,
+        "relationRecords": 24,
+        "modelSubstituteCalls": 3
+      }
+    },
+    {
+      "id": "G01",
+      "label": "경계 data_unavailable",
+      "expected": "held/data_unavailable",
+      "status": "pass",
+      "detail": {
+        "status": "held",
+        "reason": "data_unavailable",
+        "modelSubstituteCalls": 0
+      }
+    },
+    {
+      "id": "G02",
+      "label": "경계 data_unavailable",
+      "expected": "held/data_unavailable",
+      "status": "pass",
+      "detail": {
+        "status": "held",
+        "reason": "data_unavailable",
+        "modelSubstituteCalls": 1
+      }
+    },
+    {
+      "id": "G03",
+      "label": "경계 period_incomparable",
+      "expected": "held/period_incomparable",
+      "status": "pass",
+      "detail": {
+        "status": "held",
+        "reason": "period_incomparable",
+        "modelSubstituteCalls": 1
+      }
+    },
+    {
+      "id": "G04",
+      "label": "경계 scope_invalid",
+      "expected": "needs_scope/scope_invalid",
+      "status": "pass",
+      "detail": {
+        "status": "needs_scope",
+        "reason": "scope_invalid",
+        "modelSubstituteCalls": 0
+      }
+    },
+    {
+      "id": "G05",
+      "label": "경계 product_unknown",
+      "expected": "needs_scope/product_unknown",
+      "status": "pass",
+      "detail": {
+        "status": "needs_scope",
+        "reason": "product_unknown",
+        "modelSubstituteCalls": 0
+      }
+    },
+    {
+      "id": "G06",
+      "label": "경계 inputs_changed",
+      "expected": "needs_scope/inputs_changed",
+      "status": "pass",
+      "detail": {
+        "status": "needs_scope",
+        "reason": "inputs_changed",
+        "modelSubstituteCalls": 0
+      }
+    },
+    {
+      "id": "G07",
+      "label": "경계 followup_reference_required",
+      "expected": "needs_scope/followup_reference_required",
+      "status": "pass",
+      "detail": {
+        "status": "needs_scope",
+        "reason": "followup_reference_required",
+        "modelSubstituteCalls": 0
+      }
+    },
+    {
+      "id": "O01",
+      "label": "KR T08 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 21,
+        "facts": 504,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O02",
+      "label": "KR T13 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 580,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O03",
+      "label": "KR T22 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 112,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O04",
+      "label": "JP T08 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 21,
+        "facts": 504,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O05",
+      "label": "JP T13 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 580,
+        "missing": 10
+      }
+    },
+    {
+      "id": "O06",
+      "label": "JP T22 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 112,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O07",
+      "label": "US T08 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 21,
+        "facts": 504,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O08",
+      "label": "US T13 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 580,
+        "missing": 0
+      }
+    },
+    {
+      "id": "O09",
+      "label": "US T22 전페이지 원천대조",
+      "expected": "raw_equal",
+      "status": "pass",
+      "detail": {
+        "pages": 5,
+        "facts": 112,
+        "missing": 0
+      }
+    }
+  ]
+}
