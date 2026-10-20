@@ -1,0 +1,1593 @@
+{
+  "proposal": "D005-2.0.0",
+  "mode": "validate",
+  "started_at": "2026-10-17T04:46:31.363Z",
+  "node": "v24.19.0",
+  "checks": [
+    {
+      "name": "schema_preflight",
+      "status": "pass",
+      "source_branches": 93,
+      "common_types": 31,
+      "metaschema": "pass",
+      "references": "resolved",
+      "coerceTypes": false,
+      "useDefaults": false,
+      "removeAdditional": false
+    },
+    {
+      "name": "normal_source_common_and_semantics",
+      "status": "pass",
+      "rows": 534,
+      "source_files": 31,
+      "false_rejections": 0
+    },
+    {
+      "name": "independent_oracle_and_RDF",
+      "status": "pass",
+      "python": "3.12.14",
+      "oracle_rows": 534,
+      "money_tolerance": "0",
+      "ledger": {
+        "KR": {
+          "currency": "KRW",
+          "orders": 4,
+          "lines": 6,
+          "gross": "99000.00",
+          "refund": "24500.00",
+          "net": "74500.00"
+        },
+        "JP": {
+          "currency": "JPY",
+          "orders": 4,
+          "lines": 6,
+          "gross": "9900.00",
+          "refund": "2450.00",
+          "net": "7450.00"
+        },
+        "US": {
+          "currency": "USD",
+          "orders": 4,
+          "lines": 6,
+          "gross": "99.00",
+          "refund": "24.50",
+          "net": "74.50"
+        }
+      },
+      "rdf": {
+        "status": "pass",
+        "triples": 130811,
+        "rdf_sha256": "ba37bc12cc947b5cad4b12fcb8c40ff768fc93a5a5874f277cd6bba24119960c",
+        "records_read_back": 534,
+        "source_field_lineages": 11139,
+        "typed_relations": 726,
+        "declared_classes": 110,
+        "shacl": "pass",
+        "calculation_shacl": "pass",
+        "readback": "pass",
+        "base_model": "loaded_in_memory",
+        "shared_Product_Brand_Campaign_Review_IRIs": "D004_convention",
+        "candidate_identity_connections": 0,
+        "existing_reference_rows": 36,
+        "mapping_version": "D005-2.0.0-validation.1",
+        "calculation_results": [
+          {
+            "country": "KR",
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00",
+            "currency": "KRW",
+            "input_records": 8,
+            "rdf_readback": "pass"
+          },
+          {
+            "country": "JP",
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00",
+            "currency": "JPY",
+            "input_records": 8,
+            "rdf_readback": "pass"
+          },
+          {
+            "country": "US",
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50",
+            "currency": "USD",
+            "input_records": 8,
+            "rdf_readback": "pass"
+          }
+        ]
+      }
+    },
+    {
+      "name": "reverse_order_RDF",
+      "status": "pass",
+      "rdf_sha256": "ba37bc12cc947b5cad4b12fcb8c40ff768fc93a5a5874f277cd6bba24119960c"
+    },
+    {
+      "name": "validation_replay",
+      "status": "pass"
+    },
+    {
+      "name": "expected_error_detection",
+      "status": "pass",
+      "cases": 60,
+      "structure": 30,
+      "semantic": 30
+    },
+    {
+      "name": "boundary_checks",
+      "status": "pass",
+      "checks": 9
+    },
+    {
+      "name": "preservation",
+      "status": "pass",
+      "original_source_files": 11,
+      "original_schema_and_tests": 2,
+      "git_head": "7b35d09380d4eb0902af35064c8393ba8c71cc82",
+      "generation_git_head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+      "git_scope": "current_execution",
+      "refs": "current branch unchanged",
+      "other_worktree_refs_changed": false,
+      "index": "unchanged"
+    }
+  ],
+  "system_validation": "incomplete",
+  "HermiT": "not_run",
+  "OOPS": "not_run",
+  "full_52_assertions": "not_run",
+  "actual_external_source_fit": "not_run",
+  "execution_input_sha256": {
+    "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+    "docs/research/marketing-ontology/schemas/marketing-records.schema.json": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+    "docs/research/marketing-ontology/batches/D005/contract.mjs": "0c802a6f363c080ca11c76bdcd0f872f3ffb02773326f139eed7116718ed0021",
+    "docs/research/marketing-ontology/batches/D005/generate.mjs": "9822a499138278ddc2544cb6413d9410c739aa5b13b4aa48c710a72b5b7a99cd",
+    "docs/research/marketing-ontology/batches/D005/validate.mjs": "2090af302cad36d2c8a57da143c650e55c9161e87b2aa25d055aee7a78810db3",
+    "docs/research/marketing-ontology/batches/D005/oracle.py": "71d7f47dd00131d7b6957c610e6871a8103d86cc7806779e5ac8079373e91920",
+    "docs/research/marketing-ontology/batches/D005/run.mjs": "39cbfe4bcec854994062e3d6017d5b46943dcc1e8460f11f246c1d35693965d3",
+    "docs/research/marketing-ontology/batches/D005/source.schema.json": "f5a63f3aa7c75082bf0878439fca6fe4a0a38fa0641a12dae6af1a2f9a2a050e",
+    "docs/research/marketing-ontology/batches/D005/common.schema.json": "a44e22c94a15ae05c39e4c8ad683e4caf43bc2c8b5def4a934498b858f2094fd",
+    "docs/research/marketing-ontology/data-proposal.md": "7f1c6830c092a4676703a1eddbb4d7e245a8720796e1aaec7380a1913a878187",
+    "docs/research/marketing-ontology/common-contract/ontology.ttl": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+    "docs/research/marketing-ontology/common-contract/shapes.ttl": "4e898511b998ab3679c6fe18ca39e4e65aea10a93753b783fac2de5f8c52ea0a",
+    "docs/research/marketing-ontology/common-contract/field-semantics.json": "5f5b7b85486a7dd779e4c5c3dd1fe117fef39b0b661f7b9bc410d2c98b7472f7",
+    "docs/research/marketing-ontology/common-contract/d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+    "docs/research/marketing-ontology/common-contract/batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+    "docs/research/marketing-ontology/common-contract/run-validation-cycle.py": "414db14c255be28502c7ad52162b34d05f8e35290eb243c5bd92625a948ac001",
+    "docs/research/marketing-ontology/common-contract/validate-d003b.py": "2b3c102f8f6de9d6299c3b1823b9318cfd94d63596ebc22ba4ee14e5fb6c8b9f",
+    "docs/research/marketing-ontology/common-contract/calculate-d003b.py": "0af368a9e689a4b38c01a7e10c402271432d6eeebce089df594e749ba6c305be",
+    "docs/research/marketing-ontology/common-contract/check-spec.py": "a2d41a0704133bf914d36a82f841efdd92ad8c525bae94a9a91fba4b3fbe45bf",
+    "docs/research/marketing-ontology/batches/D005/source/T01.jsonl": "781ec542106a00b2b7d79f49546169b6528191e035c818a7aa0511b152f55e4c",
+    "docs/research/marketing-ontology/batches/D005/source/T02.jsonl": "225dce1c5724934ca819479e75b0f9ce466160892de297f7fa9bdedd834e5fbe",
+    "docs/research/marketing-ontology/batches/D005/source/T04.jsonl": "d536c897e1c49c710c3f91745d5f7b789328e025832ff178d5cca8ab286f590b",
+    "docs/research/marketing-ontology/batches/D005/source/T05.jsonl": "1977e4a1cfe82fbb6c3eb99c1c7af1a26fed21eb4c0aa1e8c0ea83e64249f714",
+    "docs/research/marketing-ontology/batches/D005/source/T06.jsonl": "6336de29f4190c0a0e509947edea2e08fe1a5e58bf1199478951282960a32459",
+    "docs/research/marketing-ontology/batches/D005/source/T07.jsonl": "87f0b16e3b16162cb067325d2746def2d12e7f28cca864d8dff6493fdfba3a63",
+    "docs/research/marketing-ontology/batches/D005/source/T10.jsonl": "639480badd97a4910926a97b4a087143f03f13f50a8b19a5fb85ace87b6efe2f",
+    "docs/research/marketing-ontology/batches/D005/source/T11.jsonl": "c41d8ce484b8b7ee2c852469ee61cd86480071e21e52bb93a744f889973903a3",
+    "docs/research/marketing-ontology/batches/D005/source/T14.jsonl": "7458dc1e6f57963ac54eaea80503eac8ac19235015b408b2982a8b1a89933d3f",
+    "docs/research/marketing-ontology/batches/D005/source/T15.jsonl": "c8b25fba00ef3380e9726747a69ba6dc6e028653ebb5a249da612039f6924e7e",
+    "docs/research/marketing-ontology/batches/D005/source/T16.jsonl": "c4f9d22b306e5a2252408dce714faf159d39459e2795e4929c3705302c8c1de0",
+    "docs/research/marketing-ontology/batches/D005/source/T17.jsonl": "8551f0e45d0fffca4a3eabbeba83f0b1cd697c0e002631c2342f92781dcc468d",
+    "docs/research/marketing-ontology/batches/D005/source/T18.jsonl": "531d306867232eaedac5583e2b80789aa6d14db0181d40c6554a1e1b4e235490",
+    "docs/research/marketing-ontology/batches/D005/source/T19.jsonl": "e133c5e7afa0418918eb30e152c6dd18dae2b436d3eef1ef5e53f9deb8ed97c9",
+    "docs/research/marketing-ontology/batches/D005/source/T20.jsonl": "7deb50cf6f093ea6647dd21bba735699db50ab15cb368f3c6a58d57620e82198",
+    "docs/research/marketing-ontology/batches/D005/source/T21.jsonl": "33a1a29fe9f41ab8796c4dde29f44ca7580a23cc92559b44ba3b5b0bab408f82",
+    "docs/research/marketing-ontology/batches/D005/source/T23.jsonl": "b80966c69fff6dde40173f86b2c872563a98a97154429a3b67743262c9d60455",
+    "docs/research/marketing-ontology/batches/D005/source/T25.jsonl": "9b7889e2d373ec25cf43a04d89fc6227eac052a3c0e3decefe9c8a7454108bdb",
+    "docs/research/marketing-ontology/batches/D005/source/T26.jsonl": "430e01087afc6f1ca773769e9bfc1047d9c36ddeca87ad923a45372d788e6614",
+    "docs/research/marketing-ontology/batches/D005/source/T27.jsonl": "7ae6cd356dd41e0bef204ce11138f8cc71c772ff2d8df7ce0b9e7d3be2ccf200",
+    "docs/research/marketing-ontology/batches/D005/source/T28.jsonl": "9c525be73550aa7b3c4210b260777c5da011b4a73c1c0022f74b32ff3339025a",
+    "docs/research/marketing-ontology/batches/D005/source/T29.jsonl": "29fd121c304a73a6402a5db4bda741ac866d64d246fce52df04e54f5100527b1",
+    "docs/research/marketing-ontology/batches/D005/source/T30.jsonl": "b35cfabdaabae3e5908a91b2dc72b79877514d524396182ca17fc08a80e5013f",
+    "docs/research/marketing-ontology/batches/D005/source/T31.jsonl": "a917c7d0a3ea9674ac7f6b2240ab3358e7cc205fce0d2dd050e6014aef8e20bd",
+    "docs/research/marketing-ontology/batches/D005/source/T32.jsonl": "b50ffdf5c2b8ff8ada878036b30d1884c45fce3832f865ae82bc07f5aa49f4f0",
+    "docs/research/marketing-ontology/batches/D005/source/T33.jsonl": "41ab2432f27d85092d263092770d33b58fa446236e5ed757996fa13a35da1e4e",
+    "docs/research/marketing-ontology/batches/D005/source/T34.jsonl": "cd210b2e6194dae74d38423313b52c2a1c0dc63fa0a1de6e66a682cb37da650a",
+    "docs/research/marketing-ontology/batches/D005/source/T37.jsonl": "e723471e4d3f34974721b4509e4d639dc5eea10b6335845731017bf9d7ef86bd",
+    "docs/research/marketing-ontology/batches/D005/source/T38.jsonl": "d0d0d6ff5c9d49ce27fa5200e25b9df40530a2f168d6e5ea7cbf2cae2d48a7c6",
+    "docs/research/marketing-ontology/batches/D005/source/T39.jsonl": "aef9946a60934c237785676c7b48422cd2e26f8320bed3d0e077e8194b7eab59",
+    "docs/research/marketing-ontology/batches/D005/source/T40.jsonl": "ddb979932fb299d57a69db656cd3648f1b3d0669066165d6525b62cd4d743552"
+  },
+  "validation_revision": "D005-2.0.0-validation.1",
+  "error_cases": [
+    {
+      "case_id": "T02-structure",
+      "target_record_id": "D005-T02-0001",
+      "source_json_path": "$.payload.EXTERNAL_VALUE",
+      "mutation_rule": "delete external_value",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T02-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "EXTERNAL_VALUE"
+            },
+            "message": "must have required property 'EXTERNAL_VALUE'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T02-semantic",
+      "target_record_id": "D005-T02-0001",
+      "source_json_path": "$.payload.ENTITY_REF",
+      "mutation_rule": "x=>x.entity_ref='D005-MISSING'",
+      "expected_code": "ENTITY_REF",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T02-0001",
+        "stage": "semantic",
+        "code": "ENTITY_REF",
+        "path": "/payload/entity_ref"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T04-structure",
+      "target_record_id": "D005-T04-0001",
+      "source_json_path": "$.payload.sampleSize",
+      "mutation_rule": "delete sample_size",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T04-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "sampleSize"
+            },
+            "message": "must have required property 'sampleSize'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T04-semantic",
+      "target_record_id": "D005-T04-0001",
+      "source_json_path": "$.payload.positiveResponses",
+      "mutation_rule": "x=>x.positive_responses=x.sample_size+1",
+      "expected_code": "SAMPLE_EXCEEDED",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T04-0001",
+        "stage": "semantic",
+        "code": "SAMPLE_EXCEEDED",
+        "path": "/payload/positive_responses"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T05-structure",
+      "target_record_id": "D005-T05-0001",
+      "source_json_path": "$.payload.QUERY_ID",
+      "mutation_rule": "delete query_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T05-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "QUERY_ID"
+            },
+            "message": "must have required property 'QUERY_ID'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T05-semantic",
+      "target_record_id": "D005-T05-0001",
+      "source_json_path": "$.payload.NORMALIZATION_SCOPE",
+      "mutation_rule": "x=>x.normalization_scope='D005-MISSING'",
+      "expected_code": "NORMALIZATION_SCOPE",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T05-0001",
+        "stage": "semantic",
+        "code": "NORMALIZATION_SCOPE",
+        "path": "/payload/normalization_scope"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T06-structure",
+      "target_record_id": "D005-T06-0001",
+      "source_json_path": "$.payload.keyword",
+      "mutation_rule": "delete keyword",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T06-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "keyword"
+            },
+            "message": "must have required property 'keyword'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T06-semantic",
+      "target_record_id": "D005-T06-0001",
+      "source_json_path": "$.payload.bid_lower",
+      "mutation_rule": "x=>x.bid_lower=fromMinor(total(x.bid_upper)+1n,x.bid_upper.currency)",
+      "expected_code": "BID_BOUNDS",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T06-0001",
+        "stage": "semantic",
+        "code": "BID_BOUNDS",
+        "path": "/payload/bid_lower"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T07-structure",
+      "target_record_id": "D005-T07-0001",
+      "source_json_path": "$.payload.siteRef",
+      "mutation_rule": "delete site_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T07-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "siteRef"
+            },
+            "message": "must have required property 'siteRef'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T07-semantic",
+      "target_record_id": "D005-T07-0001",
+      "source_json_path": "$.payload.clicks",
+      "mutation_rule": "x=>x.clicks=x.impressions+1",
+      "expected_code": "CLICKS_EXCEEDED",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T07-0001",
+        "stage": "semantic",
+        "code": "CLICKS_EXCEEDED",
+        "path": "/payload/clicks"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T10-structure",
+      "target_record_id": "D005-T10-0001",
+      "source_json_path": "$.payload.publicAdId",
+      "mutation_rule": "delete public_ad_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T10-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "publicAdId"
+            },
+            "message": "must have required property 'publicAdId'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T10-semantic",
+      "target_record_id": "D005-T10-0001",
+      "source_json_path": "$.payload.firstSeen",
+      "mutation_rule": "x=>x.first_seen='2026-09-01T12:00:00+09:00'",
+      "expected_code": "AD_TIME",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T10-0001",
+        "stage": "semantic",
+        "code": "AD_TIME",
+        "path": "/payload/first_seen"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T11-structure",
+      "target_record_id": "D005-T11-0001",
+      "source_json_path": "$.payload.DOCUMENT_ID",
+      "mutation_rule": "delete document_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T11-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "DOCUMENT_ID"
+            },
+            "message": "must have required property 'DOCUMENT_ID'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T11-semantic",
+      "target_record_id": "D005-T11-0001",
+      "source_json_path": "$.payload.SUBJECT_REFS",
+      "mutation_rule": "x=>x.subject_refs=['D005-MISSING']",
+      "expected_code": "DOCUMENT_SUBJECT",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T11-0001",
+        "stage": "semantic",
+        "code": "DOCUMENT_SUBJECT",
+        "path": "/payload/subject_refs"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T14-structure",
+      "target_record_id": "D005-T14-0001",
+      "source_json_path": "$.payload.CAMPAIGN_REF",
+      "mutation_rule": "delete campaign_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T14-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "CAMPAIGN_REF"
+            },
+            "message": "must have required property 'CAMPAIGN_REF'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T14-semantic",
+      "target_record_id": "D005-T14-0001",
+      "source_json_path": "$.payload.METRICS",
+      "mutation_rule": "x=>x.metrics.spend=fromMinor(total(x.metrics.spend)+1n,x.metrics.spend.currency)",
+      "expected_code": "SEGMENT_TOTAL",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T14-0001",
+        "stage": "semantic",
+        "code": "SEGMENT_TOTAL",
+        "path": "/payload/metrics/spend"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T15-structure",
+      "target_record_id": "D005-T15-0001",
+      "source_json_path": "$.payload.campaign_ref",
+      "mutation_rule": "delete campaign_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T15-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "campaign_ref"
+            },
+            "message": "must have required property 'campaign_ref'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T15-semantic",
+      "target_record_id": "D005-T15-0001",
+      "source_json_path": "$.payload.campaign_ref",
+      "mutation_rule": "x=>x.campaign_ref='D005-MISSING'",
+      "expected_code": "CAMPAIGN_REF",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T15-0001",
+        "stage": "semantic",
+        "code": "CAMPAIGN_REF",
+        "path": "/payload/campaign_ref"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T16-structure",
+      "target_record_id": "D005-T16-0001",
+      "source_json_path": "$.payload.creativeId",
+      "mutation_rule": "delete creative_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T16-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "creativeId"
+            },
+            "message": "must have required property 'creativeId'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T16-semantic",
+      "target_record_id": "D005-T16-0001",
+      "source_json_path": "$.payload.period",
+      "mutation_rule": "x=>x.period.end='2026-06-01'",
+      "expected_code": "PERIOD",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T16-0001",
+        "stage": "semantic",
+        "code": "PERIOD",
+        "path": "/payload/period"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T17-structure",
+      "target_record_id": "D005-T17-0001",
+      "source_json_path": "$.payload.EVENT_ID",
+      "mutation_rule": "delete event_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T17-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "EVENT_ID"
+            },
+            "message": "must have required property 'EVENT_ID'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T17-semantic",
+      "target_record_id": "D005-T17-0001",
+      "source_json_path": "$.payload.EVENT_ID",
+      "mutation_rule": "(x,all,r)=>{x.event_id=all.find(z=>z.metadata.dataset_type==='T17'&&z.metadata.record_id!==r.metadata.record_id).payload.event_id;}",
+      "expected_code": "EVENT_COLLISION",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T17-0002",
+        "stage": "semantic",
+        "code": "EVENT_COLLISION",
+        "path": "/payload/event_id"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T18-structure",
+      "target_record_id": "D005-T18-0013",
+      "source_json_path": "$.payload.transaction_ref",
+      "mutation_rule": "delete transaction_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T18-0013",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/additionalProperties",
+            "keyword": "additionalProperties",
+            "params": {
+              "additionalProperty": "unit_price"
+            },
+            "message": "must NOT have additional properties"
+          },
+          {
+            "instancePath": "/payload/event_name",
+            "schemaPath": "#/properties/payload/oneOf/0/properties/event_name/enum",
+            "keyword": "enum",
+            "params": {
+              "allowedValues": [
+                "view_item",
+                "add_to_cart",
+                "begin_checkout"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T18-semantic",
+      "target_record_id": "D005-T18-0013",
+      "source_json_path": "$.payload.transaction_ref",
+      "mutation_rule": "x=>x.transaction_ref='D005-MISSING'",
+      "expected_code": "TRANSACTION_REF",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T18-0013",
+        "stage": "semantic",
+        "code": "TRANSACTION_REF",
+        "path": "/payload/transaction_ref"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T19-structure",
+      "target_record_id": "D005-T19-0001",
+      "source_json_path": "$.payload.lineId",
+      "mutation_rule": "delete line_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T19-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "lineId"
+            },
+            "message": "must have required property 'lineId'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T19-semantic",
+      "target_record_id": "D005-T19-0001",
+      "source_json_path": "$.payload.lineGrossTotal",
+      "mutation_rule": "x=>x.line_gross_total=fromMinor(total(x.line_gross_total)+1n,x.line_gross_total.currency)",
+      "expected_code": "LINE_TOTAL",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T19-0001",
+        "stage": "semantic",
+        "code": "LINE_TOTAL",
+        "path": "/payload/line_gross_total"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T20-structure",
+      "target_record_id": "D005-T20-0001",
+      "source_json_path": "$.payload.REFUND_AMOUNT",
+      "mutation_rule": "delete refund_amount",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T20-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "REFUND_AMOUNT"
+            },
+            "message": "must have required property 'REFUND_AMOUNT'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/additionalProperties",
+            "keyword": "additionalProperties",
+            "params": {
+              "additionalProperty": "PROCESSED_AT"
+            },
+            "message": "must NOT have additional properties"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T20-semantic",
+      "target_record_id": "D005-T20-0001",
+      "source_json_path": "$.payload.QUANTITY",
+      "mutation_rule": "x=>x.quantity=999",
+      "expected_code": "REFUND_QUANTITY",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T20-0001",
+        "stage": "semantic",
+        "code": "REFUND_QUANTITY",
+        "path": "/payload/quantity"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T21-structure",
+      "target_record_id": "D005-T21-0001",
+      "source_json_path": "$.payload.accounting_basis",
+      "mutation_rule": "delete accounting_basis",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T21-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "accounting_basis"
+            },
+            "message": "must have required property 'accounting_basis'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T21-semantic",
+      "target_record_id": "D005-T21-0001",
+      "source_json_path": "$.payload.period",
+      "mutation_rule": "x=>x.period.end='2026-08-08'",
+      "expected_code": "COST_OVERLAP",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T21-0001",
+        "stage": "semantic",
+        "code": "COST_OVERLAP",
+        "path": "/payload/period"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T23-structure",
+      "target_record_id": "D005-T23-0003",
+      "source_json_path": "$.payload.orderRef",
+      "mutation_rule": "delete order_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T23-0003",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "productRef"
+            },
+            "message": "must have required property 'productRef'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "period"
+            },
+            "message": "must have required property 'period'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T23-semantic",
+      "target_record_id": "D005-T23-0003",
+      "source_json_path": "$.payload.deliveredAt",
+      "mutation_rule": "x=>x.delivered_at='2026-08-01T12:00:00+09:00'",
+      "expected_code": "SHIPMENT_TIME",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T23-0003",
+        "stage": "semantic",
+        "code": "SHIPMENT_TIME",
+        "path": "/payload/delivered_at"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T25-structure",
+      "target_record_id": "D005-T25-0001",
+      "source_json_path": "$.payload.evidenceSpan",
+      "mutation_rule": "delete evidence_span",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T25-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "evidenceSpan"
+            },
+            "message": "must have required property 'evidenceSpan'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "sampleSize"
+            },
+            "message": "must have required property 'sampleSize'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T25-semantic",
+      "target_record_id": "D005-T25-0001",
+      "source_json_path": "$.payload.evidenceSpan",
+      "mutation_rule": "x=>x.evidence_span.start+=1",
+      "expected_code": "EVIDENCE_SPAN",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T25-0001",
+        "stage": "semantic",
+        "code": "EVIDENCE_SPAN",
+        "path": "/payload/evidence_span"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T26-structure",
+      "target_record_id": "D005-T26-0001",
+      "source_json_path": "$.payload.LINK_STATUS",
+      "mutation_rule": "delete link_status",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T26-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "LINK_STATUS"
+            },
+            "message": "must have required property 'LINK_STATUS'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "LINK_STATUS"
+            },
+            "message": "must have required property 'LINK_STATUS'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T26-semantic",
+      "target_record_id": "D005-T26-0001",
+      "source_json_path": "$.payload.ORDER_REF",
+      "mutation_rule": "x=>x.order_ref='D005-MISSING'",
+      "expected_code": "ORDER_REF",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T26-0001",
+        "stage": "semantic",
+        "code": "ORDER_REF",
+        "path": "/payload/order_ref"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T27-structure",
+      "target_record_id": "D005-T27-0001",
+      "source_json_path": "$.payload.content_id",
+      "mutation_rule": "delete content_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T27-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "content_id"
+            },
+            "message": "must have required property 'content_id'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T27-semantic",
+      "target_record_id": "D005-T27-0002",
+      "source_json_path": "$.payload.viewCount",
+      "mutation_rule": "x=>x.view_count=0",
+      "expected_code": "CUMULATIVE_DECREASE",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T27-0002",
+        "stage": "semantic",
+        "code": "CUMULATIVE_DECREASE",
+        "path": "/payload/view_count"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T28-structure",
+      "target_record_id": "D005-T28-0001",
+      "source_json_path": "$.payload.contentRef",
+      "mutation_rule": "delete content_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T28-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "contentRef"
+            },
+            "message": "must have required property 'contentRef'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T28-semantic",
+      "target_record_id": "D005-T28-0002",
+      "source_json_path": "$.payload.PARENT_COMMENT_REF",
+      "mutation_rule": "(x,all,r)=>{x.parent_comment_ref=all.find(z=>z.metadata.dataset_type==='T28'&&z.payload.content_ref!==r.payload.content_ref).payload.comment_id;}",
+      "expected_code": "COMMENT_PARENT",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T28-0002",
+        "stage": "semantic",
+        "code": "COMMENT_PARENT",
+        "path": "/payload/parent_comment_ref"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T29-structure",
+      "target_record_id": "D005-T29-0001",
+      "source_json_path": "$.payload.COLLABORATION_ID",
+      "mutation_rule": "delete collaboration_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T29-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "COLLABORATION_ID"
+            },
+            "message": "must have required property 'COLLABORATION_ID'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T29-semantic",
+      "target_record_id": "D005-T29-0001",
+      "source_json_path": "$.payload.CONTENT_REFS",
+      "mutation_rule": "x=>x.content_refs=['D005-MISSING']",
+      "expected_code": "COLLAB_CONTENT",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T29-0001",
+        "stage": "semantic",
+        "code": "COLLAB_CONTENT",
+        "path": "/payload/content_refs"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T30-structure",
+      "target_record_id": "D005-T30-0001",
+      "source_json_path": "$.payload.cohort_ref",
+      "mutation_rule": "delete cohort_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T30-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "cohort_ref"
+            },
+            "message": "must have required property 'cohort_ref'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "opportunity_id"
+            },
+            "message": "must have required property 'opportunity_id'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T30-semantic",
+      "target_record_id": "D005-T30-0001",
+      "source_json_path": "$.payload.sample_size",
+      "mutation_rule": "x=>x.sample_size=1",
+      "expected_code": "COHORT_SAMPLE",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T30-0001",
+        "stage": "semantic",
+        "code": "COHORT_SAMPLE",
+        "path": "/payload/sample_size"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T31-structure",
+      "target_record_id": "D005-T31-0001",
+      "source_json_path": "$.payload.emailsSent",
+      "mutation_rule": "delete emails_sent",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T31-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "emailsSent"
+            },
+            "message": "must have required property 'emailsSent'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T31-semantic",
+      "target_record_id": "D005-T31-0001",
+      "source_json_path": "$.payload.uniqueClicks",
+      "mutation_rule": "x=>x.unique_clicks=3",
+      "expected_code": "CRM_REACH",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T31-0001",
+        "stage": "semantic",
+        "code": "CRM_REACH",
+        "path": "/payload/unique_clicks"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T32-structure",
+      "target_record_id": "D005-T32-0001",
+      "source_json_path": "$.payload.SAMPLING_METHOD",
+      "mutation_rule": "delete sampling_method",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T32-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "SAMPLING_METHOD"
+            },
+            "message": "must have required property 'SAMPLING_METHOD'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T32-semantic",
+      "target_record_id": "D005-T32-0001",
+      "source_json_path": "$.payload.POSITIVE_RESPONSES",
+      "mutation_rule": "x=>x.positive_responses=51",
+      "expected_code": "SAMPLE_EXCEEDED",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T32-0001",
+        "stage": "semantic",
+        "code": "SAMPLE_EXCEEDED",
+        "path": "/payload/positive_responses"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T33-structure",
+      "target_record_id": "D005-T33-0001",
+      "source_json_path": "$.payload.statistics_table_id",
+      "mutation_rule": "delete statistics_table_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T33-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "statistics_table_id"
+            },
+            "message": "must have required property 'statistics_table_id'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T33-semantic",
+      "target_record_id": "D005-T33-0002",
+      "source_json_path": "$.payload.supersedesRecordId",
+      "mutation_rule": "(x,all,r)=>{x.supersedes_record_id=all.find(z=>z.metadata.dataset_type==='T33'&&z.metadata.country_code!==r.metadata.country_code).metadata.record_id;}",
+      "expected_code": "REVISION_SCOPE",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T33-0002",
+        "stage": "semantic",
+        "code": "REVISION_SCOPE",
+        "path": "/payload/supersedes_record_id"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T34-structure",
+      "target_record_id": "D005-T34-0001",
+      "source_json_path": "$.payload.stationRef",
+      "mutation_rule": "delete station_ref",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T34-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "stationRef"
+            },
+            "message": "must have required property 'stationRef'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "title"
+            },
+            "message": "must have required property 'title'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T34-semantic",
+      "target_record_id": "D005-T34-0001",
+      "source_json_path": "$.payload.period",
+      "mutation_rule": "x=>x.period.end='2026-08-01'",
+      "expected_code": "PERIOD",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T34-0001",
+        "stage": "semantic",
+        "code": "PERIOD",
+        "path": "/payload/period"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T37-structure",
+      "target_record_id": "D005-T37-0001",
+      "source_json_path": "$.payload.measures",
+      "mutation_rule": "delete measures",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T37-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "measures"
+            },
+            "message": "must have required property 'measures'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/1/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "incidentStart"
+            },
+            "message": "must have required property 'incidentStart'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T37-semantic",
+      "target_record_id": "D005-T37-0003",
+      "source_json_path": "$.payload.incident_end",
+      "mutation_rule": "x=>x.incident_end='2026-08-01T12:00:00+09:00'",
+      "expected_code": "INCIDENT_TIME",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T37-0003",
+        "stage": "semantic",
+        "code": "INCIDENT_TIME",
+        "path": "/payload/incident_end"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T38-structure",
+      "target_record_id": "D005-T38-0001",
+      "source_json_path": "$.payload.ARM_ID",
+      "mutation_rule": "delete arm_id",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T38-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "ARM_ID"
+            },
+            "message": "must have required property 'ARM_ID'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T38-semantic",
+      "target_record_id": "D005-T38-0001",
+      "source_json_path": "$.payload.CONVERSIONS",
+      "mutation_rule": "x=>x.conversions=101",
+      "expected_code": "EXPERIMENT_SAMPLE",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T38-0001",
+        "stage": "semantic",
+        "code": "EXPERIMENT_SAMPLE",
+        "path": "/payload/conversions"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T39-structure",
+      "target_record_id": "D005-T39-0002",
+      "source_json_path": "$.payload.allocations",
+      "mutation_rule": "delete allocations",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T39-0002",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "modelId"
+            },
+            "message": "must have required property 'modelId'"
+          },
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/oneOf/0/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "formula"
+            },
+            "message": "must have required property 'formula'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T39-semantic",
+      "target_record_id": "D005-T39-0002",
+      "source_json_path": "$.payload.allocations",
+      "mutation_rule": "x=>x.allocations.search=fromMinor(total(x.total_budget)+1n,x.total_budget.currency)",
+      "expected_code": "BUDGET_TOTAL",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T39-0002",
+        "stage": "semantic",
+        "code": "BUDGET_TOTAL",
+        "path": "/payload/allocations"
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T40-structure",
+      "target_record_id": "D005-T40-0001",
+      "source_json_path": "$.payload.approvalRole",
+      "mutation_rule": "delete approval_role",
+      "expected_code": "STRUCTURE",
+      "expected_stage": "source_schema",
+      "detected": {
+        "record_id": "D005-T40-0001",
+        "stage": "source_schema",
+        "code": "STRUCTURE",
+        "path": "/payload",
+        "detail": [
+          {
+            "instancePath": "/payload",
+            "schemaPath": "#/properties/payload/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "approvalRole"
+            },
+            "message": "must have required property 'approvalRole'"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "T40-semantic",
+      "target_record_id": "D005-T40-0001",
+      "source_json_path": "$.payload.kpiDefinitionRef",
+      "mutation_rule": "x=>x.kpi_definition_ref='D005-MISSING'",
+      "expected_code": "KPI_REF",
+      "expected_stage": "semantic",
+      "detected": {
+        "record_id": "D005-T40-0001",
+        "stage": "semantic",
+        "code": "KPI_REF",
+        "path": "/payload/kpi_definition_ref"
+      },
+      "status": "pass"
+    }
+  ],
+  "boundary_checks": [
+    {
+      "name": "available_at_before_and_exact_all_534",
+      "status": "pass"
+    },
+    {
+      "name": "half_open_cost_creative_policy_boundaries",
+      "status": "pass"
+    },
+    {
+      "name": "statistical_vintage_before_and_exact",
+      "status": "pass"
+    },
+    {
+      "name": "null_unknown_pending_and_consent_preserved",
+      "status": "pass"
+    },
+    {
+      "name": "proposed_never_executable",
+      "status": "pass"
+    },
+    {
+      "name": "normalization_windows_not_combined",
+      "status": "pass"
+    },
+    {
+      "name": "nonadditive_content_auction_and_rolling_p75",
+      "status": "pass"
+    },
+    {
+      "name": "refund_subtracted_once_by_completed_adjustment",
+      "status": "pass"
+    },
+    {
+      "name": "C_units_and_USD_minor_exact_roundtrip",
+      "status": "pass"
+    }
+  ],
+  "batch_validation": "D005_pass_D004_regression_not_run_in_this_command",
+  "status": "pass",
+  "layer_counts": {
+    "json_schema": {
+      "pass": 534,
+      "fail": 0
+    },
+    "synthetic_source_fit": {
+      "pass": 534,
+      "fail": 0
+    },
+    "semantic_contract_programmatic": {
+      "pass": 534,
+      "fail": 0
+    },
+    "independent_business_meaning_review": "not_run",
+    "logic": {
+      "D004_OWL_RL": "see_D004_report",
+      "HermiT": "not_run",
+      "OOPS": "not_run"
+    },
+    "question_support": {
+      "full_contract_pass": 0,
+      "full_contract_fail": 0,
+      "full_contract_not_run": 52,
+      "existing_partial_components": 5
+    },
+    "new_type_source_coverage": 30
+  },
+  "finished_at": "2026-10-17T04:47:00.390Z",
+  "exit_code": 0
+}

@@ -1,0 +1,1 @@
+{"status":"pass","scope":"existing-only-preflight","checks":13,"existing_rows":2242,"new_rows_generated":0,"planned_rows":20000,"legacy_canonical_conforming":1452,"limitations":"D007 generation, distributions, independent oracle and RDF tests have not run. Legacy gaps are exposed rather than filled."}

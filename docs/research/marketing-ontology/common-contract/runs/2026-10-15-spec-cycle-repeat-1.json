@@ -1,0 +1,243 @@
+{
+  "scope": "specification_only",
+  "started_at": "2026-10-15T13:57:05.134155+09:00",
+  "git_commit": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+  "git_dirty_status": " M AGENTS.md\n M docs/iterations/README.md\n M docs/iterations/v0.2.0.md\n M docs/research/marketing-ontology/common-contract/README.md\n M docs/research/marketing-ontology/common-contract/check-spec.py\n M docs/research/marketing-ontology/common-contract/evaluation.md\n M docs/research/marketing-ontology/work-log.md\n?? docs/research/marketing-ontology/common-contract/run-spec-cycle.py\n?? docs/research/marketing-ontology/common-contract/runs/\n?? docs/research/marketing-ontology/common-contract/verification-cycle.md\n",
+  "python": "3.12.14",
+  "input_sha256": {
+    "docs/research/marketing-ontology/common-contract/batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+    "docs/research/marketing-ontology/common-contract/check-json-schemas.mjs": "291195bd3d675c02a3614300a91d7d7567a70c35554d92fdecdfc8b661087efc",
+    "docs/research/marketing-ontology/common-contract/check-preservation.mjs": "f9e795b54329cc6521b5c85c997066347b0ca328ddfbdd3d8fa2f870b9b10c80",
+    "docs/research/marketing-ontology/common-contract/check-spec.py": "8b01f0f554253d86fdb874806bf7a773390eb837dae352713c9e974f34710801",
+    "docs/research/marketing-ontology/common-contract/d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+    "docs/research/marketing-ontology/common-contract/evaluation.md": "4a32b66e645e1a6b9512c021dc44132217dfd036a6332079336475e78fe59e85",
+    "docs/research/marketing-ontology/common-contract/mapping-notes.md": "945bc84329d7fd1c480d08bdb3e61bee188dcb62bb9594c458f5c422820ad04b",
+    "docs/research/marketing-ontology/common-contract/ontology.ttl": "bd7512761ddfab6c3aa68793ec9fd09699f7906f0913be272540ca07ee545a01",
+    "docs/research/marketing-ontology/common-contract/preservation-baseline.json": "9baaa46d99ec1890dc07da4a3e8c2523c0ba54d77bb47c639113c681bb015708",
+    "docs/research/marketing-ontology/common-contract/README.md": "792dd16284fca7aff942be26fe0d41d5acaff74425d59eed00ee7a9c136e13bb",
+    "docs/research/marketing-ontology/common-contract/run-spec-cycle.py": "51f226d31eda489c4046ef8f732dfbbe9aa5086abfe92a8b2a3f4e878701f434",
+    "docs/research/marketing-ontology/common-contract/schema-crosswalk.md": "24a599dee31640c27ba0dfd8e8d9bb96f0af9552e597e6beb2f3808d11862f8f",
+    "docs/research/marketing-ontology/common-contract/semantics.md": "33713b34fc318e4a2c6bc62736ba7993b3acafa2f57de009d9d38d586ae3f1da",
+    "docs/research/marketing-ontology/common-contract/shapes.ttl": "e8e647209572b09aa5e5ff2e32d244d79a01301530194c336ba5125690502cea",
+    "docs/research/marketing-ontology/common-contract/source-contracts.json": "1ba0a64a8e87babdb23655fae9fa069a783c7c064722d73709f30efea16501e7",
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+    "docs/research/marketing-ontology/common-contract/validation-proposal.md": "7099766f859571ffe63da229b0cce3478e522eb1b1abf0b6df2aca948298be27",
+    "docs/research/marketing-ontology/common-contract/validation.md": "3c02012b47e8d50f7e69c613153d1c47a30b0f2429b665898935a66f6a920721",
+    "docs/research/marketing-ontology/common-contract/verification-cycle.md": "2ee52914343c67bd33c673631788eb8f633bee58b2763db1fe672a00cb8955bb",
+    "docs/research/marketing-ontology/schemas/check-catalog.mjs": "4f7240a75b485dbf5c6361b511eb5950111ff219c81a0a04754d1529c6d490bc",
+    "docs/research/marketing-ontology/schemas/marketing-records.schema.json": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+    "docs/research/marketing-ontology/schemas/temporal-policy.mjs": "10fdce607a35b81a30b0271ff7d76d82eb164e9b2c16e751df2315de59a45be6",
+    "docs/research/marketing-ontology/batches/D003B/batch.schema.json": "c50c2d53b29e05e955bc24d529753378de8fb8a243355c214a4beecb6d61470c",
+    "docs/research/marketing-ontology/data-source-register.md": "6a99cb2f0195a4e0459813115674c8c28ac8bd02d3116a04ebd0ddfaf4f5129d"
+  },
+  "specification_status": "pass",
+  "checks": [
+    {
+      "check": "spec",
+      "command": [
+        "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\check-spec.py",
+        "--tools",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stderr": "",
+      "result": {
+        "contract_version": "MC-1.0.0",
+        "date": "2026-10-14 Asia/Seoul",
+        "environment": {
+          "python": "3.12.14",
+          "rdflib": "7.6.0",
+          "pyshacl": "0.40.1",
+          "owlrl": "7.6.2"
+        },
+        "checks": [
+          {
+            "name": "D003B 11-type schema/field coverage and metric references",
+            "status": "pass",
+            "detail": {
+              "types": 11,
+              "mapped_field_occurrences": 163,
+              "metrics": 18
+            }
+          },
+          {
+            "name": "13 questions × 4 categories; 30-question status; policy traceability",
+            "status": "pass",
+            "detail": {
+              "core_questions": 13,
+              "test_specs": 52,
+              "data_tests_executed": 0,
+              "all_questions": 30
+            }
+          },
+          {
+            "name": "Proposal IDs/counts/observation arithmetic and approval boundary",
+            "status": "pass",
+            "detail": {
+              "proposed_input_rows": 214,
+              "proposed_observations": 547,
+              "actual_transformed_rows": 0,
+              "ID_existence": "not run; approval required"
+            }
+          },
+          {
+            "name": "Search/social/own-sales contract completeness",
+            "status": "pass",
+            "detail": "3 contracts; pending source semantics explicit; no API connector executed"
+          },
+          {
+            "name": "RDFLib Turtle parsing",
+            "status": "pass",
+            "detail": {
+              "ontology_triples": 275,
+              "shape_triples": 558
+            }
+          },
+          {
+            "name": "RDF declaration/shape/mapping references",
+            "status": "pass",
+            "detail": {
+              "owl_classes": 22,
+              "node_shapes": 21,
+              "undeclared_local_references": 0,
+              "explicit_sameAs": 0
+            }
+          },
+          {
+            "name": "pySHACL SHACL specification meta-validation",
+            "status": "pass",
+            "detail": {
+              "meta_shacl_conforms": true,
+              "target": "shapes.ttl only",
+              "marketing_graph_validation": "not run"
+            }
+          },
+          {
+            "name": "SHACL-SPARQL constraint syntax",
+            "status": "pass",
+            "detail": {
+              "parsed_constraint_queries": 4,
+              "executed_against_marketing_data": 0
+            }
+          },
+          {
+            "name": "Declared hierarchy/disjointness structure",
+            "status": "pass",
+            "detail": "No declared subclass cycles/disjoint ancestors; HermiT satisfiability not run"
+          },
+          {
+            "name": "OWL RL definition entailments and detected contradictions",
+            "status": "pass",
+            "detail": {
+              "expected_entailments": 5,
+              "unsatisfiable_named_classes": 0,
+              "scope": "OWL RL TBox only; OWL DL consistency not run"
+            }
+          },
+          {
+            "name": "New-document local links",
+            "status": "pass",
+            "detail": {
+              "existing_local_links": 45
+            }
+          },
+          {
+            "name": "Protégé/HermiT OWL consistency and satisfiability",
+            "status": "not_run",
+            "detail": "not installed; no reasoner version recorded"
+          },
+          {
+            "name": "OOPS! automated scan",
+            "status": "not_run",
+            "detail": "external ontology submission not performed"
+          },
+          {
+            "name": "52 data-dependent question tests",
+            "status": "not_run",
+            "detail": "data reuse/transformation/fault fixtures not approved"
+          },
+          {
+            "name": "Real source compatibility and user usefulness",
+            "status": "not_run",
+            "detail": "no real account samples or user business evaluation"
+          }
+        ],
+        "passed": 11,
+        "failed": 0,
+        "not_run": 4,
+        "marketing_rows_read": 0,
+        "marketing_rows_generated": 0,
+        "marketing_rows_transformed": 0,
+        "hashes": {
+          "batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+          "d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+          "ontology.ttl": "bd7512761ddfab6c3aa68793ec9fd09699f7906f0913be272540ca07ee545a01",
+          "preservation-baseline.json": "9baaa46d99ec1890dc07da4a3e8c2523c0ba54d77bb47c639113c681bb015708",
+          "preservation-results.json": "8bf5ca3e5643cb3f207223f6aa3aaa9fdc7ec3d8375f56d640c1a11761b6eed6",
+          "shapes.ttl": "e8e647209572b09aa5e5ff2e32d244d79a01301530194c336ba5125690502cea",
+          "source-contracts.json": "1ba0a64a8e87babdb23655fae9fa069a783c7c064722d73709f30efea16501e7",
+          "tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337"
+        }
+      }
+    },
+    {
+      "check": "schemas",
+      "command": [
+        "node",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\check-json-schemas.mjs"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stderr": "",
+      "result": {
+        "node": "v24.19.0",
+        "ajv": "8.20.0",
+        "results": [
+          {
+            "schema": "../batches/D003B/batch.schema.json",
+            "metaschema": "pass",
+            "compile": "pass",
+            "instance_validation": "not_run"
+          },
+          {
+            "schema": "../schemas/marketing-records.schema.json",
+            "metaschema": "pass",
+            "compile": "pass",
+            "instance_validation": "not_run"
+          }
+        ]
+      }
+    },
+    {
+      "check": "catalog",
+      "command": [
+        "node",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\schemas\\check-catalog.mjs"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stderr": "",
+      "result": {
+        "types": 40,
+        "propertyOccurrences": 857,
+        "registeredSources": 44,
+        "temporalPolicy": "passed: 40 types, 24 months, 28 days/4 complete weeks, H01 separate",
+        "proposedRecordBudget": 15419,
+        "metaschemaValidation": "passed: Draft 2020-12 metaschema, 40 types and H01 compile with formats",
+        "generatedMarketingRecords": 0
+      }
+    }
+  ],
+  "system_validation": "incomplete",
+  "remaining_gates": [
+    "G1 independent meaning review",
+    "G3 OWL logic/design",
+    "G4 approved transformation/data conformance",
+    "G5 independent calculation/query",
+    "G6 question/evidence/abstention",
+    "G7 exception/regression/reproducibility"
+  ],
+  "data_operations_executed": false
+}

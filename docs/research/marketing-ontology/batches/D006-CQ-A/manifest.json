@@ -1,0 +1,22 @@
+{
+  "version": "D006-1.0.0",
+  "scope_id": "D006-CQ-A",
+  "rows": 3,
+  "files": [
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+      "rows": 1,
+      "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+      "rows": 2,
+      "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+    }
+  ],
+  "scope_sha256": "7e3bd4c7ebaf45b8d7ba5642c3168bcbd7ec2fdd8f57bfa1b9374573f9e3e6cb",
+  "approval_sha256": "f195246d82b3ab11659e5dd5cc421d0cc49e55949157631c1bfb7f576cd131bc",
+  "generator_sha256": "e712bba3a1c65f6c843bdf8dae0092ade9873cc01671feb1eecc62dd3b437b08",
+  "source_rewrites": 0,
+  "permanent_RDF_or_DB": false
+}

@@ -1,0 +1,2175 @@
+{
+  "status": "pending_review",
+  "ontology_sha256": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+  "source_commit": "11572ea6b31cba29dd3f8a443e24311652f059de",
+  "findings": [
+    {
+      "code": "P04",
+      "importance": "MINOR",
+      "resources": [
+        "http://www.w3.org/ns/prov#Activity"
+      ],
+      "fingerprint": "e37df70b0c59372d8e46872bcf974ec58e924efb5d97e01ab75da2578aff05f8",
+      "review_state": "proposed_non_application",
+      "reason": "Local PROV terms have explicit inbound subclass edges. Review as a disconnected-element false-positive candidate.",
+      "evidence": [
+        {
+          "subclass": "https://example.org/marketing/CollectionRun",
+          "superclass": "http://www.w3.org/ns/prov#Activity"
+        },
+        {
+          "subclass": "https://example.org/marketing/Transformation",
+          "superclass": "http://www.w3.org/ns/prov#Activity"
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P04",
+      "importance": "MINOR",
+      "resources": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "fingerprint": "39702e6f711d91672a27e3a5b20a80885577e81d63d43f6b921227bf41adf177",
+      "review_state": "proposed_non_application",
+      "reason": "Local PROV terms have explicit inbound subclass edges. Review as a disconnected-element false-positive candidate.",
+      "evidence": [
+        {
+          "subclass": "https://example.org/marketing/Entity",
+          "superclass": "http://www.w3.org/ns/prov#Entity"
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "http://www.w3.org/ns/prov#wasDerivedFrom"
+      ],
+      "fingerprint": "b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "http://www.w3.org/ns/prov#wasGeneratedBy"
+      ],
+      "fingerprint": "ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/afterValue"
+      ],
+      "fingerprint": "1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/aggregation"
+      ],
+      "fingerprint": "788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/aggregation",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/asOf"
+      ],
+      "fingerprint": "8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/asOf",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/attributionModel"
+      ],
+      "fingerprint": "70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/attributionModel",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/attributionWindowDays"
+      ],
+      "fingerprint": "0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/attributionWindowDays",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/availability"
+      ],
+      "fingerprint": "957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/availability",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/availableAt"
+      ],
+      "fingerprint": "94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/availableAt",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/beforeValue"
+      ],
+      "fingerprint": "31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/bodyText"
+      ],
+      "fingerprint": "fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/bodyText",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/brandRole"
+      ],
+      "fingerprint": "5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/calendar"
+      ],
+      "fingerprint": "6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/calendar",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/category"
+      ],
+      "fingerprint": "5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/category",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/changeField"
+      ],
+      "fingerprint": "dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/channel"
+      ],
+      "fingerprint": "1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/channel",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/claimText"
+      ],
+      "fingerprint": "9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/claimText",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/claimText",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/codeVersion"
+      ],
+      "fingerprint": "64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/codeVersion",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/comparisonGroup"
+      ],
+      "fingerprint": "a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/conversionName"
+      ],
+      "fingerprint": "ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/conversionName",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/counters"
+      ],
+      "fingerprint": "be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/country"
+      ],
+      "fingerprint": "5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/country",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/coverageText"
+      ],
+      "fingerprint": "5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/coverageText",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/currency"
+      ],
+      "fingerprint": "8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/currency",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/definitionVersion"
+      ],
+      "fingerprint": "bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/definitionVersion",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/definition"
+      ],
+      "fingerprint": "140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/definition",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/discountRatio"
+      ],
+      "fingerprint": "1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/endAtExclusive"
+      ],
+      "fingerprint": "d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/endAtExclusive",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/endDateExclusive"
+      ],
+      "fingerprint": "159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/endDateExclusive",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#date"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/eventKind"
+      ],
+      "fingerprint": "c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/eventKind",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/evidenceSpan"
+      ],
+      "fingerprint": "27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/evidenceSpan",
+          "classes": [
+            "https://example.org/marketing/EvidenceSpan"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/expectedCount"
+      ],
+      "fingerprint": "c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/expectedCount",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/fieldPath"
+      ],
+      "fingerprint": "d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/fieldPath",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/generatedBy"
+      ],
+      "fingerprint": "5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/generatedBy",
+          "classes": [
+            "https://example.org/marketing/Transformation"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/grain"
+      ],
+      "fingerprint": "04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/grain",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/identifierNamespace"
+      ],
+      "fingerprint": "fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/identifierNamespace",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/instant"
+      ],
+      "fingerprint": "fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/interval"
+      ],
+      "fingerprint": "d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/interval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/interval",
+          "classes": [],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/isSynthetic"
+      ],
+      "fingerprint": "7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/isSynthetic",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#boolean"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/label"
+      ],
+      "fingerprint": "62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/language"
+      ],
+      "fingerprint": "dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/language",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/location"
+      ],
+      "fingerprint": "c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/mappingVersion"
+      ],
+      "fingerprint": "4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/mappingVersion",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/metricId"
+      ],
+      "fingerprint": "d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/metricId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/missingCount"
+      ],
+      "fingerprint": "4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/missingCount",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/offsetEnd"
+      ],
+      "fingerprint": "f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/offsetEnd",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/offsetStart"
+      ],
+      "fingerprint": "114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/offsetStart",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/originKind"
+      ],
+      "fingerprint": "b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/originKind",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/originKind",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/path"
+      ],
+      "fingerprint": "2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/path",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/platform"
+      ],
+      "fingerprint": "53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/platform",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/policyVersion"
+      ],
+      "fingerprint": "12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/policyVersion",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/questionId"
+      ],
+      "fingerprint": "8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/questionId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/quote"
+      ],
+      "fingerprint": "1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/quote",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/ratingScaleMax"
+      ],
+      "fingerprint": "df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/reason"
+      ],
+      "fingerprint": "9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/reason",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/receivedCount"
+      ],
+      "fingerprint": "c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/receivedCount",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/recordId"
+      ],
+      "fingerprint": "bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/recordId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/resultStatus"
+      ],
+      "fingerprint": "491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/resultStatus",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/revision"
+      ],
+      "fingerprint": "75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/revision",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#integer"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/scope"
+      ],
+      "fingerprint": "2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/sellerStatus"
+      ],
+      "fingerprint": "7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/seller"
+      ],
+      "fingerprint": "35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/seriesRole"
+      ],
+      "fingerprint": "4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/seriesRole",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/sha256"
+      ],
+      "fingerprint": "3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/sha256",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/shippingIncluded"
+      ],
+      "fingerprint": "34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/sourceId"
+      ],
+      "fingerprint": "cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/sourceId",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/sourceRecord"
+      ],
+      "fingerprint": "78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/sourceRecord",
+          "classes": [
+            "https://example.org/marketing/SourceRecord"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/startAt"
+      ],
+      "fingerprint": "3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/startAt",
+          "classes": [],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/startAt",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/startDate"
+      ],
+      "fingerprint": "af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/startDate",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#date"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/subject"
+      ],
+      "fingerprint": "b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/supports"
+      ],
+      "fingerprint": "3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/taxIncluded"
+      ],
+      "fingerprint": "87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/timestamp"
+      ],
+      "fingerprint": "e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/timestamp",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#dateTime"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/timezone"
+      ],
+      "fingerprint": "cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/timezone",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        },
+        {
+          "path": "https://example.org/marketing/timezone",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/unit"
+      ],
+      "fingerprint": "eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/unit",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#string"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/validInterval"
+      ],
+      "fingerprint": "6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/validInterval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/validInterval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/value"
+      ],
+      "fingerprint": "9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/value",
+          "classes": [],
+          "datatypes": [
+            "http://www.w3.org/2001/XMLSchema#decimal"
+          ]
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/verifiedPurchase"
+      ],
+      "fingerprint": "7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P11",
+      "importance": "IMPORTANT",
+      "resources": [
+        "https://example.org/marketing/volumeMl"
+      ],
+      "fingerprint": "d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb",
+      "review_state": "needs_design_review",
+      "reason": "Global domain/range changes inference. Preserve context-scoped constraints where evidence exists; missing constraints require explicit design review.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "http://www.w3.org/ns/prov#wasDerivedFrom"
+      ],
+      "fingerprint": "c8d8ae9e1b81b2e032706088510d6cd389a1e693c360acc11512eb5abe80cda5",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "http://www.w3.org/ns/prov#wasGeneratedBy"
+      ],
+      "fingerprint": "7d015b678a0b6ddecb235d8b76e1334d7d66c052c3e7e1cd7e9e2ec06c347adb",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/artifact"
+      ],
+      "fingerprint": "1d3fa8deb66a47848e41afdc12fef552c7266b2bea3f64fa84f554c567cf30c8",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/artifact",
+          "classes": [
+            "https://example.org/marketing/SourceArtifact"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/brand"
+      ],
+      "fingerprint": "18613602502a833f4d5915d2d1707f13c8d35290578a47c65a89bc23764c2df3",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/brand",
+          "classes": [
+            "https://example.org/marketing/Brand"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/counters"
+      ],
+      "fingerprint": "1b26416d178e6c1545b141731b67bf766c06b336bc2c8b3724a304882403ccdc",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/evidenceSpan"
+      ],
+      "fingerprint": "d7015e8cd26022c1f1f671a7326e97084972d7c0a3e0ecb5eb869e41bf5f492d",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/evidenceSpan",
+          "classes": [
+            "https://example.org/marketing/EvidenceSpan"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/generatedBy"
+      ],
+      "fingerprint": "47c057bf8511914cccbc9c8fea4dfb724d810cc9c30073e2b58e3595d5b64669",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/generatedBy",
+          "classes": [
+            "https://example.org/marketing/Transformation"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/inCategory"
+      ],
+      "fingerprint": "344ec60fbc3621a3f5aab90cb895788a30cde2cd55ef22e0f545f3baa4b19aab",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/inCategory",
+          "classes": [
+            "https://example.org/marketing/Category"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/input"
+      ],
+      "fingerprint": "14e69077d3afdcbbc7e9461566707770193bd6788cd2f41247ab55afd38ccd80",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/input",
+          "classes": [],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/instant"
+      ],
+      "fingerprint": "8b93524acf09062fa727c8dcab7a6a08d06589b3e1e46d9cbf5b7215ff784a11",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [
+            "https://example.org/marketing/TimeInstant"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/instant",
+          "classes": [],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/interval"
+      ],
+      "fingerprint": "b5625caa701867fb3cf76038478dc80c87b96bef66eb35b6c30b18e4935009c4",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/interval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/interval",
+          "classes": [],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/location"
+      ],
+      "fingerprint": "84637ae7917155bd8582f7ce13ab66d497c3f32b3ba97b552522eb7d8d196e02",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/member"
+      ],
+      "fingerprint": "ec0eb914b0bdff60527be2470adf055bbb5158d4d1015cb7e269ed17a537b337",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/member",
+          "classes": [
+            "https://example.org/marketing/Product"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/metric"
+      ],
+      "fingerprint": "a0f8608660b081fa955f7a8d36309a4089e28e04676ef00afdb6b4130716b546",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/metric",
+          "classes": [
+            "https://example.org/marketing/MetricDefinition"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/originalReview"
+      ],
+      "fingerprint": "80556f62b8d2ac82a91b07fa8bd397867f1859522f9a4a1849d43526f5d77ea5",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/originalReview",
+          "classes": [
+            "https://example.org/marketing/Review"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/promotes"
+      ],
+      "fingerprint": "e52495aa88e245757c934ef975df91a71710bd45987bb6bf51a34eb3084bd7b1",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/promotes",
+          "classes": [
+            "https://example.org/marketing/Product"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/scope"
+      ],
+      "fingerprint": "ce53289b249961383962e20a2a599ba7650e3ac43247437f59c8ab3ba9311a8a",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/scope",
+          "classes": [
+            "https://example.org/marketing/MarketScope"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/seller"
+      ],
+      "fingerprint": "e02107dda5045c9d2b3b3f8f692ec4db41458a3e07a4209b5da8ea818404ea2e",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/sourceRecord"
+      ],
+      "fingerprint": "1bf042bf52e6c8f048b0714c72f1fac9b70c4d2eed3535c74dc214438a4c6dc8",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/sourceRecord",
+          "classes": [
+            "https://example.org/marketing/SourceRecord"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/subject"
+      ],
+      "fingerprint": "59f88b69ef88397909887bdebffdfab47276b352e0bc035d0dc5f372394b8682",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/subject",
+          "classes": [
+            "https://example.org/marketing/Subject"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/supersedes"
+      ],
+      "fingerprint": "7b398f71ee980a4b5a031c34e2b97914c947e65df6184413eed788ca9bb24a64",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/supersedes",
+          "classes": [
+            "https://example.org/marketing/SourceRecord"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/supports"
+      ],
+      "fingerprint": "2d7609cbb588e8cba9792dcbbf32acdc64a58a5de48cc100ba7f2f625025fc30",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/validInterval"
+      ],
+      "fingerprint": "a7584aeb13693d1ecb042c61fe9defabaad17bd27cee3f448ea460d9ec94c4db",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/validInterval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        },
+        {
+          "path": "https://example.org/marketing/validInterval",
+          "classes": [
+            "https://example.org/marketing/TimeInterval"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-N",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/variantOf"
+      ],
+      "fingerprint": "d248c15113e3f71e7a8a65621d7cf33cebced9e240cacfd38f7fc4dd04ac7a91",
+      "review_state": "proposed_non_application",
+      "reason": "No named reverse predicate is required by the current contract. Keep directional relations and review the inverse-property recommendation without automatically adding axioms.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/variantOf",
+          "classes": [
+            "https://example.org/marketing/Product"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    },
+    {
+      "code": "P13-S",
+      "importance": "MINOR",
+      "resources": [
+        "https://example.org/marketing/supersedes"
+      ],
+      "fingerprint": "9fb39fe187cfa7ed006f1820dec5fa42001d5dbee72201af8574033b37920a9a",
+      "review_state": "proposed_non_application",
+      "reason": "supersedes is directional: reject symmetry; review transitivity against asOf and revision contracts.",
+      "evidence": [
+        {
+          "path": "https://example.org/marketing/supersedes",
+          "classes": [
+            "https://example.org/marketing/SourceRecord"
+          ],
+          "datatypes": []
+        }
+      ],
+      "approved_exception": false
+    }
+  ],
+  "counts": {
+    "P04": 2,
+    "P11": 79,
+    "P13-N": 24,
+    "P13-S": 1
+  },
+  "external_transmission": false
+}

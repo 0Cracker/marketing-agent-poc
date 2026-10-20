@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "scope": "review protocol replay of real scanner result; Java scanner NOT executed in this check",
+  "actual_scan_report": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\runs\\2026-10-16-completion-system-3-logic.json",
+  "script_sha256": "81b2bd0ab395e42c1195eb9c63e69e3cb4b47615f552277196c82c97720e8b54",
+  "actual_scan_report_sha256": "de7e15f8708fd40a0880d929423200d4d0e1139968de417e84784a0671c1a2fe",
+  "source_rows_created": 0,
+  "checks": [
+    {
+      "case": "valid",
+      "status": "pass",
+      "valid_review": "accepted"
+    },
+    {
+      "case": "human-forgery",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS delegated review authority missing"
+    },
+    {
+      "case": "stale-model",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS review must explicitly identify the current model and scanner"
+    },
+    {
+      "case": "missing-finding",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "OOPS review must match every current finding exactly"
+    },
+    {
+      "case": "changed-proof-hash",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "missing or changed alternative validation evidence"
+    },
+    {
+      "case": "wrong-proof-target",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "alternative evidence does not test this model finding"
+    },
+    {
+      "case": "stale-proof-input",
+      "status": "pass",
+      "invalid_review": "rejected",
+      "reason": "alternative evidence inputs changed"
+    }
+  ],
+  "scanner_protocol": {
+    "status": "pass",
+    "checks": 8
+  }
+}

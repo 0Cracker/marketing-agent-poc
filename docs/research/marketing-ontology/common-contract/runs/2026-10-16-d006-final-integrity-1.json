@@ -1,0 +1,67 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "original_and_generated_sources_manifests_immutable",
+      "status": "pass",
+      "detail": {
+        "files": 57
+      }
+    },
+    {
+      "name": "all_52_contracts_and_682_assertions",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "live_query_code_matches_executed_code",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "integrated_git_and_input_preservation",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "inventory_matches_actual_execution",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "business_review_and_actual_provider_still_unverified",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Python_AST",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "Node_syntax",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "D006_document_links",
+      "status": "pass",
+      "detail": {
+        "links": 54,
+        "broken": []
+      }
+    },
+    {
+      "name": "30_type_audit_inputs_current",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "no_fake_complete_system",
+      "status": "pass",
+      "detail": null
+    }
+  ],
+  "system_validation": "incomplete",
+  "failed": []
+}

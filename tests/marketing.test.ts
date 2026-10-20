@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {aggregate,analyze,ratio,scenarios} from '../lib/marketing.ts';
+import {aggregate,analyze,ratio,scenarios} from '../frontend/lib/marketing.ts';
 const ctx={channel:'전체 채널',period:'이번 주'};
 const totals=aggregate(ctx);
 assert.equal(totals.spend,42000000);

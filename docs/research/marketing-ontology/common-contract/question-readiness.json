@@ -1,0 +1,3550 @@
+{
+  "tests_sha256": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+  "counts": {
+    "현재 실행 가능": 52
+  },
+  "execution_counts": {
+    "pass": 52,
+    "fail": 0,
+    "not_run": 0
+  },
+  "tests": [
+    {
+      "id": "CQ01-1",
+      "question_id": "CQ01",
+      "category": "normal",
+      "condition": "동일 JP·Q3 2025/2026 T03 범위의 제품별 판매량/금액·비중 비교",
+      "required_fields": "T03 units_sold/sales_value/market_total_value; T01 product/brand",
+      "expected": {
+        "status": "answered",
+        "assertion": "합계와 증감·분모의 unique scope 합계가 독립 검산과 일치, 전세계 순위 주장 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-AGG",
+        "P-RATIO"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "market"
+      ],
+      "oracle_domains": [
+        "market"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ01-2",
+      "question_id": "CQ01",
+      "category": "boundary",
+      "condition": "같은 이름 다른 원천 제품 ID·식별자 충돌을 승인된 예외에서 제시",
+      "required_fields": "T01 source namespace/id; product crosswalk",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "명칭 자동 통합0; 충돌 record/field 이유 반환",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ01-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "incomparable",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ01-3",
+      "question_id": "CQ01",
+      "category": "insufficient",
+      "condition": "시장분모 또는 비교제품 월 하나 미확보 조건",
+      "required_fields": "T03 market_total_value + coverage",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "비중 값 없음, missing을0으로 대체0; 요구 자료 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE",
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ01-3"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "insufficient_data",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ01-4",
+      "question_id": "CQ01",
+      "category": "counterevidence",
+      "condition": "모의 시장 판매 하락과 광고 귀속가치 상승이 공존하는 조건",
+      "required_fields": "T03 vs T13 attributed_revenue",
+      "expected": {
+        "status": "answered",
+        "assertion": "시장/광고 지표 별도로 보고, 귀속가치로 시장열위 반박 단정 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "market",
+        "monthly_ads"
+      ],
+      "oracle_domains": [
+        "market",
+        "monthly_ads"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ02-1",
+      "question_id": "CQ02",
+      "category": "normal",
+      "condition": "JP P1A와 P2A 전년 Q3 절대/상대 증감 비교",
+      "required_fields": "T03 units_sold; H01 net_units",
+      "expected": {
+        "status": "answered",
+        "assertion": "자사 악화·경쟁 성장의 방향과 값 별도; 고객이동 결론 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-AGG",
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "market",
+        "own"
+      ],
+      "oracle_domains": [
+        "market",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ02-2",
+      "question_id": "CQ02",
+      "category": "boundary",
+      "condition": "승인된 경계 입력에서 비교기준값0",
+      "required_fields": "T03 units_sold baseline",
+      "expected": {
+        "status": "answered",
+        "assertion": "절대 변화만 반환; 상대 증감 value 없음 reason denominator_zero",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-RATIO"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ02-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 10,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ02-3",
+      "question_id": "CQ02",
+      "category": "insufficient",
+      "condition": "기준일이 2026-09-30인 Q3 보고 요청",
+      "required_fields": "T03/H01 available_at",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "10월5일 확보될 9월치를 사용하지 않고 완전분기 보류",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ASOF"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "early"
+      ],
+      "oracle_domains": [
+        "early"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ02-4",
+      "question_id": "CQ02",
+      "category": "counterevidence",
+      "condition": "시장 P1A 하락과 자사 순판매 기준 차이가 있는 조건",
+      "required_fields": "T03 coverage_text vs H01 scope",
+      "expected": {
+        "status": "answered",
+        "assertion": "같은 정의 증감만 계산, 서로 다른 범위의 대사 실패를 숨기지 않음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "market",
+        "own"
+      ],
+      "oracle_domains": [
+        "market",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 13,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ04-1",
+      "question_id": "CQ04",
+      "category": "normal",
+      "condition": "JP P1A/P2A 동일300ml 판매처 가격·할인 기간 탐색",
+      "required_fields": "T01 volume_ml; T08 price; T09 dates",
+      "expected": {
+        "status": "answered",
+        "assertion": "관측 표시가격만 비교, 세금/배송 미확인 제한 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "prices",
+        "promotion"
+      ],
+      "oracle_domains": [
+        "prices",
+        "promotion"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl",
+          "rows": 504,
+          "sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 13,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ04-2",
+      "question_id": "CQ04",
+      "category": "boundary",
+      "condition": "기간 마지막09시·10% 할인 종료 경계와 금액 배율 예외",
+      "required_fields": "T09 end_at_exclusive; source scales",
+      "expected": {
+        "status": "answered",
+        "assertion": "종료 제외, micros/decimal scale 별도 적용·exact 원값 유지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-MONEY"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ04-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 10,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ04-3",
+      "question_id": "CQ04",
+      "category": "insufficient",
+      "condition": "용량·판매처·세금/배송 조건 중 필수 비교 조건 부재",
+      "required_fields": "T01/T08 tax_included/shipping_included",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "총지불가격 경쟁력 판단 보류; unknown을false로 대체0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-VALUE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "prices"
+      ],
+      "oracle_domains": [
+        "prices"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl",
+          "rows": 504,
+          "sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "incomparable",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ04-4",
+      "question_id": "CQ04",
+      "category": "counterevidence",
+      "condition": "표시가격은 싸지만 배송포함가격 근거가 반대인 조건",
+      "required_fields": "T08 price plus approved shipping basis",
+      "expected": {
+        "status": "answered",
+        "assertion": "비교 정의별 결과 분리, 전체 가격우위 주장 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE",
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ04-4"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ05-1",
+      "question_id": "CQ05",
+      "category": "normal",
+      "condition": "JP 할인 종료와 월 판매 변화의 기간 맥락 연결",
+      "required_fields": "T09 dates; T03/H01 period",
+      "expected": {
+        "status": "answered",
+        "assertion": "전후 후보 설명·시간해상도 제한; 효과 수치 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "promotion",
+        "market",
+        "own"
+      ],
+      "oracle_domains": [
+        "promotion",
+        "market",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ05-2",
+      "question_id": "CQ05",
+      "category": "boundary",
+      "condition": "종료일 포함 오류·snapshot 가격 합산 시도",
+      "required_fields": "T09 end_at_exclusive; T08 observed_at/price",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "종료경계 오분류 및 가격합산 탐지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-AGG"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "promotion",
+        "prices"
+      ],
+      "oracle_domains": [
+        "promotion",
+        "prices",
+        "boundary_decision"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl",
+          "rows": 504,
+          "sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "incomparable",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ05-3",
+      "question_id": "CQ05",
+      "category": "insufficient",
+      "condition": "일별 판매/주문 T19가 없는 할인종료 일효과 요청",
+      "required_fields": "T19 absent; H01 month",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "월값 일분해0, 주문복원0, 필요한 일별 원천 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "gaps",
+        "own"
+      ],
+      "oracle_domains": [
+        "gaps",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ05-4",
+      "question_id": "CQ05",
+      "category": "counterevidence",
+      "condition": "할인기간에 품절·리뷰·누락 근거도 존재하는 조건",
+      "required_fields": "T22/T24/T36",
+      "expected": {
+        "status": "answered",
+        "assertion": "대안·반대 근거 함께 제시; 단일원인 단정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "promotion",
+        "stock",
+        "reviews",
+        "daily_ads",
+        "logs"
+      ],
+      "oracle_domains": [
+        "promotion",
+        "stock",
+        "reviews",
+        "daily_ads",
+        "logs"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl",
+          "rows": 168,
+          "sha256": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl",
+          "rows": 72,
+          "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl",
+          "rows": 1,
+          "sha256": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 16,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ06-1",
+      "question_id": "CQ06",
+      "category": "normal",
+      "condition": "JP P1A 09시 재고0와 같은날 캠페인 전환 연결",
+      "required_fields": "T22 instant/quantity; T13 conversions; T12 target",
+      "expected": {
+        "status": "answered",
+        "assertion": "7개0 snapshot과 같은기간 광고관측 표시, 인과효과 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE",
+        "P-TIME"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "stock",
+        "daily_ads",
+        "definitions"
+      ],
+      "oracle_domains": [
+        "stock",
+        "daily_ads",
+        "definitions"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl",
+          "rows": 168,
+          "sha256": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl",
+          "rows": 1,
+          "sha256": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ06-2",
+      "question_id": "CQ06",
+      "category": "boundary",
+      "condition": "snapshot 공백·시간대/DST 다른 원천과 설정유효기간 중간변경",
+      "required_fields": "T22 observed_at; T12 valid_from/to; timezone",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "24시간 품절 연장 금지, 불명확 현지시간 격리, 혼합설정 경고",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ06-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "contract_revision": {
+        "period": "Original Q3/August conditions plus [2025-11-02,2025-11-03) and [2026-03-08,2026-03-09), America/New_York; asOf unchanged"
+      },
+      "revision_version": "CQ-contract-20261016",
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "incomparable",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ06-3",
+      "question_id": "CQ06",
+      "category": "insufficient",
+      "condition": "소셜08-26/27 conversions null인 구간 비교",
+      "required_fields": "T13 availability; T36 missing_dates",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "0전환과 결측 별도, 완전 일별 비교 보류",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE",
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "daily_ads",
+        "logs"
+      ],
+      "oracle_domains": [
+        "daily_ads",
+        "logs"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ06-4",
+      "question_id": "CQ06",
+      "category": "counterevidence",
+      "condition": "전환 감소가 재고 회복 후에도 지속되는 반대 조건",
+      "required_fields": "T35 after_value; T22; T13",
+      "expected": {
+        "status": "answered",
+        "assertion": "품절 하나로 원인 확정하지 않고 후속 확인 반환",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ06-4"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ07-1",
+      "question_id": "CQ07",
+      "category": "normal",
+      "condition": "검색/소셜 분리해 노출·클릭·구매·비용 변화 분해",
+      "required_fields": "T13 metrics; T12 attribution",
+      "expected": {
+        "status": "answered",
+        "assertion": "CTR/CVR/CPA/ROAS가 합한 분자·분모에서 계산, 정의별 구분",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-RATIO"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "monthly_ads",
+        "daily_ads",
+        "definitions"
+      ],
+      "oracle_domains": [
+        "monthly_ads",
+        "daily_ads",
+        "definitions"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ07-2",
+      "question_id": "CQ07",
+      "category": "boundary",
+      "condition": "월baseline+일detail·정정 중복·비율 평균 입력",
+      "required_fields": "T13 grain/series_role; revision",
+      "expected": {
+        "status": "answered",
+        "assertion": "월/일 중복 제거·최신 revision 선택, 단순평균 거부",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-REVISION",
+        "P-AGG",
+        "P-RATIO"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ07-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 13,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ07-3",
+      "question_id": "CQ07",
+      "category": "insufficient",
+      "condition": "clicks 또는 conversion 정의 미확보",
+      "required_fields": "T13 clicks; T12 conversion_name",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "사용 가능한 지표만; CVR value 없음, missing≠0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ07-3"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "insufficient_data",
+      "assertion_count": 10,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ07-4",
+      "question_id": "CQ07",
+      "category": "counterevidence",
+      "condition": "ROAS 상승이나 광고지출 감소와 자사판매 악화 공존",
+      "required_fields": "T13 vs H01",
+      "expected": {
+        "status": "answered",
+        "assertion": "귀속효율과 자사 실적 분리, 예산증액 자동 권고0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ07-4"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ11-1",
+      "question_id": "CQ11",
+      "category": "normal",
+      "condition": "C-JP-social 수신26/기대28·결측2와 부분 주 보고",
+      "required_fields": "T36 counts/missing_dates; T13 availability",
+      "expected": {
+        "status": "answered",
+        "assertion": "수신행26·정규화행28 별도, known subtotal partial",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "daily_ads",
+        "logs"
+      ],
+      "oracle_domains": [
+        "daily_ads",
+        "logs"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ11-2",
+      "question_id": "CQ11",
+      "category": "boundary",
+      "condition": "로그 기대=수신+누락 불일치·입력순서 변경",
+      "required_fields": "T36 counts; SourceRecord.recordId",
+      "expected": {
+        "status": "execution_failed",
+        "assertion": "명시 계약 오류 탐지, 정상 입력 순서 바꿔도 동일 상태/값",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-ID"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ11-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "execution_failed",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ11-3",
+      "question_id": "CQ11",
+      "category": "insufficient",
+      "condition": "동의 변경 T17·설정변경 로그가 없음",
+      "required_fields": "T17/T35 campaign consent evidence absent",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "누락만 확인; 동의변경 원인 확인으로 표기 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "gaps",
+        "logs"
+      ],
+      "oracle_domains": [
+        "gaps",
+        "logs"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ11-4",
+      "question_id": "CQ11",
+      "category": "counterevidence",
+      "condition": "월complete인데 상세partial인 서로 다른 수집 범위",
+      "required_fields": "T13 baseline/detail; T36",
+      "expected": {
+        "status": "answered",
+        "assertion": "월 수치와 상세 누락 동시 보고; 월값으로 일 결측 보완0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-REVISION"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "monthly_ads",
+        "daily_ads",
+        "logs"
+      ],
+      "oracle_domains": [
+        "monthly_ads",
+        "daily_ads",
+        "logs"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ12-1",
+      "question_id": "CQ12",
+      "category": "normal",
+      "condition": "광고 귀속가치와 H01 순판매 범위를 정의표로 비교",
+      "required_fields": "T12 settings; T13 ad_value; H01 net_sales",
+      "expected": {
+        "status": "answered",
+        "assertion": "정의 차이와 원천값 별도; GA/주문 대사 완료로 표시0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "definitions",
+        "monthly_ads",
+        "own"
+      ],
+      "oracle_domains": [
+        "definitions",
+        "monthly_ads",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ12-2",
+      "question_id": "CQ12",
+      "category": "boundary",
+      "condition": "같은 구매명 다른 귀속·통화·반품범위 조건",
+      "required_fields": "source settings/currency; H01 return policy",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "플랫폼 전환 자동합산·환율없는합산0, 다른 metric ID",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-MONEY"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ12-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "incomparable",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ12-3",
+      "question_id": "CQ12",
+      "category": "insufficient",
+      "condition": "GA4 T18·주문 T19·환불 T20 부재에서 원인대사 요청",
+      "required_fields": "T18/T19/T20 absent",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "주문·개별환불복원0; 필요한 원천/기간 제시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "gaps",
+        "own"
+      ],
+      "oracle_domains": [
+        "gaps",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ12-4",
+      "question_id": "CQ12",
+      "category": "counterevidence",
+      "condition": "귀속매출 증가와 net_sales 감소 반대 근거",
+      "required_fields": "T13 attributed_revenue; H01 returns_value/net_sales",
+      "expected": {
+        "status": "answered",
+        "assertion": "측정별 반대 방향 유지, 광고 효과 확정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "monthly_ads",
+        "own"
+      ],
+      "oracle_domains": [
+        "monthly_ads",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ14-1",
+      "question_id": "CQ14",
+      "category": "normal",
+      "condition": "원문에서 향/건조감 측면의 실제 발췌를 승인 후 연결",
+      "required_fields": "T24 body_text/review_id; EvidenceSpan offsets",
+      "expected": {
+        "status": "answered",
+        "assertion": "문자열 substring exact; 원문·추출·가설 분리",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ14-1"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ14-2",
+      "question_id": "CQ14",
+      "category": "boundary",
+      "condition": "별점3 혼재 원문·잘못된 리뷰 대상/offset 조건",
+      "required_fields": "T24 rating/body_text/product_id",
+      "expected": {
+        "status": "execution_failed",
+        "assertion": "다른 원문 연결·offset 불일치 탐지; 별점만 감성확정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID",
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ14-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 2,
+      "answer_status": "execution_failed",
+      "assertion_count": 18,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ14-3",
+      "question_id": "CQ14",
+      "category": "insufficient",
+      "condition": "T25 측면 주석/과거 동일표본 없는데 악화 추이 요청",
+      "required_fields": "T25 absent; T24 limited sample",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "원문 탐색과 측면 악화 추이 지원 구별",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "reviews",
+        "gaps"
+      ],
+      "oracle_domains": [
+        "reviews",
+        "gaps"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl",
+          "rows": 72,
+          "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ14-4",
+      "question_id": "CQ14",
+      "category": "counterevidence",
+      "condition": "향 부정과 거품 긍정 등 반대 측면 혼재",
+      "required_fields": "T24 body_text",
+      "expected": {
+        "status": "answered",
+        "assertion": "긍정/부정 span 함께 보존; 전체제품 품질판정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ14-4"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ15-1",
+      "question_id": "CQ15",
+      "category": "normal",
+      "condition": "표본·판매처·수집창 메타데이터가 확정된 리뷰 비교",
+      "required_fields": "T24; review CollectionRun contract",
+      "expected": {
+        "status": "answered",
+        "assertion": "같은 표본범위에서만 비교·한계 표시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ15-1"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "contract_revision": {
+        "metric": "Low rating: unique valid 5-star-scale reviews rated 1 or 2 / unique valid rated reviews; null excluded"
+      },
+      "revision_version": "CQ-contract-20261016",
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ15-2",
+      "question_id": "CQ15",
+      "category": "boundary",
+      "condition": "표본72리뷰를 전체시장 불만율·unique로 확대 시도",
+      "required_fields": "T24 review_id; sample coverage",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "전체시장 확대와 unique합산 거부",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-AGG"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "reviews"
+      ],
+      "oracle_domains": [
+        "reviews"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl",
+          "rows": 72,
+          "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "incomparable",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ15-3",
+      "question_id": "CQ15",
+      "category": "insufficient",
+      "condition": "리뷰 판매처/기대수집량 T36이 없음",
+      "required_fields": "T24 seller absent; T36 ad only",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "광고수집로그를 리뷰완전성으로 사용0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "reviews",
+        "gaps"
+      ],
+      "oracle_domains": [
+        "reviews",
+        "gaps"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl",
+          "rows": 72,
+          "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 15,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ15-4",
+      "question_id": "CQ15",
+      "category": "counterevidence",
+      "condition": "판매처 구성 변경이 부정비율 변화를 설명하는 반대조건",
+      "required_fields": "approved review sample metadata",
+      "expected": {
+        "status": "answered",
+        "assertion": "구성효과와 품질 가설 구별; 사용자의 업무검증 미확인 유지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ15-4"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "contract_revision": {
+        "metric": "Low-rating change; seller mix distinguished from within-seller change"
+      },
+      "revision_version": "CQ-contract-20261016",
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "answered",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ17-1",
+      "question_id": "CQ17",
+      "category": "normal",
+      "condition": "경쟁 P2A 가격관측과 모의 할인만 공개활동 후보로 탐색",
+      "required_fields": "T08/T09; T01",
+      "expected": {
+        "status": "answered",
+        "assertion": "관측가격·행사 주장과 실적효과 분리",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "prices",
+        "promotion"
+      ],
+      "oracle_domains": [
+        "prices",
+        "promotion"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl",
+          "rows": 504,
+          "sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 13,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ17-2",
+      "question_id": "CQ17",
+      "category": "boundary",
+      "condition": "동일이름 경쟁제품·다른나라 또는 기준일이후 행사",
+      "required_fields": "T01 id/country; T09 available_at",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "국가/ID 혼입0·미래 정보배제",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID",
+        "P-ASOF"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ17-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 2,
+      "answer_status": "incomparable",
+      "assertion_count": 18,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ17-3",
+      "question_id": "CQ17",
+      "category": "insufficient",
+      "condition": "신제품 T10·경쟁 광고 T11 원천이 없음",
+      "required_fields": "T10/T11 absent",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "경쟁 활동 전체 지원으로 계산하지 않음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "gaps"
+      ],
+      "oracle_domains": [
+        "gaps"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "contract_revision": {
+        "condition": "공개 경쟁 광고 T10·신제품 발표/사건 T11 원천이 원 시험 범위에 없음",
+        "business_confirmation": "confirmed_by_explicit_user_decision_2A",
+        "decision_record": "meaning-decisions-20261016.json"
+      },
+      "revision_version": "CQ-contract-20261016",
+      "answer_status": "insufficient_data",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ17-4",
+      "question_id": "CQ17",
+      "category": "counterevidence",
+      "condition": "행사는 있지만 판매 증가 원천/내부집행 근거 없음",
+      "required_fields": "T09 vs T03; T11 absent",
+      "expected": {
+        "status": "answered",
+        "assertion": "행사효과·경쟁내부지출 추정0, 추가 확인 제시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "promotion",
+        "market",
+        "gaps"
+      ],
+      "oracle_domains": [
+        "promotion",
+        "market",
+        "gaps"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl",
+          "rows": 1,
+          "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 16,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ23-1",
+      "question_id": "CQ23",
+      "category": "normal",
+      "condition": "국가별 원천 조건표·제품규격·통화·시간대 비교",
+      "required_fields": "T01/T12/T03/H01 currencies/zones",
+      "expected": {
+        "status": "answered",
+        "assertion": "국가별 별도 수치와 comparable 조건 표시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "countries"
+      ],
+      "oracle_domains": [
+        "countries"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 13,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ23-2",
+      "question_id": "CQ23",
+      "category": "boundary",
+      "condition": "USD 센트·JPY .00·미국 DST·다른계정시각과 부분기간",
+      "required_fields": "currency/timezone/period",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "환율없는합계0·일광절약시간 경계보존, 부분기간 자동비교0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-MONEY"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ23-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "contract_revision": {
+        "period": "Original Q3/August conditions plus [2025-11-02,2025-11-03) and [2026-03-08,2026-03-09), America/New_York; asOf unchanged"
+      },
+      "revision_version": "CQ-contract-20261016",
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 1,
+      "answer_status": "incomparable",
+      "assertion_count": 9,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ23-3",
+      "question_id": "CQ23",
+      "category": "insufficient",
+      "condition": "FX·지역상품 대응 T02 또는 가격세금조건 부재",
+      "required_fields": "T02/FX absent; T08 tax/shipping",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "통합국가매출 순위 보류, 필요한 crosswalk/FX 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "countries",
+        "gaps"
+      ],
+      "oracle_domains": [
+        "countries",
+        "gaps"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "insufficient_data",
+      "assertion_count": 16,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ23-4",
+      "question_id": "CQ23",
+      "category": "counterevidence",
+      "condition": "같은 국가여도 서로 다른 유통범위/귀속창",
+      "required_fields": "T03 coverage vs H01/T13",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "국가일치만으로 comparable=true 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "definitions",
+        "market",
+        "own"
+      ],
+      "oracle_domains": [
+        "definitions",
+        "market",
+        "own"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl",
+          "rows": 144,
+          "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl",
+          "rows": 432,
+          "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl",
+          "rows": 6,
+          "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "incomparable",
+      "assertion_count": 14,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ28-1",
+      "question_id": "CQ28",
+      "category": "normal",
+      "condition": "질문별 누락 자료·영향 계산·확인 과제를 반환",
+      "required_fields": "CollectionRun; per-question required fields",
+      "expected": {
+        "status": "answered",
+        "assertion": "원천 유형/필드/기간·보류이유·추가검증 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "gaps",
+        "logs",
+        "reviews"
+      ],
+      "oracle_domains": [
+        "gaps",
+        "logs",
+        "reviews"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl",
+          "rows": 6,
+          "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl",
+          "rows": 312,
+          "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl",
+          "rows": 72,
+          "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl",
+          "rows": 6,
+          "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+        }
+      ],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 16,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ28-2",
+      "question_id": "CQ28",
+      "category": "boundary",
+      "condition": "필수근거 삭제·asOf 변경·재적재·무관한자료 추가",
+      "required_fields": "source refs/revision/asOf",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "삭제/기준일은 상태반영, 순서/재적재/무관자료는 값·근거 불변",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ASOF",
+        "P-REVISION",
+        "P-EVIDENCE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "D006:CQ28-2"
+      ],
+      "oracle_domains": [
+        "independent_D006_source_ledger"
+      ],
+      "inputs": [
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T24.jsonl",
+          "rows": 1,
+          "sha256": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-A/source/T25.jsonl",
+          "rows": 2,
+          "sha256": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+          "rows": 4,
+          "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+          "rows": 6,
+          "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+          "rows": 4,
+          "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+          "rows": 11,
+          "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+          "rows": 4,
+          "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+          "rows": 20,
+          "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+        },
+        {
+          "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+          "rows": 4,
+          "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+        }
+      ],
+      "selector": "approved isolated D006 inputs; original scenario remains separate",
+      "reason": "승인된 모든 분기·독립 원천 검산·실제 RDF/SHACL·근거/완전성 검증 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "approval_scope_id": "D006-CQ-AB-1",
+      "branch_count": 4,
+      "answer_status": "insufficient_data",
+      "assertion_count": 38,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ28-3",
+      "question_id": "CQ28",
+      "category": "insufficient",
+      "condition": "요구자료0건·unsupported 질문/기간 요청",
+      "required_fields": "questionId/period; required registry",
+      "expected": {
+        "status": "out_of_scope",
+        "assertion": "지원밖과 자료부족 분리; 예외·도구실패는 execution_failed",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "unsupported"
+      ],
+      "oracle_domains": [
+        "unsupported"
+      ],
+      "inputs": [],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "out_of_scope",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    },
+    {
+      "id": "CQ28-4",
+      "question_id": "CQ28",
+      "category": "counterevidence",
+      "condition": "보류검사 성공을 실질답변 커버리지로 세려는 조건",
+      "required_fields": "evaluation support/status fields",
+      "expected": {
+        "status": "answered",
+        "assertion": "보류 성공은 guard coverage만, answer coverage 증가0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "readiness": "현재 실행 가능",
+      "query_implemented": true,
+      "data_validation": "pass",
+      "execution_authorized": true,
+      "execution_status": "pass",
+      "route": [
+        "coverage"
+      ],
+      "oracle_domains": [
+        "coverage"
+      ],
+      "inputs": [],
+      "selector": "original tests.json product/country/period/asOf; all original IDs in the listed immutable files",
+      "reason": "전체 assertion·독립 검산·근거·완전성·재실행/순서 검사 실제 통과",
+      "implementation_gap": null,
+      "D005_substitution": false,
+      "answer_status": "answered",
+      "assertion_count": 12,
+      "result_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1-questions.json",
+      "result_sha256": "fc1c9b6af25c2e9ca393a41f1e02693f7f9556a566e81d454094785bbfc89c47"
+    }
+  ]
+}

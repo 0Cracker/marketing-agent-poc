@@ -1,0 +1,175 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "CQ06-2",
+      "status": "pass",
+      "assertions": [
+        {
+          "name": "independent_mutation_and_cutoff",
+          "status": "pass"
+        },
+        {
+          "name": "independent_answer_status",
+          "status": "pass"
+        },
+        {
+          "name": "independent_completeness",
+          "status": "pass"
+        },
+        {
+          "name": "independent_all_facts",
+          "status": "pass"
+        },
+        {
+          "name": "guard_vs_substantive",
+          "status": "pass"
+        },
+        {
+          "name": "evidence_file_hash_record_fields_asof",
+          "status": "pass"
+        },
+        {
+          "name": "every_withheld_value_has_reason",
+          "status": "pass"
+        }
+      ],
+      "RDF": {
+        "conforms": true,
+        "records": 22,
+        "triples": 2087,
+        "sha256": "62dbfec17b8358ceb89ad025ee430a38fe3a62e80e403fcbad5ebafb78a298b3",
+        "fields": 470
+      }
+    },
+    {
+      "id": "CQ23-2",
+      "status": "pass",
+      "assertions": [
+        {
+          "name": "independent_mutation_and_cutoff",
+          "status": "pass"
+        },
+        {
+          "name": "independent_answer_status",
+          "status": "pass"
+        },
+        {
+          "name": "independent_completeness",
+          "status": "pass"
+        },
+        {
+          "name": "independent_all_facts",
+          "status": "pass"
+        },
+        {
+          "name": "guard_vs_substantive",
+          "status": "pass"
+        },
+        {
+          "name": "evidence_file_hash_record_fields_asof",
+          "status": "pass"
+        },
+        {
+          "name": "every_withheld_value_has_reason",
+          "status": "pass"
+        }
+      ],
+      "RDF": {
+        "conforms": true,
+        "records": 22,
+        "triples": 2087,
+        "sha256": "62dbfec17b8358ceb89ad025ee430a38fe3a62e80e403fcbad5ebafb78a298b3",
+        "fields": 470
+      }
+    },
+    {
+      "id": "ambiguous_fall",
+      "status": "pass",
+      "stage": "source_schema",
+      "error_codes": [
+        "ambiguous_local_time"
+      ],
+      "schema_status": "fail"
+    },
+    {
+      "id": "nonexistent_spring",
+      "status": "pass",
+      "stage": "semantic_admission",
+      "error_codes": [
+        "nonexistent_local_time"
+      ],
+      "schema_status": "pass"
+    },
+    {
+      "id": "overlapping_config",
+      "status": "pass",
+      "stage": "semantic_admission",
+      "error_codes": [
+        "config_overlap"
+      ],
+      "schema_status": "pass"
+    },
+    {
+      "id": "snapshot_gap",
+      "status": "pass",
+      "stage": "query",
+      "error_codes": [],
+      "schema_status": "pass"
+    },
+    {
+      "id": "unknown_scale",
+      "status": "pass",
+      "stage": "source_schema",
+      "error_codes": [
+        "unknown_scale"
+      ],
+      "schema_status": "fail"
+    },
+    {
+      "id": "fractional_minor",
+      "status": "pass",
+      "stage": "source_schema",
+      "error_codes": [
+        "fractional_minor"
+      ],
+      "schema_status": "fail"
+    },
+    {
+      "id": "missing_seller",
+      "status": "pass",
+      "stage": "source_schema",
+      "error_codes": [
+        "review_collection_scope",
+        "seller_missing"
+      ],
+      "schema_status": "fail"
+    },
+    {
+      "id": "null_rating",
+      "status": "pass",
+      "stage": "query",
+      "error_codes": [],
+      "schema_status": "pass"
+    },
+    {
+      "id": "duplicate_review",
+      "status": "pass",
+      "stage": "identity_ingestion",
+      "error_codes": [],
+      "schema_status": "pass"
+    },
+    {
+      "id": "review_count_mismatch",
+      "status": "pass",
+      "stage": "semantic_admission",
+      "error_codes": [
+        "count_mismatch",
+        "review_collection_mismatch"
+      ],
+      "schema_status": "pass"
+    }
+  ],
+  "source_rewrites": 0,
+  "script_sha256": "dd0c30fc4e161c2482e0d60402bc0155eb4b025f9d95d886e7580b9fbcd3ea02"
+}

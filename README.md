@@ -2,6 +2,37 @@
 
 DB·실제 AI·실제 광고 계정 없이, 준비된 원천값과 질문/응답으로 분석에서 업무 결정까지 보여주는 데스크톱 시연입니다.
 
+다음 확장을 위한 [마케팅 온톨로지 조사·설계 자료](docs/research/marketing-ontology/README.md)를 별도로 정리했습니다. 문제·질문·스키마·근거와 데이터 사전 승인 제안을 담으며, 현재 앱의 구현 완료 상태를 뜻하지 않습니다.
+
+## 폴더 구조
+
+```text
+marketing-agent-poc/
+├─ frontend/          # 프론트 코드와 정적 파일
+│  ├─ app/            # 화면·스타일·기존 레이아웃
+│  ├─ components/     # UI 컴포넌트
+│  ├─ hooks/          # React 훅
+│  ├─ lib/            # 화면 로직·기존 고정 시연 데이터
+│  ├─ src/            # Vite 진입점
+│  ├─ public/         # 아이콘 등 정적 파일
+│  ├─ vendor/         # 기존 외부 스타일
+│  └─ index.html
+├─ backend/           # 빈 폴더, .gitkeep만 포함
+├─ data/              # 기존 DB 템플릿, 실제 DB 미구축
+│  ├─ db/             # D1 연결 템플릿·빈 스키마
+│  └─ drizzle/        # 마이그레이션 메타데이터
+├─ docs/              # 설계·조사·개발 기록
+├─ tests/             # 기존 검산 테스트
+├─ scripts/           # 실행·작성 도구
+├─ build/             # 기존 호스팅 도구
+├─ examples/          # 선택적으로 참고할 예제
+└─ evidence/          # 검증 근거
+```
+
+패키지·잠금 파일과 도구 설정은 루트에서 공통 관리합니다. 실행 명령도 루트에서 사용하며 빌드 결과는 기존 `dist/`에 생성합니다. `@/`는 `frontend/`를 가리킵니다. 기존 Next.js·호스팅 보조 파일은 보존하지만 현재 실행 경로는 React/Vite입니다.
+
+2026-10-14 폴더 정리: 사용자 요청으로 프론트·백엔드·데이터 영역을 분리했습니다. 백엔드 서버나 새 데이터는 만들지 않았습니다. 기존 조사 문서와 데이터 자료는 `docs/research/marketing-ontology/`에 보존합니다. 발행 버전 미확정 작업이며 기존 발행 일지·태그는 변경하지 않습니다.
+
 ## 실행·검증
 
 Node.js 22.13 이상. 패키지 매니저가 있으면 pnpm dev/test/build를 사용합니다. 이 환경에서는 다음 직접 실행도 가능합니다.
@@ -13,6 +44,8 @@ node --experimental-strip-types tests/demo.test.ts
 node node_modules/typescript/bin/tsc --noEmit --incremental false
 node node_modules/vite/bin/vite.js build
 ~~~
+
+폴더 정리 검증(2026-10-14, dev `fb74fed` 위 미커밋 작업 트리): 기존 테스트 2개 통과. 프론트 파일의 이동 전후 내용과 새 경로를 확인했습니다. 타입 검사·빌드는 기존 `node_modules` 링크가 이전 경로인 `Desktop/marketing-agent-poc`를 가리켜 TypeScript/Vite를 찾지 못했습니다. 의존성 설치를 복구한 환경에서 두 검증을 다시 실행해야 하며, UI 실행 검증은 미수행입니다.
 
 ## 대표 시연
 
@@ -29,7 +62,7 @@ A 원인 분석 → 다섯 단계의 분석 과정·원천/산식·반대 근거
 
 ## 데이터·작성 근거
 
-- lib/demo-scenarios.ts: 6개 사례·18개 고정 응답·36개 월 기록·원천/검산·다섯 단계 분석·차별화된 실행안. 앱은 이 정적 콘텐츠를 표시합니다.
+- frontend/lib/demo-scenarios.ts: 6개 사례·18개 고정 응답·36개 월 기록·원천/검산·다섯 단계 분석·차별화된 실행안. 앱은 이 정적 콘텐츠를 표시합니다.
 - scripts/author-demo.mjs: 작성 단계 계산·콘텐츠 생성. 앱에서 호출하지 않습니다.
 - scripts/scenario-decisions.mjs: 시나리오별 판단 규칙과 실행안의 작성 원본.
 - docs/scenario-playbook.md: 수치·과정·실행안을 검토할 전체 시나리오 문서. 작성 스크립트로 함께 생성합니다.

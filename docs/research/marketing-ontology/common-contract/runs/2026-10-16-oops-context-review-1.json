@@ -1,0 +1,419 @@
+{
+  "status": "evidence_collected",
+  "ontology_sha256": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+  "source_rows": 1652,
+  "graph_sha256": "030ad84e12d83c7c02ea8f88ae5f80e560745d2b1dd1a19f7981eb89fe755563",
+  "triples": 78528,
+  "domain_shacl": true,
+  "properties": [
+    {
+      "property": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "fingerprint": "b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": []
+    },
+    {
+      "property": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "fingerprint": "ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": []
+    },
+    {
+      "property": "https://example.org/marketing/afterValue",
+      "fingerprint": "1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T35",
+          "source_path": "$.after_value",
+          "target": "m:afterValue",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/beforeValue",
+      "fingerprint": "31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T35",
+          "source_path": "$.before_value",
+          "target": "m:beforeValue",
+          "source_schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/brandRole",
+      "fingerprint": "5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T01",
+          "source_path": "$.brand_role",
+          "target": "m:brandRole",
+          "source_schema": {
+            "enum": [
+              "own",
+              "competitor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/changeField",
+      "fingerprint": "dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T35",
+          "source_path": "$.changed_field",
+          "target": "m:changeField",
+          "source_schema": {
+            "const": "available_quantity"
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/comparisonGroup",
+      "fingerprint": "a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T01",
+          "source_path": "$.comparison_group",
+          "target": "m:comparisonGroup",
+          "source_schema": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/counters",
+      "fingerprint": "be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": []
+    },
+    {
+      "property": "https://example.org/marketing/discountRatio",
+      "fingerprint": "1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": []
+    },
+    {
+      "property": "https://example.org/marketing/label",
+      "fingerprint": "62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T01",
+          "source_path": "$.product_name",
+          "target": "m:Product/m:label",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T01",
+          "source_path": "$.brand_name",
+          "target": "m:Brand/m:label",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T12",
+          "source_path": "$.campaign_name",
+          "target": "m:label",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T08",
+          "source_path": "$.seller_name",
+          "target": "m:Seller/m:label",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T22",
+          "source_path": "$.location_name",
+          "target": "m:Location/m:label",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/location",
+      "fingerprint": "c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T22",
+          "source_path": "$.location_id",
+          "target": "m:location/m:sourceId",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T35",
+          "source_path": "$.location_id",
+          "target": "m:location/m:sourceId",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/ratingScaleMax",
+      "fingerprint": "df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T24",
+          "source_path": "$.rating_scale_max",
+          "target": "m:ratingScaleMax",
+          "source_schema": {
+            "const": 5
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/sellerStatus",
+      "fingerprint": "7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T22",
+          "source_path": "$.sellable_status",
+          "target": "m:sellerStatus",
+          "source_schema": {
+            "enum": [
+              "in_stock",
+              "out_of_stock"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/seller",
+      "fingerprint": "35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T08",
+          "source_path": "$.seller_id",
+          "target": "m:seller/m:sourceId",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "type": "T09",
+          "source_path": "$.seller_id",
+          "target": "m:seller/m:sourceId",
+          "source_schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/shippingIncluded",
+      "fingerprint": "34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T08",
+          "source_path": "$.shipping_included",
+          "target": "m:shippingIncluded",
+          "source_schema": {
+            "type": "null"
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/supports",
+      "fingerprint": "3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": []
+    },
+    {
+      "property": "https://example.org/marketing/taxIncluded",
+      "fingerprint": "87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T08",
+          "source_path": "$.tax_included",
+          "target": "m:taxIncluded",
+          "source_schema": {
+            "type": "null"
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/verifiedPurchase",
+      "fingerprint": "7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T24",
+          "source_path": "$.verified_purchase",
+          "target": "m:verifiedPurchase",
+          "source_schema": {
+            "type": "null"
+          }
+        }
+      ]
+    },
+    {
+      "property": "https://example.org/marketing/volumeMl",
+      "fingerprint": "d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb",
+      "statements": 0,
+      "subject_classes": [],
+      "object_classes": [],
+      "literal_datatypes": [],
+      "scope": "observed D003B usage only; not a universal domain declaration",
+      "review_status": "unresolved; asserted D003B usage cannot validate proposed global domain/range",
+      "declared_mapping_contexts": [
+        {
+          "type": "T01",
+          "source_path": "$.volume_ml",
+          "target": "m:volumeMl",
+          "source_schema": {
+            "const": 300
+          }
+        }
+      ]
+    }
+  ],
+  "new_source_rows": 0,
+  "persistent_RDF_files": 0,
+  "assertion_scope": "Direct triples only. No RDFS subPropertyOf closure was computed. No assertion about D005/D006 usage or universal absence.",
+  "further_decision": "Keep global inference unchanged. Decide context constraints using declared JSON source schemas and mappings; present any added OWL/SHACL constraints before applying. Do not accept this usage report as an approved exception.",
+  "mapping_sha256": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+  "basis_report": "2026-10-16-oops-context-evidence-1.json"
+}

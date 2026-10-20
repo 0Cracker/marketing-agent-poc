@@ -1,0 +1,74 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "57_immutable_inputs",
+      "status": "pass"
+    },
+    {
+      "name": "52_tests_682_assertions",
+      "status": "pass"
+    },
+    {
+      "name": "query_input_hashes_current",
+      "status": "pass"
+    },
+    {
+      "name": "readiness_52_pass",
+      "status": "pass"
+    },
+    {
+      "name": "canonical_gap_fail_not_hidden",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_code_schema_current",
+      "status": "pass"
+    },
+    {
+      "name": "python_AST",
+      "status": "pass"
+    },
+    {
+      "name": "node_syntax",
+      "status": "pass"
+    },
+    {
+      "name": "blocked_external_scan_bound_to_model",
+      "status": "pass"
+    },
+    {
+      "name": "git_preserved_during_cycle",
+      "status": "pass"
+    },
+    {
+      "name": "post_doc_spec",
+      "status": "pass"
+    },
+    {
+      "name": "new_and_changed_document_links",
+      "status": "pass"
+    }
+  ],
+  "local_links": 380,
+  "new_broken_links": [],
+  "preexisting_missing_links_verified_in_HEAD": [
+    {
+      "file": "docs\\research\\marketing-ontology\\README.md",
+      "target": "../../agent-contract.md"
+    },
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../poc-v2-initial-design.md"
+    },
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../agent-contract.md"
+    },
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../scenario-playbook.md"
+    }
+  ],
+  "previous_link_audit": "2026-10-16-decisions-integrity-1.json"
+}

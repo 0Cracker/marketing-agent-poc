@@ -1,0 +1,292 @@
+{
+  "proposal": "D005-2.0.0",
+  "mode": "generate",
+  "started_at": "2026-10-15T12:38:02.431Z",
+  "node": "v24.19.0",
+  "checks": [
+    {
+      "name": "schema_preflight",
+      "status": "pass",
+      "source_branches": 93,
+      "common_types": 31,
+      "metaschema": "pass",
+      "references": "resolved",
+      "coerceTypes": false,
+      "useDefaults": false,
+      "removeAdditional": false
+    },
+    {
+      "name": "generation_stage_1",
+      "status": "pass",
+      "new_rows": 186,
+      "cumulative_rows": 186,
+      "oracle": {
+        "status": "pass",
+        "python": "3.12.14",
+        "oracle_rows": 186,
+        "money_tolerance": "0",
+        "ledger": {
+          "KR": {
+            "currency": "KRW",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00"
+          },
+          "JP": {
+            "currency": "JPY",
+            "orders": 4,
+            "lines": 6,
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00"
+          },
+          "US": {
+            "currency": "USD",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50"
+          }
+        },
+        "rdf": {
+          "status": "pass",
+          "triples": 35246,
+          "rdf_sha256": "817e38267de2c783c64f8312a08fd1c6246194c0a2207139d2250b64b52e413c",
+          "records_read_back": 186,
+          "source_field_lineages": 4062,
+          "typed_relations": 330,
+          "declared_classes": 33,
+          "shacl": "pass",
+          "readback": "pass"
+        }
+      }
+    },
+    {
+      "name": "generation_stage_2",
+      "status": "pass",
+      "new_rows": 63,
+      "cumulative_rows": 249,
+      "oracle": {
+        "status": "pass",
+        "python": "3.12.14",
+        "oracle_rows": 249,
+        "money_tolerance": "0",
+        "ledger": {
+          "KR": {
+            "currency": "KRW",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00"
+          },
+          "JP": {
+            "currency": "JPY",
+            "orders": 4,
+            "lines": 6,
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00"
+          },
+          "US": {
+            "currency": "USD",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50"
+          }
+        },
+        "rdf": {
+          "status": "pass",
+          "triples": 45701,
+          "rdf_sha256": "a8ccc44d8dd9ee172c48efa734df3e5a8b14b97c8a88638ebcac08c5e2a2d855",
+          "records_read_back": 249,
+          "source_field_lineages": 5271,
+          "typed_relations": 426,
+          "declared_classes": 40,
+          "shacl": "pass",
+          "readback": "pass"
+        }
+      }
+    },
+    {
+      "name": "generation_stage_3",
+      "status": "pass",
+      "new_rows": 162,
+      "cumulative_rows": 411,
+      "oracle": {
+        "status": "pass",
+        "python": "3.12.14",
+        "oracle_rows": 411,
+        "money_tolerance": "0",
+        "ledger": {
+          "KR": {
+            "currency": "KRW",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00"
+          },
+          "JP": {
+            "currency": "JPY",
+            "orders": 4,
+            "lines": 6,
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00"
+          },
+          "US": {
+            "currency": "USD",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50"
+          }
+        },
+        "rdf": {
+          "status": "pass",
+          "triples": 74105,
+          "rdf_sha256": "2544ad9d933d883fa75d2ebf90c473be4c4dbe7fefe88fd3e0ff8086444bdaf1",
+          "records_read_back": 411,
+          "source_field_lineages": 8559,
+          "typed_relations": 588,
+          "declared_classes": 50,
+          "shacl": "pass",
+          "readback": "pass"
+        }
+      }
+    },
+    {
+      "name": "generation_stage_4",
+      "status": "pass",
+      "new_rows": 96,
+      "cumulative_rows": 507,
+      "oracle": {
+        "status": "pass",
+        "python": "3.12.14",
+        "oracle_rows": 507,
+        "money_tolerance": "0",
+        "ledger": {
+          "KR": {
+            "currency": "KRW",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00"
+          },
+          "JP": {
+            "currency": "JPY",
+            "orders": 4,
+            "lines": 6,
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00"
+          },
+          "US": {
+            "currency": "USD",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50"
+          }
+        },
+        "rdf": {
+          "status": "pass",
+          "triples": 91562,
+          "rdf_sha256": "ece5c5fbeeab31dfd4c79aecccdb3e39b798c0a92b67a6b81438f2b8a520f243",
+          "records_read_back": 507,
+          "source_field_lineages": 10569,
+          "typed_relations": 714,
+          "declared_classes": 59,
+          "shacl": "pass",
+          "readback": "pass"
+        }
+      }
+    },
+    {
+      "name": "generation_stage_5",
+      "status": "pass",
+      "new_rows": 27,
+      "cumulative_rows": 534,
+      "oracle": {
+        "status": "pass",
+        "python": "3.12.14",
+        "oracle_rows": 534,
+        "money_tolerance": "0",
+        "ledger": {
+          "KR": {
+            "currency": "KRW",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99000.00",
+            "refund": "24500.00",
+            "net": "74500.00"
+          },
+          "JP": {
+            "currency": "JPY",
+            "orders": 4,
+            "lines": 6,
+            "gross": "9900.00",
+            "refund": "2450.00",
+            "net": "7450.00"
+          },
+          "US": {
+            "currency": "USD",
+            "orders": 4,
+            "lines": 6,
+            "gross": "99.00",
+            "refund": "24.50",
+            "net": "74.50"
+          }
+        },
+        "rdf": {
+          "status": "pass",
+          "triples": 96548,
+          "rdf_sha256": "b3f7f07bcd81c9f3a75573a2e3b7b00f62a2be7305d90f461787cc4ccc43dae4",
+          "records_read_back": 534,
+          "source_field_lineages": 11139,
+          "typed_relations": 732,
+          "declared_classes": 63,
+          "shacl": "pass",
+          "readback": "pass"
+        }
+      }
+    },
+    {
+      "name": "deterministic_generation_replay",
+      "status": "pass",
+      "rows": 534
+    },
+    {
+      "name": "manifest",
+      "status": "pass",
+      "files": 31,
+      "rows": 534
+    },
+    {
+      "name": "preservation",
+      "status": "pass",
+      "original_source_files": 11,
+      "original_schema_and_tests": 2,
+      "git_head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+      "refs": "unchanged",
+      "index": "unchanged"
+    }
+  ],
+  "system_validation": "incomplete",
+  "HermiT": "not_run",
+  "OOPS": "not_run",
+  "full_52_assertions": "not_run",
+  "actual_external_source_fit": "not_run",
+  "status": "pass",
+  "finished_at": "2026-10-15T12:38:32.947Z",
+  "exit_code": 0
+}

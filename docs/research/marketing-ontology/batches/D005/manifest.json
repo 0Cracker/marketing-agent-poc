@@ -1,0 +1,207 @@
+{
+  "proposal": "D005-2.0.0",
+  "seed": "500520261015",
+  "approval": "사용자: 실행해",
+  "rows": 534,
+  "files": [
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T01.jsonl",
+      "rows": 6,
+      "sha256": "781ec542106a00b2b7d79f49546169b6528191e035c818a7aa0511b152f55e4c"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T02.jsonl",
+      "rows": 60,
+      "sha256": "225dce1c5724934ca819479e75b0f9ce466160892de297f7fa9bdedd834e5fbe"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T04.jsonl",
+      "rows": 18,
+      "sha256": "d536c897e1c49c710c3f91745d5f7b789328e025832ff178d5cca8ab286f590b"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T05.jsonl",
+      "rows": 36,
+      "sha256": "1977e4a1cfe82fbb6c3eb99c1c7af1a26fed21eb4c0aa1e8c0ea83e64249f714"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T06.jsonl",
+      "rows": 18,
+      "sha256": "6336de29f4190c0a0e509947edea2e08fe1a5e58bf1199478951282960a32459"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T07.jsonl",
+      "rows": 24,
+      "sha256": "87f0b16e3b16162cb067325d2746def2d12e7f28cca864d8dff6493fdfba3a63"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T10.jsonl",
+      "rows": 12,
+      "sha256": "639480badd97a4910926a97b4a087143f03f13f50a8b19a5fb85ace87b6efe2f"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T11.jsonl",
+      "rows": 6,
+      "sha256": "c41d8ce484b8b7ee2c852469ee61cd86480071e21e52bb93a744f889973903a3"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T14.jsonl",
+      "rows": 24,
+      "sha256": "7458dc1e6f57963ac54eaea80503eac8ac19235015b408b2982a8b1a89933d3f"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T15.jsonl",
+      "rows": 12,
+      "sha256": "c8b25fba00ef3380e9726747a69ba6dc6e028653ebb5a249da612039f6924e7e"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T16.jsonl",
+      "rows": 12,
+      "sha256": "c4f9d22b306e5a2252408dce714faf159d39459e2795e4929c3705302c8c1de0"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T17.jsonl",
+      "rows": 24,
+      "sha256": "8551f0e45d0fffca4a3eabbeba83f0b1cd697c0e002631c2342f92781dcc468d"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T18.jsonl",
+      "rows": 60,
+      "sha256": "531d306867232eaedac5583e2b80789aa6d14db0181d40c6554a1e1b4e235490"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T19.jsonl",
+      "rows": 18,
+      "sha256": "e133c5e7afa0418918eb30e152c6dd18dae2b436d3eef1ef5e53f9deb8ed97c9"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T20.jsonl",
+      "rows": 9,
+      "sha256": "7deb50cf6f093ea6647dd21bba735699db50ab15cb368f3c6a58d57620e82198"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T21.jsonl",
+      "rows": 12,
+      "sha256": "33a1a29fe9f41ab8796c4dde29f44ca7580a23cc92559b44ba3b5b0bab408f82"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T23.jsonl",
+      "rows": 18,
+      "sha256": "b80966c69fff6dde40173f86b2c872563a98a97154429a3b67743262c9d60455"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T25.jsonl",
+      "rows": 24,
+      "sha256": "9b7889e2d373ec25cf43a04d89fc6227eac052a3c0e3decefe9c8a7454108bdb"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T26.jsonl",
+      "rows": 9,
+      "sha256": "430e01087afc6f1ca773769e9bfc1047d9c36ddeca87ad923a45372d788e6614"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T27.jsonl",
+      "rows": 12,
+      "sha256": "7ae6cd356dd41e0bef204ce11138f8cc71c772ff2d8df7ce0b9e7d3be2ccf200"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T28.jsonl",
+      "rows": 18,
+      "sha256": "9c525be73550aa7b3c4210b260777c5da011b4a73c1c0022f74b32ff3339025a"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T29.jsonl",
+      "rows": 3,
+      "sha256": "29fd121c304a73a6402a5db4bda741ac866d64d246fce52df04e54f5100527b1"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T30.jsonl",
+      "rows": 9,
+      "sha256": "b35cfabdaabae3e5908a91b2dc72b79877514d524396182ca17fc08a80e5013f"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T31.jsonl",
+      "rows": 6,
+      "sha256": "a917c7d0a3ea9674ac7f6b2240ab3358e7cc205fce0d2dd050e6014aef8e20bd"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T32.jsonl",
+      "rows": 18,
+      "sha256": "b50ffdf5c2b8ff8ada878036b30d1884c45fce3832f865ae82bc07f5aa49f4f0"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T33.jsonl",
+      "rows": 12,
+      "sha256": "41ab2432f27d85092d263092770d33b58fa446236e5ed757996fa13a35da1e4e"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T34.jsonl",
+      "rows": 18,
+      "sha256": "cd210b2e6194dae74d38423313b52c2a1c0dc63fa0a1de6e66a682cb37da650a"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T37.jsonl",
+      "rows": 9,
+      "sha256": "e723471e4d3f34974721b4509e4d639dc5eea10b6335845731017bf9d7ef86bd"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T38.jsonl",
+      "rows": 12,
+      "sha256": "d0d0d6ff5c9d49ce27fa5200e25b9df40530a2f168d6e5ea7cbf2cae2d48a7c6"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T39.jsonl",
+      "rows": 9,
+      "sha256": "aef9946a60934c237785676c7b48422cd2e26f8320bed3d0e077e8194b7eab59"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D005/source/T40.jsonl",
+      "rows": 6,
+      "sha256": "ddb979932fb299d57a69db656cd3648f1b3d0669066165d6525b62cd4d743552"
+    }
+  ],
+  "versions": {
+    "generator": "D005-2.0.0",
+    "schemas": "D005-2.0.0",
+    "mapping": "D005-2.0.0",
+    "oracle": "D005-2.0.0"
+  },
+  "code_sha256": {
+    "docs/research/marketing-ontology/batches/D005/contract.mjs": "0c802a6f363c080ca11c76bdcd0f872f3ffb02773326f139eed7116718ed0021",
+    "docs/research/marketing-ontology/batches/D005/generate.mjs": "9822a499138278ddc2544cb6413d9410c739aa5b13b4aa48c710a72b5b7a99cd",
+    "docs/research/marketing-ontology/batches/D005/validate.mjs": "2090af302cad36d2c8a57da143c650e55c9161e87b2aa25d055aee7a78810db3",
+    "docs/research/marketing-ontology/batches/D005/oracle.py": "e3a25a0d1286963ca7fa0f7c7a71b8a357022a58bbb937e54704ea9943911b96",
+    "docs/research/marketing-ontology/batches/D005/run.mjs": "e29fd70b0854c9d63fa784e297af4e141c222311465661719a75aca633e7de2e",
+    "docs/research/marketing-ontology/batches/D005/source.schema.json": "f5a63f3aa7c75082bf0878439fca6fe4a0a38fa0641a12dae6af1a2f9a2a050e",
+    "docs/research/marketing-ontology/batches/D005/common.schema.json": "a44e22c94a15ae05c39e4c8ad683e4caf43bc2c8b5def4a934498b858f2094fd"
+  },
+  "existing_input_sha256": {
+    "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+    "docs/research/marketing-ontology/schemas/marketing-records.schema.json": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "python": "C:/Users/박시형/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "tools": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools",
+    "platform": "win32"
+  },
+  "git": {
+    "head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+    "dirty": "M AGENTS.md\n M docs/iterations/README.md\n M docs/iterations/v0.2.0.md\n M docs/research/marketing-ontology/common-contract/README.md\n M docs/research/marketing-ontology/common-contract/check-spec.py\n M docs/research/marketing-ontology/common-contract/evaluation.md\n M docs/research/marketing-ontology/common-contract/ontology.ttl\n M docs/research/marketing-ontology/common-contract/schema-crosswalk.md\n M docs/research/marketing-ontology/common-contract/shapes.ttl\n M docs/research/marketing-ontology/common-contract/validation-proposal.md\n M docs/research/marketing-ontology/data-proposal.md\n M docs/research/marketing-ontology/work-log.md\n?? docs/research/marketing-ontology/batches/D005/\n?? docs/research/marketing-ontology/common-contract/__pycache__/\n?? docs/research/marketing-ontology/common-contract/build-field-semantics.py\n?? docs/research/marketing-ontology/common-contract/calculate-d003b.py\n?? docs/research/marketing-ontology/common-contract/field-semantics.json\n?? docs/research/marketing-ontology/common-contract/run-spec-cycle.py\n?? docs/research/marketing-ontology/common-contract/run-validation-cycle.py\n?? docs/research/marketing-ontology/common-contract/runs/\n?? docs/research/marketing-ontology/common-contract/validate-d003b.py\n?? docs/research/marketing-ontology/common-contract/verification-cycle.md"
+  },
+  "selected_existing_rows": 36,
+  "normalization": "memory_only",
+  "rdf": "memory_only",
+  "status": "generated_stage_gates_passed_cycle_pending"
+}

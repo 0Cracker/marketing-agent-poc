@@ -1,0 +1,20 @@
+{
+  "proposal": "D005-2.0.0",
+  "status": "pass",
+  "batch_validation": "complete",
+  "files": 31,
+  "rows": 534,
+  "error_cases": 60,
+  "all_execution_input_hashes_match": 61,
+  "source_hashes_match": 31,
+  "old_source_hashes_match": 11,
+  "git_head_refs_index": "unchanged",
+  "report_overwrite": "refused_unchanged",
+  "batch_regeneration": "refused",
+  "missing_tool_expected_exit": 2,
+  "read_only_validate_exit": 0,
+  "cycle_exit": 0,
+  "final_cycle_report": "docs/research/marketing-ontology/common-contract/runs/2026-10-15-d005-cycle-final-verified.json",
+  "final_cycle_sha256": "4419710e61ff865475f95f691de6c001a88325da6edae4b6555573d4b962fe1e",
+  "system_validation": "incomplete"
+}

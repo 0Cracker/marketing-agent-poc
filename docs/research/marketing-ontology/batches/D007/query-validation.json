@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "catalog_rows": 22242,
+  "checks": [
+    "invalid_timestamp_rejected",
+    "future_source_excluded",
+    "country_scope_and_rating_scale_preserved",
+    "independent_normalization_scopes_separated",
+    "experiments_and_arms_separated",
+    "nested_metric_definition_preserved"
+  ],
+  "review_groups": 6,
+  "search_groups": 72,
+  "experiment_arm_groups": 24
+}

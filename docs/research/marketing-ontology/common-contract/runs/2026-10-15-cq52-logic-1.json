@@ -1,0 +1,25 @@
+{
+  "status": "not_run",
+  "exit_code": 2,
+  "timestamp": "2026-10-15T13:52:23.008484+00:00",
+  "ontology_sha256": "120868fdcf350f960ac5e4984d05ac2ab14c6e02c03968d588788209750eb34a",
+  "input_changed": false,
+  "checks": {
+    "HermiT": {
+      "status": "not_run",
+      "reason": "[WinError 5] 액세스가 거부되었습니다: 'C:\\\\Users\\\\박시형\\\\AppData\\\\Local\\\\Packages\\\\sandbox.{d74f5402-ba09-46c5-90fc-81ee0f5528d0}\\\\AC\\\\Temp\\\\marketing-definition-logic-hm82bb8s'"
+    },
+    "OOPS": {
+      "status": "not_run",
+      "reason": "--oops not requested",
+      "endpoint": "https://oops.linkeddata.es/rest"
+    }
+  },
+  "system_validation": "incomplete",
+  "instance_records_read": 0,
+  "references": [
+    "https://www.cs.ox.ac.uk/isg/tools/HermiT/command.html",
+    "https://owlready2.readthedocs.io/en/latest/reasoning.html",
+    "https://oops.linkeddata.es/webservice.html"
+  ]
+}

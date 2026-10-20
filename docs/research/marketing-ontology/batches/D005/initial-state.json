@@ -1,0 +1,24 @@
+{
+  "proposal": "D005-2.0.0",
+  "seed": "500520261015",
+  "approval": "사용자: 실행해",
+  "head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+  "refs": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90 refs/heads/dev\nfb74fed8e2a34ca46f3d6026c3f52630b79057b7 refs/heads/main\nfb74fed8e2a34ca46f3d6026c3f52630b79057b7 refs/remotes/origin/HEAD\n0bec7ec0496ff8d1143102932b5f910696638b9a refs/remotes/origin/codex/inline-analysis-reports\nfb74fed8e2a34ca46f3d6026c3f52630b79057b7 refs/remotes/origin/dev\nfb74fed8e2a34ca46f3d6026c3f52630b79057b7 refs/remotes/origin/main\n4cb789f89c49945b1a7eb63b376504111a125a2c refs/stash\ne55de086e5e6fc9384c4e3e83188fd3a12b94850 refs/tags/dev-v0.1.0\n9dc550f953e7d750cc8b2f1215b09eb67e89056e refs/tags/local-source-20261013\naf8e8056e6553f11620e1f85e06b9759fc827b31 refs/tags/v0.0.0\n95dcb8d94c24ce98ab1d78619613e7c31759fab0 refs/tags/v0.1.0",
+  "index_sha256": "b95902502d4353ea3cd9c2cb179b3288d5239d309e6cf89aeb89778829e0bcc7",
+  "dirty": "M AGENTS.md\n M docs/iterations/README.md\n M docs/iterations/v0.2.0.md\n M docs/research/marketing-ontology/common-contract/README.md\n M docs/research/marketing-ontology/common-contract/check-spec.py\n M docs/research/marketing-ontology/common-contract/evaluation.md\n M docs/research/marketing-ontology/common-contract/ontology.ttl\n M docs/research/marketing-ontology/common-contract/schema-crosswalk.md\n M docs/research/marketing-ontology/common-contract/shapes.ttl\n M docs/research/marketing-ontology/common-contract/validation-proposal.md\n M docs/research/marketing-ontology/data-proposal.md\n M docs/research/marketing-ontology/work-log.md\n?? docs/research/marketing-ontology/common-contract/__pycache__/\n?? docs/research/marketing-ontology/common-contract/build-field-semantics.py\n?? docs/research/marketing-ontology/common-contract/calculate-d003b.py\n?? docs/research/marketing-ontology/common-contract/field-semantics.json\n?? docs/research/marketing-ontology/common-contract/run-spec-cycle.py\n?? docs/research/marketing-ontology/common-contract/run-validation-cycle.py\n?? docs/research/marketing-ontology/common-contract/runs/\n?? docs/research/marketing-ontology/common-contract/validate-d003b.py\n?? docs/research/marketing-ontology/common-contract/verification-cycle.md",
+  "input_sha256": {
+    "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+    "docs/research/marketing-ontology/schemas/marketing-records.schema.json": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337"
+  }
+}

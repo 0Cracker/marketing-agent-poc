@@ -1,0 +1,67 @@
+{
+  "baseline_files": 202,
+  "unchanged_existing_files": 194,
+  "expected_document_changes": [
+    "docs/decisions/decision-001.md",
+    "docs/research/marketing-ontology/data-proposal.md",
+    "docs/research/marketing-ontology/ontology-spec.md",
+    "docs/research/marketing-ontology/question-coverage.md",
+    "docs/research/marketing-ontology/README.md",
+    "docs/research/marketing-ontology/research-status.md",
+    "docs/research/marketing-ontology/schema-contract.md",
+    "docs/research/marketing-ontology/work-log.md"
+  ],
+  "unexpected": [],
+  "head_preserved": true,
+  "refs_preserved": true,
+  "staged_diff_preserved": true,
+  "existing_deletion_states_preserved": true,
+  "source_hashes": [
+    {
+      "file": "T01.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T03.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T12.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T13.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "H01.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T08.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T22.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T24.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T09.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T35.jsonl",
+      "unchanged": true
+    },
+    {
+      "file": "T36.jsonl",
+      "unchanged": true
+    }
+  ],
+  "status": "pass",
+  "source_rows_parsed": 0
+}

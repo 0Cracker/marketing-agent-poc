@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "scope": "final evidence and OOPS tool tests; overall system remains fail/incomplete",
+  "previous_integrity_report": "2026-10-16-canonical-final-integrity-1.json",
+  "previous_integrity_sha256": "672c925bbabfee07f0ac149a470b77a115faa6d4d40b49e6c7a898f7fc10d63c",
+  "upstream_offline_profile_reports": [
+    {
+      "path": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\oops\\OOPS-11572ea6b31cba29dd3f8a443e24311652f059de\\target\\surefire-reports\\TEST-es.upm.fi.oeg.oops.RegressionTests.xml",
+      "sha256": "1ae822ec7e93745031c3775cab62facc8a7f8c4ad76992cc48a1334a1e35809f",
+      "name": "es.upm.fi.oeg.oops.RegressionTests",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\oops\\OOPS-11572ea6b31cba29dd3f8a443e24311652f059de\\target\\surefire-reports\\TEST-es.upm.fi.oeg.oops.TestUtils.xml",
+      "sha256": "2fc88618dea25a53530e4c6e2f5cdbb4b3f5e00acf31c3c3fed322561a2f7081",
+      "name": "es.upm.fi.oeg.oops.TestUtils",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "tool_tests": 33,
+  "tool_test_failures": 0,
+  "runtime_locked_files": 731,
+  "install_lock_sha256": "92db1b9ce4e97a4d566a15b1e9b93b4f3b24117dd4323b919f63a55c949a2496",
+  "system_report": "2026-10-16-canonical-system-2.json",
+  "system_report_sha256": "ede6c37fb083cbbb722a524ac5ca65563d79e894e0989a54e26eeef3fae5427f",
+  "system_validation": "incomplete",
+  "schema_conformance": "198/528",
+  "oops_unresolved_findings": 106,
+  "new_synthetic_values": 0,
+  "git_diff_check": "pass",
+  "final_record_sha256": {
+    "docs/iterations/v0.2.0.md": "416978cd018c8f330a2ca2b258a2556913d91a5575dfd465ec4431780d9376e2",
+    "docs/research/marketing-ontology/work-log.md": "f30f6a76a730262ea0ce380ab0297b52f6478f0822437b499a75fe7d8ea90cd6"
+  }
+}

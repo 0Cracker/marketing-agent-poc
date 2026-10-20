@@ -1,0 +1,9 @@
+{
+  "cycle": "D006-CQ-AB-1",
+  "status": "not_run",
+  "exit_code": 2,
+  "reason": "No module named 'rdflib'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\run-d006-cycle.py\", line 208, in main\n    try:report=run(args.approval_record,args.tools)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\run-d006-cycle.py\", line 160, in run\n    out,rdf=response(test,name,varied,refs,cutoff,tools)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\run-d006-cycle.py\", line 62, in response\n    readback,rdf=project(picked,refs,tools)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\d006_rdf.py\", line 31, in project\n    from rdflib import Graph, Literal, Namespace, RDF, XSD\nModuleNotFoundError: No module named 'rdflib'\n",
+  "system_validation": "incomplete",
+  "finished_at": "2026-10-16T01:14:17.169365+00:00"
+}

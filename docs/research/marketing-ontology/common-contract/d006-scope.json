@@ -1,0 +1,182 @@
+{
+  "scope_id": "D006-CQ-AB-1",
+  "version": "D006-1.0.0",
+  "normal_source_rows": 56,
+  "files": 9,
+  "batch_counts": {
+    "D006-CQ-A": {
+      "T24": 1,
+      "T25": 2
+    },
+    "D006-CQ-B": {
+      "T08": 4,
+      "T22": 6,
+      "T12": 4,
+      "T13": 11,
+      "T03": 4,
+      "T24": 20,
+      "T36": 4
+    }
+  },
+  "seller_declarations": 2,
+  "A_test_cases": {
+    "CQ01-2": [
+      "collision"
+    ],
+    "CQ01-3": [
+      "missing_month"
+    ],
+    "CQ02-2": [
+      "zero_baseline"
+    ],
+    "CQ06-4": [
+      "recovery_counter"
+    ],
+    "CQ07-3": [
+      "missing_clicks"
+    ],
+    "CQ07-4": [
+      "half_spend"
+    ],
+    "CQ11-2": [
+      "bad_counts"
+    ],
+    "CQ12-2": [
+      "different_definition"
+    ],
+    "CQ14-1": [
+      "aspects"
+    ],
+    "CQ14-2": [
+      "wrong_product",
+      "wrong_span"
+    ],
+    "CQ14-4": [
+      "mixed_aspects"
+    ],
+    "CQ17-2": [
+      "foreign_price",
+      "future_promotion"
+    ],
+    "CQ28-2": [
+      "remove_evidence",
+      "early_asof",
+      "replay",
+      "unrelated"
+    ]
+  },
+  "A_mutation_branches": 16,
+  "B_test_cases": {
+    "CQ04-2": [
+      "money_boundary"
+    ],
+    "CQ04-4": [
+      "shipping_reverse"
+    ],
+    "CQ06-2": [
+      "time_boundaries"
+    ],
+    "CQ07-2": [
+      "revision"
+    ],
+    "CQ15-1": [
+      "review_sample"
+    ],
+    "CQ15-4": [
+      "review_composition"
+    ],
+    "CQ23-2": [
+      "country_time_money"
+    ]
+  },
+  "B_faults": [
+    "ambiguous_fall",
+    "nonexistent_spring",
+    "overlapping_config",
+    "snapshot_gap",
+    "unknown_scale",
+    "fractional_minor",
+    "missing_seller",
+    "null_rating",
+    "duplicate_review",
+    "review_count_mismatch"
+  ],
+  "B_memory_branches": 10,
+  "rules": "data-proposal.md D006-CQ-A and D006-CQ-B; approved proposed plan in current conversation",
+  "time_revision": {
+    "ids": [
+      "CQ06-2",
+      "CQ23-2"
+    ],
+    "days": [
+      "2025-11-02",
+      "2026-03-08"
+    ],
+    "zone": "America/New_York",
+    "as_of": "2026-10-06T00:00:00+09:00"
+  },
+  "rating_definition": {
+    "scale_max": 5,
+    "low": [
+      1,
+      2
+    ],
+    "null": "excluded_from_denominator",
+    "seller_unit": "explicit_seller_id"
+  },
+  "reused_D005_ids": [
+    "D005-T25-0009",
+    "D005-T25-0011"
+  ],
+  "existing_sources": "D003B 1652 immutable rows plus explicitly listed D005 annotations and their D003B parent reviews; existing D004/D005 regressions",
+  "source_rewrites": 0,
+  "permanent_RDF_or_DB": false,
+  "external_submission": false,
+  "immutable_inputs": {
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+    "docs/research/marketing-ontology/batches/D003B/manifest.json": "0360899ebeb925243db603438738ea6bfb4ae7ac017176e09487d4f216adfa28",
+    "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+    "docs/research/marketing-ontology/batches/D005/manifest.json": "259e30d53364eb22487b3264fd68da9913a34ee3b40c22aaa1a015d29b4f9145",
+    "docs/research/marketing-ontology/batches/D005/source/T01.jsonl": "781ec542106a00b2b7d79f49546169b6528191e035c818a7aa0511b152f55e4c",
+    "docs/research/marketing-ontology/batches/D005/source/T02.jsonl": "225dce1c5724934ca819479e75b0f9ce466160892de297f7fa9bdedd834e5fbe",
+    "docs/research/marketing-ontology/batches/D005/source/T04.jsonl": "d536c897e1c49c710c3f91745d5f7b789328e025832ff178d5cca8ab286f590b",
+    "docs/research/marketing-ontology/batches/D005/source/T05.jsonl": "1977e4a1cfe82fbb6c3eb99c1c7af1a26fed21eb4c0aa1e8c0ea83e64249f714",
+    "docs/research/marketing-ontology/batches/D005/source/T06.jsonl": "6336de29f4190c0a0e509947edea2e08fe1a5e58bf1199478951282960a32459",
+    "docs/research/marketing-ontology/batches/D005/source/T07.jsonl": "87f0b16e3b16162cb067325d2746def2d12e7f28cca864d8dff6493fdfba3a63",
+    "docs/research/marketing-ontology/batches/D005/source/T10.jsonl": "639480badd97a4910926a97b4a087143f03f13f50a8b19a5fb85ace87b6efe2f",
+    "docs/research/marketing-ontology/batches/D005/source/T11.jsonl": "c41d8ce484b8b7ee2c852469ee61cd86480071e21e52bb93a744f889973903a3",
+    "docs/research/marketing-ontology/batches/D005/source/T14.jsonl": "7458dc1e6f57963ac54eaea80503eac8ac19235015b408b2982a8b1a89933d3f",
+    "docs/research/marketing-ontology/batches/D005/source/T15.jsonl": "c8b25fba00ef3380e9726747a69ba6dc6e028653ebb5a249da612039f6924e7e",
+    "docs/research/marketing-ontology/batches/D005/source/T16.jsonl": "c4f9d22b306e5a2252408dce714faf159d39459e2795e4929c3705302c8c1de0",
+    "docs/research/marketing-ontology/batches/D005/source/T17.jsonl": "8551f0e45d0fffca4a3eabbeba83f0b1cd697c0e002631c2342f92781dcc468d",
+    "docs/research/marketing-ontology/batches/D005/source/T18.jsonl": "531d306867232eaedac5583e2b80789aa6d14db0181d40c6554a1e1b4e235490",
+    "docs/research/marketing-ontology/batches/D005/source/T19.jsonl": "e133c5e7afa0418918eb30e152c6dd18dae2b436d3eef1ef5e53f9deb8ed97c9",
+    "docs/research/marketing-ontology/batches/D005/source/T20.jsonl": "7deb50cf6f093ea6647dd21bba735699db50ab15cb368f3c6a58d57620e82198",
+    "docs/research/marketing-ontology/batches/D005/source/T21.jsonl": "33a1a29fe9f41ab8796c4dde29f44ca7580a23cc92559b44ba3b5b0bab408f82",
+    "docs/research/marketing-ontology/batches/D005/source/T23.jsonl": "b80966c69fff6dde40173f86b2c872563a98a97154429a3b67743262c9d60455",
+    "docs/research/marketing-ontology/batches/D005/source/T25.jsonl": "9b7889e2d373ec25cf43a04d89fc6227eac052a3c0e3decefe9c8a7454108bdb",
+    "docs/research/marketing-ontology/batches/D005/source/T26.jsonl": "430e01087afc6f1ca773769e9bfc1047d9c36ddeca87ad923a45372d788e6614",
+    "docs/research/marketing-ontology/batches/D005/source/T27.jsonl": "7ae6cd356dd41e0bef204ce11138f8cc71c772ff2d8df7ce0b9e7d3be2ccf200",
+    "docs/research/marketing-ontology/batches/D005/source/T28.jsonl": "9c525be73550aa7b3c4210b260777c5da011b4a73c1c0022f74b32ff3339025a",
+    "docs/research/marketing-ontology/batches/D005/source/T29.jsonl": "29fd121c304a73a6402a5db4bda741ac866d64d246fce52df04e54f5100527b1",
+    "docs/research/marketing-ontology/batches/D005/source/T30.jsonl": "b35cfabdaabae3e5908a91b2dc72b79877514d524396182ca17fc08a80e5013f",
+    "docs/research/marketing-ontology/batches/D005/source/T31.jsonl": "a917c7d0a3ea9674ac7f6b2240ab3358e7cc205fce0d2dd050e6014aef8e20bd",
+    "docs/research/marketing-ontology/batches/D005/source/T32.jsonl": "b50ffdf5c2b8ff8ada878036b30d1884c45fce3832f865ae82bc07f5aa49f4f0",
+    "docs/research/marketing-ontology/batches/D005/source/T33.jsonl": "41ab2432f27d85092d263092770d33b58fa446236e5ed757996fa13a35da1e4e",
+    "docs/research/marketing-ontology/batches/D005/source/T34.jsonl": "cd210b2e6194dae74d38423313b52c2a1c0dc63fa0a1de6e66a682cb37da650a",
+    "docs/research/marketing-ontology/batches/D005/source/T37.jsonl": "e723471e4d3f34974721b4509e4d639dc5eea10b6335845731017bf9d7ef86bd",
+    "docs/research/marketing-ontology/batches/D005/source/T38.jsonl": "d0d0d6ff5c9d49ce27fa5200e25b9df40530a2f168d6e5ea7cbf2cae2d48a7c6",
+    "docs/research/marketing-ontology/batches/D005/source/T39.jsonl": "aef9946a60934c237785676c7b48422cd2e26f8320bed3d0e077e8194b7eab59",
+    "docs/research/marketing-ontology/batches/D005/source/T40.jsonl": "ddb979932fb299d57a69db656cd3648f1b3d0669066165d6525b62cd4d743552"
+  }
+}

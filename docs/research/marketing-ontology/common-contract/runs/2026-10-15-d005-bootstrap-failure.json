@@ -1,0 +1,11 @@
+{
+  "proposal": "D005-2.0.0",
+  "phase": "runner_bootstrap",
+  "command": "node docs/research/marketing-ontology/batches/D005/run.mjs preflight --output docs/research/marketing-ontology/common-contract/runs/2026-10-15-d005-preflight-1.json",
+  "status": "fail",
+  "exit_code": 1,
+  "error": "SyntaxError: Unexpected token ')' at run.mjs:84",
+  "new_rows": 0,
+  "resolution": "Corrected the assert.ok parenthesis before rerunning preflight. This diagnostic was recorded from the tool output; the parser failed before the runner could write a report.",
+  "system_validation": "incomplete"
+}

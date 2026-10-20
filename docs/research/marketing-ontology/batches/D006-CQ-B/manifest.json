@@ -1,0 +1,47 @@
+{
+  "version": "D006-1.0.0",
+  "scope_id": "D006-CQ-B",
+  "rows": 53,
+  "files": [
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T08.jsonl",
+      "rows": 4,
+      "sha256": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T22.jsonl",
+      "rows": 6,
+      "sha256": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T12.jsonl",
+      "rows": 4,
+      "sha256": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T13.jsonl",
+      "rows": 11,
+      "sha256": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T03.jsonl",
+      "rows": 4,
+      "sha256": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T24.jsonl",
+      "rows": 20,
+      "sha256": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4"
+    },
+    {
+      "path": "docs/research/marketing-ontology/batches/D006-CQ-B/source/T36.jsonl",
+      "rows": 4,
+      "sha256": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08"
+    }
+  ],
+  "scope_sha256": "7e3bd4c7ebaf45b8d7ba5642c3168bcbd7ec2fdd8f57bfa1b9374573f9e3e6cb",
+  "approval_sha256": "f195246d82b3ab11659e5dd5cc421d0cc49e55949157631c1bfb7f576cd131bc",
+  "generator_sha256": "e712bba3a1c65f6c843bdf8dae0092ade9873cc01671feb1eecc62dd3b437b08",
+  "source_rewrites": 0,
+  "permanent_RDF_or_DB": false
+}

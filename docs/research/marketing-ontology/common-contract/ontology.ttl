@@ -1,0 +1,441 @@
+@prefix m: <https://example.org/marketing/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+m: rdf:type owl:Ontology .
+m: owl:versionInfo "MC-1.0.0-logic-2" .
+# Explicit declarations for the PROV-O terms reused by this definition graph.
+# This is a local declaration subset, not an import of the complete PROV-O.
+prov:Entity a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:Activity a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasGeneratedBy a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasDerivedFrom a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+m:Entity rdf:type owl:Class .
+m:Entity rdfs:subClassOf prov:Entity .
+m:Entity skos:prefLabel "Entity" .
+m:Entity skos:definition "식별 가능한 정보·대상 개체" .
+m:Subject rdf:type owl:Class .
+m:Subject rdfs:subClassOf m:Entity .
+m:Subject skos:prefLabel "Subject" .
+m:Subject skos:definition "관측·원문·사건이 다루는 대상" .
+m:Brand rdf:type owl:Class .
+m:Brand rdfs:subClassOf m:Subject .
+m:Brand skos:prefLabel "Brand" .
+m:Brand skos:definition "원천 ID로 확인된 브랜드" .
+m:Product rdf:type owl:Class .
+m:Product rdfs:subClassOf m:Subject .
+m:Product skos:prefLabel "Product" .
+m:Product skos:definition "원천에서 식별한 제품 및 규격" .
+m:Variant rdf:type owl:Class .
+m:Variant rdfs:subClassOf m:Subject .
+m:Variant skos:prefLabel "Variant" .
+m:Variant skos:definition "원천의 별도 식별자로 확인된 판매 변형; 용량만으로 생성하지 않음" .
+m:Category rdf:type owl:Class .
+m:Category rdfs:subClassOf m:Entity .
+m:Category skos:prefLabel "Category" .
+m:Category skos:definition "원천의 별도 분류 식별자로 확인된 제품 범주" .
+m:Campaign rdf:type owl:Class .
+m:Campaign rdfs:subClassOf m:Subject .
+m:Campaign skos:prefLabel "Campaign" .
+m:Campaign skos:definition "계정 범위의 광고 캠페인과 유효 설정" .
+m:Seller rdf:type owl:Class .
+m:Seller rdfs:subClassOf m:Subject .
+m:Seller skos:prefLabel "Seller" .
+m:Seller skos:definition "가격 관측의 판매처" .
+m:Location rdf:type owl:Class .
+m:Location rdfs:subClassOf m:Subject .
+m:Location skos:prefLabel "Location" .
+m:Location skos:definition "자사 재고 관측 위치" .
+m:MarketScope rdf:type owl:Class .
+m:MarketScope rdfs:subClassOf m:Subject .
+m:MarketScope skos:prefLabel "MarketScope" .
+m:MarketScope skos:definition "국가·카테고리·수집범위·비교집합·유효기간" .
+m:MetricDefinition rdf:type owl:Class .
+m:MetricDefinition rdfs:subClassOf m:Entity .
+m:MetricDefinition skos:prefLabel "MetricDefinition" .
+m:MetricDefinition skos:definition "지표의 의미·단위·자료형·집계·버전" .
+m:Observation rdf:type owl:Class .
+m:Observation rdfs:subClassOf m:Entity .
+m:Observation skos:prefLabel "Observation" .
+m:Observation skos:definition "대상 하나와 지표 하나의 값 또는 확보 상태" .
+m:SourceArtifact rdf:type owl:Class .
+m:SourceArtifact rdfs:subClassOf m:Entity .
+m:SourceArtifact skos:prefLabel "SourceArtifact" .
+m:SourceArtifact skos:definition "원천 파일의 경로·내용 hash" .
+m:SourceRecord rdf:type owl:Class .
+m:SourceRecord rdfs:subClassOf m:Entity .
+m:SourceRecord skos:prefLabel "SourceRecord" .
+m:SourceRecord skos:definition "원천 파일에 있는 식별 가능한 행과 버전" .
+m:CollectionRun rdf:type owl:Class .
+m:CollectionRun rdfs:subClassOf prov:Activity .
+m:CollectionRun skos:prefLabel "CollectionRun" .
+m:CollectionRun skos:definition "수집 구간·기대·수신·누락을 보존하는 실행" .
+m:Transformation rdf:type owl:Class .
+m:Transformation rdfs:subClassOf prov:Activity .
+m:Transformation skos:prefLabel "Transformation" .
+m:Transformation skos:definition "매핑 버전과 코드 버전이 있는 변환 활동" .
+m:TimeInterval rdf:type owl:Class .
+m:TimeInterval rdfs:subClassOf m:Entity .
+m:TimeInterval skos:prefLabel "TimeInterval" .
+m:TimeInterval skos:definition "시작 포함·종료 제외의 현지 달력 구간" .
+m:TimeInstant rdf:type owl:Class .
+m:TimeInstant rdfs:subClassOf m:Entity .
+m:TimeInstant skos:prefLabel "TimeInstant" .
+m:TimeInstant skos:definition "시간대와 원천 offset이 있는 시점" .
+m:Review rdf:type owl:Class .
+m:Review rdfs:subClassOf m:Entity .
+m:Review skos:prefLabel "Review" .
+m:Review skos:definition "대상에 대한 원천 원문과 별점" .
+m:EvidenceSpan rdf:type owl:Class .
+m:EvidenceSpan rdfs:subClassOf m:Entity .
+m:EvidenceSpan skos:prefLabel "EvidenceSpan" .
+m:EvidenceSpan skos:definition "원문 문자열의 실제 발췌와 반개방 offset" .
+m:Event rdf:type owl:Class .
+m:Event rdfs:subClassOf m:Entity .
+m:Event skos:prefLabel "Event" .
+m:Event skos:definition "원천이 기록한 사건 및 시점·구간" .
+m:Promotion rdf:type owl:Class .
+m:Promotion rdfs:subClassOf m:Event .
+m:Promotion skos:prefLabel "Promotion" .
+m:Promotion skos:definition "원천 행사 식별자로 확인된 프로모션 사건; 행사 방식은 별도 속성" .
+m:Claim rdf:type owl:Class .
+m:Claim rdfs:subClassOf m:Entity .
+m:Claim skos:prefLabel "Claim" .
+m:Claim skos:definition "원천이 주장하는 명제" .
+m:Hypothesis rdf:type owl:Class .
+m:Hypothesis rdfs:subClassOf m:Entity .
+m:Hypothesis skos:prefLabel "Hypothesis" .
+m:Hypothesis skos:definition "지지·반대·대안 근거를 가진 설명 후보" .
+m:AnalysisResult rdf:type owl:Class .
+m:AnalysisResult rdfs:subClassOf m:Entity .
+m:AnalysisResult skos:prefLabel "AnalysisResult" .
+m:AnalysisResult skos:definition "입력·기준일·질문·상태를 가진 분석 결과" .
+m:Observation owl:disjointWith m:Product .
+m:Observation owl:disjointWith m:Campaign .
+m:Claim owl:disjointWith m:Observation .
+m:Hypothesis owl:disjointWith m:Observation .
+m:Hypothesis owl:disjointWith m:AnalysisResult .
+m:brand rdf:type owl:ObjectProperty .
+m:variantOf rdf:type owl:ObjectProperty .
+m:variantOf rdfs:domain m:Variant .
+m:variantOf rdfs:range m:Product .
+m:inCategory rdf:type owl:ObjectProperty .
+m:inCategory rdfs:domain m:Product .
+m:inCategory rdfs:range m:Category .
+m:brand rdfs:range m:Brand .
+m:promotes rdf:type owl:ObjectProperty .
+m:promotes rdfs:range m:Product .
+m:subject rdf:type owl:ObjectProperty .
+m:subject rdfs:range m:Subject .
+m:scope rdf:type owl:ObjectProperty .
+m:scope rdfs:range m:MarketScope .
+m:member rdf:type owl:ObjectProperty .
+m:member rdfs:range m:Product .
+m:metric rdf:type owl:ObjectProperty .
+m:metric rdfs:range m:MetricDefinition .
+m:interval rdf:type owl:ObjectProperty .
+m:interval rdfs:range m:TimeInterval .
+m:instant rdf:type owl:ObjectProperty .
+m:instant rdfs:range m:TimeInstant .
+m:validInterval rdf:type owl:ObjectProperty .
+m:validInterval rdfs:range m:TimeInterval .
+m:sourceRecord rdf:type owl:ObjectProperty .
+m:sourceRecord rdfs:range m:SourceRecord .
+m:artifact rdf:type owl:ObjectProperty .
+m:artifact rdfs:range m:SourceArtifact .
+m:generatedBy rdf:type owl:ObjectProperty .
+m:generatedBy rdfs:range m:Transformation .
+m:seller rdf:type owl:ObjectProperty .
+m:seller rdfs:range m:Seller .
+m:location rdf:type owl:ObjectProperty .
+m:location rdfs:range m:Location .
+m:evidenceSpan rdf:type owl:ObjectProperty .
+m:evidenceSpan rdfs:range m:EvidenceSpan .
+m:originalReview rdf:type owl:ObjectProperty .
+m:originalReview rdfs:range m:Review .
+m:supports rdf:type owl:ObjectProperty .
+m:supports rdfs:range m:Hypothesis .
+m:counters rdf:type owl:ObjectProperty .
+m:counters rdfs:range m:Hypothesis .
+m:input rdf:type owl:ObjectProperty .
+m:supersedes rdf:type owl:ObjectProperty .
+m:supersedes rdfs:range m:SourceRecord .
+m:brand rdfs:domain m:Product .
+m:promotes rdfs:domain m:Campaign .
+m:member rdfs:domain m:MarketScope .
+m:metric rdfs:domain m:Observation .
+m:artifact rdfs:domain m:SourceRecord .
+m:originalReview rdfs:domain m:EvidenceSpan .
+m:input rdfs:domain m:AnalysisResult .
+m:supersedes rdfs:domain m:SourceRecord .
+m:input rdfs:range rdfs:Resource .
+m:sourceRecord rdfs:subPropertyOf prov:wasDerivedFrom .
+m:generatedBy rdfs:subPropertyOf prov:wasGeneratedBy .
+m:sourceId rdf:type owl:DatatypeProperty .
+m:sourceId rdfs:range xsd:string .
+m:identifierNamespace rdf:type owl:DatatypeProperty .
+m:identifierNamespace rdfs:range xsd:string .
+m:label rdf:type owl:DatatypeProperty .
+m:label rdfs:range xsd:string .
+m:category rdf:type owl:DatatypeProperty .
+m:category rdfs:range xsd:string .
+m:coverageText rdf:type owl:DatatypeProperty .
+m:coverageText rdfs:range xsd:string .
+m:calendar rdf:type owl:DatatypeProperty .
+m:calendar rdfs:range xsd:string .
+m:grain rdf:type owl:DatatypeProperty .
+m:grain rdfs:range xsd:string .
+m:timezone rdf:type owl:DatatypeProperty .
+m:timezone rdfs:range xsd:string .
+m:recordId rdf:type owl:DatatypeProperty .
+m:recordId rdfs:range xsd:string .
+m:sourceLine rdf:type owl:DatatypeProperty .
+m:sourceLine rdfs:domain m:SourceRecord .
+m:sourceLine rdfs:range xsd:integer .
+m:fieldPath rdf:type owl:DatatypeProperty .
+m:fieldPath rdfs:range xsd:string .
+m:sourceContext rdf:type owl:DatatypeProperty .
+m:sourceContext rdfs:domain m:SourceRecord .
+m:sourceContext rdfs:range xsd:string .
+m:sourceContext skos:definition "질문 실행 중 원천의 비관측 필드를 보존하는 JSON 문자열. null과 필드 부재를 구분하며 수치 관측은 별도 Observation에서 재조회한다. 영구 저장하지 않는다." .
+m:path rdf:type owl:DatatypeProperty .
+m:path rdfs:range xsd:string .
+m:sha256 rdf:type owl:DatatypeProperty .
+m:sha256 rdfs:range xsd:string .
+m:mappingVersion rdf:type owl:DatatypeProperty .
+m:mappingVersion rdfs:range xsd:string .
+m:codeVersion rdf:type owl:DatatypeProperty .
+m:codeVersion rdfs:range xsd:string .
+m:metricId rdf:type owl:DatatypeProperty .
+m:metricId rdfs:range xsd:string .
+m:definition rdf:type owl:DatatypeProperty .
+m:definition rdfs:range xsd:string .
+m:unit rdf:type owl:DatatypeProperty .
+m:unit rdfs:range xsd:string .
+m:aggregation rdf:type owl:DatatypeProperty .
+m:aggregation rdfs:range xsd:string .
+m:availability rdf:type owl:DatatypeProperty .
+m:availability rdfs:range xsd:string .
+m:originKind rdf:type owl:DatatypeProperty .
+m:originKind rdfs:range xsd:string .
+m:reason rdf:type owl:DatatypeProperty .
+m:reason rdfs:range xsd:string .
+m:questionId rdf:type owl:DatatypeProperty .
+m:questionId rdfs:range xsd:string .
+m:resultStatus rdf:type owl:DatatypeProperty .
+m:resultStatus rdfs:range xsd:string .
+m:channel rdf:type owl:DatatypeProperty .
+m:channel rdfs:range xsd:string .
+m:platform rdf:type owl:DatatypeProperty .
+m:platform rdfs:range xsd:string .
+m:conversionName rdf:type owl:DatatypeProperty .
+m:conversionName rdfs:range xsd:string .
+m:attributionModel rdf:type owl:DatatypeProperty .
+m:attributionModel rdfs:range xsd:string .
+m:language rdf:type owl:DatatypeProperty .
+m:language rdfs:range xsd:string .
+m:bodyText rdf:type owl:DatatypeProperty .
+m:bodyText rdfs:range xsd:string .
+m:quote rdf:type owl:DatatypeProperty .
+m:quote rdfs:range xsd:string .
+m:sellerStatus rdf:type owl:DatatypeProperty .
+m:sellerStatus rdfs:range xsd:string .
+m:brandRole rdf:type owl:DatatypeProperty .
+m:brandRole rdfs:range xsd:string .
+m:comparisonGroup rdf:type owl:DatatypeProperty .
+m:comparisonGroup rdfs:range xsd:string .
+m:eventKind rdf:type owl:DatatypeProperty .
+m:eventKind rdfs:range xsd:string .
+m:promotionType rdf:type owl:DatatypeProperty .
+m:promotionType rdfs:domain m:Promotion .
+m:promotionType rdfs:range xsd:string .
+m:claimText rdf:type owl:DatatypeProperty .
+m:claimText rdfs:range xsd:string .
+m:changeField rdf:type owl:DatatypeProperty .
+m:changeField rdfs:range xsd:string .
+m:policyVersion rdf:type owl:DatatypeProperty .
+m:policyVersion rdfs:range xsd:string .
+m:definitionVersion rdf:type owl:DatatypeProperty .
+m:definitionVersion rdfs:range xsd:string .
+m:seriesRole rdf:type owl:DatatypeProperty .
+m:seriesRole rdfs:range xsd:string .
+m:value rdf:type owl:DatatypeProperty .
+m:value rdfs:range xsd:decimal .
+m:volumeMl rdf:type owl:DatatypeProperty .
+m:volumeMl rdfs:range xsd:decimal .
+m:discountRatio rdf:type owl:DatatypeProperty .
+m:discountRatio rdfs:range xsd:decimal .
+m:beforeValue rdf:type owl:DatatypeProperty .
+m:beforeValue rdfs:range xsd:decimal .
+m:afterValue rdf:type owl:DatatypeProperty .
+m:afterValue rdfs:range xsd:decimal .
+m:ratingScaleMax rdf:type owl:DatatypeProperty .
+m:ratingScaleMax rdfs:range xsd:decimal .
+m:revision rdf:type owl:DatatypeProperty .
+m:revision rdfs:range xsd:integer .
+m:offsetStart rdf:type owl:DatatypeProperty .
+m:offsetStart rdfs:range xsd:integer .
+m:offsetEnd rdf:type owl:DatatypeProperty .
+m:offsetEnd rdfs:range xsd:integer .
+m:expectedCount rdf:type owl:DatatypeProperty .
+m:expectedCount rdfs:range xsd:integer .
+m:receivedCount rdf:type owl:DatatypeProperty .
+m:receivedCount rdfs:range xsd:integer .
+m:missingCount rdf:type owl:DatatypeProperty .
+m:missingCount rdfs:range xsd:integer .
+m:attributionWindowDays rdf:type owl:DatatypeProperty .
+m:attributionWindowDays rdfs:range xsd:integer .
+m:startDate rdf:type owl:DatatypeProperty .
+# xsd:date is outside the OWL 2 datatype map. Exact date typing and ordering
+# remain mandatory in TimeIntervalShape; do not ignore unsupported datatypes.
+m:startDate rdfs:range rdfs:Literal .
+m:endDateExclusive rdf:type owl:DatatypeProperty .
+m:endDateExclusive rdfs:range rdfs:Literal .
+m:timestamp rdf:type owl:DatatypeProperty .
+m:timestamp rdfs:range xsd:dateTime .
+m:startAt rdf:type owl:DatatypeProperty .
+m:startAt rdfs:range xsd:dateTime .
+m:endAtExclusive rdf:type owl:DatatypeProperty .
+m:endAtExclusive rdfs:range xsd:dateTime .
+m:availableAt rdf:type owl:DatatypeProperty .
+m:availableAt rdfs:range xsd:dateTime .
+m:asOf rdf:type owl:DatatypeProperty .
+m:asOf rdfs:range xsd:dateTime .
+m:isSynthetic rdf:type owl:DatatypeProperty .
+m:isSynthetic rdfs:range xsd:boolean .
+m:taxIncluded rdf:type owl:DatatypeProperty .
+m:taxIncluded rdfs:range xsd:boolean .
+m:shippingIncluded rdf:type owl:DatatypeProperty .
+m:shippingIncluded rdfs:range xsd:boolean .
+m:verifiedPurchase rdf:type owl:DatatypeProperty .
+m:verifiedPurchase rdfs:range xsd:boolean .
+m:currency rdf:type owl:DatatypeProperty .
+m:currency rdfs:range xsd:string .
+m:country rdf:type owl:DatatypeProperty .
+m:country rdfs:range xsd:string .
+
+# Human-readable definitions; no domain/range/inverse inference is added here.
+<https://example.org/marketing/AnalysisResult> rdfs:label "AnalysisResult" ; rdfs:comment "입력·기준일·질문·상태를 가진 분석 결과" .
+<https://example.org/marketing/Brand> rdfs:label "Brand" ; rdfs:comment "원천 ID로 확인된 브랜드" .
+<https://example.org/marketing/Campaign> rdfs:label "Campaign" ; rdfs:comment "계정 범위의 광고 캠페인과 유효 설정" .
+<https://example.org/marketing/Category> rdfs:label "Category" ; rdfs:comment "원천의 별도 분류 식별자로 확인된 제품 범주" .
+<https://example.org/marketing/Claim> rdfs:label "Claim" ; rdfs:comment "원천이 주장하는 명제" .
+<https://example.org/marketing/CollectionRun> rdfs:label "CollectionRun" ; rdfs:comment "수집 구간·기대·수신·누락을 보존하는 실행" .
+<https://example.org/marketing/Entity> rdfs:label "Entity" ; rdfs:comment "식별 가능한 정보·대상 개체" .
+<https://example.org/marketing/Event> rdfs:label "Event" ; rdfs:comment "원천이 기록한 사건 및 시점·구간" .
+<https://example.org/marketing/EvidenceSpan> rdfs:label "EvidenceSpan" ; rdfs:comment "원문 문자열의 실제 발췌와 반개방 offset" .
+<https://example.org/marketing/Hypothesis> rdfs:label "Hypothesis" ; rdfs:comment "지지·반대·대안 근거를 가진 설명 후보" .
+<https://example.org/marketing/Location> rdfs:label "Location" ; rdfs:comment "자사 재고 관측 위치" .
+<https://example.org/marketing/MarketScope> rdfs:label "MarketScope" ; rdfs:comment "국가·카테고리·수집범위·비교집합·유효기간" .
+<https://example.org/marketing/MetricDefinition> rdfs:label "MetricDefinition" ; rdfs:comment "지표의 의미·단위·자료형·집계·버전" .
+<https://example.org/marketing/Observation> rdfs:label "Observation" ; rdfs:comment "대상 하나와 지표 하나의 값 또는 확보 상태" .
+<https://example.org/marketing/Product> rdfs:label "Product" ; rdfs:comment "원천에서 식별한 제품 및 규격" .
+<https://example.org/marketing/Promotion> rdfs:label "Promotion" ; rdfs:comment "원천 행사 식별자로 확인된 프로모션 사건; 행사 방식은 별도 속성" .
+<https://example.org/marketing/Review> rdfs:label "Review" ; rdfs:comment "대상에 대한 원천 원문과 별점" .
+<https://example.org/marketing/Seller> rdfs:label "Seller" ; rdfs:comment "가격 관측의 판매처" .
+<https://example.org/marketing/SourceArtifact> rdfs:label "SourceArtifact" ; rdfs:comment "원천 파일의 경로·내용 hash" .
+<https://example.org/marketing/SourceRecord> rdfs:label "SourceRecord" ; rdfs:comment "원천 파일에 있는 식별 가능한 행과 버전" .
+<https://example.org/marketing/Subject> rdfs:label "Subject" ; rdfs:comment "관측·원문·사건이 다루는 대상" .
+<https://example.org/marketing/TimeInstant> rdfs:label "TimeInstant" ; rdfs:comment "시간대와 원천 offset이 있는 시점" .
+<https://example.org/marketing/TimeInterval> rdfs:label "TimeInterval" ; rdfs:comment "시작 포함·종료 제외의 현지 달력 구간" .
+<https://example.org/marketing/Transformation> rdfs:label "Transformation" ; rdfs:comment "매핑 버전과 코드 버전이 있는 변환 활동" .
+<https://example.org/marketing/Variant> rdfs:label "Variant" ; rdfs:comment "원천의 별도 식별자로 확인된 판매 변형; 용량만으로 생성하지 않음" .
+m:afterValue rdfs:label "afterValue" ; rdfs:comment "변경 후 원천 값" .
+m:aggregation rdfs:label "aggregation" ; rdfs:comment "측정값의 허용 집계 방식" .
+m:artifact rdfs:label "artifact" ; rdfs:comment "원천 레코드를 보존하는 파일 산출물" .
+m:asOf rdfs:label "asOf" ; rdfs:comment "분석에서 자료 확보 여부를 판정하는 기준 시각" .
+m:attributionModel rdfs:label "attributionModel" ; rdfs:comment "광고 전환 기여를 배분하는 모형 명칭" .
+m:attributionWindowDays rdfs:label "attributionWindowDays" ; rdfs:comment "광고 전환 기여를 인정하는 일수" .
+m:availability rdfs:label "availability" ; rdfs:comment "값의 제공·누락·억제 상태" .
+m:availableAt rdfs:label "availableAt" ; rdfs:comment "해당 자료를 사용할 수 있게 된 시각" .
+m:beforeValue rdfs:label "beforeValue" ; rdfs:comment "변경 전 원천 값" .
+m:bodyText rdfs:label "bodyText" ; rdfs:comment "원천 원문 문자열" .
+m:brand rdfs:label "brand" ; rdfs:comment "제품에 연결된 브랜드" .
+m:brandRole rdfs:label "brandRole" ; rdfs:comment "관측 범위에서 브랜드의 역할" .
+m:calendar rdfs:label "calendar" ; rdfs:comment "기간 해석에 사용하는 달력 식별자" .
+m:category rdfs:label "category" ; rdfs:comment "원천 분류 문자열" .
+m:changeField rdfs:label "changeField" ; rdfs:comment "변경 사건이 가리키는 필드" .
+m:channel rdfs:label "channel" ; rdfs:comment "원천이 명시한 채널" .
+m:claimText rdfs:label "claimText" ; rdfs:comment "원천 주장의 문장" .
+m:codeVersion rdfs:label "codeVersion" ; rdfs:comment "변환에 사용한 코드 버전" .
+m:comparisonGroup rdfs:label "comparisonGroup" ; rdfs:comment "서로 비교할 수 있도록 명시한 집합" .
+m:conversionName rdfs:label "conversionName" ; rdfs:comment "원천 광고 설정의 전환 명칭" .
+m:counters rdfs:label "counters" ; rdfs:comment "가설을 반박하는 근거에서 해당 가설로의 연결" .
+m:country rdfs:label "country" ; rdfs:comment "자료가 적용되는 국가 코드" .
+m:coverageText rdfs:label "coverageText" ; rdfs:comment "자료가 포괄하는 범위를 설명한 문자열" .
+m:currency rdfs:label "currency" ; rdfs:comment "금액의 통화 코드" .
+m:definition rdfs:label "definition" ; rdfs:comment "측정 또는 분류 기준의 설명" .
+m:definitionVersion rdfs:label "definitionVersion" ; rdfs:comment "측정 또는 분류 기준의 버전" .
+m:discountRatio rdfs:label "discountRatio" ; rdfs:comment "할인 전 금액에 적용하는 할인 비율" .
+m:endAtExclusive rdfs:label "endAtExclusive" ; rdfs:comment "종료를 포함하지 않는 시각 경계" .
+m:endDateExclusive rdfs:label "endDateExclusive" ; rdfs:comment "종료일을 포함하지 않는 날짜 경계" .
+m:eventKind rdfs:label "eventKind" ; rdfs:comment "원천에 기록된 사건 종류" .
+m:evidenceSpan rdfs:label "evidenceSpan" ; rdfs:comment "주장의 근거가 되는 원문 발췌" .
+m:expectedCount rdfs:label "expectedCount" ; rdfs:comment "수집 실행에서 기대한 레코드 수" .
+m:fieldPath rdfs:label "fieldPath" ; rdfs:comment "원천 필드의 경로" .
+m:generatedBy rdfs:label "generatedBy" ; rdfs:comment "원천을 변환한 활동" .
+m:grain rdfs:label "grain" ; rdfs:comment "기간 또는 자료의 집계 단위" .
+m:identifierNamespace rdfs:label "identifierNamespace" ; rdfs:comment "원천 식별자의 충돌 방지 명명 공간" .
+m:inCategory rdfs:label "inCategory" ; rdfs:comment "제품이 속하는 분류 개체" .
+m:input rdfs:label "input" ; rdfs:comment "분석 결과가 사용한 입력 자원" .
+m:instant rdfs:label "instant" ; rdfs:comment "자료가 가리키는 시점 개체" .
+m:interval rdfs:label "interval" ; rdfs:comment "자료가 가리키는 기간 개체" .
+m:isSynthetic rdfs:label "isSynthetic" ; rdfs:comment "모의로 생성된 자료인지 여부" .
+m:label rdfs:label "label" ; rdfs:comment "원천 또는 개체의 표시 이름" .
+m:language rdfs:label "language" ; rdfs:comment "텍스트의 언어 코드" .
+m:location rdfs:label "location" ; rdfs:comment "자료가 가리키는 장소 개체" .
+m:mappingVersion rdfs:label "mappingVersion" ; rdfs:comment "원천 필드 변환 규칙의 버전" .
+m:member rdfs:label "member" ; rdfs:comment "시장 비교 범위에 속하는 제품" .
+m:metric rdfs:label "metric" ; rdfs:comment "관측의 값과 단위 및 집계 규칙을 정의하는 지표" .
+m:metricId rdfs:label "metricId" ; rdfs:comment "측정 정의의 식별자" .
+m:missingCount rdfs:label "missingCount" ; rdfs:comment "수집 실행에서 누락된 레코드 수" .
+m:offsetEnd rdfs:label "offsetEnd" ; rdfs:comment "원문 발췌의 끝을 포함하지 않는 코드포인트 위치" .
+m:offsetStart rdfs:label "offsetStart" ; rdfs:comment "원문 발췌의 시작 코드포인트 위치" .
+m:originKind rdfs:label "originKind" ; rdfs:comment "직접 관측·추정·주석 등 값의 생성 방식" .
+m:originalReview rdfs:label "originalReview" ; rdfs:comment "발췌의 실제 원문을 제공하는 부모 리뷰" .
+m:path rdfs:label "path" ; rdfs:comment "원천 파일의 위치" .
+m:platform rdfs:label "platform" ; rdfs:comment "원천이 명시한 플랫폼" .
+m:policyVersion rdfs:label "policyVersion" ; rdfs:comment "계산 또는 판단에 사용한 정책 버전" .
+m:promotes rdfs:label "promotes" ; rdfs:comment "캠페인이 홍보하는 제품" .
+m:promotionType rdfs:label "promotionType" ; rdfs:comment "행사 식별자와 별도로 기록한 행사 방식" .
+m:questionId rdfs:label "questionId" ; rdfs:comment "분석이 응답하는 질문의 식별자" .
+m:quote rdfs:label "quote" ; rdfs:comment "원문에서 실제로 발췌한 문자열" .
+m:ratingScaleMax rdfs:label "ratingScaleMax" ; rdfs:comment "별점 척도의 최댓값" .
+m:reason rdfs:label "reason" ; rdfs:comment "결측·보류·판단 상태의 명시적 사유" .
+m:receivedCount rdfs:label "receivedCount" ; rdfs:comment "수집 실행에서 수신한 레코드 수" .
+m:recordId rdfs:label "recordId" ; rdfs:comment "원천 레코드의 식별자" .
+m:resultStatus rdfs:label "resultStatus" ; rdfs:comment "분석 결과의 응답 또는 보류 상태" .
+m:revision rdfs:label "revision" ; rdfs:comment "자료의 정정판 번호" .
+m:scope rdfs:label "scope" ; rdfs:comment "자료가 적용되는 시장 범위 개체" .
+m:seller rdfs:label "seller" ; rdfs:comment "판매처 개체와의 연결" .
+m:sellerStatus rdfs:label "sellerStatus" ; rdfs:comment "판매처 식별 정보의 확보 상태" .
+m:seriesRole rdfs:label "seriesRole" ; rdfs:comment "기준 집계 또는 상세 자료의 역할" .
+m:sha256 rdfs:label "sha256" ; rdfs:comment "원천 파일 바이트를 검증하는 SHA-256 해시" .
+m:shippingIncluded rdfs:label "shippingIncluded" ; rdfs:comment "금액에 배송비가 포함되어 있는지 여부" .
+m:sourceContext rdfs:label "sourceContext" ; rdfs:comment "원천의 비관측 필드를 null과 부재를 구별해 보존하는 JSON 문자열" .
+m:sourceId rdfs:label "sourceId" ; rdfs:comment "명명 공간 안에서의 원천 식별자" .
+m:sourceLine rdfs:label "sourceLine" ; rdfs:comment "원천 파일 안의 레코드 행 번호" .
+m:sourceRecord rdfs:label "sourceRecord" ; rdfs:comment "자료의 근거가 되는 원천 레코드" .
+m:startAt rdfs:label "startAt" ; rdfs:comment "시작을 포함하는 시각 경계" .
+m:startDate rdfs:label "startDate" ; rdfs:comment "시작일을 포함하는 날짜 경계" .
+m:subject rdfs:label "subject" ; rdfs:comment "관측·주장·사건이 가리키는 대상" .
+m:supersedes rdfs:label "supersedes" ; rdfs:comment "새 정정판에서 대체되는 이전 원천 레코드로 향하는 연결" .
+m:supports rdfs:label "supports" ; rdfs:comment "가설을 지지하는 근거에서 해당 가설로의 연결" .
+m:taxIncluded rdfs:label "taxIncluded" ; rdfs:comment "금액에 세금이 포함되어 있는지 여부" .
+m:timestamp rdfs:label "timestamp" ; rdfs:comment "원천의 offset과 시간대를 보존하는 시각" .
+m:timezone rdfs:label "timezone" ; rdfs:comment "현지 날짜 및 시각 해석에 사용하는 시간대" .
+m:unit rdfs:label "unit" ; rdfs:comment "관측값의 단위" .
+m:validInterval rdfs:label "validInterval" ; rdfs:comment "설정 또는 대상이 유효한 기간" .
+m:value rdfs:label "value" ; rdfs:comment "지표 정의에 따른 수치 관측값" .
+m:variantOf rdfs:label "variantOf" ; rdfs:comment "판매 단위가 속하는 제품" .
+m:verifiedPurchase rdfs:label "verifiedPurchase" ; rdfs:comment "원천이 표시한 구매 확인 여부" .
+m:volumeMl rdfs:label "volumeMl" ; rdfs:comment "밀리리터로 표현한 용량" .
+prov:Entity rdfs:label "Entity" ; rdfs:comment "PROV-O의 식별 가능한 물리·디지털·개념 개체" .
+prov:Activity rdfs:label "Activity" ; rdfs:comment "PROV-O의 개체를 사용하거나 생성하는 활동" .
+prov:wasGeneratedBy rdfs:label "was generated by" ; rdfs:comment "개체에서 해당 개체를 생성한 활동으로 향하는 PROV-O 연결" .
+prov:wasDerivedFrom rdfs:label "was derived from" ; rdfs:comment "파생 개체에서 근거가 된 개체로 향하는 PROV-O 연결" .

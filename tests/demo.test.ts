@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {demoCases,componentWeights,levels} from '../lib/demo-scenarios.ts';
+import {demoCases,componentWeights,levels} from '../frontend/lib/demo-scenarios.ts';
 const near=(a:number,b:number)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 const shares=(r:(number|null)[])=>[0,2,4,6].map(i=>r[i]===null||r[i+1]===null?null:100*r[i]!/(r[i]!+r[i+1]!));
 const cti=(s:(number|null)[])=>s.some(v=>v===null)?null:s.reduce<number>((t,v,i)=>t+v!*componentWeights[i],0);

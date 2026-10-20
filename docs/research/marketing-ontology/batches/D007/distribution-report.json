@@ -1,0 +1,575 @@
+{
+  "status": "pass",
+  "new_rows": 20000,
+  "catalog_rows": 22242,
+  "counts": {
+    "T02": 108,
+    "T03": 432,
+    "T04": 108,
+    "T05": 216,
+    "T06": 216,
+    "T07": 432,
+    "T08": 1512,
+    "T09": 54,
+    "T10": 108,
+    "T11": 54,
+    "T12": 12,
+    "T13": 624,
+    "T14": 672,
+    "T15": 144,
+    "T16": 72,
+    "T17": 2800,
+    "T18": 3280,
+    "T19": 1200,
+    "T20": 120,
+    "T21": 144,
+    "T22": 336,
+    "T23": 900,
+    "T24": 1800,
+    "T25": 2400,
+    "T26": 180,
+    "T27": 108,
+    "T28": 540,
+    "T29": 36,
+    "T30": 144,
+    "T31": 144,
+    "T32": 108,
+    "T33": 72,
+    "T34": 168,
+    "T35": 108,
+    "T36": 216,
+    "T37": 108,
+    "T38": 72,
+    "T39": 72,
+    "T40": 36,
+    "H01": 144
+  },
+  "reviews": {
+    "rows": 1800,
+    "distinct_texts": 1800,
+    "by_product_country": [
+      {
+        "product": "P1A",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.57,
+        "rating_counts": {
+          "1": 8,
+          "2": 12,
+          "3": 20,
+          "4": 35,
+          "5": 25
+        }
+      },
+      {
+        "product": "P1B",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.62,
+        "rating_counts": {
+          "1": 8,
+          "2": 12,
+          "3": 20,
+          "4": 30,
+          "5": 30
+        }
+      },
+      {
+        "product": "P2A",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.9,
+        "rating_counts": {
+          "1": 5,
+          "2": 10,
+          "3": 15,
+          "4": 30,
+          "5": 40
+        }
+      },
+      {
+        "product": "P2B",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.92,
+        "rating_counts": {
+          "1": 5,
+          "2": 8,
+          "3": 17,
+          "4": 30,
+          "5": 40
+        }
+      },
+      {
+        "product": "P3A",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.3,
+        "rating_counts": {
+          "1": 15,
+          "2": 15,
+          "3": 20,
+          "4": 25,
+          "5": 25
+        }
+      },
+      {
+        "product": "P3B",
+        "country": "KR",
+        "rows": 100,
+        "mean_rating": 3.35,
+        "rating_counts": {
+          "1": 10,
+          "2": 15,
+          "3": 25,
+          "4": 30,
+          "5": 20
+        }
+      },
+      {
+        "product": "P1A",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 3.17,
+        "rating_counts": {
+          "1": 18,
+          "2": 12,
+          "3": 20,
+          "4": 35,
+          "5": 15
+        }
+      },
+      {
+        "product": "P1B",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 3.62,
+        "rating_counts": {
+          "1": 8,
+          "2": 12,
+          "3": 20,
+          "4": 30,
+          "5": 30
+        }
+      },
+      {
+        "product": "P2A",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 4.06,
+        "rating_counts": {
+          "1": 1,
+          "2": 10,
+          "3": 15,
+          "4": 30,
+          "5": 44
+        }
+      },
+      {
+        "product": "P2B",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 3.92,
+        "rating_counts": {
+          "1": 5,
+          "2": 8,
+          "3": 17,
+          "4": 30,
+          "5": 40
+        }
+      },
+      {
+        "product": "P3A",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 3.3,
+        "rating_counts": {
+          "1": 15,
+          "2": 15,
+          "3": 20,
+          "4": 25,
+          "5": 25
+        }
+      },
+      {
+        "product": "P3B",
+        "country": "JP",
+        "rows": 100,
+        "mean_rating": 3.35,
+        "rating_counts": {
+          "1": 10,
+          "2": 15,
+          "3": 25,
+          "4": 30,
+          "5": 20
+        }
+      },
+      {
+        "product": "P1A",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.85,
+        "rating_counts": {
+          "1": 1,
+          "2": 12,
+          "3": 20,
+          "4": 35,
+          "5": 32
+        }
+      },
+      {
+        "product": "P1B",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.62,
+        "rating_counts": {
+          "1": 8,
+          "2": 12,
+          "3": 20,
+          "4": 30,
+          "5": 30
+        }
+      },
+      {
+        "product": "P2A",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.5,
+        "rating_counts": {
+          "1": 15,
+          "2": 10,
+          "3": 15,
+          "4": 30,
+          "5": 30
+        }
+      },
+      {
+        "product": "P2B",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.92,
+        "rating_counts": {
+          "1": 5,
+          "2": 8,
+          "3": 17,
+          "4": 30,
+          "5": 40
+        }
+      },
+      {
+        "product": "P3A",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.3,
+        "rating_counts": {
+          "1": 15,
+          "2": 15,
+          "3": 20,
+          "4": 25,
+          "5": 25
+        }
+      },
+      {
+        "product": "P3B",
+        "country": "US",
+        "rows": 100,
+        "mean_rating": 3.35,
+        "rating_counts": {
+          "1": 10,
+          "2": 15,
+          "3": 25,
+          "4": 30,
+          "5": 20
+        }
+      }
+    ]
+  },
+  "price_ranges": [
+    {
+      "product": "P1A",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 11458,
+      "max_minor": 13480
+    },
+    {
+      "product": "P1B",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 14044,
+      "max_minor": 17556
+    },
+    {
+      "product": "P2A",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 11280,
+      "max_minor": 14734
+    },
+    {
+      "product": "P2B",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 15127,
+      "max_minor": 20691
+    },
+    {
+      "product": "P3A",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 14123,
+      "max_minor": 16616
+    },
+    {
+      "product": "P3B",
+      "country": "KR",
+      "rows": 84,
+      "currency": "KRW",
+      "min_minor": 12790,
+      "max_minor": 15988
+    },
+    {
+      "product": "P1A",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1145,
+      "max_minor": 1348
+    },
+    {
+      "product": "P1B",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1404,
+      "max_minor": 1756
+    },
+    {
+      "product": "P2A",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1128,
+      "max_minor": 1473
+    },
+    {
+      "product": "P2B",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1512,
+      "max_minor": 2069
+    },
+    {
+      "product": "P3A",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1412,
+      "max_minor": 1662
+    },
+    {
+      "product": "P3B",
+      "country": "JP",
+      "rows": 84,
+      "currency": "JPY",
+      "min_minor": 1279,
+      "max_minor": 1599
+    },
+    {
+      "product": "P1A",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1145,
+      "max_minor": 1348
+    },
+    {
+      "product": "P1B",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1404,
+      "max_minor": 1756
+    },
+    {
+      "product": "P2A",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1128,
+      "max_minor": 1473
+    },
+    {
+      "product": "P2B",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1512,
+      "max_minor": 2069
+    },
+    {
+      "product": "P3A",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1412,
+      "max_minor": 1662
+    },
+    {
+      "product": "P3B",
+      "country": "US",
+      "rows": 84,
+      "currency": "USD",
+      "min_minor": 1279,
+      "max_minor": 1599
+    }
+  ],
+  "ad_rates": [
+    {
+      "product": "P1A",
+      "country": "KR",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.017558765222316624,
+      "ctr_max": 0.03933304831124412,
+      "cvr_min": 0.03389830508474576,
+      "cvr_max": 0.07894736842105263
+    },
+    {
+      "product": "P1A",
+      "country": "KR",
+      "channel": "social",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.024793388429752067,
+      "ctr_max": 0.05412541254125412,
+      "cvr_min": 0.02127659574468085,
+      "cvr_max": 0.04411764705882353
+    },
+    {
+      "product": "P1B",
+      "country": "KR",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.011363636363636364,
+      "ctr_max": 0.031891379854752135,
+      "cvr_min": 0.02127659574468085,
+      "cvr_max": 0.05555555555555555
+    },
+    {
+      "product": "P1B",
+      "country": "KR",
+      "channel": "social",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.0159846547314578,
+      "ctr_max": 0.0424695241840346,
+      "cvr_min": 0,
+      "cvr_max": 0.0392156862745098
+    },
+    {
+      "product": "P1A",
+      "country": "JP",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.018295056442195406,
+      "ctr_max": 0.03978779840848806,
+      "cvr_min": 0,
+      "cvr_max": 0.08163265306122448
+    },
+    {
+      "product": "P1A",
+      "country": "JP",
+      "channel": "social",
+      "rows": 28,
+      "missing": 2,
+      "ctr_min": 0.02262879152623977,
+      "ctr_max": 0.055522740696987594,
+      "cvr_min": 0,
+      "cvr_max": 0.046875
+    },
+    {
+      "product": "P1B",
+      "country": "JP",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.011248185776487663,
+      "ctr_max": 0.03056588186699711,
+      "cvr_min": 0.017543859649122806,
+      "cvr_max": 0.05660377358490566
+    },
+    {
+      "product": "P1B",
+      "country": "JP",
+      "channel": "social",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.016386890487609912,
+      "ctr_max": 0.041536050156739814,
+      "cvr_min": 0,
+      "cvr_max": 0.03225806451612903
+    },
+    {
+      "product": "P1A",
+      "country": "US",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.017342657342657344,
+      "ctr_max": 0.04178814382896016,
+      "cvr_min": 0.029850746268656716,
+      "cvr_max": 0.08
+    },
+    {
+      "product": "P1A",
+      "country": "US",
+      "channel": "social",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.022779043280182234,
+      "ctr_max": 0.056078959174517724,
+      "cvr_min": 0.014285714285714285,
+      "cvr_max": 0.047058823529411764
+    },
+    {
+      "product": "P1B",
+      "country": "US",
+      "channel": "search",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.011542497376705142,
+      "ctr_max": 0.03176861071597914,
+      "cvr_min": 0.015384615384615385,
+      "cvr_max": 0.05714285714285714
+    },
+    {
+      "product": "P1B",
+      "country": "US",
+      "channel": "social",
+      "rows": 28,
+      "missing": 0,
+      "ctr_min": 0.016574585635359115,
+      "ctr_max": 0.039960369881109646,
+      "cvr_min": 0,
+      "cvr_max": 0.034482758620689655
+    }
+  ],
+  "orders": 900,
+  "cohorts": 144,
+  "query_checks": {
+    "invalid_timestamp_rejected": true,
+    "asof_before_creation_excluded": true,
+    "scope_preserved_in_summary": true
+  },
+  "legacy_contract_gap_rows": 790
+}
