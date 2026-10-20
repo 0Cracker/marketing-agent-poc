@@ -1,0 +1,74 @@
+{
+  "status": "fail",
+  "checks": [
+    {
+      "name": "57_immutable_original_and_generated_inputs",
+      "status": "pass"
+    },
+    {
+      "name": "52_tests_682_assertions",
+      "status": "pass"
+    },
+    {
+      "name": "query_input_hashes_current",
+      "status": "pass"
+    },
+    {
+      "name": "published_readiness_52_pass",
+      "status": "pass"
+    },
+    {
+      "name": "global_dictionary_not_falsely_passed",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_schema_and_code_current",
+      "status": "pass"
+    },
+    {
+      "name": "changed_python_AST",
+      "status": "pass"
+    },
+    {
+      "name": "new_node_syntax",
+      "status": "pass"
+    },
+    {
+      "name": "external_scan_block_record",
+      "status": "pass"
+    },
+    {
+      "name": "git_index_refs_preserved",
+      "status": "pass"
+    },
+    {
+      "name": "post_docs_spec_three_checks",
+      "status": "pass"
+    },
+    {
+      "name": "document_links",
+      "status": "fail"
+    }
+  ],
+  "local_links": 380,
+  "broken_links": [
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../poc-v2-initial-design.md"
+    },
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../agent-contract.md"
+    },
+    {
+      "file": "docs\\decisions\\README.md",
+      "target": "../scenario-playbook.md"
+    }
+  ],
+  "known_preexisting_missing_links": [
+    {
+      "file": "docs\\research\\marketing-ontology\\README.md",
+      "target": "../../agent-contract.md"
+    }
+  ]
+}

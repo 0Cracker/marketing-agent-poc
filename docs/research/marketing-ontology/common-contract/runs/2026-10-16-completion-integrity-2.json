@@ -1,0 +1,122 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "protected_disk_and_git",
+      "status": "pass",
+      "detail": {
+        "files": 60,
+        "disk_and_git_bytes_match": true
+      }
+    },
+    {
+      "name": "current_model_proof",
+      "status": "pass",
+      "detail": {
+        "raw_findings": 106,
+        "accepted_non_application": 106,
+        "unresolved": 0,
+        "by_code": {
+          "P04": 2,
+          "P11": 79,
+          "P13-N": 24,
+          "P13-S": 1
+        },
+        "current_proof_inputs": "unchanged"
+      }
+    },
+    {
+      "name": "syntax",
+      "status": "pass",
+      "detail": {
+        "files": 16,
+        "python_AST_and_Node_syntax": "pass"
+      }
+    },
+    {
+      "name": "markdown_links",
+      "status": "pass",
+      "detail": {
+        "documents": 16,
+        "links_scanned": 594,
+        "new_missing": [],
+        "preexisting_missing": [
+          {
+            "file": "docs/research/marketing-ontology/README.md",
+            "target": "../../agent-contract.md"
+          }
+        ]
+      }
+    },
+    {
+      "name": "git_whitespace",
+      "status": "pass",
+      "detail": 0
+    },
+    {
+      "name": "full_cycle",
+      "status": "pass",
+      "detail": {
+        "head": "3ee92a9c72e5c0b72c75bfc87111a6f112c27dc0",
+        "gates": 7,
+        "questions": 52,
+        "original_assertions": 682,
+        "input_changes": 0,
+        "git_preserved": true,
+        "other_worktree_ref_changes": [],
+        "validation_code_and_data_still_current": true,
+        "documentation_updated_after_cycle": [
+          "docs/research/marketing-ontology/common-contract/completion-execution.md",
+          "docs/research/marketing-ontology/common-contract/local-validation.md",
+          "docs/research/marketing-ontology/common-contract/README.md",
+          "docs/research/marketing-ontology/common-contract/verification-cycle.md",
+          "docs/research/marketing-ontology/field-dictionary.md",
+          "docs/research/marketing-ontology/schema-contract.md"
+        ]
+      }
+    },
+    {
+      "name": "review_rejection_protocol",
+      "status": "pass",
+      "detail": {
+        "valid_review_accepted": 1,
+        "invalid_review_rejected": 6,
+        "scanner_protocol_checks": 8,
+        "scope": "report replay, not a new Java scan"
+      }
+    },
+    {
+      "name": "reproducibility",
+      "status": "pass",
+      "detail": {
+        "dictionary_entire_report_after_path_normalization": "equal",
+        "HermiT_status_and_inferred_class_sets": "equal",
+        "HermiT_raw_output_identical": false,
+        "HermiT_raw_line_order_only_difference": true,
+        "OOPS_entire_result": "equal",
+        "values_status_lineage_RDF": "equal"
+      }
+    },
+    {
+      "name": "current_refs",
+      "status": "pass",
+      "detail": {
+        "branch": "dev",
+        "protected_refs": {
+          "refs/heads/main": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+          "refs/remotes/origin/HEAD": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+          "refs/remotes/origin/codex/inline-analysis-reports": "0bec7ec0496ff8d1143102932b5f910696638b9a",
+          "refs/remotes/origin/dev": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+          "refs/remotes/origin/main": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7",
+          "refs/tags/dev-v0.1.0": "e55de086e5e6fc9384c4e3e83188fd3a12b94850",
+          "refs/tags/local-source-20261013": "9dc550f953e7d750cc8b2f1215b09eb67e89056e",
+          "refs/tags/v0.0.0": "af8e8056e6553f11620e1f85e06b9759fc827b31",
+          "refs/tags/v0.1.0": "95dcb8d94c24ce98ab1d78619613e7c31759fab0"
+        },
+        "unchanged_from": "2026-10-16-canonical-system-2.json"
+      }
+    }
+  ],
+  "git_head": "3ee92a9c72e5c0b72c75bfc87111a6f112c27dc0",
+  "script_sha256": "372ab28b129436f58e0d09f2e459470a721dd967f6c87a63a20b94ff141e2ff2"
+}

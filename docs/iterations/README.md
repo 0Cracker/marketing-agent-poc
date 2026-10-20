@@ -1,11 +1,30 @@
 # 버전별 개선 일지
 
+2026-10-17 데이터 확장: [D007 최종 결과](../research/marketing-ontology/batches/D007/result.json)는 신규 20,000행·전체 22,242행 공통 조회, 독립 검산·RDF/SHACL·재현·보존 pass다. [기존 전체 회귀](../research/marketing-ontology/common-contract/runs/2026-10-17-d007-post-generation-system-1.json)는 52시험/682검증 pass다. 기존 v0.2.0에 이어 기록하며 발행 버전·태그를 새로 만들지 않았다. 기존 790행의 공통 계약 차이와 원천 오류를 구분한다.
+
+2026-10-16 공통 데이터 명세 완성: [통합 실행](../research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3.json)은 528/528행·335+10필드 위임 검토·816설정 독립 검산, 기존 52시험/682검증·D004·D005·HermiT 통과로 `pass / complete`다. OOPS는 원시 106개·개별 근거 있는 비적용 106개·미해결 0개다. [후속 더블 다이아몬드](v0.2.0-double-diamond.md)와 [AI 교훈](../ai-lessons/lesson-001.md)에 매핑·가상 보완·가용시점·RDF·검사 오류와 교정을 기록했다. 원천·과거 보고서는 보존했으며 발행·태그는 수행하지 않았다. 아래는 이전 이력이다.
+
+2026-10-16 회고: [v0.2.0 더블 다이아몬드·AI 협업 기록](v0.2.0-double-diamond.md)에 11개 커밋의 문제·정의·시도·검증·미해결과 사용자 지시의 확인 범위를 정리했다. [AI 활용 교훈001](../ai-lessons/lesson-001.md)은 승인·독립 검산·사전 설명·완료 판정·로컬 도구·Git 보존의 시행착오를 별도로 다룬다. 현재 미완료 상태를 바꾸는 새 기능 검증이나 신규 데이터 작업은 아니다.
+
+2026-10-16 로컬 검증 후속: [v0.2.0 기록](v0.2.0.md#10-로컬-oops사전-변환-후속--2026-10-16)에 OOPS 격리 설치·외부 전송 제거·명시적 사전 변환과 [최종 회귀](../research/marketing-ontology/common-contract/runs/2026-10-16-canonical-system-2.json)를 연결했다.52시험/682검증·D004·D005·HermiT pass, 사전198/528행 스키마 적합·OOPS106개 잔여로 전체는fail/incomplete다. 새 가상값0·원천/Git 보존이며330행816개 필드 보완안은 별도 승인 대기다. 아래는 이전 이력이다.
+
+2026-10-16 선택 반영 후: [구조 결정](../research/marketing-ontology/common-contract/structure-decision-20261016.md)과 [재검증](../research/marketing-ontology/common-contract/runs/2026-10-16-cq52-decisions-1.json)을 기존 v0.2.0에 기록했다. 질문52/52·assertion682개·반올림 경계7개 및 기존 회귀pass, 새 전역 사전 게이트fail로 시스템은incomplete다. 추가 원천0·입력/Git 보존, OOPS 외부 재전송은 자동 심사 차단이다. 아래는 선택 전 이력이다.
+
+2026-10-16 D006 후속: 승인된 추가56행/9파일·판매처 선언2건과16+10메모리분기로 잔여20시험의 조회·정책·독립 oracle를 구현했다. [최종 통합 회귀](../research/marketing-ontology/common-contract/runs/2026-10-16-cq52-d006-integrated-2.json)는52pass/0fail/0not_run·assertion682개 pass(실질28/보류24), D004·D005/60오류·HermiT pass다. 현업 확인·전역 필드 계약 차이·OOPS·실제 공급자 적합성은 미완료다. [기존 v0.2.0](v0.2.0.md#8-d006-승인-구현과52시험-통합-회귀--2026-10-16)에 이어 기록하며 발행 버전·태그·Git 상태는 변경하지 않았다.
+
+2026-10-16: 기존 데이터 재사용 승인 후52시험32통과/0실패/20자료부족(실질 답변18·보류/거부14), assertion448개 통과와 D004·D005/60오류·HermiT 통합 회귀를 [v0.2.0 일지](v0.2.0.md#7-기존52시험-승인-실행과-잔여자료-계획--2026-10-16)에 기록했다. OOPS 재전송 차단/기존 지적 미해결로 시스템 incomplete이며 추가 생성0이다.
+
 [운영 절차](../DEVELOPMENT-WORKFLOW.md)에 따라 실제 개선 사이클을 시작할 때 [Iteration 템플릿](../../.agents/skills/poc-iteration-log/assets/iteration-template.md)을 복사해 `vX.Y.Z.md`를 만든다. 버전은 사용자와 확정하며 패키지·설계 버전에서 추정하지 않는다.
 
 | 버전 | 상태 | 핵심 문제/목표 | 이전 버전·시작 SHA | 일지 | 결과·개발 태그 |
 | --- | --- | --- | --- | --- | --- |
 | v0.1.0 | 발행 준비 | CTI 기준 버전과 발행 규약 검증 | v0.0.0 / 659530e | [일지](v0.1.0.md) | v0.1.0 / dev-v0.1.0 예정 |
+| v0.2.0 | 진행 중 | 데이터·온톨로지 기반 검증 | v0.1.0 / fb74fed | [일지](v0.2.0.md) | dev-v0.2.0 / v0.2.0 예정, 미생성 |
 
 상태는 진행 중 / 검증 중 / 발행 준비 / 발행 완료를 사용한다. 태그·PR·Release가 실제 확인되기 전 발행 완료로 표시하지 않는다. 최종 SHA를 같은 커밋 안에 기록하려 하지 않는다. 사이클 시작 SHA와 발행 예정 태그 이름은 일지에, 확정 SHA·발행 링크는 GitHub Release에 기록한다. 발행 완료 인덱스 갱신은 다음 dev 사이클에 반영한다.
 
 Discover·Define·Develop·Deliver를 작업 중 갱신하고 단계로 돌아간 이유와 날짜를 남긴다. 테스트에는 명령·대상 커밋 또는 미커밋 트리·환경·결과·실패·한계를 기록한다. Evidence 링크는 `../../evidence/실제버전/...` 형식으로 존재하는 파일만 연결한다. 중요한 결정·AI 교훈은 해당 인덱스에도 연결한다.
+
+2026-10-13의 [마케팅 온톨로지 조사 작업](../research/marketing-ontology/README.md)은 발행 버전 미확정이다. [작업 기록](../research/marketing-ontology/work-log.md)에 근거·결정·승인 대기를 먼저 남기며 버전을 임의로 생성하지 않는다. 기존 v0.1.0 발행 준비 표의 갱신은 별도의 원격 확인 작업과 구분한다.
+
+2026-10-14 사용자 확인으로 위 조사 작업의 다음 사이클을 **v0.2.0**으로 확정했다. 위 버전 미확정 설명은 확정 전 이력이다. **2026-10-15 정정: 후속 UI/UX·v0.3.0 계획은 현재 범위에서 제외하고, 온톨로지 구축·검증과 반복 가능한 시스템 테스트 사이클에 집중한다.** v0.1.0 로컬 태그와 개발 태그의 트리는 일치하지만 이번에 원격 Release를 재확인하지 않아 기존 발행 준비 기록을 발행 완료로 바꾸지는 않았다.

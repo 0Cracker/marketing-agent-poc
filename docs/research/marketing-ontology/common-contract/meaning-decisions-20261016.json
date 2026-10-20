@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "source": "explicit_human_response",
+  "user_message": "기존 D005 랑 지금 구조랑 뭐가 더 좋은 것 같아? 뭐가 더 나은 구조지?\n4 반올림은 그냥 가상 임의의 반올림 하면 될 것갘아. 나머지 1,2,3,5,6은 a안으로 가자",
+  "decisions": {
+    "1": "Retain the common dictionary; preserve D005 source profiles; implement explicit mappings and report missing information without weakening the dictionary.",
+    "2": "T10 is public competitor advertising; T11 is documents, announcements and events. Correct CQ17-3 wording through its revision sidecar.",
+    "3": "Separate aspect sentiment, source text spans, ratings, sellers, samples and collection windows. Do not extrapolate to the market population.",
+    "4": "Agent-selected synthetic policy SYNTHETIC-HALF-UP-1: exact decimal discount first, then round once to JPY/KRW 1 or USD 0.01, ties away from zero. Not an actual merchant policy.",
+    "5": "Make necessary ontology corrections and rerun OOPS with the definition graph only; do not add arbitrary domain, range or inverse axioms to silence findings.",
+    "6": "Actual provider pilot is a separate follow-up, one provider first. Actual provider mapping and actual data fitness remain not_run."
+  },
+  "business_definition_review": "confirmed_by_user_for_decisions_2_and_3",
+  "individual_annotations_reviewed": false,
+  "all_30_type_fields_business_reviewed": false,
+  "new_source_records_authorized_by_this_record": 0,
+  "git_or_remote_mutations_authorized": false
+}

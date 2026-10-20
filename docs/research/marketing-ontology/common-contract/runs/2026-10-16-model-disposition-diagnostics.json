@@ -1,0 +1,22 @@
+{
+  "status": "diagnostic_history",
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "fail",
+      "stage": "D006 full input RDF projection",
+      "issue": "TimeInstant key omitted reporting timezone; four maxCount violations",
+      "action": "fixed timestamp+reporting_timezone identity; full 1710 records then passed existing SHACL",
+      "source_values_changed": 0
+    },
+    {
+      "attempt": 2,
+      "outcome": "fail",
+      "stage": "P11 positive fixture for afterValue",
+      "issue": "Python int was used with xsd:decimal in a checker fixture; pySHACL requires the matching Decimal value",
+      "action": "use Decimal for positive decimal fixtures; source values and model constraints unchanged"
+    }
+  ],
+  "current_attempt": "model-disposition-3",
+  "all_original_inputs_preserved": true
+}

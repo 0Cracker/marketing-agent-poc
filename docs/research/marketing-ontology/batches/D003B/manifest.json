@@ -1,0 +1,69 @@
+{
+  "batch": "D003B",
+  "is_synthetic": true,
+  "seed": 300320261014,
+  "generator_version": "D003B-1.0.0",
+  "schema_version": "D003B-1.0.0",
+  "format": "UTF-8 JSONL, LF, final newline",
+  "record_total": 1652,
+  "files": {
+    "T01.jsonl": {
+      "records": 6,
+      "sha256": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a"
+    },
+    "T03.jsonl": {
+      "records": 432,
+      "sha256": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2"
+    },
+    "T12.jsonl": {
+      "records": 6,
+      "sha256": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6"
+    },
+    "T13.jsonl": {
+      "records": 312,
+      "sha256": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209"
+    },
+    "H01.jsonl": {
+      "records": 144,
+      "sha256": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82"
+    },
+    "T08.jsonl": {
+      "records": 504,
+      "sha256": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a"
+    },
+    "T22.jsonl": {
+      "records": 168,
+      "sha256": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b"
+    },
+    "T24.jsonl": {
+      "records": 72,
+      "sha256": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888"
+    },
+    "T09.jsonl": {
+      "records": 1,
+      "sha256": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907"
+    },
+    "T35.jsonl": {
+      "records": 1,
+      "sha256": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd"
+    },
+    "T36.jsonl": {
+      "records": 6,
+      "sha256": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+    }
+  },
+  "tool_sha256": {
+    "batch.schema.json": "c50c2d53b29e05e955bc24d529753378de8fb8a243355c214a4beecb6d61470c",
+    "schema.mjs": "4b6f006a27f63fa592c09b570b87ed1a46081303a342d9f080e198c8d07cc9e9",
+    "generate.mjs": "7d3bd59ee331f4be6c095c19bc080b9153cf8907411ad0c0c972caaaedab4d09",
+    "validate.mjs": "cb61a357bc697945afc1de6eaab0f07f9720f27f68430fc0fcb343e167287a47",
+    "run.mjs": "23fed4f61d288b6711249b2a24b07ca9de5d6ff7b476648187b9395beb95390e"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "icu": "78.3",
+    "tz": "2026b",
+    "platform": "win32"
+  },
+  "baseline_head": "fb74fed8e2a34ca46f3d6026c3f52630b79057b7"
+}

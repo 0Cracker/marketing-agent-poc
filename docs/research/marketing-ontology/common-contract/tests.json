@@ -1,0 +1,1853 @@
+{
+  "version": "MC-1.0.0",
+  "core_selection": "user confirmed 2026-10-14: CQ01/02/04/05/06/07/11/12/14/15/17/23/28",
+  "test_count": 52,
+  "answer_coverage_policy": "guard success does not count as substantive answer support",
+  "tests": [
+    {
+      "id": "CQ01-1",
+      "question_id": "CQ01",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "동일 JP·Q3 2025/2026 T03 범위의 제품별 판매량/금액·비중 비교",
+        "fields": "T03 units_sold/sales_value/market_total_value; T01 product/brand"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "합계와 증감·분모의 unique scope 합계가 독립 검산과 일치, 전세계 순위 주장 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-AGG",
+        "P-RATIO"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ01-2",
+      "question_id": "CQ01",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "같은 이름 다른 원천 제품 ID·식별자 충돌을 승인된 예외에서 제시",
+        "fields": "T01 source namespace/id; product crosswalk"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "명칭 자동 통합0; 충돌 record/field 이유 반환",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ01-3",
+      "question_id": "CQ01",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "시장분모 또는 비교제품 월 하나 미확보 조건",
+        "fields": "T03 market_total_value + coverage"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "비중 값 없음, missing을0으로 대체0; 요구 자료 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE",
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ01-4",
+      "question_id": "CQ01",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "모의 시장 판매 하락과 광고 귀속가치 상승이 공존하는 조건",
+        "fields": "T03 vs T13 attributed_revenue"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "시장/광고 지표 별도로 보고, 귀속가치로 시장열위 반박 단정 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ02-1",
+      "question_id": "CQ02",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "JP P1A와 P2A 전년 Q3 절대/상대 증감 비교",
+        "fields": "T03 units_sold; H01 net_units"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "자사 악화·경쟁 성장의 방향과 값 별도; 고객이동 결론 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-AGG",
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ02-2",
+      "question_id": "CQ02",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "승인된 경계 입력에서 비교기준값0",
+        "fields": "T03 units_sold baseline"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "절대 변화만 반환; 상대 증감 value 없음 reason denominator_zero",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-RATIO"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ02-3",
+      "question_id": "CQ02",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "기준일이 2026-09-30인 Q3 보고 요청",
+        "fields": "T03/H01 available_at"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "10월5일 확보될 9월치를 사용하지 않고 완전분기 보류",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ASOF"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ02-4",
+      "question_id": "CQ02",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "시장 P1A 하락과 자사 순판매 기준 차이가 있는 조건",
+        "fields": "T03 coverage_text vs H01 scope"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "같은 정의 증감만 계산, 서로 다른 범위의 대사 실패를 숨기지 않음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ04-1",
+      "question_id": "CQ04",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "JP P1A/P2A 동일300ml 판매처 가격·할인 기간 탐색",
+        "fields": "T01 volume_ml; T08 price; T09 dates"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "관측 표시가격만 비교, 세금/배송 미확인 제한 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ04-2",
+      "question_id": "CQ04",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "기간 마지막09시·10% 할인 종료 경계와 금액 배율 예외",
+        "fields": "T09 end_at_exclusive; source scales"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "종료 제외, micros/decimal scale 별도 적용·exact 원값 유지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-MONEY"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ04-3",
+      "question_id": "CQ04",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "용량·판매처·세금/배송 조건 중 필수 비교 조건 부재",
+        "fields": "T01/T08 tax_included/shipping_included"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "총지불가격 경쟁력 판단 보류; unknown을false로 대체0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-VALUE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ04-4",
+      "question_id": "CQ04",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "표시가격은 싸지만 배송포함가격 근거가 반대인 조건",
+        "fields": "T08 price plus approved shipping basis"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "비교 정의별 결과 분리, 전체 가격우위 주장 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE",
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ05-1",
+      "question_id": "CQ05",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "JP 할인 종료와 월 판매 변화의 기간 맥락 연결",
+        "fields": "T09 dates; T03/H01 period"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "전후 후보 설명·시간해상도 제한; 효과 수치 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ05-2",
+      "question_id": "CQ05",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "종료일 포함 오류·snapshot 가격 합산 시도",
+        "fields": "T09 end_at_exclusive; T08 observed_at/price"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "종료경계 오분류 및 가격합산 탐지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-AGG"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ05-3",
+      "question_id": "CQ05",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "일별 판매/주문 T19가 없는 할인종료 일효과 요청",
+        "fields": "T19 absent; H01 month"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "월값 일분해0, 주문복원0, 필요한 일별 원천 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ05-4",
+      "question_id": "CQ05",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "할인기간에 품절·리뷰·누락 근거도 존재하는 조건",
+        "fields": "T22/T24/T36"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "대안·반대 근거 함께 제시; 단일원인 단정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ06-1",
+      "question_id": "CQ06",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "JP P1A 09시 재고0와 같은날 캠페인 전환 연결",
+        "fields": "T22 instant/quantity; T13 conversions; T12 target"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "7개0 snapshot과 같은기간 광고관측 표시, 인과효과 없음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE",
+        "P-TIME"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ06-2",
+      "question_id": "CQ06",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "snapshot 공백·시간대/DST 다른 원천과 설정유효기간 중간변경",
+        "fields": "T22 observed_at; T12 valid_from/to; timezone"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "24시간 품절 연장 금지, 불명확 현지시간 격리, 혼합설정 경고",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ06-3",
+      "question_id": "CQ06",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "소셜08-26/27 conversions null인 구간 비교",
+        "fields": "T13 availability; T36 missing_dates"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "0전환과 결측 별도, 완전 일별 비교 보류",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE",
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ06-4",
+      "question_id": "CQ06",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "전환 감소가 재고 회복 후에도 지속되는 반대 조건",
+        "fields": "T35 after_value; T22; T13"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "품절 하나로 원인 확정하지 않고 후속 확인 반환",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ07-1",
+      "question_id": "CQ07",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "검색/소셜 분리해 노출·클릭·구매·비용 변화 분해",
+        "fields": "T13 metrics; T12 attribution"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "CTR/CVR/CPA/ROAS가 합한 분자·분모에서 계산, 정의별 구분",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-RATIO"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ07-2",
+      "question_id": "CQ07",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "월baseline+일detail·정정 중복·비율 평균 입력",
+        "fields": "T13 grain/series_role; revision"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "월/일 중복 제거·최신 revision 선택, 단순평균 거부",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-REVISION",
+        "P-AGG",
+        "P-RATIO"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ07-3",
+      "question_id": "CQ07",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "clicks 또는 conversion 정의 미확보",
+        "fields": "T13 clicks; T12 conversion_name"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "사용 가능한 지표만; CVR value 없음, missing≠0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-VALUE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ07-4",
+      "question_id": "CQ07",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "ROAS 상승이나 광고지출 감소와 자사판매 악화 공존",
+        "fields": "T13 vs H01"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "귀속효율과 자사 실적 분리, 예산증액 자동 권고0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ11-1",
+      "question_id": "CQ11",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "C-JP-social 수신26/기대28·결측2와 부분 주 보고",
+        "fields": "T36 counts/missing_dates; T13 availability"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "수신행26·정규화행28 별도, known subtotal partial",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ11-2",
+      "question_id": "CQ11",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "로그 기대=수신+누락 불일치·입력순서 변경",
+        "fields": "T36 counts; SourceRecord.recordId"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "execution_failed",
+        "assertion": "명시 계약 오류 탐지, 정상 입력 순서 바꿔도 동일 상태/값",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-ID"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ11-3",
+      "question_id": "CQ11",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "동의 변경 T17·설정변경 로그가 없음",
+        "fields": "T17/T35 campaign consent evidence absent"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "누락만 확인; 동의변경 원인 확인으로 표기 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ11-4",
+      "question_id": "CQ11",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "월complete인데 상세partial인 서로 다른 수집 범위",
+        "fields": "T13 baseline/detail; T36"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "월 수치와 상세 누락 동시 보고; 월값으로 일 결측 보완0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-REVISION"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ12-1",
+      "question_id": "CQ12",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "광고 귀속가치와 H01 순판매 범위를 정의표로 비교",
+        "fields": "T12 settings; T13 ad_value; H01 net_sales"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "정의 차이와 원천값 별도; GA/주문 대사 완료로 표시0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ12-2",
+      "question_id": "CQ12",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "같은 구매명 다른 귀속·통화·반품범위 조건",
+        "fields": "source settings/currency; H01 return policy"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "플랫폼 전환 자동합산·환율없는합산0, 다른 metric ID",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-MONEY"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ12-3",
+      "question_id": "CQ12",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "GA4 T18·주문 T19·환불 T20 부재에서 원인대사 요청",
+        "fields": "T18/T19/T20 absent"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "주문·개별환불복원0; 필요한 원천/기간 제시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ12-4",
+      "question_id": "CQ12",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "귀속매출 증가와 net_sales 감소 반대 근거",
+        "fields": "T13 attributed_revenue; H01 returns_value/net_sales"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "측정별 반대 방향 유지, 광고 효과 확정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ14-1",
+      "question_id": "CQ14",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "원문에서 향/건조감 측면의 실제 발췌를 승인 후 연결",
+        "fields": "T24 body_text/review_id; EvidenceSpan offsets"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "문자열 substring exact; 원문·추출·가설 분리",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ14-2",
+      "question_id": "CQ14",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "별점3 혼재 원문·잘못된 리뷰 대상/offset 조건",
+        "fields": "T24 rating/body_text/product_id"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "execution_failed",
+        "assertion": "다른 원문 연결·offset 불일치 탐지; 별점만 감성확정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID",
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ14-3",
+      "question_id": "CQ14",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "T25 측면 주석/과거 동일표본 없는데 악화 추이 요청",
+        "fields": "T25 absent; T24 limited sample"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "원문 탐색과 측면 악화 추이 지원 구별",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ14-4",
+      "question_id": "CQ14",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "향 부정과 거품 긍정 등 반대 측면 혼재",
+        "fields": "T24 body_text"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "긍정/부정 span 함께 보존; 전체제품 품질판정0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ15-1",
+      "question_id": "CQ15",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "표본·판매처·수집창 메타데이터가 확정된 리뷰 비교",
+        "fields": "T24; review CollectionRun contract"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "같은 표본범위에서만 비교·한계 표시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE",
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ15-2",
+      "question_id": "CQ15",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "표본72리뷰를 전체시장 불만율·unique로 확대 시도",
+        "fields": "T24 review_id; sample coverage"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "전체시장 확대와 unique합산 거부",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE",
+        "P-AGG"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ15-3",
+      "question_id": "CQ15",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "리뷰 판매처/기대수집량 T36이 없음",
+        "fields": "T24 seller absent; T36 ad only"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "광고수집로그를 리뷰완전성으로 사용0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ15-4",
+      "question_id": "CQ15",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "판매처 구성 변경이 부정비율 변화를 설명하는 반대조건",
+        "fields": "approved review sample metadata"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "구성효과와 품질 가설 구별; 사용자의 업무검증 미확인 유지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ17-1",
+      "question_id": "CQ17",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "경쟁 P2A 가격관측과 모의 할인만 공개활동 후보로 탐색",
+        "fields": "T08/T09; T01"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "관측가격·행사 주장과 실적효과 분리",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ17-2",
+      "question_id": "CQ17",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "동일이름 경쟁제품·다른나라 또는 기준일이후 행사",
+        "fields": "T01 id/country; T09 available_at"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "국가/ID 혼입0·미래 정보배제",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ID",
+        "P-ASOF"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ17-3",
+      "question_id": "CQ17",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "신제품 T10·경쟁 광고 T11 원천이 없음",
+        "fields": "T10/T11 absent"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "경쟁 활동 전체 지원으로 계산하지 않음",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ17-4",
+      "question_id": "CQ17",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "행사는 있지만 판매 증가 원천/내부집행 근거 없음",
+        "fields": "T09 vs T03; T11 absent"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "행사효과·경쟁내부지출 추정0, 추가 확인 제시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ23-1",
+      "question_id": "CQ23",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "국가별 원천 조건표·제품규격·통화·시간대 비교",
+        "fields": "T01/T12/T03/H01 currencies/zones"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "국가별 별도 수치와 comparable 조건 표시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ23-2",
+      "question_id": "CQ23",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "USD 센트·JPY .00·미국 DST·다른계정시각과 부분기간",
+        "fields": "currency/timezone/period"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "환율없는합계0·일광절약시간 경계보존, 부분기간 자동비교0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-TIME",
+        "P-MONEY"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ23-3",
+      "question_id": "CQ23",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "FX·지역상품 대응 T02 또는 가격세금조건 부재",
+        "fields": "T02/FX absent; T08 tax/shipping"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "통합국가매출 순위 보류, 필요한 crosswalk/FX 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ23-4",
+      "question_id": "CQ23",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "같은 국가여도 서로 다른 유통범위/귀속창",
+        "fields": "T03 coverage vs H01/T13"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "incomparable",
+        "assertion": "국가일치만으로 comparable=true 금지",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COMPARE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ28-1",
+      "question_id": "CQ28",
+      "category": "normal",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "질문별 누락 자료·영향 계산·확인 과제를 반환",
+        "fields": "CollectionRun; per-question required fields"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "원천 유형/필드/기간·보류이유·추가검증 명시",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ28-2",
+      "question_id": "CQ28",
+      "category": "boundary",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "필수근거 삭제·asOf 변경·재적재·무관한자료 추가",
+        "fields": "source refs/revision/asOf"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "insufficient_data",
+        "assertion": "삭제/기준일은 상태반영, 순서/재적재/무관자료는 값·근거 불변",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-ASOF",
+        "P-REVISION",
+        "P-EVIDENCE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ28-3",
+      "question_id": "CQ28",
+      "category": "insufficient",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "요구자료0건·unsupported 질문/기간 요청",
+        "fields": "questionId/period; required registry"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "out_of_scope",
+        "assertion": "지원밖과 자료부족 분리; 예외·도구실패는 execution_failed",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    },
+    {
+      "id": "CQ28-4",
+      "question_id": "CQ28",
+      "category": "counterevidence",
+      "input_spec": {
+        "target": "P1A/P2A or specified products; campaign C-JP-search/social where relevant",
+        "country": "JP unless country comparison",
+        "period": "Q3 2025/2026 or [2026-08-03,2026-08-31) detail",
+        "as_of": "2026-10-06T00:00:00+09:00 unless explicitly changed",
+        "condition": "보류검사 성공을 실질답변 커버리지로 세려는 조건",
+        "fields": "evaluation support/status fields"
+      },
+      "procedure": "After separate approval: verify input identity/coverage, apply named policies, execute store-independent query/calculation, compare independently to oracle",
+      "expected": {
+        "status": "answered",
+        "assertion": "보류 성공은 guard coverage만, answer coverage 증가0",
+        "value_contract": "exact decimal or explicit null + reason; money tolerance0 minor unit for D003B",
+        "evidence_contract": "file/hash/record/field or exact span + mapping/policy versions; 100% returned facts traced",
+        "completeness": "complete/partial/sample/unknown distinct"
+      },
+      "policies": [
+        "P-COVERAGE"
+      ],
+      "execution_status": "not_run",
+      "reason": "data reuse/transformation/fault injection not approved; this is a test specification",
+      "fixture_requirement": "existing approved input reuse requires new approval; boundary/counter condition not in D003B requires separately specified fixture count/rules; zero fixtures created",
+      "independent_oracle": "separate hand ledger or independent decimal code; never import transformation code; report values/ids/status vs expected",
+      "stability_checks": [
+        "input order permutation",
+        "replay same input no duplicates",
+        "unrelated source addition stable",
+        "remove mandatory evidence changes status",
+        "move asOf changes accessible versions"
+      ]
+    }
+  ]
+}

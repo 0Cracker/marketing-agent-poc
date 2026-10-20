@@ -1,0 +1,1937 @@
+{
+  "status": "pass",
+  "scope": "property-use and directional-model review; existing full regression remains required",
+  "ontology_sha256": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+  "property_shapes_sha256": "c373739581cb2a0d2d92144f41f00e648cd7fb71bb0aa88bca7084026256ca99",
+  "input_sha256": {
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\ontology.ttl": "32dfb7402d49047b48841f021771ad51ef02c0d2a3367111a5ee24b135891316",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\shapes.ttl": "4e898511b998ab3679c6fe18ca39e4e65aea10a93753b783fac2de5f8c52ea0a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\review-local-model.py": "64e3ef002719eaaa2e223f1f589fa9090402ea18a9ac3e412e7d4e8e20ab09af",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\validate-d003b.py": "2b3c102f8f6de9d6299c3b1823b9318cfd94d63596ebc22ba4ee14e5fb6c8b9f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\d006_data.py": "00c16b44c51ecc664fdad930a3afa5798653f7e98b6bce10c315f91f00b9b4b0",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\d006_rdf.py": "c189cb9c8beecc0d3463bdd706334f5553911602be504c296a18bbbcd71db600",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\oracle.py": "71d7f47dd00131d7b6957c610e6871a8103d86cc7806779e5ac8079373e91920",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D003B\\source\\T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T01.jsonl": "781ec542106a00b2b7d79f49546169b6528191e035c818a7aa0511b152f55e4c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T02.jsonl": "225dce1c5724934ca819479e75b0f9ce466160892de297f7fa9bdedd834e5fbe",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T04.jsonl": "d536c897e1c49c710c3f91745d5f7b789328e025832ff178d5cca8ab286f590b",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T05.jsonl": "1977e4a1cfe82fbb6c3eb99c1c7af1a26fed21eb4c0aa1e8c0ea83e64249f714",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T06.jsonl": "6336de29f4190c0a0e509947edea2e08fe1a5e58bf1199478951282960a32459",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T07.jsonl": "87f0b16e3b16162cb067325d2746def2d12e7f28cca864d8dff6493fdfba3a63",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T10.jsonl": "639480badd97a4910926a97b4a087143f03f13f50a8b19a5fb85ace87b6efe2f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T11.jsonl": "c41d8ce484b8b7ee2c852469ee61cd86480071e21e52bb93a744f889973903a3",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T14.jsonl": "7458dc1e6f57963ac54eaea80503eac8ac19235015b408b2982a8b1a89933d3f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T15.jsonl": "c8b25fba00ef3380e9726747a69ba6dc6e028653ebb5a249da612039f6924e7e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T16.jsonl": "c4f9d22b306e5a2252408dce714faf159d39459e2795e4929c3705302c8c1de0",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T17.jsonl": "8551f0e45d0fffca4a3eabbeba83f0b1cd697c0e002631c2342f92781dcc468d",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T18.jsonl": "531d306867232eaedac5583e2b80789aa6d14db0181d40c6554a1e1b4e235490",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T19.jsonl": "e133c5e7afa0418918eb30e152c6dd18dae2b436d3eef1ef5e53f9deb8ed97c9",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T20.jsonl": "7deb50cf6f093ea6647dd21bba735699db50ab15cb368f3c6a58d57620e82198",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T21.jsonl": "33a1a29fe9f41ab8796c4dde29f44ca7580a23cc92559b44ba3b5b0bab408f82",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T23.jsonl": "b80966c69fff6dde40173f86b2c872563a98a97154429a3b67743262c9d60455",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T25.jsonl": "9b7889e2d373ec25cf43a04d89fc6227eac052a3c0e3decefe9c8a7454108bdb",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T26.jsonl": "430e01087afc6f1ca773769e9bfc1047d9c36ddeca87ad923a45372d788e6614",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T27.jsonl": "7ae6cd356dd41e0bef204ce11138f8cc71c772ff2d8df7ce0b9e7d3be2ccf200",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T28.jsonl": "9c525be73550aa7b3c4210b260777c5da011b4a73c1c0022f74b32ff3339025a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T29.jsonl": "29fd121c304a73a6402a5db4bda741ac866d64d246fce52df04e54f5100527b1",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T30.jsonl": "b35cfabdaabae3e5908a91b2dc72b79877514d524396182ca17fc08a80e5013f",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T31.jsonl": "a917c7d0a3ea9674ac7f6b2240ab3358e7cc205fce0d2dd050e6014aef8e20bd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T32.jsonl": "b50ffdf5c2b8ff8ada878036b30d1884c45fce3832f865ae82bc07f5aa49f4f0",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T33.jsonl": "41ab2432f27d85092d263092770d33b58fa446236e5ed757996fa13a35da1e4e",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T34.jsonl": "cd210b2e6194dae74d38423313b52c2a1c0dc63fa0a1de6e66a682cb37da650a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T37.jsonl": "e723471e4d3f34974721b4509e4d639dc5eea10b6335845731017bf9d7ef86bd",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T38.jsonl": "d0d0d6ff5c9d49ce27fa5200e25b9df40530a2f168d6e5ea7cbf2cae2d48a7c6",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T39.jsonl": "aef9946a60934c237785676c7b48422cd2e26f8320bed3d0e077e8194b7eab59",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D005\\source\\T40.jsonl": "ddb979932fb299d57a69db656cd3648f1b3d0669066165d6525b62cd4d743552",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-A\\source\\T24.jsonl": "87c3ce7ddc8e9d6248baeac8398ef7bca1af836c613fc01152bb120a0ae4ad6c",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-A\\source\\T25.jsonl": "d072f867d8f8c5490c4816550a2e1d70e303730561b015792cd11cf93c967c1d",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T03.jsonl": "4b3089d83fd2038a3a4d06643831363c54725598f380a6c438af4016dce8095a",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T08.jsonl": "7b6c31ee5fb7fff6ecfd084d4cf4e989f417360e8eb1020954c69ee162ca5543",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T12.jsonl": "3d77cd62e4a464ac9cd4d24701eec2abe2e56b7a432c6fe003a32986e015deac",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T13.jsonl": "cbfdeefccc1131502ae79d6b1d2e113f2ae1b947aa70912a65fa38d44ca5618b",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T22.jsonl": "b89ffbd6435afa0d8a5f851424134d77b2c17fe3d049ba3719b724e9e16aa4f0",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T24.jsonl": "0b54992e461a04f2b466492d2c293dfb3800404eb7ebe2fdb46d14e1183e71b4",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\batches\\D006-CQ-B\\source\\T36.jsonl": "eaa32d4f73318f31b5ae9bfa5e26a3035e58dba661f697a18ea91b77ba7a1b08",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-delegation-20261016.json": "f058264a4e3ed91f2bddb93d20d4e6d8dec6b578151f2e97d7f86d1f7909d6e9"
+  },
+  "graphs": {
+    "D003B": {
+      "triples": 78528
+    },
+    "D005": {
+      "triples": 130811
+    },
+    "D006": {
+      "triples": 120046
+    }
+  },
+  "rdfs_subproperty_closure": true,
+  "class_hierarchy_closure": true,
+  "datatype_entailment_before_lexical_SHACL": false,
+  "checks": [
+    {
+      "id": "e37df70b0c59372d8e46872bcf974ec58e924efb5d97e01ab75da2578aff05f8",
+      "code": "P04",
+      "resource": "http://www.w3.org/ns/prov#Activity",
+      "status": "pass",
+      "incoming_subclasses": [
+        "https://example.org/marketing/CollectionRun",
+        "https://example.org/marketing/Transformation"
+      ]
+    },
+    {
+      "id": "39702e6f711d91672a27e3a5b20a80885577e81d63d43f6b921227bf41adf177",
+      "code": "P04",
+      "resource": "http://www.w3.org/ns/prov#Entity",
+      "status": "pass",
+      "incoming_subclasses": [
+        "https://example.org/marketing/Entity"
+      ]
+    },
+    {
+      "id": "b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737",
+      "code": "P11",
+      "resource": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 7074,
+      "subject_classes": [
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/EvidenceSpan",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/Subject",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "http://www.w3.org/ns/prov#Entity",
+      "shape": "urn:property-use:b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc",
+      "code": "P11",
+      "resource": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 15938,
+      "subject_classes": [
+        "https://example.org/marketing/AnalysisResult",
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/EvidenceSpan",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/Subject",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "http://www.w3.org/ns/prov#Activity",
+      "shape": "urn:property-use:ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db",
+      "code": "P11",
+      "resource": "https://example.org/marketing/afterValue",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b",
+      "code": "P11",
+      "resource": "https://example.org/marketing/aggregation",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 97,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 97,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MetricDefinition"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e",
+      "code": "P11",
+      "resource": "https://example.org/marketing/asOf",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "shape": "urn:property-use:8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b",
+      "code": "P11",
+      "resource": "https://example.org/marketing/attributionModel",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 6,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8",
+      "code": "P11",
+      "resource": "https://example.org/marketing/attributionWindowDays",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 6,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d",
+      "code": "P11",
+      "resource": "https://example.org/marketing/availability",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4105,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 4105,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370",
+      "code": "P11",
+      "resource": "https://example.org/marketing/availableAt",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1652,
+        "D005": 36,
+        "D006": 1710
+      },
+      "rdfs_usage": 3362,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/SourceRecord"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "shape": "urn:property-use:94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733",
+      "code": "P11",
+      "resource": "https://example.org/marketing/beforeValue",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42",
+      "code": "P11",
+      "resource": "https://example.org/marketing/bodyText",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 72,
+        "D005": 0,
+        "D006": 93
+      },
+      "rdfs_usage": 165,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Review"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5",
+      "code": "P11",
+      "resource": "https://example.org/marketing/brandRole",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4",
+      "code": "P11",
+      "resource": "https://example.org/marketing/calendar",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 323,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 328,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInterval"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768",
+      "code": "P11",
+      "resource": "https://example.org/marketing/category",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 488,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 493,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c",
+      "code": "P11",
+      "resource": "https://example.org/marketing/changeField",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb",
+      "code": "P11",
+      "resource": "https://example.org/marketing/channel",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 6,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2",
+      "code": "P11",
+      "resource": "https://example.org/marketing/claimText",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4,
+      "subject_classes": [
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778",
+      "code": "P11",
+      "resource": "https://example.org/marketing/codeVersion",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1,
+        "D005": 0,
+        "D006": 1
+      },
+      "rdfs_usage": 2,
+      "subject_classes": [
+        "https://example.org/marketing/Transformation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b",
+      "code": "P11",
+      "resource": "https://example.org/marketing/comparisonGroup",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94",
+      "code": "P11",
+      "resource": "https://example.org/marketing/conversionName",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 6,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1",
+      "code": "P11",
+      "resource": "https://example.org/marketing/counters",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "https://example.org/marketing/Hypothesis",
+      "shape": "urn:property-use:be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373",
+      "code": "P11",
+      "resource": "https://example.org/marketing/country",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 488,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 493,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a",
+      "code": "P11",
+      "resource": "https://example.org/marketing/coverageText",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 488,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 493,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd",
+      "code": "P11",
+      "resource": "https://example.org/marketing/currency",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 3864,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 3864,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb",
+      "code": "P11",
+      "resource": "https://example.org/marketing/definitionVersion",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 97,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 97,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MetricDefinition"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155",
+      "code": "P11",
+      "resource": "https://example.org/marketing/definition",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 97,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 97,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MetricDefinition"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862",
+      "code": "P11",
+      "resource": "https://example.org/marketing/discountRatio",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de",
+      "code": "P11",
+      "resource": "https://example.org/marketing/endAtExclusive",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 1,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Promotion"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "shape": "urn:property-use:d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0",
+      "code": "P11",
+      "resource": "https://example.org/marketing/endDateExclusive",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 323,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 328,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInterval"
+      ],
+      "range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "shape": "urn:property-use:159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766",
+      "code": "P11",
+      "resource": "https://example.org/marketing/eventKind",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 2,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 2,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Promotion"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796",
+      "code": "P11",
+      "resource": "https://example.org/marketing/evidenceSpan",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4,
+      "subject_classes": [
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "https://example.org/marketing/EvidenceSpan",
+      "shape": "urn:property-use:27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a",
+      "code": "P11",
+      "resource": "https://example.org/marketing/expectedCount",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 10
+      },
+      "rdfs_usage": 16,
+      "subject_classes": [
+        "https://example.org/marketing/CollectionRun"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/fieldPath",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4105,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 4105,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea",
+      "code": "P11",
+      "resource": "https://example.org/marketing/generatedBy",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4688,
+        "D005": 11142,
+        "D006": 108
+      },
+      "rdfs_usage": 15938,
+      "subject_classes": [
+        "https://example.org/marketing/AnalysisResult",
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/EvidenceSpan",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/Subject",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "https://example.org/marketing/Transformation",
+      "shape": "urn:property-use:5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66",
+      "code": "P11",
+      "resource": "https://example.org/marketing/grain",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 323,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 328,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInterval"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df",
+      "code": "P11",
+      "resource": "https://example.org/marketing/identifierNamespace",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1673,
+        "D005": 0,
+        "D006": 1712
+      },
+      "rdfs_usage": 3385,
+      "subject_classes": [
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/SourceRecord",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196",
+      "code": "P11",
+      "resource": "https://example.org/marketing/instant",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 817,
+        "D005": 0,
+        "D006": 93
+      },
+      "rdfs_usage": 910,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Review"
+      ],
+      "range": "https://example.org/marketing/TimeInstant",
+      "shape": "urn:property-use:fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb",
+      "code": "P11",
+      "resource": "https://example.org/marketing/interval",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 3361,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 3361,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "https://example.org/marketing/TimeInterval",
+      "shape": "urn:property-use:d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680",
+      "code": "P11",
+      "resource": "https://example.org/marketing/isSynthetic",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4105,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 4105,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#boolean",
+      "shape": "urn:property-use:7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489",
+      "code": "P11",
+      "resource": "https://example.org/marketing/label",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066",
+      "code": "P11",
+      "resource": "https://example.org/marketing/language",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 72,
+        "D005": 0,
+        "D006": 93
+      },
+      "rdfs_usage": 165,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Review"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c",
+      "code": "P11",
+      "resource": "https://example.org/marketing/location",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "https://example.org/marketing/Location",
+      "shape": "urn:property-use:c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc",
+      "code": "P11",
+      "resource": "https://example.org/marketing/mappingVersion",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1,
+        "D005": 0,
+        "D006": 1
+      },
+      "rdfs_usage": 2,
+      "subject_classes": [
+        "https://example.org/marketing/Transformation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3",
+      "code": "P11",
+      "resource": "https://example.org/marketing/metricId",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 97,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 97,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MetricDefinition"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a",
+      "code": "P11",
+      "resource": "https://example.org/marketing/missingCount",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 10
+      },
+      "rdfs_usage": 16,
+      "subject_classes": [
+        "https://example.org/marketing/CollectionRun"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180",
+      "code": "P11",
+      "resource": "https://example.org/marketing/offsetEnd",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/EvidenceSpan"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a",
+      "code": "P11",
+      "resource": "https://example.org/marketing/offsetStart",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/EvidenceSpan"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d",
+      "code": "P11",
+      "resource": "https://example.org/marketing/originKind",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4105,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4109,
+      "subject_classes": [
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa",
+      "code": "P11",
+      "resource": "https://example.org/marketing/path",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 11,
+        "D005": 0,
+        "D006": 21
+      },
+      "rdfs_usage": 32,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/SourceArtifact"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/platform",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 6,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/policyVersion",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c",
+      "code": "P11",
+      "resource": "https://example.org/marketing/questionId",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6",
+      "code": "P11",
+      "resource": "https://example.org/marketing/quote",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 4
+      },
+      "rdfs_usage": 4,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/EvidenceSpan"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972",
+      "code": "P11",
+      "resource": "https://example.org/marketing/ratingScaleMax",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/reason",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 10,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 10,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654",
+      "code": "P11",
+      "resource": "https://example.org/marketing/receivedCount",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6,
+        "D005": 0,
+        "D006": 10
+      },
+      "rdfs_usage": 16,
+      "subject_classes": [
+        "https://example.org/marketing/CollectionRun"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba",
+      "code": "P11",
+      "resource": "https://example.org/marketing/recordId",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1652,
+        "D005": 0,
+        "D006": 1710
+      },
+      "rdfs_usage": 3362,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/SourceRecord"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9",
+      "code": "P11",
+      "resource": "https://example.org/marketing/resultStatus",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c",
+      "code": "P11",
+      "resource": "https://example.org/marketing/revision",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1652,
+        "D005": 0,
+        "D006": 1710
+      },
+      "rdfs_usage": 3362,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/SourceRecord"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#integer",
+      "shape": "urn:property-use:75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/scope",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4185,
+        "D005": 0,
+        "D006": 93
+      },
+      "rdfs_usage": 4278,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "https://example.org/marketing/MarketScope",
+      "shape": "urn:property-use:2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3",
+      "code": "P11",
+      "resource": "https://example.org/marketing/sellerStatus",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12",
+      "code": "P11",
+      "resource": "https://example.org/marketing/seller",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "https://example.org/marketing/Seller",
+      "shape": "urn:property-use:35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681",
+      "code": "P11",
+      "resource": "https://example.org/marketing/seriesRole",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4105,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 4105,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377",
+      "code": "P11",
+      "resource": "https://example.org/marketing/sha256",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 11,
+        "D005": 0,
+        "D006": 21
+      },
+      "rdfs_usage": 32,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/SourceArtifact"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/shippingIncluded",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#boolean",
+      "shape": "urn:property-use:34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119",
+      "code": "P11",
+      "resource": "https://example.org/marketing/sourceId",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 23,
+        "D005": 155,
+        "D006": 2
+      },
+      "rdfs_usage": 165,
+      "subject_classes": [
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Category",
+        "https://example.org/marketing/Cohort",
+        "https://example.org/marketing/Comment",
+        "https://example.org/marketing/Content",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/KPIDefinition",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/Model",
+        "https://example.org/marketing/NormalizationScope",
+        "https://example.org/marketing/Order",
+        "https://example.org/marketing/OrderLine",
+        "https://example.org/marketing/Page",
+        "https://example.org/marketing/Policy",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Region",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/Session",
+        "https://example.org/marketing/Site",
+        "https://example.org/marketing/Station",
+        "https://example.org/marketing/Subject",
+        "https://example.org/marketing/Transaction",
+        "https://example.org/marketing/Variant"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500",
+      "code": "P11",
+      "resource": "https://example.org/marketing/sourceRecord",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 6876,
+        "D005": 0,
+        "D006": 198
+      },
+      "rdfs_usage": 7074,
+      "subject_classes": [
+        "https://example.org/marketing/Brand",
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Claim",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/EvidenceSpan",
+        "https://example.org/marketing/Location",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Product",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review",
+        "https://example.org/marketing/Seller",
+        "https://example.org/marketing/Subject",
+        "https://example.org/marketing/d006/AspectClaim"
+      ],
+      "range": "https://example.org/marketing/SourceRecord",
+      "shape": "urn:property-use:78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6",
+      "code": "P11",
+      "resource": "https://example.org/marketing/startAt",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 1,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 1,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Promotion"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "shape": "urn:property-use:3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b",
+      "code": "P11",
+      "resource": "https://example.org/marketing/startDate",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 323,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 328,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInterval"
+      ],
+      "range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "shape": "urn:property-use:af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef",
+      "code": "P11",
+      "resource": "https://example.org/marketing/subject",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4179,
+        "D005": 0,
+        "D006": 93
+      },
+      "rdfs_usage": 4272,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Event",
+        "https://example.org/marketing/Observation",
+        "https://example.org/marketing/Promotion",
+        "https://example.org/marketing/Review"
+      ],
+      "range": "https://example.org/marketing/Subject",
+      "shape": "urn:property-use:b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/supports",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "https://example.org/marketing/Hypothesis",
+      "shape": "urn:property-use:3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9",
+      "code": "P11",
+      "resource": "https://example.org/marketing/taxIncluded",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#boolean",
+      "shape": "urn:property-use:87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b",
+      "code": "P11",
+      "resource": "https://example.org/marketing/timestamp",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 96,
+        "D005": 0,
+        "D006": 28
+      },
+      "rdfs_usage": 124,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInstant"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "shape": "urn:property-use:e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4",
+      "code": "P11",
+      "resource": "https://example.org/marketing/timezone",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 419,
+        "D005": 0,
+        "D006": 33
+      },
+      "rdfs_usage": 452,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/TimeInstant",
+        "https://example.org/marketing/TimeInterval"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1",
+      "code": "P11",
+      "resource": "https://example.org/marketing/unit",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 97,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 97,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MetricDefinition"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#string",
+      "shape": "urn:property-use:eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3",
+      "code": "P11",
+      "resource": "https://example.org/marketing/validInterval",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 494,
+        "D005": 0,
+        "D006": 5
+      },
+      "rdfs_usage": 499,
+      "subject_classes": [
+        "https://example.org/marketing/Campaign",
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/MarketScope",
+        "https://example.org/marketing/Subject"
+      ],
+      "range": "https://example.org/marketing/TimeInterval",
+      "shape": "urn:property-use:6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f",
+      "code": "P11",
+      "resource": "https://example.org/marketing/value",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 4095,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 4095,
+      "subject_classes": [
+        "https://example.org/marketing/Entity",
+        "https://example.org/marketing/Observation"
+      ],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb",
+      "code": "P11",
+      "resource": "https://example.org/marketing/verifiedPurchase",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#boolean",
+      "shape": "urn:property-use:7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb",
+      "code": "P11",
+      "resource": "https://example.org/marketing/volumeMl",
+      "status": "pass",
+      "asserted_usage": {
+        "D003B": 0,
+        "D005": 0,
+        "D006": 0
+      },
+      "rdfs_usage": 0,
+      "subject_classes": [],
+      "range": "http://www.w3.org/2001/XMLSchema#decimal",
+      "shape": "urn:property-use:d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb",
+      "subject_policy": "IRI in declared application context; no universal class asserted",
+      "positive_and_negative_property_test": "pass"
+    },
+    {
+      "id": "c8d8ae9e1b81b2e032706088510d6cd389a1e693c360acc11512eb5abe80cda5",
+      "code": "P13-N",
+      "resource": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "status": "pass",
+      "reverse_query_pairs": 7074,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "7d015b678a0b6ddecb235d8b76e1334d7d66c052c3e7e1cd7e9e2ec06c347adb",
+      "code": "P13-N",
+      "resource": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "status": "pass",
+      "reverse_query_pairs": 15938,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "1d3fa8deb66a47848e41afdc12fef552c7266b2bea3f64fa84f554c567cf30c8",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/artifact",
+      "status": "pass",
+      "reverse_query_pairs": 3362,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "18613602502a833f4d5915d2d1707f13c8d35290578a47c65a89bc23764c2df3",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/brand",
+      "status": "pass",
+      "reverse_query_pairs": 6,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "1b26416d178e6c1545b141731b67bf766c06b336bc2c8b3724a304882403ccdc",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/counters",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "d7015e8cd26022c1f1f671a7326e97084972d7c0a3e0ecb5eb869e41bf5f492d",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/evidenceSpan",
+      "status": "pass",
+      "reverse_query_pairs": 4,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "47c057bf8511914cccbc9c8fea4dfb724d810cc9c30073e2b58e3595d5b64669",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/generatedBy",
+      "status": "pass",
+      "reverse_query_pairs": 15938,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "344ec60fbc3621a3f5aab90cb895788a30cde2cd55ef22e0f545f3baa4b19aab",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/inCategory",
+      "status": "pass",
+      "reverse_query_pairs": 6,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "14e69077d3afdcbbc7e9461566707770193bd6788cd2f41247ab55afd38ccd80",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/input",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "8b93524acf09062fa727c8dcab7a6a08d06589b3e1e46d9cbf5b7215ff784a11",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/instant",
+      "status": "pass",
+      "reverse_query_pairs": 910,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "b5625caa701867fb3cf76038478dc80c87b96bef66eb35b6c30b18e4935009c4",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/interval",
+      "status": "pass",
+      "reverse_query_pairs": 3361,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "84637ae7917155bd8582f7ce13ab66d497c3f32b3ba97b552522eb7d8d196e02",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/location",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "ec0eb914b0bdff60527be2470adf055bbb5158d4d1015cb7e269ed17a537b337",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/member",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "a0f8608660b081fa955f7a8d36309a4089e28e04676ef00afdb6b4130716b546",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/metric",
+      "status": "pass",
+      "reverse_query_pairs": 4105,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "80556f62b8d2ac82a91b07fa8bd397867f1859522f9a4a1849d43526f5d77ea5",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/originalReview",
+      "status": "pass",
+      "reverse_query_pairs": 4,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "e52495aa88e245757c934ef975df91a71710bd45987bb6bf51a34eb3084bd7b1",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/promotes",
+      "status": "pass",
+      "reverse_query_pairs": 6,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "ce53289b249961383962e20a2a599ba7650e3ac43247437f59c8ab3ba9311a8a",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/scope",
+      "status": "pass",
+      "reverse_query_pairs": 4278,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "e02107dda5045c9d2b3b3f8f692ec4db41458a3e07a4209b5da8ea818404ea2e",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/seller",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "1bf042bf52e6c8f048b0714c72f1fac9b70c4d2eed3535c74dc214438a4c6dc8",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/sourceRecord",
+      "status": "pass",
+      "reverse_query_pairs": 7074,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "59f88b69ef88397909887bdebffdfab47276b352e0bc035d0dc5f372394b8682",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/subject",
+      "status": "pass",
+      "reverse_query_pairs": 4272,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "7b398f71ee980a4b5a031c34e2b97914c947e65df6184413eed788ca9bb24a64",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/supersedes",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "2d7609cbb588e8cba9792dcbbf32acdc64a58a5de48cc100ba7f2f625025fc30",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/supports",
+      "status": "pass",
+      "reverse_query_pairs": 0,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "a7584aeb13693d1ecb042c61fe9defabaad17bd27cee3f448ea460d9ec94c4db",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/validInterval",
+      "status": "pass",
+      "reverse_query_pairs": 499,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "d248c15113e3f71e7a8a65621d7cf33cebced9e240cacfd38f7fc4dd04ac7a91",
+      "code": "P13-N",
+      "resource": "https://example.org/marketing/variantOf",
+      "status": "pass",
+      "reverse_query_pairs": 6,
+      "reverse_query_fixture": "pass"
+    },
+    {
+      "id": "9fb39fe187cfa7ed006f1820dec5fa42001d5dbee72201af8574033b37920a9a",
+      "code": "P13-S",
+      "resource": "https://example.org/marketing/supersedes",
+      "status": "pass",
+      "directional_revision_edges": 0,
+      "directional_revision_fixture": "pass"
+    }
+  ],
+  "property_use_SHACL": "pass",
+  "new_scoped_test_graphs": 103,
+  "source_rows_added": 0,
+  "completed_at": "2026-10-16T14:22:43.385783+00:00",
+  "serialization_normalization": {
+    "original_sha256": "1e4c286119ddfdedd0bd76d7d7cee93cdce2f80332cf4595c734336bb0568259",
+    "current_sha256": "c373739581cb2a0d2d92144f41f00e648cd7fb71bb0aa88bca7084026256ca99",
+    "reason": "remove serializer empty EOF line for git whitespace check",
+    "RDF_triples_unchanged": true
+  }
+}

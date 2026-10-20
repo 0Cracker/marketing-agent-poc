@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "engine": "Installed ESLint Linter API",
+  "rules": [
+    "no-undef",
+    "no-unused-vars"
+  ],
+  "results": [
+    {
+      "file": "catalog.mjs",
+      "messages": []
+    },
+    {
+      "file": "check.mjs",
+      "messages": []
+    },
+    {
+      "file": "generate.mjs",
+      "messages": []
+    },
+    {
+      "file": "query-check.mjs",
+      "messages": []
+    },
+    {
+      "file": "spec.mjs",
+      "messages": []
+    },
+    {
+      "file": "text.mjs",
+      "messages": []
+    },
+    {
+      "file": "validate.mjs",
+      "messages": []
+    }
+  ]
+}

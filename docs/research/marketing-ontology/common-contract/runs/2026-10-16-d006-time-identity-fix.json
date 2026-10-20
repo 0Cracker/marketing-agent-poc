@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "issue": "Previously full D006 source graph failed four maxCount timezone constraints: TimeInstant identity omitted reporting timezone. Per-question subsets had not exposed this merge.",
+  "fix": "TimeInstant key includes original timestamp and reporting timezone",
+  "records": 1710,
+  "triples": 120046,
+  "time_instants": 28,
+  "existing_SHACL": "pass",
+  "source_values_changed": 0
+}

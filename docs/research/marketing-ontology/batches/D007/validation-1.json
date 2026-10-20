@@ -1,0 +1,10 @@
+{
+  "status": "fail",
+  "stage": "independent_oracle_no_report",
+  "new_rows": 20000,
+  "configured_timeout_ms": 300000,
+  "process_exit_code": null,
+  "oracle_report": null,
+  "driver_error": "AssertionError: null !== 0 at validate.mjs independent subprocess check",
+  "note": "First execution produced no independent JSON report; not treated as data failure or validation pass. Source files were not changed. The exact subprocess error code was not captured by the first driver."
+}

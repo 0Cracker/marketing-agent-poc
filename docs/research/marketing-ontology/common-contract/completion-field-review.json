@@ -1,0 +1,5414 @@
+{
+  "source": "delegated_ai_review",
+  "human_confirmed": false,
+  "authority_file": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\completion-delegation-20261016.json",
+  "authority_sha256": "f058264a4e3ed91f2bddb93d20d4e6d8dec6b578151f2e97d7f86d1f7909d6e9",
+  "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+  "mapping_sha256": "f1b1456cb0dac2883d93d3cfc5b91218ab3191721668ddc74ad3ecc69e51e0e2",
+  "entries": [
+    {
+      "key": "T02.mapping_kind",
+      "meaning": "매핑 종류",
+      "rules": [
+        "declared-field-copy",
+        "registered-enum-alias"
+      ],
+      "sources": [
+        "payload.mapping_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.entity_type",
+      "meaning": "매핑 대상 유형",
+      "rules": [
+        "resolve-explicit-entity-type"
+      ],
+      "sources": [
+        "payload.entity_ref",
+        "existing-product-brand-variant-identities"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.entity_ref",
+      "meaning": "내부 개체 참조",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.entity_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.external_system",
+      "meaning": "외부 명명 체계",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.external_system"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.external_value",
+      "meaning": "원천의 코드·별칭·URL",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.external_value"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.country_code",
+      "meaning": "ISO 국가 코드",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.language",
+      "meaning": "별칭/상품명 매핑에 필수",
+      "rules": [
+        "declared-Korean-product-name"
+      ],
+      "sources": [
+        "payload.external_value",
+        "parent-product.description_ko",
+        "D005/generate.mjs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.match_status",
+      "meaning": "매핑 확정 수준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.match_status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.valid_from",
+      "meaning": "유효 시작",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.period.start"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.valid_to_exclusive",
+      "meaning": "유효 종료",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.period.end"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T02.evidence",
+      "meaning": "후보·확정 매핑 근거",
+      "rules": [
+        "exact-approved-mock-code-assertion; not provider evidence",
+        "candidate-alias-exact-parent-name; not confirmed identity"
+      ],
+      "sources": [
+        "payload.evidence",
+        "parent-product.product_name"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.panel_id",
+      "meaning": "조사 패널 정의",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.panel_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.cohort_id",
+      "meaning": "표본 집단 정의",
+      "rules": [
+        "panel-subject-period"
+      ],
+      "sources": [
+        "payload.panel_id",
+        "payload.subject_ref",
+        "payload.period"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.subject_ref",
+      "meaning": "브랜드/제품",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.subject_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.period",
+      "meaning": "측정 기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.sample_size",
+      "meaning": "관측 표본 수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.weighting_method",
+      "meaning": "가중·투영 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.weighting_method"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.measures",
+      "meaning": "침투·구매·재구매 등 정의된 집계",
+      "rules": [
+        "source-panel-count-and-rate"
+      ],
+      "sources": [
+        "payload.positive_responses",
+        "payload.positive_rate"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.purchase_channel",
+      "meaning": "판매처 범위",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.usage_context",
+      "meaning": "사용 조사 맥락",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T04.linked_survey_ref",
+      "meaning": "조사 연결",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.query_id",
+      "meaning": "정규화 요청/비교 집합 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.query_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.term_ref",
+      "meaning": "검색어 또는 주제 정의",
+      "rules": [
+        "UTF8-term-identity"
+      ],
+      "sources": [
+        "payload.term"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.term_kind",
+      "meaning": "분석 대상 종류",
+      "rules": [
+        "literal-search-term"
+      ],
+      "sources": [
+        "payload.term"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.period",
+      "meaning": "원천의 기간 해상도",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.index_value",
+      "meaning": "상대 관심/클릭 지수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.index_value"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.index_definition",
+      "meaning": "검색 관심인지 쇼핑 클릭인지",
+      "rules": [
+        "within-window-index"
+      ],
+      "sources": [
+        "payload.normalization_scope",
+        "payload.index_value",
+        "payload.search_surface"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.normalization_scope",
+      "meaning": "요청별 최대/비교 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.normalization_scope"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.search_surface",
+      "meaning": "검색/쇼핑 등 표면",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.search_surface"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T05.filters",
+      "meaning": "지역·기기·카테고리 등 요청조건",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.keyword",
+      "meaning": "원천 키워드",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.keyword"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.language",
+      "meaning": "검색 언어",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.language"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.geo_target_ref",
+      "meaning": "타깃 지역 정의",
+      "rules": [
+        "synthetic-country-target"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.period",
+      "meaning": "원천 월 범위",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.estimated_searches",
+      "meaning": "근사 검색량",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.estimated_searches"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.competition_level",
+      "meaning": "공급자 경쟁 분류",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.competition_level"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.competition_index",
+      "meaning": "광고 슬롯 경쟁 지수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.competition_index"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.low_bid",
+      "meaning": "원천 입찰 범위 하단",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.bid_lower"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.high_bid",
+      "meaning": "원천 입찰 범위 상단",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.bid_upper"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T06.network_scope",
+      "meaning": "검색 네트워크 조건",
+      "rules": [
+        "synthetic-search-network"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.site_ref",
+      "meaning": "권한 있는 사이트",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.site_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.period",
+      "meaning": "원천 보고 시간대와 기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.query",
+      "meaning": "검색어; 숨겨지면 null",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.query"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.page_ref",
+      "meaning": "페이지",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.page_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.device",
+      "meaning": "원천 기기 분류",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.device"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.search_type",
+      "meaning": "검색 유형",
+      "rules": [
+        "synthetic-search-kind"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.clicks",
+      "meaning": "보고 클릭",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.clicks"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.impressions",
+      "meaning": "보고 노출",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.impressions"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.average_position",
+      "meaning": "평균 순위",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.average_position"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T07.aggregation_scope",
+      "meaning": "속성/페이지 등 집계 기준",
+      "rules": [
+        "explicit-source-grain"
+      ],
+      "sources": [
+        "payload.site_ref",
+        "payload.page_ref",
+        "payload.query",
+        "payload.device",
+        "payload.period"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.advertiser_ref",
+      "meaning": "공개 광고주",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.advertiser_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.public_ad_id",
+      "meaning": "공개 관측 광고 ID",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.public_ad_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.observed_at",
+      "meaning": "조사 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.observed_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.format",
+      "meaning": "광고 형식",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.format"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.creative_text",
+      "meaning": "공개된 문구",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.creative_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.media_ref",
+      "meaning": "이미지/영상 광고의 근거 파일",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.served_regions",
+      "meaning": "공개된 지역 범위",
+      "rules": [
+        "synthetic-served-region"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.first_seen",
+      "meaning": "공개/관측에서 확인한 최초 시점",
+      "rules": [
+        "instant-to-local-calendar-date; original timestamp preserved"
+      ],
+      "sources": [
+        "payload.first_seen",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.last_seen",
+      "meaning": "공개/관측 마지막 시점",
+      "rules": [
+        "instant-to-local-calendar-date; original timestamp preserved"
+      ],
+      "sources": [
+        "payload.last_seen",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.destination_ref",
+      "meaning": "공개 목적지",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T10.coverage_text",
+      "meaning": "공개 광고 조사 범위",
+      "rules": [
+        "sample-coverage"
+      ],
+      "sources": [
+        "metadata.scope_id",
+        "metadata.quality"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.document_id",
+      "meaning": "문서 ID",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.document_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.publisher",
+      "meaning": "발행 주체",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.publisher"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.published_at",
+      "meaning": "게시 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.published_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.language",
+      "meaning": "원문 언어",
+      "rules": [
+        "declared-generation-text-language"
+      ],
+      "sources": [
+        "payload.body_text",
+        "D005/README.md fixed Korean constants"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.title",
+      "meaning": "문서 제목",
+      "rules": [
+        "supplement-title-not-original"
+      ],
+      "sources": [
+        "payload.document_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.body_text",
+      "meaning": "허용된 원문/가상 원문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.body_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.subject_refs",
+      "meaning": "언급된 대상",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.subject_refs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.event_time",
+      "meaning": "본문이 명시한 발생 시각; 게시일과 구별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_time"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.duplicate_cluster",
+      "meaning": "전재/중복 문서군",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.duplicate_group"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T11.claims",
+      "meaning": "본문 주장과 위치",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.campaign_ref",
+      "meaning": "캠페인",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.campaign_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.period",
+      "meaning": "보고 기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.breakdown_dimensions",
+      "meaning": "기기·배치 등 지원 차원",
+      "rules": [
+        "explicit-dimension"
+      ],
+      "sources": [
+        "payload.device"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.report_definition_ref",
+      "meaning": "허용된 원천 조합 정의",
+      "rules": [
+        "parent-device-report"
+      ],
+      "sources": [
+        "payload.parent_record_id",
+        "payload.device",
+        "payload.split_basis"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.metrics",
+      "meaning": "동일 귀속 기준의 부분 집계",
+      "rules": [
+        "registered-attributed-metric-names; D005 split preserves parent attribution"
+      ],
+      "sources": [
+        "payload.metrics",
+        "payload.parent_record_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.audience_basis",
+      "meaning": "설정/실제 관측 구별",
+      "rules": [
+        "synthetic-parent-aggregate-not-target-setting"
+      ],
+      "sources": [
+        "payload.split_basis"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.parent_report_ref",
+      "meaning": "대사 가능한 상위 집계",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.parent_record_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T14.suppression_rule",
+      "meaning": "억제·반올림 기준",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.campaign_ref",
+      "meaning": "보고 대상 캠페인",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.campaign_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.competitor_domain",
+      "meaning": "원천 광고주 표시",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.competitor_domain"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.period",
+      "meaning": "공유 경매 범위",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.report_surface",
+      "meaning": "검색/쇼핑 등 지원 표면",
+      "rules": [
+        "synthetic-auction-surface"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.impression_share",
+      "meaning": "원천 정의 노출 점유",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.impression_share"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.overlap_rate",
+      "meaning": "원천 중복 비율",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.overlap_rate"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.outranking_share",
+      "meaning": "원천 우위 비율",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.position_above_rate",
+      "meaning": "지원 시 상위 게재 비율",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.device",
+      "meaning": "보고 세그먼트",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T15.threshold_status",
+      "meaning": "활동 임계·누락 상태",
+      "rules": [
+        "threshold-not-supplied-not-zero"
+      ],
+      "sources": [
+        "payload.denominator_status",
+        "source-schema"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.creative_id",
+      "meaning": "소재 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.creative_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.version",
+      "meaning": "내용 버전",
+      "rules": [
+        "integer-version-to-string; no date-time invented"
+      ],
+      "sources": [
+        "payload.version"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.product_refs",
+      "meaning": "제품 연결",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.product_refs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.format",
+      "meaning": "텍스트/이미지/영상",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.format"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.language",
+      "meaning": "문구 언어",
+      "rules": [
+        "declared-generation-text-language"
+      ],
+      "sources": [
+        "payload.message_text",
+        "D005/README.md fixed Korean constants"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.message_text",
+      "meaning": "실제형 소재 문구",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.message_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.valid_from",
+      "meaning": "사용 시작",
+      "rules": [
+        "local-midnight-validity"
+      ],
+      "sources": [
+        "payload.period.start",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.valid_to_exclusive",
+      "meaning": "사용 종료",
+      "rules": [
+        "local-midnight-validity"
+      ],
+      "sources": [
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.media_ref",
+      "meaning": "비텍스트 소재의 파일 근거",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.duration_seconds",
+      "meaning": "영상 길이",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.cta",
+      "meaning": "행동 문구",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.message_tags",
+      "meaning": "추출/수작업 주제",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T16.annotation_evidence",
+      "meaning": "메시지 태그를 판단한 근거",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.event_id",
+      "meaning": "중복 제거 키",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.event_time",
+      "meaning": "발생 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_time"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.event_name",
+      "meaning": "이벤트명",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_name"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.site_ref",
+      "meaning": "사이트/앱",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.site_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.session_ref",
+      "meaning": "수집 가능한 세션 키",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.session_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.user_pseudo_ref",
+      "meaning": "수집 가능한 가명 키",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.page_ref",
+      "meaning": "페이지; 미제공 null",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.page_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.device",
+      "meaning": "관측 기기",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.device"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.traffic_source",
+      "meaning": "관측 유입 출처",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.traffic_medium",
+      "meaning": "관측 유입 매체",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.utm_campaign",
+      "meaning": "전달된 캠페인 파라미터",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.click_id",
+      "meaning": "권한·계측이 있는 클릭 ID",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.consent_state",
+      "meaning": "동의/저장 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.consent_state"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T17.event_parameters",
+      "meaning": "추가 속성",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.event_id",
+      "meaning": "이벤트 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.item_index",
+      "meaning": "상품 배열 내 행 식별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.item_index"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.event_time",
+      "meaning": "발생 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_time"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.event_name",
+      "meaning": "재현할 계측 이벤트",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.event_name"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.variant_ref",
+      "meaning": "원천 상품 매핑",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.variant_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.quantity",
+      "meaning": "상품 수량",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.quantity"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.unit_price",
+      "meaning": "원천에 가격이 있는 경우",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.unit_price"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.session_ref",
+      "meaning": "세션 연결",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.session_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.transaction_ref",
+      "meaning": "purchase/refund에 필수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.transaction_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.campaign_ref",
+      "meaning": "귀속 가능할 때만 캠페인 연결",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T18.measurement_basis",
+      "meaning": "이벤트 구현·중복 처리 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.measurement_basis"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.order_id",
+      "meaning": "주문 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.order_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.line_id",
+      "meaning": "주문 내 상품 행 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.line_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.variant_ref",
+      "meaning": "판매 제품 변형",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.variant_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.seller_ref",
+      "meaning": "자사 판매처",
+      "rules": [
+        "synthetic-country-seller"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.ordered_at",
+      "meaning": "주문 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.ordered_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.customer_pseudo_ref",
+      "meaning": "자사 범위 가명 고객",
+      "rules": [
+        "declared-parallel-cohort-order-customer-membership"
+      ],
+      "sources": [
+        "payload.order_id",
+        "T30.order_refs/customer_set",
+        "D005/generate.mjs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.quantity",
+      "meaning": "판매 수량",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.quantity"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.unit_price",
+      "meaning": "판매 단가",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.unit_price"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.line_discount",
+      "meaning": "상품 행 할인",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.line_discount"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.line_tax",
+      "meaning": "상품 행 세금",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.line_tax"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.line_gross_total",
+      "meaning": "정의된 세금 포함/제외 행 합계",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.line_gross_total"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.financial_status",
+      "meaning": "결제 상태",
+      "rules": [
+        "initially-paid-assumption-and-completed-refunds"
+      ],
+      "sources": [
+        "payload.order_id",
+        "payload.status_available_at",
+        "T19.line_gross_total",
+        "T20.completed.refund_amount"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.fulfilment_status",
+      "meaning": "이행 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.fulfilment_status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.transaction_ref",
+      "meaning": "웹 대사 키",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.transaction_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T19.acquisition_ref",
+      "meaning": "확인 가능한 유입 연결",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.adjustment_id",
+      "meaning": "처리 사건 ID",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.adjustment_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.adjustment_kind",
+      "meaning": "처리 종류",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.adjustment_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.order_ref",
+      "meaning": "원주문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.order_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.order_line_ref",
+      "meaning": "원상품 행",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.order_line_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.requested_at",
+      "meaning": "요청 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.requested_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.processed_at",
+      "meaning": "완료 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.processed_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.quantity",
+      "meaning": "대상 수량",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.quantity"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.refund_amount",
+      "meaning": "금전 환불이면 필수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.refund_amount"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.reason_code",
+      "meaning": "확인된 사유 또는 unknown",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.reason_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.reason_text",
+      "meaning": "원천 설명",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.status",
+      "meaning": "처리 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T20.restocked",
+      "meaning": "재입고 확인 여부",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.restocked"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.variant_ref",
+      "meaning": "품목 변형",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.variant_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.period",
+      "meaning": "원가 적용기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.unit_cost",
+      "meaning": "알려진 단위원가",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.unit_cost"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.margin_definition",
+      "meaning": "매출총이익/기여이익 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.margin_definition"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.fulfilment_unit_cost",
+      "meaning": "출고당 비용",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.payment_fee_ratio",
+      "meaning": "결제 수수료 비율",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.channel_fee_ratio",
+      "meaning": "판매처 수수료 비율",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.promotion_cost",
+      "meaning": "기간 프로모션 비용",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T21.accounting_basis",
+      "meaning": "회계·원가 정의",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.accounting_basis"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.record_kind",
+      "meaning": "서로 다른 단위를 구분",
+      "rules": [
+        "declared-field-copy",
+        "registered-shipment-subtype"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.product_ref",
+      "meaning": "유통 자료 대상",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.product_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.period",
+      "meaning": "유통 집계기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.retail_channel",
+      "meaning": "유통 채널",
+      "rules": [
+        "synthetic-retail-channel"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.distribution_measures",
+      "meaning": "정의된 유통 지표",
+      "rules": [
+        "source-distribution-counts"
+      ],
+      "sources": [
+        "payload.stockists",
+        "payload.target_stockists"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.order_ref",
+      "meaning": "배송 대상 주문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.order_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.promised_at",
+      "meaning": "배송 약속 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.promised_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.shipped_at",
+      "meaning": "출고 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.shipped_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.delivered_at",
+      "meaning": "도착 확인 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.delivered_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.status",
+      "meaning": "배송 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T23.location_ref",
+      "meaning": "유통/배송 위치",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.record_kind",
+      "meaning": "원문 추출/공급자 집계 구분",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.subject_ref",
+      "meaning": "제품/사업체 대상",
+      "rules": [
+        "product-subject-only"
+      ],
+      "sources": [
+        "payload.product_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.aspect_ref",
+      "meaning": "평가 측면 정의",
+      "rules": [
+        "registered-original-aspect"
+      ],
+      "sources": [
+        "payload.aspect"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.sentiment",
+      "meaning": "측면별 분류",
+      "rules": [
+        "declared-field-copy",
+        "matching-source-annotation-only"
+      ],
+      "sources": [
+        "payload.sentiment",
+        "D005-T25-0001",
+        "D005-T25-0003",
+        "D005-T25-0005",
+        "D005-T25-0007",
+        "D005-T25-0009",
+        "D005-T25-0011",
+        "D005-T25-0013",
+        "D005-T25-0015",
+        "D005-T25-0017",
+        "D005-T25-0019",
+        "D005-T25-0021",
+        "D005-T25-0023"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.definition_version",
+      "meaning": "분류/집계 기준",
+      "rules": [
+        "new-classification-version-not-retroactive"
+      ],
+      "sources": [
+        "payload.aspect",
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.review_ref",
+      "meaning": "개별 주석이면 원리뷰",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.review_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.evidence_span",
+      "meaning": "주석이면 원문 위치",
+      "rules": [
+        "Unicode-codepoint-exact-span"
+      ],
+      "sources": [
+        "payload.review_ref",
+        "payload.evidence_span",
+        "parent-review.language"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.period",
+      "meaning": "집계기간",
+      "rules": [
+        "referenced-review-calendar-envelope"
+      ],
+      "sources": [
+        "payload.review_refs",
+        "D003B.T24.written_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.mention_count",
+      "meaning": "원천 언급 수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.mention_count"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.sample_size",
+      "meaning": "비교 표본",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.extractor_version",
+      "meaning": "LLM/수작업 버전",
+      "rules": [
+        "existing-synthetic-generator-not-LLM-or-human"
+      ],
+      "sources": [
+        "D005/generate.mjs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T25.assessment_status",
+      "meaning": "검토 수준",
+      "rules": [
+        "declared-field-copy",
+        "provided-synthetic-annotation-not-human-reviewed"
+      ],
+      "sources": [
+        "payload.assessment_status",
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.ticket_id",
+      "meaning": "문의 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.ticket_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.created_at",
+      "meaning": "문의 생성",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.created_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.resolved_at",
+      "meaning": "처리 완료",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.channel",
+      "meaning": "문의 경로",
+      "rules": [
+        "synthetic-support-channel"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.subject",
+      "meaning": "문의 제목",
+      "rules": [
+        "existing-message-as-ticket-heading"
+      ],
+      "sources": [
+        "payload.message_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.message_text",
+      "meaning": "근거 대화/문의",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.message_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.status",
+      "meaning": "처리 상태",
+      "rules": [
+        "synthetic-open-not-link-status"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.priority",
+      "meaning": "업무 우선순위",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.product_ref",
+      "meaning": "확인 가능한 제품 연결",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.order_ref",
+      "meaning": "확인 가능한 주문 연결",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.order_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.link_status",
+      "meaning": "대상 연결 수준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.link_status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.tags",
+      "meaning": "원천/주석 분류",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.resolution_type",
+      "meaning": "해결 유형",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T26.satisfaction",
+      "meaning": "확인된 만족도",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.content_id",
+      "meaning": "공개 콘텐츠 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.content_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.platform",
+      "meaning": "플랫폼",
+      "rules": [
+        "synthetic-video-platform"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.channel_ref",
+      "meaning": "게시 채널",
+      "rules": [
+        "synthetic-country-channel"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.published_at",
+      "meaning": "게시일",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.published_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.observed_at",
+      "meaning": "통계 수집일",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.observed_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.title",
+      "meaning": "제목",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.title"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.description_text",
+      "meaning": "설명",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.description_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.language",
+      "meaning": "언어",
+      "rules": [
+        "declared-generation-text-language"
+      ],
+      "sources": [
+        "payload.title",
+        "D005/README.md fixed Korean constants"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.view_count",
+      "meaning": "누적 조회",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.view_count"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.like_count",
+      "meaning": "누적 좋아요",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.comment_count",
+      "meaning": "누적 댓글",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T27.product_refs",
+      "meaning": "확인한 제품 언급",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.comment_id",
+      "meaning": "댓글 ID",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.comment_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.content_ref",
+      "meaning": "게시 콘텐츠",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.content_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.parent_comment_ref",
+      "meaning": "답글 부모",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.parent_comment_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.written_at",
+      "meaning": "작성일",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.written_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.body_text",
+      "meaning": "원문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.body_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.language",
+      "meaning": "언어",
+      "rules": [
+        "declared-generation-text-language"
+      ],
+      "sources": [
+        "payload.body_text",
+        "D005/README.md fixed Korean constants"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.like_count",
+      "meaning": "공개 반응",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.mentioned_entity_refs",
+      "meaning": "확인된 대상",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T28.annotation_spans",
+      "meaning": "주제/대상 해석 근거",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.collaboration_id",
+      "meaning": "협업 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.collaboration_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.creator_ref",
+      "meaning": "크리에이터",
+      "rules": [
+        "synthetic-country-creator"
+      ],
+      "sources": [
+        "metadata.country_code"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.product_refs",
+      "meaning": "홍보 제품",
+      "rules": [
+        "synthetic-collaboration-products"
+      ],
+      "sources": [
+        "D003B.T01.product_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.planned_period",
+      "meaning": "약속 게시기간",
+      "rules": [
+        "linked-content-publication-envelope-not-original-contract"
+      ],
+      "sources": [
+        "payload.content_refs",
+        "T27.published_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.message_brief",
+      "meaning": "계약 메시지",
+      "rules": [
+        "synthetic-message-brief"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.content_refs",
+      "meaning": "실제 게시물",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.content_refs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.agreement_status",
+      "meaning": "합의/게시 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.agreement_status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.fee",
+      "meaning": "자사 계약으로 확인한 비용만",
+      "rules": [
+        "declared-collaboration-cost"
+      ],
+      "sources": [
+        "payload.cost"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.tracking_ref",
+      "meaning": "유효한 추적 링크",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T29.rights_text",
+      "meaning": "사용 권리 범위",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.record_kind",
+      "meaning": "소비재 코호트/B2B 기회 구분",
+      "rules": [
+        "declared-field-copy",
+        "registered-B2B-subtype"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.cohort_ref",
+      "meaning": "집단 정의",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.cohort_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.period",
+      "meaning": "측정 기간",
+      "rules": [
+        "approved-synthetic-cohort-window"
+      ],
+      "sources": [
+        "payload.order_refs",
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.sample_size",
+      "meaning": "집단 인원",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.acquisition_channel",
+      "meaning": "확인한 획득 출처",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.net_revenue",
+      "meaning": "기간 순매출",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.net_revenue"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.repeat_purchase_rate",
+      "meaning": "동일 집단 반복구매 비율",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.repeat_purchase_rate"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.deal_id",
+      "meaning": "B2B 기회 ID",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.opportunity_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.stage",
+      "meaning": "영업 단계",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.stage"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.deal_amount",
+      "meaning": "기회 금액",
+      "rules": [
+        "synthetic-B2B-amount-not-B2C"
+      ],
+      "sources": [
+        "metadata.country_code",
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T30.closed_at",
+      "meaning": "확인한 종료",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.crm_campaign_id",
+      "meaning": "발송 캠페인",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.crm_campaign_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.segment_ref",
+      "meaning": "대상 집단",
+      "rules": [
+        "explicit-CRM-target-cohort; no clicker-equivalence-assumed"
+      ],
+      "sources": [
+        "payload.cohort_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.sent_at",
+      "meaning": "발송 시각",
+      "rules": [
+        "synthetic-send-time"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.period",
+      "meaning": "반응 관측기간",
+      "rules": [
+        "corrected-observation-window-before-availability"
+      ],
+      "sources": [
+        "delegation",
+        "metadata.available_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.emails_sent",
+      "meaning": "발송 건수",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.emails_sent"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.bounces",
+      "meaning": "반송",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.bounces"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.unique_opens",
+      "meaning": "관측 고유 오픈",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.unique_clickers",
+      "meaning": "고유 클릭 수신자",
+      "rules": [
+        "distinct-recipients-within-send-synthetic-only"
+      ],
+      "sources": [
+        "payload.unique_clicks",
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.unsubscribes",
+      "meaning": "해지 수신자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.unsubscribes"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.linked_orders",
+      "meaning": "확인된 주문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.linked_orders"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.message_ref",
+      "meaning": "발송 문구",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T31.open_measurement_basis",
+      "meaning": "프록시/계측 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.open_measurement_basis"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.study_id",
+      "meaning": "조사 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.study_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.subject_ref",
+      "meaning": "브랜드/제품",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.subject_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.period",
+      "meaning": "조사기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.question_text",
+      "meaning": "질문 원문",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.question_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.measure_definition",
+      "meaning": "인지·회상·고려 등 정의",
+      "rules": [
+        "source-question-response-definition"
+      ],
+      "sources": [
+        "payload.question_text",
+        "payload.response_scale"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.cohort_ref",
+      "meaning": "조사 집단",
+      "rules": [
+        "study-subject-period"
+      ],
+      "sources": [
+        "payload.study_id",
+        "payload.subject_ref",
+        "payload.period"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.sample_size",
+      "meaning": "응답 표본",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.response_scale",
+      "meaning": "응답 척도",
+      "rules": [
+        "ordered-response-labels-to-description"
+      ],
+      "sources": [
+        "payload.response_scale"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.measures",
+      "meaning": "응답/집계 지표",
+      "rules": [
+        "survey-count-and-denominator"
+      ],
+      "sources": [
+        "payload.positive_responses",
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.sampling_method",
+      "meaning": "모집·가중 기준",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sampling_method"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.experiment_ref",
+      "meaning": "리프트 비교 실험",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T32.uncertainty_text",
+      "meaning": "자료가 제공한 불확실성",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.statistics_table_id",
+      "meaning": "통계표 식별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.statistics_table_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.item_code",
+      "meaning": "원천 항목 분류",
+      "rules": [
+        "synthetic-statistical-series"
+      ],
+      "sources": [
+        "payload.statistics_table_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.region_ref",
+      "meaning": "공표 지역",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.region_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.period",
+      "meaning": "공표기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.value",
+      "meaning": "통계 값",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.value"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.unit",
+      "meaning": "원천 단위",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.unit"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.definition",
+      "meaning": "통계 항목 의미",
+      "rules": [
+        "synthetic-index-definition"
+      ],
+      "sources": [
+        "payload.statistics_table_id",
+        "payload.region_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.published_at",
+      "meaning": "발표일",
+      "rules": [
+        "instant-to-local-publication-date; availability kept separately"
+      ],
+      "sources": [
+        "payload.published_at",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.revised_at",
+      "meaning": "개정일",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.base_year",
+      "meaning": "기준년",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.seasonal_adjustment",
+      "meaning": "조정 여부",
+      "rules": [
+        "no-seasonal-adjustment-in-source"
+      ],
+      "sources": [
+        "source-schema"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T33.sampling_text",
+      "meaning": "표본·추정 방식",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.record_kind",
+      "meaning": "기상/일정 구분",
+      "rules": [
+        "declared-field-copy",
+        "registered-calendar-subtype"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.region_ref",
+      "meaning": "관측/적용 지역",
+      "rules": [
+        "sample-country-region; not whole-country coverage"
+      ],
+      "sources": [
+        "metadata.country_code",
+        "metadata.scope_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.period",
+      "meaning": "시간 범위",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.station_ref",
+      "meaning": "기상 관측소",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.station_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.measures",
+      "meaning": "기온·강수 등 측정",
+      "rules": [
+        "source-weather-units"
+      ],
+      "sources": [
+        "payload.temperature",
+        "payload.precipitation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.event_name",
+      "meaning": "휴일/시즌 이름",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.title"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.calendar_kind",
+      "meaning": "일정 종류",
+      "rules": [
+        "operational-schedule-not-public-holiday"
+      ],
+      "sources": [
+        "payload.is_public_holiday",
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T34.observation_quality",
+      "meaning": "원천 기상 품질",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.record_kind",
+      "meaning": "집계/사건 구분",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.page_ref",
+      "meaning": "URL/origin",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.page_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.device",
+      "meaning": "기기",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.device"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.period",
+      "meaning": "성능 집계기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.measures",
+      "meaning": "성능 분포/백분위",
+      "rules": [
+        "provided-metric-values; definition version still required",
+        "LCP-p75-ms-28-day-definition"
+      ],
+      "sources": [
+        "payload.measures"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.incident_start",
+      "meaning": "장애 시작",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.incident_start"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.incident_end",
+      "meaning": "복구 시각",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.incident_end"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.status",
+      "meaning": "장애 상태",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.release_ref",
+      "meaning": "확인된 배포 변경",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T37.error_text",
+      "meaning": "확인된 오류",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.error_text"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.experiment_id",
+      "meaning": "실험 식별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.experiment_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.arm_id",
+      "meaning": "대조/처리 집단",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.arm_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.hypothesis_text",
+      "meaning": "검증할 주장",
+      "rules": [
+        "testable-hypothesis-not-observed-result"
+      ],
+      "sources": [
+        "payload.population"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.period",
+      "meaning": "실험기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.assignment_method",
+      "meaning": "분할/무작위 방법",
+      "rules": [
+        "synthetic-experiment-assignment"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.assignment_unit",
+      "meaning": "고객/지역/캠페인 등 단위",
+      "rules": [
+        "synthetic-assignment-unit"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.treatment_description",
+      "meaning": "집단 조건",
+      "rules": [
+        "synthetic-treatment"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.sample_size",
+      "meaning": "표본",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.sample_size"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.status",
+      "meaning": "계획/진행/종료",
+      "rules": [
+        "period-ended-before-availability"
+      ],
+      "sources": [
+        "payload.period.end",
+        "metadata.available_at"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.outcome_measures",
+      "meaning": "실제형 측정 결과",
+      "rules": [
+        "existing-experiment-conversions; not causal-lift"
+      ],
+      "sources": [
+        "payload.conversions",
+        "completion-definitions.json:T38.conversions"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.uncertainty_text",
+      "meaning": "추정 범위·방법",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T38.contamination_text",
+      "meaning": "오염·중단 상태",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.record_kind",
+      "meaning": "모형/후보 구분",
+      "rules": [
+        "registered-model-subtype"
+      ],
+      "sources": [
+        "payload.record_kind"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.model_ref",
+      "meaning": "사용 모형 식별",
+      "rules": [
+        "model-own-identity",
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.model_id",
+        "payload.model_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.model_version",
+      "meaning": "모형 버전",
+      "rules": [
+        "new-model-definition-version"
+      ],
+      "sources": [
+        "payload.model_id",
+        "payload.model_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.objective",
+      "meaning": "최적화/비교 목표",
+      "rules": [
+        "synthetic-model-objective"
+      ],
+      "sources": [
+        "payload.formula",
+        "referenced-model.formula"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.assumptions",
+      "meaning": "계산 가정",
+      "rules": [
+        "verbatim-declared-model-assumptions"
+      ],
+      "sources": [
+        "referenced-model.trained",
+        "referenced-model.formula",
+        "referenced-model.unit_budget"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.validity_scope",
+      "meaning": "모형 적용 대상·범위",
+      "rules": [
+        "declared-independent-sample-model-scope"
+      ],
+      "sources": [
+        "metadata.scope_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.training_period",
+      "meaning": "추정 모형의 자료 범위",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.formula",
+      "meaning": "가정 모의 함수 또는 검증 모형 설명",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.formula"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.parameters",
+      "meaning": "파라미터 명세",
+      "rules": [
+        "lossless-declared-model-parameter-encoding"
+      ],
+      "sources": [
+        "payload.unit_budget",
+        "payload.bounds"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.scenario_id_ref",
+      "meaning": "예산안 식별",
+      "rules": [
+        "existing-candidate-record-identity"
+      ],
+      "sources": [
+        "metadata.record_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.period",
+      "meaning": "집행 제안기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.total_budget",
+      "meaning": "고정/상한 총액",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.total_budget"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.allocations",
+      "meaning": "캠페인별 현행/후보 배분",
+      "rules": [
+        "resolve-channel-and-model-bounds"
+      ],
+      "sources": [
+        "payload.allocations",
+        "existing-campaign.channel",
+        "referenced-model.bounds"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.expected_measures",
+      "meaning": "모의 성과",
+      "rules": [
+        "existing-prediction-not-outcome"
+      ],
+      "sources": [
+        "payload.predicted_conversions"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T39.validation_evidence_refs",
+      "meaning": "실험/검증 근거",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.policy_id",
+      "meaning": "업무/정책 식별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.policy_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.version",
+      "meaning": "유효 버전",
+      "rules": [
+        "synthetic-policy-version"
+      ],
+      "sources": [
+        "payload.policy_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.period",
+      "meaning": "적용기간",
+      "rules": [
+        "declared-half-open-period; do not infer aggregation cadence"
+      ],
+      "sources": [
+        "payload.period.start",
+        "payload.period.end",
+        "metadata.reporting_timezone"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.objective",
+      "meaning": "사업/캠페인 목표",
+      "rules": [
+        "synthetic-policy-objective"
+      ],
+      "sources": [
+        "delegation"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.kpi_definition_refs",
+      "meaning": "판단 KPI",
+      "rules": [
+        "scalar-reference-to-array"
+      ],
+      "sources": [
+        "payload.kpi_definition_ref"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.product_refs",
+      "meaning": "대상 제품",
+      "rules": [
+        "synthetic-policy-product"
+      ],
+      "sources": [
+        "D003B.T01.product_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.budget_limit",
+      "meaning": "허용 총액",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.budget"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.allowed_channels",
+      "meaning": "사용 채널",
+      "rules": [
+        "declared-synthetic-model-channels"
+      ],
+      "sources": [
+        "T39.bounds"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.approval_role",
+      "meaning": "승인 역할",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "payload.approval_role"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.change_constraints",
+      "meaning": "변경 제한",
+      "rules": [
+        "explicit-mock-policy-constraints"
+      ],
+      "sources": [
+        "payload.budget",
+        "payload.status",
+        "T39.bounds"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.brand_guidelines",
+      "meaning": "허용/금지 표현",
+      "rules": [],
+      "sources": [],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "optional_not_supplied",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "T40.policy_status",
+      "meaning": "실제/가상 승인 의미",
+      "rules": [
+        "synthetic-approval-only"
+      ],
+      "sources": [
+        "payload.status"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.record_id",
+      "meaning": "레코드 전역 식별자. 소스·유형·범위를 포함해 중복 방지",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.record_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.dataset_type",
+      "meaning": "T01–T40 유형 식별자",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.dataset_type"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.scope_id",
+      "meaning": "국가·카테고리·비교 집합을 정의하는 범위 참조",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.scope_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.scenario_id",
+      "meaning": "서로 다른 가상 상황을 섞지 않는 격리 키",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.scenario_id"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.is_synthetic",
+      "meaning": "가상 자료 여부. 모의 값과 실제 출처 문서를 구별",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.is_synthetic"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.value_origin",
+      "meaning": "값이 만들어진 방식. is_synthetic과 별개",
+      "rules": [
+        "synthetic-generation-origin; original retained in source ledger"
+      ],
+      "sources": [
+        "metadata.value_origin",
+        "D005/generate.mjs"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.provenance",
+      "meaning": "실제형 원천 시스템·파일 위치·수집 방식·문서 근거",
+      "rules": [
+        "existing-approved-artifact-provenance"
+      ],
+      "sources": [
+        "metadata.source_file",
+        "metadata.record_id",
+        "D005/manifest.json",
+        "D005/README.md"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.quality",
+      "meaning": "결측·억제·수집 범위·부분자료 표시",
+      "rules": [
+        "provided-synthetic-sample; not market-complete"
+      ],
+      "sources": [
+        "metadata.quality",
+        "D005/README.md"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.temporal",
+      "meaning": "시간 의미·원천 간격·달력·표본 범위·자료 확보 시점",
+      "rules": [
+        "D005-independent-detail-sample; original artifact revision zero unless explicitly revised"
+      ],
+      "sources": [
+        "metadata.available_at",
+        "metadata.reporting_timezone",
+        "payload.period",
+        "payload.revision",
+        "D005/README.md",
+        "temporal-design.md"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    },
+    {
+      "key": "common.related_record_ids",
+      "meaning": "근거/변경/승인 자료 추가 참조",
+      "rules": [
+        "declared-field-copy"
+      ],
+      "sources": [
+        "metadata.parent_record_ids"
+      ],
+      "status": "resolved",
+      "human_confirmed": false,
+      "decision": "mapped_or_explicitly_completed",
+      "null_policy": "원래 값 null·미제공을 보존하며 선택 필드는 생성하지 않음",
+      "reference_policy": "원천/부모 식별자 또는 별도 정의 등록부에 근거한 명시 매핑",
+      "time_policy": "사건·보고기간·자료 확보·보완 작성시각을 구분; 새 정의는 과거 조회에 소급 노출하지 않음"
+    }
+  ]
+}

@@ -1,0 +1,643 @@
+{
+  "version": "CANONICAL-SYNTHETIC-1",
+  "created_at": "2026-10-16T13:58:04.510Z",
+  "definitions": [
+    {
+      "id": "CANONICAL-SYNTHETIC-1",
+      "kind": "DefinitionVersion",
+      "definition": "New mapping/definition registry, not a historical provider version",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "P1A",
+      "kind": "Product",
+      "definition": "Existing D003B product identity",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "P1B",
+      "kind": "Product",
+      "definition": "Existing D003B product identity",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T04.positive_rate",
+      "kind": "MetricDefinition",
+      "definition": "T04.positive_rate; ratio; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T04.positive_responses",
+      "kind": "MetricDefinition",
+      "definition": "T04.positive_responses; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T23.stockists",
+      "kind": "MetricDefinition",
+      "definition": "T23.stockists; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T23.target_stockists",
+      "kind": "MetricDefinition",
+      "definition": "T23.target_stockists; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.positive_rate",
+      "kind": "MetricDefinition",
+      "definition": "T32.positive_rate; ratio; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.positive_responses",
+      "kind": "MetricDefinition",
+      "definition": "T32.positive_responses; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T32.sample_size",
+      "kind": "MetricDefinition",
+      "definition": "T32.sample_size; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T34.precipitation",
+      "kind": "MetricDefinition",
+      "definition": "T34.precipitation; mm; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T34.temperature",
+      "kind": "MetricDefinition",
+      "definition": "T34.temperature; ℃; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T38.conversions",
+      "kind": "MetricDefinition",
+      "definition": "T38.conversions; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "T39.predicted_conversions",
+      "kind": "MetricDefinition",
+      "definition": "T39.predicted_conversions; count; source value preserved, no population extrapolation; comparisons require matching question, scope, window and denominator",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "aspect/%EA%B1%B0%ED%92%88",
+      "kind": "Aspect",
+      "definition": "거품",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "aspect/%EA%B1%B4%EC%A1%B0%EA%B0%90",
+      "kind": "Aspect",
+      "definition": "건조감",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "aspect/%EC%9A%A9%EA%B8%B0",
+      "kind": "Aspect",
+      "definition": "용기",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "content-channel/JP",
+      "kind": "Channel",
+      "definition": "가상 콘텐츠 채널",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "content-channel/KR",
+      "kind": "Channel",
+      "definition": "가상 콘텐츠 채널",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "content-channel/US",
+      "kind": "Channel",
+      "definition": "가상 콘텐츠 채널",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "creator/JP",
+      "kind": "Creator",
+      "definition": "가상 협업자",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "creator/KR",
+      "kind": "Creator",
+      "definition": "가상 협업자",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "creator/US",
+      "kind": "Creator",
+      "definition": "가상 협업자",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "geo/JP",
+      "kind": "GeoTarget",
+      "definition": "가상 국가별 검색 타깃",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "geo/KR",
+      "kind": "GeoTarget",
+      "definition": "가상 국가별 검색 타깃",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "geo/US",
+      "kind": "GeoTarget",
+      "definition": "가상 국가별 검색 타깃",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-JP-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-KR-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B1/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B1/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B2/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B2/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B3/%7B%22start%22%3A%222025-07-01%22%2C%22end%22%3A%222025-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "panel/D005-US-PANEL/B3/%7B%22start%22%3A%222026-07-01%22%2C%22end%22%3A%222026-10-01%22%7D",
+      "kind": "Cohort",
+      "definition": "Panel, subject and period identify this sample only",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0022/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0022/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0023/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0023/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0074/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0074/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0075/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0075/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0126/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0126/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0127/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0127/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0178/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0178/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0179/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0179/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0230/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0230/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0231/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0231/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0282/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0282/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0283/desktop",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "report/D003B-T13-0283/mobile",
+      "kind": "ReportDefinition",
+      "definition": "D005 parent attribution retained; synthetic device partition",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "seller/D005/JP",
+      "kind": "Seller",
+      "definition": "가상 자사 판매처; 실제 판매처 아님",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "seller/D005/KR",
+      "kind": "Seller",
+      "definition": "가상 자사 판매처; 실제 판매처 아님",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "seller/D005/US",
+      "kind": "Seller",
+      "definition": "가상 자사 판매처; 실제 판매처 아님",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-JP-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-KR-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY0/B1/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY0/B2/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY0/B3/%7B%22start%22%3A%222026-08-03%22%2C%22end%22%3A%222026-08-08%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY1/B1/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY1/B2/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "survey/D005-US-SURVEY1/B3/%7B%22start%22%3A%222026-08-17%22%2C%22end%22%3A%222026-08-22%22%7D",
+      "kind": "Cohort",
+      "definition": "Convenience survey sample",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "term/3a2783605efb72674391e9603b496b40d6f52969ec4006f0bea1c0d6601ed2c4",
+      "kind": "SearchTerm",
+      "definition": "세정",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    },
+    {
+      "id": "term/8a1a86408c2624283bf78f9a16728e8e8017b5017b0e9c521e1b649c0b102098",
+      "kind": "SearchTerm",
+      "definition": "샴푸",
+      "version": "CANONICAL-SYNTHETIC-1",
+      "is_synthetic": true
+    }
+  ]
+}

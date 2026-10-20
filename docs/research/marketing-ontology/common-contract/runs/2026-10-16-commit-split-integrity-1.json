@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "scope": "local commit split and reproducible source bytes; overall ontology system remains incomplete",
+  "validated_git_head": "807c45d6ae971a47a61cfa4a7df03b6c82230cc3",
+  "original_head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+  "commits": [
+    {
+      "sha": "0f5ffe0b315e219733efa053ec475737dd4746b7",
+      "parent": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+      "title": "chore: 검증 입력의 바이트 보존과 Python 캐시 제외 규칙 추가",
+      "files": 2
+    },
+    {
+      "sha": "6adcdcf95d0d86b1dc88072d7053fcc0a95a2b80",
+      "parent": "0f5ffe0b315e219733efa053ec475737dd4746b7",
+      "title": "docs: 가상 데이터 승인과 공통 규격 유지 범위 확정",
+      "files": 5
+    },
+    {
+      "sha": "12398fe38e2e63c1947c5c6a0b62186c0c57c830",
+      "parent": "6adcdcf95d0d86b1dc88072d7053fcc0a95a2b80",
+      "title": "feat: D004 원천의 독립 검산과 RDF 반복 검증 구현",
+      "files": 23
+    },
+    {
+      "sha": "2819d0f13083fae35f34212dc166bec377000e3b",
+      "parent": "12398fe38e2e63c1947c5c6a0b62186c0c57c830",
+      "title": "feat: D005 30종 가상 원천과 변환 검증 배치 추가",
+      "files": 56
+    },
+    {
+      "sha": "b33dc5fbc20c80797484836853b979eb8d140492",
+      "parent": "2819d0f13083fae35f34212dc166bec377000e3b",
+      "title": "feat: 승인된 D006 질문 보완 자료와 생성 검증 추가",
+      "files": 20
+    },
+    {
+      "sha": "0f7560d0ff61335f69c9e3d3e94ff5925046a8a3",
+      "parent": "b33dc5fbc20c80797484836853b979eb8d140492",
+      "title": "feat: 52시험의 조회 정책과 독립 검산 실행 구현",
+      "files": 22
+    },
+    {
+      "sha": "b83fab3fdee45bb5d36c7bb64a03c794bcd532cb",
+      "parent": "0f7560d0ff61335f69c9e3d3e94ff5925046a8a3",
+      "title": "feat: 공통 사전 변환과 528행 적합성 검사 구현",
+      "files": 16
+    },
+    {
+      "sha": "e11f4fdec8524d6550254528964e2c1e43e78fe6",
+      "parent": "b83fab3fdee45bb5d36c7bb64a03c794bcd532cb",
+      "title": "feat: OOPS 로컬 설치와 오프라인 모델 검사 구현",
+      "files": 20
+    },
+    {
+      "sha": "de18368a18f2260d144331cd40f7a108cd607e14",
+      "parent": "e11f4fdec8524d6550254528964e2c1e43e78fe6",
+      "title": "feat: 사전 모델 질문 검증을 통합하고 필수 게이트 판정",
+      "files": 56
+    },
+    {
+      "sha": "807c45d6ae971a47a61cfa4a7df03b6c82230cc3",
+      "parent": "de18368a18f2260d144331cd40f7a108cd607e14",
+      "title": "fix: 검증 기준 파일의 원본 줄바꿈 바이트 보존",
+      "files": 10
+    }
+  ],
+  "protected_files": 60,
+  "protected_disk_and_git_bytes_identical": true,
+  "byte_preservation_only_files": 10,
+  "byte_preservation_semantic_diff": "none, confirmed with git diff --ignore-space-at-eol",
+  "main_remote_tracking_and_tags_preserved": true,
+  "other_worktree_ref_changes_observed": {
+    "refs/heads/feature/workbench-evolution": {
+      "before": "6c060f9b0cab38d9010d947f70c5b8859c7b7efd",
+      "after": "4d286c505e8ac659c1d839b257631ef7280f31d6"
+    }
+  },
+  "refs_modified_by_this_work": [
+    "refs/heads/dev"
+  ],
+  "D005": {
+    "report": "2026-10-16-post-commit-d005-1.json",
+    "sha256": "af3432fcb1d8949f381cb83c014fc5a5f39bd83473a52384d6a6dfe1da9ddad7",
+    "gates": 8,
+    "error_cases": 60,
+    "status": "pass",
+    "executed_at_new_head": "de18368a18f2260d144331cd40f7a108cd607e14",
+    "generation_head_retained": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90"
+  },
+  "protocol_checks": 24,
+  "python_ast": "pass",
+  "node_runner_syntax": "pass",
+  "push_performed": false,
+  "main_merge_performed": false,
+  "new_synthetic_values": 0
+}

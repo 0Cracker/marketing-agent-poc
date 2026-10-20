@@ -1,0 +1,1421 @@
+{
+  "cycle": "D004-memory-v1",
+  "started_at": "2026-10-15T11:53:44.072181+00:00",
+  "git_head": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+  "python": "3.12.14",
+  "input_sha256": {
+    "docs/research/marketing-ontology/common-contract/ontology.ttl": "1ca4ad16fa2323d48a79d25773fa2678770bcffe4b7137d8f6aa8e77ffae1e81",
+    "docs/research/marketing-ontology/common-contract/shapes.ttl": "e928a57a775122dfabe6387330327c21d7ac4cbfabcbbeb3b0863d9b8230408a",
+    "docs/research/marketing-ontology/common-contract/field-semantics.json": "69099c6570e5ba370097db7e6fb2ad85e17c3373bae7ca8a7b6ddade21881b37",
+    "docs/research/marketing-ontology/common-contract/d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+    "docs/research/marketing-ontology/common-contract/batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+    "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+    "docs/research/marketing-ontology/common-contract/run-validation-cycle.py": "4b18a79256996e2363e48108196171239ebd1be38ef1a2ab632fdd074b29558b",
+    "docs/research/marketing-ontology/common-contract/validate-d003b.py": "37b37110ae130e3f3548d2c023ff0cd1f6956c2685601d58370dfd2213fd06ad",
+    "docs/research/marketing-ontology/common-contract/calculate-d003b.py": "0af368a9e689a4b38c01a7e10c402271432d6eeebce089df594e749ba6c305be",
+    "docs/research/marketing-ontology/common-contract/check-spec.py": "675d14dfc32dfa9a09b2b13da6c8670d87cc954132565f256a5ca4bbdf3ec2ec",
+    "docs/research/marketing-ontology/batches/D003B/manifest.json": "0360899ebeb925243db603438738ea6bfb4ae7ac017176e09487d4f216adfa28",
+    "docs/research/marketing-ontology/batches/D003B/source/H01.jsonl": "c27f0c3c5d865e48c0e0a04eef22f03dccb6b4af1773a75ce1325e74ab6a5c82",
+    "docs/research/marketing-ontology/batches/D003B/source/T01.jsonl": "24ce6d4eacf686918d7d5d34b47f7323c7fcd7bf454e7019709c20c0648b566a",
+    "docs/research/marketing-ontology/batches/D003B/source/T03.jsonl": "77c24cdac75c93560a27c4fcf3326a3b93c43397c552e801210ef05efdf6a8c2",
+    "docs/research/marketing-ontology/batches/D003B/source/T08.jsonl": "295a2c375c9e26c3d18b95f856d35f8f05d5c05b62f83491a6334049fa3bbc5a",
+    "docs/research/marketing-ontology/batches/D003B/source/T09.jsonl": "23f2b04af9510dc4b7818e254a2ebb0a6cdbabb9ff507ac0188885d47b287907",
+    "docs/research/marketing-ontology/batches/D003B/source/T12.jsonl": "061d355833c4923fb54ee4df7cbcc0cb077e0cabc68378ae7d7fec8436a97ce6",
+    "docs/research/marketing-ontology/batches/D003B/source/T13.jsonl": "0f5a1ef10b60cb9a6e75a05a32c1de148cfbbb9a241d14e2a9a293892fed6209",
+    "docs/research/marketing-ontology/batches/D003B/source/T22.jsonl": "59effc75ce27df6e3cdadbd98ed3c7dd536cc4c9b0185f7c68a09559c35ebe9b",
+    "docs/research/marketing-ontology/batches/D003B/source/T24.jsonl": "6747b2f859e1a261c0ae3703175bb474d6d3df2bbf783dd0de246b050636a888",
+    "docs/research/marketing-ontology/batches/D003B/source/T35.jsonl": "a2b7019d32ae867f6b0f6fd7fda9942ae019875d33c1a14c0a426cbbb4286ddd",
+    "docs/research/marketing-ontology/batches/D003B/source/T36.jsonl": "28e25c0015fb1c25f3669faa9582f7bbe60520e1518caa312dbc445894a3db05"
+  },
+  "checks": [
+    {
+      "name": "spec",
+      "status": "pass",
+      "exit_code": 0,
+      "result": {
+        "scope": "specification_only",
+        "started_at": "2026-10-15T20:51:29.488412+09:00",
+        "git_commit": "e52cef6bfe54eb6f2a91a5378edda0fb9b686b90",
+        "git_dirty_status": " M AGENTS.md\n M docs/iterations/README.md\n M docs/iterations/v0.2.0.md\n M docs/research/marketing-ontology/common-contract/README.md\n M docs/research/marketing-ontology/common-contract/check-spec.py\n M docs/research/marketing-ontology/common-contract/evaluation.md\n M docs/research/marketing-ontology/common-contract/ontology.ttl\n M docs/research/marketing-ontology/common-contract/schema-crosswalk.md\n M docs/research/marketing-ontology/common-contract/shapes.ttl\n M docs/research/marketing-ontology/common-contract/validation-proposal.md\n M docs/research/marketing-ontology/data-proposal.md\n M docs/research/marketing-ontology/work-log.md\n?? docs/research/marketing-ontology/common-contract/build-field-semantics.py\n?? docs/research/marketing-ontology/common-contract/calculate-d003b.py\n?? docs/research/marketing-ontology/common-contract/field-semantics.json\n?? docs/research/marketing-ontology/common-contract/run-spec-cycle.py\n?? docs/research/marketing-ontology/common-contract/run-validation-cycle.py\n?? docs/research/marketing-ontology/common-contract/runs/\n?? docs/research/marketing-ontology/common-contract/validate-d003b.py\n?? docs/research/marketing-ontology/common-contract/verification-cycle.md\n",
+        "python": "3.12.14",
+        "input_sha256": {
+          "docs/research/marketing-ontology/common-contract/batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+          "docs/research/marketing-ontology/common-contract/build-field-semantics.py": "76b8597d7030408b87059a3fd5b8c51567e981c419c176e8bfed63c492f11e84",
+          "docs/research/marketing-ontology/common-contract/calculate-d003b.py": "0af368a9e689a4b38c01a7e10c402271432d6eeebce089df594e749ba6c305be",
+          "docs/research/marketing-ontology/common-contract/check-json-schemas.mjs": "291195bd3d675c02a3614300a91d7d7567a70c35554d92fdecdfc8b661087efc",
+          "docs/research/marketing-ontology/common-contract/check-preservation.mjs": "f9e795b54329cc6521b5c85c997066347b0ca328ddfbdd3d8fa2f870b9b10c80",
+          "docs/research/marketing-ontology/common-contract/check-spec.py": "675d14dfc32dfa9a09b2b13da6c8670d87cc954132565f256a5ca4bbdf3ec2ec",
+          "docs/research/marketing-ontology/common-contract/d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+          "docs/research/marketing-ontology/common-contract/evaluation.md": "2cd6107e60a1d3ca2516cbbe7ee028e6f19bbecafa07996cf1a7b1d2475f7bf3",
+          "docs/research/marketing-ontology/common-contract/field-semantics.json": "69099c6570e5ba370097db7e6fb2ad85e17c3373bae7ca8a7b6ddade21881b37",
+          "docs/research/marketing-ontology/common-contract/mapping-notes.md": "945bc84329d7fd1c480d08bdb3e61bee188dcb62bb9594c458f5c422820ad04b",
+          "docs/research/marketing-ontology/common-contract/ontology.ttl": "1ca4ad16fa2323d48a79d25773fa2678770bcffe4b7137d8f6aa8e77ffae1e81",
+          "docs/research/marketing-ontology/common-contract/preservation-baseline.json": "9baaa46d99ec1890dc07da4a3e8c2523c0ba54d77bb47c639113c681bb015708",
+          "docs/research/marketing-ontology/common-contract/README.md": "66e9447ee6b5082b015df5b15152ca04da3d61eacb2062c631146a9d4eaea434",
+          "docs/research/marketing-ontology/common-contract/run-spec-cycle.py": "f4e4352cabd3c1e9913c149eb093107bd95da6f1d59472d329b25fa2d6ecec08",
+          "docs/research/marketing-ontology/common-contract/run-validation-cycle.py": "4b18a79256996e2363e48108196171239ebd1be38ef1a2ab632fdd074b29558b",
+          "docs/research/marketing-ontology/common-contract/schema-crosswalk.md": "0b3f65476f0edc94dfd90d1e14b4f3172a2ac9cc640206e08403c07406f4f575",
+          "docs/research/marketing-ontology/common-contract/semantics.md": "33713b34fc318e4a2c6bc62736ba7993b3acafa2f57de009d9d38d586ae3f1da",
+          "docs/research/marketing-ontology/common-contract/shapes.ttl": "e928a57a775122dfabe6387330327c21d7ac4cbfabcbbeb3b0863d9b8230408a",
+          "docs/research/marketing-ontology/common-contract/source-contracts.json": "1ba0a64a8e87babdb23655fae9fa069a783c7c064722d73709f30efea16501e7",
+          "docs/research/marketing-ontology/common-contract/tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+          "docs/research/marketing-ontology/common-contract/validate-d003b.py": "37b37110ae130e3f3548d2c023ff0cd1f6956c2685601d58370dfd2213fd06ad",
+          "docs/research/marketing-ontology/common-contract/validation-proposal.md": "70b7e7c79dbc333b70ab6d67d08b87c7be8068ce6ebf14dd306ee360b16ff047",
+          "docs/research/marketing-ontology/common-contract/validation.md": "3c02012b47e8d50f7e69c613153d1c47a30b0f2429b665898935a66f6a920721",
+          "docs/research/marketing-ontology/common-contract/verification-cycle.md": "49b17bcfd8b9c10f3e5a9cfbf939b71d99f1b9e2d9399b5bf5169d4839d29697",
+          "docs/research/marketing-ontology/schemas/check-catalog.mjs": "4f7240a75b485dbf5c6361b511eb5950111ff219c81a0a04754d1529c6d490bc",
+          "docs/research/marketing-ontology/schemas/marketing-records.schema.json": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+          "docs/research/marketing-ontology/schemas/temporal-policy.mjs": "10fdce607a35b81a30b0271ff7d76d82eb164e9b2c16e751df2315de59a45be6",
+          "docs/research/marketing-ontology/batches/D003B/batch.schema.json": "c50c2d53b29e05e955bc24d529753378de8fb8a243355c214a4beecb6d61470c",
+          "docs/research/marketing-ontology/data-source-register.md": "6a99cb2f0195a4e0459813115674c8c28ac8bd02d3116a04ebd0ddfaf4f5129d",
+          "docs/research/marketing-ontology/field-dictionary.md": "03cbae32ea1dd600300da6a92d39c9312b2dfc4b73cdc8a9f479121934d6859f"
+        },
+        "specification_status": "pass",
+        "checks": [
+          {
+            "check": "spec",
+            "command": [
+              "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+              "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\check-spec.py",
+              "--tools",
+              "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools"
+            ],
+            "exit_code": 0,
+            "status": "pass",
+            "stderr": "",
+            "result": {
+              "contract_version": "MC-1.0.0",
+              "date": "2026-10-14 Asia/Seoul",
+              "environment": {
+                "python": "3.12.14",
+                "rdflib": "7.6.0",
+                "pyshacl": "0.40.1",
+                "owlrl": "7.6.2"
+              },
+              "checks": [
+                {
+                  "name": "40-type field semantics coverage and declared concept references",
+                  "status": "pass",
+                  "detail": {
+                    "type_fields": 457,
+                    "common_fields": 10,
+                    "H01_specific_fields": 7,
+                    "design_entries": 474,
+                    "source_validated_fields": 0
+                  }
+                },
+                {
+                  "name": "D003B 11-type schema/field coverage and metric references",
+                  "status": "pass",
+                  "detail": {
+                    "types": 11,
+                    "mapped_field_occurrences": 163,
+                    "metrics": 18
+                  }
+                },
+                {
+                  "name": "13 questions × 4 categories; 30-question status; policy traceability",
+                  "status": "pass",
+                  "detail": {
+                    "core_questions": 13,
+                    "test_specs": 52,
+                    "data_tests_executed": 0,
+                    "all_questions": 30
+                  }
+                },
+                {
+                  "name": "Proposal IDs/counts/observation arithmetic and approval boundary",
+                  "status": "pass",
+                  "detail": {
+                    "proposed_input_rows": 214,
+                    "proposed_observations": 547,
+                    "actual_transformed_rows": 0,
+                    "ID_existence": "not run; approval required"
+                  }
+                },
+                {
+                  "name": "Search/social/own-sales contract completeness",
+                  "status": "pass",
+                  "detail": "3 contracts; pending source semantics explicit; no API connector executed"
+                },
+                {
+                  "name": "RDFLib Turtle parsing",
+                  "status": "pass",
+                  "detail": {
+                    "ontology_triples": 299,
+                    "shape_triples": 609
+                  }
+                },
+                {
+                  "name": "RDF declaration/shape/mapping references",
+                  "status": "pass",
+                  "detail": {
+                    "owl_classes": 25,
+                    "node_shapes": 24,
+                    "undeclared_local_references": 0,
+                    "explicit_sameAs": 0
+                  }
+                },
+                {
+                  "name": "pySHACL SHACL specification meta-validation",
+                  "status": "pass",
+                  "detail": {
+                    "meta_shacl_conforms": true,
+                    "target": "shapes.ttl only",
+                    "marketing_graph_validation": "not run"
+                  }
+                },
+                {
+                  "name": "SHACL-SPARQL constraint syntax",
+                  "status": "pass",
+                  "detail": {
+                    "parsed_constraint_queries": 4,
+                    "executed_against_marketing_data": 0
+                  }
+                },
+                {
+                  "name": "Declared hierarchy/disjointness structure",
+                  "status": "pass",
+                  "detail": "No declared subclass cycles/disjoint ancestors; HermiT satisfiability not run"
+                },
+                {
+                  "name": "OWL RL definition entailments and detected contradictions",
+                  "status": "pass",
+                  "detail": {
+                    "expected_entailments": 8,
+                    "unsatisfiable_named_classes": 0,
+                    "scope": "OWL RL TBox only; OWL DL consistency not run"
+                  }
+                },
+                {
+                  "name": "New-document local links",
+                  "status": "pass",
+                  "detail": {
+                    "existing_local_links": 56
+                  }
+                },
+                {
+                  "name": "Protégé/HermiT OWL consistency and satisfiability",
+                  "status": "not_run",
+                  "detail": "not installed; no reasoner version recorded"
+                },
+                {
+                  "name": "OOPS! automated scan",
+                  "status": "not_run",
+                  "detail": "external ontology submission not performed"
+                },
+                {
+                  "name": "52 data-dependent question tests",
+                  "status": "not_run",
+                  "detail": "data reuse/transformation/fault fixtures not approved"
+                },
+                {
+                  "name": "Real source compatibility and user usefulness",
+                  "status": "not_run",
+                  "detail": "no real account samples or user business evaluation"
+                }
+              ],
+              "passed": 12,
+              "failed": 0,
+              "not_run": 4,
+              "marketing_rows_read": 0,
+              "marketing_rows_generated": 0,
+              "marketing_rows_transformed": 0,
+              "hashes": {
+                "batch-selection.json": "e353ae4693c9a4892328d7ebb51b12c7c2e1213d81b3282f8ef422726357a44f",
+                "d003b-mapping.json": "c926e26b5d0d47e5993b3cf679a41268ae724448ceee781f17bf9cdf2f0a835d",
+                "field-semantics.json": "69099c6570e5ba370097db7e6fb2ad85e17c3373bae7ca8a7b6ddade21881b37",
+                "ontology.ttl": "1ca4ad16fa2323d48a79d25773fa2678770bcffe4b7137d8f6aa8e77ffae1e81",
+                "preservation-baseline.json": "9baaa46d99ec1890dc07da4a3e8c2523c0ba54d77bb47c639113c681bb015708",
+                "preservation-results.json": "8bf5ca3e5643cb3f207223f6aa3aaa9fdc7ec3d8375f56d640c1a11761b6eed6",
+                "shapes.ttl": "e928a57a775122dfabe6387330327c21d7ac4cbfabcbbeb3b0863d9b8230408a",
+                "source-contracts.json": "1ba0a64a8e87babdb23655fae9fa069a783c7c064722d73709f30efea16501e7",
+                "tests.json": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337"
+              }
+            }
+          },
+          {
+            "check": "schemas",
+            "command": [
+              "node",
+              "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\check-json-schemas.mjs"
+            ],
+            "exit_code": 0,
+            "status": "pass",
+            "stderr": "",
+            "result": {
+              "node": "v24.19.0",
+              "ajv": "8.20.0",
+              "results": [
+                {
+                  "schema": "../batches/D003B/batch.schema.json",
+                  "metaschema": "pass",
+                  "compile": "pass",
+                  "instance_validation": "not_run"
+                },
+                {
+                  "schema": "../schemas/marketing-records.schema.json",
+                  "metaschema": "pass",
+                  "compile": "pass",
+                  "instance_validation": "not_run"
+                }
+              ]
+            }
+          },
+          {
+            "check": "catalog",
+            "command": [
+              "node",
+              "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\schemas\\check-catalog.mjs"
+            ],
+            "exit_code": 0,
+            "status": "pass",
+            "stderr": "",
+            "result": {
+              "types": 40,
+              "propertyOccurrences": 857,
+              "registeredSources": 44,
+              "temporalPolicy": "passed: 40 types, 24 months, 28 days/4 complete weeks, H01 separate",
+              "proposedRecordBudget": 15419,
+              "metaschemaValidation": "passed: Draft 2020-12 metaschema, 40 types and H01 compile with formats",
+              "generatedMarketingRecords": 0
+            }
+          }
+        ],
+        "system_validation": "incomplete",
+        "remaining_gates": [
+          "G1 independent meaning review",
+          "G3 OWL logic/design",
+          "G4 approved transformation/data conformance",
+          "G5 independent calculation/query",
+          "G6 question/evidence/abstention",
+          "G7 exception/regression/reproducibility"
+        ],
+        "data_operations_executed": false
+      },
+      "stderr_tail": ""
+    },
+    {
+      "name": "D004_small",
+      "status": "pass",
+      "exit_code": 0,
+      "result": {
+        "stage": "small",
+        "status": "pass",
+        "rows": 214,
+        "observations": 547,
+        "missing": 10,
+        "rdf_readback": "pass",
+        "oracle_dependency": "shared mapping; independent traversal and source context",
+        "factual_components": {
+          "CQ01-1": {
+            "status": "pass",
+            "scope": "RDF Q3 sums and unique-denominator shares",
+            "aggregate_checks": 12
+          },
+          "CQ02-1": {
+            "status": "pass",
+            "scope": "RDF year-pair inputs; narrative and absolute/relative answer contract pending"
+          },
+          "CQ02-3": {
+            "status": "pass",
+            "scope": "RDF availableAt excludes September; complete Q3 withheld",
+            "result_status": "insufficient_data"
+          },
+          "CQ06-3": {
+            "status": "pass",
+            "scope": "RDF missing conversions stay null; full daily comparison withheld",
+            "result_status": "insufficient_data",
+            "missing_rows": 2
+          },
+          "CQ11-1": {
+            "status": "pass",
+            "scope": "RDF received26/normalized28/missing2; subtotal remains partial",
+            "result_status": "answered"
+          }
+        },
+        "repeated_denominator_groups": 6,
+        "graph_triples": 11172,
+        "graph_sha256": "a96f76e311975e6d5291f315080849a7f566c22b7e4c09d989277586f656a455",
+        "input_order_check": "pass",
+        "node_counts": {
+          "Transformation": 1,
+          "SourceRecord": 214,
+          "Review": 8,
+          "Product": 6,
+          "Campaign": 2,
+          "Seller": 1,
+          "Promotion": 1,
+          "TimeInterval": 73,
+          "Brand": 3,
+          "Location": 1,
+          "Event": 2,
+          "CollectionRun": 2,
+          "Subject": 123,
+          "TimeInstant": 32,
+          "SourceArtifact": 11,
+          "MetricDefinition": 33,
+          "Observation": 547,
+          "MarketScope": 110
+        },
+        "tools": {
+          "rdflib": "7.6.0",
+          "pyshacl": "0.40.1"
+        }
+      },
+      "stderr_tail": ""
+    },
+    {
+      "name": "D004_full",
+      "status": "pass",
+      "exit_code": 0,
+      "result": {
+        "stage": "full",
+        "status": "pass",
+        "rows": 1652,
+        "observations": 4105,
+        "missing": 10,
+        "rdf_readback": "pass",
+        "oracle_dependency": "shared mapping; independent traversal and source context",
+        "factual_components": {
+          "CQ01-1": {
+            "status": "pass",
+            "scope": "RDF Q3 sums and unique-denominator shares",
+            "aggregate_checks": 12
+          },
+          "CQ02-1": {
+            "status": "pass",
+            "scope": "RDF year-pair inputs; narrative and absolute/relative answer contract pending"
+          },
+          "CQ02-3": {
+            "status": "pass",
+            "scope": "RDF availableAt excludes September; complete Q3 withheld",
+            "result_status": "insufficient_data"
+          },
+          "CQ06-3": {
+            "status": "pass",
+            "scope": "RDF missing conversions stay null; full daily comparison withheld",
+            "result_status": "insufficient_data",
+            "missing_rows": 2
+          },
+          "CQ11-1": {
+            "status": "pass",
+            "scope": "RDF received26/normalized28/missing2; subtotal remains partial",
+            "result_status": "answered"
+          }
+        },
+        "repeated_denominator_groups": 72,
+        "graph_triples": 78528,
+        "graph_sha256": "030ad84e12d83c7c02ea8f88ae5f80e560745d2b1dd1a19f7981eb89fe755563",
+        "input_order_check": "not_run",
+        "node_counts": {
+          "Brand": 3,
+          "MetricDefinition": 97,
+          "CollectionRun": 6,
+          "Subject": 509,
+          "SourceRecord": 1652,
+          "Observation": 4105,
+          "TimeInstant": 96,
+          "Review": 72,
+          "Event": 2,
+          "TimeInterval": 323,
+          "Promotion": 1,
+          "MarketScope": 488,
+          "Transformation": 1,
+          "SourceArtifact": 11,
+          "Seller": 3,
+          "Product": 6,
+          "Campaign": 6,
+          "Location": 3
+        },
+        "tools": {
+          "rdflib": "7.6.0",
+          "pyshacl": "0.40.1"
+        }
+      },
+      "stderr_tail": ""
+    },
+    {
+      "name": "independent_calculation",
+      "status": "pass",
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "source": "D003B synthetic",
+        "q3": {
+          "P1A_market_units": {
+            "status": "answered",
+            "2025_Q3": "5829",
+            "2026_Q3": "4995",
+            "absolute_change": "-834",
+            "relative_change": "-0.1430777148739063304168811117"
+          },
+          "P1A_market_sales": {
+            "status": "answered",
+            "2025_Q3": "8883396.00",
+            "2026_Q3": "7482510.00",
+            "absolute_change": "-1400886.00",
+            "relative_change": "-0.1576971239377373247798477069"
+          },
+          "P1A_own_net_units": {
+            "status": "answered",
+            "2025_Q3": "1608",
+            "2026_Q3": "1377",
+            "absolute_change": "-231",
+            "relative_change": "-0.1436567164179104477611940299"
+          },
+          "P1A_own_net_sales": {
+            "status": "answered",
+            "2025_Q3": "2450592.00",
+            "2026_Q3": "2062746.00",
+            "absolute_change": "-387846.00",
+            "relative_change": "-0.1582662475026442590198613233"
+          },
+          "campaigns": {
+            "C-JP-search": {
+              "impressions": {
+                "status": "answered",
+                "2025_Q3": "297781",
+                "2026_Q3": "306781",
+                "absolute_change": "9000",
+                "relative_change": "0.03022355355109963362336750834"
+              },
+              "clicks": {
+                "status": "answered",
+                "2025_Q3": "5956",
+                "2026_Q3": "6134",
+                "absolute_change": "178",
+                "relative_change": "0.02988582941571524513096037609"
+              },
+              "conversions": {
+                "status": "answered",
+                "2025_Q3": "179",
+                "2026_Q3": "168",
+                "absolute_change": "-11",
+                "relative_change": "-0.06145251396648044692737430168"
+              },
+              "spend": {
+                "status": "answered",
+                "2025_Q3": "297800.00",
+                "2026_Q3": "306700.00",
+                "absolute_change": "8900.00",
+                "relative_change": "0.02988582941571524513096037609"
+              },
+              "attributed_revenue": {
+                "status": "answered",
+                "2025_Q3": "268500.00",
+                "2026_Q3": "252000.00",
+                "absolute_change": "-16500.00",
+                "relative_change": "-0.06145251396648044692737430168"
+              }
+            },
+            "C-JP-social": {
+              "impressions": {
+                "status": "answered",
+                "2025_Q3": "258011",
+                "2026_Q3": "284950",
+                "absolute_change": "26939",
+                "relative_change": "0.1044102770812097158648274686"
+              },
+              "clicks": {
+                "status": "answered",
+                "2025_Q3": "5160",
+                "2026_Q3": "5699",
+                "absolute_change": "539",
+                "relative_change": "0.1044573643410852713178294574"
+              },
+              "conversions": {
+                "status": "answered",
+                "2025_Q3": "155",
+                "2026_Q3": "159",
+                "absolute_change": "4",
+                "relative_change": "0.02580645161290322580645161290"
+              },
+              "spend": {
+                "status": "answered",
+                "2025_Q3": "258000.00",
+                "2026_Q3": "284950.00",
+                "absolute_change": "26950.00",
+                "relative_change": "0.1044573643410852713178294574"
+              },
+              "attributed_revenue": {
+                "status": "answered",
+                "2025_Q3": "232500.00",
+                "2026_Q3": "238500.00",
+                "absolute_change": "6000.00",
+                "relative_change": "0.02580645161290322580645161290"
+              }
+            }
+          }
+        },
+        "earlier_as_of": {
+          "as_of": "2026-09-30T00:00:00+09:00",
+          "P1A_market_units": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          },
+          "P1A_own_net_units": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          },
+          "C_JP_search_impressions": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          }
+        },
+        "market_denominator_unique_periods": 6,
+        "jp_detail": {
+          "ad_rows": 56,
+          "present_ad_rows": 54,
+          "missing_ad_rows": 2,
+          "missing_dates": [
+            "2026-08-26",
+            "2026-08-27"
+          ],
+          "known_impressions": "162860",
+          "known_clicks": "3256",
+          "known_conversions": "69",
+          "known_spend": "162800.00",
+          "known_attributed_revenue": "103500.00",
+          "stock_rows": 28,
+          "zero_stock_rows": 7,
+          "offer_rows": 56,
+          "promotion_rows": 1,
+          "collection_expected": 56,
+          "collection_received": 54,
+          "collection_missing": 2,
+          "causal_judgment": "not_run"
+        }
+      },
+      "stderr_tail": ""
+    },
+    {
+      "name": "calculation_replay",
+      "status": "pass",
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "source": "D003B synthetic",
+        "q3": {
+          "P1A_market_units": {
+            "status": "answered",
+            "2025_Q3": "5829",
+            "2026_Q3": "4995",
+            "absolute_change": "-834",
+            "relative_change": "-0.1430777148739063304168811117"
+          },
+          "P1A_market_sales": {
+            "status": "answered",
+            "2025_Q3": "8883396.00",
+            "2026_Q3": "7482510.00",
+            "absolute_change": "-1400886.00",
+            "relative_change": "-0.1576971239377373247798477069"
+          },
+          "P1A_own_net_units": {
+            "status": "answered",
+            "2025_Q3": "1608",
+            "2026_Q3": "1377",
+            "absolute_change": "-231",
+            "relative_change": "-0.1436567164179104477611940299"
+          },
+          "P1A_own_net_sales": {
+            "status": "answered",
+            "2025_Q3": "2450592.00",
+            "2026_Q3": "2062746.00",
+            "absolute_change": "-387846.00",
+            "relative_change": "-0.1582662475026442590198613233"
+          },
+          "campaigns": {
+            "C-JP-search": {
+              "impressions": {
+                "status": "answered",
+                "2025_Q3": "297781",
+                "2026_Q3": "306781",
+                "absolute_change": "9000",
+                "relative_change": "0.03022355355109963362336750834"
+              },
+              "clicks": {
+                "status": "answered",
+                "2025_Q3": "5956",
+                "2026_Q3": "6134",
+                "absolute_change": "178",
+                "relative_change": "0.02988582941571524513096037609"
+              },
+              "conversions": {
+                "status": "answered",
+                "2025_Q3": "179",
+                "2026_Q3": "168",
+                "absolute_change": "-11",
+                "relative_change": "-0.06145251396648044692737430168"
+              },
+              "spend": {
+                "status": "answered",
+                "2025_Q3": "297800.00",
+                "2026_Q3": "306700.00",
+                "absolute_change": "8900.00",
+                "relative_change": "0.02988582941571524513096037609"
+              },
+              "attributed_revenue": {
+                "status": "answered",
+                "2025_Q3": "268500.00",
+                "2026_Q3": "252000.00",
+                "absolute_change": "-16500.00",
+                "relative_change": "-0.06145251396648044692737430168"
+              }
+            },
+            "C-JP-social": {
+              "impressions": {
+                "status": "answered",
+                "2025_Q3": "258011",
+                "2026_Q3": "284950",
+                "absolute_change": "26939",
+                "relative_change": "0.1044102770812097158648274686"
+              },
+              "clicks": {
+                "status": "answered",
+                "2025_Q3": "5160",
+                "2026_Q3": "5699",
+                "absolute_change": "539",
+                "relative_change": "0.1044573643410852713178294574"
+              },
+              "conversions": {
+                "status": "answered",
+                "2025_Q3": "155",
+                "2026_Q3": "159",
+                "absolute_change": "4",
+                "relative_change": "0.02580645161290322580645161290"
+              },
+              "spend": {
+                "status": "answered",
+                "2025_Q3": "258000.00",
+                "2026_Q3": "284950.00",
+                "absolute_change": "26950.00",
+                "relative_change": "0.1044573643410852713178294574"
+              },
+              "attributed_revenue": {
+                "status": "answered",
+                "2025_Q3": "232500.00",
+                "2026_Q3": "238500.00",
+                "absolute_change": "6000.00",
+                "relative_change": "0.02580645161290322580645161290"
+              }
+            }
+          }
+        },
+        "earlier_as_of": {
+          "as_of": "2026-09-30T00:00:00+09:00",
+          "P1A_market_units": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          },
+          "P1A_own_net_units": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          },
+          "C_JP_search_impressions": {
+            "status": "insufficient_data",
+            "month_counts": {
+              "2025": 3,
+              "2026": 2
+            }
+          }
+        },
+        "market_denominator_unique_periods": 6,
+        "jp_detail": {
+          "ad_rows": 56,
+          "present_ad_rows": 54,
+          "missing_ad_rows": 2,
+          "missing_dates": [
+            "2026-08-26",
+            "2026-08-27"
+          ],
+          "known_impressions": "162860",
+          "known_clicks": "3256",
+          "known_conversions": "69",
+          "known_spend": "162800.00",
+          "known_attributed_revenue": "103500.00",
+          "stock_rows": 28,
+          "zero_stock_rows": 7,
+          "offer_rows": 56,
+          "promotion_rows": 1,
+          "collection_expected": 56,
+          "collection_received": 54,
+          "collection_missing": 2,
+          "causal_judgment": "not_run"
+        }
+      },
+      "stderr_tail": ""
+    },
+    {
+      "name": "calculation_replay_equality",
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "name": "input_immutability",
+      "status": "pass",
+      "exit_code": 0
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "CQ01-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "pass",
+        "scope": "RDF Q3 sums and unique-denominator shares",
+        "aggregate_checks": 12
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ01-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ01-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ01-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ02-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "pass",
+        "scope": "RDF year-pair inputs; narrative and absolute/relative answer contract pending"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ02-2",
+      "category": "boundary",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ02-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "pass",
+        "scope": "RDF availableAt excludes September; complete Q3 withheld",
+        "result_status": "insufficient_data"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ02-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ04-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ04-2",
+      "category": "boundary",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ04-3",
+      "category": "insufficient",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ04-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ05-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ05-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ05-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ05-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ06-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ06-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ06-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "pass",
+        "scope": "RDF missing conversions stay null; full daily comparison withheld",
+        "result_status": "insufficient_data",
+        "missing_rows": 2
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ06-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ07-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ07-2",
+      "category": "boundary",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ07-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ07-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ11-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "pass",
+        "scope": "RDF received26/normalized28/missing2; subtotal remains partial",
+        "result_status": "answered"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ11-2",
+      "category": "boundary",
+      "expected_status": "execution_failed",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ11-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ11-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ12-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ12-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ12-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ12-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ14-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ14-2",
+      "category": "boundary",
+      "expected_status": "execution_failed",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ14-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ14-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ15-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ15-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ15-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ15-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ17-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ17-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ17-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ17-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ23-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ23-2",
+      "category": "boundary",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ23-3",
+      "category": "insufficient",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ23-4",
+      "category": "counterevidence",
+      "expected_status": "incomparable",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ28-1",
+      "category": "normal",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "existing_D003B",
+      "end_to_end_status": "not_run",
+      "reason": "AI judgment/answer interface not implemented; existing factual checks are only components"
+    },
+    {
+      "id": "CQ28-2",
+      "category": "boundary",
+      "expected_status": "insufficient_data",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ28-3",
+      "category": "insufficient",
+      "expected_status": "out_of_scope",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    },
+    {
+      "id": "CQ28-4",
+      "category": "counterevidence",
+      "expected_status": "answered",
+      "factual_component": {
+        "status": "not_run",
+        "reason": "deterministic query not connected or separately approved input required"
+      },
+      "ontology_fact_scope": "separate_fixture_or_source_required",
+      "end_to_end_status": "not_run",
+      "reason": "condition needs a separately approved isolated fixture or unavailable source"
+    }
+  ],
+  "test_status_counts": {
+    "pass": 0,
+    "fail": 0,
+    "not_run": 52
+  },
+  "factual_component_counts": {
+    "pass": 5,
+    "fail": 0,
+    "not_run": 47
+  },
+  "HermiT": "not_run",
+  "OOPS": "not_run",
+  "actual_external_source_fit": "not_run",
+  "future_AI_answer_evaluation": "not_run",
+  "system_validation": "incomplete"
+}

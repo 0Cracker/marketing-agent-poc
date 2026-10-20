@@ -1,0 +1,87 @@
+{
+  "status": "not_run",
+  "exit_code": 2,
+  "timestamp": "2026-10-16T01:24:19.936412+00:00",
+  "ontology_sha256": "db48376faf94408d34b80be2cd46d753bd272761783ea35b14eab1b9a4557849",
+  "input_changed": false,
+  "checks": {
+    "HermiT": {
+      "status": "pass",
+      "scope": "ontology.ttl definitions only; no D003B/D005 instance reasoning",
+      "distribution": "HermiT.jar bundled in Owlready2 0.51 (modified distribution)",
+      "version": "1.3.8.1099\nHermiT is a product of Oxford University.\nVisit <http://hermit-reasoner.org/> for details.",
+      "java": "../ontology-validation-tools/logic/jdk-17.0.20.1+1-jre/bin/java.exe",
+      "jar": "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\HermiT.jar",
+      "jar_sha256": "97e53f519720a0a2e328556e03b806aa239347c85e57637a935e6433ed2ad3a8",
+      "class_checks": 25,
+      "consistency": "pass",
+      "unsatisfiable_classes": [],
+      "missing_results": [],
+      "hierarchy_checks": [
+        {
+          "child": "Product",
+          "expected_super": "Subject",
+          "forbidden_super": "Campaign",
+          "status": "pass",
+          "stdout": "All super-classes of '<https://example.org/marketing/Product>':\n\thttp://www.w3.org/2002/07/owl#Thing\n\thttps://example.org/marketing/Subject\n\thttp://www.w3.org/ns/prov#Entity\n\thttps://example.org/marketing/Entity\n",
+          "stderr": ""
+        },
+        {
+          "child": "Promotion",
+          "expected_super": "Event",
+          "forbidden_super": "Product",
+          "status": "pass",
+          "stdout": "All super-classes of '<https://example.org/marketing/Promotion>':\n\thttp://www.w3.org/2002/07/owl#Thing\n\thttps://example.org/marketing/Event\n\thttp://www.w3.org/ns/prov#Entity\n\thttps://example.org/marketing/Entity\n",
+          "stderr": ""
+        }
+      ],
+      "command": [
+        "../ontology-validation-tools/logic/jdk-17.0.20.1+1-jre/bin/java.exe",
+        "-jar",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\ontology-validation-tools\\logic\\HermiT.jar",
+        "--consistency=<http://www.w3.org/2002/07/owl#Thing>",
+        "--consistency=<https://example.org/marketing/AnalysisResult>",
+        "--consistency=<https://example.org/marketing/Brand>",
+        "--consistency=<https://example.org/marketing/Campaign>",
+        "--consistency=<https://example.org/marketing/Category>",
+        "--consistency=<https://example.org/marketing/Claim>",
+        "--consistency=<https://example.org/marketing/CollectionRun>",
+        "--consistency=<https://example.org/marketing/Entity>",
+        "--consistency=<https://example.org/marketing/Event>",
+        "--consistency=<https://example.org/marketing/EvidenceSpan>",
+        "--consistency=<https://example.org/marketing/Hypothesis>",
+        "--consistency=<https://example.org/marketing/Location>",
+        "--consistency=<https://example.org/marketing/MarketScope>",
+        "--consistency=<https://example.org/marketing/MetricDefinition>",
+        "--consistency=<https://example.org/marketing/Observation>",
+        "--consistency=<https://example.org/marketing/Product>",
+        "--consistency=<https://example.org/marketing/Promotion>",
+        "--consistency=<https://example.org/marketing/Review>",
+        "--consistency=<https://example.org/marketing/Seller>",
+        "--consistency=<https://example.org/marketing/SourceArtifact>",
+        "--consistency=<https://example.org/marketing/SourceRecord>",
+        "--consistency=<https://example.org/marketing/Subject>",
+        "--consistency=<https://example.org/marketing/TimeInstant>",
+        "--consistency=<https://example.org/marketing/TimeInterval>",
+        "--consistency=<https://example.org/marketing/Transformation>",
+        "--consistency=<https://example.org/marketing/Variant>",
+        "<temporary RDF/XML definition URI>"
+      ],
+      "exit_code": 0,
+      "stdout": "<http://www.w3.org/2002/07/owl#Thing> is satisfiable.\n<https://example.org/marketing/AnalysisResult> is satisfiable.\n<https://example.org/marketing/Brand> is satisfiable.\n<https://example.org/marketing/Campaign> is satisfiable.\n<https://example.org/marketing/Category> is satisfiable.\n<https://example.org/marketing/Claim> is satisfiable.\n<https://example.org/marketing/CollectionRun> is satisfiable.\n<https://example.org/marketing/Entity> is satisfiable.\n<https://example.org/marketing/Event> is satisfiable.\n<https://example.org/marketing/EvidenceSpan> is satisfiable.\n<https://example.org/marketing/Hypothesis> is satisfiable.\n<https://example.org/marketing/Location> is satisfiable.\n<https://example.org/marketing/MarketScope> is satisfiable.\n<https://example.org/marketing/MetricDefinition> is satisfiable.\n<https://example.org/marketing/Observation> is satisfiable.\n<https://example.org/marketing/Product> is satisfiable.\n<https://example.org/marketing/Promotion> is satisfiable.\n<https://example.org/marketing/Review> is satisfiable.\n<https://example.org/marketing/Seller> is satisfiable.\n<https://example.org/marketing/SourceArtifact> is satisfiable.\n<https://example.org/marketing/SourceRecord> is satisfiable.\n<https://example.org/marketing/Subject> is satisfiable.\n<https://example.org/marketing/TimeInstant> is satisfiable.\n<https://example.org/marketing/TimeInterval> is satisfiable.\n<https://example.org/marketing/Transformation> is satisfiable.\n<https://example.org/marketing/Variant> is satisfiable.\n",
+      "stderr": ""
+    },
+    "OOPS": {
+      "status": "not_run",
+      "reason": "--oops not requested",
+      "endpoint": "https://oops.linkeddata.es/rest"
+    }
+  },
+  "system_validation": "incomplete",
+  "instance_records_read": 0,
+  "references": [
+    "https://www.cs.ox.ac.uk/isg/tools/HermiT/command.html",
+    "https://owlready2.readthedocs.io/en/latest/reasoning.html",
+    "https://oops.linkeddata.es/webservice.html"
+  ]
+}

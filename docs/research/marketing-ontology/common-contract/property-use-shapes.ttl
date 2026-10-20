@@ -1,0 +1,642 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+owl:Class rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty rdfs:subClassOf rdf:Property .
+
+<urn:property-use:04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/grain> .
+
+<urn:property-use:0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/attributionWindowDays> .
+
+<urn:property-use:114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/offsetStart> .
+
+<urn:property-use:12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/policyVersion> .
+
+<urn:property-use:140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/definition> .
+
+<urn:property-use:159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/endDateExclusive> .
+
+<urn:property-use:1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/afterValue> .
+
+<urn:property-use:1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/quote> .
+
+<urn:property-use:1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/channel> .
+
+<urn:property-use:1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/discountRatio> .
+
+<urn:property-use:27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/evidenceSpan> .
+
+<urn:property-use:2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/path> .
+
+<urn:property-use:2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/scope> .
+
+<urn:property-use:31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/beforeValue> .
+
+<urn:property-use:34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/shippingIncluded> .
+
+<urn:property-use:35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/seller> .
+
+<urn:property-use:3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/startAt> .
+
+<urn:property-use:3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/sha256> .
+
+<urn:property-use:3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/supports> .
+
+<urn:property-use:491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/resultStatus> .
+
+<urn:property-use:4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/mappingVersion> .
+
+<urn:property-use:4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/missingCount> .
+
+<urn:property-use:4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/seriesRole> .
+
+<urn:property-use:5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/category> .
+
+<urn:property-use:53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/platform> .
+
+<urn:property-use:5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/coverageText> .
+
+<urn:property-use:5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/country> .
+
+<urn:property-use:5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/generatedBy> .
+
+<urn:property-use:5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/brandRole> .
+
+<urn:property-use:62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/label> .
+
+<urn:property-use:64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/codeVersion> .
+
+<urn:property-use:6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/validInterval> .
+
+<urn:property-use:6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/calendar> .
+
+<urn:property-use:70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/attributionModel> .
+
+<urn:property-use:75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/revision> .
+
+<urn:property-use:788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/aggregation> .
+
+<urn:property-use:78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/sourceRecord> .
+
+<urn:property-use:7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/isSynthetic> .
+
+<urn:property-use:7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/sellerStatus> .
+
+<urn:property-use:7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/verifiedPurchase> .
+
+<urn:property-use:87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/taxIncluded> .
+
+<urn:property-use:8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/asOf> .
+
+<urn:property-use:8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/currency> .
+
+<urn:property-use:8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/questionId> .
+
+<urn:property-use:9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/reason> .
+
+<urn:property-use:94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/availableAt> .
+
+<urn:property-use:957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/availability> .
+
+<urn:property-use:9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/value> .
+
+<urn:property-use:9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/claimText> .
+
+<urn:property-use:a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/comparisonGroup> .
+
+<urn:property-use:ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/conversionName> .
+
+<urn:property-use:af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/startDate> .
+
+<urn:property-use:b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/subject> .
+
+<urn:property-use:b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/originKind> .
+
+<urn:property-use:b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737:value> ;
+    sh:targetSubjectsOf prov:wasDerivedFrom .
+
+<urn:property-use:bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/definitionVersion> .
+
+<urn:property-use:bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/recordId> .
+
+<urn:property-use:be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/counters> .
+
+<urn:property-use:c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/eventKind> .
+
+<urn:property-use:c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/location> .
+
+<urn:property-use:c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/expectedCount> .
+
+<urn:property-use:c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/receivedCount> .
+
+<urn:property-use:cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/sourceId> .
+
+<urn:property-use:cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/timezone> .
+
+<urn:property-use:d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/interval> .
+
+<urn:property-use:d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/fieldPath> .
+
+<urn:property-use:d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/metricId> .
+
+<urn:property-use:d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/volumeMl> .
+
+<urn:property-use:d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/endAtExclusive> .
+
+<urn:property-use:dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/language> .
+
+<urn:property-use:dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/changeField> .
+
+<urn:property-use:df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/ratingScaleMax> .
+
+<urn:property-use:e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/timestamp> .
+
+<urn:property-use:eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/unit> .
+
+<urn:property-use:ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc:value> ;
+    sh:targetSubjectsOf prov:wasGeneratedBy .
+
+<urn:property-use:f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/offsetEnd> .
+
+<urn:property-use:fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/instant> .
+
+<urn:property-use:fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/identifierNamespace> .
+
+<urn:property-use:fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42> a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property <urn:property-use:fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42:value> ;
+    sh:targetSubjectsOf <https://example.org/marketing/bodyText> .
+
+<urn:property-use:04dbb84f17bb10fd8ab6a6c42bfe0211a81e5284ae03ab7fe0bf909b0a935e66:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/grain> .
+
+<urn:property-use:0e02983a6bba43a5afe88c2e28a1b870ba567f9ecc37481b918eaa34b2a014e8:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/attributionWindowDays> .
+
+<urn:property-use:114880d10a1d5d75c7fea42a6a825f3e917cbd4ce11dd7f57806efa6e702e04a:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/offsetStart> .
+
+<urn:property-use:12678adf46bfb2f8118579d870c2b598b49b37459b19874fdd9f6ba5ee89976f:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/policyVersion> .
+
+<urn:property-use:140131a3b5223abd6c8b9cb1bb6862067041c404503fb22f7571d02b8b7c0155:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/definition> .
+
+<urn:property-use:159a2a3f3bd66cc1034c9cf9bcffd21eb116a95103608fbd788222ff631cd1d0:value> sh:nodeKind sh:Literal ;
+    sh:path <https://example.org/marketing/endDateExclusive> .
+
+<urn:property-use:1961ee280bbcd87acfbe08aea23b56067ebfe1c19756eb4289238934dfe267db:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/afterValue> .
+
+<urn:property-use:1d99e7da34f2b222691708e90a2a005270696fbe1bf01aadb2803fff98e237a6:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/quote> .
+
+<urn:property-use:1ea379dd6605be4be2ee7b2c69a597e5900a591e3d58b7f5f19804c8f8d0b5bb:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/channel> .
+
+<urn:property-use:1f68ced27bc65811f6c596edded939677f4aebf2685d661096846b403eeb3862:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/discountRatio> .
+
+<urn:property-use:27bf0922d65637f3d23d0e7e3264aa38c75bc02b16b0b8c11b7d5ed8d6ae7796:value> sh:class <https://example.org/marketing/EvidenceSpan> ;
+    sh:path <https://example.org/marketing/evidenceSpan> .
+
+<urn:property-use:2ee7e1837e988999df0e5453982a46654292c78bd32d2515d4b95fdd7bc94efa:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/path> .
+
+<urn:property-use:2f08b7ee1baee22cd78ebd0be16e454b7f1d737d1f619375e708273bf6c9167f:value> sh:class <https://example.org/marketing/MarketScope> ;
+    sh:path <https://example.org/marketing/scope> .
+
+<urn:property-use:31c113ea8f733c58f0221befcd30394fb42ec5858b8e0a6ded948b45691f7733:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/beforeValue> .
+
+<urn:property-use:34459ab95d04464e9160d8cdbc7aa5600d1c103f0adbdc7d1ff054767f59000f:value> sh:datatype xsd:boolean ;
+    sh:path <https://example.org/marketing/shippingIncluded> .
+
+<urn:property-use:35ce3d584eb9123fad1a881095207456ef605b5a455744c2072b372205049d12:value> sh:class <https://example.org/marketing/Seller> ;
+    sh:path <https://example.org/marketing/seller> .
+
+<urn:property-use:3c9cb868f8099ba92c056e32b0337852d3d24b74c7d0faacb053bc711487a1f6:value> sh:datatype xsd:dateTime ;
+    sh:path <https://example.org/marketing/startAt> .
+
+<urn:property-use:3cda0ec2ccf6def3eaadd46a2fbfa52668c707c21cafaef983fe20bb00bed377:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/sha256> .
+
+<urn:property-use:3e37659e4beb5331791767535f031664ecad9d53a344dc36c91849198c16256f:value> sh:class <https://example.org/marketing/Hypothesis> ;
+    sh:path <https://example.org/marketing/supports> .
+
+<urn:property-use:491dc31712d59090e2428e52d0eb533cacd1e61af7abaec34f5555da9ceda9e9:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/resultStatus> .
+
+<urn:property-use:4b83d11c0cd76538a4305eb38118bc7b3b2ee80500870cf3271dade9ceab35cc:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/mappingVersion> .
+
+<urn:property-use:4cbb9b56c90c2ccf8e6e91ed5bdca261d10e98a7f85aeeb860d400723d3c733a:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/missingCount> .
+
+<urn:property-use:4f6005f8eb7d067ee6f82e0108cfc4571b43ebfbec9c2ebfe8b917e6c3755681:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/seriesRole> .
+
+<urn:property-use:5204f7c5a199ea17d1c38f17bd7c8bcb7659528bde68bffaa4d62cfd32d45768:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/category> .
+
+<urn:property-use:53623576fe19584b6b5427b1d627b520e8bc5250b16827c3a476926ebcefff6f:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/platform> .
+
+<urn:property-use:5765dc78baf88fac7bc017de932aa3183091fe7fe019b3af467a8cff6747179a:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/coverageText> .
+
+<urn:property-use:5ab8003d7e2435b1803a0f6656c6ebb8bfaadf8ff1ecee5b46452ca673f63373:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/country> .
+
+<urn:property-use:5fe3069025da83022c145c80d94565b7585442f510093604f717efcecb7e4fea:value> sh:class <https://example.org/marketing/Transformation> ;
+    sh:path <https://example.org/marketing/generatedBy> .
+
+<urn:property-use:5ff85cf4e15679aaa422de4a45e095993ea3eb32e9f711c60fc3e011969abfa5:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/brandRole> .
+
+<urn:property-use:62bc43998afd56a669feee2c49e92d3edb1829ccba833e1a1827730ce1978489:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/label> .
+
+<urn:property-use:64fa71f3e7c1b53fee3f92dad96f7f92cf7d6f1da9570742193b025069d51778:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/codeVersion> .
+
+<urn:property-use:6d14d9ad2f713920b4ec1b934fcdc1c75a71c42c3700d8434359739312cd5ad3:value> sh:class <https://example.org/marketing/TimeInterval> ;
+    sh:path <https://example.org/marketing/validInterval> .
+
+<urn:property-use:6f72990f1d13c541009a92657753ac952ef88bf0c1f2902bcb00bfc95209c1d4:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/calendar> .
+
+<urn:property-use:70de6f1547d218c3b5af79d1cf40fcbfef64e5343dbfbee4927bef88d910e61b:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/attributionModel> .
+
+<urn:property-use:75021a40ba78f6c2fe47caaa54b4d16c5f48adec98c597abeeb1c79bbcf1742c:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/revision> .
+
+<urn:property-use:788016a0d712cbe0ce38984d720d2c9a6e7daab9da53b397f0459e98a9d5922b:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/aggregation> .
+
+<urn:property-use:78f28604eaa72b0721e9bf1329c9d6d1450d4226a77388ac7e682da7aa380500:value> sh:class <https://example.org/marketing/SourceRecord> ;
+    sh:path <https://example.org/marketing/sourceRecord> .
+
+<urn:property-use:7a4bde8ed9806bf9cbc9822f1886f4ec5678450a9b3e477eb6c2c24b88f94680:value> sh:datatype xsd:boolean ;
+    sh:path <https://example.org/marketing/isSynthetic> .
+
+<urn:property-use:7b336f8e20b7baa4ec9a2963cb34195ee5dbe14adc322ad5bf7be8c4d32ef8c3:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/sellerStatus> .
+
+<urn:property-use:7ee7077c10ae8da2cc7c97d7396479df877011414f8e8633869f896596b9a2fb:value> sh:datatype xsd:boolean ;
+    sh:path <https://example.org/marketing/verifiedPurchase> .
+
+<urn:property-use:87e1f4d5c6458865deb1f5ad58bbcb38644561ff1548ee3c99d405b4d052ddd9:value> sh:datatype xsd:boolean ;
+    sh:path <https://example.org/marketing/taxIncluded> .
+
+<urn:property-use:8822d40f1668ba7fb9f9e37510c7f161a7662ac68b13926dbf22ee0ca809c72e:value> sh:datatype xsd:dateTime ;
+    sh:path <https://example.org/marketing/asOf> .
+
+<urn:property-use:8a0bf1d0bac3441ee71e8614f799d30825d43e944e702a2fbfe5ecdd675574fd:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/currency> .
+
+<urn:property-use:8a6880397bd576cb81bdac264766480494decbf4b6897401bafd3f05d8b4854c:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/questionId> .
+
+<urn:property-use:9286f595678fb5b6fcb2cc26b24a9276ce9a530784075f0005bddd5d87584d2f:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/reason> .
+
+<urn:property-use:94675fc0e1cf785748ecfd87d96e3ea7851741b30bd249fa1241b69e591c6370:value> sh:datatype xsd:dateTime ;
+    sh:path <https://example.org/marketing/availableAt> .
+
+<urn:property-use:957c24fb16f429fbd37836acdd9e62c2ce2e667e319f16ecf89f318cea22378d:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/availability> .
+
+<urn:property-use:9ad47a237b64899f3c238b00eed69b9043fbc0726cd5d084678bdf24b7ea560f:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/value> .
+
+<urn:property-use:9c2b391e973ebcd69d10478f6b217f8296a1a13b83449840842586e2d6da48b2:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/claimText> .
+
+<urn:property-use:a5b4ed1e9185b2c774becc9ca29a4ed9101068ae27fa393671bf966e0f462f6b:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/comparisonGroup> .
+
+<urn:property-use:ab2aaea7fffa7d1b3f8e3b99dd66c8ed13f6d1a5f75cf8628d5cc749c8f22a94:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/conversionName> .
+
+<urn:property-use:af290b85822fd90b06c9996d3e251aa9cd7bbb49ca096c5c335976d340e4575b:value> sh:nodeKind sh:Literal ;
+    sh:path <https://example.org/marketing/startDate> .
+
+<urn:property-use:b05dc95ad9a405535eca7de7f6fe8bf071e93349485a80d3f94057a5aa5cf2ef:value> sh:class <https://example.org/marketing/Subject> ;
+    sh:path <https://example.org/marketing/subject> .
+
+<urn:property-use:b46764badedd37ceba01a3c760531bb8cf13b272fb6c7ff23cb5446858be352d:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/originKind> .
+
+<urn:property-use:b785a03d18e274944a000b486e7422caea4b39c0dcfdf9e156805df29da8a737:value> sh:class prov:Entity ;
+    sh:path prov:wasDerivedFrom .
+
+<urn:property-use:bce5ea1596708eefc785762ae2236519e94ac4611dc604415dda9222c288dfcb:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/definitionVersion> .
+
+<urn:property-use:bdf54f55b604189372e76050ee11c990289f0d2da12a1bc2d92246a2d17c02ba:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/recordId> .
+
+<urn:property-use:be38b9b8ac2e7768a2a5f160b6a4d3cbbb3dbd919b6a71f49d8c45f1587d44e1:value> sh:class <https://example.org/marketing/Hypothesis> ;
+    sh:path <https://example.org/marketing/counters> .
+
+<urn:property-use:c1738b56352663d9988870d75d55aae3a13fc7193650b9dcf370d2940a24c766:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/eventKind> .
+
+<urn:property-use:c203d68c263f93bb9050be5ea62fc7cf0fda94198bf3ea07de13b7c9f189d38c:value> sh:class <https://example.org/marketing/Location> ;
+    sh:path <https://example.org/marketing/location> .
+
+<urn:property-use:c80a982cec90c2fce44e49dcd13397c4980940047a65ec4ab5702aebfb08e32a:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/expectedCount> .
+
+<urn:property-use:c93e4c5ac51679e90551b80169c0dd62ad86c1d0f7c7453326cd58613a02c654:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/receivedCount> .
+
+<urn:property-use:cf006f796a74f4ea70a10c3ae457cd86ccd256c1e858cf7c9611b7ade60d9119:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/sourceId> .
+
+<urn:property-use:cf4f609cc11414def46dbb61294e89bcf5d137da69b0381b7f7c41c959f13ab4:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/timezone> .
+
+<urn:property-use:d0eb74d4bb93a78debbee8c6346191c730b13b0f6b7f186b0c1a544da0a991fb:value> sh:class <https://example.org/marketing/TimeInterval> ;
+    sh:path <https://example.org/marketing/interval> .
+
+<urn:property-use:d1851d261ddef4355b9ebe31474016dd8617aac90d40e5d1656f9ca326e34f4f:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/fieldPath> .
+
+<urn:property-use:d266c887df9836fb174b3a819a824d320c85af64c6e56e7433c9af900205aea3:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/metricId> .
+
+<urn:property-use:d29c16ef280f6a0110572ae0aaf7ac601519b20e9c144175ef7c071f46baacfb:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/volumeMl> .
+
+<urn:property-use:d4420152863d0b4379337804af63bc80dd5c22ec946ae26cc6d3382de04996de:value> sh:datatype xsd:dateTime ;
+    sh:path <https://example.org/marketing/endAtExclusive> .
+
+<urn:property-use:dceef47aaee10c486856c584c7a691e97368ddf7074933542c26b8dd92098066:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/language> .
+
+<urn:property-use:dd768d87fd71035f14c592d32d0193a80347c41a9a8d8cd7fc2fb10b53cf6b0c:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/changeField> .
+
+<urn:property-use:df4ca0ae626c5b54b60d3b82c12b11f17240267913a53164ec351fbf483b4972:value> sh:datatype xsd:decimal ;
+    sh:path <https://example.org/marketing/ratingScaleMax> .
+
+<urn:property-use:e09a4d1e83c6389be91a623b0943929aca2b788338b88c1828f64e014afbd50b:value> sh:datatype xsd:dateTime ;
+    sh:path <https://example.org/marketing/timestamp> .
+
+<urn:property-use:eb1441be06eee191ff4f92be9a5fd0f82f619ca0d502409e964a32f95543f9c1:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/unit> .
+
+<urn:property-use:ee7002773394b3b95e1d424879d68be313dfcb282decf53f4eb77e11fcbc22dc:value> sh:class prov:Activity ;
+    sh:path prov:wasGeneratedBy .
+
+<urn:property-use:f9f8b74f251aaf304b0be480cfb1998bfdbc7fa1ba210cd0c6fc7e4ab588b180:value> sh:datatype xsd:integer ;
+    sh:path <https://example.org/marketing/offsetEnd> .
+
+<urn:property-use:fba3b6fdb1f7dcb16e80afe9c8ab1394298519f2491878f270c8593e9e662196:value> sh:class <https://example.org/marketing/TimeInstant> ;
+    sh:path <https://example.org/marketing/instant> .
+
+<urn:property-use:fcdd7bc4b92934a0e5b247caec755041db3af7e3ebd37f36d0deb407a4dac0df:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/identifierNamespace> .
+
+<urn:property-use:fcefec57dc8818c851fae4c081260c9e8e8ecaf9f8156ca599c4de1cac9b2e42:value> sh:datatype xsd:string ;
+    sh:path <https://example.org/marketing/bodyText> .

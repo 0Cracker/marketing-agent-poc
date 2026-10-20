@@ -1,0 +1,101 @@
+{
+  "status": "pass",
+  "scope": "implementation/regression evidence integrity; system remains incomplete",
+  "system_status": "fail",
+  "system_validation": "incomplete",
+  "question_tests": 52,
+  "question_assertions": 682,
+  "canonical_schema_rows": 198,
+  "remaining_rows": 330,
+  "remaining_gap_groups": 63,
+  "oops_unresolved_findings": 106,
+  "protected_input_files": 60,
+  "protected_changes": [],
+  "git_head_refs_index_preserved": true,
+  "dictionary_repeat_all_values_equal": true,
+  "oops_repeat_all_values_equal": true,
+  "network_attempts": 0,
+  "post_cycle_document_changes": [
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\canonical-gap-proposal-20261016.json",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\local-validation.md",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\README.md",
+    "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\verification-cycle.md"
+  ],
+  "protocol": [
+    {
+      "command": [
+        "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\run-system-cycle.py",
+        "--self-check"
+      ],
+      "result": {
+        "status": "pass",
+        "checks": 9
+      }
+    },
+    {
+      "command": [
+        "C:\\Users\\박시형\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\check-logic.py",
+        "--self-check"
+      ],
+      "result": {
+        "status": "pass",
+        "checks": 8
+      }
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\docs\\research\\marketing-ontology\\common-contract\\canonical-supplement.mjs",
+        "--self-check"
+      ],
+      "result": {
+        "status": "pass",
+        "checks": 7
+      }
+    }
+  ],
+  "python_ast_files": 5,
+  "node_syntax_files": 3,
+  "git_diff_check": "pass",
+  "specification_checks": 3,
+  "local_links_checked": 237,
+  "new_missing_links": 0,
+  "preexisting_missing_links": [
+    {
+      "file": "docs/decisions/README.md",
+      "target": "../poc-v2-initial-design.md",
+      "status": "preexisting in HEAD"
+    },
+    {
+      "file": "docs/decisions/README.md",
+      "target": "../agent-contract.md",
+      "status": "preexisting in HEAD"
+    },
+    {
+      "file": "docs/decisions/README.md",
+      "target": "../scenario-playbook.md",
+      "status": "preexisting in HEAD"
+    }
+  ],
+  "new_source_rows": 0,
+  "new_synthetic_values": 0,
+  "reports": {
+    "2026-10-16-canonical-system-2.json": "ede6c37fb083cbbb722a524ac5ca65563d79e894e0989a54e26eeef3fae5427f",
+    "2026-10-16-canonical-post-docs-spec-1.json": "0b5e2ed59f47c39f333ebce8b35dbd25d082434ec2c8ce5da49323359c25a274",
+    "2026-10-16-oops-context-review-1.json": "42b11b354ba7399857d844b54a511b6043a985da8bafd482d850c15f5191dc96"
+  },
+  "current_implementation_sha256": {
+    "d005-canonical.mjs": "61a3aa0ee578be2d84ec7b850e732260f8947ce84feb1f3209abb242acd76b75",
+    "check-d005-dictionary.mjs": "4207ed4064ca51941197f9fcbee4dc8ff9504c1db9d6016298de8b4c235de3a7",
+    "check-canonical-readback.py": "e4fbb18a77c049a085489a91b1adeb05f7eb8cb6cfb91aad44cfd04761511245",
+    "canonical-supplement.mjs": "ddb9a6bf08d47419a4e2ff02b5976d7a904bc8bb1a17fb1521488f2860dc65a9",
+    "check-logic.py": "54f71a25ae1de4890cc56f673eaf952e1033e90ce6e74215113ce13eaaa7a2ad",
+    "oops_local.py": "25fb0405654c5c6846a82278cc51c3d9b3028b85d7b1922bf1cf11ad77dfe05a",
+    "OopsLocal.java": "f3d1f8c43e770194efe8088e9a2ea2a04ccb61ff7353922b2fb5fa807a816621",
+    "setup-oops-local.py": "cdd9e81fefd9a8a8caec086b5e113d5752d23378b35077d352c6906b491a4b7e",
+    "oops-local-fixes.json": "0bbce9d94ad0094391971bbb744dccdc0c6a1f85e84f1cd2ac9a96f412c45865",
+    "run-system-cycle.py": "41d84af42ad33d6942cdcfc72b8c5ef26f60acdf013692f4c534b01a68692525"
+  }
+}

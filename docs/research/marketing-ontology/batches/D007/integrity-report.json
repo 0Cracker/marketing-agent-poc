@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "new_rows": 20000,
+  "original_rows": 2242,
+  "original_files_preserved": 55,
+  "global_schema_ontology_shapes_unchanged": [
+    "docs/research/marketing-ontology/schemas/marketing-records.schema.json",
+    "docs/research/marketing-ontology/common-contract/ontology.ttl",
+    "docs/research/marketing-ontology/common-contract/shapes.ttl",
+    "docs/research/marketing-ontology/common-contract/property-use-shapes.ttl"
+  ],
+  "source_files": 40,
+  "code_hashes_match_generation": true,
+  "approval_sha256": "2f0cb5c465e17b94d24ad2a3d71e13aea9158b7b8dcbf5ee044f1d078bd49e74",
+  "manifest_sha256": "3435a8ec30af79dbe3a24b49e80f5af073d53659899efa145ae6d561209649b4",
+  "node_version": "v24.19.0"
+}

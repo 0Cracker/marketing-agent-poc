@@ -1,0 +1,24 @@
+{
+  "version": "CQ-contract-20261016",
+  "original_tests_sha256": "e5c19efcb84fba66697b71ec1b857f50f31001617b69e935201e141acb2e6337",
+  "source": "explicit_user_decisions_in_current_conversation",
+  "overrides": {
+    "CQ06-2": {
+      "period": "Original Q3/August conditions plus [2025-11-02,2025-11-03) and [2026-03-08,2026-03-09), America/New_York; asOf unchanged"
+    },
+    "CQ23-2": {
+      "period": "Original Q3/August conditions plus [2025-11-02,2025-11-03) and [2026-03-08,2026-03-09), America/New_York; asOf unchanged"
+    },
+    "CQ15-1": {
+      "metric": "Low rating: unique valid 5-star-scale reviews rated 1 or 2 / unique valid rated reviews; null excluded"
+    },
+    "CQ15-4": {
+      "metric": "Low-rating change; seller mix distinguished from within-seller change"
+    },
+    "CQ17-3": {
+      "condition": "공개 경쟁 광고 T10·신제품 발표/사건 T11 원천이 원 시험 범위에 없음",
+      "business_confirmation": "confirmed_by_explicit_user_decision_2A",
+      "decision_record": "meaning-decisions-20261016.json"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "diagnostic_history",
+  "attempt": "completion-system-1",
+  "report_created": false,
+  "stage": "invoke completion_protocol report parsing",
+  "observed_error": "TypeError: object of type int has no len()",
+  "cause": "D004 list-specific checks applied to integer completion_protocol checks count",
+  "action": "Limit D004 list parsing to D004 and test integer and malformed D004 reports",
+  "fixed_in_commit": "0e25e12",
+  "subsequent_full_run": "2026-10-16-completion-system-2.json",
+  "subsequent_status": "pass/complete"
+}
