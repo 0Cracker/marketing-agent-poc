@@ -1,0 +1,58 @@
+{
+  "role": "analysis",
+  "question": "일본 2026년 8월 6제품의 시장 위치와 재고 관측을 확인해줘. 한 시점 재고를 품절 지속기간으로 해석하지 마.",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
+  },
+  "parentId": null,
+  "focus": "stock",
+  "status": "held",
+  "stage": "exploration",
+  "events": [
+    {
+      "type": "scope_validated",
+      "at": "2026-10-20T04:38:25.486Z"
+    },
+    {
+      "type": "quality",
+      "at": "2026-10-20T04:38:25.521Z",
+      "available": 8170,
+      "excluded": 0,
+      "rawFallback": false,
+      "coverage": "sample"
+    },
+    {
+      "type": "stopped",
+      "stage": "exploration",
+      "reason": "model_failed",
+      "at": "2026-10-20T04:38:29.342Z"
+    }
+  ],
+  "history": [],
+  "modelCalls": 1,
+  "toolCalls": 0,
+  "issuedFacts": {},
+  "issuedRecords": [],
+  "requiredCounters": {},
+  "inputFingerprint": "0f023e6eaba1f6ba6a8b25f656611a618bacb9fe576342eff4ee5953ef93f695",
+  "id": "11305d53-0fa3-4fd2-9865-838208012ffd",
+  "version": 7,
+  "reason": "model_failed",
+  "resumeConditions": [
+    "Resolve model_failed before continuing"
+  ]
+}

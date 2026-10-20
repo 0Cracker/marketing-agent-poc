@@ -1,0 +1,58 @@
+{
+  "role": "analysis",
+  "question": "한국 2026년 8월 6제품의 금액 점유율을 비교하고, 자사 P1A의 가격 관련 지지·반대 근거를 확인해줘. 인과로 단정하지 마.",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "KR",
+    "scopeId": "CURRENT-KR",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
+  },
+  "parentId": null,
+  "focus": "price",
+  "status": "held",
+  "stage": "exploration",
+  "events": [
+    {
+      "type": "scope_validated",
+      "at": "2026-10-20T04:38:20.622Z"
+    },
+    {
+      "type": "quality",
+      "at": "2026-10-20T04:38:20.669Z",
+      "available": 6016,
+      "excluded": 0,
+      "rawFallback": false,
+      "coverage": "sample"
+    },
+    {
+      "type": "stopped",
+      "stage": "exploration",
+      "reason": "model_failed",
+      "at": "2026-10-20T04:38:21.376Z"
+    }
+  ],
+  "history": [],
+  "modelCalls": 1,
+  "toolCalls": 0,
+  "issuedFacts": {},
+  "issuedRecords": [],
+  "requiredCounters": {},
+  "inputFingerprint": "0f023e6eaba1f6ba6a8b25f656611a618bacb9fe576342eff4ee5953ef93f695",
+  "id": "d4111ed7-5eb8-4244-a30a-67f1835920f7",
+  "version": 7,
+  "reason": "model_failed",
+  "resumeConditions": [
+    "Resolve model_failed before continuing"
+  ]
+}

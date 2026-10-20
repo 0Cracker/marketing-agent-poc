@@ -52,3 +52,6 @@ next-env.d.ts
 # Python validation caches are local build artifacts.
 __pycache__/
 *.py[cod]
+
+# Local evaluation execution stores; the JSON run/evidence records are versioned.
+/evidence/v0.4.0/live-questions-*/flow.sqlite*

@@ -39,7 +39,7 @@ export class FlowStore {
 
 export const toolDefinitions={
   market_compare:{description:'Compare complete monthly market sales and share for the fixed scope. No arguments.',parameters:{type:'object',properties:{},additionalProperties:false}},
-  observations:{description:'Read paginated price, stock or ad metric observations; preserve missing values and snapshot semantics.',parameters:{type:'object',properties:{type:{type:'string',enum:['T08','T13','T22']},offset:{type:'integer',minimum:0},limit:{type:'integer',minimum:1,maximum:80}},required:['type'],additionalProperties:false}},
+  observations:{description:'Read paginated price, stock or ad metric observations; preserve missing values and snapshot semantics.',parameters:{type:'object',properties:{type:{type:'string',enum:['T08','T13','T22']},offset:{type:'integer',minimum:0},limit:{type:'integer',minimum:1,maximum:24}},required:['type'],additionalProperties:false}},
   relations:{description:'Retrieve bounded explicit product/campaign/source relations and both positive and negative evidence. Association is not causation.',parameters:{type:'object',properties:{candidate:{type:'string',enum:['price','stock','media','measurement']}},required:['candidate'],additionalProperties:false}},
   evidence:{description:'Read in-scope source evidence. IDs must be from tool results.',parameters:{type:'object',properties:{ids:{type:'array',items:{type:'string'},minItems:1,maxItems:24}},required:['ids'],additionalProperties:false}},
   budget_inputs:{description:'List approved synthetic budget scenarios, response models and applicable policies.',parameters:{type:'object',properties:{},additionalProperties:false}},
@@ -96,13 +96,13 @@ export class AgentFlow {
     requireThat(!this.#active.has(doc.id),'run_busy');this.#active.add(doc.id);
     try{
       while(doc.modelCalls<this.maxModelCalls){
-        doc=this.#change(doc,d=>{d.status='running';d.modelCalls++;});
+        doc=this.#change(doc,d=>{d.status='running';delete d.reason;delete d.resumeConditions;d.modelCalls++;});
         let response;
         try{
           response=await this.model({role:doc.role,question:doc.question,focus:doc.focus,scope:structuredClone(doc.scope),history:structuredClone(doc.history),
             tools:Object.fromEntries(allowed[doc.role].map(k=>[k,toolDefinitions[k]])),analysis:doc.analysisId?this.get(doc.analysisId).output:doc.parentId?this.get(doc.parentId).output:null});
         }catch(e){
-          return this.#held(this.get(doc.id),['quota_exhausted','model_timeout','model_context_limit','model_protocol','provider_configuration'].includes(e.code)?e.code:'model_failed',['quota_exhausted','model_timeout'].includes(e.code)?'paused':'held');
+          return this.#held(this.get(doc.id),['quota_exhausted','model_timeout','model_unavailable','model_context_limit','model_protocol','provider_configuration'].includes(e.code)?e.code:'model_failed',['quota_exhausted','model_timeout','model_unavailable'].includes(e.code)?'paused':'held');
         }
         doc=this.get(doc.id);if(doc.status!=='running')return doc;
         requireThat(keys(response,['tool','args','finish'])&&((typeof response.tool==='string'&&!response.finish)||(response.finish&&!response.tool)),'model_protocol');

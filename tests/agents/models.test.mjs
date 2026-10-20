@@ -21,7 +21,7 @@ test('M02 no transmission opt-in means zero network calls',()=>{
 for(const [id,change] of [['M03',{provider:'unknown'}],['M04',{model:''}],['M05',{apiKey:''}]]){
   test(`${id} provider/model/key must be explicit`,()=>assert.throws(()=>createRemoteModel({...options,provider:'groq',...change})));
 }
-for(const [id,status,code] of [['M06',429,'quota_exhausted'],['M07',503,'model_failed'],['M08',401,'model_failed']]){
+for(const [id,status,code] of [['M06',429,'quota_exhausted'],['M07',503,'model_unavailable'],['M08',401,'model_failed'],['M15',500,'model_failed'],['M16',502,'model_failed'],['M17',504,'model_failed']]){
   test(`${id} HTTP ${status} is safe failure without blind retries or key leakage`,async()=>{
     let calls=0;const model=createRemoteModel({...options,provider:'groq',fetchImpl:async()=>{calls++;return new Response(options.apiKey,{status});}});
     await assert.rejects(model(context),e=>e.code===code&&!e.message.includes(options.apiKey));assert.equal(calls,1);
