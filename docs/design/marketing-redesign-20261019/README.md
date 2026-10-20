@@ -40,7 +40,7 @@
 - [GA4 전자상거래 구매 보고서](https://support.google.com/analytics/answer/12924131?hl=en), [상품 단위 지표](https://support.google.com/analytics/answer/13428834?hl=en): 상품 수량을 제품·행동별로 집계하는 방식을 적용했다. [사용자 구매 여정 보고서](https://support.google.com/analytics/answer/13128171?hl=en)의 사용자 퍼널과는 구분한다. 현재 상품행 이벤트·주문 연결 이벤트의 수집 범위가 달라 사용자 전환율이나 이탈률을 만들지 않았다.
 - [Shopify 재고 보고서](https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/inventory-reports): 특정 시점의 재고와 기간 흐름을 구분한다. 같은 제품의 서로 다른 위치는 같은 관측일 안에서 집계하며 여러 날짜의 재고를 누적 합계로 보여주지 않는다.
 - [Statuspage 과거 상태 표시](https://support.atlassian.com/statuspage/docs/display-historical-uptime-of-components/): 발생 시점과 상태를 시간축에 배치하는 방식을 참고했다. 해당 서비스의 가동률을 복제하지 않고 우리 자료에 실제로 기록된 사건만 표시한다.
-- [기존 R01/R02·R11/R13 조사 자료](../../../../dashboard-design-references-20261015/catalog.md): 밝은 업무 화면·절제된 경계·한국어 가독성과 밀도를 유지했다. 참고 제품의 수치·로고·이미지를 데이터로 가져오지 않았다.
+- [기존 R01/R02·R11/R13 조사 자료](../../references/dashboard-design/catalog.md): 밝은 업무 화면·절제된 경계·한국어 가독성과 밀도를 유지했다. 참고 제품의 수치·로고·이미지를 데이터로 가져오지 않았다.
 
 ## 비교용 가상 데이터 D008
 

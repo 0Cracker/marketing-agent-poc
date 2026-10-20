@@ -24,7 +24,7 @@ D001 변환, 대표 성과 목표, 추가 자료·시뮬레이션 가정은 제�
 
 ## 근거·검증·재검토
 
-[자료 S01–S14와 L01–L06](../research/marketing-ontology/evidence-register.md), [질문](../research/marketing-ontology/questions-and-data.md), [온톨로지](../research/marketing-ontology/ontology-spec.md), [D001](../research/marketing-ontology/data-proposal.md), [작업 기록](../research/marketing-ontology/work-log.md).
+자료 S01–S14와 L01–L06 (이전 파일 `evidence-register.md`, 현재 미보존), [질문](../research/marketing-ontology/questions-and-data.md), [온톨로지](../research/marketing-ontology/ontology-spec.md), [D001](../research/marketing-ontology/data-proposal.md), [작업 기록](../research/marketing-ontology/work-log.md).
 
 현재 검증은 자료 조사·저장소 점검·문서 정합성이다. 데이터 적재·인과 효과·현업 적합성은 미검증. 기업 스키마가 제공되거나 목표가 바뀌거나 형식 추론이 필수로 확인되면 모델·저장 방식을 재검토한다. 실제 설치가 실패하면 가짜 그래프를 만들지 않고 실행 가능한 대안을 제안한다.
 

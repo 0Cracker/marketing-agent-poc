@@ -1,6 +1,6 @@
 # 업무 유형·파일·식별키 매핑
 
-공통 키는 `dataset_type` · `scope_id` · `scenario_id`다. 서로 다른 시나리오·표본을 자동 중복으로 삭제하지 않는다. 미제공 필드는 null로 비교하고 충돌 자료는 판정 보류로 남긴다.
+공통 키는 `dataset_type` · `scope_id` · `scenario_id`다. 서로 다른 시나리오·표본을 자동 중복으로 삭제하지 않는다. 미제공 필드는 null로 비교하고 충돌 자료는 판정 보류로 남긴다. 예외로 2026-10-20 승인된 T37 가상 성능 자료는 기존 업무 키마다 ID 정렬 첫 행 하나를 대표로 선택하고 나머지는 원본·판정 이력에 보존한다.
 
 | 유형 | 현재 파일 | 활성 행수 | 업무 식별 차원 |
 | --- | --- | ---: | --- |
@@ -40,7 +40,7 @@
 | T34 | weather-calendar.jsonl | 168 | `record_kind` · `region_ref` · `period` · `station_ref` · `event_name` · `calendar_kind` |
 | T35 | change-events.jsonl | 108 | `change_id` · `entity_ref` · `changed_at` · `changed_field` |
 | T36 | collection-runs.jsonl | 216 | `run_id` · `target_dataset` · `expected_period` |
-| T37 | site-events.jsonl | 23 | `record_kind` · `page_ref` · `device` · `incident_start` · `incident_end` · `period` |
+| T37 | site-events.jsonl | 35 | `record_kind` · `page_ref` · `device` · `incident_start` · `incident_end` · `period` |
 | T38 | experiments.jsonl | 72 | `experiment_id` · `arm_id` · `period` · `assignment_method` · `assignment_unit` |
 | T39 | budget-models.jsonl | 72 | `record_kind` · `model_ref` · `model_version` · `validity_scope` · `scenario_id_ref` · `period` |
 | T40 | budget-policies.jsonl | 36 | `policy_id` · `version` · `period` |

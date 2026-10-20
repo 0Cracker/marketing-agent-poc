@@ -4,7 +4,7 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
-const repository=path.resolve(process.argv[2]||(fs.existsSync('docs/research/marketing-ontology/batches/D007/catalog.mjs')?'.':'../marketing-agent-poc'));
+const repository=path.resolve(process.argv[2]||path.join(import.meta.dirname,'..'));
 const base='docs/research/marketing-ontology/batches/D007';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const read=file=>fs.readFileSync(path.join(repository,file));

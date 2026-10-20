@@ -1,0 +1,146 @@
+{
+  "id": "e432078c3099d8b979a3ce105c3a125114c62c985a78313c50c94a9a9d14349a",
+  "kind": "assumption_simulation",
+  "baseline": {
+    "recordId": "D008-T39-00002",
+    "allocations": [
+      {
+        "campaign_ref": "D008-Campaign-KR-P1A-search",
+        "amount": {
+          "amount": "5250000.00",
+          "currency": "KRW"
+        },
+        "lower": {
+          "amount": "1500000.00",
+          "currency": "KRW"
+        },
+        "upper": {
+          "amount": "13500000.00",
+          "currency": "KRW"
+        }
+      },
+      {
+        "campaign_ref": "D008-Campaign-KR-P1A-social",
+        "amount": {
+          "amount": "9750000.00",
+          "currency": "KRW"
+        },
+        "lower": {
+          "amount": "1500000.00",
+          "currency": "KRW"
+        },
+        "upper": {
+          "amount": "13500000.00",
+          "currency": "KRW"
+        }
+      }
+    ],
+    "total": {
+      "amount": "15000000.00",
+      "currency": "KRW"
+    },
+    "expected": "72.848485",
+    "channels": [
+      "search",
+      "social"
+    ],
+    "campaignChannels": {
+      "D008-Campaign-KR-P1A-search": "search",
+      "D008-Campaign-KR-P1A-social": "social"
+    }
+  },
+  "candidate": {
+    "recordId": "D008-T39-00026",
+    "allocations": [
+      {
+        "campaign_ref": "D008-Campaign-KR-P1A-search",
+        "amount": {
+          "amount": "7500000.00",
+          "currency": "KRW"
+        },
+        "lower": {
+          "amount": "1500000.00",
+          "currency": "KRW"
+        },
+        "upper": {
+          "amount": "13500000.00",
+          "currency": "KRW"
+        }
+      },
+      {
+        "campaign_ref": "D008-Campaign-KR-P1A-social",
+        "amount": {
+          "amount": "7500000.00",
+          "currency": "KRW"
+        },
+        "lower": {
+          "amount": "1500000.00",
+          "currency": "KRW"
+        },
+        "upper": {
+          "amount": "13500000.00",
+          "currency": "KRW"
+        }
+      }
+    ],
+    "total": {
+      "amount": "15000000.00",
+      "currency": "KRW"
+    },
+    "expected": "76.190476",
+    "channels": [
+      "search",
+      "social"
+    ],
+    "campaignChannels": {
+      "D008-Campaign-KR-P1A-search": "search",
+      "D008-Campaign-KR-P1A-social": "social"
+    }
+  },
+  "modelId": "D008-T39-00001",
+  "modelVersion": "Hill-slope1-demo-20261020",
+  "assumptions": [
+    "Hill slope=1: response = scale × channel_budget / (half_saturation + channel_budget).",
+    "한 국가·한 시나리오 기간의 같은 채널 캠페인 예산을 합산한 뒤 채널 반응을 더한다. 검색 최대 60건·소셜 최대 40건은 가상의 모의 전환수다.",
+    "가상 계수: 검색 반포화 3000000, 소셜 반포화 1500000; 해당 국가 예산 통화 단위. 총예산 15000000 기준으로 시연용 설정했다.",
+    "인터넷 근거는 포화 함수의 형태만 뒷받침한다. 계수는 학습·추정되지 않았으며 실제 성과 예측·인과 효과·최적 배분을 입증하지 않는다. Adstock·지연 효과는 적용하지 않는다.",
+    "기존 global scale/saturation 모형은 이력 호환을 위해 캠페인별 계산을 유지한다. 채널 계수 모형과 의미가 다르므로 같은 결과로 비교하지 않는다.",
+    "https://developers.google.com/meridian/docs/advanced-modeling/media-saturation-lagging"
+  ],
+  "formula": "scale * budget / (saturation + budget)",
+  "parameters": [
+    {
+      "name": "search.scale",
+      "value": "60"
+    },
+    {
+      "name": "search.saturation",
+      "value": "3000000"
+    },
+    {
+      "name": "social.scale",
+      "value": "40"
+    },
+    {
+      "name": "social.saturation",
+      "value": "1500000"
+    }
+  ],
+  "responseAggregation": "channel",
+  "policyId": "D008-T40-00034",
+  "approvalRole": "synthetic_analyst",
+  "period": {
+    "start": "2026-08-03",
+    "end_exclusive": "2026-08-31",
+    "timezone": "Asia/Seoul",
+    "grain": "custom"
+  },
+  "realExecutionAllowed": false,
+  "recordIds": [
+    "D008-T39-00002",
+    "D008-T39-00026",
+    "D008-T39-00001",
+    "D008-T40-00034"
+  ],
+  "inputFingerprint": "0f023e6eaba1f6ba6a8b25f656611a618bacb9fe576342eff4ee5953ef93f695"
+}

@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {scopeFromScreen,snapshotKey,createAgentClient} from '../frontend/workbench/agent-client.ts';
+import {scopeFromScreen,snapshotKey,createAgentClient,errorText} from '../frontend/workbench/agent-client.ts';
+
+test('503 guidance describes saved state and manual resume without hiding other errors',()=>{
+  assert.match(errorText('model_unavailable'),/일시적으로/);assert.match(errorText('model_unavailable'),/직접 재개/);assert.match(errorText('model_unavailable'),/자동 재시도하지 않습니다/);
+  assert.notEqual(errorText('model_unavailable'),errorText('quota_exhausted'));assert.notEqual(errorText('model_unavailable'),errorText('model_failed'));
+});
 
 const selection={dataset:'D007',country:'JP',month:'2026-08',productIds:['P1A','P2A'],asOf:'2026-10-18T00:00:00Z'};
 test('C01 screen context becomes explicit half-open scope without raw data',()=>{

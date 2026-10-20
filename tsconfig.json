@@ -34,6 +34,7 @@
     "allowImportingTsExtensions": true
   },
   "include": [
+    "frontend/**/*.d.ts",
     "frontend/app/**/*.tsx",
     "frontend/components/**/*.tsx",
     "frontend/lib/**/*.ts",

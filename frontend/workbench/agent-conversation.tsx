@@ -2,6 +2,7 @@ import {useCallback,useEffect,useRef,useState} from 'react';
 import {ArrowUp,Sparkles} from 'lucide-react';
 import {createAgentClient,errorText,scopeFromScreen,snapshotKey} from './agent-client';
 import {analysisAnswer,budgetConclusion} from './agent-answer';
+import {hypothesisRows} from './agent-presentation';
 import {AgentResult,EvidenceCards} from './agent-result';
 import type {AgentRun,AgentScope,BudgetInputs,ScreenSelection} from './agent-client';
 import './agent-conversation.css';
@@ -13,7 +14,7 @@ const eventNames:Record<string,string>={scope_validated:'범위 확인',quality:
 const toolNames:Record<string,string>={market_compare:'시장 지표 비교',relations:'관계·반대 근거 조회',evidence:'원천 확인',budget_inputs:'예산 입력 확인',simulate:'현행·대안 계산'};
 
 export function AgentConversation({screen,evidenceIds,metricLabels,selectedTitle}:{screen:ScreenSelection;evidenceIds:string[];metricLabels:string[];selectedTitle:string}){
-  const [client]=useState(()=>createAgentClient());
+  const [client]=useState(()=>createAgentClient(fetch,import.meta.env.VITE_AGENT_API_URL||'/agent-api'));
   const [question,setQuestion]=useState(''),[focus,setFocus]=useState('price');
   const [pendingQuestion,setPendingQuestion]=useState('');
   const threadRef=useRef<HTMLDivElement>(null),inputRef=useRef<HTMLTextAreaElement>(null);
@@ -60,6 +61,7 @@ export function AgentConversation({screen,evidenceIds,metricLabels,selectedTitle
   }
   async function showEvidence(id:string){if(!analysis)return;await perform(async()=>{const r=await client.evidence(analysis.id,[id]);if(alive.current)setEvidence(r.records);});}
   const answer=analysis?analysisAnswer(analysis):null;
+  const summaryRows=analysis?hypothesisRows(analysis):[];
   const referenceIds=[...new Set((analysis?.output?.hypotheses||[]).flatMap(h=>[h.supports[0],h.counters[0]]).filter((id):id is string=>!!id))];
   function draft(text:string){setQuestion(text);inputRef.current?.focus();}
   return <section className="wb-conversation" aria-label="분석·예산 대화">
@@ -71,7 +73,7 @@ export function AgentConversation({screen,evidenceIds,metricLabels,selectedTitle
       {analysis&&<section className="wb-agent-result" aria-live="polite"><h2><Sparkles size={15}/> 마케팅 AI <span>{states[analysis.status]||analysis.status}</span></h2>
         <p className="wb-agent-conclusion">{answer?.conclusion}</p>
         {analysis.reason&&<p>{errorText(analysis.reason)}</p>}
-        {(!!analysis.output?.hypotheses?.length||!!analysis.output?.facts?.length)&&<><h3>핵심 근거</h3><ul className="wb-agent-key-points">{analysis.output.hypotheses?.slice(0,2).map(h=><li key={h.candidate}>{candidates[h.candidate]}: 지지 {h.supports.length}건 · 반대 {h.counters.length}건.{[h.supports[0],h.counters[0]].filter(Boolean).map(id=><button className="wb-agent-reference" key={id} type="button" disabled={busy} onClick={()=>void showEvidence(id)} aria-label={`근거 ${referenceIds.indexOf(id)+1} 원문 보기`}>[{referenceIds.indexOf(id)+1}]</button>)}</li>)}{!!analysis.output.facts?.length&&<li>선택 범위에서 사실 {analysis.output.facts.length}개를 반환했습니다.{analysis.output.completeness==='partial'?' 일부 값은 미확보입니다.':''}</li>}</ul></>}
+        {(!!analysis.output?.hypotheses?.length||!!analysis.output?.facts?.length)&&<><h3>핵심 근거</h3><ul className="wb-agent-key-points">{analysis.output.hypotheses?.slice(0,2).map(h=><li key={h.candidate}>{candidates[h.candidate]}: {summaryRows.find(r=>r.candidate===h.candidate)?.summary}.{[h.supports[0],h.counters[0]].filter(Boolean).map(id=><button className="wb-agent-reference" key={id} type="button" disabled={busy} onClick={()=>void showEvidence(id)} aria-label={`근거 ${referenceIds.indexOf(id)+1} 원문 보기`}>[{referenceIds.indexOf(id)+1}]</button>)}</li>)}{!!analysis.output.facts?.length&&<li>선택 범위에서 사실 {analysis.output.facts.length}개를 반환했습니다.{analysis.output.completeness==='partial'?' 일부 값은 미확보입니다.':''}</li>}</ul></>}
         {analysis.output&&<p className="wb-agent-limit"><b>한계</b> 가상 표본·제한된 조회 범위의 결과입니다. 근거 건수는 효과의 크기나 신뢰도가 아니며, 인과는 입증되지 않았습니다.</p>}
         <p className="wb-agent-next"><b>다음 행동</b> {answer?.next}</p>
         {!!analysis.screenContext?.excludedEvidenceIds?.length&&<p>선택 근거 중 질문 범위를 벗어난 {analysis.screenContext.excludedEvidenceIds.length}건은 제외했습니다.</p>}
@@ -88,8 +90,8 @@ export function AgentConversation({screen,evidenceIds,metricLabels,selectedTitle
         {proposal.simulation&&<><p className="wb-agent-limit"><b>한계</b> 기존 가상 시나리오의 가정 기반 계산입니다. 실제 계정의 현행·성과 예측이 아니며, 비교 수치만으로 집행을 권하지 않습니다.</p>
           {proposal.simulation.period&&<p className="wb-agent-help">예산 시나리오 기간: {proposal.simulation.period.start} ~ {proposal.simulation.period.end_exclusive} 미포함. 아래 캠페인만 변경 대상입니다.</p>}
           <table className="wb-agent-budget-table"><caption>캠페인별 배분 비교</caption><thead><tr><th>변경 대상</th><th>기준안</th><th>후보안</th></tr></thead><tbody>{proposal.simulation.candidate.allocations.map(a=>{const baseline=proposal.simulation!.baseline.allocations.find(b=>b.campaign_ref===a.campaign_ref);return <tr key={a.campaign_ref}><th>{a.campaign_ref.replace(/^D007-Campaign-/,'')}</th><td>{baseline?`${Number(baseline.amount.amount).toLocaleString('ko-KR')} ${baseline.amount.currency}`:'미확보'}</td><td>{Number(a.amount.amount).toLocaleString('ko-KR')} {a.amount.currency}</td></tr>;})}</tbody></table>
-          <table><caption>같은 가정의 기준안·후보안 비교</caption><thead><tr><th>구분</th><th>모의 전환수</th></tr></thead><tbody><tr><th>기준안</th><td>{proposal.simulation.baseline.expected}</td></tr><tr><th>후보안</th><td>{proposal.simulation.candidate.expected}</td></tr></tbody></table>
-          <details><summary>승인 대상 배분·가정 보기</summary><ul>{proposal.simulation.candidate.allocations.map(a=><li key={a.campaign_ref}>{a.campaign_ref}: {a.amount.amount} {a.amount.currency}</li>)}</ul><ul>{proposal.simulation.assumptions.map(a=><li key={a}>{a}</li>)}</ul><p>제안 버전 {proposal.version}</p></details>
+          <table><caption>같은 가정의 기준안·후보안 비교</caption><thead><tr><th>구분</th><th>예상 전환수 · 가상 모형</th></tr></thead><tbody><tr><th>기준안</th><td>{proposal.simulation.baseline.expected}</td></tr><tr><th>후보안</th><td>{proposal.simulation.candidate.expected}</td></tr></tbody></table>
+          <details><summary>승인 대상 배분·가정 보기</summary><p>모형: {proposal.simulation.modelVersion}</p>{proposal.simulation.formula&&<p>수식: {proposal.simulation.formula} · {proposal.simulation.responseAggregation==='channel'?'같은 채널 예산 합산 후 계산':'캠페인별 계산'}</p>}{proposal.simulation.parameters&&<ul>{proposal.simulation.parameters.map(p=><li key={p.name}>{p.name}: {p.value}</li>)}</ul>}<ul>{proposal.simulation.candidate.allocations.map(a=><li key={a.campaign_ref}>{a.campaign_ref}: {a.amount.amount} {a.amount.currency}</li>)}</ul><ul>{proposal.simulation.assumptions.map(a=><li key={a}>{a}</li>)}</ul><p>제안 버전 {proposal.version}</p></details>
           <p className="wb-agent-next"><b>다음 행동</b> {proposal.status==='invalidated'?'최신 분석으로 예산을 다시 검토하세요.':proposal.status==='rejected'?'새 제안이 필요하면 분석에서 예산 검토를 다시 선택하세요.':proposal.status==='approved'?'승인된 배분·가정을 확인하세요. 수정하면 다시 승인해야 합니다.':'배분·가정을 검토하고, 필요하면 가정을 바꿔 다시 계산하세요.'}</p>
           {inputs&&<details><summary>후보·가정 변경</summary><div className="wb-agent-revision"><label>다른 기존 후보<select value={candidateId} onChange={e=>setCandidate(e.target.value)} disabled={busy||!['pending_approval','approved','retained'].includes(proposal.status)}>{inputs.scenarios.map(s=><option key={s.record_id} value={s.record_id}>{s.record_id}</option>)}</select></label><label>가정 모형<select value={modelId} onChange={e=>setModel(e.target.value)} disabled={busy||!['pending_approval','approved','retained'].includes(proposal.status)}>{inputs.models.map(m=><option key={m.record_id} value={m.record_id}>{m.model_ref}</option>)}</select></label><button type="button" disabled={busy||!['pending_approval','approved','retained'].includes(proposal.status)} onClick={()=>void proposalAction('revise')}>수정·재계산</button><p>수정하면 기존 승인은 무효화됩니다.</p></div></details>}
           <div className="wb-agent-actions"><button type="button" disabled={busy||proposal.status!=='pending_approval'} onClick={()=>void proposalAction('approve')}>가상 변경 승인</button><button type="button" disabled={busy||!['pending_approval','approved'].includes(proposal.status)} onClick={()=>void proposalAction('reject')}>제안 거절</button><button type="button" disabled>실제 집행 미연결</button></div>

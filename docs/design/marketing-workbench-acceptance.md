@@ -6,7 +6,7 @@
 - [40유형 매핑](marketing-workbench-type-map.json)
 - [수치 검산 원문](workbench-validation/numeric-checks.json)
 - [브라우저 검증 원문](workbench-validation/browser-checks.json)
-- [구현·초안 보존 스냅샷](../../../dashboard-design-history/2026-10-15-workbench-implementation/README.md)
+- [구현·초안 보존 스냅샷](../../archive/design-history/2026-10-15-workbench-implementation/README.md)
 
 ## 원문과 기존 작업 보존
 

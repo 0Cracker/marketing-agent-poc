@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "contentType": "image/webp",
+      "id": "e28866b2ecebc8ea",
+      "kind": "image",
+      "name": "dashboard-guide-digital-marketing.webp",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/0fcdd4c1-f64a-4d21-8c69-967a6a20dcd1/e28866b2ecebc8ea.webp",
+      "url": "https://cdn.metabase.com/images/dashboards/dashboard-guide-digital-marketing.webp"
+    },
+    {
+      "contentType": "image/webp",
+      "id": "aea759be44797e35",
+      "kind": "image",
+      "name": "dashboard-guide-marketing-funnel.webp",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/0fcdd4c1-f64a-4d21-8c69-967a6a20dcd1/aea759be44797e35.webp",
+      "url": "https://cdn.metabase.com/images/dashboards/dashboard-guide-marketing-funnel.webp"
+    }
+  ],
+  "directoryPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/0fcdd4c1-f64a-4d21-8c69-967a6a20dcd1",
+  "failures": [],
+  "manifestPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/0fcdd4c1-f64a-4d21-8c69-967a6a20dcd1/manifest.json",
+  "summary": {
+    "downloadedCount": 2,
+    "elapsedMs": 6141.756999999983,
+    "failedCount": 0,
+    "requestedCount": 2
+  }
+}

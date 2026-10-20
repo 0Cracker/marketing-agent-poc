@@ -5,14 +5,15 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {businessKey,businessKeys} from './data-business-keys.mjs';
-const root=path.resolve(import.meta.dirname,'..'),sibling=path.resolve(root,'../marketing-agent-poc');
+import {applyDemoBudgetModels} from './demo-budget-model.mjs';
+const root=path.resolve(import.meta.dirname,'..');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const jsonl=rs=>rs.map(r=>JSON.stringify(r)).join('\n')+'\n';
 const output=path.join(root,'data');
 const names=['products','identity-mappings','market-sales','purchase-surveys','search-interest','keyword-demand','organic-search','prices','promotions','public-ads','publications','campaigns','ad-performance','ad-breakdowns','auction-insights','creatives','web-events','commerce-events','order-lines','refunds','costs','inventory','distribution-fulfilment','reviews','review-annotations','customer-inquiries','owned-content','social-comments','creator-collaborations','customer-cohorts','crm-performance','brand-surveys','public-statistics','weather-calendar','change-events','collection-runs','site-events','experiments','budget-models','budget-policies'];
 const mapping=Object.fromEntries(names.map((name,i)=>['T'+String(i+1).padStart(2,'0'),name+'.jsonl']));mapping.H01='sales-reports.jsonl';
-const {loadCatalog,validRecord}=await import(pathToFileURL(path.join(sibling,'docs/research/marketing-ontology/batches/D007/catalog.mjs')));
+const {loadCatalog,validRecord}=await import(pathToFileURL(path.join(root,'docs/research/marketing-ontology/batches/D007/catalog.mjs')));
 const entries=loadCatalog();
 const publicRoot=path.join(root,'frontend/public/workbench-data');
 const demo=read(path.join(publicRoot,'D008/catalog.json')),lock=read(path.join(publicRoot,'D008/lock.json'));
@@ -27,14 +28,14 @@ function preserve(base,relative,kind){
  const destination=path.join(output,target);fs.mkdirSync(path.dirname(destination),{recursive:true});
  if(fs.existsSync(destination))assert.equal(hash(fs.readFileSync(destination)),sha256);else fs.writeFileSync(destination,bytes,{flag:'wx'});
  const rows=relative.endsWith('.jsonl')?bytes.toString().trim().split(/\r?\n/).filter(Boolean).map(JSON.parse):[];
- inputs.push({repository:base===sibling?'marketing-agent-poc':'marketing-dashboard-drafts',path:relative.replaceAll('\\','/'),sha256,bytes:bytes.length,rows:rows.length,kind,archive:target});
+ inputs.push({repository:kind==='original'&&relative.startsWith('docs/research/')?'marketing-agent-poc':'marketing-dashboard-drafts',path:relative.replaceAll('\\','/'),sha256,bytes:bytes.length,rows:rows.length,kind,archive:target});
  return {rows,input:inputs.at(-1)};
 }
 const batchesDir='docs/research/marketing-ontology/batches';
 for(const batch of [...new Set(entries.map(e=>e.batch))]){
- const dir=path.join(sibling,batchesDir,batch,'source');
+ const dir=path.join(root,batchesDir,batch,'source');
  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.jsonl')).sort()){
-  const {rows,input}=preserve(sibling,`${batchesDir}/${batch}/source/${file}`,'original');
+  const {rows,input}=preserve(root,`${batchesDir}/${batch}/source/${file}`,'original');
   rows.forEach((r,i)=>locations.set(batch+'/'+(r.record_id||r.metadata?.record_id),{...input,line:i+1,raw_sha256:hash(JSON.stringify(r))}));
  }
 }
@@ -71,7 +72,26 @@ for(const e of entries){
  }else decide(e,'independent_archive','Historical independent sample/validation case with different scope; retain without combining denominators with the current comparison scenario');
 }
 const candidates=new Map();for(const r of demo.records){const key=businessKey(r);candidates.set(key,[...(candidates.get(key)||[]),r.record_id]);}
-for(const r of demo.records){const v=validRecord(r);assert(v.conforming,JSON.stringify({id:r.record_id,errors:v.errors}));const conflicts=candidates.get(businessKey(r));decide({batch:'D008',record:r,source:r},conflicts.length>1?'pending':'active',conflicts.length>1?'Ambiguous same-scope business key without sample/measurement discriminator; all conflicting rows withheld: '+conflicts.join(', '):'Existing current comparison scenario; no generated/changed observation');}
+for(const r of demo.records){
+ const v=validRecord(r);assert(v.conforming,JSON.stringify({id:r.record_id,errors:v.errors}));
+ const conflicts=candidates.get(businessKey(r));
+ // User-approved demo representative selection, not a measured/statistical aggregate.
+ if(r.dataset_type==='T37'&&r.record_kind==='performance'&&conflicts.length>1){
+  const selected=[...conflicts].sort()[0];
+  decide({batch:'D008',record:r,source:r},r.record_id===selected?'active':'selection_excluded',
+   '2026-10-20 user-approved synthetic demo representative: lexicographically first record_id per existing business key; source values unchanged; not a combined p75; selected '+selected,r.record_id===selected?undefined:selected);
+ }else decide({batch:'D008',record:r,source:r},conflicts.length>1?'pending':'active',conflicts.length>1?'Ambiguous same-scope business key without sample/measurement discriminator; all conflicting rows withheld: '+conflicts.join(', '):'Existing current comparison scenario; no generated/changed observation');
+}
+// Preserve raw source hashes and explicitly identify the approved derived model projection.
+const projected=applyDemoBudgetModels(active);
+for(let i=0;i<active.length;i++)if(projected[i]!==active[i]){
+ const r=projected[i];assert(validRecord(r).conforming,'Invalid projected model '+r.record_id);
+ active[i]=r;
+ for(const m of [migration.find(m=>m.active_id===r.record_id),provenance.find(m=>m.active_id===r.record_id)]){
+  m.record_sha256=hash(JSON.stringify(r));
+  m.transformation='2026-10-20 user-approved Hill slope=1 synthetic channel model and scenario projection; original archived source unchanged';
+ }
+}
 assert.equal(migration.length,originals.reduce((n,x)=>n+x.rows,0));
 const ids=new Set(active.map(r=>r.record_id));assert.equal(ids.size,active.length);
 const byId=new Map(active.map(r=>[r.record_id,r]));
@@ -91,5 +111,5 @@ manifest.period={start:periods.map(p=>p.start).sort()[0],end:periods.map(p=>p.en
 manifest.pending_by_type=Object.fromEntries([...new Set(pending.map(m=>m.type))].map(t=>[t,pending.filter(m=>m.type===t).length]));
 manifest.data_sha256=hash(JSON.stringify({contract:manifest.contract,screen_contract:manifest.screen_contract,schema_sha256:manifest.schema_sha256,source_created_at:manifest.source_created_at,scope_ids:manifest.scope_ids,period:manifest.period,files:files.map(({file,sha256})=>({file,sha256})),metadata}));
 write('manifest.json',JSON.stringify(manifest,null,2)+'\n');
-for(const input of inputs){const base=input.repository==='marketing-agent-poc'?sibling:root;assert.equal(hash(fs.readFileSync(path.join(base,input.path))),input.sha256,'Source changed during migration');}
+for(const input of inputs){const base=root;assert.equal(hash(fs.readFileSync(path.join(base,input.path))),input.sha256,'Source changed during migration');}
 console.log(JSON.stringify({pass:true,rows:manifest.rows,preserved_rows:manifest.preserved_rows,source_files:manifest.source_files,decisions,data_sha256:manifest.data_sha256}));

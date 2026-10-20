@@ -1,0 +1,472 @@
+{
+  "at": "2026-10-19T05:34:31.391Z",
+  "mode": {
+    "mode": "remote_model",
+    "externalModelEnabled": true,
+    "models": {
+      "analysis": "gemini-3.5-flash-lite",
+      "budget": "gemini-3.8-flash"
+    }
+  },
+  "scope": {
+    "batch": "D007",
+    "country": "JP",
+    "scopeId": "D007-JP-sample",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T00:00:00Z"
+  },
+  "diagnostics": [
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 784,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 795,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 784
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 3560,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 3571,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3560
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 22384,
+        "candidatesTokenCount": 435,
+        "totalTokenCount": 22819,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 22384
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 1383,
+        "candidatesTokenCount": 11,
+        "totalTokenCount": 1394,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1383
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 16444,
+        "candidatesTokenCount": 79,
+        "totalTokenCount": 16523,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 16444
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "httpStatus": 200,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 17288,
+        "candidatesTokenCount": 72,
+        "totalTokenCount": 17360,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 17288
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "inputFingerprint": "c6c6e64a4f221407bdd9f33987c90487020b43262b2ef78af5f92ebea9860ab1",
+  "analysis": {
+    "status": "analyzed",
+    "modelCalls": 3,
+    "events": [
+      {
+        "type": "scope_validated",
+        "at": "2026-10-19T05:33:50.762Z"
+      },
+      {
+        "type": "quality",
+        "at": "2026-10-19T05:33:50.789Z",
+        "available": 5673,
+        "excluded": 0,
+        "rawFallback": false,
+        "coverage": "sample"
+      },
+      {
+        "type": "tool",
+        "name": "market_compare",
+        "args": {},
+        "recordIds": [
+          "D007-T03-00277",
+          "D007-T03-00278",
+          "D007-T03-00279",
+          "D007-T03-00280",
+          "D007-T03-00281",
+          "D007-T03-00282"
+        ],
+        "at": "2026-10-19T05:33:51.989Z"
+      },
+      {
+        "type": "tool",
+        "name": "relations",
+        "args": {
+          "candidate": "price"
+        },
+        "recordIds": [
+          "D007-T25-00622",
+          "D007-T25-00643",
+          "D007-T25-00664",
+          "D007-T25-00706",
+          "D007-T25-00727",
+          "D007-T25-00748",
+          "D007-T25-00790",
+          "D007-T25-00811",
+          "D007-T25-00601",
+          "D007-T25-00605",
+          "D007-T25-00609",
+          "D007-T25-00613",
+          "D007-T25-00615",
+          "D007-T25-00617",
+          "D007-T25-00621",
+          "D007-T25-00625",
+          "D007-T08-00505",
+          "D007-T08-00506",
+          "D007-T08-00507",
+          "D007-T08-00508",
+          "D007-T08-00509",
+          "D007-T08-00510",
+          "D007-T08-00511",
+          "D007-T08-00512"
+        ],
+        "at": "2026-10-19T05:33:56.136Z"
+      },
+      {
+        "type": "output_validated",
+        "at": "2026-10-19T05:34:01.265Z"
+      }
+    ],
+    "output": {
+      "facts": [
+        {
+          "id": "D007-T03-00277.sales_value",
+          "recordId": "D007-T03-00277",
+          "field": "sales_value",
+          "value": "1483235.00",
+          "unit": "JPY",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Tokyo",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00277.market_total_value",
+          "recordId": "D007-T03-00277",
+          "field": "market_total_value",
+          "value": "39055434.00",
+          "unit": "JPY",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Tokyo",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        },
+        {
+          "id": "D007-T03-00277.share",
+          "recordId": "D007-T03-00277",
+          "field": "share",
+          "value": "0.037978",
+          "unit": "ratio",
+          "product": "P1A",
+          "period": {
+            "start": "2026-08-01",
+            "end_exclusive": "2026-09-01",
+            "timezone": "Asia/Tokyo",
+            "grain": "month"
+          },
+          "source": "docs/research/marketing-ontology/batches/D007/source/T03.jsonl",
+          "classification": "observed_or_calculated",
+          "isSynthetic": true
+        }
+      ],
+      "hypotheses": [
+        {
+          "candidate": "price",
+          "supports": [
+            "D007-T25-00622",
+            "D007-T25-00643",
+            "D007-T25-00664",
+            "D007-T25-00706",
+            "D007-T25-00727",
+            "D007-T25-00748",
+            "D007-T25-00790",
+            "D007-T25-00811"
+          ],
+          "counters": [
+            "D007-T25-00601",
+            "D007-T25-00605",
+            "D007-T25-00609",
+            "D007-T25-00613",
+            "D007-T25-00615",
+            "D007-T25-00617",
+            "D007-T25-00621",
+            "D007-T25-00625"
+          ],
+          "causal": false,
+          "kind": "proposed_interpretation",
+          "assessment": "mixed"
+        }
+      ],
+      "recommendation": "investigate",
+      "completeness": "complete_within_selected_facts",
+      "causalEffect": null,
+      "coverage": "sample",
+      "limitations": [
+        "synthetic_sample",
+        "association_not_causation",
+        "bounded_evidence_search"
+      ]
+    }
+  },
+  "budget": {
+    "status": "retained",
+    "modelCalls": 3,
+    "events": [
+      {
+        "type": "handoff",
+        "at": "2026-10-19T05:34:01.268Z",
+        "analysisId": "142c0410-cf16-4703-953e-39304b0307a5",
+        "analysisVersion": 11,
+        "userSelected": true
+      },
+      {
+        "type": "tool",
+        "name": "budget_inputs",
+        "args": {},
+        "recordIds": [
+          "D007-T39-00004",
+          "D007-T39-00010",
+          "D007-T39-00016",
+          "D007-T39-00022",
+          "D007-T39-00028",
+          "D007-T39-00034",
+          "D007-T39-00040",
+          "D007-T39-00046",
+          "D007-T39-00052",
+          "D007-T39-00058",
+          "D007-T39-00064",
+          "D007-T39-00070",
+          "D007-T39-00003",
+          "D007-T39-00009",
+          "D007-T39-00015",
+          "D007-T39-00021",
+          "D007-T39-00027",
+          "D007-T39-00033",
+          "D007-T39-00039",
+          "D007-T39-00045",
+          "D007-T39-00051",
+          "D007-T39-00057",
+          "D007-T39-00063",
+          "D007-T39-00069",
+          "D007-T40-00035"
+        ],
+        "at": "2026-10-19T05:34:04.354Z"
+      },
+      {
+        "type": "tool",
+        "name": "simulate",
+        "args": {
+          "baselineId": "D007-T39-00004",
+          "candidateId": "D007-T39-00010",
+          "modelId": "D007-T39-00003",
+          "policyId": "D007-T40-00035"
+        },
+        "recordIds": [
+          "D007-T39-00004",
+          "D007-T39-00010",
+          "D007-T39-00003",
+          "D007-T40-00035"
+        ],
+        "at": "2026-10-19T05:34:18.388Z"
+      },
+      {
+        "type": "proposal_created",
+        "at": "2026-10-19T05:34:31.390Z"
+      }
+    ],
+    "simulation": {
+      "id": "cb4628c789c748003aef0101d1f750a68c1c0150724e6dd0892d824b6e74fbe9",
+      "kind": "assumption_simulation",
+      "baseline": {
+        "recordId": "D007-T39-00004",
+        "allocations": [
+          {
+            "campaign_ref": "D007-Campaign-JP-P1A-search",
+            "amount": {
+              "amount": "525000.00",
+              "currency": "JPY"
+            },
+            "lower": {
+              "amount": "150000.00",
+              "currency": "JPY"
+            },
+            "upper": {
+              "amount": "1350000.00",
+              "currency": "JPY"
+            }
+          },
+          {
+            "campaign_ref": "D007-Campaign-JP-P1A-social",
+            "amount": {
+              "amount": "975000.00",
+              "currency": "JPY"
+            },
+            "lower": {
+              "amount": "150000.00",
+              "currency": "JPY"
+            },
+            "upper": {
+              "amount": "1350000.00",
+              "currency": "JPY"
+            }
+          }
+        ],
+        "total": {
+          "amount": "1500000.00",
+          "currency": "JPY"
+        },
+        "expected": "60.500000",
+        "channels": [
+          "search",
+          "social"
+        ]
+      },
+      "candidate": {
+        "recordId": "D007-T39-00010",
+        "allocations": [
+          {
+            "campaign_ref": "D007-Campaign-JP-P1A-search",
+            "amount": {
+              "amount": "750000.00",
+              "currency": "JPY"
+            },
+            "lower": {
+              "amount": "150000.00",
+              "currency": "JPY"
+            },
+            "upper": {
+              "amount": "1350000.00",
+              "currency": "JPY"
+            }
+          },
+          {
+            "campaign_ref": "D007-Campaign-JP-P1A-social",
+            "amount": {
+              "amount": "750000.00",
+              "currency": "JPY"
+            },
+            "lower": {
+              "amount": "150000.00",
+              "currency": "JPY"
+            },
+            "upper": {
+              "amount": "1350000.00",
+              "currency": "JPY"
+            }
+          }
+        ],
+        "total": {
+          "amount": "1500000.00",
+          "currency": "JPY"
+        },
+        "expected": "61.538462",
+        "channels": [
+          "search",
+          "social"
+        ]
+      },
+      "modelId": "D007-T39-00003",
+      "modelVersion": "D007-1",
+      "assumptions": [
+        "가상 포화 반응 함수이며 학습된 실제 효과가 아님",
+        "통화·기간·국가가 다른 후보를 합치지 않음"
+      ],
+      "policyId": "D007-T40-00035",
+      "approvalRole": "synthetic_analyst",
+      "period": {
+        "start": "2026-08-03",
+        "end_exclusive": "2026-08-31",
+        "timezone": "Asia/Tokyo",
+        "grain": "custom"
+      },
+      "realExecutionAllowed": false,
+      "recordIds": [
+        "D007-T39-00004",
+        "D007-T39-00010",
+        "D007-T39-00003",
+        "D007-T40-00035"
+      ],
+      "inputFingerprint": "c6c6e64a4f221407bdd9f33987c90487020b43262b2ef78af5f92ebea9860ab1"
+    }
+  },
+  "sourceFingerprintUnchanged": true,
+  "realAdsCalls": 0,
+  "newMarketingRecords": 0
+}

@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-19T05:24:45.061Z",
+  "scope": "one short non-marketing JSON generation per model; no business data transmitted",
+  "keyNames": [
+    "GEMINI_API_KEY_1",
+    "GEMINI_API_KEY_2"
+  ],
+  "keyListAuthentication": {
+    "GEMINI_API_KEY_1": 200,
+    "GEMINI_API_KEY_2": 200
+  },
+  "generationKeyName": "GEMINI_API_KEY_1",
+  "checks": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "httpStatus": 200,
+      "validJSON": true,
+      "expectedOutput": true,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 27,
+        "candidatesTokenCount": 9,
+        "totalTokenCount": 36,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 27
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsedMs": 7535
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "httpStatus": 400,
+      "validJSON": false,
+      "expectedOutput": false,
+      "errorStatus": "INVALID_ARGUMENT",
+      "elapsedMs": 645
+    },
+    {
+      "model": "gemma-4-26b-a4b-it",
+      "httpStatus": 200,
+      "validJSON": true,
+      "expectedOutput": true,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 27,
+        "candidatesTokenCount": 5,
+        "totalTokenCount": 32,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 27
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsedMs": 1307
+    },
+    {
+      "model": "gemma-4-31b-it",
+      "httpStatus": 200,
+      "validJSON": true,
+      "expectedOutput": true,
+      "finishReason": "STOP",
+      "usage": {
+        "promptTokenCount": 27,
+        "candidatesTokenCount": 5,
+        "totalTokenCount": 32,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 27
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsedMs": 30571
+    }
+  ],
+  "marketingSourceRowsCreated": 0,
+  "adsCalls": 0
+}

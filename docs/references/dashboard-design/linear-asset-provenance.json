@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "contentType": "image/jpeg",
+      "id": "616aff343f41ab16",
+      "kind": "image",
+      "name": "hero-poster.jpg",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/15a32d2f-084b-4ad5-804b-b8f63c758feb/616aff343f41ab16.jpg",
+      "url": "https://static.linear.app/assets/insights/hero-poster.jpg"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "27d4fb7f8b1257c7",
+      "kind": "image",
+      "name": "f=auto,fit=scale-down,metadata=none",
+      "path": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/15a32d2f-084b-4ad5-804b-b8f63c758feb/27d4fb7f8b1257c7",
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/62ef104e-3a3a-4d23-e56a-7582bda76800/f=auto,fit=scale-down,metadata=none"
+    }
+  ],
+  "directoryPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/15a32d2f-084b-4ad5-804b-b8f63c758feb",
+  "failures": [],
+  "manifestPath": "C:\\Users\\박시형\\AppData\\Local\\Packages\\sandbox.{fefa68ff-edeb-462b-8155-40fbf0915d51}\\AC\\Temp/browser-use/assets/15a32d2f-084b-4ad5-804b-b8f63c758feb/manifest.json",
+  "summary": {
+    "downloadedCount": 2,
+    "elapsedMs": 3756.6973999999464,
+    "failedCount": 0,
+    "requestedCount": 2
+  }
+}

@@ -1,0 +1,1038 @@
+{
+  "records": [
+    {
+      "record_id": "D008-T22-00113",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00113",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-03T09:00:00+09:00",
+      "available_quantity": 343,
+      "committed_quantity": 18,
+      "on_hand_quantity": 361,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00114",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00114",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-04T09:00:00+09:00",
+      "available_quantity": 549,
+      "committed_quantity": 25,
+      "on_hand_quantity": 574,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00115",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00115",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-05T09:00:00+09:00",
+      "available_quantity": 260,
+      "committed_quantity": 13,
+      "on_hand_quantity": 273,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00116",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00116",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-06T09:00:00+09:00",
+      "available_quantity": 625,
+      "committed_quantity": 21,
+      "on_hand_quantity": 646,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00117",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00117",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-07T09:00:00+09:00",
+      "available_quantity": 504,
+      "committed_quantity": 40,
+      "on_hand_quantity": 544,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00118",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00118",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-08T09:00:00+09:00",
+      "available_quantity": 527,
+      "committed_quantity": 12,
+      "on_hand_quantity": 539,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00119",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00119",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-09T09:00:00+09:00",
+      "available_quantity": 588,
+      "committed_quantity": 50,
+      "on_hand_quantity": 638,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00120",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00120",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-10T09:00:00+09:00",
+      "available_quantity": 367,
+      "committed_quantity": 42,
+      "on_hand_quantity": 409,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00121",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00121",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-11T09:00:00+09:00",
+      "available_quantity": 204,
+      "committed_quantity": 30,
+      "on_hand_quantity": 234,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00122",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00122",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-12T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 47,
+      "on_hand_quantity": 47,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00123",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00123",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-13T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 25,
+      "on_hand_quantity": 25,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00124",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00124",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-14T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 12,
+      "on_hand_quantity": 12,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00125",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00125",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-15T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 16,
+      "on_hand_quantity": 16,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00126",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00126",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-16T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 29,
+      "on_hand_quantity": 29,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00127",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00127",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-17T09:00:00+09:00",
+      "available_quantity": 0,
+      "committed_quantity": 41,
+      "on_hand_quantity": 41,
+      "sellable_status": "out_of_stock"
+    },
+    {
+      "record_id": "D008-T22-00128",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00128",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-18T09:00:00+09:00",
+      "available_quantity": 95,
+      "committed_quantity": 34,
+      "on_hand_quantity": 129,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00129",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00129",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-19T09:00:00+09:00",
+      "available_quantity": 589,
+      "committed_quantity": 12,
+      "on_hand_quantity": 601,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00130",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00130",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-20T09:00:00+09:00",
+      "available_quantity": 584,
+      "committed_quantity": 49,
+      "on_hand_quantity": 633,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00131",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00131",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-21T09:00:00+09:00",
+      "available_quantity": 498,
+      "committed_quantity": 29,
+      "on_hand_quantity": 527,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00132",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00132",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-22T09:00:00+09:00",
+      "available_quantity": 507,
+      "committed_quantity": 19,
+      "on_hand_quantity": 526,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00133",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00133",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-23T09:00:00+09:00",
+      "available_quantity": 467,
+      "committed_quantity": 45,
+      "on_hand_quantity": 512,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00134",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00134",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-24T09:00:00+09:00",
+      "available_quantity": 323,
+      "committed_quantity": 46,
+      "on_hand_quantity": 369,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00135",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00135",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-25T09:00:00+09:00",
+      "available_quantity": 244,
+      "committed_quantity": 30,
+      "on_hand_quantity": 274,
+      "sellable_status": "sellable"
+    },
+    {
+      "record_id": "D008-T22-00136",
+      "dataset_type": "T22",
+      "scope_id": "D008-JP-sample",
+      "scenario_id": "D008-comparison-demo",
+      "is_synthetic": true,
+      "value_origin": "simulation",
+      "provenance": {
+        "system": "D008-comparison-1",
+        "collection_method": "synthetic_generation",
+        "source_record_key": "D008-T22-00136",
+        "artifact_ref": "frontend/public/workbench-data/D008/source/T22.jsonl",
+        "collected_at": "2026-10-19T05:06:31.333Z",
+        "access_class": "internal",
+        "documentation_refs": [
+          "docs/design/marketing-redesign-20261019/README.md"
+        ]
+      },
+      "quality": {
+        "availability": "available",
+        "coverage": "User-requested synthetic comparison demo; independent from historical source versions",
+        "is_partial": true
+      },
+      "temporal": {
+        "time_kind": "instant",
+        "source_grain": "instant",
+        "series_role": "detail",
+        "calendar_id": "Gregorian",
+        "reporting_timezone": "Asia/Tokyo",
+        "coverage_kind": "sample",
+        "available_at": "2026-10-19T05:06:31.333Z",
+        "revision": 0,
+        "timestamp_field": "observed_at"
+      },
+      "variant_ref": "D005-V-P1A",
+      "location_ref": "D008-Location-JP-0",
+      "observed_at": "2026-08-26T09:00:00+09:00",
+      "available_quantity": 197,
+      "committed_quantity": 21,
+      "on_hand_quantity": 218,
+      "sellable_status": "sellable"
+    }
+  ],
+  "recordIds": [
+    "D008-T22-00113",
+    "D008-T22-00114",
+    "D008-T22-00115",
+    "D008-T22-00116",
+    "D008-T22-00117",
+    "D008-T22-00118",
+    "D008-T22-00119",
+    "D008-T22-00120",
+    "D008-T22-00121",
+    "D008-T22-00122",
+    "D008-T22-00123",
+    "D008-T22-00124",
+    "D008-T22-00125",
+    "D008-T22-00126",
+    "D008-T22-00127",
+    "D008-T22-00128",
+    "D008-T22-00129",
+    "D008-T22-00130",
+    "D008-T22-00131",
+    "D008-T22-00132",
+    "D008-T22-00133",
+    "D008-T22-00134",
+    "D008-T22-00135",
+    "D008-T22-00136"
+  ]
+}

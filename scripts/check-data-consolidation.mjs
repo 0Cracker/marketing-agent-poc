@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {createServer} from 'vite';
 import {loadCurrentData,sha256,currentDataPlugin} from './current-data.mjs';
 import {businessKey} from './data-business-keys.mjs';
-const sourceRoot=fs.existsSync(new URL('../backend/agent-tools.mjs',import.meta.url))?new URL('../',import.meta.url):new URL('../../marketing-agent-poc/',import.meta.url);
+const sourceRoot=new URL('../',import.meta.url);
 const {CatalogTools,cents}=await import(new URL('backend/agent-tools.mjs',sourceRoot));
 const {AgentFlow,FlowStore}=await import(new URL('backend/agent-flow.mjs',sourceRoot));
 const {createAgentServer}=await import(new URL('backend/agent-http.mjs',sourceRoot));
@@ -22,7 +22,8 @@ assert.equal(migration.length,manifest.preserved_rows);assert.equal(provenance.l
 assert.equal(new Set(migration.map(m=>m.source_key)).size,migration.length);
 assert.equal(new Set(records.map(businessKey)).size,records.length);
 for(const [decision,count]of Object.entries(manifest.decisions))assert.equal(migration.filter(m=>m.decision===decision).length,count);
-for(const input of inventory){assert.equal(sha256(fs.readFileSync(path.join('data',input.archive))),input.sha256);const base=input.repository==='marketing-agent-poc'?(fs.existsSync('backend/agent-tools.mjs')?'.':'../marketing-agent-poc'):'.';const live=fs.readFileSync(path.join(base,input.path));if(sha256(live)!==input.sha256){/* Shared checkout paths may represent the LF source; archived physical copies retain exact CRLF bytes. */assert.equal(live.toString().replaceAll('\r\n','\n'),fs.readFileSync(path.join('data',input.archive),'utf8').replaceAll('\r\n','\n'),input.path);}}
+for(const input of inventory){assert.equal(sha256(fs.readFileSync(path.join('data',input.archive))),input.sha256);// Archived generator/code snapshots intentionally outlive later source refactors.
+if(input.kind==='legacy-code-or-generator')continue;const base='.';const live=fs.readFileSync(path.join(base,input.path));if(sha256(live)!==input.sha256){/* Shared checkout paths may represent the LF source; archived physical copies retain exact CRLF bytes. */assert.equal(live.toString().replaceAll('\r\n','\n'),fs.readFileSync(path.join('data',input.archive),'utf8').replaceAll('\r\n','\n'),input.path);}}
 const currencies={KR:'KRW',JP:'JPY',US:'USD'};
 for(const r of records){
  const status=validRecord(r);assert(status.conforming,r.record_id+JSON.stringify(status.errors));

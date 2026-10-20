@@ -3,7 +3,7 @@
   "screen_contract": "workbench-model/1",
   "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
   "source_created_at": "2026-10-19T05:06:31.333Z",
-  "rows": 30315,
+  "rows": 30327,
   "preserved_rows": 52636,
   "source_files": 131,
   "files": [
@@ -262,9 +262,9 @@
     {
       "type": "T37",
       "file": "site-events.jsonl",
-      "rows": 23,
-      "bytes": 26382,
-      "sha256": "f952c1d5a1b4a1a1b659ea5447e549bf212f308a70c79277dc3118e0b9853285"
+      "rows": 35,
+      "bytes": 41256,
+      "sha256": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64"
     },
     {
       "type": "T38",
@@ -277,8 +277,8 @@
       "type": "T39",
       "file": "budget-models.jsonl",
       "rows": 72,
-      "bytes": 122682,
-      "sha256": "2d3c7a5e4e8fbaa2e66fab854511a51462478b02acff9e518a31093161d3c22e"
+      "bytes": 160170,
+      "sha256": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc"
     },
     {
       "type": "T40",
@@ -308,9 +308,9 @@
   "decisions": {
     "independent_archive": 1446,
     "nonconforming": 790,
-    "active": 30315,
+    "active": 30327,
     "replaced": 20000,
-    "pending": 85
+    "selection_excluded": 73
   },
   "scope_ids": {
     "KR": [
@@ -328,8 +328,6 @@
     "start": "2024-10-01",
     "end": "2026-10-01"
   },
-  "pending_by_type": {
-    "T37": 85
-  },
-  "data_sha256": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  "pending_by_type": {},
+  "data_sha256": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
 }

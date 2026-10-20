@@ -11,7 +11,8 @@ export function hypothesisRows(run:Pick<AgentRun,'output'>){
   return Object.entries(candidateNames).map(([candidate,label])=>{
     const h=run.output?.hypotheses?.find(x=>x.candidate===candidate);
     const classified=!!h&&(h.supports.length>0||h.counters.length>0);
-    return {candidate,label,supports:h?.supports||[],counters:h?.counters||[],assessment:!h?'미검토':!classified?'원인 평가 미분류':h.assessment==='mixed'?'근거 혼재':h.supports.length?'지지 근거 조회':'반대 근거 조회',classified};
+    const assessment=!h?'미검토':!classified?candidate==='stock'?'자료 확인됨 · 원인 판단 미완료':'원인 평가 미분류':h.assessment==='mixed'?'근거 혼재':h.supports.length?'지지 근거 조회':'반대 근거 조회';
+    return {candidate,label,supports:h?.supports||[],counters:h?.counters||[],assessment,classified,summary:classified?`지지 ${h.supports.length}건 · 반대 ${h.counters.length}건`:assessment};
   });
 }
 export function shareSeries(run:Pick<AgentRun,'output'>){

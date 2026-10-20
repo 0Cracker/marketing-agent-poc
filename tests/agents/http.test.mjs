@@ -13,6 +13,18 @@ async function start(options){
   const close=async()=>{await new Promise(resolve=>server.close(resolve));flow.close();};
   return {flow,server,base,request,info,close};
 }
+
+test('H08 exact deployed origin can preflight and analyze; foreign origins and extra capabilities fail',async()=>{
+  const origin='https://marketing.example',s=await start({origins:[origin]});try{
+    const headers={origin,'access-control-request-method':'POST','access-control-request-headers':'content-type,x-agent-token','access-control-request-private-network':'true'};
+    const pre=await fetch(s.base+'/analysis',{method:'OPTIONS',headers});
+    assert.equal(pre.status,204);assert.equal(pre.headers.get('access-control-allow-origin'),origin);assert.equal(pre.headers.get('access-control-allow-private-network'),'true');
+    const result=await s.request('/analysis',{question:'가격 근거',scope},{origin});assert.equal(result.status,200);assert.equal(result.headers.get('access-control-allow-origin'),origin);
+    const foreign=await fetch(s.base+'/session',{headers:{origin:'https://other.example'}});assert.equal(foreign.status,403);assert.equal(foreign.headers.get('access-control-allow-origin'),null);
+    for(const extra of [{'access-control-request-method':'DELETE'},{'access-control-request-headers':'authorization'}])assert.equal((await fetch(s.base+'/analysis',{method:'OPTIONS',headers:{...headers,...extra}})).status,403);
+    assert.equal((await fetch(s.base+'/analysis',{method:'POST',headers:{origin,'content-type':'application/json'},body:'{}'})).status,403);
+  }finally{await s.close();}
+});
 test('H01 session describes offline mode and blocks foreign origins/host rebinding',async()=>{
   const s=await start();try{
     assert.equal(s.info.mode,'offline_model_substitute');assert.equal(s.info.realAdsEnabled,false);

@@ -114,8 +114,10 @@ export function createStandardQuery(catalog:StandardCatalog,lock:CatalogLock){
  function query(type:string,country:string,month:string,options:QueryOptions={}):Model{
   const asOf=options.asOf||lock.source_created_at;
   if(!Number.isFinite(Date.parse(asOf)))throw Error('조회 기준 시각이 올바르지 않습니다');
-  const all=records.filter(r=>str(r,'dataset_type')===type&&(country==='ALL'||type==='T01'||(str(r,'_country')||scopeCountry(r))===country||str(r,'_country')==='GLOBAL')&&((options.detailOnly&&!options.asOf)||Date.parse(String(obj(r.temporal).available_at))<=Date.parse(asOf)));
-  if(lock.screen_contract==='workbench-model/1'&&!options.detailOnly&&country!=='ALL'&&month!=='ALL'&&['T03','T13','T24','H01','T01'].includes(type)&&!(type==='T24'&&(options.brand||options.product))&&Date.parse(asOf)>=Date.parse(lock.source_created_at)){
+  // Dummy acquisition metadata must not hide CURRENT observations; historical queries retain as-of filtering.
+  const ignoreAvailableAt=batch==='CURRENT'&&records.filter(r=>r.dataset_type===type).every(r=>r.is_synthetic===true);
+  const all=records.filter(r=>str(r,'dataset_type')===type&&(country==='ALL'||type==='T01'||(str(r,'_country')||scopeCountry(r))===country||str(r,'_country')==='GLOBAL')&&((batch==='CURRENT'&&r.is_synthetic===true)||(options.detailOnly&&!options.asOf)||Date.parse(String(obj(r.temporal).available_at))<=Date.parse(asOf)));
+  if(lock.screen_contract==='workbench-model/1'&&!options.detailOnly&&country!=='ALL'&&month!=='ALL'&&['T03','T13','T24','H01','T01'].includes(type)&&!(type==='T24'&&(options.brand||options.product))&&(ignoreAvailableAt||Date.parse(asOf)>=Date.parse(lock.source_created_at))){
    const result=restore(legacy(type,country,month,options));
    result.asOf=asOf;
    if(type==='T13')for(const row of result.rows){if(!row.child)row.values.name=str(projected.T12.find(c=>c.campaign_id===row.id)||{},'campaign_name')||String(row.id);row.values.window=String(obj(row.source.find(s=>s.attribution_window)).attribution_window??'—');}

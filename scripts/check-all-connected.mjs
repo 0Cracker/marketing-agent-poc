@@ -10,7 +10,7 @@ const data=index.batches.map(b=>{const bytes=fs.readFileSync(root+b.url);assert.
 const catalog=data.find(b=>b.id==='D007').value;
 const lock=JSON.parse(fs.readFileSync(root+'/workbench-data/D007/lock.json'));
 const entries=data.flatMap(d=>d.id==='D007'?d.value.records.map(record=>({batch:'D007',country:record.scope_id.split('-')[1],record,source:record,payload:record,schema_conforming:true,contract_gaps:[]})):d.value);
-for(const [p,hash]of Object.entries(index.source_sha256))assert.equal(digest(fs.readFileSync(path.join(fs.existsSync('docs/research/marketing-ontology/batches/D007/catalog.mjs')?'.':'../marketing-agent-poc',p))),hash,p);
+for(const [p,hash]of Object.entries(index.source_sha256))assert.equal(digest(fs.readFileSync(path.join(import.meta.dirname,'..',p))),hash,p);
 const server=await createServer({configFile:false,root:process.cwd()+'/frontend',server:{middlewareMode:true},optimizeDeps:{noDiscovery:true},appType:'custom'});
 try{
  const {createConnectedServices}=await server.ssrLoadModule('/workbench/historical-connected-service.ts');

@@ -6,10 +6,9 @@ import {once} from 'node:events';
 import net from 'node:net';
 import {createInterface} from 'node:readline/promises';
 import {DatabaseSync} from 'node:sqlite';
-// Prefer this checkout after integration; retain the original split-worktree layout.
-const {loadCurrentData,publicFiles,sha256}=await import(fs.existsSync(new URL('./current-data.mjs',import.meta.url))?'./current-data.mjs':'../../marketing-dashboard-drafts/scripts/current-data.mjs');
+import {loadCurrentData,publicFiles,sha256} from './current-data.mjs';
 
-const root=path.resolve(import.meta.dirname,'..'),dashboard=fs.existsSync(path.join(root,'data/manifest.json'))?root:path.resolve(root,'../marketing-dashboard-drafts');
+const root=path.resolve(import.meta.dirname,'..'),dashboard=root;
 const outputIndex=process.argv.indexOf('--output');
 const observe=process.argv.includes('--observe');
 const resume=process.argv.includes('--resume');

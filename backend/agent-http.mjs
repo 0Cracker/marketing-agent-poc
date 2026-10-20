@@ -37,6 +37,20 @@ export function createAgentServer(flow,{origins=['http://127.0.0.1:5173','http:/
       const port=server.address()?.port;
       requireThat([`127.0.0.1:${port}`,`localhost:${port}`].includes(req.headers.host),'host_denied');
       requireThat(!req.headers.origin||origins.includes(req.headers.origin),'origin_denied');
+      if(req.headers.origin){
+        res.setHeader('access-control-allow-origin',req.headers.origin);
+        res.setHeader('vary','Origin');
+      }
+      if(req.method==='OPTIONS'){
+        requireThat(Boolean(req.headers.origin),'origin_denied');
+        requireThat(['GET','POST'].includes(req.headers['access-control-request-method']),'origin_denied');
+        const requested=String(req.headers['access-control-request-headers']||'').toLowerCase().split(',').map(v=>v.trim()).filter(Boolean);
+        requireThat(requested.every(v=>['content-type','x-agent-token'].includes(v)),'origin_denied');
+        res.setHeader('access-control-allow-methods','GET, POST');
+        res.setHeader('access-control-allow-headers','content-type, x-agent-token');
+        if(req.headers['access-control-request-private-network']==='true')res.setHeader('access-control-allow-private-network','true');
+        res.writeHead(204);res.end();return;
+      }
       const url=new URL(req.url,'http://127.0.0.1');
       if(req.method==='GET'&&url.pathname==='/agent-api/session')return json(res,200,{token,...sessionInfo,realAdsEnabled:false});
       const supplied=Buffer.from(String(req.headers['x-agent-token']||''));

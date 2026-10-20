@@ -7,4 +7,6 @@
 /docs/design/data-separation-validation/d003b-baseline.json -text
 # Preserve historical command output without rewriting report whitespace.
 /evidence/** -text -whitespace
+# Imported design assets retain source bytes and original script whitespace.
+/docs/references/dashboard-design/** -text -whitespace
 # Preserve historical command output, including intentional report whitespace.

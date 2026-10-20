@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-20T04:47:56.336Z",
+  "target": "uncommitted final semantic change tree",
+  "backend": {
+    "command": "node --test --test-concurrency=1 --test-timeout=60000 tests/agents/*.test.mjs",
+    "tests": 126,
+    "pass": 126,
+    "fail": 0,
+    "exitCode": 0,
+    "log": "backend-tests.txt",
+    "codeHashes": {
+      "agent-flow.mjs": "b2615ae29855f2e996994e733a0323e98312f9530f1d0b7b24b3fa6a780b32fc",
+      "agent-tools.mjs": "9ccf30ed2f116817dbcc5fe113f4fed435d5b019232499dfcb17f9660bc10e0f",
+      "agent-model.mjs": "7c4a5a6aef8b1c8b7a531e1c35c52a81f6fd28cb294f44aa5a08eda3700055d9",
+      "agent-runtime.mjs": "7e29d64d24c6d95627d8ed972e01927b80086a43e280cf7191e237826c1eea58"
+    }
+  },
+  "legacyAppTests": {
+    "marketing": 0,
+    "demo": 0
+  },
+  "ui": {
+    "tests": 20,
+    "fail": 0,
+    "typesExitCode": 0,
+    "buildExitCode": 0,
+    "buildWarnings": [
+      "Existing font URLs resolved at runtime"
+    ]
+  },
+  "offline": {
+    "pass": 33,
+    "fail": 0,
+    "not_run": 0
+  },
+  "live": {
+    "pass": 4,
+    "fail": 0,
+    "not_run": 0
+  },
+  "modelAttempts": 23,
+  "modelAttemptCeiling": 24,
+  "hillDecimalCases": 36,
+  "consolidationQueries": 328,
+  "realAdsCalls": 0,
+  "newUiScreenshot": "not_run",
+  "dataHash": "50f2b94f39ee75e4da6bdc946fddc5fe2a20810452fadce59bea16a33655b8e5"
+}
