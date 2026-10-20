@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-19T10:40:06.637Z",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "base": "http://127.0.0.1:8796/agent-api",
+  "origin": "http://127.0.0.1:5178",
+  "db": "C:\\Users\\박시형\\Desktop\\Marketing\\marketing-agent-poc\\evidence\\v0.2.0\\current-live-20261019-2\\flow.sqlite",
+  "steps": [
+    {
+      "command": "check",
+      "status": "fail",
+      "at": "2026-10-19T10:40:40.380Z",
+      "error": "Commands: analysis, followup, budget, approve, restart, invalidate, finish, quit"
+    },
+    {
+      "command": "analysis",
+      "status": "pass",
+      "at": "2026-10-19T10:41:12.222Z",
+      "detail": {
+        "runId": "0c116ff1-3088-4466-8ac9-8bd3aa7d5218",
+        "facts": 18,
+        "evidence": 22
+      }
+    },
+    {
+      "command": "followup",
+      "status": "fail",
+      "at": "2026-10-19T13:26:47.305Z",
+      "error": "model_failed\n\n'held' !== 'analyzed'\n"
+    }
+  ],
+  "runs": {
+    "initial": "0c116ff1-3088-4466-8ac9-8bd3aa7d5218",
+    "followup": "7a78f66f-d783-4be9-a196-664ea9f547be"
+  },
+  "modelCallCeiling": 24,
+  "modelCalls": {
+    "total": 5,
+    "analysis": 5,
+    "budget": 0
+  }
+}

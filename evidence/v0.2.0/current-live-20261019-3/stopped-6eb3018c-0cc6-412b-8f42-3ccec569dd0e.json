@@ -1,0 +1,61 @@
+{
+  "role": "budget",
+  "question": "Compare current and alternative synthetic budget allocations",
+  "scope": {
+    "batch": "CURRENT",
+    "country": "JP",
+    "scopeId": "CURRENT-JP",
+    "productIds": [
+      "P1A",
+      "P1B",
+      "P2A",
+      "P2B",
+      "P3A",
+      "P3B"
+    ],
+    "start": "2026-08-01",
+    "end": "2026-09-01",
+    "asOf": "2026-10-19T05:06:31.333Z",
+    "dataHash": "a37ea0b00bc7f7f0d494016d40ee5e356efb4fec90233a9729262f22fd4546b4"
+  },
+  "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+  "analysisVersion": 14,
+  "status": "held",
+  "stage": "budget_exploration",
+  "events": [
+    {
+      "type": "handoff",
+      "at": "2026-10-19T13:30:07.525Z",
+      "analysisId": "fb987dd4-97d8-4373-810d-f55ade133cc5",
+      "analysisVersion": 14,
+      "userSelected": true
+    },
+    {
+      "type": "stopped",
+      "stage": "budget_exploration",
+      "reason": "model_timeout",
+      "at": "2026-10-19T13:31:07.566Z"
+    },
+    {
+      "type": "stopped",
+      "stage": "budget_exploration",
+      "reason": "model_failed",
+      "at": "2026-10-19T13:31:29.071Z"
+    }
+  ],
+  "history": [],
+  "modelCalls": 2,
+  "toolCalls": 0,
+  "issuedFacts": {},
+  "issuedRecords": [],
+  "requiredCounters": {},
+  "inputFingerprint": "d413f4265d3639a556b3bf95ec9b49fd6806b4d09773f07508b36ffaa7b19945",
+  "approval": null,
+  "realExecutionAllowed": false,
+  "id": "6eb3018c-0cc6-412b-8f42-3ccec569dd0e",
+  "version": 5,
+  "reason": "model_failed",
+  "resumeConditions": [
+    "Resolve model_failed before continuing"
+  ]
+}

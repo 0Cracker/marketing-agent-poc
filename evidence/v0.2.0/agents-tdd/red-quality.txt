@@ -1,0 +1,23 @@
+✖ Q03 quality reader failure becomes explicit held state, no model call (3.3567ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2283.4963
+
+✖ failing tests:
+
+test at tests\agents\integration.test.mjs:24:1
+✖ Q03 quality reader failure becomes explicit held state, no model call (3.3567ms)
+  Error: quality store unavailable
+      at Object.quality (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/integration.test.mjs:25:160)
+      at AgentFlow.analyze (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/backend/agent-flow.mjs:80:30)
+      at analyzed (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/support.mjs:20:15)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/agents/integration.test.mjs:26:21)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)

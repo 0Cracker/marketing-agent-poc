@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "name": "initial",
+      "facts": 18,
+      "pass": true
+    },
+    {
+      "name": "followup",
+      "facts": 18,
+      "pass": true
+    }
+  ],
+  "method": "independent Python Decimal and source-record/span readback"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-19",
+  "scope": "Chat layout, conversation history, fixed composer and visual separation",
+  "tests": {"pass":15,"fail":0,"log":"tests-final.txt"},
+  "typescriptExitCode": 0,
+  "buildExitCode": 0,
+  "emptyProductLoadingRegression": {"pass":true,"expectedStatus":"empty","rows":0},
+  "browser": {
+    "mode": "offline_model_substitute",
+    "suggestionFillsDraftWithoutSending": true,
+    "enterSends": true,
+    "shiftEnterAddsNewlineWithoutSending": true,
+    "followupHistoryVisible": true,
+    "evidenceOpensOriginal": true,
+    "composerRectBeforeAndAfterThreadScroll": {"top":575,"bottom":621},
+    "escapeClosesAndReturnsFocus": true,
+    "mobile": {"viewport":390,"layoutWidth":375,"panelLeft":8,"panelRight":367,"panelWidth":359,"clientWidth":357,"scrollWidth":357},
+    "screenshots": ["chat-final.jpg","chat-mobile-verified.jpg","chat-welcome.jpg"]
+  },
+  "limits": ["UI and offline procedure verification; no external LLM quality evaluation", "No source data or schema changes by this task", "Concurrent data consolidation is separate work", "Backend full regression not rerun"]
+}

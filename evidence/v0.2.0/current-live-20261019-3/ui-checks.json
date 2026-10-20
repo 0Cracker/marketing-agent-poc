@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "platform": "Windows in-app browser",
+  "documentGeometry": {
+    "conversationScrollWidth": 478,
+    "conversationWidth": 478,
+    "scrollWidth": 1233,
+    "width": 1233
+  },
+  "finalApprovalState": "invalidated",
+  "restoredQuestionCount": 3,
+  "approvalRestoredBeforeInvalidation": true,
+  "sourceOpened": "D008-T25-01121",
+  "warningsAndErrorsAfterFinalReload": [],
+  "screenshots": [
+    "analysis-windows.png",
+    "evidence-windows.png",
+    "followup-windows.png",
+    "budget-paused.png",
+    "budget-windows.png",
+    "approved-windows.png",
+    "approved-restored-windows.png",
+    "final-restored-windows.png"
+  ]
+}
