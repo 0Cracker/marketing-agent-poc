@@ -1,0 +1,1 @@
+{"status": "passed", "cases": 18, "checks": 97067, "method": "independent Decimal and integer aggregation", "scope": "mock consistency, not real marketer learning efficacy"}

@@ -1,0 +1,178 @@
+{
+  "rows": 41341,
+  "dataHash": "4a58a7326fcd84b4d050ab2b2aea1cb7289c7d28bbb1deab1df2e378e5afadbb",
+  "files": [
+    {
+      "file": "products.jsonl",
+      "sha256": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860"
+    },
+    {
+      "file": "identity-mappings.jsonl",
+      "sha256": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79"
+    },
+    {
+      "file": "market-sales.jsonl",
+      "sha256": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a"
+    },
+    {
+      "file": "purchase-surveys.jsonl",
+      "sha256": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c"
+    },
+    {
+      "file": "search-interest.jsonl",
+      "sha256": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54"
+    },
+    {
+      "file": "keyword-demand.jsonl",
+      "sha256": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563"
+    },
+    {
+      "file": "organic-search.jsonl",
+      "sha256": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18"
+    },
+    {
+      "file": "prices.jsonl",
+      "sha256": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3"
+    },
+    {
+      "file": "promotions.jsonl",
+      "sha256": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40"
+    },
+    {
+      "file": "public-ads.jsonl",
+      "sha256": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4"
+    },
+    {
+      "file": "publications.jsonl",
+      "sha256": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95"
+    },
+    {
+      "file": "campaigns.jsonl",
+      "sha256": "2f22418bf5901b2b06192198717bcbe3d1de46d89289d77f94a90481b87de051"
+    },
+    {
+      "file": "ad-performance.jsonl",
+      "sha256": "3cfcd3b0e8798dec8961e4c3478594a6a994e393fd6a0798003d68a0ef19d698"
+    },
+    {
+      "file": "ad-breakdowns.jsonl",
+      "sha256": "fd2de56115e2cdc2b807b8373e8cde8eb7c38e620eca7e27d03ee3be63d91cd5"
+    },
+    {
+      "file": "auction-insights.jsonl",
+      "sha256": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2"
+    },
+    {
+      "file": "creatives.jsonl",
+      "sha256": "1b0b5530ae43bd9bfe85855f0b6c8288bd5d4b6f0e0703a9964585bc6b2f893d"
+    },
+    {
+      "file": "web-events.jsonl",
+      "sha256": "1ea9ce654275424332b8015fa30012c7f93d86f4abcba942599c633a50a8942c"
+    },
+    {
+      "file": "commerce-events.jsonl",
+      "sha256": "527d82e8482d32ed99807b58a51298ba169a1b243591d9a6aa78282e8c8c4de9"
+    },
+    {
+      "file": "order-lines.jsonl",
+      "sha256": "a976229d378e63f9c38eea9398895823c37f398b0bcd04206d4913fe40b54015"
+    },
+    {
+      "file": "refunds.jsonl",
+      "sha256": "fc56db364d5c426232b123392c4be0de2f6a115d104760d0e01f71fe10373f08"
+    },
+    {
+      "file": "costs.jsonl",
+      "sha256": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e"
+    },
+    {
+      "file": "inventory.jsonl",
+      "sha256": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5"
+    },
+    {
+      "file": "distribution-fulfilment.jsonl",
+      "sha256": "e472d27c6bdecc89f3b802d14af44f5e6b2c597c46474ba973f5e54090dd69a8"
+    },
+    {
+      "file": "reviews.jsonl",
+      "sha256": "079f2485e9852c26f994b6eb418902553becea2976c6627161f454fd87758a1c"
+    },
+    {
+      "file": "review-annotations.jsonl",
+      "sha256": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18"
+    },
+    {
+      "file": "customer-inquiries.jsonl",
+      "sha256": "2724303362ba8ef5ba425d34114db79eb7bda414ed9c8f0c371ccd03debc82d0"
+    },
+    {
+      "file": "owned-content.jsonl",
+      "sha256": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716"
+    },
+    {
+      "file": "social-comments.jsonl",
+      "sha256": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4"
+    },
+    {
+      "file": "creator-collaborations.jsonl",
+      "sha256": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e"
+    },
+    {
+      "file": "customer-cohorts.jsonl",
+      "sha256": "e3d9c6b1e593f25d4b428c556b5abb82ecacba504dc3ec5d17a312766728a943"
+    },
+    {
+      "file": "crm-performance.jsonl",
+      "sha256": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498"
+    },
+    {
+      "file": "brand-surveys.jsonl",
+      "sha256": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e"
+    },
+    {
+      "file": "public-statistics.jsonl",
+      "sha256": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428"
+    },
+    {
+      "file": "weather-calendar.jsonl",
+      "sha256": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70"
+    },
+    {
+      "file": "change-events.jsonl",
+      "sha256": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b"
+    },
+    {
+      "file": "collection-runs.jsonl",
+      "sha256": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27"
+    },
+    {
+      "file": "site-events.jsonl",
+      "sha256": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64"
+    },
+    {
+      "file": "experiments.jsonl",
+      "sha256": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f"
+    },
+    {
+      "file": "budget-models.jsonl",
+      "sha256": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc"
+    },
+    {
+      "file": "budget-policies.jsonl",
+      "sha256": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd"
+    },
+    {
+      "file": "sales-reports.jsonl",
+      "sha256": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1"
+    },
+    {
+      "file": "definitions.json",
+      "sha256": "182013eb5c76e6d52cb8b17e256c287e0574d02856c413879c17623b3cf19b31"
+    },
+    {
+      "file": "product-presentation.json",
+      "sha256": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+✔ approved diversity generation is deterministic, isolated and within the total observation budget (451.8871ms)
+✔ generated observations pass independent Decimal, event-order and numeric-contrast checks (833.4473ms)
+✔ paid-cohort device evidence retains same-session events across the comparison end midnight (1733.8535ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5047.6082

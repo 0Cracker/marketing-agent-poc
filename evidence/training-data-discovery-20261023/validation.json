@@ -1,0 +1,45 @@
+{
+  "status": "automated checks passed, browser unavailable",
+  "date": "2026-10-23",
+  "checks": {
+    "trainingTests": {
+      "passed": 20,
+      "failed": 0,
+      "log": "tests.txt"
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "lint": {
+      "exitCode": 0,
+      "advisory": "Existing pages-directory advisory"
+    },
+    "build": {
+      "exitCode": 0,
+      "log": "build.txt",
+      "advisory": "Existing font-path warnings"
+    },
+    "http": {
+      "status": 200,
+      "scope": "Current JSX transformed and served"
+    },
+    "canonicalData": {
+      "status": "unchanged",
+      "sha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40"
+    }
+  },
+  "scope": [
+    "Applicable media choices derived from campaign metadata",
+    "Media changes clear incompatible campaign selection",
+    "Task-first data selection with relevant comparison dimensions",
+    "Missing values distinguish inapplicable, zero denominator and uncollected data",
+    "Realistic campaign display names and codes, Korean audience display labels"
+  ],
+  "browser": {
+    "status": "not_run",
+    "reason": "Local browser use is disabled in Work settings",
+    "mobile": "excluded by user"
+  },
+  "server": "Restarted at 127.0.0.1:5183 after ECONNREFUSED",
+  "identityPolicy": "Canonical IDs are unchanged; aliases affect presentation only and remain searchable."
+}

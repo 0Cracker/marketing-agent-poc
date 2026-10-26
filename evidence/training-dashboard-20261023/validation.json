@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "command": "node --test tests/training-dashboard.test.mjs",
+  "exitCode": 0,
+  "tests": 11,
+  "pass": 11,
+  "fail": 0,
+  "durationMs": 50925.9,
+  "coverage": [
+    "Same complete dashboard schema across all fifteen cases",
+    "Ratio-of-sums and ROAS factor identity",
+    "Parent and child dimension reconciliation",
+    "Campaign, channel and device filter consistency across views",
+    "All fifteen scenario numerical targets",
+    "Reporting cutoffs and delayed return purchases",
+    "Funnel, stockout, traffic and normal tracking evidence semantics",
+    "Public endpoint availability and private data rejection",
+    "All 41341 existing rows and source-file byte preservation",
+    "Deterministic regeneration from the actual catalog",
+    "Production asset completeness and private asset exclusion"
+  ],
+  "lint": {
+    "command": "node node_modules/eslint/bin/eslint.js shared/training-dashboard.mjs scripts/generate-training-dashboard.mjs scripts/training-data.mjs scripts/current-data.mjs frontend/workbench/training-dashboard.tsx frontend/workbench/workbench.tsx tests/training-dashboard.test.mjs",
+    "exitCode": 0,
+    "warning": "Existing Next pages-directory warning"
+  },
+  "limits": "Mock consistency and PC functionality verified. Actual learning efficacy remains unverified. Mobile viewport excluded at user request.",
+  "latestRerun": {
+    "command": "node --experimental-strip-types --test tests/training-dashboard.test.mjs",
+    "exitCode": 0,
+    "tests": 11,
+    "pass": 11,
+    "includes": [
+      "source filters",
+      "nullable content reach",
+      "68 unique detail records",
+      "non-synchronized daily purchase distribution"
+    ]
+  },
+  "existingRoasRegression": {
+    "command": "node --experimental-strip-types --test tests/roas-*.test.mjs tests/roas-*.test.ts",
+    "exitCode": 0,
+    "tests": 67,
+    "pass": 67
+  },
+  "dataHash": "55b9329c06888d2c88ca7c262149f61579a9d8811468e4b629e6318a0ed50795",
+  "sourceSha256": "a0e930f977093c853a03f4a51d7f87414b0228bdb92a4d69f9741484011f745b",
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "node node_modules/vite/bin/vite.js build",
+    "exitCode": 0,
+    "durationSeconds": 56,
+    "warnings": [
+      "Existing font paths resolve via copied runtime assets",
+      "Plugin timings advisory"
+    ]
+  },
+  "browser": {
+    "status": "passed",
+    "scope": "PC only",
+    "evidence": "browser.json",
+    "overviewCases": 15,
+    "detailViews": 60,
+    "consoleErrorsAfterReload": 0
+  }
+}

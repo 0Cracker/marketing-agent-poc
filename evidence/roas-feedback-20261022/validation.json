@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-22",
+  "branch": "feature/roas-decision-flow",
+  "head": "19f63fc",
+  "target": "existing uncommitted ROAS scenario plus parallel feedback fixes, including the concurrently implemented draft store",
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "marketingRowsCreatedOrChanged": 0,
+  "automated": {
+    "command": "node --experimental-strip-types --test tests/roas-*.test.mjs tests/roas-reviews.test.ts tests/agents/*.test.mjs tests/marketing.test.ts tests/demo.test.ts tests/agent-client.test.ts tests/agent-answer.test.ts tests/agent-presentation.test.ts",
+    "exitCode": 0,
+    "passed": 177,
+    "failed": 0,
+    "roasTestsIncluded": 28,
+    "checks": ["blank selected action blocked on Markdown export", "one selected draft replaces default actions and budgets", "budget direction requires reason and reconsideration condition", "literal replacement tokens preserved", "draft save and JSON restore preserve empty text", "channel and period evidence isolation", "cutoff-aware refund evidence", "daily net revenue reconciles with period and channel totals", "late refund changes original acquisition day", "incomplete source leaves daily net ROAS null", "existing agent approval, invalidation and recovery"]
+  },
+  "independentMoneyCheck": {
+    "command": "python scripts/check-roas-case.py",
+    "runtime": "bundled Python with -X utf8",
+    "exitCode": 0,
+    "checks": 13,
+    "originalRowsBytePreserved": 30327,
+    "expectedNetProductRevenue": ["1470000.00", "684500.00"]
+  },
+  "browser": {
+    "urls": ["http://127.0.0.1:5173/workbench", "http://localhost:5173/workbench"],
+    "observed": ["PC overview renders refund-adjusted trend by default", "reported trend toggle is displayed", "headline net ROAS and revenue are unchanged", "no captured console errors"],
+    "interactiveStatus": "not_verified",
+    "blocker": "In-app browser reads DOM and screenshots but click and key activation did not change the page, including native details expansion. Refresh, fresh tabs and session reset did not restore activation.",
+    "pending": ["menu round trip retains unsaved input", "save then reload in integrated screen", "blank export error in browser", "channel evidence dialog in browser", "final Markdown download contents in browser", "replacement dialog cancel and two-tab interaction"]
+  },
+  "finalChecks": {
+    "typecheck": {"exitCode": 0, "log": "typecheck.txt"},
+    "lint": {"exitCode": 0, "log": "lint.txt", "note": "Existing Next pages directory advisory, no lint violations"},
+    "build": {"exitCode": 0, "log": "build.txt", "note": "Existing font runtime-resolution advisories, font assets emitted"},
+    "diffCheck": {"exitCode": 0, "note": "Existing LF/CRLF advisories only"}
+  },
+  "publication": false,
+  "newVersion": false
+}

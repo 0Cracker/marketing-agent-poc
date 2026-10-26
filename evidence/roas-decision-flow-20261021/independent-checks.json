@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "newRows": 3470,
+  "existingRowsBytePreserved": 30327,
+  "checks": [
+    "counts",
+    "old_file_prefix_hashes",
+    "old_definitions_preserved",
+    "default_scope_isolation",
+    "record_references",
+    "purchase_order_session",
+    "ordered_funnel",
+    "device_partition",
+    "decimal_product_revenue",
+    "independent_partial_refunds",
+    "return_aliases",
+    "cutoff",
+    "reported_vs_net"
+  ],
+  "expectedNetProductRevenue": [
+    "1470000.00",
+    "684500.00"
+  ],
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d"
+}

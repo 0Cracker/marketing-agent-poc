@@ -1,0 +1,11 @@
+✔ screen projection uses the approved scenario and the same verified calculation (6120.1743ms)
+✔ development endpoint serves the derived screen without opening archived data (5033.542ms)
+✔ installed diverse cases serve isolated screen projections and registered production asset names (9490.4151ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21057.1289

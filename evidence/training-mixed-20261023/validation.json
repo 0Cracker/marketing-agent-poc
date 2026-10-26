@@ -1,0 +1,39 @@
+{
+  "status": "passed with browser limitation",
+  "date": "2026-10-23",
+  "dataHash": "0f013f0a59de02923b63b0c0720b740dd606768a8795fdb02a9e6a92c392311a",
+  "sourceSha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+  "cases": 18,
+  "aggregateRows": 38760,
+  "individualRecords": 105,
+  "checks": {
+    "trainingTests": {
+      "passed": 16,
+      "failed": 0,
+      "log": "tests.txt"
+    },
+    "legacyRoasTests": {
+      "passed": 67,
+      "failed": 0
+    },
+    "independent": {
+      "passed": 97067,
+      "log": "independent.json"
+    },
+    "originalRows": 41341,
+    "oldCases": "15 unchanged, original details and S15 mature override preserved by test",
+    "typecheck": "passed",
+    "lint": "passed, existing pages-directory advisory",
+    "build": "passed, existing runtime font-path warnings",
+    "http": "3 new projections and workbench route 200, index contains 18 cases"
+  },
+  "browser": {
+    "status": "not_run",
+    "reason": "Local browser use is disabled in Work settings",
+    "mobile": "excluded by user"
+  },
+  "limitations": [
+    "Synthetic arithmetic consistency does not establish causal effects or learner outcomes.",
+    "New cases were not visually checked in a desktop browser."
+  ]
+}

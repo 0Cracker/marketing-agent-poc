@@ -1,0 +1,18 @@
+✔ existing evidence exposes gaps instead of inventing net ROAS or purchase paths (2577.4691ms)
+✔ source selection isolates existing scopes and preserves shared product definitions (17.0689ms)
+✔ comparison dates and cutoff are required rather than silently defaulted (6.6767ms)
+✔ approved scenario regenerates exactly, without modifying the installed dataset (1941.5309ms)
+✔ linked case separates reported ROAS, net product ROAS and both conversion denominators (701.1217ms)
+✔ return aliases and pending requests cannot reduce net revenue twice (1986.3727ms)
+✔ a refund processed after the comparison period revises its original purchase cohort only after cutoff (1795.5633ms)
+✔ missing purchase and broken financial references fail instead of claiming a complete analysis (1246.0675ms)
+✔ screen projection uses the approved scenario and the same verified calculation (4611.9563ms)
+✔ development endpoint serves the derived screen without opening archived data (4414.7108ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18611.3483

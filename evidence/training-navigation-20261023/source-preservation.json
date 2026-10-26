@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "sourceSha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+  "scope": "UI navigation, labels and layout only; canonical data unchanged"
+}

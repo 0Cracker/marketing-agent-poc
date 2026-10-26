@@ -1,0 +1,7 @@
+{
+  "status": 200,
+  "uiModule": "Vite transformed module served",
+  "caseCount": 18,
+  "browserInteraction": "not checked",
+  "initialCheck": "Incorrect /frontend prefix returned SPA HTML; corrected to Vite root /workbench module."
+}

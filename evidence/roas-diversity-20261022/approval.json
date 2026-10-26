@@ -1,0 +1,21 @@
+{
+  "approved": true,
+  "date": "2026-10-22",
+  "user_request": "ㄱㄱ 진행해. 이번엔 실제 데이터처럼 구성이정말 다양해야할거야.",
+  "proposal": "docs/research/marketing-ontology/data-proposal.md#2026-10-22-독립-재감사-후-현실성-검증-사례-제안-미승인",
+  "maximumObservationRows": 12000,
+  "cases": [
+    "R002-cost-change",
+    "R003-order-value",
+    "R004-adjustment-change"
+  ],
+  "preserveScenarios": [
+    "R001-roas-decline"
+  ],
+  "schemaChanges": false,
+  "baselineDataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "sourceFields": "existing T12/T13/T14/T16/T17/T18/T19/T20/T24/T26",
+  "provenanceAndMigration": "one each per observation",
+  "externalModelCalls": 0,
+  "realAdsCalls": 0
+}

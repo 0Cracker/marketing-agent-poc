@@ -1,8 +1,9 @@
 import {createStandardQuery,type StandardCatalog,type CatalogLock} from './standard-query';
 import type {Raw} from './contract';
+import {selectScenario} from '../../shared/scenario-selection.mjs';
 export type CurrentManifest={contract:string;screen_contract:string;schema_sha256:string;pending_by_type:Record<string,number>;data_sha256:string;source_created_at:string;rows:number;preserved_rows:number;source_files:number;decisions:Record<string,number>;files:{type:string;file:string;rows:number;bytes:number;sha256:string}[];metadata:{file:string;sha256:string}[];period:{start:string;end:string};scope_ids:Record<string,string[]>};
 const digest=async(bytes:ArrayBuffer)=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
-export function createCurrentServices(catalog:StandardCatalog,lock:CatalogLock,index:CurrentManifest){const service=createStandardQuery(catalog,lock);return {service,index,services:{CURRENT:service}};}
+export function createCurrentServices(catalog:StandardCatalog,lock:CatalogLock,index:CurrentManifest){const service=createStandardQuery({...catalog,records:selectScenario(catalog.records,index.scope_ids)},lock);return {service,index,services:{CURRENT:service}};}
 export async function loadConnectedServices(){
  const base='/workbench-data/current/';
  const response=await fetch(base+'manifest.json',{cache:'no-cache'});if(!response.ok)throw Error('통합 manifest를 읽지 못했습니다');
@@ -26,7 +27,7 @@ export async function loadConnectedServices(){
   // Share one download per type; review annotations need their actual parent text.
   await Promise.all([...new Set(['T01','T03','T12',type,...(type==='T25'?['T24']:[])])].map(load));
   const records=[...loaded.values()].flat();if(new Set(records.map(r=>r.record_id)).size!==records.length)throw Error('통합 ID 중복');
-  return createStandardQuery({batch:'CURRENT',scenario:'current-comparison',records,products,definitions:{}},{sha256:manifest.data_sha256,source_created_at:manifest.source_created_at,rows:manifest.rows,screen_contract:manifest.screen_contract});
+  return createCurrentServices({batch:'CURRENT',scenario:'current-comparison',records,products,definitions:{}},{sha256:manifest.data_sha256,source_created_at:manifest.source_created_at,rows:manifest.rows,screen_contract:manifest.screen_contract},manifest).service;
  };
  return {service:await loadType('T03'),index:manifest,loadType};
 }

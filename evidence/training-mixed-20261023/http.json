@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "cases": 18,
+  "page": 200,
+  "results": [
+    {
+      "id": "S16",
+      "status": 200,
+      "facts": 336,
+      "breakdowns": 1680
+    },
+    {
+      "id": "S17",
+      "status": 200,
+      "facts": 336,
+      "breakdowns": 1680
+    },
+    {
+      "id": "S18",
+      "status": 200,
+      "facts": 336,
+      "breakdowns": 1680
+    }
+  ],
+  "scope": "HTTP delivery only, browser layout and interaction untested"
+}

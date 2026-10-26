@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-22",
+  "branch": "feature/roas-decision-flow",
+  "head": "19f63fc",
+  "workingTree": "Existing uncommitted feature and unrelated changes retained; no release or combined commit",
+  "plan": "docs/design/roas-decision-flow.md: independent re-audit execution plan",
+  "broadRegression": {
+    "pass": 205,
+    "fail": 0,
+    "log": "tests.txt"
+  },
+  "finalRoasRegression": {
+    "pass": 57,
+    "fail": 0,
+    "log": "roas-final.txt",
+    "detail": "Rerun after final preserved-note budget validation fix"
+  },
+  "typecheck": {
+    "initialExitCode": 2,
+    "initialLog": "types.txt",
+    "cause": "Missing declarations for new evidence filter exports",
+    "finalExitCode": 0,
+    "finalLog": "types-final.txt"
+  },
+  "lint": {
+    "exitCode": 0,
+    "log": "lint-final.txt",
+    "earlierLog": "lint.txt",
+    "advisory": "Existing Next pages directory advisory"
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "build-final.txt",
+    "earlierLog": "build.txt",
+    "advisory": "Existing font runtime resolution and plugin timing advisories"
+  },
+  "independentDecimal": {
+    "pass": 13,
+    "log": "decimal.txt"
+  },
+  "sourceData": {
+    "newMarketingRows": 0,
+    "changedMarketingRows": 0,
+    "hash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+    "existingRowsBytePreserved": 30327
+  },
+  "persistentReviewSchemaVersion": 1,
+  "independentReview": {
+    "status": "No new high severity finding after integration",
+    "scope": "Read-only code review, existing-data calculations, 36 channel/device/stage export combinations and free-note round trips",
+    "browserInteraction": false,
+    "realMarketerTaskSuccess": false
+  },
+  "browser": {
+    "status": "not verified",
+    "reason": "Earlier automatic approval review rejected reload due to possible unsaved draft loss; explicit reload approval requested again and pending. Existing tab unchanged."
+  },
+  "newScenarioProposal": {
+    "status": "approval pending; no rows generated",
+    "path": "docs/research/marketing-ontology/data-proposal.md",
+    "cases": [
+      "cost change",
+      "purchase amount change",
+      "confirmed adjustment change"
+    ],
+    "maximumObservationRows": 12000,
+    "provenanceAndMigration": "one each per observation",
+    "schemaChanges": false
+  }
+}

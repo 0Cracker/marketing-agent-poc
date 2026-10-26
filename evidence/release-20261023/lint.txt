@@ -1,0 +1,13 @@
+Pages directory cannot be found at C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\pages or C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\src\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\docs\research\marketing-ontology\batches\D005\generate.mjs
+  58:11  warning  'chars' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\docs\research\marketing-ontology\batches\D005\validate.mjs
+  2:39  warning  'counts' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\frontend\app\page.tsx
+  4:83  warning  'Target' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+

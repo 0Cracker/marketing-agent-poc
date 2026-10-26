@@ -14,6 +14,10 @@
     "db:generate": "drizzle-kit generate",
     "test": "node --experimental-strip-types tests/marketing.test.ts && node --experimental-strip-types tests/demo.test.ts",
     "test:agents": "node --test --test-concurrency=1 tests/agents/*.test.mjs",
+    "test:roas": "node --experimental-strip-types --test tests/roas-*.test.mjs tests/roas-*.test.ts",
+    "test:training": "node --test tests/training-dashboard.test.mjs",
+    "data:training": "node scripts/generate-training-dashboard.mjs",
+    "demo:roas": "node scripts/roas-case.mjs --scenario R001-roas-decline",
     "demo:agents": "node scripts/agent-demo.mjs",
     "start:agents": "node scripts/agent-server.mjs"
   },

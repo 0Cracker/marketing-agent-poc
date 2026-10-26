@@ -1,0 +1,25 @@
+✔ existing evidence exposes gaps instead of inventing net ROAS or purchase paths (1437.0737ms)
+✔ source selection isolates existing scopes and preserves shared product definitions (15.4163ms)
+✔ comparison dates and cutoff are required rather than silently defaulted (6.0722ms)
+✔ approved scenario regenerates exactly, without modifying the installed dataset (1445.0267ms)
+✔ linked case separates reported ROAS, net product ROAS and both conversion denominators (527.5594ms)
+✔ return aliases and pending requests cannot reduce net revenue twice (945.1651ms)
+✔ a refund processed after the comparison period revises its original purchase cohort only after cutoff (472.7777ms)
+✔ missing purchase and broken financial references fail instead of claiming a complete analysis (262.7072ms)
+✔ draft JSON round trip and persisted reload retain content without changing source (6.7261ms)
+✔ cleared action text and note stay empty after saving and importing a draft (1.1094ms)
+✔ two drafts remain isolated and stale revision cannot overwrite saved content (5.5412ms)
+✔ duplicate imports, stale tabs, quota failures and corrupt stores preserve prior bytes (1.8236ms)
+✔ outdated context remains readable but is never rebound to current evidence (1.7566ms)
+✔ current-context draft must match targets, media and exact evidence links (0.8348ms)
+✔ unsupported format, invalid dates, duplicated fields and oversized files fail closed (2.5283ms)
+✔ screen projection uses the approved scenario and the same verified calculation (1844.6653ms)
+✔ development endpoint serves the derived screen without opening archived data (2737.4164ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8673.5555
