@@ -8,7 +8,7 @@ import {compile,validate,runErrors} from './validate.mjs';
 const args=process.argv.slice(2),mode=args[0];
 const arg=k=>{const i=args.indexOf(k);return i<0?undefined:args[i+1];};
 const python=arg('--python')??'C:/Users/박시형/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe';
-const tools=arg('--tools')??path.resolve(root,'../ontology-validation-tools');
+const tools=arg('--tools')??path.resolve(root,'.tools/ontology-validation');
 const output=arg('--output');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const fileHash=p=>hash(fs.readFileSync(p));

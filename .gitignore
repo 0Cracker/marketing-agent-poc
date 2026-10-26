@@ -49,6 +49,7 @@ next-env.d.ts
 /outputs/
 /work/
 /archive/
+/.tools/
 
 # Python validation caches are local build artifacts.
 __pycache__/

@@ -145,7 +145,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const {generate,serialize}=await import('./generate.mjs'),replay=generate(approval,manifest.created_at);
  for(const [t,body] of Object.entries(serialize(replay)))assert.equal(body,fs.readFileSync(path.join(here,'source',t+'.jsonl'),'utf8'));
  assert.deepEqual(replay.registry,data.registry);assert.deepEqual(replay.ledger,data.ledger);
- const cmd=[path.join(here,'oracle.py'),'--batch',here,'--tools',path.join(root,'../ontology-validation-tools'),'--progress-file',path.resolve(output)+'.progress.jsonl'];
+ const cmd=[path.join(here,'oracle.py'),'--batch',here,'--tools',path.join(root,'.tools/ontology-validation'),'--progress-file',path.resolve(output)+'.progress.jsonl'];
  const independent=spawnSync(option('--python')||'python',cmd,{encoding:'utf8',maxBuffer:4*1024*1024,timeout:900000,env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',PYTHONIOENCODING:'utf-8'}});
  let oracle;try{oracle=JSON.parse(independent.stdout||'{}');}catch{oracle={status:'fail',reason:'Independent process returned invalid JSON'};}
  const status=independent.status===0&&oracle.status==='pass'?'pass':independent.error?.code==='ENOENT'?'not_run':'fail';
