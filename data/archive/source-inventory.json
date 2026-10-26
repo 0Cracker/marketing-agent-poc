@@ -1753,5 +1753,185 @@
     "rows": 0,
     "kind": "legacy-code-or-generator",
     "archive": "archive/files/5f0191c089277dba09509ce2ccc5f718ba99d84400c73d57c5876e6f2c8a16eb.mjs"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/857a8762db8cd36f7f1ba70ddca8457b879314e20ace1585aa88bbdd29d9d58a.jsonl",
+    "sha256": "857a8762db8cd36f7f1ba70ddca8457b879314e20ace1585aa88bbdd29d9d58a",
+    "bytes": 2842,
+    "rows": 2,
+    "kind": "original",
+    "archive": "archive/files/857a8762db8cd36f7f1ba70ddca8457b879314e20ace1585aa88bbdd29d9d58a.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/3d2d1ff3aa436d1fd0148c6b4349c40402bf1e0b092a8d78b01ec6e95a88c950.jsonl",
+    "sha256": "3d2d1ff3aa436d1fd0148c6b4349c40402bf1e0b092a8d78b01ec6e95a88c950",
+    "bytes": 83259,
+    "rows": 56,
+    "kind": "original",
+    "archive": "archive/files/3d2d1ff3aa436d1fd0148c6b4349c40402bf1e0b092a8d78b01ec6e95a88c950.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/d968b985fa2c8314aeb38384f376058f7e76985604ddf9b029e9c6ec35894967.jsonl",
+    "sha256": "d968b985fa2c8314aeb38384f376058f7e76985604ddf9b029e9c6ec35894967",
+    "bytes": 157494,
+    "rows": 112,
+    "kind": "original",
+    "archive": "archive/files/d968b985fa2c8314aeb38384f376058f7e76985604ddf9b029e9c6ec35894967.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/84c40fd633c35c47bf8b98b22983ff29d456e749f152414d8926fbc1410ba516.jsonl",
+    "sha256": "84c40fd633c35c47bf8b98b22983ff29d456e749f152414d8926fbc1410ba516",
+    "bytes": 2558,
+    "rows": 2,
+    "kind": "original",
+    "archive": "archive/files/84c40fd633c35c47bf8b98b22983ff29d456e749f152414d8926fbc1410ba516.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/8675510bddb8b16c9a07df198039c598fbc7999014e1b689a992b0e3f817848f.jsonl",
+    "sha256": "8675510bddb8b16c9a07df198039c598fbc7999014e1b689a992b0e3f817848f",
+    "bytes": 1476253,
+    "rows": 1120,
+    "kind": "original",
+    "archive": "archive/files/8675510bddb8b16c9a07df198039c598fbc7999014e1b689a992b0e3f817848f.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/77a7f988147245552e7894c1390df95223d95800d3cd3d1c331120b79ac5100c.jsonl",
+    "sha256": "77a7f988147245552e7894c1390df95223d95800d3cd3d1c331120b79ac5100c",
+    "bytes": 2578286,
+    "rows": 1980,
+    "kind": "original",
+    "archive": "archive/files/77a7f988147245552e7894c1390df95223d95800d3cd3d1c331120b79ac5100c.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/7c7c7aed70ec8cc485ac9b1537c099d6478dbf78e35e2e736cc25c4c818f2090.jsonl",
+    "sha256": "7c7c7aed70ec8cc485ac9b1537c099d6478dbf78e35e2e736cc25c4c818f2090",
+    "bytes": 185902,
+    "rows": 126,
+    "kind": "original",
+    "archive": "archive/files/7c7c7aed70ec8cc485ac9b1537c099d6478dbf78e35e2e736cc25c4c818f2090.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/862946ae7df42dd2e25a2412c4951f7a1cac403068efb672b44f26979ac7f7d9.jsonl",
+    "sha256": "862946ae7df42dd2e25a2412c4951f7a1cac403068efb672b44f26979ac7f7d9",
+    "bytes": 22208,
+    "rows": 16,
+    "kind": "original",
+    "archive": "archive/files/862946ae7df42dd2e25a2412c4951f7a1cac403068efb672b44f26979ac7f7d9.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/d192e9fb2678c773300948966a08d3c76c73d5a4d45422c33b69da7dbf666b41.jsonl",
+    "sha256": "d192e9fb2678c773300948966a08d3c76c73d5a4d45422c33b69da7dbf666b41",
+    "bytes": 34933,
+    "rows": 28,
+    "kind": "original",
+    "archive": "archive/files/d192e9fb2678c773300948966a08d3c76c73d5a4d45422c33b69da7dbf666b41.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/877c732952b0d5f848e89943ab3c0c0020f852f1aa5faf3b3e86d3fb52950e45.jsonl",
+    "sha256": "877c732952b0d5f848e89943ab3c0c0020f852f1aa5faf3b3e86d3fb52950e45",
+    "bytes": 34002,
+    "rows": 28,
+    "kind": "original",
+    "archive": "archive/files/877c732952b0d5f848e89943ab3c0c0020f852f1aa5faf3b3e86d3fb52950e45.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/1d2fb6d71315133e8e54d77a0aefdbd2aa525fd2df2a90e4f45cbff61fe856bd.jsonl",
+    "sha256": "1d2fb6d71315133e8e54d77a0aefdbd2aa525fd2df2a90e4f45cbff61fe856bd",
+    "bytes": 8784,
+    "rows": 6,
+    "kind": "original",
+    "archive": "archive/files/1d2fb6d71315133e8e54d77a0aefdbd2aa525fd2df2a90e4f45cbff61fe856bd.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/8fa03dd1cd897ce7034b6cabac2b909c3eb606168eb8652c0958fd0ce0a12128.jsonl",
+    "sha256": "8fa03dd1cd897ce7034b6cabac2b909c3eb606168eb8652c0958fd0ce0a12128",
+    "bytes": 257217,
+    "rows": 168,
+    "kind": "original",
+    "archive": "archive/files/8fa03dd1cd897ce7034b6cabac2b909c3eb606168eb8652c0958fd0ce0a12128.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/6461c80ee73153c5c3dabc7441679a2298c3b0c03c28251c32b8afb083f781cc.jsonl",
+    "sha256": "6461c80ee73153c5c3dabc7441679a2298c3b0c03c28251c32b8afb083f781cc",
+    "bytes": 487131,
+    "rows": 336,
+    "kind": "original",
+    "archive": "archive/files/6461c80ee73153c5c3dabc7441679a2298c3b0c03c28251c32b8afb083f781cc.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/101df92988224bd134e504be648a50ce4429a29b502fc660fae004ec5a062569.jsonl",
+    "sha256": "101df92988224bd134e504be648a50ce4429a29b502fc660fae004ec5a062569",
+    "bytes": 7617,
+    "rows": 6,
+    "kind": "original",
+    "archive": "archive/files/101df92988224bd134e504be648a50ce4429a29b502fc660fae004ec5a062569.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/46f0145790008e2fd96203052adc2b3e9d7ce9c9587fdeefe258f91a64413d93.jsonl",
+    "sha256": "46f0145790008e2fd96203052adc2b3e9d7ce9c9587fdeefe258f91a64413d93",
+    "bytes": 3360107,
+    "rows": 2368,
+    "kind": "original",
+    "archive": "archive/files/46f0145790008e2fd96203052adc2b3e9d7ce9c9587fdeefe258f91a64413d93.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/252687e9226e706a744457499b6d2272b0f5993cb65bd3c469c630ef35447bdd.jsonl",
+    "sha256": "252687e9226e706a744457499b6d2272b0f5993cb65bd3c469c630ef35447bdd",
+    "bytes": 5646018,
+    "rows": 4160,
+    "kind": "original",
+    "archive": "archive/files/252687e9226e706a744457499b6d2272b0f5993cb65bd3c469c630ef35447bdd.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/982fb39c1bb44ec11d48c5f6ffc8f3a04c865956d5806c9cb99a7a47686c0b0b.jsonl",
+    "sha256": "982fb39c1bb44ec11d48c5f6ffc8f3a04c865956d5806c9cb99a7a47686c0b0b",
+    "bytes": 270493,
+    "rows": 177,
+    "kind": "original",
+    "archive": "archive/files/982fb39c1bb44ec11d48c5f6ffc8f3a04c865956d5806c9cb99a7a47686c0b0b.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/e61a0a3a4ad8e64c4989c50c46ef9de54e74f6d8f92e16de73ac93777b225d4e.jsonl",
+    "sha256": "e61a0a3a4ad8e64c4989c50c46ef9de54e74f6d8f92e16de73ac93777b225d4e",
+    "bytes": 78298,
+    "rows": 53,
+    "kind": "original",
+    "archive": "archive/files/e61a0a3a4ad8e64c4989c50c46ef9de54e74f6d8f92e16de73ac93777b225d4e.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/8cbbe780821db104a506dee62e9d0e9450779ac85a9e63eb792c5acd1d6c353d.jsonl",
+    "sha256": "8cbbe780821db104a506dee62e9d0e9450779ac85a9e63eb792c5acd1d6c353d",
+    "bytes": 186889,
+    "rows": 138,
+    "kind": "original",
+    "archive": "archive/files/8cbbe780821db104a506dee62e9d0e9450779ac85a9e63eb792c5acd1d6c353d.jsonl"
+  },
+  {
+    "repository": "marketing-agent-poc",
+    "path": "data/archive/files/f02924abe645a60e0af2aaaf40a77702452d84dcfed393c68dd490fd7d417677.jsonl",
+    "sha256": "f02924abe645a60e0af2aaaf40a77702452d84dcfed393c68dd490fd7d417677",
+    "bytes": 179766,
+    "rows": 132,
+    "kind": "original",
+    "archive": "archive/files/f02924abe645a60e0af2aaaf40a77702452d84dcfed393c68dd490fd7d417677.jsonl"
   }
 ]

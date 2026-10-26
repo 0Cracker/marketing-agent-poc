@@ -5,7 +5,7 @@ export function applyDemoOrderFlow(records){
  // Japan's six missing order days were collapsed into Aug 18 by the old generator.
  // Restore those days and shift dependent events by the same delta per order.
  const shifts=new Map();
- for(const r of records.filter(r=>r.dataset_type==='T19'&&r.scope_id.includes('-JP-')&&r.ordered_at.startsWith('2026-08-18'))){
+ for(const r of records.filter(r=>r.scenario_id==='D008-comparison-demo'&&r.dataset_type==='T19'&&r.scope_id.includes('-JP-')&&r.ordered_at.startsWith('2026-08-18'))){
   const index=Number(r.line_id.match(/JP-(\d+)/)?.[1]),day=3+Math.floor(index/2)%28;
   if(day>=12&&day<=17)shifts.set(r.order_id,day-18);
  }
@@ -16,9 +16,9 @@ export function applyDemoOrderFlow(records){
  const money=cents=>(Number(cents)/100).toFixed(2);
  const cents=value=>BigInt(Math.round(Number(value.amount)*100));
  const minimum=new Map();
- for(const r of records.filter(r=>r.dataset_type==='T20'))minimum.set(r.order_line_ref,(minimum.get(r.order_line_ref)||0)+Number(r.quantity||0));
+ for(const r of records.filter(r=>r.scenario_id==='D008-comparison-demo'&&r.dataset_type==='T20'))minimum.set(r.order_line_ref,(minimum.get(r.order_line_ref)||0)+Number(r.quantity||0));
  const groups=new Map(),updates=new Map();
- for(const r of records.filter(r=>r.dataset_type==='T19')){
+ for(const r of records.filter(r=>r.scenario_id==='D008-comparison-demo'&&r.dataset_type==='T19')){
   const key=[r.scope_id,r.variant_ref,r.ordered_at.slice(0,10)].join('/');
   if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);
  }
@@ -39,6 +39,7 @@ export function applyDemoOrderFlow(records){
  }
  const byId=new Map(records.map(r=>[r.record_id,updates.get(r.record_id)||r]));
  return records.map(r=>{
+  if(r.scenario_id!=='D008-comparison-demo')return r;
   if(updates.has(r.record_id))return updates.get(r.record_id);
   if(r.dataset_type==='T18'&&['purchase','refund'].includes(r.event_name)){
    const parents=(r.related_record_ids||[]).map(id=>byId.get(id));

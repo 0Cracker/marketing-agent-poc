@@ -3,9 +3,9 @@
   "screen_contract": "workbench-model/1",
   "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
   "source_created_at": "2026-10-19T05:06:31.333Z",
-  "rows": 30327,
-  "preserved_rows": 52636,
-  "source_files": 131,
+  "rows": 41341,
+  "preserved_rows": 63650,
+  "source_files": 151,
   "files": [
     {
       "type": "T01",
@@ -87,23 +87,23 @@
     {
       "type": "T12",
       "file": "campaigns.jsonl",
-      "rows": 12,
-      "bytes": 17624,
-      "sha256": "69bc3b0d9c644e1bb38f06a9828155d980bbc785b3c8cf91cc5693b1a003ba5c"
+      "rows": 20,
+      "bytes": 29250,
+      "sha256": "2f22418bf5901b2b06192198717bcbe3d1de46d89289d77f94a90481b87de051"
     },
     {
       "type": "T13",
       "file": "ad-performance.jsonl",
-      "rows": 624,
-      "bytes": 979371,
-      "sha256": "7ec26018ccc0f463658656c0152fc50480b9d408ed625d728a8e7f97d2dd36d6"
+      "rows": 848,
+      "bytes": 1319847,
+      "sha256": "3cfcd3b0e8798dec8961e4c3478594a6a994e393fd6a0798003d68a0ef19d698"
     },
     {
       "type": "T14",
       "file": "ad-breakdowns.jsonl",
-      "rows": 672,
-      "bytes": 994217,
-      "sha256": "8b55c5f35d4c762872207eeb45b5c91cc991de72072b68d957e1edf174d7ce56"
+      "rows": 1120,
+      "bytes": 1638842,
+      "sha256": "fd2de56115e2cdc2b807b8373e8cde8eb7c38e620eca7e27d03ee3be63d91cd5"
     },
     {
       "type": "T15",
@@ -115,37 +115,37 @@
     {
       "type": "T16",
       "file": "creatives.jsonl",
-      "rows": 72,
-      "bytes": 108540,
-      "sha256": "da0d9a69f5ee1b050f19d5f6ee5f9465ee626ec02f367435878c9361d4993d55"
+      "rows": 80,
+      "bytes": 118715,
+      "sha256": "1b0b5530ae43bd9bfe85855f0b6c8288bd5d4b6f0e0703a9964585bc6b2f893d"
     },
     {
       "type": "T17",
       "file": "web-events.jsonl",
-      "rows": 4600,
-      "bytes": 5608825,
-      "sha256": "ed66f9ef1c8134b12720bf9e5a2b4803f1f6fe21b0c939fd663e4176d76ff114"
+      "rows": 8088,
+      "bytes": 10445185,
+      "sha256": "1ea9ce654275424332b8015fa30012c7f93d86f4abcba942599c633a50a8942c"
     },
     {
       "type": "T18",
       "file": "commerce-events.jsonl",
-      "rows": 7056,
-      "bytes": 8643788,
-      "sha256": "11a217954492aa2e6fd4a6b07049c6e59b0aef2cbfed2d5de493dbfaf2cc3d49"
+      "rows": 13196,
+      "bytes": 16868092,
+      "sha256": "527d82e8482d32ed99807b58a51298ba169a1b243591d9a6aa78282e8c8c4de9"
     },
     {
       "type": "T19",
       "file": "order-lines.jsonl",
-      "rows": 1712,
-      "bytes": 2557805,
-      "sha256": "390386652fb96c3079387fcec36392747e367d50328769d0bfb8e7a510bd80d2"
+      "rows": 2015,
+      "bytes": 3014200,
+      "sha256": "a976229d378e63f9c38eea9398895823c37f398b0bcd04206d4913fe40b54015"
     },
     {
       "type": "T20",
       "file": "refunds.jsonl",
-      "rows": 170,
-      "bytes": 217803,
-      "sha256": "876a8cbbcde4b9d2456893400c6d77aa6bc816e250a40a08b64dcb7c750601b8"
+      "rows": 239,
+      "bytes": 318309,
+      "sha256": "fc56db364d5c426232b123392c4be0de2f6a115d104760d0e01f71fe10373f08"
     },
     {
       "type": "T21",
@@ -171,9 +171,9 @@
     {
       "type": "T24",
       "file": "reviews.jsonl",
-      "rows": 2410,
-      "bytes": 3174953,
-      "sha256": "0574884584401fdae6d77d601bfff9ef9256321806bde2484fbd9c2a400868d2"
+      "rows": 2576,
+      "bytes": 3396775,
+      "sha256": "079f2485e9852c26f994b6eb418902553becea2976c6627161f454fd87758a1c"
     },
     {
       "type": "T25",
@@ -185,9 +185,9 @@
     {
       "type": "T26",
       "file": "customer-inquiries.jsonl",
-      "rows": 386,
-      "bytes": 483456,
-      "sha256": "908b94e405337c24302287202bc28127bb40c9dbf5b1250615f5ad0e15159f64"
+      "rows": 546,
+      "bytes": 697224,
+      "sha256": "2724303362ba8ef5ba425d34114db79eb7bda414ed9c8f0c371ccd03debc82d0"
     },
     {
       "type": "T27",
@@ -298,17 +298,24 @@
   "metadata": [
     {
       "file": "definitions.json",
-      "sha256": "c14c4e2e09b1055d2e4d7a97a513becb92631a62fdb608138fb3625fa32cb6dd"
+      "sha256": "182013eb5c76e6d52cb8b17e256c287e0574d02856c413879c17623b3cf19b31"
     },
     {
       "file": "product-presentation.json",
       "sha256": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+    },
+    {
+      "file": "training-dashboard.json",
+      "bytes": 28191084,
+      "sha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+      "public": false,
+      "contract": "roas-training/1"
     }
   ],
   "decisions": {
     "independent_archive": 1446,
     "nonconforming": 790,
-    "active": 30327,
+    "active": 41341,
     "replaced": 20000,
     "selection_excluded": 73
   },
@@ -323,11 +330,11 @@
       "D008-US-sample"
     ]
   },
-  "policy": "One current comparison scenario plus valid shared product definitions. Independent historical samples and invalid records are excluded from KPI totals; all physical inputs and per-row decisions remain archived.",
+  "policy": "One current comparison scenario plus valid shared product definitions. Independent historical samples and invalid records are excluded from KPI totals; all physical inputs and per-row decisions remain archived. R001 is an independent approved workflow sample; scope_ids remains the default D008 selection. Explicit R001 selection is registered in definitions.json scenario_profiles. R002, R003 and R004 are explicitly approved independent diversity cases selected by scenario profile; default scopes and R001 remain unchanged.",
   "period": {
     "start": "2024-10-01",
     "end": "2026-10-01"
   },
   "pending_by_type": {},
-  "data_sha256": "56da2cdac07ed56062c38d225c6406a2f4a494fdbea73aed35dd2b95260fc415"
+  "data_sha256": "0f013f0a59de02923b63b0c0720b740dd606768a8795fdb02a9e6a92c392311a"
 }

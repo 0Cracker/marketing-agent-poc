@@ -12,6 +12,9 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const jsonl=rs=>rs.map(r=>JSON.stringify(r)).join('\n')+'\n';
 const output=path.join(root,'data');
+// A historical rebuild must not erase later, separately approved scenario sources.
+const currentDefinitions=path.join(output,'definitions.json');
+if(fs.existsSync(currentDefinitions)&&read(currentDefinitions).scenario_profiles?.length)throw Error('Approved scenario profiles exist; historical consolidation would erase them. Use the approved scenario generator or an explicitly reviewed migration.');
 const names=['products','identity-mappings','market-sales','purchase-surveys','search-interest','keyword-demand','organic-search','prices','promotions','public-ads','publications','campaigns','ad-performance','ad-breakdowns','auction-insights','creatives','web-events','commerce-events','order-lines','refunds','costs','inventory','distribution-fulfilment','reviews','review-annotations','customer-inquiries','owned-content','social-comments','creator-collaborations','customer-cohorts','crm-performance','brand-surveys','public-statistics','weather-calendar','change-events','collection-runs','site-events','experiments','budget-models','budget-policies'];
 const mapping=Object.fromEntries(names.map((name,i)=>['T'+String(i+1).padStart(2,'0'),name+'.jsonl']));mapping.H01='sales-reports.jsonl';
 const {loadCatalog,validRecord}=await import(pathToFileURL(path.join(root,'docs/research/marketing-ontology/batches/D007/catalog.mjs')));
