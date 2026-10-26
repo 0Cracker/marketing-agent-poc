@@ -34,3 +34,7 @@ npm run start:agents -- --live
 HTTP 자동 테스트는 허용 Origin의 사전 요청·실제 분석, 다른 Origin 차단, 잘못된 헤더·메서드, 토큰 누락을 확인한다. 실제 Vercel 배포와 브라우저 권한을 포함한 연결은 별도 확인이 필요하다. 현재 작업 세션에는 Vercel 도구가 노출되지 않았고 브라우저 사용이 Work 설정에서 비활성화되어 있어 배포 URL을 아직 발급·검증하지 못했다.
 
 참고: [Vercel Git 배포](https://vercel.com/docs/git), [Vite 설정](https://vercel.com/docs/frameworks/frontend/vite), [Chrome 로컬 네트워크 권한](https://developer.chrome.com/blog/local-network-access?hl=ko).
+
+## 2026-10-26 dev 배포 확인
+
+dev e23511c78d44c57f168e45364c3371bcc5391e28의 GitHub Vercel 상태가 success, Deployment has completed임을 확인했다. [해당 배포](https://vercel.com/cracker5/marketing-agent-poc/95GhBLWRxNqJ3XPTe92hJHYRQosv). 위의 URL 미발급 설명은 초기 검증 당시 상태다. 이후 dev 패치 커밋을 push하고 새 커밋의 Vercel 상태를 확인한다.

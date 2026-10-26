@@ -3,7 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {loadCurrentData, dataDirectory, sha256} from './current-data.mjs';
-import {trainingCaseIds, trainingMeasures, summarize} from '../shared/training-dashboard.mjs';
+import {trainingCaseIds, trainingMeasures, summarize, trainingCostDefinition} from '../shared/training-dashboard.mjs';
 import {buildMixedCase} from './training-mixed.mjs';
 
 const periods = [{id: 'baseline', start: '2026-08-03', end: '2026-08-17'}, {id: 'current', start: '2026-08-17', end: '2026-08-31'}];
@@ -15,8 +15,8 @@ const campaignSpecs = [
   ['구글 검색 B', 'search', 'google', 'Google Ads', 'search_ads', 'ad_impression'],
   ['페이스북 피드', 'social', 'facebook', 'Meta Ads', 'feed_ads', 'ad_impression'],
   ['인스타그램 피드', 'social', 'instagram', 'Meta Ads', 'feed_ads', 'ad_impression'],
-  ['네이버 블로그 협찬', 'content', 'naver_blog', '가상 협찬 콘텐츠', 'sponsored_content', 'content_view'],
-  ['인스타그램 협업', 'content', 'instagram', '가상 협업 콘텐츠', 'influencer_content', 'content_view'],
+  ['네이버 블로그 제휴', 'content', 'naver_blog', '가상 클릭당 정산 제휴', 'blog_affiliate', 'content_view'],
+  ['인스타그램 제휴', 'content', 'instagram', '가상 클릭당 정산 제휴', 'creator_affiliate', 'content_view'],
 ];
 
 // Largest-remainder allocation preserves integer totals without manufacturing individual users or orders.
@@ -63,9 +63,8 @@ function deviceProductSplit(counts, target) {
 }
 
 export function buildTrainingData(catalog) {
-  const originalProducts = catalog.products.filter(product => ['P1A', 'P1B', 'P2A'].includes(product.product_id));
-  assert.equal(originalProducts.length, 3);
-  const products = originalProducts.map((product, index) => ({id: product.product_id, label: product.product_name, listPrice: [25000, 50000, 75000][index], discountRate: .2}));
+  // Training merchandise has its own identity; catalog competitor products are not shop revenue.
+  const products = [25000, 50000, 75000].map((listPrice, index) => ({id: `EDU-P${index + 1}`, label: `교육용 자사 상품 ${index + 1}`, listPrice, discountRate: .2}));
   const campaigns = campaignSpecs.map(([label, channel, source, platform, adType, exposureBasis], index) => ({id: `EDU-C${index + 1}`, label, channel, source, platform, adType, exposureBasis, dailyBudget: 60000, targetRoas: 3.5, bidStrategy: '수동 집행', landingUrl: `https://shop.example.test/items/${products[index % 3].id}`, advertisedProductId: products[index % 3].id}));
   const sourceAds = catalog.records.filter(row => row.scenario_id === 'R001-roas-decline' && row.dataset_type === 'T13' && row.period.start >= periods[0].start && row.period.start < periods[0].end);
   assert.equal(sourceAds.length, 28);
@@ -75,6 +74,7 @@ export function buildTrainingData(catalog) {
   const shared = (category, campaignId, productId, title, values) => {const row = record(category, campaignId, 'all', productId, '2026-08-03', title, values); commonRecords.push(row); return row.id;};
   for (const campaign of campaigns) {
     shared('campaign', campaign.id, null, campaign.label, {목적: '결제 완료 구매', 일예산: campaign.dailyBudget, 목표ROAS: 350, 입찰방식: campaign.bidStrategy, 출처: campaign.source, 집행유형: campaign.adType, 관측분모: campaign.exposureBasis === 'ad_impression' ? '매체 보고 광고 노출' : '제공된 콘텐츠 조회', 클릭정의: '전용 링크를 통한 사이트 이동 클릭'});
+    if (campaign.channel === 'content') Object.assign(commonRecords.at(-1).values, {비용계약: '클릭당 정산 제휴', 비용범위: trainingCostDefinition, 비용집계일: '클릭 발생일, Asia/Seoul', 정산단가: '일별, 캠페인, 기기별 가상 단가, 비용/클릭으로 확인', 비용배분: '일별 클릭에 따라 발생, 상품과 유입 분할 비용은 교육용 가상 배분'});
     shared('creative', campaign.id, campaign.advertisedProductId, `${campaign.label} 소재 v1`, {소재버전: 'v1', 문구: '상품의 용량, 가격과 배송 조건을 확인하세요.', 형식: campaign.channel === 'search' ? '검색 텍스트' : '이미지와 소개문', 집행시작: '2026-08-03', 랜딩: campaign.landingUrl});
     shared('landing', campaign.id, campaign.advertisedProductId, `${campaign.label} 연결 페이지`, {페이지버전: 'v1', 광고상품: campaign.advertisedProductId, 연결상품: campaign.advertisedProductId, 페이지: campaign.landingUrl, 배송비: 3000, 배송약속: '주문 후 2영업일'});
   }
@@ -136,7 +136,20 @@ export function buildTrainingData(catalog) {
           const sessions = above(Math.max(Math.round(deviceClicks * .6), views.reduce((sum,v)=>sum+v,0)), views, weights);
           const clickDays = above(deviceClicks, sessions, weights);
           const impressionDays = above(allocate(20000, [.6,.4])[d], clickDays, weights);
-          const spendDays = allocate(deviceSpend, weights);
+          const spendDays = allocate(deviceSpend, changed === 'S06' && c === 5 ? clickDays : weights);
+          let productSpendDays;
+          if (changed === 'S06' && c === 5) {
+            const shares = productCounts.some(Boolean) ? productCounts : [.3, .4, .3];
+            const remaining = [...spendDays];
+            const originalDays = allocate(deviceSpend, weights);
+            // Keep SKU period costs as well as daily parent totals after the approved reallocation.
+            productSpendDays = shares.map((_, p) => {
+              const target = originalDays.reduce((sum, cost) => sum + allocate(cost, shares)[p], 0);
+              const values = capped(target, remaining);
+              values.forEach((value, day) => remaining[day] -= value);
+              return values;
+            });
+          }
           const ledgerDays = changed === 'S14' ? above(ledgerOrders, orderDays, weights) : orderDays;
           const failures = (c === 0 && d === 0 ? 2 : 0) + (changed === 'S13' ? baseCount - deviceOrders : 0);
           const failureDays = allocate(failures, checkouts);
@@ -156,7 +169,7 @@ export function buildTrainingData(catalog) {
               skuRows.forEach((item, p) => item[key] = parts[p]);
             }
             for (const key of ['spend','ledgerOrders','paymentAttempts','paymentFailures','redirectErrors','loadTotalMs','loadSamples','trackingExpected','trackingReceived','duplicateEvents']) {
-              const parts = allocate(row[key], upstreamShares); skuRows.forEach((item,p)=>item[key]=parts[p]);
+              const parts = key === 'spend' && productSpendDays ? productSpendDays.map(values => values[day]) : allocate(row[key], upstreamShares); skuRows.forEach((item,p)=>item[key]=parts[p]);
             }
             const skuFailures=allocate(row.paymentFailures,skuRows.map(item=>item.checkout));skuRows.forEach((item,p)=>item.paymentFailures=skuFailures[p]);
             for (const key of ['listRevenue','discount','revenue']) row[key] = skuRows.reduce((sum,item)=>sum+item[key],0);
@@ -192,6 +205,12 @@ export function buildTrainingData(catalog) {
             const extra=capped(target-minima.reduce((sum,value)=>sum+value,0),caps);
             campaignTraffic.forEach((pair,index)=>{pair[0][key]=minima[index]+extra[index];pair[1][key]=campaignFacts[index][key]-pair[0][key];});
           }
+          if (changed === 'S06' && c === 5) {
+            // Preserve the existing audience period costs while charging only dates with clicks.
+            const originalCoreCost = allocate(deviceSpend, weights).reduce((sum, cost) => sum + Math.ceil(cost / 2), 0);
+            const coreCosts = capped(originalCoreCost, spendDays);
+            campaignTraffic.forEach((pair, day) => {pair[0].spend = coreCosts[day]; pair[1].spend = spendDays[day] - coreCosts[day];});
+          }
           for(const pair of campaignTraffic)for(const item of pair){item.loadSamples=item.sessions;item.loadTotalMs=item.sessions*(device==='mobile'?1400:900);breakdowns.push(item);}
           const impressions = campaignFacts.reduce((sum,row)=>sum+row.impressions,0);
           reach.push({periodId:period.id,campaignId:campaign.id,device,impressions,reach:campaign.exposureBasis==='ad_impression'?Math.round(impressions/(changed==='S09'&&c<4?4:2)):null});
@@ -217,7 +236,7 @@ export function buildTrainingData(catalog) {
       review.push({caseId,snapshot:mature?'mature':'initial',periods:periods.map(period=>({period:period.id,...summarize(facts.filter(row=>row.periodId===period.id))}))});
     }
   }
-  const payload={contract:'roas-training/1',source:'R001 existing click weekday pattern; existing product identities; synthetic aggregate values',sourceRecordIds:sourceAds.map(row=>row.record_id),cases,matureOverrides:overrides,records:commonRecords};
+  const payload={contract:'roas-training/1',source:'R001 existing click weekday pattern; independent training-only shop products EDU-P1..3; synthetic aggregate values; paid ads and click-settled content affiliate fees',sourceRecordIds:sourceAds.map(row=>row.record_id),cases,matureOverrides:overrides,records:commonRecords};
   assert(commonRecords.length<=200);
   assert(cases.reduce((sum,item)=>sum+item.facts.length+item.breakdowns.length+item.reach.length,0)+Object.values(overrides).reduce((sum,item)=>sum+item.facts.length+item.breakdowns.length+item.reach.length,0)<50000);
   return {payload,review};
@@ -227,7 +246,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   const {catalog,manifest}=loadCurrentData();
   const {payload,review}=buildTrainingData(catalog);
   if(process.argv.includes('--write')) {
-    const evidence=path.resolve(dataDirectory,'../evidence/training-mixed-20261023');fs.mkdirSync(evidence,{recursive:true});
+    const evidence=path.resolve(dataDirectory,'../evidence/training-data-contract-20261026');fs.mkdirSync(evidence,{recursive:true});
     const baselinePath=path.join(evidence,'baseline.json');
     if(!fs.existsSync(baselinePath)) fs.writeFileSync(baselinePath,JSON.stringify({rows:manifest.rows,dataHash:manifest.data_sha256,files:[...manifest.files,...manifest.metadata].filter(file=>file.file!=='training-dashboard.json').map(file=>({file:file.file,sha256:sha256(fs.readFileSync(path.join(dataDirectory,file.file)))}))},null,2)+'\n',{flag:'wx'});
     const encoded=JSON.stringify(payload)+'\n';fs.writeFileSync(path.join(dataDirectory,'training-dashboard.json'),encoded);

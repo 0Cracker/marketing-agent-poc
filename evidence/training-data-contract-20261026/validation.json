@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-26",
+  "baseCommit": "3c11e4237c4d74e9efd96fbe5cab4a7391dc4651",
+  "workingTree": "pre-existing UI and documentation changes preserved; no commit or deploy",
+  "sourceSha256": "80361343ebc4e0591cc31b1f6b11f9828b7b7297056a30c0e374539442f1813a",
+  "dataHash": "e66f0b2088849ca5b6ba8da3112f94759b7a9c4ca964a220aac5d5964529f40b",
+  "status": "passed",
+  "checks": [
+    {
+      "command": "node --test tests/training-dashboard.test.mjs",
+      "exitCode": 0,
+      "passed": 24
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/roas-*.test.mjs tests/roas-*.test.ts",
+      "exitCode": 0,
+      "passed": 67
+    },
+    {
+      "command": "Python 3.14 scripts/check-training-dashboard.py",
+      "exitCode": 0,
+      "assertions": 97067
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js (changed source and test files)",
+      "exitCode": 0,
+      "warnings": "Existing Next pages directory configuration notice; no remaining source/test lint warnings"
+    },
+    {
+      "command": "node node_modules/vite/bin/vite.js build",
+      "exitCode": 0,
+      "warnings": "Existing font URL resolution notices; font assets emitted"
+    },
+    {
+      "command": "actual HTTP source reconciliation at 127.0.0.1:5174",
+      "responses": 36,
+      "status": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "developmentFailures": [
+    {
+      "test": "content click settlement",
+      "observation": "S06 EDU-C6 had 8 daily facts with zero clicks and total spend 4902",
+      "resolution": "explicit additional user approval, daily cost reallocation with all period costs preserved"
+    },
+    {
+      "test": "numerical preservation",
+      "observation": "initial SKU rounding changed two desktop period costs by 2 KRW",
+      "resolution": "preserve SKU and audience period margins during daily reallocation; final test passed"
+    }
+  ],
+  "preservation": {
+    "originalRows": 41341,
+    "aggregateRows": 38760,
+    "detailRecords": 105,
+    "addedObservations": 0,
+    "changedSpendFacts": 28,
+    "changedSpendBreakdowns": 112,
+    "otherNumericCells": "unchanged",
+    "periodCosts": "preserved per campaign, device, product and audience"
+  },
+  "browser": {
+    "status": "sample passed after initial navigation timeout",
+    "browser": "Codex in-app browser",
+    "url": "http://127.0.0.1:5174/workbench",
+    "checks": [
+      "S16 ROAS 227.8%, AOV 32678 KRW",
+      "S16 AOV view shows education shop products 1, 2, 3",
+      "S06 content Instagram filter: ROAS 200%, CPC 500, CVR 2.5%, CPA 20000, AOV 40000, ad CTR inapplicable",
+      "expanded business and cost definition"
+    ],
+    "screenshot": "definitions.png",
+    "limits": [
+      "not all 18 cases and all screens",
+      "mobile not tested",
+      "no real user learning experiment"
+    ]
+  }
+}

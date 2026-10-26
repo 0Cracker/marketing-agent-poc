@@ -1,0 +1,367 @@
+{
+  "date": "2026-10-26",
+  "commit": "3c11e4237c4d74e9efd96fbe5cab4a7391dc4651",
+  "method": "공개 payload의 정수 합계, 애플리케이션 집계 함수 미사용",
+  "cases": [
+    {
+      "caseId": "S16",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S16-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "a952d7da90d3a2ab51bb21718102e457d1476b73730ebcc42da13e3c9ba35599",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 19700,
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "ledgerOrders": 963,
+          "ledgerRevenue": 37280000,
+          "paymentAttempts": 963,
+          "paymentFailures": 0,
+          "roas": 3.557898305188271,
+          "cpc": 531.8830456852792,
+          "cvr": 0.04888324873096447,
+          "aov": 38712.35721703011
+        },
+        {
+          "period": "current",
+          "clicks": 28392,
+          "spend": 16929052,
+          "orders": 1180,
+          "revenue": 38560000,
+          "ledgerOrders": 1180,
+          "ledgerRevenue": 38560000,
+          "paymentAttempts": 1253,
+          "paymentFailures": 73,
+          "roas": 2.277741246231626,
+          "cpc": 596.2613412228797,
+          "cvr": 0.04156100309946464,
+          "aov": 32677.966101694914
+        }
+      ],
+      "roasRatio": {
+        "direct": 0.6401929034649844,
+        "fromFactors": 0.6401929034649844
+      },
+      "search01Targets": [
+        {
+          "period": "baseline",
+          "audience": "core",
+          "clicks": 1594,
+          "spend": 866775,
+          "orders": 130,
+          "revenue": 5076000
+        },
+        {
+          "period": "baseline",
+          "audience": "extended",
+          "clicks": 1283,
+          "spend": 487561,
+          "orders": 77,
+          "revenue": 3004000
+        },
+        {
+          "period": "current",
+          "audience": "core",
+          "clicks": 1767,
+          "spend": 1862580,
+          "orders": 189,
+          "revenue": 5680649
+        },
+        {
+          "period": "current",
+          "audience": "extended",
+          "clicks": 2983,
+          "spend": 798252,
+          "orders": 79,
+          "revenue": 2379351
+        }
+      ]
+    },
+    {
+      "caseId": "S06",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S06-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "62b7ee5b1baeec9710404557759dada4341585106d623bd79140afcdcce55150",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        },
+        {
+          "period": "current",
+          "clicks": 1200,
+          "spend": 600000,
+          "orders": 84,
+          "revenue": 3360000,
+          "ledgerOrders": 84,
+          "ledgerRevenue": 3360000,
+          "paymentAttempts": 86,
+          "paymentFailures": 2,
+          "roas": 5.6,
+          "cpc": 500,
+          "cvr": 0.07,
+          "aov": 40000
+        }
+      ]
+    },
+    {
+      "caseId": "S07",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S07-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "239c406af373c751b67baa260855c250a403556f37c5edcddc0c5c9e4968d8be",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        },
+        {
+          "period": "current",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 90,
+          "revenue": 3600000,
+          "ledgerOrders": 90,
+          "ledgerRevenue": 3600000,
+          "paymentAttempts": 92,
+          "paymentFailures": 2,
+          "roas": 3,
+          "cpc": 500,
+          "cvr": 0.0375,
+          "aov": 40000
+        }
+      ],
+      "highEfficiencySpendShare": [
+        {
+          "period": "baseline",
+          "share": 0.5
+        },
+        {
+          "period": "current",
+          "share": 0.25
+        }
+      ]
+    },
+    {
+      "caseId": "S14",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S14-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "df0e75c3daf0e6ed5582c478be582b967ef1813cf7a701709d11a13499c682bf",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        },
+        {
+          "period": "current",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 2.4,
+          "cpc": 500,
+          "cvr": 0.03,
+          "aov": 40000
+        }
+      ]
+    },
+    {
+      "caseId": "S15",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S15-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "894ed6881d4674c6ee88b02c155966943054b0b60c1d975f910bf3adbac6a439",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        },
+        {
+          "period": "current",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "ledgerOrders": 72,
+          "ledgerRevenue": 2880000,
+          "paymentAttempts": 74,
+          "paymentFailures": 2,
+          "roas": 2.4,
+          "cpc": 500,
+          "cvr": 0.03,
+          "aov": 40000
+        }
+      ]
+    },
+    {
+      "caseId": "S15",
+      "snapshot": "mature",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S15-mature.json",
+      "asOf": "2026-09-07T00:00:00+09:00",
+      "payloadSha256": "9ec21f80db37c2dcfc33512a3f2c77ee397f9608d60217b4dd599a26ed9c56ef",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        },
+        {
+          "period": "current",
+          "clicks": 2400,
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "ledgerOrders": 120,
+          "ledgerRevenue": 4800000,
+          "paymentAttempts": 122,
+          "paymentFailures": 2,
+          "roas": 4,
+          "cpc": 500,
+          "cvr": 0.05,
+          "aov": 40000
+        }
+      ]
+    },
+    {
+      "caseId": "S17",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S17-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "a62873483d11c8a85e48e129a1cc5b4ff735b161b6d796754f8e55bd67669ca1",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 19700,
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "ledgerOrders": 963,
+          "ledgerRevenue": 37280000,
+          "paymentAttempts": 963,
+          "paymentFailures": 0,
+          "roas": 3.557898305188271,
+          "cpc": 531.8830456852792,
+          "cvr": 0.04888324873096447,
+          "aov": 38712.35721703011
+        },
+        {
+          "period": "current",
+          "clicks": 8744,
+          "spend": 4629724,
+          "orders": 488,
+          "revenue": 21155000,
+          "ledgerOrders": 488,
+          "ledgerRevenue": 21155000,
+          "paymentAttempts": 488,
+          "paymentFailures": 0,
+          "roas": 4.569386857618294,
+          "cpc": 529.4743824336688,
+          "cvr": 0.055809698078682524,
+          "aov": 43350.40983606558
+        }
+      ]
+    },
+    {
+      "caseId": "S18",
+      "snapshot": "initial",
+      "url": "http://127.0.0.1:5173/workbench-data/current/training-S18-initial.json",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "payloadSha256": "3a25ed475882df4cfe077b5ec6312bdb3c743344127e455b34d62f27563d3532",
+      "periods": [
+        {
+          "period": "baseline",
+          "clicks": 19700,
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "ledgerOrders": 963,
+          "ledgerRevenue": 37280000,
+          "paymentAttempts": 963,
+          "paymentFailures": 0,
+          "roas": 3.557898305188271,
+          "cpc": 531.8830456852792,
+          "cvr": 0.04888324873096447,
+          "aov": 38712.35721703011
+        },
+        {
+          "period": "current",
+          "clicks": 23995,
+          "spend": 12924599,
+          "orders": 900,
+          "revenue": 29920000,
+          "ledgerOrders": 900,
+          "ledgerRevenue": 29920000,
+          "paymentAttempts": 900,
+          "paymentFailures": 0,
+          "roas": 2.3149654391598533,
+          "cpc": 538.6371744113356,
+          "cvr": 0.03750781412794332,
+          "aov": 33244.444444444445
+        }
+      ]
+    }
+  ]
+}

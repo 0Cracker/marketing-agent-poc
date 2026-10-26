@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {trainingIndex, trainingScreenData} from '../scripts/training-data.mjs';
-import {trainingCaseIds, trainingViews, summarize, selectFacts, selectBreakdowns, selectRecords, comparePeriods, trendRows, metricValue, metricPeriodSeries, metricMissingReason, trainingMediaOptions, changeTrainingMedia, campaignDisplayName, displayTrainingText} from '../shared/training-dashboard.mjs';
+import {trainingCaseIds, trainingViews, summarize, trainingCostDefinition, selectFacts, selectBreakdowns, selectRecords, comparePeriods, trendRows, metricValue, metricChange, metricPeriodSeries, metricMissingReason, trainingMediaOptions, changeTrainingMedia, campaignDisplayName, displayTrainingText} from '../shared/training-dashboard.mjs';
 import {currentDataPlugin, loadCurrentData, publicFiles, sha256} from '../scripts/current-data.mjs';
 import {buildTrainingData} from '../scripts/generate-training-dashboard.mjs';
 
@@ -15,6 +15,18 @@ const current=pack=>pack.facts.filter(row=>row.periodId==='current');
 const baseline=pack=>pack.facts.filter(row=>row.periodId==='baseline');
 const totals=rows=>Object.fromEntries(['impressions','clicks','spend','orders','revenue','ledgerOrders','ledgerRevenue','purchases','returnPurchases','paymentFailures'].map(key=>[key,sum(rows,key)]));
 const near=(actual,expected,label)=>assert(Math.abs(actual-expected)<1e-8,`${label}: ${actual} != ${expected}`);
+
+test('current performance and period change answer different ranking questions',()=>{
+ const pack=screens.get('S16');
+ const campaigns=pack.campaigns.map(c=>{const rows=pack.facts.filter(r=>r.campaignId===c.id);return {id:c.id,before:summarize(rows.filter(r=>r.periodId==='baseline')).rates.roas,after:summarize(rows.filter(r=>r.periodId==='current')).rates.roas};});
+ assert.equal(campaigns.toSorted((a,b)=>a.after-b.after)[0].id,'EDU-C4');
+ assert.equal(campaigns.toSorted((a,b)=>metricChange(a.before,a.after,true)-metricChange(b.before,b.after,true))[0].id,'EDU-C1');
+ assert.equal(metricChange(0,12),null,'a positive amount over zero has no relative change');
+ assert.equal(metricChange(0,0),0);
+ assert.equal(metricChange(null,1),null);
+ near(metricChange(100,120),.2,'amount uses relative change');
+ near(metricChange(.02,.03,true),.01,'rate uses percentage-point difference before formatting');
+});
 
 test('media choices contain real channel/source pairs and discard incompatible campaign selections',()=>{
  for(const pack of screens.values()){
@@ -35,7 +47,7 @@ test('media choices contain real channel/source pairs and discard incompatible c
 
 test('campaign and audience labels are realistic presentation aliases while source references remain intact',()=>{
  const pack=screens.get('S16');
- assert.equal(campaignDisplayName(pack,'EDU-C2'),'8월_구글검색_구매전환_02');
+ assert.equal(campaignDisplayName(pack,'EDU-C2'),'8월 구매 캠페인 | 검색 B');
  assert.equal(displayTrainingText('EDU-C2-v1'),'GGL-SA-202608-002-v1');
  assert.equal(displayTrainingText('core, PC 피드'),'기존 타깃, PC 피드');
  assert.equal(displayTrainingText('extended'),'확장 타깃');
@@ -75,7 +87,7 @@ test('metric trends align weekdays, retain dates and use the selected population
 });
 
 test('all eighteen cases expose the same dashboard contract and complete common data',()=>{
- assert.deepEqual(trainingCaseIds,allIds);assert.deepEqual(trainingViews,[['overview','성과 추이'],['data','상세 데이터']]);
+ assert.deepEqual(trainingCaseIds,allIds);assert.deepEqual(trainingViews,[['overview','성과 현황']]);
  const reference=screens.get('S01');
  const categories=pack=>[...new Set(pack.records.map(row=>row.category))].sort();
  const dimensions=pack=>[...new Set(pack.breakdowns.map(row=>row.dimension))].sort();
@@ -299,13 +311,25 @@ test('regeneration from the preserved catalog matches the installed source pack 
  assert.deepEqual(buildTrainingData(catalog).payload,installed);
 });
 
-test('mixed extension preserves every previous case, mature override and detail record',()=>{
- const previous=JSON.parse(fs.readFileSync(new URL('../evidence/training-mixed-20261023/preservation.json',import.meta.url)));
+test('approved semantic corrections preserve numbers except the authorized S06 daily cost allocation',()=>{
+ const before=JSON.parse(fs.readFileSync(new URL('../evidence/training-data-contract-20261026/before.json',import.meta.url)));
  const installed=JSON.parse(fs.readFileSync(new URL('../data/training-dashboard.json',import.meta.url)));
- for(const {id,sha256:expected} of previous.cases)assert.equal(sha256(JSON.stringify(installed.cases.find(c=>c.caseId===id))),expected,id);
- assert.deepEqual(installed.matureOverrides,previous.overrides);
- for(const record of previous.records)assert.deepEqual(installed.records.find(r=>r.id===record.id),record,record.id);
- assert.equal(installed.records.length-previous.records.length,37);
+ const numericRows=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).filter(([key,value])=>typeof value==='number'||['id','date','periodId','campaignId','device','dimension'].includes(key))));
+ for(const p of [...installed.cases,...Object.values(installed.matureOverrides)]){
+  const old=before.packs.find(b=>b.caseId===p.caseId&&b.asOf===p.asOf);assert(old,p.caseId);
+  if(p.caseId==='S06'){
+   const withoutSpend=rows=>numericRows(rows).map(row=>Object.fromEntries(Object.entries(row).filter(([key])=>key!=='spend')));
+   assert.equal(sha256(JSON.stringify(withoutSpend(p.facts))),before.s06CostBaseline.factsWithoutSpendSha256);
+   assert.equal(sha256(JSON.stringify(withoutSpend(p.breakdowns))),before.s06CostBaseline.breakdownsWithoutSpendSha256);
+   for(const [name,expected]of before.s06CostBaseline.periodSpendGroups){const g={};for(const r of p[name]){const k=[r.periodId,r.campaignId,r.device,r.dimension||'',r.key||''].join('|');g[k]=(g[k]||0)+r.spend;}assert.deepEqual(g,expected,'period costs per campaign, device, product and audience');}
+   assert.equal(sha256(JSON.stringify([...p.facts,...p.breakdowns].filter(r=>!(r.periodId==='current'&&r.campaignId==='EDU-C6')).map(r=>[r.id,r.spend]))),before.s06CostBaseline.unchangedCostRowsSha256);
+  }else{
+   assert.equal(sha256(JSON.stringify(p.facts)),old.factsSha256,p.caseId+' facts');
+   assert.equal(sha256(JSON.stringify(numericRows(p.breakdowns))),old.breakdownNumbersSha256,p.caseId+' breakdown numbers');
+  }
+  assert.equal(sha256(JSON.stringify(p.reach)),old.reachSha256,p.caseId+' reach');
+ }
+ assert.equal(installed.records.length,before.records,'no new detail observations');
 });
 
 test('production projections retain every case but never emit private source or answer assets',()=>{
@@ -320,4 +344,46 @@ test('production projections retain every case but never emit private source or 
  }
  assert(!emitted.has(prefix+'training-dashboard.json'));
  assert(![...emitted.keys()].some(file=>file.includes('training-review')||file.includes('ground-truth')));
+});
+
+
+test('training merchandise cannot inherit competitor identity or dangling product references',()=>{
+ for(const pack of screens.values()){
+  const products=new Set(pack.products.map(p=>p.id));
+  assert.deepEqual([...products],['EDU-P1','EDU-P2','EDU-P3']);
+  assert.deepEqual(pack.products.map(p=>p.listPrice),[25000,50000,75000]);
+  assert(pack.products.every(p=>p.label.startsWith('교육용 자사 상품 ')));
+  for(const r of pack.breakdowns.filter(r=>r.dimension==='product'))assert(products.has(r.key));
+  for(const c of pack.campaigns){assert(products.has(c.advertisedProductId));assert.equal(c.landingUrl.split('/').at(-1),c.advertisedProductId);}
+  for(const r of pack.records){if(r.productId)assert(products.has(r.productId));for(const key of ['광고상품','연결상품','소개상품'])if(key in r.values)assert(products.has(r.values[key]));}
+  assert(!/P1A|P1B|P2A|경쟁1/.test(JSON.stringify(pack)),'legacy product identity is not shop revenue');
+ }
+});
+
+test('mixed cases have one initial budget per campaign and an unambiguous later setting',()=>{
+ for(const id of ['S16','S17','S18']){
+  const pack=screens.get(id);
+  for(const [i,c]of pack.campaigns.entries()){
+   const initial=pack.records.filter(r=>r.category==='campaign'&&r.campaignId===c.id&&'일예산' in r.values);
+   assert.equal(initial.length,1,id+' '+c.id+' initial budget');assert.equal(initial[0].values.일예산,240000);
+   assert.equal(initial[0].values.적용시각,'2026-08-03T00:00:00+09:00');
+   const expected=id==='S16'&&i<4?420000:id==='S17'&&i%2?80000:240000;
+   assert.equal(c.dailyBudget,expected);
+   const changes=pack.records.filter(r=>r.category==='change'&&r.campaignId===c.id&&r.date==='2026-08-17');
+   if(expected!==240000){assert.equal(changes.length,1);assert(String(changes[0].values.변경전).includes('240000'));assert(String(changes[0].values.변경후).includes(String(expected)));}
+  }
+ }
+});
+
+test('public content campaign records disclose click settlement, excluded costs and allocation',()=>{
+ for(const pack of screens.values())for(const c of pack.campaigns.filter(c=>c.channel==='content')){
+  assert(['blog_affiliate','creator_affiliate'].includes(c.adType));
+  const settings=pack.records.find(r=>r.category==='campaign'&&r.campaignId===c.id&&'비용계약' in r.values);
+  assert(settings,c.id);assert.equal(settings.values.비용계약,'클릭당 정산 제휴');
+  assert.equal(settings.values.비용범위,trainingCostDefinition);assert.equal(settings.values.비용집계일,'클릭 발생일, Asia/Seoul');
+  assert(settings.values.비용배분.includes('가상 배분'));
+  for(const r of pack.facts.filter(r=>r.campaignId===c.id)){if(r.clicks===0)assert.equal(r.spend,0,'no fee on a date without clicks');else assert(Number.isFinite(r.spend/r.clicks));}
+ }
+ const ui=fs.readFileSync(new URL('../frontend/workbench/training-dashboard.tsx',import.meta.url),'utf8');
+ assert(ui.includes('{trainingCostDefinition}'));assert(ui.includes('유료 마케팅 집행비'));assert(!ui.includes('광고비'));
 });

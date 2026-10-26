@@ -9,6 +9,7 @@ export type TrainingData={contract:string;caseId:string;label:string;asOf:string
 export type Total=Measures&{rates:Record<'roas'|'ctr'|'cpm'|'cpc'|'cvr'|'cpa'|'aov'|'sessionCvr'|'checkoutRate'|'paymentFailureRate'|'loadMs'|'adCtr'|'contentClickRate'|'adCpm'|'contentCpm',number|null>};
 export const trainingCaseIds:string[];
 export const trainingViews:[string,string][];
+export const trainingCostDefinition:string;
 export function campaignDisplayName(data:TrainingData,id:string):string;
 export function displayTrainingText(value:unknown):string;
 export function trainingMediaOptions(data:TrainingData):{key:string;channel:string;source:string}[];
@@ -20,5 +21,6 @@ export function selectRecords(data:TrainingData,filters:Filters):DetailRecord[];
 export function comparePeriods(data:TrainingData,filters:Filters):{period:Period;total:Total;rows:Fact[]}[];
 export function trendRows(data:TrainingData,filters:Filters):{date:string;roas:number|null}[];
 export function metricValue(total:Total,key:string):number|null;
+export function metricChange(before:number|null,after:number|null,rate?:boolean):number|null;
 export function metricMissingReason(rows:Fact[],key:string):{label:string;reason:string};
 export function metricPeriodSeries(data:TrainingData,filters:Filters,key:string):{day:number;baseline:number|null;current:number|null;baselineDate:string;currentDate:string}[];

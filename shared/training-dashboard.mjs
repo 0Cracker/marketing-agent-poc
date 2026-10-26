@@ -1,11 +1,12 @@
 export const trainingCaseIds = Array.from({length: 18}, (_, index) => `S${String(index + 1).padStart(2, '0')}`);
-export const trainingViews = [['overview', '성과 추이'], ['data', '상세 데이터']];
-const campaignNames = {'EDU-C1':'8월_구글검색_구매전환_01','EDU-C2':'8월_구글검색_구매전환_02','EDU-C3':'8월_페이스북_구매전환_피드','EDU-C4':'8월_인스타그램_구매전환_피드','EDU-C5':'8월_네이버블로그_상품협찬','EDU-C6':'8월_인스타그램_콘텐츠협업'};
+export const trainingViews = [['overview', '성과 현황']];
+export const trainingCostDefinition = '유료 마케팅 집행비는 매체 광고비와 콘텐츠 제휴 수수료의 합계입니다. 콘텐츠는 추적 링크 클릭에 따라 정산하며 클릭 발생일에 비용을 집계합니다. 고정 협업비, 제작비와 제품 제공 원가는 포함하지 않습니다. 고정비 협찬의 비용 구조와 구분해야 합니다.';
+const campaignNames = {'EDU-C1':'8월 구매 캠페인 | 검색 A','EDU-C2':'8월 구매 캠페인 | 검색 B','EDU-C3':'8월 구매 캠페인 | Facebook 피드','EDU-C4':'8월 구매 캠페인 | Instagram 피드','EDU-C5':'8월 콘텐츠 제휴 | 네이버 블로그','EDU-C6':'8월 콘텐츠 제휴 | Instagram'};
 const campaignCodes = {'EDU-C1':'GGL-SA-202608-001','EDU-C2':'GGL-SA-202608-002','EDU-C3':'META-FB-202608-001','EDU-C4':'META-IG-202608-001','EDU-C5':'NAVER-BLOG-202608-001','EDU-C6':'IG-COLLAB-202608-001'};
 export function campaignDisplayName(data, id) {return campaignNames[id] || data.campaigns.find(c => c.id === id)?.label || id;}
 export function displayTrainingText(value) {
   let text = String(value).replace(/EDU-C[1-6]\b/g, id => campaignCodes[id]).replace(/\bcore\b/g, '기존 타깃').replace(/\bextended\b/g, '확장 타깃').replaceAll('핵심 집단', '기존 타깃').replaceAll('확장 집단', '확장 타깃');
-  ['구글 검색 A','구글 검색 B','페이스북 피드','인스타그램 피드','네이버 블로그 협찬','인스타그램 협업'].forEach((label,index) => {text = text.replaceAll(label,campaignNames['EDU-C'+(index+1)]);});
+  ['구글 검색 A','구글 검색 B','페이스북 피드','인스타그램 피드','네이버 블로그 제휴','인스타그램 제휴'].forEach((label,index) => {text = text.replaceAll(label,campaignNames['EDU-C'+(index+1)]);});
   return text;
 }
 export function trainingMediaOptions(data) {
@@ -63,13 +64,18 @@ export function metricValue(total, key) {
   return key in total.rates ? total.rates[key] : total[key] ?? null;
 }
 
+export function metricChange(before, after, rate = false) {
+  if (before == null || after == null) return null;
+  return rate ? after - before : before === 0 ? (after === 0 ? 0 : null) : after / before - 1;
+}
+
 export function metricMissingReason(rows, key) {
   if (!rows.length) return {label: '데이터 없음', reason: '선택한 기간과 필터에 해당하는 데이터가 없습니다.'};
   if (key === 'cac') return {label: '미집계', reason: '신규 고객 수가 제공되지 않아 고객 획득 비용을 계산할 수 없습니다.'};
   const ad = ['adCtr', 'adCpm'].includes(key), content = ['contentClickRate', 'contentCpm'].includes(key);
   if (ad && !rows.some(row => row.exposureBasis === 'ad_impression')) return {label: '해당 없음', reason: '광고 노출 기준 지표입니다. 콘텐츠 조회에는 적용되지 않습니다.'};
   if (content && !rows.some(row => row.exposureBasis === 'content_view')) return {label: '해당 없음', reason: '콘텐츠 조회 기준 지표입니다. 검색광고와 피드광고에는 적용되지 않습니다.'};
-  const denominators = {roas: '광고비', cpc: '클릭 수', cvr: '클릭 수', cpa: '구매 주문 수', aov: '구매 주문 수', ctr: '노출 수', cpm: '노출 수', adCtr: '광고 노출 수', adCpm: '광고 노출 수', contentClickRate: '콘텐츠 조회 수', contentCpm: '콘텐츠 조회 수', sessionCvr: '랜딩 세션 수', checkoutRate: '결제 시작 수', paymentFailureRate: '결제 시도 수', loadMs: '페이지 로드 측정 수', unitPrice: '판매 수량', discountRate: '할인 전 금액', viewRate: '랜딩 세션 수', cartRate: '상품 조회 수', beginRate: '장바구니 수', spendShare: '전체 광고비'};
+  const denominators = {roas: '유료 마케팅 집행비', cpc: '클릭 수', cvr: '클릭 수', cpa: '구매 주문 수', aov: '구매 주문 수', ctr: '노출 수', cpm: '노출 수', adCtr: '광고 노출 수', adCpm: '광고 노출 수', contentClickRate: '콘텐츠 조회 수', contentCpm: '콘텐츠 조회 수', sessionCvr: '랜딩 세션 수', checkoutRate: '결제 시작 수', paymentFailureRate: '결제 시도 수', loadMs: '페이지 로드 측정 수', unitPrice: '판매 수량', discountRate: '할인 전 금액', viewRate: '랜딩 세션 수', cartRate: '상품 조회 수', beginRate: '장바구니 수', spendShare: '전체 유료 마케팅 집행비'};
   if (denominators[key]) return {label: '계산 불가', reason: `${denominators[key]}가 0이어서 비율이나 평균을 계산할 수 없습니다.`};
   return {label: '미집계', reason: '계산에 필요한 데이터가 제공되지 않았습니다.'};
 }
