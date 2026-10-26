@@ -69,3 +69,9 @@
 .wb .wb-filters>span.wb-context-info{width:auto;white-space:nowrap;flex-shrink:0;padding-right:4px;font-size:12px}
 @media(min-width:1200px){.wb.wb-with-panel .wb-main{margin-right:504px}.wb .wb-chat-backdrop{display:none}.wb-with-panel .wb-filters>span{white-space:nowrap;flex-shrink:0}}
 @media(max-width:600px){.wb .wb-chat-panel{top:8px;left:8px;right:8px;bottom:8px;width:auto;max-width:none;border-radius:16px}.wb .wb-chat-panel>header{height:66px;padding:12px 16px}.wb-chat-identity>div>span{font-size:11px}.wb .wb-chat-panel .wb-agent-context{padding:0 16px 10px}.wb .wb-chat-panel>.wb-tabs{padding:0 16px}.wb-chat-context{padding:9px 16px}.wb-chat-thread{padding:20px 16px}.wb-chat-compose-area{padding:10px 12px 12px}.wb .wb-chat-compose textarea{font-size:16px}.wb-chat-user{padding-left:24px}.wb-chat-footnote>span{display:none}.wb .wb-chat-thread .wb-agent-actions>button{min-height:38px}.wb .wb-chat-compose .wb-chat-send{min-height:36px;width:36px;height:36px}}
+
+.wb .wb-chat-launcher{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:36;width:56px;height:56px;min-height:56px;padding:0;border:0;border-radius:50%;background:#6941C6;color:#FFF;box-shadow:0 4px 16px #30224E26;transition:background .15s,transform .15s}
+.wb .wb-chat-launcher:hover{background:#53389E;color:#FFF;transform:translateY(-2px)}
+.wb .wb-chat-launcher:disabled{background:#D0C6E5;color:#FFF;box-shadow:none;transform:none}
+@media(max-width:600px){.wb .wb-chat-launcher{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){.wb .wb-chat-launcher{transition:none}.wb .wb-chat-launcher:hover{transform:none}}

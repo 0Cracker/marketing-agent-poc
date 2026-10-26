@@ -1,0 +1,2857 @@
+{
+  "pass": true,
+  "active": 33797,
+  "preserved": 56106,
+  "decisions": {
+    "independent_archive": 1446,
+    "nonconforming": 790,
+    "active": 33797,
+    "replaced": 20000,
+    "selection_excluded": 73
+  },
+  "data_sha256": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "businessKeyDuplicates": 0,
+  "brokenRecordReferences": 0,
+  "spanMismatches": 0,
+  "queryCases": 328,
+  "agent": [
+    {
+      "country": "KR",
+      "month": "2026-08",
+      "facts": 18,
+      "status": "analyzed"
+    },
+    {
+      "country": "KR",
+      "month": "ALL",
+      "facts": 432,
+      "status": "analyzed"
+    },
+    {
+      "country": "JP",
+      "month": "2026-08",
+      "facts": 18,
+      "status": "analyzed"
+    },
+    {
+      "country": "JP",
+      "month": "ALL",
+      "facts": 432,
+      "status": "analyzed"
+    },
+    {
+      "country": "US",
+      "month": "2026-08",
+      "facts": 18,
+      "status": "analyzed"
+    },
+    {
+      "country": "US",
+      "month": "ALL",
+      "facts": 432,
+      "status": "analyzed"
+    }
+  ],
+  "initialBytes": 614150,
+  "downloads": [
+    {
+      "file": "manifest.json",
+      "bytes": 9509
+    },
+    {
+      "file": "product-presentation.json",
+      "bytes": 4146
+    },
+    {
+      "file": "products.jsonl",
+      "bytes": 6196
+    },
+    {
+      "file": "market-sales.jsonl",
+      "bytes": 573833
+    },
+    {
+      "file": "campaigns.jsonl",
+      "bytes": 20466
+    },
+    {
+      "file": "identity-mappings.jsonl",
+      "bytes": 124740
+    },
+    {
+      "file": "purchase-surveys.jsonl",
+      "bytes": 153924
+    },
+    {
+      "file": "search-interest.jsonl",
+      "bytes": 281232
+    },
+    {
+      "file": "keyword-demand.jsonl",
+      "bytes": 278401
+    },
+    {
+      "file": "organic-search.jsonl",
+      "bytes": 552442
+    },
+    {
+      "file": "prices.jsonl",
+      "bytes": 2002266
+    },
+    {
+      "file": "promotions.jsonl",
+      "bytes": 67851
+    },
+    {
+      "file": "public-ads.jsonl",
+      "bytes": 192660
+    },
+    {
+      "file": "publications.jsonl",
+      "bytes": 79009
+    },
+    {
+      "file": "ad-performance.jsonl",
+      "bytes": 1062630
+    },
+    {
+      "file": "ad-breakdowns.jsonl",
+      "bytes": 1151711
+    },
+    {
+      "file": "auction-insights.jsonl",
+      "bytes": 180802
+    },
+    {
+      "file": "creatives.jsonl",
+      "bytes": 111098
+    },
+    {
+      "file": "web-events.jsonl",
+      "bytes": 7085078
+    },
+    {
+      "file": "commerce-events.jsonl",
+      "bytes": 11222074
+    },
+    {
+      "file": "order-lines.jsonl",
+      "bytes": 2743707
+    },
+    {
+      "file": "refunds.jsonl",
+      "bytes": 240011
+    },
+    {
+      "file": "costs.jsonl",
+      "bytes": 176496
+    },
+    {
+      "file": "inventory.jsonl",
+      "bytes": 376625
+    },
+    {
+      "file": "distribution-fulfilment.jsonl",
+      "bytes": 1463946
+    },
+    {
+      "file": "reviews.jsonl",
+      "bytes": 3209886
+    },
+    {
+      "file": "review-annotations.jsonl",
+      "bytes": 6410967
+    },
+    {
+      "file": "customer-inquiries.jsonl",
+      "bytes": 517458
+    },
+    {
+      "file": "owned-content.jsonl",
+      "bytes": 167263
+    },
+    {
+      "file": "social-comments.jsonl",
+      "bytes": 1240102
+    },
+    {
+      "file": "creator-collaborations.jsonl",
+      "bytes": 26437
+    },
+    {
+      "file": "customer-cohorts.jsonl",
+      "bytes": 284296
+    },
+    {
+      "file": "crm-performance.jsonl",
+      "bytes": 259166
+    },
+    {
+      "file": "brand-surveys.jsonl",
+      "bytes": 187028
+    },
+    {
+      "file": "public-statistics.jsonl",
+      "bytes": 92259
+    },
+    {
+      "file": "weather-calendar.jsonl",
+      "bytes": 215428
+    },
+    {
+      "file": "change-events.jsonl",
+      "bytes": 151992
+    },
+    {
+      "file": "collection-runs.jsonl",
+      "bytes": 280348
+    },
+    {
+      "file": "site-events.jsonl",
+      "bytes": 41256
+    },
+    {
+      "file": "experiments.jsonl",
+      "bytes": 115926
+    },
+    {
+      "file": "budget-models.jsonl",
+      "bytes": 160170
+    },
+    {
+      "file": "budget-policies.jsonl",
+      "bytes": 52737
+    },
+    {
+      "file": "sales-reports.jsonl",
+      "bytes": 301484
+    }
+  ],
+  "bytes": 43861401,
+  "results": [
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 0
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 28,
+      "raw": 28,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 11,
+      "raw": 11,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 116,
+      "charts": 4
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 934,
+      "raw": 934,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 1092,
+      "raw": 1092,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 400,
+      "raw": 400,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 40,
+      "raw": 40,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 249,
+      "raw": 249,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 560,
+      "raw": 560,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 1120,
+      "raw": 1120,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 79,
+      "raw": 79,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 19,
+      "raw": 19,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 90,
+      "raw": 90,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 3,
+      "raw": 3,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 9,
+      "raw": 9,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 2
+    },
+    {
+      "type": "T01",
+      "country": "KR",
+      "month": "ALL",
+      "source": 6,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T02",
+      "country": "KR",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "KR",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "KR",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "KR",
+      "month": "ALL",
+      "source": 12,
+      "raw": 72,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "KR",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "KR",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "KR",
+      "month": "ALL",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "KR",
+      "month": "ALL",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "KR",
+      "month": "ALL",
+      "source": 28,
+      "raw": 28,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "KR",
+      "month": "ALL",
+      "source": 11,
+      "raw": 11,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "KR",
+      "month": "ALL",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "KR",
+      "month": "ALL",
+      "source": 208,
+      "raw": 208,
+      "charts": 1
+    },
+    {
+      "type": "T14",
+      "country": "KR",
+      "month": "ALL",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "KR",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "KR",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "KR",
+      "month": "ALL",
+      "source": 934,
+      "raw": 934,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "KR",
+      "month": "ALL",
+      "source": 1094,
+      "raw": 1094,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "KR",
+      "month": "ALL",
+      "source": 400,
+      "raw": 400,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "KR",
+      "month": "ALL",
+      "source": 40,
+      "raw": 40,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "KR",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "KR",
+      "month": "ALL",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "KR",
+      "month": "ALL",
+      "source": 300,
+      "raw": 300,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "KR",
+      "month": "ALL",
+      "source": 560,
+      "raw": 560,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "KR",
+      "month": "ALL",
+      "source": 1120,
+      "raw": 1120,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "KR",
+      "month": "ALL",
+      "source": 79,
+      "raw": 79,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "KR",
+      "month": "ALL",
+      "source": 19,
+      "raw": 19,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "KR",
+      "month": "ALL",
+      "source": 90,
+      "raw": 90,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "KR",
+      "month": "ALL",
+      "source": 3,
+      "raw": 3,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "KR",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "KR",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "KR",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "KR",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "KR",
+      "month": "ALL",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "KR",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "KR",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "KR",
+      "month": "ALL",
+      "source": 9,
+      "raw": 9,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "KR",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "KR",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "KR",
+      "month": "ALL",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "KR",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 0
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 41,
+      "raw": 41,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 16,
+      "raw": 16,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 116,
+      "charts": 4
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1333,
+      "raw": 1333,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1927,
+      "raw": 1927,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 512,
+      "raw": 512,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 50,
+      "raw": 50,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 319,
+      "raw": 319,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 730,
+      "raw": 730,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1460,
+      "raw": 1460,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 107,
+      "raw": 107,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 29,
+      "raw": 29,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 222,
+      "raw": 222,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 5,
+      "raw": 5,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 60,
+      "raw": 60,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 60,
+      "raw": 60,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 11,
+      "raw": 11,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 2
+    },
+    {
+      "type": "T01",
+      "country": "JP",
+      "month": "ALL",
+      "source": 6,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T02",
+      "country": "JP",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "JP",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "JP",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "JP",
+      "month": "ALL",
+      "source": 12,
+      "raw": 72,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "JP",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "JP",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "JP",
+      "month": "ALL",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "JP",
+      "month": "ALL",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "JP",
+      "month": "ALL",
+      "source": 41,
+      "raw": 41,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "JP",
+      "month": "ALL",
+      "source": 16,
+      "raw": 16,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "JP",
+      "month": "ALL",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "JP",
+      "month": "ALL",
+      "source": 208,
+      "raw": 208,
+      "charts": 1
+    },
+    {
+      "type": "T14",
+      "country": "JP",
+      "month": "ALL",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "JP",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "JP",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "JP",
+      "month": "ALL",
+      "source": 1333,
+      "raw": 1333,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "JP",
+      "month": "ALL",
+      "source": 1929,
+      "raw": 1929,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "JP",
+      "month": "ALL",
+      "source": 512,
+      "raw": 512,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "JP",
+      "month": "ALL",
+      "source": 50,
+      "raw": 50,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "JP",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "JP",
+      "month": "ALL",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "JP",
+      "month": "ALL",
+      "source": 372,
+      "raw": 372,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "JP",
+      "month": "ALL",
+      "source": 730,
+      "raw": 730,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "JP",
+      "month": "ALL",
+      "source": 1460,
+      "raw": 1460,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "JP",
+      "month": "ALL",
+      "source": 107,
+      "raw": 107,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "JP",
+      "month": "ALL",
+      "source": 29,
+      "raw": 29,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "JP",
+      "month": "ALL",
+      "source": 222,
+      "raw": 222,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "JP",
+      "month": "ALL",
+      "source": 5,
+      "raw": 5,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "JP",
+      "month": "ALL",
+      "source": 60,
+      "raw": 60,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "JP",
+      "month": "ALL",
+      "source": 60,
+      "raw": 60,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "JP",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "JP",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "JP",
+      "month": "ALL",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "JP",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "JP",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "JP",
+      "month": "ALL",
+      "source": 11,
+      "raw": 11,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "JP",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "JP",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "JP",
+      "month": "ALL",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "JP",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 0
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "2026-08",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "2026-08",
+      "source": 87,
+      "raw": 87,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "2026-08",
+      "source": 27,
+      "raw": 27,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 116,
+      "charts": 4
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "2026-08",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "2026-08",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2333,
+      "raw": 2333,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "2026-08",
+      "source": 4029,
+      "raw": 4029,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "2026-08",
+      "source": 800,
+      "raw": 800,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "2026-08",
+      "source": 80,
+      "raw": 80,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "2026-08",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "2026-08",
+      "source": 497,
+      "raw": 497,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "2026-08",
+      "source": 1120,
+      "raw": 1120,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2240,
+      "raw": 2240,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "2026-08",
+      "source": 200,
+      "raw": 200,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "2026-08",
+      "source": 60,
+      "raw": 60,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "2026-08",
+      "source": 766,
+      "raw": 766,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "2026-08",
+      "source": 10,
+      "raw": 10,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "2026-08",
+      "source": 96,
+      "raw": 96,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "2026-08",
+      "source": 96,
+      "raw": 96,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "2026-08",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "2026-08",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "2026-08",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "2026-08",
+      "source": 15,
+      "raw": 15,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "2026-08",
+      "source": 1,
+      "raw": 1,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "2026-08",
+      "source": 2,
+      "raw": 2,
+      "charts": 2
+    },
+    {
+      "type": "T01",
+      "country": "US",
+      "month": "ALL",
+      "source": 6,
+      "raw": 6,
+      "charts": 1
+    },
+    {
+      "type": "T02",
+      "country": "US",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "US",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T04",
+      "country": "US",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "US",
+      "month": "ALL",
+      "source": 12,
+      "raw": 72,
+      "charts": 1
+    },
+    {
+      "type": "T06",
+      "country": "US",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "US",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "US",
+      "month": "ALL",
+      "source": 504,
+      "raw": 504,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "US",
+      "month": "ALL",
+      "source": 18,
+      "raw": 18,
+      "charts": 1
+    },
+    {
+      "type": "T10",
+      "country": "US",
+      "month": "ALL",
+      "source": 87,
+      "raw": 87,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "US",
+      "month": "ALL",
+      "source": 27,
+      "raw": 27,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "US",
+      "month": "ALL",
+      "source": 4,
+      "raw": 4,
+      "charts": 1
+    },
+    {
+      "type": "T13",
+      "country": "US",
+      "month": "ALL",
+      "source": 208,
+      "raw": 208,
+      "charts": 1
+    },
+    {
+      "type": "T14",
+      "country": "US",
+      "month": "ALL",
+      "source": 224,
+      "raw": 224,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "US",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T16",
+      "country": "US",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T17",
+      "country": "US",
+      "month": "ALL",
+      "source": 2333,
+      "raw": 2333,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "US",
+      "month": "ALL",
+      "source": 4033,
+      "raw": 4033,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "US",
+      "month": "ALL",
+      "source": 800,
+      "raw": 800,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "US",
+      "month": "ALL",
+      "source": 80,
+      "raw": 80,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "US",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T22",
+      "country": "US",
+      "month": "ALL",
+      "source": 112,
+      "raw": 112,
+      "charts": 2
+    },
+    {
+      "type": "T23",
+      "country": "US",
+      "month": "ALL",
+      "source": 560,
+      "raw": 560,
+      "charts": 1
+    },
+    {
+      "type": "T24",
+      "country": "US",
+      "month": "ALL",
+      "source": 1120,
+      "raw": 1120,
+      "charts": 2
+    },
+    {
+      "type": "T25",
+      "country": "US",
+      "month": "ALL",
+      "source": 2240,
+      "raw": 2240,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "US",
+      "month": "ALL",
+      "source": 200,
+      "raw": 200,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "US",
+      "month": "ALL",
+      "source": 60,
+      "raw": 60,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "US",
+      "month": "ALL",
+      "source": 766,
+      "raw": 766,
+      "charts": 1
+    },
+    {
+      "type": "T29",
+      "country": "US",
+      "month": "ALL",
+      "source": 10,
+      "raw": 10,
+      "charts": 1
+    },
+    {
+      "type": "T30",
+      "country": "US",
+      "month": "ALL",
+      "source": 96,
+      "raw": 96,
+      "charts": 1
+    },
+    {
+      "type": "T31",
+      "country": "US",
+      "month": "ALL",
+      "source": 96,
+      "raw": 96,
+      "charts": 1
+    },
+    {
+      "type": "T32",
+      "country": "US",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "US",
+      "month": "ALL",
+      "source": 24,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T34",
+      "country": "US",
+      "month": "ALL",
+      "source": 56,
+      "raw": 56,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "US",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "US",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "US",
+      "month": "ALL",
+      "source": 15,
+      "raw": 15,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "US",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T39",
+      "country": "US",
+      "month": "ALL",
+      "source": 2,
+      "raw": 24,
+      "charts": 1
+    },
+    {
+      "type": "T40",
+      "country": "US",
+      "month": "ALL",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "US",
+      "month": "ALL",
+      "source": 48,
+      "raw": 48,
+      "charts": 1
+    },
+    {
+      "type": "T01",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T02",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 3
+    },
+    {
+      "type": "T04",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T06",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 1512,
+      "raw": 1512,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 54,
+      "raw": 54,
+      "charts": 2
+    },
+    {
+      "type": "T10",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 156,
+      "raw": 156,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 54,
+      "raw": 54,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "T13",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 348,
+      "raw": 348,
+      "charts": 2
+    },
+    {
+      "type": "T14",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 672,
+      "raw": 672,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "T16",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "T17",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 4600,
+      "raw": 4600,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 7048,
+      "raw": 7048,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 1712,
+      "raw": 1712,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 170,
+      "raw": 170,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T22",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 336,
+      "raw": 336,
+      "charts": 3
+    },
+    {
+      "type": "T23",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 1065,
+      "raw": 1065,
+      "charts": 2
+    },
+    {
+      "type": "T24",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 2410,
+      "raw": 2410,
+      "charts": 3
+    },
+    {
+      "type": "T25",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 4820,
+      "raw": 4820,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 386,
+      "raw": 386,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 1078,
+      "raw": 1078,
+      "charts": 2
+    },
+    {
+      "type": "T29",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T30",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 204,
+      "raw": 204,
+      "charts": 2
+    },
+    {
+      "type": "T31",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 204,
+      "raw": 204,
+      "charts": 2
+    },
+    {
+      "type": "T32",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 3,
+      "raw": 3,
+      "charts": 2
+    },
+    {
+      "type": "T34",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 168,
+      "raw": 168,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 216,
+      "raw": 216,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 35,
+      "raw": 35,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T39",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T40",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 3,
+      "raw": 3,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "ALL",
+      "month": "2026-08",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T01",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 6,
+      "raw": 6,
+      "charts": 2
+    },
+    {
+      "type": "T02",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T03",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 432,
+      "raw": 432,
+      "charts": 3
+    },
+    {
+      "type": "T04",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T05",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 216,
+      "raw": 216,
+      "charts": 2
+    },
+    {
+      "type": "T06",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 216,
+      "raw": 216,
+      "charts": 2
+    },
+    {
+      "type": "T07",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 432,
+      "raw": 432,
+      "charts": 2
+    },
+    {
+      "type": "T08",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 1512,
+      "raw": 1512,
+      "charts": 2
+    },
+    {
+      "type": "T09",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 54,
+      "raw": 54,
+      "charts": 2
+    },
+    {
+      "type": "T10",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 156,
+      "raw": 156,
+      "charts": 2
+    },
+    {
+      "type": "T11",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 54,
+      "raw": 54,
+      "charts": 2
+    },
+    {
+      "type": "T12",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 12,
+      "raw": 12,
+      "charts": 2
+    },
+    {
+      "type": "T13",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 624,
+      "raw": 624,
+      "charts": 2
+    },
+    {
+      "type": "T14",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 672,
+      "raw": 672,
+      "charts": 2
+    },
+    {
+      "type": "T15",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T16",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T17",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 4600,
+      "raw": 4600,
+      "charts": 2
+    },
+    {
+      "type": "T18",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 7056,
+      "raw": 7056,
+      "charts": 3
+    },
+    {
+      "type": "T19",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 1712,
+      "raw": 1712,
+      "charts": 3
+    },
+    {
+      "type": "T20",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 170,
+      "raw": 170,
+      "charts": 2
+    },
+    {
+      "type": "T21",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    },
+    {
+      "type": "T22",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 336,
+      "raw": 336,
+      "charts": 3
+    },
+    {
+      "type": "T23",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 1232,
+      "raw": 1232,
+      "charts": 2
+    },
+    {
+      "type": "T24",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 2410,
+      "raw": 2410,
+      "charts": 3
+    },
+    {
+      "type": "T25",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 4820,
+      "raw": 4820,
+      "charts": 2
+    },
+    {
+      "type": "T26",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 386,
+      "raw": 386,
+      "charts": 3
+    },
+    {
+      "type": "T27",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T28",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 1078,
+      "raw": 1078,
+      "charts": 2
+    },
+    {
+      "type": "T29",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 18,
+      "raw": 18,
+      "charts": 2
+    },
+    {
+      "type": "T30",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 204,
+      "raw": 204,
+      "charts": 2
+    },
+    {
+      "type": "T31",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 204,
+      "raw": 204,
+      "charts": 2
+    },
+    {
+      "type": "T32",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T33",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T34",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 168,
+      "raw": 168,
+      "charts": 2
+    },
+    {
+      "type": "T35",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 108,
+      "raw": 108,
+      "charts": 2
+    },
+    {
+      "type": "T36",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 216,
+      "raw": 216,
+      "charts": 2
+    },
+    {
+      "type": "T37",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 35,
+      "raw": 35,
+      "charts": 2
+    },
+    {
+      "type": "T38",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T39",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 72,
+      "raw": 72,
+      "charts": 2
+    },
+    {
+      "type": "T40",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 36,
+      "raw": 36,
+      "charts": 2
+    },
+    {
+      "type": "H01",
+      "country": "ALL",
+      "month": "ALL",
+      "source": 144,
+      "raw": 144,
+      "charts": 2
+    }
+  ]
+}

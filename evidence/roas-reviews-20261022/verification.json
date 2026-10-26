@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-22",
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "unitTests": {
+    "passed": 17,
+    "evidence": "tests-final.txt"
+  },
+  "build": {
+    "passed": true,
+    "evidence": "build.txt"
+  },
+  "typecheck": {
+    "passed": true
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 5,
+    "evidence": "lint.txt",
+    "note": "Shared screen was being edited by another task; warnings include its unused imports and trend state."
+  },
+  "browser": {
+    "passed": [
+      "save",
+      "reload restores chosen action, budget and note",
+      "export JSON",
+      "import current draft",
+      "duplicate import blocked",
+      "historical context opens separately",
+      "saved list and reopen"
+    ],
+    "pending": [
+      "replacement cancel after custom-dialog change",
+      "two-tab interaction",
+      "final screen review after concurrent edits"
+    ],
+    "note": "Earlier native confirm blocked in-app-browser controls; replaced with HTML dialog. Final browser validation is pending."
+  },
+  "publication": false
+}

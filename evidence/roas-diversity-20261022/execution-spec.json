@@ -1,0 +1,260 @@
+{
+  "spec": {
+    "seed": "approved-roas-diversity-20261022-1",
+    "max_records": 12000,
+    "start": "2026-08-03",
+    "end": "2026-08-31",
+    "product": "P1A",
+    "currency": "KRW",
+    "default_as_of": "2026-09-15T00:00:00+09:00",
+    "generated_at": "2026-10-22T00:00:00+09:00",
+    "daily_paid_sessions": {
+      "min": 8,
+      "max": 20
+    },
+    "device_values": [
+      "mobile",
+      "desktop"
+    ],
+    "funnel_probabilities": {
+      "view": 0.93,
+      "cart_mobile": 0.42,
+      "cart_desktop": 0.5,
+      "checkout": 0.72,
+      "purchase": 0.24
+    },
+    "consent_values": [
+      "granted",
+      "denied",
+      "unknown"
+    ],
+    "quantities": [
+      1,
+      2,
+      3
+    ],
+    "purchase_delay_days": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "minimum_repeat_paid_touch_days": 8,
+    "revenue_basis": "discounted_product_ex_tax_shipping",
+    "adjustment_links": "financial_representative",
+    "cases": [
+      {
+        "id": "R002",
+        "scenario_id": "R002-cost-change",
+        "focus": "cost",
+        "after_cpc": {
+          "search": 1.8,
+          "social": 1.55
+        },
+        "after_ctr": 0.62,
+        "after_quantity": 1,
+        "after_discount": 0,
+        "after_adjustment": 0.09
+      },
+      {
+        "id": "R003",
+        "scenario_id": "R003-order-value",
+        "focus": "revenue",
+        "after_cpc": {
+          "search": 1,
+          "social": 1.02
+        },
+        "after_ctr": 1,
+        "after_quantity": 0.5,
+        "after_discount": 0.2,
+        "after_adjustment": 0.09
+      },
+      {
+        "id": "R004",
+        "scenario_id": "R004-adjustment-change",
+        "focus": "refund",
+        "after_cpc": {
+          "search": 1.01,
+          "social": 1
+        },
+        "after_ctr": 1,
+        "after_quantity": 1,
+        "after_discount": 0,
+        "after_adjustment": 0.66
+      }
+    ],
+    "assumptions": [
+      "Independent seeded streams separate traffic, device, consent, funnel, order money, delays, media reports, feedback and adjustments.",
+      "Visit time is a simulated 70 percent daytime/evening and 30 percent all-day mixture; each device report contains at least its declared paid visits as clicks.",
+      "Each sampled paid landing is assumed to follow one distinct paid click; reports also contain additional clicks without sampled landings. Click IDs and persistent user IDs are not collected for denied or unknown consent.",
+      "For denied or unknown consent, the declared order-to-session acquisition reference is a synthetic first-party workflow relation, never an inferred cross-session or cross-device identity join.",
+      "Only the declared paid sample and its directly linked return visits are generated; no independent organic population.",
+      "A repeat paid touch uses the same consenting pseudonym after at least eight days; delayed returns happen within three days and create no new paid touch.",
+      "Purchasing paths contain page view, item view, cart, checkout and purchase in chronological order, possibly across a linked direct return session.",
+      "Attributed conversions and product revenue follow last paid touch within seven days, on paid-touch date. Reports are final synthetic ledgers.",
+      "One order contains one product line with one to three units. Prices, discounts, timings, financial reasons and feedback are simulated assumptions.",
+      "Feedback uses a documented combinatorial template library with neutral, positive and adverse topics; it is not observed customer language or causal proof.",
+      "No payment failure logs, actual page versions, audience histories or external operational facts are invented."
+    ]
+  },
+  "counts": {
+    "R002-cost-change": {
+      "T12": 2,
+      "T16": 2,
+      "T17": 781,
+      "T18": 1404,
+      "T19": 69,
+      "T13": 56,
+      "T14": 112,
+      "T20": 17,
+      "T24": 44,
+      "T26": 44
+    },
+    "R003-order-value": {
+      "T12": 2,
+      "T16": 2,
+      "T17": 817,
+      "T18": 1427,
+      "T19": 67,
+      "T13": 56,
+      "T14": 112,
+      "T20": 11,
+      "T24": 48,
+      "T26": 44
+    },
+    "R004-adjustment-change": {
+      "T12": 2,
+      "T16": 2,
+      "T17": 770,
+      "T18": 1329,
+      "T19": 41,
+      "T13": 56,
+      "T14": 112,
+      "T20": 25,
+      "T26": 44,
+      "T24": 46
+    }
+  },
+  "rows": 7544,
+  "profiles": [
+    {
+      "scenario_id": "R002-cost-change",
+      "product_id": "P1A",
+      "currency": "KRW",
+      "scope_ids": {
+        "KR": [
+          "R002-KR-paid-p1a"
+        ]
+      },
+      "baseline": {
+        "start": "2026-08-03",
+        "end": "2026-08-17"
+      },
+      "observed": {
+        "start": "2026-08-17",
+        "end": "2026-08-31"
+      },
+      "revenue_basis": "discounted_product_ex_tax_shipping",
+      "adjustment_links": "financial_representative",
+      "attribution_date_basis": "paid_touch_date",
+      "purchase_timing": "within_window",
+      "attribution_model": "last_click",
+      "attribution_window": "7_days",
+      "default_as_of": "2026-09-15T00:00:00+09:00",
+      "coverage": "Synthetic complete declared paid-touch sample and explicitly linked direct returns, not all site traffic; streams and assumptions in roas-diversity-spec.mjs",
+      "counts": {
+        "T12": 2,
+        "T16": 2,
+        "T17": 781,
+        "T18": 1404,
+        "T19": 69,
+        "T13": 56,
+        "T14": 112,
+        "T20": 17,
+        "T24": 44,
+        "T26": 44
+      },
+      "approval_spec_sha256": "de2dce1df2f60ba55bcf94a7cceff0ec9c26615ea3ac32056c1b71aba1df73fd"
+    },
+    {
+      "scenario_id": "R003-order-value",
+      "product_id": "P1A",
+      "currency": "KRW",
+      "scope_ids": {
+        "KR": [
+          "R003-KR-paid-p1a"
+        ]
+      },
+      "baseline": {
+        "start": "2026-08-03",
+        "end": "2026-08-17"
+      },
+      "observed": {
+        "start": "2026-08-17",
+        "end": "2026-08-31"
+      },
+      "revenue_basis": "discounted_product_ex_tax_shipping",
+      "adjustment_links": "financial_representative",
+      "attribution_date_basis": "paid_touch_date",
+      "purchase_timing": "within_window",
+      "attribution_model": "last_click",
+      "attribution_window": "7_days",
+      "default_as_of": "2026-09-15T00:00:00+09:00",
+      "coverage": "Synthetic complete declared paid-touch sample and explicitly linked direct returns, not all site traffic; streams and assumptions in roas-diversity-spec.mjs",
+      "counts": {
+        "T12": 2,
+        "T16": 2,
+        "T17": 817,
+        "T18": 1427,
+        "T19": 67,
+        "T13": 56,
+        "T14": 112,
+        "T20": 11,
+        "T24": 48,
+        "T26": 44
+      },
+      "approval_spec_sha256": "de2dce1df2f60ba55bcf94a7cceff0ec9c26615ea3ac32056c1b71aba1df73fd"
+    },
+    {
+      "scenario_id": "R004-adjustment-change",
+      "product_id": "P1A",
+      "currency": "KRW",
+      "scope_ids": {
+        "KR": [
+          "R004-KR-paid-p1a"
+        ]
+      },
+      "baseline": {
+        "start": "2026-08-03",
+        "end": "2026-08-17"
+      },
+      "observed": {
+        "start": "2026-08-17",
+        "end": "2026-08-31"
+      },
+      "revenue_basis": "discounted_product_ex_tax_shipping",
+      "adjustment_links": "financial_representative",
+      "attribution_date_basis": "paid_touch_date",
+      "purchase_timing": "within_window",
+      "attribution_model": "last_click",
+      "attribution_window": "7_days",
+      "default_as_of": "2026-09-15T00:00:00+09:00",
+      "coverage": "Synthetic complete declared paid-touch sample and explicitly linked direct returns, not all site traffic; streams and assumptions in roas-diversity-spec.mjs",
+      "counts": {
+        "T12": 2,
+        "T16": 2,
+        "T17": 770,
+        "T18": 1329,
+        "T19": 41,
+        "T13": 56,
+        "T14": 112,
+        "T20": 25,
+        "T26": 44,
+        "T24": 46
+      },
+      "approval_spec_sha256": "de2dce1df2f60ba55bcf94a7cceff0ec9c26615ea3ac32056c1b71aba1df73fd"
+    }
+  ],
+  "specSha256": "de2dce1df2f60ba55bcf94a7cceff0ec9c26615ea3ac32056c1b71aba1df73fd",
+  "generatorSha256": "e63ef687a40ad08bb8824e6d0f72ffad843a32716eeb34c6ce4faa5ad1f9b551"
+}

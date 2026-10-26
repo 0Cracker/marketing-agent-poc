@@ -1,0 +1,105 @@
+{
+  "pass": true,
+  "newRows": 7544,
+  "cases": {
+    "R002-cost-change": {
+      "rows": 2531,
+      "uniqueFeedback": 88,
+      "purchaseDelays": 53,
+      "financialEdges": {
+        "aliases": 2,
+        "pending": 4,
+        "afterCutoff": 1
+      },
+      "periods": [
+        {
+          "orders": 38,
+          "gross": "1304690.00",
+          "spend": "284960.00",
+          "loss": "165990.00",
+          "net": "1138700.00",
+          "cpc": "417.8299120234604105571847507",
+          "orderValue": "34333.94736842105263157894737",
+          "adjustmentRate": "0.1272256244778453119131747772"
+        },
+        {
+          "orders": 31,
+          "gross": "860000.00",
+          "spend": "457778.00",
+          "loss": "18250.00",
+          "net": "841750.00",
+          "cpc": "697.8323170731707317073170732",
+          "orderValue": "27741.93548387096774193548387",
+          "adjustmentRate": "0.02122093023255813953488372093"
+        }
+      ]
+    },
+    "R003-order-value": {
+      "rows": 2586,
+      "uniqueFeedback": 92,
+      "purchaseDelays": 56,
+      "financialEdges": {
+        "aliases": 1,
+        "pending": 2,
+        "afterCutoff": 1
+      },
+      "periods": [
+        {
+          "orders": 32,
+          "gross": "1029810.00",
+          "spend": "290092.00",
+          "loss": "69695.00",
+          "net": "960115.00",
+          "cpc": "422.2590975254730713245997089",
+          "orderValue": "32181.5625",
+          "adjustmentRate": "0.06767753274875947990405997223"
+        },
+        {
+          "orders": 35,
+          "gross": "731100.00",
+          "spend": "288370.00",
+          "loss": "28210.00",
+          "net": "702890.00",
+          "cpc": "422.8299120234604105571847507",
+          "orderValue": "20888.57142857142857142857143",
+          "adjustmentRate": "0.03858569279168376419094515114"
+        }
+      ]
+    },
+    "R004-adjustment-change": {
+      "rows": 2427,
+      "uniqueFeedback": 90,
+      "purchaseDelays": 38,
+      "financialEdges": {
+        "aliases": 5,
+        "pending": 3,
+        "afterCutoff": 1
+      },
+      "periods": [
+        {
+          "orders": 20,
+          "gross": "611060.00",
+          "spend": "277309.00",
+          "loss": "43170.00",
+          "net": "567890.00",
+          "cpc": "428.6074188562596599690880989",
+          "orderValue": "30553.00",
+          "adjustmentRate": "0.07064772690079533924655516643"
+        },
+        {
+          "orders": 21,
+          "gross": "613950.00",
+          "spend": "279505.00",
+          "loss": "243092.50",
+          "net": "370857.50",
+          "cpc": "424.1350531107738998482549317",
+          "orderValue": "29235.71428571428571428571429",
+          "adjustmentRate": "0.3959483671308738496620245948"
+        }
+      ]
+    }
+  },
+  "limitation": "Synthetic numeric contrasts do not establish real-world causes or representativeness.",
+  "originalRowsBytePreserved": 33797,
+  "dataHash": "4a58a7326fcd84b4d050ab2b2aea1cb7289c7d28bbb1deab1df2e378e5afadbb"
+}

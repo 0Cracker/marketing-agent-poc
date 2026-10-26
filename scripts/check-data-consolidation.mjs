@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {createServer} from 'vite';
 import {loadCurrentData,sha256,currentDataPlugin} from './current-data.mjs';
 import {businessKey} from './data-business-keys.mjs';
+import {selectScenario} from '../shared/scenario-selection.mjs';
 const sourceRoot=new URL('../',import.meta.url);
 const {CatalogTools,cents}=await import(new URL('backend/agent-tools.mjs',sourceRoot));
 const {AgentFlow,FlowStore}=await import(new URL('backend/agent-flow.mjs',sourceRoot));
@@ -62,7 +63,7 @@ try{
   assert(csv(raw,raw.rows).startsWith('\uFEFF'));assert.equal(csv(raw,raw.rows).split('\r\n').length,raw.rows.length+1);
   results.push({type,country,month,source:m.source.length,raw:raw.source.length,charts:m.charts.length});
  }
- assert.equal(manifest.files.reduce((n,f)=>n+service.query(f.type,'ALL','ALL',{detailOnly:true}).source.length,0),manifest.rows);
+ assert.equal(manifest.files.reduce((n,f)=>n+service.query(f.type,'ALL','ALL',{detailOnly:true}).source.length,0),selectScenario(records,manifest.scope_ids).length);
  for(const [country,count]of Object.entries({KR:560,JP:730,US:1120})){
   assert.equal(service.query('T24',country,'ALL').metrics[0].value,count);
   for(const month of ['2026-08','ALL']){

@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21",
+  "branch": "feature/roas-decision-flow",
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "physicalRows": 33797,
+  "scenarioRows": 3470,
+  "existingRowsUnchanged": 30327,
+  "nodeSuite": {
+    "tests": 135,
+    "pass": 135,
+    "fail": 0
+  },
+  "finalRoasTests": {
+    "tests": 8,
+    "pass": 8
+  },
+  "independent": {
+    "pass": true,
+    "newRows": 3470,
+    "existingRowsBytePreserved": 30327,
+    "checks": [
+      "counts",
+      "old_file_prefix_hashes",
+      "old_definitions_preserved",
+      "default_scope_isolation",
+      "record_references",
+      "purchase_order_session",
+      "ordered_funnel",
+      "device_partition",
+      "decimal_product_revenue",
+      "independent_partial_refunds",
+      "return_aliases",
+      "cutoff",
+      "reported_vs_net"
+    ],
+    "expectedNetProductRevenue": [
+      "1470000.00",
+      "684500.00"
+    ],
+    "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d"
+  },
+  "regression": 328,
+  "typescript": "pass",
+  "changedFileLint": "pass_with_existing_next_pages_warning",
+  "build": "pass",
+  "docLinks": "pass",
+  "sourceHashes": {
+    "backend/roas-case.mjs": "53f4a1fc59632832af0bcf029c1253ad9ed2072a2a47610b336f58398e410488",
+    "backend/roas-review.mjs": "ce967a4932381f7edc329e90f449ddbb89bac1f267d5951e7f6ea46b5ee8ba01",
+    "scripts/augment-roas-case.mjs": "451b9c34ee2488030f8dbc800d8b20ecad31c9d9a9862c9de21fe1a1154dbabd",
+    "scripts/roas-case.mjs": "f4b58161739c17152ca9769b79cc3a101ae05817655ff61e675fe1bff0ebad49",
+    "scripts/check-roas-case.py": "5354c017343f2d24727382f6b063602f3bb406cb142ba4ce8165a55ba512c114",
+    "shared/scenario-selection.mjs": "e64b160f4550f757aad39e7220cd8fc1ff443e5907f3db9b1c7bd7e5a04a8479"
+  },
+  "newBusinessFields": 0,
+  "externalModelCalls": 0,
+  "realAdsCalls": 0,
+  "commits": 0,
+  "limitations": [
+    "same_day_paid_sample",
+    "no_actual_landing_or_checkout_validation",
+    "no_target_roas_or_budget_constraints",
+    "no_real_marketing_effect_or_user_usefulness_validation"
+  ]
+}

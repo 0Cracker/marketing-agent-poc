@@ -1,0 +1,31 @@
+{
+  "status": "approved",
+  "response": "제안 범위 생성 승인",
+  "approved_date": "2026-10-21",
+  "scope": {
+    "scenario_id": "R001-roas-decline",
+    "scope_id": "R001-KR-paid-p1a",
+    "seed": "approved-roas-20261021-1",
+    "counts": {
+      "T12": 2,
+      "T13": 56,
+      "T14": 112,
+      "T16": 2,
+      "T17": 1120,
+      "T18": 1980,
+      "T19": 126,
+      "T20": 16,
+      "T24": 28,
+      "T26": 28
+    },
+    "start": "2026-08-03",
+    "end": "2026-08-31",
+    "product": "P1A",
+    "currency": "KRW",
+    "revenue_basis": "discounted_product_ex_tax_shipping",
+    "adjustment_links": "financial_representative"
+  },
+  "spec_sha256": "decda496e09b2c26c9a87648e57a0237bb5fa443beed3a404f89cbf357be76c0",
+  "baseline_data_sha256": "56da2cdac07ed56062c38d225c6406a2f4a494fdbea73aed35dd2b95260fc415",
+  "source": "Explicit user reply to the 3470-row generation proposal"
+}

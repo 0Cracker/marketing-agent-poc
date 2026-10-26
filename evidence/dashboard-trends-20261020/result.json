@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-20",
+  "branch": "feature/dashboard-trends",
+  "base": "7e93f84",
+  "target": "uncommitted dashboard changes; concurrent ontology-tool edits excluded from scope",
+  "checks": [
+    {
+      "command": "node scripts/check-dashboard-trends.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/check-data-consolidation.mjs",
+      "exitCode": 0,
+      "queries": 328
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js frontend/workbench scripts/demo-order-flow.mjs scripts/update-demo-order-flow.mjs scripts/check-dashboard-trends.mjs scripts/consolidate-data.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/vite/bin/vite.js build",
+      "exitCode": 0
+    }
+  ],
+  "browser": [
+    "Japan order revenue and quantity trend",
+    "country order-count comparison",
+    "Japan stacked daily inquiry chart"
+  ],
+  "warnings": [
+    "existing ESLint pages-directory warning",
+    "existing build font-resolution warnings"
+  ],
+  "remotePublished": false,
+  "committed": false
+}

@@ -85,7 +85,7 @@ for(const source of decoded.filter(r=>r.metadata.dataset_type!=='T01')){
 assert.equal(rows.length,528);assert.equal(summaries.size,30);
 assert.equal(new Set(rows.map(r=>r.record.record_id)).size,528);
 assert.ok([...supplement.patches.keys()].every(id=>rows.some(r=>r.record.record_id===id)),'supplement refers to an unaudited row');
-const readbackCommand=[path.join(here,'check-canonical-readback.py'),'--tools',option('--tools')||path.join(root,'../ontology-validation-tools')];
+const readbackCommand=[path.join(here,'check-canonical-readback.py'),'--tools',option('--tools')||path.join(root,'.tools/ontology-validation')];
 if(supplement.files.length)readbackCommand.push('--supplement',supplement.files[0],'--supplement-approval-record',supplement.files[1]);
 const independent=spawnSync(option('--python')||'python',readbackCommand,{input:JSON.stringify(rows),encoding:'utf8',maxBuffer:10*1024*1024,
  env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',PYTHONIOENCODING:'utf-8'}});

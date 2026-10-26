@@ -1,0 +1,44 @@
+{
+  "status": "automated checks passed, PC browser verification unavailable",
+  "date": "2026-10-23",
+  "checks": {
+    "trainingTests": {
+      "passed": 17,
+      "failed": 0
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "lint": {
+      "exitCode": 0,
+      "advisory": "Existing pages-directory advisory"
+    },
+    "build": {
+      "exitCode": 0,
+      "advisory": "Existing runtime font-path warnings"
+    },
+    "http": "Current Vite UI module 200, JSX transform succeeds",
+    "dataPreservation": "Canonical training data SHA unchanged"
+  },
+  "files": {
+    "frontend/workbench/training-dashboard.tsx": "18a44a21a0f662b8e30dbccbef37dfe4e2efa5a0d0e5045576a1a0628f40492b",
+    "frontend/workbench/training-dashboard.css": "059b2a00d82afa7e8a5d42e22cd7f9eef35f237fef73dce81c6ae3c5883f6d3e",
+    "shared/training-dashboard.mjs": "a28efafe77acf2d2ae6758ac0655b626cebfdb39c88a7457029774fcbfda7f2b",
+    "data/training-dashboard.json": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40"
+  },
+  "browser": {
+    "status": "not_run",
+    "reason": "Local browser use is disabled in Work settings",
+    "mobile": "excluded by user"
+  },
+  "scope": {
+    "navigation": [
+      "성과 추이",
+      "상세 데이터"
+    ],
+    "increaseColor": "red",
+    "decreaseColor": "blue",
+    "colorMeaning": "direction only; not good or bad",
+    "defaultCase": "S16"
+  }
+}

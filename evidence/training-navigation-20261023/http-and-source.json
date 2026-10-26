@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "moduleHttp": 200,
+  "checks": [
+    "Current JSX transformed and served",
+    "Metric cards use article instead of global inline-flex button",
+    "Up is red and down is blue"
+  ],
+  "scope": "Source and HTTP checks only, no rendered browser verification"
+}

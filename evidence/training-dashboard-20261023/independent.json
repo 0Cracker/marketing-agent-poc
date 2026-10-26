@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "command": "python scripts/check-training-dashboard.py",
+  "runtime": "C:/Users/박시형/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "exitCode": 0,
+  "cases": 15,
+  "checks": 80909,
+  "method": "independent Decimal and integer aggregation of actual loader projections",
+  "scope": "Mock consistency, not real marketer learning efficacy",
+  "priorFindings": [
+    "S11 stockout product initially had no paid traffic; upstream product allocation was corrected.",
+    "Normal breakdown ledger revenue differed from reported revenue; child-level reconciliation was corrected.",
+    "S11 stockout product received failed-payment allocation despite zero checkout; allocation was corrected."
+  ],
+  "latestRerun": {
+    "exitCode": 0,
+    "checks": 80909,
+    "scope": "final installed data with campaign/device daily distribution offset"
+  },
+  "dataHash": "55b9329c06888d2c88ca7c262149f61579a9d8811468e4b629e6318a0ed50795",
+  "sourceSha256": "a0e930f977093c853a03f4a51d7f87414b0228bdb92a4d69f9741484011f745b"
+}

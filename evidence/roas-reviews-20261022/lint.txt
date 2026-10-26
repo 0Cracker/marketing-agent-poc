@@ -1,0 +1,11 @@
+Pages directory cannot be found at C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\pages or C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\src\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\frontend\workbench\roas-workbench.tsx
+   5:9   warning  'applyReviewDraft' is defined but never used        @typescript-eslint/no-unused-vars
+   5:26  warning  'validateReviewDraft' is defined but never used     @typescript-eslint/no-unused-vars
+   6:9   warning  'selectRoasEvidence' is defined but never used      @typescript-eslint/no-unused-vars
+  29:9   warning  'trendBasis' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  29:20  warning  'setTrendBasis' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 5 problems (0 errors, 5 warnings)
+

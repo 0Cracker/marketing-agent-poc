@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-22",
+  "branch": "feature/roas-decision-flow",
+  "head": "19f63fc",
+  "workingTree": "pre-existing uncommitted ROAS feature retained; no release or commit",
+  "nodeTests": {
+    "passed": 193,
+    "failed": 0,
+    "log": "tests.txt"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "log": "types.txt"
+  },
+  "lint": {
+    "exitCode": 0,
+    "log": "lint.txt",
+    "advisory": "existing Next pages directory warning"
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "build.txt",
+    "advisory": "existing fonts resolve at runtime"
+  },
+  "decimal": {
+    "passed": 13,
+    "log": "decimal.txt"
+  },
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d",
+  "marketingRecordsChanged": 0,
+  "persistentSchemaChanged": false,
+  "browser": {
+    "status": "not verified",
+    "detail": "Existing tab shows earlier UI. Reload rejected by automatic approval review because unsaved draft could be lost. Existing tab preserved; approval question pending."
+  },
+  "realMarketerValidation": "not performed",
+  "finalRoasRegression": {
+    "passed": 45,
+    "failed": 0,
+    "log": "roas-final.txt",
+    "reason": "After final scope and judgment review fix; earlier broader suite 193 passed"
+  },
+  "finalTypecheck": {
+    "exitCode": 0,
+    "log": "types-final.txt"
+  },
+  "finalLint": {
+    "exitCode": 0,
+    "log": "lint-final.txt"
+  },
+  "finalBuild": {
+    "exitCode": 0,
+    "log": "build-final.txt"
+  }
+}

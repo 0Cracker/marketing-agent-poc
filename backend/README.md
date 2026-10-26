@@ -1,5 +1,11 @@
 # 두 에이전트 B 흐름
 
+## 2026-10-21 Agent와 독립적인 ROAS 검토 업무
+
+`roas-case.mjs`는 명시한 시나리오, 제품과 두 기간을 받아 매체 보고 ROAS, 확정 취소와 환불 반영 상품 매출 ROAS, 수치 분해, 세션별 구매 흐름, 원문 근거와 수정 검토안을 만든다. `roas-review.mjs`는 담당자가 읽는 Markdown 검토서를 출력한다. 제품 ROAS 검토 화면은 `scripts/current-data.mjs`의 파생 응답을 통해 같은 계산을 사용한다. 기존 Agent 도구에는 새 업무를 연결하지 않았다.
+
+`npm run demo:roas` 또는 `node scripts/roas-case.mjs --scenario R001-roas-decline --output 새파일.md`로 실행한다. 지표 정의와 연결 공백이 있는 기존 D008 자료는 `--scenario D008-comparison-demo`로 별도 검토하며, 순매출 ROAS를 추정하지 않는다. 실제 모델이나 Ads는 호출하지 않는다. [시나리오 계약과 검증](../docs/design/roas-decision-flow.md)을 참고한다.
+
 2026-10-19 통합본 안내: 이 worktree에서는 같은 저장소의 `scripts/current-data.mjs`와 `data/manifest.json`을 우선 읽는다. 아래 sibling 설명은 두 worktree를 사용하던 당시 이력이다. 현재 실행은 같은 폴더의 자료만 읽는다. 로컬 버전과 재현 명령은 [버전 대응표](../docs/iterations/version-history.md)를 따른다.
 
 2026-10-20: CURRENT 가상 자료는 확보시각으로 제외하지 않으며 측정기간·국가·제품·해시는 검증한다. 채널별 Hill `slope=1` 가상 예산 모형과 원문 계수·가정을 표시한다. 모델 관측 요청은 페이지당24행을 안내하고, 503은 수동 재개할 수 있다. 백엔드126시험·실제 모델4사례·독립 예산36건의 결과와 실패·한계는 [의미 검수 반영](../docs/design/semantic-changes-20261020.md)을 따른다. 아래 기록의 asOf 제한은 과거 배치에 적용한다.

@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "dataHash": "b73d88a7c893cf6ba00c8493f7049d3442178cec94cceda63c2c4d5540890875",
+  "types": 41,
+  "countryGroups": 133,
+  "checks": [
+    "one-series daily totals",
+    "all five topics without paging",
+    "synthetic advertisers named",
+    "synthetic index limitations",
+    "41 types and all rows counted",
+    "country-specific dates",
+    "monthly/daily mixed grain",
+    "gaps retained",
+    "inherited review dates",
+    "definitions are not measurements",
+    "report matches current source"
+  ]
+}

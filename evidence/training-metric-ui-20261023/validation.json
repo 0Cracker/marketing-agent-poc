@@ -1,0 +1,33 @@
+{
+  "status": "automated checks passed; PC browser unverified",
+  "defaultCase": "S16",
+  "trainingTests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "lint": "passed with existing pages-directory advisory",
+  "build": "passed with existing font-path warnings",
+  "sourceSha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+  "sourceData": "unchanged",
+  "metrics": [
+    "ROAS",
+    "CTR",
+    "CPC",
+    "CVR",
+    "CPA",
+    "CAC",
+    "AOV"
+  ],
+  "cac": "null, new customer counts absent; not replaced by CPA",
+  "trend": "14 paired weekdays, daily ratios from filtered raw aggregate sums, actual dates retained",
+  "browser": {
+    "status": "not_run",
+    "reason": "Local browser use is disabled in Work settings",
+    "mobile": "not requested"
+  },
+  "limitations": [
+    "No browser layout or interaction verification.",
+    "CAC requires an approved new-customer measurement definition and source data."
+  ]
+}

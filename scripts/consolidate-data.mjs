@@ -6,11 +6,15 @@ import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {businessKey,businessKeys} from './data-business-keys.mjs';
 import {applyDemoBudgetModels} from './demo-budget-model.mjs';
+import {applyDemoOrderFlow} from './demo-order-flow.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const jsonl=rs=>rs.map(r=>JSON.stringify(r)).join('\n')+'\n';
 const output=path.join(root,'data');
+// A historical rebuild must not erase later, separately approved scenario sources.
+const currentDefinitions=path.join(output,'definitions.json');
+if(fs.existsSync(currentDefinitions)&&read(currentDefinitions).scenario_profiles?.length)throw Error('Approved scenario profiles exist; historical consolidation would erase them. Use the approved scenario generator or an explicitly reviewed migration.');
 const names=['products','identity-mappings','market-sales','purchase-surveys','search-interest','keyword-demand','organic-search','prices','promotions','public-ads','publications','campaigns','ad-performance','ad-breakdowns','auction-insights','creatives','web-events','commerce-events','order-lines','refunds','costs','inventory','distribution-fulfilment','reviews','review-annotations','customer-inquiries','owned-content','social-comments','creator-collaborations','customer-cohorts','crm-performance','brand-surveys','public-statistics','weather-calendar','change-events','collection-runs','site-events','experiments','budget-models','budget-policies'];
 const mapping=Object.fromEntries(names.map((name,i)=>['T'+String(i+1).padStart(2,'0'),name+'.jsonl']));mapping.H01='sales-reports.jsonl';
 const {loadCatalog,validRecord}=await import(pathToFileURL(path.join(root,'docs/research/marketing-ontology/batches/D007/catalog.mjs')));
@@ -83,13 +87,13 @@ for(const r of demo.records){
  }else decide({batch:'D008',record:r,source:r},conflicts.length>1?'pending':'active',conflicts.length>1?'Ambiguous same-scope business key without sample/measurement discriminator; all conflicting rows withheld: '+conflicts.join(', '):'Existing current comparison scenario; no generated/changed observation');
 }
 // Preserve raw source hashes and explicitly identify the approved derived model projection.
-const projected=applyDemoBudgetModels(active);
+const projected=applyDemoOrderFlow(applyDemoBudgetModels(active));
 for(let i=0;i<active.length;i++)if(projected[i]!==active[i]){
  const r=projected[i];assert(validRecord(r).conforming,'Invalid projected model '+r.record_id);
  active[i]=r;
  for(const m of [migration.find(m=>m.active_id===r.record_id),provenance.find(m=>m.active_id===r.record_id)]){
   m.record_sha256=hash(JSON.stringify(r));
-  m.transformation='2026-10-20 user-approved Hill slope=1 synthetic channel model and scenario projection; original archived source unchanged';
+  m.transformation=r.dataset_type==='T39'?'2026-10-20 user-approved Hill slope=1 synthetic channel model and scenario projection; original archived source unchanged':'2026-10-20 user-requested daily order variation with dependent dates and cohort revenue; scripts/demo-order-flow.mjs; original archived source unchanged';
  }
 }
 assert.equal(migration.length,originals.reduce((n,x)=>n+x.rows,0));

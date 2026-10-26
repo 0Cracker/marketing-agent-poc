@@ -1,0 +1,1123 @@
+{
+  "scenarioId": "D008-comparison-demo",
+  "productId": "P1A",
+  "currency": "KRW",
+  "asOf": "2026-10-21T00:00:00+09:00",
+  "mode": "synthetic_workflow",
+  "status": "partial",
+  "periods": [
+    {
+      "period": {
+        "start": "2026-08-03",
+        "end": "2026-08-17"
+      },
+      "channels": [
+        {
+          "channel": "search",
+          "campaignId": "D008-Campaign-KR-P1A-search",
+          "reported": {
+            "spend": "529166.00",
+            "attributedRevenue": "838500.00",
+            "purchases": 65,
+            "clicks": 1087,
+            "roas": 1.584568925441166,
+            "cpc": 486.8132474701012,
+            "clickPurchaseRate": 0.05979760809567617,
+            "revenuePerPurchase": 12900
+          },
+          "purchaseCohort": {
+            "paidSessions": 0,
+            "orders": null,
+            "discountedProductRevenue": null,
+            "confirmedReversals": null,
+            "netProductRevenue": null,
+            "netRoas": null,
+            "sessionPurchaseRate": null,
+            "funnel": {
+              "view_item": 0,
+              "add_to_cart": 0,
+              "begin_checkout": 0,
+              "purchase": null
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "D008-T13-00001",
+              "D008-T13-00002",
+              "D008-T13-00003",
+              "D008-T13-00004",
+              "D008-T13-00005",
+              "D008-T13-00006",
+              "D008-T13-00007",
+              "D008-T13-00008",
+              "D008-T13-00009",
+              "D008-T13-00010",
+              "D008-T13-00011",
+              "D008-T13-00012",
+              "D008-T13-00013",
+              "D008-T13-00014"
+            ],
+            "orderRecordIds": [],
+            "adjustmentRecordIds": []
+          }
+        },
+        {
+          "channel": "social",
+          "campaignId": "D008-Campaign-KR-P1A-social",
+          "reported": {
+            "spend": "446886.00",
+            "attributedRevenue": "606300.00",
+            "purchases": 47,
+            "clicks": 1433,
+            "roas": 1.3567218485251271,
+            "cpc": 311.85345429169575,
+            "clickPurchaseRate": 0.03279832519190509,
+            "revenuePerPurchase": 12900
+          },
+          "purchaseCohort": {
+            "paidSessions": 0,
+            "orders": null,
+            "discountedProductRevenue": null,
+            "confirmedReversals": null,
+            "netProductRevenue": null,
+            "netRoas": null,
+            "sessionPurchaseRate": null,
+            "funnel": {
+              "view_item": 0,
+              "add_to_cart": 0,
+              "begin_checkout": 0,
+              "purchase": null
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "D008-T13-00053",
+              "D008-T13-00054",
+              "D008-T13-00055",
+              "D008-T13-00056",
+              "D008-T13-00057",
+              "D008-T13-00058",
+              "D008-T13-00059",
+              "D008-T13-00060",
+              "D008-T13-00061",
+              "D008-T13-00062",
+              "D008-T13-00063",
+              "D008-T13-00064",
+              "D008-T13-00065",
+              "D008-T13-00066"
+            ],
+            "orderRecordIds": [],
+            "adjustmentRecordIds": []
+          }
+        }
+      ],
+      "total": {
+        "spend": "976052.00",
+        "reportedRevenue": "1444800.00",
+        "reportedRoas": 1.4802490031268827,
+        "netProductRevenue": null,
+        "netRoas": null
+      }
+    },
+    {
+      "period": {
+        "start": "2026-08-17",
+        "end": "2026-08-31"
+      },
+      "channels": [
+        {
+          "channel": "search",
+          "campaignId": "D008-Campaign-KR-P1A-search",
+          "reported": {
+            "spend": "457057.00",
+            "attributedRevenue": "709500.00",
+            "purchases": 55,
+            "clicks": 979,
+            "roas": 1.5523227956250534,
+            "cpc": 466.8610827374872,
+            "clickPurchaseRate": 0.056179775280898875,
+            "revenuePerPurchase": 12900
+          },
+          "purchaseCohort": {
+            "paidSessions": 0,
+            "orders": null,
+            "discountedProductRevenue": null,
+            "confirmedReversals": null,
+            "netProductRevenue": null,
+            "netRoas": null,
+            "sessionPurchaseRate": null,
+            "funnel": {
+              "view_item": 0,
+              "add_to_cart": 0,
+              "begin_checkout": 0,
+              "purchase": null
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "D008-T13-00015",
+              "D008-T13-00016",
+              "D008-T13-00017",
+              "D008-T13-00018",
+              "D008-T13-00019",
+              "D008-T13-00020",
+              "D008-T13-00021",
+              "D008-T13-00022",
+              "D008-T13-00023",
+              "D008-T13-00024",
+              "D008-T13-00025",
+              "D008-T13-00026",
+              "D008-T13-00027",
+              "D008-T13-00028"
+            ],
+            "orderRecordIds": [],
+            "adjustmentRecordIds": []
+          }
+        },
+        {
+          "channel": "social",
+          "campaignId": "D008-Campaign-KR-P1A-social",
+          "reported": {
+            "spend": "403895.00",
+            "attributedRevenue": "490200.00",
+            "purchases": 38,
+            "clicks": 1220,
+            "roas": 1.2136817737283205,
+            "cpc": 331.0614754098361,
+            "clickPurchaseRate": 0.03114754098360656,
+            "revenuePerPurchase": 12900
+          },
+          "purchaseCohort": {
+            "paidSessions": 0,
+            "orders": null,
+            "discountedProductRevenue": null,
+            "confirmedReversals": null,
+            "netProductRevenue": null,
+            "netRoas": null,
+            "sessionPurchaseRate": null,
+            "funnel": {
+              "view_item": 0,
+              "add_to_cart": 0,
+              "begin_checkout": 0,
+              "purchase": null
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "D008-T13-00067",
+              "D008-T13-00068",
+              "D008-T13-00069",
+              "D008-T13-00070",
+              "D008-T13-00071",
+              "D008-T13-00072",
+              "D008-T13-00073",
+              "D008-T13-00074",
+              "D008-T13-00075",
+              "D008-T13-00076",
+              "D008-T13-00077",
+              "D008-T13-00078",
+              "D008-T13-00079",
+              "D008-T13-00080"
+            ],
+            "orderRecordIds": [],
+            "adjustmentRecordIds": []
+          }
+        }
+      ],
+      "total": {
+        "spend": "860952.00",
+        "reportedRevenue": "1199700.00",
+        "reportedRoas": 1.3934574749811837,
+        "netProductRevenue": null,
+        "netRoas": null
+      }
+    }
+  ],
+  "changes": [
+    {
+      "campaignId": "D008-Campaign-KR-P1A-search",
+      "channel": "search",
+      "classification": "calculated_change_not_cause",
+      "reportedRoasChange": -0.03224612981611252,
+      "cpcFactor": 0.95901474572374,
+      "clickPurchaseRateFactor": 0.9394987035436474,
+      "revenuePerPurchaseFactor": 1,
+      "spendShareBefore": 0.5421493936798449,
+      "spendShareAfter": 0.5308739627760897
+    },
+    {
+      "campaignId": "D008-Campaign-KR-P1A-social",
+      "channel": "social",
+      "classification": "calculated_change_not_cause",
+      "reportedRoasChange": -0.14304007479680658,
+      "cpcFactor": 1.0615931003931542,
+      "clickPurchaseRateFactor": 0.9496686431810255,
+      "revenuePerPurchaseFactor": 1,
+      "spendShareBefore": 0.45785060632015506,
+      "spendShareAfter": 0.4691260372239103
+    }
+  ],
+  "gaps": [
+    "product_revenue_definition_unconfirmed",
+    "financial_event_deduplication_unconfirmed",
+    "order_acquisition_missing",
+    "purchase_session_missing"
+  ],
+  "evidence": [
+    {
+      "recordId": "D008-T24-00001",
+      "text": "출근 전 사용해 보니 가격이 부담스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-03T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00002",
+      "text": "두 주 동안 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-04T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00003",
+      "text": "운동 후 사용했을 때 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-05T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00004",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-06T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00005",
+      "text": "출근 전 사용해 보니 거품이 부족하게 느껴졌습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-07T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00006",
+      "text": "두 주 동안 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정감이 산뜻했습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-08T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00007",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-09T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00008",
+      "text": "가족과 함께 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-10T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00009",
+      "text": "출근 전 사용해 보니 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-11T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00010",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-12T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00011",
+      "text": "운동 후 사용했을 때 거품이 풍성하게 났습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-13T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00012",
+      "text": "가족과 함께 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정감이 산뜻했습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-14T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00013",
+      "text": "출근 전 사용해 보니 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-15T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00014",
+      "text": "두 주 동안 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-16T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00015",
+      "text": "운동 후 사용했을 때 향이 제 취향과 달랐습니다. 거품이 부족하게 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-17T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00016",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-18T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00017",
+      "text": "출근 전 사용해 보니 거품이 풍성하게 났습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-19T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00018",
+      "text": "두 주 동안 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-20T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00019",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-21T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00020",
+      "text": "가족과 함께 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-22T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00021",
+      "text": "출근 전 사용해 보니 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-23T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00022",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-24T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00023",
+      "text": "운동 후 사용했을 때 거품이 부족하게 느껴졌습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-25T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00024",
+      "text": "가족과 함께 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-26T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00025",
+      "text": "출근 전 사용해 보니 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-27T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00026",
+      "text": "두 주 동안 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-28T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00027",
+      "text": "운동 후 사용했을 때 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-29T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00028",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-30T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00029",
+      "text": "출근 전 사용해 보니 거품이 풍성하게 났습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-03T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00030",
+      "text": "두 주 동안 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-04T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00031",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-05T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00032",
+      "text": "가족과 함께 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-06T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00033",
+      "text": "출근 전 사용해 보니 향이 제 취향과 달랐습니다. 거품이 부족하게 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-07T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00034",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-08T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00035",
+      "text": "운동 후 사용했을 때 거품이 부족하게 느껴졌습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-09T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00036",
+      "text": "가족과 함께 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정감이 산뜻했습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-10T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00037",
+      "text": "출근 전 사용해 보니 가격에 비해 만족스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-11T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00038",
+      "text": "두 주 동안 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-12T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00039",
+      "text": "운동 후 사용했을 때 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-13T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00040",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-14T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00041",
+      "text": "출근 전 사용해 보니 거품이 풍성하게 났습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-15T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00042",
+      "text": "두 주 동안 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-16T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00043",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-17T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00044",
+      "text": "가족과 함께 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-18T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00045",
+      "text": "출근 전 사용해 보니 향이 은은해서 좋았습니다. 거품이 부족하게 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-19T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00046",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-20T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00047",
+      "text": "운동 후 사용했을 때 거품이 부족하게 느껴졌습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-21T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00048",
+      "text": "가족과 함께 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정감이 산뜻했습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-22T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00049",
+      "text": "출근 전 사용해 보니 가격이 부담스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-23T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00050",
+      "text": "두 주 동안 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-24T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00051",
+      "text": "운동 후 사용했을 때 향이 은은해서 좋았습니다. 거품이 부족하게 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-25T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00052",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-26T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00053",
+      "text": "출근 전 사용해 보니 거품이 풍성하게 났습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-27T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00054",
+      "text": "두 주 동안 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-28T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00055",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-29T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00056",
+      "text": "가족과 함께 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-30T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00057",
+      "text": "출근 전 사용해 보니 향이 제 취향과 달랐습니다. 거품이 부족하게 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-03T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00058",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-04T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00059",
+      "text": "운동 후 사용했을 때 거품이 부족하게 느껴졌습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-05T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00060",
+      "text": "가족과 함께 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-06T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00061",
+      "text": "출근 전 사용해 보니 가격에 비해 만족스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-07T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00062",
+      "text": "두 주 동안 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-08T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00063",
+      "text": "운동 후 사용했을 때 향이 은은해서 좋았습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-09T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00064",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-10T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00065",
+      "text": "출근 전 사용해 보니 거품이 풍성하게 났습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-11T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00066",
+      "text": "두 주 동안 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-12T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00067",
+      "text": "운동 후 사용했을 때 가격에 비해 만족스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-13T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00068",
+      "text": "가족과 함께 사용해 보니 세정 후 건조함이 느껴졌습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-14T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00069",
+      "text": "출근 전 사용해 보니 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-15T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00070",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 뻣뻣함이 남았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-16T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00071",
+      "text": "운동 후 사용했을 때 거품이 풍성하게 났습니다. 가격이 부담스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-17T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00072",
+      "text": "가족과 함께 사용해 보니 사용 후 머릿결이 부드러웠습니다. 세정 후 건조함이 느껴졌습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-18T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00073",
+      "text": "출근 전 사용해 보니 가격이 부담스러웠습니다. 향이 제 취향과 달랐습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-19T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00074",
+      "text": "두 주 동안 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-20T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00075",
+      "text": "운동 후 사용했을 때 향이 제 취향과 달랐습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-21T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00076",
+      "text": "가족과 함께 사용해 보니 용기에서 꺼내 쓰기 편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-22T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00077",
+      "text": "출근 전 사용해 보니 거품이 부족하게 느껴졌습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-23T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00078",
+      "text": "두 주 동안 사용해 보니 사용 후 뻣뻣함이 남았습니다. 세정감이 산뜻했습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-24T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00079",
+      "text": "운동 후 사용했을 때 가격이 부담스러웠습니다. 향이 은은해서 좋았습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-25T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00080",
+      "text": "가족과 함께 사용해 보니 세정감이 산뜻했습니다. 용기에서 꺼내 쓰기 불편했습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-26T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00081",
+      "text": "출근 전 사용해 보니 향이 은은해서 좋았습니다. 거품이 풍성하게 났습니다. 제 사용 환경에서 느낀 점입니다.",
+      "at": "2026-08-27T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00082",
+      "text": "두 주 동안 사용해 보니 용기에서 꺼내 쓰기 불편했습니다. 사용 후 머릿결이 부드러웠습니다. 다음 구매 때도 비교해 보려 합니다.",
+      "at": "2026-08-28T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T24-00083",
+      "text": "운동 후 사용했을 때 거품이 풍성하게 났습니다. 가격에 비해 만족스러웠습니다. 사용량을 조절해서 써 보려고 합니다.",
+      "at": "2026-08-29T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00001",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-03T10:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00002",
+      "text": "교환 가능한 조건과 접수 방법을 알고 싶습니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-04T11:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00003",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 확인 후 안내 부탁드립니다.",
+      "at": "2026-08-05T12:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00004",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-06T13:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00005",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-07T14:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00006",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 확인 후 안내 부탁드립니다.",
+      "at": "2026-08-08T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00007",
+      "text": "한 번에 어느 정도를 사용하면 좋을지 안내받고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-09T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00008",
+      "text": "교환 가능한 조건과 접수 방법을 알고 싶습니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-10T10:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00009",
+      "text": "표시된 할인과 혜택의 적용 조건을 확인하고 싶습니다. 확인 후 안내 부탁드립니다.",
+      "at": "2026-08-11T11:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00010",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-12T12:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00011",
+      "text": "한 번에 어느 정도를 사용하면 좋을지 안내받고 싶습니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-13T13:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00012",
+      "text": "교환 가능한 조건과 접수 방법을 알고 싶습니다. 확인 후 안내 부탁드립니다.",
+      "at": "2026-08-14T14:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00013",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-15T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00014",
+      "text": "사용 후 건조함이 느껴져 권장 사용 방법을 문의합니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-16T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00015",
+      "text": "사용 후 건조함이 느껴져 권장 사용 방법을 문의합니다. 확인 후 안내 부탁드립니다.",
+      "at": "2026-08-17T10:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00016",
+      "text": "배송 예정일과 배송 상태를 확인하고 싶습니다. 선택한 제품은 P1A입니다.",
+      "at": "2026-08-18T11:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "D008-T26-00017",
+      "text": "한 번에 어느 정도를 사용하면 좋을지 안내받고 싶습니다. 처음 이용해 보아 문의드립니다.",
+      "at": "2026-08-19T12:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    }
+  ],
+  "actionDrafts": [
+    {
+      "target": "광고와 상품 페이지의 배송 안내",
+      "change": "배송 약속 문구와 실제 안내를 대조하고 출고 예정일, 배송 소요 조건을 일치시키는 수정안 작성",
+      "evidenceIds": [
+        "D008-T26-00001",
+        "D008-T26-00003",
+        "D008-T26-00004",
+        "D008-T26-00005",
+        "D008-T26-00006",
+        "D008-T26-00010",
+        "D008-T26-00013",
+        "D008-T26-00016"
+      ],
+      "status": "candidate_requires_content_review"
+    }
+  ],
+  "budgetReview": [
+    {
+      "campaignId": "D008-Campaign-KR-P1A-search",
+      "channel": "search",
+      "decision": "hold_for_review",
+      "amount": null,
+      "changeRatio": null,
+      "required": [
+        "target_roas",
+        "budget_limit",
+        "operating_constraints"
+      ],
+      "reason": "목표와 운영 제약 확인 전 예산 변경을 확정하지 않음"
+    },
+    {
+      "campaignId": "D008-Campaign-KR-P1A-social",
+      "channel": "social",
+      "decision": "hold_for_review",
+      "amount": null,
+      "changeRatio": null,
+      "required": [
+        "target_roas",
+        "budget_limit",
+        "operating_constraints"
+      ],
+      "reason": "목표와 운영 제약 확인 전 예산 변경을 확정하지 않음"
+    }
+  ],
+  "limitations": [
+    "synthetic_not_marketing_effect",
+    "arithmetic_decomposition_not_causality",
+    "feedback_not_causal_proof",
+    "paid_session_sample_not_all_site_traffic",
+    "customer_mix_unmeasured",
+    "refunds_as_of_cutoff_not_final_forever",
+    "workflow_usefulness_not_yet_user_validated"
+  ],
+  "dataHash": "56da2cdac07ed56062c38d225c6406a2f4a494fdbea73aed35dd2b95260fc415"
+}

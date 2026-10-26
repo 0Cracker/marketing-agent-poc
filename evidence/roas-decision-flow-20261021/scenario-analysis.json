@@ -1,0 +1,1033 @@
+{
+  "scenarioId": "R001-roas-decline",
+  "productId": "P1A",
+  "currency": "KRW",
+  "asOf": "2026-09-15T00:00:00+09:00",
+  "mode": "synthetic_workflow",
+  "status": "review_ready",
+  "periods": [
+    {
+      "period": {
+        "start": "2026-08-03",
+        "end": "2026-08-17"
+      },
+      "channels": [
+        {
+          "channel": "search",
+          "campaignId": "R001-Campaign-search",
+          "reported": {
+            "spend": "269630.00",
+            "attributedRevenue": "776500.00",
+            "purchases": 42,
+            "clicks": 474,
+            "roas": 2.879872417757668,
+            "cpc": 568.8396624472574,
+            "clickPurchaseRate": 0.08860759493670886,
+            "revenuePerPurchase": 18488.095238095237
+          },
+          "purchaseCohort": {
+            "paidSessions": 280,
+            "orders": 42,
+            "discountedProductRevenue": "776500.00",
+            "confirmedReversals": "74000.00",
+            "netProductRevenue": "702500.00",
+            "netRoas": 2.605422245299114,
+            "sessionPurchaseRate": 0.15,
+            "funnel": {
+              "view_item": 280,
+              "add_to_cart": 112,
+              "begin_checkout": 70,
+              "purchase": 42
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "R001-T13-00001",
+              "R001-T13-00003",
+              "R001-T13-00005",
+              "R001-T13-00007",
+              "R001-T13-00009",
+              "R001-T13-00011",
+              "R001-T13-00013",
+              "R001-T13-00015",
+              "R001-T13-00017",
+              "R001-T13-00019",
+              "R001-T13-00021",
+              "R001-T13-00023",
+              "R001-T13-00025",
+              "R001-T13-00027"
+            ],
+            "orderRecordIds": [
+              "R001-T19-00001",
+              "R001-T19-00002",
+              "R001-T19-00005",
+              "R001-T19-00006",
+              "R001-T19-00007",
+              "R001-T19-00011",
+              "R001-T19-00012",
+              "R001-T19-00013",
+              "R001-T19-00014",
+              "R001-T19-00019",
+              "R001-T19-00020",
+              "R001-T19-00023",
+              "R001-T19-00024",
+              "R001-T19-00025",
+              "R001-T19-00026",
+              "R001-T19-00031",
+              "R001-T19-00032",
+              "R001-T19-00033",
+              "R001-T19-00037",
+              "R001-T19-00038",
+              "R001-T19-00039",
+              "R001-T19-00043",
+              "R001-T19-00044",
+              "R001-T19-00047",
+              "R001-T19-00048",
+              "R001-T19-00049",
+              "R001-T19-00053",
+              "R001-T19-00054",
+              "R001-T19-00055",
+              "R001-T19-00056",
+              "R001-T19-00061",
+              "R001-T19-00062",
+              "R001-T19-00065",
+              "R001-T19-00066",
+              "R001-T19-00067",
+              "R001-T19-00068",
+              "R001-T19-00073",
+              "R001-T19-00074",
+              "R001-T19-00075",
+              "R001-T19-00079",
+              "R001-T19-00080",
+              "R001-T19-00081"
+            ],
+            "adjustmentRecordIds": [
+              "R001-T20-00001",
+              "R001-T20-00002",
+              "R001-T20-00003",
+              "R001-T20-00009",
+              "R001-T20-00013"
+            ]
+          }
+        },
+        {
+          "channel": "social",
+          "campaignId": "R001-Campaign-social",
+          "reported": {
+            "spend": "199150.00",
+            "attributedRevenue": "776500.00",
+            "purchases": 42,
+            "clicks": 476,
+            "roas": 3.8990710519708762,
+            "cpc": 418.38235294117646,
+            "clickPurchaseRate": 0.08823529411764706,
+            "revenuePerPurchase": 18488.095238095237
+          },
+          "purchaseCohort": {
+            "paidSessions": 280,
+            "orders": 42,
+            "discountedProductRevenue": "776500.00",
+            "confirmedReversals": "9000.00",
+            "netProductRevenue": "767500.00",
+            "netRoas": 3.853878985689179,
+            "sessionPurchaseRate": 0.15,
+            "funnel": {
+              "view_item": 280,
+              "add_to_cart": 112,
+              "begin_checkout": 70,
+              "purchase": 42
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "R001-T13-00002",
+              "R001-T13-00004",
+              "R001-T13-00006",
+              "R001-T13-00008",
+              "R001-T13-00010",
+              "R001-T13-00012",
+              "R001-T13-00014",
+              "R001-T13-00016",
+              "R001-T13-00018",
+              "R001-T13-00020",
+              "R001-T13-00022",
+              "R001-T13-00024",
+              "R001-T13-00026",
+              "R001-T13-00028"
+            ],
+            "orderRecordIds": [
+              "R001-T19-00003",
+              "R001-T19-00004",
+              "R001-T19-00008",
+              "R001-T19-00009",
+              "R001-T19-00010",
+              "R001-T19-00015",
+              "R001-T19-00016",
+              "R001-T19-00017",
+              "R001-T19-00018",
+              "R001-T19-00021",
+              "R001-T19-00022",
+              "R001-T19-00027",
+              "R001-T19-00028",
+              "R001-T19-00029",
+              "R001-T19-00030",
+              "R001-T19-00034",
+              "R001-T19-00035",
+              "R001-T19-00036",
+              "R001-T19-00040",
+              "R001-T19-00041",
+              "R001-T19-00042",
+              "R001-T19-00045",
+              "R001-T19-00046",
+              "R001-T19-00050",
+              "R001-T19-00051",
+              "R001-T19-00052",
+              "R001-T19-00057",
+              "R001-T19-00058",
+              "R001-T19-00059",
+              "R001-T19-00060",
+              "R001-T19-00063",
+              "R001-T19-00064",
+              "R001-T19-00069",
+              "R001-T19-00070",
+              "R001-T19-00071",
+              "R001-T19-00072",
+              "R001-T19-00076",
+              "R001-T19-00077",
+              "R001-T19-00078",
+              "R001-T19-00082",
+              "R001-T19-00083",
+              "R001-T19-00084"
+            ],
+            "adjustmentRecordIds": [
+              "R001-T20-00005",
+              "R001-T20-00007",
+              "R001-T20-00008",
+              "R001-T20-00015"
+            ]
+          }
+        }
+      ],
+      "total": {
+        "spend": "468780.00",
+        "reportedRevenue": "1553000.00",
+        "reportedRoas": 3.3128546439694526,
+        "netProductRevenue": "1470000.00",
+        "netRoas": 3.135799308844234
+      }
+    },
+    {
+      "period": {
+        "start": "2026-08-17",
+        "end": "2026-08-31"
+      },
+      "channels": [
+        {
+          "channel": "search",
+          "campaignId": "R001-Campaign-search",
+          "reported": {
+            "spend": "295860.00",
+            "attributedRevenue": "504000.00",
+            "purchases": 28,
+            "clicks": 478,
+            "roas": 1.7035084161427703,
+            "cpc": 618.9539748953974,
+            "clickPurchaseRate": 0.058577405857740586,
+            "revenuePerPurchase": 18000
+          },
+          "purchaseCohort": {
+            "paidSessions": 280,
+            "orders": 28,
+            "discountedProductRevenue": "504000.00",
+            "confirmedReversals": "71500.00",
+            "netProductRevenue": "432500.00",
+            "netRoas": 1.4618400594875955,
+            "sessionPurchaseRate": 0.1,
+            "funnel": {
+              "view_item": 280,
+              "add_to_cart": 112,
+              "begin_checkout": 70,
+              "purchase": 28
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "R001-T13-00029",
+              "R001-T13-00031",
+              "R001-T13-00033",
+              "R001-T13-00035",
+              "R001-T13-00037",
+              "R001-T13-00039",
+              "R001-T13-00041",
+              "R001-T13-00043",
+              "R001-T13-00045",
+              "R001-T13-00047",
+              "R001-T13-00049",
+              "R001-T13-00051",
+              "R001-T13-00053",
+              "R001-T13-00055"
+            ],
+            "orderRecordIds": [
+              "R001-T19-00085",
+              "R001-T19-00086",
+              "R001-T19-00087",
+              "R001-T19-00089",
+              "R001-T19-00090",
+              "R001-T19-00091",
+              "R001-T19-00094",
+              "R001-T19-00095",
+              "R001-T19-00096",
+              "R001-T19-00097",
+              "R001-T19-00100",
+              "R001-T19-00101",
+              "R001-T19-00103",
+              "R001-T19-00104",
+              "R001-T19-00106",
+              "R001-T19-00107",
+              "R001-T19-00108",
+              "R001-T19-00110",
+              "R001-T19-00111",
+              "R001-T19-00112",
+              "R001-T19-00115",
+              "R001-T19-00116",
+              "R001-T19-00117",
+              "R001-T19-00118",
+              "R001-T19-00121",
+              "R001-T19-00122",
+              "R001-T19-00124",
+              "R001-T19-00125"
+            ],
+            "adjustmentRecordIds": [
+              "R001-T20-00004",
+              "R001-T20-00006",
+              "R001-T20-00010",
+              "R001-T20-00011",
+              "R001-T20-00012",
+              "R001-T20-00014",
+              "R001-T20-00016"
+            ]
+          }
+        },
+        {
+          "channel": "social",
+          "campaignId": "R001-Campaign-social",
+          "reported": {
+            "spend": "225180.00",
+            "attributedRevenue": "252000.00",
+            "purchases": 14,
+            "clicks": 480,
+            "roas": 1.1191047162270185,
+            "cpc": 469.125,
+            "clickPurchaseRate": 0.029166666666666667,
+            "revenuePerPurchase": 18000
+          },
+          "purchaseCohort": {
+            "paidSessions": 280,
+            "orders": 14,
+            "discountedProductRevenue": "252000.00",
+            "confirmedReversals": "0.00",
+            "netProductRevenue": "252000.00",
+            "netRoas": 1.1191047162270185,
+            "sessionPurchaseRate": 0.05,
+            "funnel": {
+              "view_item": 280,
+              "add_to_cart": 112,
+              "begin_checkout": 70,
+              "purchase": 14
+            }
+          },
+          "evidence": {
+            "adRecordIds": [
+              "R001-T13-00030",
+              "R001-T13-00032",
+              "R001-T13-00034",
+              "R001-T13-00036",
+              "R001-T13-00038",
+              "R001-T13-00040",
+              "R001-T13-00042",
+              "R001-T13-00044",
+              "R001-T13-00046",
+              "R001-T13-00048",
+              "R001-T13-00050",
+              "R001-T13-00052",
+              "R001-T13-00054",
+              "R001-T13-00056"
+            ],
+            "orderRecordIds": [
+              "R001-T19-00088",
+              "R001-T19-00092",
+              "R001-T19-00093",
+              "R001-T19-00098",
+              "R001-T19-00099",
+              "R001-T19-00102",
+              "R001-T19-00105",
+              "R001-T19-00109",
+              "R001-T19-00113",
+              "R001-T19-00114",
+              "R001-T19-00119",
+              "R001-T19-00120",
+              "R001-T19-00123",
+              "R001-T19-00126"
+            ],
+            "adjustmentRecordIds": []
+          }
+        }
+      ],
+      "total": {
+        "spend": "521040.00",
+        "reportedRevenue": "756000.00",
+        "reportedRoas": 1.450944265315523,
+        "netProductRevenue": "684500.00",
+        "netRoas": 1.3137187164133273
+      }
+    }
+  ],
+  "changes": [
+    {
+      "campaignId": "R001-Campaign-search",
+      "channel": "search",
+      "classification": "calculated_change_not_cause",
+      "reportedRoasChange": -1.1763640016148975,
+      "cpcFactor": 1.0880991881482713,
+      "clickPurchaseRateFactor": 0.6610878661087866,
+      "revenuePerPurchaseFactor": 0.9735994848679975,
+      "spendShareBefore": 0.5751738555399121,
+      "spendShareAfter": 0.5678258866881621
+    },
+    {
+      "campaignId": "R001-Campaign-social",
+      "channel": "social",
+      "classification": "calculated_change_not_cause",
+      "reportedRoasChange": -2.7799663357438575,
+      "cpcFactor": 1.1212829525483303,
+      "clickPurchaseRateFactor": 0.33055555555555555,
+      "revenuePerPurchaseFactor": 0.9735994848679975,
+      "spendShareBefore": 0.4248261444600879,
+      "spendShareAfter": 0.43217411331183786
+    }
+  ],
+  "gaps": [],
+  "evidence": [
+    {
+      "recordId": "R001-T24-00001",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-03T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00002",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-04T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00010"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00003",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-05T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00018"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00004",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-06T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00022"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00005",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-07T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00006",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-08T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00036"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00007",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-09T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00042"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00008",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-10T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00046"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00009",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-11T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00010",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-12T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00060"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00011",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-13T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00064"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00012",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-14T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00072"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00013",
+      "text": "용량 안내를 보고 구매했습니다. 사용 방법 설명이 도움이 됐습니다.",
+      "at": "2026-08-15T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00014",
+      "text": "향의 강도가 예상과 달랐습니다. 다음 구매 전 비교해 보겠습니다.",
+      "at": "2026-08-16T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00084"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00015",
+      "text": "제품 사용감은 만족했습니다. 안내된 사용 방법대로 사용했습니다.",
+      "at": "2026-08-17T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00085"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00016",
+      "text": "출고 예정일을 찾기 어려웠고 배송 안내를 더 자세히 보고 싶었습니다.",
+      "at": "2026-08-18T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00088"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00017",
+      "text": "결제 단계에서 배송비를 알게 되어 추가 비용 안내가 아쉬웠습니다.",
+      "at": "2026-08-19T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00018",
+      "text": "제품 사용감은 만족했습니다. 안내된 사용 방법대로 사용했습니다.",
+      "at": "2026-08-20T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00094"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00019",
+      "text": "출고 예정일을 찾기 어려웠고 배송 안내를 더 자세히 보고 싶었습니다.",
+      "at": "2026-08-21T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00099"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00020",
+      "text": "결제 단계에서 배송비를 알게 되어 추가 비용 안내가 아쉬웠습니다.",
+      "at": "2026-08-22T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00102"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00021",
+      "text": "제품 사용감은 만족했습니다. 안내된 사용 방법대로 사용했습니다.",
+      "at": "2026-08-23T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00022",
+      "text": "출고 예정일을 찾기 어려웠고 배송 안내를 더 자세히 보고 싶었습니다.",
+      "at": "2026-08-24T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00106"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00023",
+      "text": "결제 단계에서 배송비를 알게 되어 추가 비용 안내가 아쉬웠습니다.",
+      "at": "2026-08-25T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00109"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00024",
+      "text": "제품 사용감은 만족했습니다. 안내된 사용 방법대로 사용했습니다.",
+      "at": "2026-08-26T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00114"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00025",
+      "text": "출고 예정일을 찾기 어려웠고 배송 안내를 더 자세히 보고 싶었습니다.",
+      "at": "2026-08-27T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00026",
+      "text": "결제 단계에서 배송비를 알게 되어 추가 비용 안내가 아쉬웠습니다.",
+      "at": "2026-08-28T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00120"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00027",
+      "text": "제품 사용감은 만족했습니다. 안내된 사용 방법대로 사용했습니다.",
+      "at": "2026-08-29T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00123"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T24-00028",
+      "text": "출고 예정일을 찾기 어려웠고 배송 안내를 더 자세히 보고 싶었습니다.",
+      "at": "2026-08-30T16:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [
+        "R001-T19-00126"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00001",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-03T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00002",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-04T15:00:00+09:00",
+      "orderRef": "R001-Order-9",
+      "relatedRecordIds": [
+        "R001-T19-00010"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00003",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-05T15:00:00+09:00",
+      "orderRef": "R001-Order-17",
+      "relatedRecordIds": [
+        "R001-T19-00018"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00004",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-06T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00005",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-07T15:00:00+09:00",
+      "orderRef": "R001-Order-29",
+      "relatedRecordIds": [
+        "R001-T19-00030"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00006",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-08T15:00:00+09:00",
+      "orderRef": "R001-Order-35",
+      "relatedRecordIds": [
+        "R001-T19-00036"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00007",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-09T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00008",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-10T15:00:00+09:00",
+      "orderRef": "R001-Order-45",
+      "relatedRecordIds": [
+        "R001-T19-00046"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00009",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-11T15:00:00+09:00",
+      "orderRef": "R001-Order-51",
+      "relatedRecordIds": [
+        "R001-T19-00052"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00010",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-12T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00011",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-13T15:00:00+09:00",
+      "orderRef": "R001-Order-63",
+      "relatedRecordIds": [
+        "R001-T19-00064"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00012",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-14T15:00:00+09:00",
+      "orderRef": "R001-Order-71",
+      "relatedRecordIds": [
+        "R001-T19-00072"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00013",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-15T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00014",
+      "text": "상품 페이지의 사용 방법과 1회 권장 사용량을 확인하고 싶습니다.",
+      "at": "2026-08-16T15:00:00+09:00",
+      "orderRef": "R001-Order-83",
+      "relatedRecordIds": [
+        "R001-T19-00084"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00015",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-17T15:00:00+09:00",
+      "orderRef": "R001-Order-84",
+      "relatedRecordIds": [
+        "R001-T19-00085"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00016",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-18T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00017",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-19T15:00:00+09:00",
+      "orderRef": "R001-Order-92",
+      "relatedRecordIds": [
+        "R001-T19-00093"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00018",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-20T15:00:00+09:00",
+      "orderRef": "R001-Order-93",
+      "relatedRecordIds": [
+        "R001-T19-00094"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00019",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-21T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00020",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-22T15:00:00+09:00",
+      "orderRef": "R001-Order-101",
+      "relatedRecordIds": [
+        "R001-T19-00102"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00021",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-23T15:00:00+09:00",
+      "orderRef": "R001-Order-104",
+      "relatedRecordIds": [
+        "R001-T19-00105"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00022",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-24T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00023",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-25T15:00:00+09:00",
+      "orderRef": "R001-Order-108",
+      "relatedRecordIds": [
+        "R001-T19-00109"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00024",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-26T15:00:00+09:00",
+      "orderRef": "R001-Order-113",
+      "relatedRecordIds": [
+        "R001-T19-00114"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00025",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-27T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00026",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-28T15:00:00+09:00",
+      "orderRef": "R001-Order-119",
+      "relatedRecordIds": [
+        "R001-T19-00120"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00027",
+      "text": "배송비와 할인 조건을 결제 전에 한눈에 확인하고 싶습니다.",
+      "at": "2026-08-29T15:00:00+09:00",
+      "orderRef": "R001-Order-122",
+      "relatedRecordIds": [
+        "R001-T19-00123"
+      ],
+      "classification": "explanation_candidate_evidence"
+    },
+    {
+      "recordId": "R001-T26-00028",
+      "text": "출고 예정일과 배송 소요 조건을 결제 전에 확인하기 어려웠습니다.",
+      "at": "2026-08-30T15:00:00+09:00",
+      "orderRef": null,
+      "relatedRecordIds": [],
+      "classification": "explanation_candidate_evidence"
+    }
+  ],
+  "actionDrafts": [
+    {
+      "target": "광고와 상품 페이지의 배송 안내",
+      "change": "배송 약속 문구와 실제 안내를 대조하고 출고 예정일, 배송 소요 조건을 일치시키는 수정안 작성",
+      "evidenceIds": [
+        "R001-T24-00016",
+        "R001-T24-00017",
+        "R001-T24-00019",
+        "R001-T24-00020",
+        "R001-T24-00022",
+        "R001-T24-00023",
+        "R001-T24-00025",
+        "R001-T24-00026",
+        "R001-T24-00028",
+        "R001-T26-00015",
+        "R001-T26-00016",
+        "R001-T26-00017",
+        "R001-T26-00018",
+        "R001-T26-00019",
+        "R001-T26-00020",
+        "R001-T26-00021",
+        "R001-T26-00022",
+        "R001-T26-00023",
+        "R001-T26-00024",
+        "R001-T26-00025",
+        "R001-T26-00026",
+        "R001-T26-00027",
+        "R001-T26-00028"
+      ],
+      "status": "candidate_requires_content_review"
+    },
+    {
+      "target": "상품 페이지와 결제 시작 화면",
+      "change": "최종 결제 전 상품금액, 배송비, 할인 적용 조건을 확인할 수 있는 안내 수정안 작성",
+      "evidenceIds": [
+        "R001-T24-00017",
+        "R001-T24-00020",
+        "R001-T24-00023",
+        "R001-T24-00026",
+        "R001-T26-00015",
+        "R001-T26-00016",
+        "R001-T26-00017",
+        "R001-T26-00018",
+        "R001-T26-00019",
+        "R001-T26-00020",
+        "R001-T26-00021",
+        "R001-T26-00022",
+        "R001-T26-00023",
+        "R001-T26-00024",
+        "R001-T26-00025",
+        "R001-T26-00026",
+        "R001-T26-00027",
+        "R001-T26-00028"
+      ],
+      "status": "candidate_requires_content_review"
+    }
+  ],
+  "budgetReview": [
+    {
+      "campaignId": "R001-Campaign-search",
+      "channel": "search",
+      "decision": "hold_for_review",
+      "amount": null,
+      "changeRatio": null,
+      "required": [
+        "target_roas",
+        "budget_limit",
+        "operating_constraints"
+      ],
+      "reason": "목표와 운영 제약 확인 전 예산 변경을 확정하지 않음"
+    },
+    {
+      "campaignId": "R001-Campaign-social",
+      "channel": "social",
+      "decision": "hold_for_review",
+      "amount": null,
+      "changeRatio": null,
+      "required": [
+        "target_roas",
+        "budget_limit",
+        "operating_constraints"
+      ],
+      "reason": "목표와 운영 제약 확인 전 예산 변경을 확정하지 않음"
+    }
+  ],
+  "limitations": [
+    "synthetic_not_marketing_effect",
+    "arithmetic_decomposition_not_causality",
+    "feedback_not_causal_proof",
+    "paid_session_sample_not_all_site_traffic",
+    "customer_mix_unmeasured",
+    "refunds_as_of_cutoff_not_final_forever",
+    "workflow_usefulness_not_yet_user_validated"
+  ],
+  "dataHash": "f8a8bfd8cde6666f37f70d8b67a917cf3ec542c3715f0706e3e6d107661b760d"
+}

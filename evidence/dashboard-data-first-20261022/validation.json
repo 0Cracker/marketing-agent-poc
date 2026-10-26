@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-22",
+  "scope": "Replace guided review authoring UI with direct data dashboard",
+  "sourceRowsChanged": 0,
+  "dataHash": "4a58a7326fcd84b4d050ab2b2aea1cb7289c7d28bbb1deab1df2e378e5afadbb",
+  "removedFromDashboard": [
+    "review save/load",
+    "investigation summary and choice workflow",
+    "notes and rationale input",
+    "action and budget review forms",
+    "file export and review report generation"
+  ],
+  "previousSavedDataDeleted": false,
+  "dashboardAccessesSavedReviewStorage": false,
+  "tests": {
+    "pass": 67,
+    "log": "tests.txt"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "log": "types-final.txt"
+  },
+  "lint": {
+    "exitCode": 0,
+    "log": "lint-final.txt",
+    "advisory": "Existing Next pages directory advisory"
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "build-final.txt"
+  },
+  "browser": {
+    "verified": [
+      "Default data visible without prerequisite selection",
+      "No authoring UI in default DOM",
+      "Social PC filter updates KPIs, trend and tables immediately",
+      "Advertising metrics visible directly in advertising menu"
+    ],
+    "viewport": "974x816",
+    "url": "http://127.0.0.1:5173/workbench",
+    "actualMarketerEvaluation": false
+  },
+  "sourceChanges": "frontend/workbench/roas-workbench.tsx, roas-workbench.css; shared/roas-dashboard.mjs/.d.mts; tests/roas-dashboard.test.mjs",
+  "git": "Existing uncommitted feature preserved; no combined commit or release"
+}

@@ -21,7 +21,7 @@ marketing-agent-poc/
 └─ archive/        과거 스냅샷·백업 (Git 제외)
 ```
 
-별도 프로젝트 폴더·worktree는 사용하지 않는다. 외부 Python/Java 검증 도구는 기존 상대 경로 `../ontology-validation-tools/`에 보존한다. 이 폴더는 애플리케이션 작업본이 아니며 과거 검증 재현용 설치물이다.
+별도 프로젝트 폴더·worktree는 사용하지 않는다. 온톨로지용 Python/Java 검증 도구는 내부 `.tools/ontology-validation/`에 둔다. 앱 실행에는 필요하지 않으며 RDF/SHACL·HermiT·OOPS 검증에 사용한다. Git 추적에서는 제외한다. 과거 보고서의 이전 경로는 실행 당시 기록으로 보존한다.
 
 ## 실행·검증
 

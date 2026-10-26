@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-22",
+  "scope": "ROAS hierarchy and explicit period comparison, existing uncommitted checkout",
+  "checks": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js frontend/workbench/roas-workbench.tsx",
+      "exitCode": 0,
+      "advisory": "Existing Next pages path notice"
+    },
+    {
+      "command": "node node_modules/vite/bin/vite.js build",
+      "exitCode": 0,
+      "advisory": "Existing font runtime path notices"
+    },
+    {
+      "command": "node --experimental-strip-types --test tests/roas-dashboard.test.mjs tests/roas-diagnosis.test.mjs",
+      "exitCode": 0,
+      "passed": 10
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:5173/workbench",
+    "verified": [
+      "Primary ROAS separate from three supporting metrics",
+      "Explicit before and after dates and values",
+      "Percentage point change and relative percentage distinguished",
+      "Chart boundary and period backgrounds",
+      "Social desktop filter updates primary and supporting values"
+    ],
+    "finalScope": "overview, all channels, all devices"
+  },
+  "limitations": [
+    "Comparison remains the two provided 14-day periods",
+    "No field user study or full accessibility audit"
+  ]
+}

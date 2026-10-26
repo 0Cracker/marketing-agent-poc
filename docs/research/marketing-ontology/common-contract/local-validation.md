@@ -4,7 +4,7 @@ OOPS는 로컬 Java 도구로 설치하고 기존 Python 실행기에서 호출�
 
 ## 설치와 무결성
 
-공식 저장소 `oeg-upm/OOPS`의 커밋 `11572ea6b31cba29dd3f8a443e24311652f059de`를 사용한다. JDK 17.0.20.1+1과 Maven 3.9.11을 `ontology-validation-tools/logic/oops` 아래에 격리한다. 시스템 PATH·Java 전역 설정은 변경하지 않는다.
+공식 저장소 `oeg-upm/OOPS`의 커밋 `11572ea6b31cba29dd3f8a443e24311652f059de`를 사용한다. JDK 17.0.20.1+1과 Maven 3.9.11을 `.tools/ontology-validation/logic/oops` 아래에 격리한다. 시스템 PATH·Java 전역 설정은 변경하지 않는다.
 
 `setup-oops-local.py`는 명시적으로 실행하는 설치 명령이다. 공식 소스·JDK·Maven 아카이브 체크섬을 검증하고 Maven 의존성을 로컬 캐시에 준비한다. 원천·모델을 읽지 않는다. 설치 다운로드에는 네트워크가 필요하며 모델 검사와 분리한다. Apache-2.0 원본 고지·의존성 라이선스는 도구 폴더에 보존한다.
 
@@ -30,16 +30,16 @@ Java 어댑터는 모델을 읽기 전에 SocketPermission·연결·수신을 �
 $ontologyPython = 'C:\Users\박시형\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 
 # 최초 설치 / 소스·어댑터 변경 후 재설치. 모델은 읽지 않는다.
-& $ontologyPython docs/research/marketing-ontology/common-contract/setup-oops-local.py --tools ../ontology-validation-tools
+& $ontologyPython docs/research/marketing-ontology/common-contract/setup-oops-local.py --tools .tools/ontology-validation
 
 # 빠른 사전 변환·독립 검산·메모리 RDF 재조회
-node docs/research/marketing-ontology/common-contract/check-d005-dictionary.mjs --python $ontologyPython --tools ../ontology-validation-tools --output docs/research/marketing-ontology/common-contract/runs/dictionary-new-run.json
+node docs/research/marketing-ontology/common-contract/check-d005-dictionary.mjs --python $ontologyPython --tools .tools/ontology-validation --output docs/research/marketing-ontology/common-contract/runs/dictionary-new-run.json
 
 # 모델 정의만 로컬 HermiT·OOPS 실행
-& $ontologyPython docs/research/marketing-ontology/common-contract/check-logic.py --tools ../ontology-validation-tools --oops-local --output docs/research/marketing-ontology/common-contract/runs/logic-new-run.json
+& $ontologyPython docs/research/marketing-ontology/common-contract/check-logic.py --tools .tools/ontology-validation --oops-local --output docs/research/marketing-ontology/common-contract/runs/logic-new-run.json
 
 # D004·D005·사전·모델·52시험 전체 검증
-& $ontologyPython docs/research/marketing-ontology/common-contract/run-system-cycle.py --tools ../ontology-validation-tools --question-approval-record docs/research/marketing-ontology/common-contract/question-approval-20261015.json --additional-approval-record docs/research/marketing-ontology/common-contract/d006-approval-20261016.json --oops-local --output docs/research/marketing-ontology/common-contract/runs/system-new-run.json
+& $ontologyPython docs/research/marketing-ontology/common-contract/run-system-cycle.py --tools .tools/ontology-validation --question-approval-record docs/research/marketing-ontology/common-contract/question-approval-20261015.json --additional-approval-record docs/research/marketing-ontology/common-contract/d006-approval-20261016.json --oops-local --output docs/research/marketing-ontology/common-contract/runs/system-new-run.json
 ```
 
 `--oops-artifact-lock`으로 별도 설치 잠금 파일을 지정할 수 있다. `--oops-local`을 생략하면 OOPS는 미실행이며 전체 완료로 판정하지 않는다. 과거 `--oops`/`--oops-approval-record` 외부 전송 옵션은 지원하지 않는다.
@@ -72,7 +72,7 @@ node docs/research/marketing-ontology/common-contract/check-d005-dictionary.mjs 
 
 ```powershell
 $ontologyPython = 'C:\Users\박시형\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-& $ontologyPython docs/research/marketing-ontology/common-contract/run-system-cycle.py --tools ../ontology-validation-tools --completion --output docs/research/marketing-ontology/common-contract/runs/completion-new-run.json
+& $ontologyPython docs/research/marketing-ontology/common-contract/run-system-cycle.py --tools .tools/ontology-validation --completion --output docs/research/marketing-ontology/common-contract/runs/completion-new-run.json
 ```
 
 `--completion`은 보완·위임 검토·OOPS 검토·기존 질문 승인 경로와 로컬 모델 검사를 함께 설정한다. CLI에 명시한 개별 경로는 유지한다. 현재 실행기는 기존 질문 protocol, 보완 protocol, D004, D005, 공통 데이터 명세, 모델, 질문의7게이트를 요구한다. 보완 protocol은345개 필드 inventory·불완전/위조 검토 거부·가용시각 직전/정각을 포함한다.
@@ -90,5 +90,5 @@ $ontologyPython = 'C:\Users\박시형\.cache\codex-runtimes\codex-primary-runtim
 검토 기록의 위조·누락 거부는 다음처럼 재검사한다. 이 명령은 실제 스캔 결과를 재생하는 protocol 시험이며 Java 스캔 자체는 위 전체/모델 명령으로 실행한다.
 
 ```powershell
-& $ontologyPython docs/research/marketing-ontology/common-contract/check-model-review-protocol.py --tools ../ontology-validation-tools --scan-report docs/research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3-logic.json --output docs/research/marketing-ontology/common-contract/runs/model-review-protocol-new.json
+& $ontologyPython docs/research/marketing-ontology/common-contract/check-model-review-protocol.py --tools .tools/ontology-validation --scan-report docs/research/marketing-ontology/common-contract/runs/2026-10-16-completion-system-3-logic.json --output docs/research/marketing-ontology/common-contract/runs/model-review-protocol-new.json
 ```

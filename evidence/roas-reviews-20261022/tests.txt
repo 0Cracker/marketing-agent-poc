@@ -1,0 +1,14 @@
+✔ draft JSON round trip and persisted reload retain content without changing source (2.3354ms)
+✔ two drafts remain isolated and stale revision cannot overwrite saved content (2.787ms)
+✔ duplicate imports, stale tabs, quota failures and corrupt stores preserve prior bytes (0.964ms)
+✔ outdated context remains readable but is never rebound to current evidence (0.5835ms)
+✔ current-context draft must match targets, media and exact evidence links (0.4478ms)
+✔ unsupported format, invalid dates, duplicated fields and oversized files fail closed (1.4853ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 798.7665

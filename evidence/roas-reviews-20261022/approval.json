@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-22",
+  "proposal": "docs/design/roas-decision-flow.md#2026-10-22-검토안-저장-제안-승인-대기",
+  "userResponse": "ㄱㄱ",
+  "scope": [
+    "browser review storage",
+    "saved review list and reopen",
+    "JSON export and import",
+    "current versus historical context separation"
+  ],
+  "maxTestDrafts": 10,
+  "marketingRowsCreated": 0
+}

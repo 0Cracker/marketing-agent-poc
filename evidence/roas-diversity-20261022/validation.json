@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-22",
+  "branch": "feature/roas-decision-flow",
+  "head": "19f63fc",
+  "workingTree": "existing uncommitted changes preserved; no release or combined commit",
+  "approvedMaximumObservationRows": 12000,
+  "newObservationRows": 7544,
+  "totalObservationRows": 41341,
+  "baselineRowsBytePreserved": 33797,
+  "dataHash": "4a58a7326fcd84b4d050ab2b2aea1cb7289c7d28bbb1deab1df2e378e5afadbb",
+  "schemaChanges": false,
+  "savedReviewSchemaVersion": 1,
+  "regression": {
+    "passed": 213,
+    "failed": 0,
+    "log": "regression.txt"
+  },
+  "screenFinal": {
+    "passed": 3,
+    "log": "screen-final.txt"
+  },
+  "diversityFinal": {
+    "passed": 3,
+    "log": "diversity-final.txt",
+    "detail": "After paid-session midnight evidence fix"
+  },
+  "independentDecimalAndDistribution": {
+    "passed": true,
+    "log": "independent.json"
+  },
+  "originalR001Checks": {
+    "passed": 13,
+    "log": "r001-preservation.txt"
+  },
+  "types": {
+    "exitCode": 0,
+    "log": "types-final.txt"
+  },
+  "lint": {
+    "exitCode": 0,
+    "log": "lint.txt",
+    "existingAdvisory": "Next pages directory not present"
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "build-final.txt",
+    "advisory": "Existing fonts runtime resolution warnings"
+  },
+  "idempotency": {
+    "unchanged": true,
+    "log": "idempotency.json"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5173/workbench",
+    "tab": "6",
+    "viewport": "1280x900",
+    "verified": [
+      "case A/B/C selections",
+      "A cost branch and non-shipping candidates",
+      "A rationale/condition entry, save, downloaded Markdown",
+      "B order quantity/price/discount figures",
+      "unsaved case change cancel preserves B scope",
+      "B middle-stage save",
+      "C refund figures",
+      "refund source type and outside-period filters",
+      "same-session and later-return purchases shown separately",
+      "C save and left as demo"
+    ],
+    "exportEvidence": "browser-export-check.md",
+    "unverified": [
+      "actual marketer usability/time savings",
+      "full keyboard/screen-reader audit",
+      "all error-recovery UI paths",
+      "public deployment"
+    ]
+  },
+  "independentAgents": {
+    "generator": "source implementation plus memory tests before final root calibration",
+    "validator": "independent Python/Decimal plus distribution checks",
+    "backend": "within-window paid touch and return purchase support",
+    "finalRootChanges": "Explicit funnel probability calibration, installation, source midnight edge fix and final integration verification"
+  },
+  "limitations": [
+    "Synthetic scenarios, not observed customer or industry benchmark data",
+    "Source reports and order attribution reconcile by declared generation rules; real measurement discrepancies and payment failure causes remain untested",
+    "One product line per order with quantity 1–3; no multi-product mix",
+    "Distinct template combinations are not real customer language",
+    "Final source changes reviewed by root after agent usage limits interrupted further agent work"
+  ]
+}
