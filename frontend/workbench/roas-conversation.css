@@ -1,4 +1,5 @@
 /* Keep the existing purple conversation identity; hierarchy comes from type and data alignment. */
+.wb-chat-starters>small{font-size:11px;color:#81758D;line-height:1.6}
 .wb .wb-answer-flow-change>small{color:inherit}
 .wb-answer-screen-context{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 20px;background:#FAF9FD;border-block:1px solid #EEEAF4;flex-shrink:0}
 .wb .wb-answer-conclusion>ul{display:grid;gap:10px;margin:0;padding-left:18px;font-size:14px;font-weight:500;line-height:1.8;color:#45394F;letter-spacing:0;overflow-wrap:anywhere}.wb-answer-conclusion li::marker{color:#B3A7C5}

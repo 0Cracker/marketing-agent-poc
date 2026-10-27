@@ -253,6 +253,9 @@ test('mixed scenarios preserve normal measurement and realistic varied daily per
 test('S16 combines budget growth, a bounded mobile payment incident and offsetting creative improvement',()=>{
  const pack=screens.get('S16'),b=summarize(baseline(pack)),c=summarize(current(pack));
  assert(c.spend>b.spend,'S16 more spend');
+ assert(c.aov>b.aov,'discount removal raises AOV');assert(c.cvr<b.cvr,'CVR worsens');assert(c.cpc>b.cpc,'CPC worsens');assert(c.roas<b.roas,'AOV only partly offsets the decline');
+ const discountChanges=pack.records.filter(row=>row.date==='2026-08-17'&&row.values.항목==='할인율');
+ assert.equal(discountChanges.length,3);assert(discountChanges.every(row=>row.values.변경전===20&&row.values.변경후===0));
  const incident=current(pack).filter(row=>row.device==='mobile'&&row.date>='2026-08-21'&&row.date<='2026-08-24');
  const outside=current(pack).filter(row=>row.device==='mobile'&&(row.date<'2026-08-21'||row.date>'2026-08-24'));
  assert(summarize(incident).paymentFailureRate>summarize(outside).paymentFailureRate,'S16 localized payment problem');
@@ -311,7 +314,7 @@ test('regeneration from the preserved catalog matches the installed source pack 
  assert.deepEqual(buildTrainingData(catalog).payload,installed);
 });
 
-test('approved semantic corrections preserve numbers except the authorized S06 daily cost allocation',()=>{
+test('approved corrections preserve numbers except S06 daily cost and S16 current money fields',()=>{
  const before=JSON.parse(fs.readFileSync(new URL('../evidence/training-data-contract-20261026/before.json',import.meta.url)));
  const installed=JSON.parse(fs.readFileSync(new URL('../data/training-dashboard.json',import.meta.url)));
  const numericRows=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).filter(([key,value])=>typeof value==='number'||['id','date','periodId','campaignId','device','dimension'].includes(key))));
@@ -323,13 +326,22 @@ test('approved semantic corrections preserve numbers except the authorized S06 d
    assert.equal(sha256(JSON.stringify(withoutSpend(p.breakdowns))),before.s06CostBaseline.breakdownsWithoutSpendSha256);
    for(const [name,expected]of before.s06CostBaseline.periodSpendGroups){const g={};for(const r of p[name]){const k=[r.periodId,r.campaignId,r.device,r.dimension||'',r.key||''].join('|');g[k]=(g[k]||0)+r.spend;}assert.deepEqual(g,expected,'period costs per campaign, device, product and audience');}
    assert.equal(sha256(JSON.stringify([...p.facts,...p.breakdowns].filter(r=>!(r.periodId==='current'&&r.campaignId==='EDU-C6')).map(r=>[r.id,r.spend]))),before.s06CostBaseline.unchangedCostRowsSha256);
+  }else if(p.caseId==='S16'){
+   const approved=JSON.parse(fs.readFileSync(new URL('../evidence/roas-examples-20261027/before.json',import.meta.url)));
+   assert.equal(approved.s16FactsSha256,old.factsSha256,'S16 approval baseline matches the earlier preserved facts');
+   const strip=row=>Object.fromEntries(Object.entries(row).filter(([key])=>row.periodId!=='current'||!['discount','revenue','ledgerRevenue'].includes(key)));
+   const preserved={...p,recordIds:p.recordIds.filter(id=>!['CASE-S16-13','CASE-S16-14','CASE-S16-15'].includes(id)),facts:p.facts.map(strip),breakdowns:p.breakdowns.map(strip)};
+   assert.equal(sha256(JSON.stringify(preserved)),approved.s16PreservedHash,'all fields outside the approved S16 scope stay intact');
+   for(const row of [...p.facts,...p.breakdowns].filter(row=>row.periodId==='current')){assert.equal(row.discount,0);assert.equal(row.revenue,row.listRevenue);assert.equal(row.ledgerRevenue,row.revenue);}
   }else{
    assert.equal(sha256(JSON.stringify(p.facts)),old.factsSha256,p.caseId+' facts');
    assert.equal(sha256(JSON.stringify(numericRows(p.breakdowns))),old.breakdownNumbersSha256,p.caseId+' breakdown numbers');
   }
   assert.equal(sha256(JSON.stringify(p.reach)),old.reachSha256,p.caseId+' reach');
  }
- assert.equal(installed.records.length,before.records,'no new detail observations');
+ const approved=JSON.parse(fs.readFileSync(new URL('../evidence/roas-examples-20261027/before.json',import.meta.url)));
+ assert.equal(installed.records.length,before.records+3,'three approved S16 discount-change records');
+ for(const old of approved.recordHashes)assert.equal(sha256(JSON.stringify(installed.records.find(row=>row.id===old.id))),old.sha256,'existing detail '+old.id);
 });
 
 test('production projections retain every case but never emit private source or answer assets',()=>{

@@ -26,6 +26,7 @@ export function buildMixedCase(caseId, template, commonRecords, allocate) {
   if (caseId === 'S16') {
     add('2026-08-21', 'incident', null, 'mobile', null, '간편결제 처리 기록', {시작: '2026-08-21T00:00:00+09:00', 종료: '2026-08-25T00:00:00+09:00', 오류코드: 'PAYMENT_CALLBACK_TIMEOUT', 결제수단: '간편결제', 브라우저: '모바일 브라우저'});
     add('2026-08-24', 'creative', 'EDU-C3', 'all', null, '페이스북 피드 소재 v2', {소재버전: 'v2', 집행시작: '2026-08-24', 문구: '상품 용량과 사용 방법을 확인하세요.'});
+    for (const product of pack.products) add('2026-08-17', 'change', null, 'all', product.id, `${product.label} 판매 조건`, {항목: '할인율', 변경전: 20, 변경후: 0, 정가: product.listPrice, 적용시각: '2026-08-17T00:00:00+09:00'});
   }
   if (caseId === 'S17') {
     for (const product of pack.products) add('2026-08-21', 'change', null, 'all', product.id, `${product.label} 판매 조건`, {항목: '할인율', 변경전: 20, 변경후: 0, 정가: product.listPrice, 적용시각: '2026-08-21T00:00:00+09:00'});
@@ -48,6 +49,7 @@ export function buildMixedCase(caseId, template, commonRecords, allocate) {
     let failRate = .02, discount = .2;
     const stockout = current && caseId === 'S18' && day >= 3 && day < 11;
     if (current && caseId === 'S16') {
+      discount = 0;
       if (c < 4) {volume = 1.65; cpc *= 1.19; conversion *= .83;}
       if (mobile && day >= 4 && day < 8) failRate = .42;
       if (c === 2 && day >= 7) {ctr *= 1.22; conversion *= 1.12;}

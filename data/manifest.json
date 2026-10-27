@@ -306,8 +306,8 @@
     },
     {
       "file": "training-dashboard.json",
-      "bytes": 28329312,
-      "sha256": "80361343ebc4e0591cc31b1f6b11f9828b7b7297056a30c0e374539442f1813a",
+      "bytes": 28326584,
+      "sha256": "4ada40bb6153fcc40cdaa2654c48aaa3cccd46c489a1558ad888d5a0d2e80c66",
       "public": false,
       "contract": "roas-training/1"
     }
@@ -336,5 +336,5 @@
     "end": "2026-10-01"
   },
   "pending_by_type": {},
-  "data_sha256": "e66f0b2088849ca5b6ba8da3112f94759b7a9c4ca964a220aac5d5964529f40b"
+  "data_sha256": "1512d887a63cb17a233a7bf6c75632b5ffe712e9f03b3e776be34ffd4e0a645e"
 }

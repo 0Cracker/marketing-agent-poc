@@ -134,11 +134,11 @@ test('ROAS comparison leaves zero-purchase AOV unavailable rather than drawing a
 test('ROAS ranking conclusions distinguish current minimum from largest decline and prevent cherry-picking',async()=>{
  const input=request();let saved;
  const chat=createRoasChat({model:async context=>{
-  assert(context.rankingFacts.some(text=>text.includes('Instagram 피드')&&text.includes('96.5%')));
+  assert(context.rankingFacts.some(text=>text.includes('Instagram 피드')&&text.includes('120.7%')));
   const ids=context.campaigns.map(row=>row.id),action=finish(ids);action.finish.comparison={metric:'roas',sourceIds:ids,highlights:['lowest_current','largest_decline']};saved=action;return action;
  }});
  const result=await chat(input);
- assert.match(result.sections.conclusion,/Instagram 피드.*96\.5%/);assert.match(result.sections.conclusion,/검색 A.*-293\.7%p/);
+ assert.match(result.sections.conclusion,/Instagram 피드.*120\.7%/);assert.match(result.sections.conclusion,/검색 A.*-218%p/);
  assert.equal(chatHighlights(result.comparison,['lowest_current']).length,1);
  const partial={...saved.finish,comparison:{...saved.finish.comparison,sourceIds:saved.finish.comparison.sourceIds.slice(0,4)}};
  await assert.rejects(createRoasChat({model:async()=>({finish:partial})})(input),/model_protocol/);

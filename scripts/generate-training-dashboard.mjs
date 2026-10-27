@@ -246,7 +246,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   const {catalog,manifest}=loadCurrentData();
   const {payload,review}=buildTrainingData(catalog);
   if(process.argv.includes('--write')) {
-    const evidence=path.resolve(dataDirectory,'../evidence/training-data-contract-20261026');fs.mkdirSync(evidence,{recursive:true});
+    const evidence=path.resolve(dataDirectory,'../evidence/roas-examples-20261027');fs.mkdirSync(evidence,{recursive:true});
     const baselinePath=path.join(evidence,'baseline.json');
     if(!fs.existsSync(baselinePath)) fs.writeFileSync(baselinePath,JSON.stringify({rows:manifest.rows,dataHash:manifest.data_sha256,files:[...manifest.files,...manifest.metadata].filter(file=>file.file!=='training-dashboard.json').map(file=>({file:file.file,sha256:sha256(fs.readFileSync(path.join(dataDirectory,file.file)))}))},null,2)+'\n',{flag:'wx'});
     const encoded=JSON.stringify(payload)+'\n';fs.writeFileSync(path.join(dataDirectory,'training-dashboard.json'),encoded);

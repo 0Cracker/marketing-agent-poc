@@ -6,6 +6,7 @@ import {createAgentClient,errorText} from './agent-client';
 import type {RoasAnswer} from './agent-client';
 import {AgentPanelShell} from './panel';
 import {RoasAnswerView} from './roas-answer';
+import {roasExamples,roasExampleAnswer} from './roas-examples';
 import './agent-conversation.css';
 import './agent-chat.css';
 import './roas-conversation.css';
@@ -49,16 +50,23 @@ export function RoasConversation({data,snapshot,filters,metric,screenTitle,onClo
  const media:Record<string,string>={google:'Google Ads',facebook:'Facebook',instagram:'Instagram',naver_blog:'네이버 블로그',search:'검색 광고',social:'소셜 광고',content:'콘텐츠 제휴'};
  const target=[campaign,filters.campaignId==='all'&&filters.source&&filters.source!=='all'?media[filters.source]||filters.source:filters.campaignId==='all'&&filters.channel!=='all'?media[filters.channel]||filters.channel:'',filters.device==='mobile'?'모바일':filters.device==='desktop'?'PC':''].filter(Boolean).join(', ');
  const current=data.periods.find(p=>p.id==='current')!,baseline=data.periods.find(p=>p.id==='baseline')!;
+ function showExample(example:typeof roasExamples[number]){
+  if(sending.current)return;
+  onExchange({question:example.question,result:roasExampleAnswer(data,filters,example.id)});
+  setQuestion('');
+ }
+ const starters=<div className="wb-chat-starters"><small>{exchanges.length?'다른 예시 답변 보기':'예시 대화, 클릭하면 답변을 볼 수 있어요'}</small>{roasExamples.map(example=><button key={example.id} type="button" disabled={busy} onClick={()=>showExample(example)}>{example.label}</button>)}</div>;
  return <AgentPanelShell onClose={onClose}>
   <section className="wb-conversation wb-roas-conversation" aria-label="ROAS 분석 대화">
    <div className="wb-answer-screen-context"><span><Monitor size={13}/>보고 있는 화면</span><strong>{screenTitle}</strong><p>{target}</p><details><summary>{periodLabel(current.start,current.end)} 분석</summary><p>비교 {periodLabel(baseline.start,baseline.end)}<br/>보고 기준 {new Date(data.asOf).toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul'})}</p></details></div>
    <div ref={thread} className="wb-chat-thread" role="region" aria-label="대화 내역" aria-busy={busy}>
-    {!exchanges.length&&!pending&&<div className="wb-chat-welcome"><span className="wb-chat-welcome-icon"><Sparkles size={25}/></span><h2>궁금한 성과를<br/>함께 살펴볼까요?</h2><p>지금 보고 있는 데이터에서 변화를 비교하고,<br/>판단에 필요한 근거를 찾아드려요.</p><div className="wb-chat-starters">{['ROAS가 직전 기간보다 달라진 이유를 분석해줘','캠페인별 현재 ROAS와 하락 폭을 비교해줘','구매 과정에서 이탈이 늘어난 구간을 찾아줘'].map(text=><button key={text} type="button" onClick={()=>{setQuestion(text);input.current?.focus();}}>{text}</button>)}</div></div>}
+    {!exchanges.length&&!pending&&<div className="wb-chat-welcome"><span className="wb-chat-welcome-icon"><Sparkles size={25}/></span><h2>궁금한 성과를<br/>함께 살펴볼까요?</h2><p>지금 보고 있는 데이터에서 변화를 비교하고,<br/>판단에 필요한 근거를 찾아드려요.</p>{starters}</div>}
     {exchanges.map((item,index)=><div className="wb-chat-exchange" key={index}><div className="wb-chat-user" data-current-question={index===exchanges.length-1||undefined} aria-label="내 질문"><p>{item.question}</p></div><RoasAnswerView result={item.result} data={data} filters={filters}/></div>)}
     {pending&&<><div className="wb-chat-user"><p>{pending}</p></div><p className="wb-chat-working" role="status"><Sparkles size={15}/>선택 범위의 자료를 확인하고 있어요…</p></>}
+    {!!exchanges.length&&!pending&&starters}
    </div>
    <div className="wb-chat-compose-area wb-roas-compose-area">
-    {(connecting||errorCode||!connected)&&<div className={'wb-chat-connection '+(connecting?'is-connecting':'is-error')} role={connecting?'status':'alert'}>{connecting?<RefreshCw size={16}/>:<AlertCircle size={16}/>}<div><strong>{connecting?'AI 서버 연결 확인 중':!connected?'AI 서버에 연결할 수 없습니다':'답변을 받지 못했습니다'}</strong>{!connecting&&<p>{connectionError(errorCode||'server_unavailable')}</p>}</div>{!connecting&&<button type="button" disabled={busy} onClick={()=>void (!connected?reconnect():ask())}>{!connected?'다시 연결':'다시 보내기'}</button>}</div>}
+    {(connecting||errorCode||!connected)&&<div className={'wb-chat-connection '+(connecting?'is-connecting':'is-error')} role={connecting?'status':'alert'}>{connecting?<RefreshCw size={16}/>:<AlertCircle size={16}/>}<div><strong>{connecting?'AI 서버 연결 확인 중':!connected?'AI 서버에 연결할 수 없습니다':'답변을 받지 못했습니다'}</strong>{!connecting&&<p>{connectionError(errorCode||'server_unavailable')}{!connected&&' 예시 답변은 연결 없이 볼 수 있습니다.'}</p>}</div>{!connecting&&<button type="button" disabled={busy} onClick={()=>void (!connected?reconnect():ask())}>{!connected?'다시 연결':'다시 보내기'}</button>}</div>}
     <form className="wb-chat-compose wb-roas-composer" onSubmit={e=>{e.preventDefault();void ask();}}><textarea ref={input} aria-label="분석 질문" rows={2} maxLength={4000} value={question} disabled={busy} placeholder={exchanges.length?'이어서 궁금한 점을 물어보세요':'데이터에 대해 무엇이 궁금하세요?'} onChange={e=>setQuestion(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();void ask();}}}/><div className="wb-chat-compose-tools"><button type="submit" className="wb-chat-send" aria-label="질문 보내기" disabled={busy||!connected||connecting||!question.trim()}><ArrowUp size={17}/></button></div></form><p className="wb-chat-footnote">{mode==='offline_model_substitute'?'오프라인 연결 확인':'AI 답변의 수치와 근거를 확인하세요.'}<span>Enter 전송, Shift+Enter 줄바꿈</span></p>
    </div>
   </section>

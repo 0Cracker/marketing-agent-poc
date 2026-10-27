@@ -19,7 +19,7 @@ export function RoasAnswerView({result,data,filters}:{result:RoasAnswer;data:Tra
  const conclusions=(sections?.conclusion||result.answer).split(/\n+/).filter(text=>text.trim());
  const comparison=result.comparison??(!sections?chatComparison(result.sources.filter(s=>s.kind==='summary'),'roas'):null);
  return <section className="wb-agent-result wb-structured-answer">
-  <h2><Sparkles size={15}/>마케팅 AI<span>{result.mode==='remote_model'?'분석 완료':'오프라인 연결 확인'}</span></h2>
+  <h2><Sparkles size={15}/>마케팅 AI<span>{result.mode==='example'?'예시 답변':result.mode==='remote_model'?'분석 완료':'오프라인 연결 확인'}</span></h2>
   <div className="wb-answer-conclusion"><h3>핵심 결론</h3><ul>{conclusions.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul></div>
   {(sections?.summary.length||comparison)&&<section className="wb-answer-section"><h3>결과 정리</h3>{sections?.summary.length&&<ul>{sections.summary.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul>}{comparison&&<Comparison values={comparison} onSource={setSelected}/>}</section>}
   <section className="wb-answer-section"><h3>판단 근거</h3>{sections?.reasoning.length?<ul>{sections.reasoning.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul>:<p>답변에 연결된 집계와 운영 기록을 확인하세요.</p>}<details className="wb-answer-references"><summary>참고한 자료 {result.sources.length}개</summary><div>{result.sources.map((row,i)=><button key={row.id} onClick={()=>setSelected(row.id)}><span>{i+1}</span>{sourceTitle(row)}</button>)}</div></details>
