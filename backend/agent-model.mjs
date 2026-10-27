@@ -25,7 +25,7 @@ function actionSchema(context){
 
 // JSON action envelopes keep business contracts independent of provider-specific
 // function-call messages. The server still validates every action and argument.
-export function createRemoteModel({provider,model,apiKey,allowDataTransmission=false,fetchImpl=globalThis.fetch,timeoutMs=20000,maxContextChars=120000,thinkingLevel}){
+export function createRemoteModel({provider,model,apiKey,allowDataTransmission=false,fetchImpl=globalThis.fetch,timeoutMs=20000,maxContextChars=120000,thinkingLevel,protocol}){
   requireThat(allowDataTransmission===true,'data_transmission_not_enabled');
   requireThat(['gemini','groq'].includes(provider)&&typeof model==='string'&&/^[a-zA-Z0-9._/-]+$/.test(model)&&typeof apiKey==='string'&&apiKey.length>0,'provider_configuration');
   requireThat(Number.isInteger(timeoutMs)&&timeoutMs>0&&timeoutMs<=60000,'provider_configuration');
@@ -36,8 +36,10 @@ export function createRemoteModel({provider,model,apiKey,allowDataTransmission=f
     const gemini=provider==='gemini';
     const url=gemini?`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`:'https://api.groq.com/openai/v1/chat/completions';
     const headers=gemini?{'x-goog-api-key':apiKey}:{authorization:'Bearer '+apiKey};
-    const body=gemini?{systemInstruction:{parts:[{text:instruction}]},contents:[{role:'user',parts:[{text:input}]}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:actionSchema(context),maxOutputTokens:4096,...(thinkingLevel?{thinkingConfig:{thinkingLevel}}:{})}}:
-      {model,messages:[{role:'system',content:instruction},{role:'user',content:input}],response_format:{type:'json_object'},max_completion_tokens:4096};
+    const selectedProtocol=typeof protocol==='function'?protocol(context):protocol;
+    const systemInstruction=selectedProtocol?.instruction||instruction;
+    const body=gemini?{systemInstruction:{parts:[{text:systemInstruction}]},contents:[{role:'user',parts:[{text:input}]}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:selectedProtocol?selectedProtocol.schema(context):actionSchema(context),maxOutputTokens:4096,...(thinkingLevel?{thinkingConfig:{thinkingLevel}}:{})}}:
+      {model,messages:[{role:'system',content:systemInstruction},{role:'user',content:input}],response_format:{type:'json_object'},max_completion_tokens:4096};
     let response;
     try{response=await fetchImpl(url,{method:'POST',headers:{...headers,'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(timeoutMs),redirect:'error'});}
     catch(e){throw new FlowError(['TimeoutError','AbortError'].includes(e.name)?'model_timeout':'model_failed');}

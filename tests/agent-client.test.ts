@@ -45,3 +45,11 @@ test('C08 remote mode requires explicit external flag and still rejects real Ads
   const client=createAgentClient(async()=>new Response(JSON.stringify(session)));assert.equal((await client.session()).mode,'remote_model');
   for(const delta of [{externalModelEnabled:false},{realAdsEnabled:true},{mode:'unknown'}])await assert.rejects(createAgentClient(async()=>new Response(JSON.stringify({...session,...delta}))).session(),e=>(e as Error).message==='unsupported_server_mode');
 });
+
+test('ROAS chat reuses the session token and returns cited answers without a catalog run',async()=>{
+ const calls:{url:string;init?:RequestInit}[]=[];
+ const answer={answer:'조회 결과',sources:[],events:[],mode:'offline_model_substitute'};
+ const client=createAgentClient(async(input,init)=>{calls.push({url:String(input),init});return new Response(JSON.stringify(String(input).endsWith('/session')?{token:'test-session',mode:'offline_model_substitute',realAdsEnabled:false}:answer));});
+ assert.deepEqual(await client.roasChat({question:'ROAS를 비교해줘'}),answer);
+ assert.equal(calls[1].url,'/agent-api/roas/chat');assert.equal(new Headers(calls[1].init?.headers).get('x-agent-token'),'test-session');
+});

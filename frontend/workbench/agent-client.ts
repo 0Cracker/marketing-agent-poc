@@ -9,6 +9,7 @@ export type AgentRun={id:string;version:number;role:'analysis'|'budget';status:s
   simulation?:Simulation;approval?:{expiresAt:string;principal:{id:string;role:string}}|null;events:{type:string;name?:string;reason?:string;at:string}[]};
 export type BudgetInputs={scenarios:{record_id:string;model_ref:string;total_budget:{amount:string;currency:string}}[];models:{record_id:string;model_ref:string;model_version:string}[]};
 type Envelope={run?:AgentRun;error?:string;token?:string;mode?:string;realAdsEnabled?:boolean;externalModelEnabled?:boolean;dataHash?:string;models?:{analysis:string;budget:string}};
+export type RoasAnswer={answer:string;sections?:{conclusion:string;summary:string[];reasoning:string[];actions:string[];limitations:string[]};comparison?:import('../../shared/roas-chat.mjs').ChatComparison|null;sources:import('../../shared/roas-chat.mjs').ChatSource[];events:{tool:string;count:number}[];mode:string};
 
 export function scopeFromScreen(s:ScreenSelection):AgentScope{
   if(!['CURRENT','D007'].includes(s.dataset))throw Error('unsupported_dataset');
@@ -40,7 +41,7 @@ export function createAgentClient(fetcher:typeof fetch=fetch,base='/agent-api'){
     if(!response.ok)throw Error(data.error||'server_error');return data;
   }
   async function run(path:string,body?:unknown){const data=await request(path,body) as Envelope;if(!data.run?.id||!data.run.status)throw Error('response_invalid');return data.run;}
-  return {session,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
+  return {session,roasChat:async(body:unknown)=>await request('/roas/chat',body) as RoasAnswer,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
     action:(id:string,action:'approve'|'reject'|'revise'|'resume'|'cancel',body:unknown)=>run(`/runs/${encodeURIComponent(id)}/${action}`,body),
     budgetInputs:async(id:string)=>await request(`/runs/${encodeURIComponent(id)}/budget-inputs`) as BudgetInputs,
     evidence:async(id:string,ids:string[])=>await request(`/runs/${encodeURIComponent(id)}/evidence`,{ids}) as {records:Record<string,unknown>[]}};

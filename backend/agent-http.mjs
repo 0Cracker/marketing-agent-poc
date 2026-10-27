@@ -27,7 +27,7 @@ function statusFor(code){
 // Loopback development API. Session capability + exact Origin/Host checks prevent
 // another website from using a browser to approve local changes. Model and key
 // selection stay server-side. Live Ads and arbitrary tool endpoints stay disabled.
-export function createAgentServer(flow,{origins=['http://127.0.0.1:5173','http://localhost:5173'],runtimeInfo={mode:'offline_model_substitute',externalModelEnabled:false}}={}){
+export function createAgentServer(flow,{origins=['http://127.0.0.1:5173','http://localhost:5173'],runtimeInfo={mode:'offline_model_substitute',externalModelEnabled:false},roasChat}={}){
   requireThat(['offline_model_substitute','remote_model'].includes(runtimeInfo.mode)&&runtimeInfo.externalModelEnabled===(runtimeInfo.mode==='remote_model'),'provider_configuration');
   const sessionInfo={mode:runtimeInfo.mode,externalModelEnabled:runtimeInfo.externalModelEnabled,...(runtimeInfo.dataHash?{dataHash:runtimeInfo.dataHash,dataContract:runtimeInfo.dataContract}:{}),...(runtimeInfo.models?{models:{analysis:runtimeInfo.models.analysis,budget:runtimeInfo.models.budget}}:{})};
   const token=randomBytes(32).toString('hex');
@@ -55,6 +55,10 @@ export function createAgentServer(flow,{origins=['http://127.0.0.1:5173','http:/
       if(req.method==='GET'&&url.pathname==='/agent-api/session')return json(res,200,{token,...sessionInfo,realAdsEnabled:false});
       const supplied=Buffer.from(String(req.headers['x-agent-token']||''));
       const expected=Buffer.from(token);requireThat(supplied.length===expected.length&&timingSafeEqual(supplied,expected),'csrf_denied');
+      if(req.method==='POST'&&url.pathname==='/agent-api/roas/chat'){
+        requireThat(typeof roasChat==='function','not_found');
+        return json(res,200,await roasChat(await body(req)));
+      }
       const match=url.pathname.match(/^\/agent-api\/runs\/([\w-]+)(?:\/([\w-]+))?$/);
       if(req.method==='GET'&&match&&!match[2]){const run=flow.get(match[1]);requireThat(!runtimeInfo.dataHash||run.inputFingerprint===flow.tools.fingerprint,'inputs_changed');return json(res,200,{run:publicRun(run)});}
       if(req.method==='GET'&&match?.[2]==='budget-inputs'){

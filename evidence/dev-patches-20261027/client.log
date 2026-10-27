@@ -1,0 +1,18 @@
+✔ 503 guidance describes saved state and manual resume without hiding other errors (1.3385ms)
+✔ C01 screen context becomes explicit half-open scope without raw data (3.0392ms)
+✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (0.4714ms)
+✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (0.2968ms)
+✔ C04 session token is attached to API requests, never put in body (32.5292ms)
+✔ C05 lost POST response is not automatically submitted again (1.0636ms)
+✔ C06 token rejected before mutation may refresh once after a server restart (2.5986ms)
+✔ C07 server errors remain actionable codes; no fake successful result (1.671ms)
+✔ C08 remote mode requires explicit external flag and still rejects real Ads mode (1.5773ms)
+✔ ROAS chat reuses the session token and returns cited answers without a catalog run (1.0248ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 220.5925

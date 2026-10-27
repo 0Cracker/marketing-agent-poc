@@ -12,7 +12,7 @@ const profiles={
 
 // One explicitly selected credential; keys in one project share quota.
 // ponytail: process-local pacing; provider 429 remains authoritative across processes.
-export function createLiveRuntime({env=process.env,fetchImpl=globalThis.fetch,now=Date.now,wait=sleep,onDiagnostic}={}){
+export function createLiveRuntime({env=process.env,fetchImpl=globalThis.fetch,now=Date.now,wait=sleep,onDiagnostic,protocol}={}){
   const keyName=env.AGENT_KEY_NAME||Object.keys(env).filter(k=>/^GEMINI_API_KEY(?:_\d+)?$/.test(k)&&env[k]?.trim()).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}))[0];
   requireThat(typeof keyName==='string'&&/^GEMINI_API_KEY(?:_\d+)?$/.test(keyName)&&env[keyName]?.trim(),'provider_configuration');
   const models={analysis:env.AGENT_ANALYSIS_MODEL||'gemini-3.5-flash-lite',budget:env.AGENT_BUDGET_MODEL||'gemini-3.8-flash'};
@@ -23,7 +23,7 @@ export function createLiveRuntime({env=process.env,fetchImpl=globalThis.fetch,no
     try{response=await fetchImpl(...args);}catch(error){onDiagnostic?.({model:id,elapsedMs:now()-started,transportError:error.cause?.code||error.name});throw error;}
     if(onDiagnostic){const data=await response.clone().json().catch(()=>({}));onDiagnostic({model:id,httpStatus:response.status,elapsedMs:now()-started,errorStatus:data.error?.status,finishReason:data.candidates?.[0]?.finishReason,usage:data.usageMetadata});}
     return response;
-  },timeoutMs:60000,maxContextChars:profiles[id].contextChars,thinkingLevel:id==='gemini-3.8-flash'?'low':'minimal'}));
+  },timeoutMs:60000,maxContextChars:profiles[id].contextChars,thinkingLevel:id==='gemini-3.8-flash'?'low':'minimal',protocol}));
   return {info:{mode:'remote_model',externalModelEnabled:true,models},model:async context=>{
     requireThat(Object.hasOwn(models,context.role),'provider_configuration');
     const id=models[context.role],slot=Math.max(now(),nextCall.get(id)||0);
