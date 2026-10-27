@@ -1,5 +1,5 @@
 // 집행 규모와 가격 조건은 증가만으로 성과 방향을 정하지 않는다.
-const higherIsBetter=new Set(['roas','revenue','orders','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']);
+const higherIsBetter=new Set(['roas','revenue','orders','ledgerOrders','ledgerRevenue','units','returnPurchases','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']);
 const lowerIsBetter=new Set(['cpc','cpa','cac','adCpm','contentCpm','paymentFailureRate','paymentFailures','redirectErrors','loadMs','duplicateEvents']);
 
 export function deltaTone(key:string,before:number|null,after:number|null,rate=false){

@@ -89,3 +89,21 @@ test('mini bounds stay readable for flat, zero and unavailable series',()=>{
  const [low,high]=miniPlotDomain([500,500]);
  assert(low<500&&high>500);
 });
+
+// Reuse approved S16 observations; no new marketing fixtures.
+test('all directional table metrics share improvement, deterioration and neutral semantics',()=>{
+ const [before,after]=comparePeriods(trainingScreenData(undefined,'S16','initial'),filters);
+ const low=before.total.rates.cpc!,high=after.total.rates.cpc!;
+ for(const key of ['roas','revenue','orders','ledgerOrders','ledgerRevenue','units','returnPurchases','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']){
+  assert.equal(deltaTone(key,low,high),'positive',key);
+  assert.equal(deltaTone(key,high,low),'negative',key);
+ }
+ for(const key of ['cpc','cpa','cac','adCpm','contentCpm','paymentFailureRate','paymentFailures','redirectErrors','loadMs','duplicateEvents']){
+  assert.equal(deltaTone(key,low,high),'negative',key);
+  assert.equal(deltaTone(key,high,low),'positive',key);
+ }
+ for(const key of ['spend','spendShare','impressions','clicks','sessions','view','cart','checkout','paymentAttempts','unitPrice','listRevenue','discount','discountRate','trackingExpected','trackingReceived','reach','frequency','unknown']){
+  assert.equal(deltaTone(key,low,high),'neutral',key);
+  assert.equal(deltaTone(key,high,low),'neutral',key);
+ }
+});

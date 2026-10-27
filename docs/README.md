@@ -1,5 +1,7 @@
 # 문서 안내
 
+2026-10-27 표 색상 후속: [v0.4.4](iterations/v0.4.4.md)에서 표 현재 수치와 증감, AI 답변에 개선은 빨강, 악화는 파랑, 중립은 회색을 공통 적용했다.
+
 현재 작업은 `marketing-agent-poc` 한 곳에서 진행한다. 같은 이름의 과거 파일을 찾았을 때는 이 인덱스와 실제 Git 상태를 우선한다.
 
 2026-10-27 dev 패치 정리: ROAS 조회 API와 답변 계약은 [v0.4.2](iterations/v0.4.2.md), 대화 UI, 탐색 UX와 KPI 표현은 [v0.4.3](iterations/v0.4.3.md)으로 나눴다. 패키지 버전은 0.4.3이며 [이번 자동 검증과 한계](../evidence/dev-patches-20261027/validation.md)를 따른다. 실제 원격 반영 상태는 dev SHA와 Vercel 커밋 체크로 확인한다. main과 태그, Release는 이번 범위에 포함하지 않는다.
