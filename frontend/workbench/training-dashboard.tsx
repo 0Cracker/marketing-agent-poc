@@ -1,6 +1,6 @@
 'use client';
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
-import {ArrowLeft,BarChart3,Database,Layers,Menu,Search,Sparkles,X} from 'lucide-react';
+import {ArrowLeft,BarChart3,Layers,Menu,Search,Sparkles,X} from 'lucide-react';
 import {RoasConversation} from './roas-conversation';
 import type {RoasAnswer} from './agent-client';
 import {CartesianGrid,Line,LineChart,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
@@ -248,7 +248,9 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
  const [error,setError]=useState(''),[retry,setRetry]=useState(0),[navOpen,setNavOpen]=useState(false);
  const [evidence,setEvidenceState]=useState<Evidence|null>(null),[query,setQuery]=useState(''),[limit,setLimit]=useState(30);
  const dialog=useRef<HTMLDialogElement>(null);
+ const content=useRef<HTMLElement>(null);
  const overviewScroll=useRef(0),detailScroll=useRef(0),pendingScroll=useRef<number|null>(null);
+ const overviewDisclosures=useRef<boolean[]>([]);
  const evidenceHistory=useRef(new Map<number,Evidence>()),nextEvidenceId=useRef(0);
  function setEvidence(value:Evidence|null){
   if(!value&&!evidence)return;
@@ -283,12 +285,16 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
  useEffect(()=>{
   if(pendingScroll.current===null)return;
   const top=pendingScroll.current;pendingScroll.current=null;
-  const frame=requestAnimationFrame(()=>window.scrollTo({top}));
+  const frame=requestAnimationFrame(()=>{
+   // Restore expanded sections before scrolling, otherwise the shorter page clamps the saved position.
+   if(selectedMetric===null)content.current?.querySelectorAll('details').forEach((node,index)=>{if(index<overviewDisclosures.current.length)node.open=overviewDisclosures.current[index];});
+   const heading=content.current?.querySelector('h1');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}window.scrollTo({top});
+  });
   return()=>cancelAnimationFrame(frame);
  },[view,selectedMetric,evidence]);
  function navigate(metric:string|null,comparison=false){
   if(!evidence&&metric===selectedMetric&&(comparison?'data':'overview')===view){window.scrollTo({top:0});return;}
-  if(!selectedMetric)overviewScroll.current=window.scrollY;
+  if(!selectedMetric){overviewScroll.current=window.scrollY;overviewDisclosures.current=Array.from(content.current?.querySelectorAll('details')||[],node=>node.open);}
   else if(view==='overview')detailScroll.current=window.scrollY;
   const top=metric===null?overviewScroll.current:metric===selectedMetric&&!comparison?detailScroll.current:0;
   const nextDevice=metric===null||metric!==selectedMetric?'all':filters.device;
@@ -320,13 +326,18 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
  }
  return <div className={`wb roas-workbench roas-data-dashboard training-dashboard ${navOpen?'wb-nav-open':''} ${chatOpen&&active&&data&&!error?'wb-with-panel':''}`}>
   <a className="wb-skip" href="#training-content">본문 바로가기</a>
-  <aside className="wb-sidebar"><div className="wb-logo"><span><Layers size={19}/></span><div>Marketing<span>데이터 대시보드</span></div><button className="wb-mobile" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}><X size={18}/></button></div><nav aria-label="성과 메뉴">{trainingViews.map(([id,label])=><button key={id} className="active" aria-current={!selectedMetric?'page':undefined} onClick={()=>navigate(null)}><BarChart3 size={17}/>{label}</button>)}</nav><div className="roas-side-bottom"><details className="training-test-cases"><summary>테스트 케이스{caseId!=='S16'&&<small>{index?.cases.find(item=>item.id===caseId)?.label}</small>}</summary><label>테스트 데이터<select aria-label="데이터 사례" value={caseId} onChange={e=>{if(e.target.value!==caseId){resetRequest();setCaseId(e.target.value);}}}><option value="S16">기본 대시보드</option>{index?.cases.filter(item=>item.id!=='S16').map(item=><option key={item.id} value={item.id}>{item.label}</option>)}</select></label><label>보고 기준시점<select aria-label="보고 기준시점" value={snapshot} onChange={e=>{if(e.target.value!==snapshot){resetRequest();setSnapshot(e.target.value);}}}>{index?.snapshots.map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label><p className="training-case-description">{caseDescriptions[caseId]}</p></details><button onClick={onExplore}><Database size={17}/>(구) 대시보드</button></div></aside>
+  <aside className="wb-sidebar"><div className="wb-logo"><span><Layers size={19}/></span><div>Marketing<span>데이터 대시보드</span></div><button className="wb-mobile" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}><X size={18}/></button></div><nav aria-label="성과 메뉴">{trainingViews.map(([id,label])=><button key={id} className="active" aria-current={!selectedMetric?'page':undefined} onClick={()=>navigate(null)}><BarChart3 size={17}/>{label}</button>)}</nav><div className="roas-side-bottom"><details className="training-test-cases"><summary>테스트 케이스{caseId!=='S16'&&<small>{index?.cases.find(item=>item.id===caseId)?.label}</small>}</summary><label>테스트 데이터<select aria-label="데이터 사례" value={caseId} onChange={e=>{if(e.target.value!==caseId){resetRequest();setCaseId(e.target.value);}}}><option value="S16">기본 대시보드</option>{index?.cases.filter(item=>item.id!=='S16').map(item=><option key={item.id} value={item.id}>{item.label}</option>)}</select></label><label>보고 기준시점<select aria-label="보고 기준시점" value={snapshot} onChange={e=>{if(e.target.value!==snapshot){resetRequest();setSnapshot(e.target.value);}}}>{index?.snapshots.map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label><p className="training-case-description">{caseDescriptions[caseId]}</p></details><button onClick={onExplore}><Layers size={17}/>(구) 대시보드 확인</button></div></aside>
   {navOpen&&<button className="wb-nav-shade" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}/>}
-  <div className="wb-main"><div className="training-query-context"><header className="wb-header training-navigation-header"><button className="wb-mobile" aria-label="메뉴 열기" onClick={()=>setNavOpen(true)}><Menu size={18}/></button><nav className="training-breadcrumb" aria-label="탐색 경로"><button onClick={()=>navigate(null)} aria-current={!selectedMetric?'page':undefined}>{selectedMetric&&<ArrowLeft size={16}/>}성과 현황</button>{selectedMetric&&<><span aria-hidden="true">/</span>{view==='data'?<><button onClick={()=>navigate(selectedMetric)}>{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</button><span aria-hidden="true">/</span><span aria-current="page">비교 표</span></>:<span aria-current="page">{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</span>}</>}</nav>{selectedMetric&&view!=='data'&&<button className="training-open-comparison" onClick={openComparison}>세부 수치와 운영 기록</button>}<div className="training-color-legend" aria-label="증감 색상 의미"><span className="training-delta-positive">빨강: 개선</span><span className="training-delta-negative">파랑: 악화</span><span>회색: 중립</span></div><span className="wb-synthetic">가상 데이터</span></header>
+  <div className="wb-main"><div className="training-query-context"><header className="wb-header training-navigation-header"><button className="wb-mobile" aria-label="메뉴 열기" onClick={()=>setNavOpen(true)}><Menu size={18}/></button><nav className="training-breadcrumb" aria-label="탐색 경로"><button onClick={()=>navigate(null)} aria-current={!selectedMetric?'page':undefined}>{selectedMetric&&<ArrowLeft size={16}/>}성과 현황</button>{selectedMetric&&<><span aria-hidden="true">/</span>{view==='data'?<><button onClick={()=>navigate(selectedMetric)}>{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</button><span aria-hidden="true">/</span><span aria-current="page">비교 표</span></>:<span aria-current="page">{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</span>}</>}</nav><div className="training-color-legend" aria-label="증감 색상 의미"><span className="training-delta-positive">빨강: 개선</span><span className="training-delta-negative">파랑: 악화</span><span>회색: 중립</span></div><span className="wb-synthetic">가상 데이터</span></header>
    {before&&after&&<div className="training-analysis-context"><div><span>분석 기간</span><strong>{periodLabel(after.period.start,after.period.end)}</strong></div><div><span>비교</span><strong>직전 14일</strong><small>{periodLabel(before.period.start,before.period.end)}</small></div><div><span>사례</span><strong>{data?.caseId}</strong><span>보고 기준</span><strong>{data&&new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(data.asOf))}</strong></div></div>}
    <div className="roas-dashboard-filters"><TrainingScopePicker data={data} filters={filters} onCampaign={id=>{setFilters(current=>({...current,channel:'all',source:'all',campaignId:id}));setScopeNotice('');}} onMedia={changeMedia}/>{selectedMetric&&filters.device!=='all'&&<span className="training-device-context">상세 조회: {names[filters.device]}<button onClick={()=>filter('device','all')}>전체 기기로 보기</button></span>}<details className="training-measure-info"><summary>집계 기준</summary><p>매출은 7일 내 마지막 유료 클릭에 기록한 구매 전환 매출입니다. 광고 접점일 기준, 환불과 세금, 배송비 제외.</p></details></div>
+   <nav className="training-page-navigation" aria-label="성과 화면 탐색">
+    <button className="training-overview-link" aria-current={!selectedMetric?'page':undefined} onClick={()=>navigate(null)}>{selectedMetric?<ArrowLeft size={17} aria-hidden="true"/>:<BarChart3 size={17} aria-hidden="true"/>}{selectedMetric?'성과 현황으로 돌아가기':'성과 현황'}</button>
+    <div className="training-metric-links"><span>지표 상세</span>{focusMetrics.map(item=><button key={item.key} aria-label={`${item.label} 상세로 이동`} aria-current={selectedMetric===item.key?'page':undefined} onClick={()=>navigate(item.key)}>{item.label}</button>)}</div>
+    {selectedMetric&&<div className="training-view-links" role="group" aria-label="상세 화면 보기"><button aria-pressed={view==='overview'} onClick={()=>navigate(selectedMetric)}>상세 분석</button><button aria-pressed={view==='data'} onClick={openComparison}>비교 표와 운영 기록</button></div>}
+   </nav>
    <div className="training-scope-notice" role="status">{scopeNotice}</div></div>
-   <main id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<>
+   <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<>
     {(!selectedMetric||view==='data')&&<div className="roas-dashboard-heading"><h1>{selectedMetric?focusMetrics.find(item=>item.key===selectedMetric)?.label+' 비교 표':'성과 현황'}</h1></div>}
     {view==='overview'&&!selectedMetric&&<RoasSummary before={before.total.rates.roas} after={after.total.rates.roas}/>}
     {view==='overview'&&(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onEvidence={setEvidence} tableControlFor={tableControlFor} onDevice={device=>filter('device',device)}/>:<>
