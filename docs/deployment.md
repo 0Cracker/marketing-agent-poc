@@ -18,6 +18,8 @@ VITE_AGENT_API_URL=http://127.0.0.1:8788/agent-api
 
 ## 로컬 AI 서버
 
+ROAS 교육 대시보드의 AI 대화도 같은 서버를 사용한다. 업데이트된 `scripts/agent-server.mjs`를 다시 실행하면 `/agent-api/roas/chat`이 열리며, 별도 키나 온톨로지 설정은 필요하지 않다. `--live`는 실제 모델 답변, 생략하면 연결 확인용 집계를 제공한다. [ROAS 데이터 연결](design/roas-training-dashboard.md#16-roas-에이전트-대화와-데이터-연결-2026-10-27)을 참고한다.
+
 프로젝트 폴더의 PowerShell에서 실제 발급된 두 주소를 사용한다. 아래 예시는 실제 배포 주소가 아니다. Origin에는 경로와 끝의 `/`를 넣지 않는다.
 
 ```powershell

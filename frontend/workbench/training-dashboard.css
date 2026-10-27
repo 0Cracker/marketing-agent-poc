@@ -50,20 +50,39 @@
 .training-test-cases label{display:flex;flex-direction:column;gap:8px;padding:8px 0;font-size:11px}
 .training-test-cases select{width:100%;min-height:34px;padding:6px;border:1px solid #DDE2EB;border-radius:5px;background:#fff;color:#596475;font:inherit}
 .training-test-cases summary:focus-visible,.training-test-cases select:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
-@media(max-width:800px){.training-indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.training-comparison-row{grid-template-columns:130px minmax(0,1fr);gap:12px}.training-bar-line{grid-template-columns:minmax(0,1fr) 80px}.training-chart-legend small{width:100%;margin:0}}
+@media(max-width:800px){.training-comparison-row{grid-template-columns:130px minmax(0,1fr);gap:12px}.training-bar-line{grid-template-columns:minmax(0,1fr) 80px}.training-chart-legend small{width:100%;margin:0}}
 /* Metric tiles are articles: global .wb button flex/nowrap styles must not lay out their content. */
-.training-dashboard .training-indicator{display:block;cursor:default;padding:18px 20px;min-width:0;max-width:100%;white-space:normal;overflow:hidden}
+.training-dashboard .training-indicator{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:26px 42px 176px;gap:10px;align-content:start;cursor:default;padding:18px 20px;min-width:0;max-width:100%;white-space:normal;overflow:hidden}
 .training-dashboard .training-indicator:hover{border-color:#E4E8EF}
 .training-dashboard .training-indicator:hover,.training-dashboard .training-indicator:focus-within{position:relative;z-index:2;overflow:visible}
-.training-indicator-title{gap:12px;min-width:0;margin-bottom:14px}
+.training-indicator-title{gap:12px;min-width:0;margin:0}
 .training-dashboard .training-indicator-title button{display:inline-flex;flex-shrink:0;justify-content:flex-end;width:auto;min-height:26px;padding:2px 0;border:0;background:transparent;color:#7357BA;font-size:12px;white-space:nowrap}
 .training-dashboard .training-indicator-title>span{font-size:14px;font-weight:600;color:#27354B}
-.training-indicator-value{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;min-width:0}
-.training-indicator-value>strong{font-size:26px;font-weight:600;line-height:1.3;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.training-indicator-value{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:8px;min-width:0}
+.training-indicator-value>strong{font-size:26px;font-weight:600;line-height:1.3;font-variant-numeric:tabular-nums;white-space:nowrap}
 .training-indicator-value>.training-delta{font-size:12px;white-space:nowrap}
-.training-dashboard .training-delta-up{color:#C43D42}
-.training-dashboard .training-delta-down{color:#236AB9}
-.training-dashboard .training-delta-flat{color:#687487}
+.training-dashboard .training-delta-positive{color:#C43D42}
+.training-dashboard .training-delta-negative{color:#236AB9}
+.training-dashboard .training-delta-neutral{color:#687487}
+.training-dashboard .training-sparkline{height:176px;width:100%;margin:0}
+.training-dashboard .training-mini-empty{height:176px;margin:0;align-items:center}
+.training-indicator-value>strong>.training-missing-value{font-size:22px;font-weight:500}
+.training-dashboard .training-roas-summary{display:block;width:100%;padding:24px 28px;border:1px solid #DDE3EC;border-left:4px solid currentColor;border-radius:8px;background:#FFF;font-variant-numeric:tabular-nums}
+.training-dashboard .training-roas-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin:0 0 12px;font-size:14px;font-weight:650;line-height:20px;color:#27354B}
+.training-roas-heading>span{font-size:12px;font-weight:400;color:#687487}
+.training-roas-current{font-size:52px;line-height:1.1;font-weight:700;letter-spacing:-1.6px;color:#27354B;white-space:nowrap}
+.training-roas-direction{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.training-roas-direction>svg{display:block;width:52px;height:44px;flex-shrink:0}
+.training-dashboard .training-roas-reference{margin:0;font-size:12px;line-height:18px;color:#687487}
+.training-roas-value-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px}
+.training-roas-change{display:inline-flex;align-items:baseline;gap:5px;font-size:14px;font-weight:600;line-height:20px;white-space:nowrap}
+.training-roas-change>svg{width:10px;height:10px;align-self:center;flex-shrink:0}
+@media(max-width:700px){.training-dashboard .training-roas-summary{padding:22px}.training-roas-current{font-size:44px}}
+@media(max-width:380px){.training-dashboard .training-roas-summary{padding:20px}.training-roas-current{font-size:40px}.training-roas-change{font-size:12px}.training-roas-value-row{column-gap:12px}}
+@media(max-width:1050px){.training-indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.training-indicator-grid{grid-template-columns:minmax(0,1fr)}}
+.training-color-legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;font-size:10px;color:#687487;flex-shrink:0}
+@media(max-width:1050px){.training-color-legend{max-width:150px;gap:2px 8px}.training-navigation-header{gap:10px}}
 .training-analysis-context{display:flex;align-items:center;flex-wrap:wrap;gap:14px 36px;padding:18px 24px;background:#FFF;border-bottom:1px solid #E8ECF2}
 .training-analysis-context>div{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .training-analysis-context span{font-size:12px;color:#788494}
@@ -119,7 +138,12 @@
 .training-dashboard .training-scope-modes button[aria-pressed=true]{border-bottom-color:#7357BA;color:#604594;font-weight:600}
 .training-scope-search{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #DDE2EB;border-radius:6px}
 .training-scope-search input{width:100%;min-width:0;border:0;outline:none;font-size:13px;color:#27354B}
-.training-dashboard .training-scope-all{margin:12px 0;width:100%;justify-content:flex-start;border:0;background:#F7F5FA;padding:8px 12px;font-size:13px}
+.training-scope-catalog{margin-top:16px;border:1px solid #E4E0EC;border-radius:6px;overflow:hidden}
+.training-scope-catalog-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;background:#F7F5FA;border-bottom:1px solid #E4E0EC}
+.training-scope-catalog-heading h3{font-size:13px;font-weight:600}
+.training-dashboard .training-scope-catalog-heading button,.training-dashboard .training-scope-group>div button{padding:5px 10px;border:1px solid #D9D0EA;border-radius:4px;background:#FFF;font-size:12px;color:#604594}
+.training-dashboard .training-scope-catalog-heading button:hover,.training-dashboard .training-scope-group>div button:hover{background:#F0EBF8;border-color:#7357BA}
+.training-dashboard .training-scope-catalog-heading button:focus-visible,.training-dashboard .training-scope-group>div button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
 .training-scope-results{max-height:360px;overflow:auto}
 .training-dashboard .training-scope-option{display:flex;align-items:flex-start;flex-direction:column;gap:5px;width:100%;padding:12px;border:0;border-bottom:1px solid #F0EDF5;border-radius:0;background:#FFF;white-space:normal;text-align:left}
 .training-dashboard .training-scope-option:hover,.training-dashboard .training-scope-option[aria-current=true]{background:#F8F6FC}
@@ -129,7 +153,6 @@
 .training-scope-group{margin:8px 0 18px}
 .training-scope-group>div{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#F7F5FA}
 .training-scope-group h3{font-size:13px}
-.training-dashboard .training-scope-group>div button{border:0;background:transparent;font-size:11px;color:#7357BA}
 .training-query-context .training-analysis-context{gap:10px 22px;padding:12px 24px}
 .training-scope-notice:empty{display:none}
 .training-scope-notice{padding:8px 24px;color:#594781;background:#F7F4FC;font-size:12px}
@@ -140,7 +163,7 @@
 .training-detail-field .roas-evidence-facts{margin:0}
 .training-detail-field .training-detail-field{grid-template-columns:84px minmax(0,1fr)}
 .training-case-description{margin:-8px 0 20px;color:#788494;font-size:12px;line-height:1.7}
-@media(max-width:1050px){.training-indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 
 /* 캠페인 비교 막대는 카드 안의 모든 행에 같은 0 기준 눈금을 쓴다. */
 .training-bar-legend i{border:0;height:7px;border-radius:1px;background:#9BA8B9}
@@ -158,9 +181,13 @@
 .training-detail-comparisons .roas-card{margin-bottom:18px}
 .training-dashboard .training-breadcrumb button:first-child:not([aria-current=page]){display:inline-flex;gap:8px;border:1px solid #DED7EB;border-radius:5px;padding:7px 12px;background:#FFF}
 .training-dashboard .roas-dashboard-filters{align-items:center;gap:24px}
-.training-device-options{position:relative;margin-left:24px;color:#687487;font-size:12px}
-.training-device-options summary,.training-measure-info summary{cursor:pointer;list-style-position:inside;padding:7px 0}
-.training-device-options[open]>label,.training-device-options[open]>p{background:#FFF;padding:12px;border:1px solid #E4E8EF;margin:0}
+.training-measure-info summary{cursor:pointer;list-style-position:inside;padding:7px 0}
+.training-local-device{display:flex;align-items:center;gap:10px;font-size:12px;color:#687487}
+.training-local-device select{font:inherit;color:#354156;padding:6px 10px;border:1px solid #DDE2EB;border-radius:5px;background:#FFF}
+.training-device-followup{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 4px 20px}
+.training-device-followup p{margin:0;font-size:12px;color:#687487}
+.training-device-context{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:#687487}
+.training-dashboard .training-device-context button{border:0;background:transparent;color:#7357BA;font-size:12px;padding:2px 0;text-decoration:underline}
 .training-measure-info{margin-left:auto;position:relative;font-size:11px;color:#788494}
 .training-measure-info p{position:absolute;right:0;top:32px;width:320px;padding:16px;background:#FFF;border:1px solid #E4E8EF;border-radius:6px;line-height:1.8;box-shadow:0 8px 24px #27354B16}
 .training-sort-help{font-size:11px;color:#788494;margin:0 0 12px}

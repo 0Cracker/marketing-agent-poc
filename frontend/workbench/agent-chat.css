@@ -1,4 +1,5 @@
 /* Separate the conversation from the data workbench without dimming it on desktop. */
+.wb-roas-conversation-container{display:flex;flex:1;min-height:0;flex-direction:column}.wb-roas-conversation-container[hidden]{display:none}.wb .wb-roas-answer{white-space:pre-wrap;font-size:14px;line-height:1.8;color:#342C40}
 .wb .wb-chat-panel{top:12px;right:12px;bottom:12px;width:480px;max-width:calc(100vw - 24px);border:1px solid #E5E0EE;border-radius:18px;box-shadow:0 8px 32px #30224E14;overflow:hidden;background:#FFF}
 .wb .wb-chat-panel>header{height:76px;padding:16px 20px;background:#FAF9FD;border-bottom:0}
 .wb-chat-identity{display:flex;gap:11px;align-items:center;min-width:0}

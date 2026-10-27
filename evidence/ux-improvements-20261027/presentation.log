@@ -1,0 +1,15 @@
+✔ the same numerical direction means opposite performance for ROAS and purchase costs (376.1193ms)
+✔ one visible axis encloses both periods for all existing cases and KPI trends (188.5123ms)
+✔ the entry metric and its numerator and denominator precede other columns without changing source order (0.4769ms)
+✔ displayed zero changes, zero percentage points and unavailable comparisons are neutral (0.767ms)
+✔ headline ROAS compares each full period aggregate rather than daily mean or last-day ROAS (2.7497ms)
+✔ mini trends use two shared bounds around actual values while large trends retain zero (111.1535ms)
+✔ mini bounds stay readable for flat, zero and unavailable series (0.2833ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 938.7123

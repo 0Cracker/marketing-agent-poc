@@ -1,0 +1,36 @@
+✔ answer does not promote held, paused or cancelled runs to a conclusion (2.8347ms)
+✔ superseded analysis takes priority over a successful previous status (0.4448ms)
+✔ absent evidence remains unresolved even when analysis processing finished (0.4575ms)
+✔ conflicting or one-sided evidence never establishes causation (0.5895ms)
+✔ approval and invalidation are described as state, never actual execution (0.5707ms)
+✔ a missing simulation cannot be presented as a winning budget proposal (0.3658ms)
+✔ loading without brand reference data does not crash the dashboard (0.4318ms)
+✔ 503 guidance describes saved state and manual resume without hiding other errors (3.336ms)
+✔ C01 screen context becomes explicit half-open scope without raw data (8.7982ms)
+✔ C02 aggregate countries, legacy batches and unspecified periods need explicit scope (0.84ms)
+✔ C03 restoring a run cannot cross country, period, product or asOf snapshots (2.2ms)
+✔ C04 session token is attached to API requests, never put in body (75.1787ms)
+✔ C05 lost POST response is not automatically submitted again (2.7934ms)
+✔ C06 token rejected before mutation may refresh once after a server restart (2.1384ms)
+✔ C07 server errors remain actionable codes; no fake successful result (2.0188ms)
+✔ C08 remote mode requires explicit external flag and still rejects real Ads mode (2.3749ms)
+✔ ROAS chat reuses the session token and returns cited answers without a catalog run (1.6756ms)
+✔ P01 chart and formatted cards use the same approved values and reference IDs (2.4593ms)
+✔ P02 unreviewed and unclassified candidates never become evidence of no effect (0.7124ms)
+✔ P03 null is not zero; multiple months cannot become duplicated product bars (1.5891ms)
+✔ P04 summary distinguishes missing classification from a genuine zero side (3.5978ms)
+✔ the same numerical direction means opposite performance for ROAS and purchase costs (549.3601ms)
+✔ one visible axis encloses both periods for all existing cases and KPI trends (349.4983ms)
+✔ the entry metric and its numerator and denominator precede other columns without changing source order (1.3981ms)
+✔ displayed zero changes, zero percentage points and unavailable comparisons are neutral (6.9464ms)
+✔ headline ROAS compares each full period aggregate rather than daily mean or last-day ROAS (4.5782ms)
+✔ mini trends use two shared bounds around actual values while large trends retain zero (198.948ms)
+✔ mini bounds stay readable for flat, zero and unavailable series (0.2922ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1730.926

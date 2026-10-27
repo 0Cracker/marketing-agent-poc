@@ -36,7 +36,8 @@ export default function TrainingScopePicker({data,filters,onCampaign,onMedia}:{d
    <div className="training-scope-browser">
     <div className="training-scope-modes"><button aria-pressed={mode==='campaign'} onClick={()=>setMode('campaign')}>캠페인으로 찾기</button><button aria-pressed={mode==='provider'} onClick={()=>setMode('provider')}>집행처로 찾기</button></div>
     <label className="training-scope-search"><Search size={16}/><input ref={search} aria-label="캠페인, 집행처, 유형 검색" placeholder="캠페인명, ID, 집행처 또는 유형 검색" value={query} onChange={event=>setQuery(event.target.value)}/></label>
-    <button className="training-scope-all" onClick={()=>choose('all')}>전체 캠페인 조회</button>
+    <section className="training-scope-catalog" aria-label="전체 캠페인 목록">
+    <div className="training-scope-catalog-heading"><h3>{mode==='campaign'?'전체 캠페인':'전체 집행처'}</h3><button onClick={()=>choose('all')}>전체 캠페인 조회</button></div>
     <div className="training-scope-results" onClick={event=>{const button=(event.target as HTMLElement).closest<HTMLButtonElement>('button[data-campaign], button[data-media]');if(!button)return;if(button.dataset.campaign)onCampaign(button.dataset.campaign);else if(button.dataset.media)onMedia(button.dataset.media);close();}}>
      {mode==='campaign'?campaigns.map(c=><button key={c.id} className="training-scope-option" aria-current={filters.campaignId===c.id?'true':undefined} data-campaign={c.id}><strong>{data&&campaignDisplayName(data,c.id)}</strong><small>{description(c)}</small></button>):groups.map(name=>{
       const rows=campaigns.filter(c=>providerName(c)===name);
@@ -46,6 +47,7 @@ export default function TrainingScopePicker({data,filters,onCampaign,onMedia}:{d
      })}
      {!campaigns.length&&<p>검색에 맞는 캠페인이 없습니다.</p>}
     </div>
+    </section>
    </div>
   </dialog>
  </div>;
