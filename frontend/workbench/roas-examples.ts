@@ -3,6 +3,7 @@ import type {Filters,TrainingData} from '../../shared/training-dashboard.mjs';
 import {chatComparison,chatHighlights,chatValue} from '../../shared/roas-chat.mjs';
 import type {ChatSource} from '../../shared/roas-chat.mjs';
 import type {RoasAnswer} from './agent-client';
+import {factorEffects} from './training-analysis.ts';
 
 export const roasExamples=[
  {id:'overview',label:'ROAS가 직전 기간보다 달라진 이유를 분석해줘',question:'ROAS가 직전 기간보다 달라진 이유를 분석해줘'},
@@ -69,13 +70,7 @@ export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):R
   sections.reasoning=['ROAS = AOV × CVR ÷ CPC입니다. 여기서 AOV는 구매 전환 매출 ÷ 주문, CVR은 주문 ÷ 클릭, CPC는 집행비 ÷ 클릭으로, 같은 기간과 범위의 합계를 사용합니다.'];
   sections.summary=names.map((name,i)=>`${name}: ${chatValue(from[i],name.toLowerCase())} → ${chatValue(to[i],name.toLowerCase())}. ${citations}`);
   if(from.every(value=>value!==null&&Number.isFinite(value))&&to.every(value=>value!==null&&Number.isFinite(value))&&(a.cpc??0)>0&&(b.cpc??0)>0){
-   const prior=from as number[],current=to as number[],impact=[0,0,0];
-   const roas=(values:number[])=>values[0]*values[1]/values[2];
-   // Average all replacement orders so interactions do not depend on one chosen order.
-   for(const order of [[0,1,2],[0,2,1],[1,0,2],[1,2,0],[2,0,1],[2,1,0]]){
-    const values=[...prior];
-    for(const index of order){const previous=roas(values);values[index]=current[index];impact[index]+=(roas(values)-previous)/6;}
-   }
+   const impact=factorEffects('roas',a,b)!.map(row=>row.impact);
    const ranked=impact.map((value,index)=>({value,index})).sort((x,y)=>x.value-y.value);
    const worst=ranked.find(row=>row.value<0),best=ranked.toReversed().find(row=>row.value>0);
    sections.conclusion=`ROAS는 ${chatValue(a.roas,'roas')} → ${chatValue(b.roas,'roas')}, ${signed((b.roas-a.roas)*100,'%p')}입니다. ${worst?`가장 큰 하락 기여 지표는 ${names[worst.index]}입니다.`:'세 지표에서 하락 기여는 없습니다.'} ${citations}`;

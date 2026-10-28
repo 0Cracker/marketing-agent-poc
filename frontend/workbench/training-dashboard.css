@@ -240,3 +240,61 @@
 .training-dashboard .wb-sidebar nav button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
 .training-dashboard main h1:focus-visible{outline:2px solid #7357BA;outline-offset:5px}
 #training-campaign-roas{scroll-margin-top:180px}
+
+/* Primary rows expose calculation inputs; investigation belongs to the expanded row. */
+.training-factor-summary>p,.training-factor-section>p{font-size:12px;line-height:1.8;color:#687487}
+.training-factor-section h4{font-size:13px;font-weight:600;margin:20px 0 8px}
+.training-factor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-block:1px solid #E8ECF2;margin:14px 0 18px}
+.training-factor-grid article{min-width:0;padding:16px 18px;border-right:1px solid #E8ECF2;font-size:12px;line-height:1.7}
+.training-factor-grid article:first-child{padding-left:0}.training-factor-grid article:last-child{border:0}
+.training-factor-grid article p{margin:6px 0;color:#687487;font-variant-numeric:tabular-nums}
+.training-dashboard .training-factor-grid button{padding:0;border:0;background:transparent;color:#7357BA;font-size:13px}
+.training-factor-grid article>span{font-weight:600;font-variant-numeric:tabular-nums}
+.training-analysis-panel{min-width:0}
+.training-analysis-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;padding:14px 0;border-bottom:1px solid #E8ECF2}
+.training-analysis-controls label{display:flex;align-items:center;gap:10px;font-size:12px;color:#687487}
+.training-analysis-controls select{font:inherit;padding:7px 10px;border:1px solid #DDE2EB;border-radius:5px;color:#354156;background:#FFF;max-width:100%}
+.training-analysis-total{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin:18px 0;font-size:12px;color:#687487}
+.training-analysis-total strong{font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.training-analysis-total>span{margin-left:auto;font-size:11px}
+.training-analysis-section>h4{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin:22px 0 12px;font-size:14px}
+.training-analysis-section>h4 small{font-size:11px;font-weight:400;color:#788494}
+.training-analysis-panel .wb-table-scroll{max-width:100%;overflow:auto;overscroll-behavior-inline:contain}
+.training-analysis-table{min-width:100%;font-variant-numeric:tabular-nums}
+.training-analysis-table>thead>tr>th{white-space:nowrap;text-align:right;min-width:110px}
+.training-analysis-table>thead>tr>th:first-child,.training-analysis-table>tbody>tr>th[scope=row]{position:sticky;left:0;z-index:2;background:#FFF;min-width:220px;max-width:270px;text-align:left}
+.training-analysis-table>tbody>tr>td{min-width:110px;padding-block:16px}
+.training-analysis-table td>strong{display:block;font-size:13px;font-weight:600}
+.training-analysis-table .training-cell-change{font-size:11px}
+.training-dashboard .training-analysis-table th button{display:inline-flex;align-items:flex-start;border:0;background:transparent;padding:0;text-align:inherit;color:inherit;font:inherit;white-space:normal;line-height:1.6}
+.training-dashboard .training-analysis-table .training-analysis-expand{display:flex;gap:10px;max-width:250px;text-align:left;color:#354156;font-size:12px}
+.training-analysis-expand>span{flex-shrink:0;width:18px;height:18px;border:1px solid #DED7EB;border-radius:3px;color:#7357BA;line-height:16px;text-align:center}
+.training-analysis-table .training-impact-value{font-weight:600;white-space:nowrap;border-left:1px solid #E8ECF2}
+.training-analysis-table>tbody>.training-analysis-expanded-row>td{padding:0;white-space:normal;min-width:0}
+.training-analysis-expanded-row[hidden]{display:none}
+.training-analysis-detail{padding:24px;background:#FAFBFD;border-block:1px solid #E0E4ED;white-space:normal;max-width:calc(100vw - 340px)}
+.training-sidebar-collapsed .training-analysis-detail{max-width:calc(100vw - 120px)}
+.training-analysis-detail>section{margin-top:24px;min-width:0}
+.training-analysis-detail h4{font-size:14px;font-weight:600;margin:0 0 12px;color:#354156;white-space:normal}
+.training-analysis-detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.training-analysis-detail-heading>div{display:flex;gap:10px;flex-wrap:wrap}
+.training-dashboard .training-analysis-detail-heading button{font-size:12px;padding:6px 10px;white-space:normal}
+.training-calculation-table{width:100%;font-variant-numeric:tabular-nums}
+.training-calculation-table th[scope=row]{font-size:12px;font-weight:500;white-space:normal;min-width:160px;text-align:left}
+.training-calculation-table th small{display:block;font-size:10px;font-weight:400;color:#788494;margin-top:4px}
+.training-calculation-table td{font-size:12px;white-space:nowrap}
+.training-impact-breakdown{display:flex;flex-wrap:wrap;gap:14px 36px;margin:0}
+.training-impact-breakdown dt{font-size:11px;color:#788494;line-height:1.8}
+.training-impact-breakdown dd{margin:4px 0 0;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.training-analysis-detail .training-change-timeline{background:transparent;border:0;padding:0;box-shadow:none}
+.training-analysis-detail .roas-data-note{white-space:normal;line-height:1.8;max-width:90ch}
+.training-analysis-detail .training-product-evidence details{padding:4px 0}
+.training-reference-records{margin-top:24px;font-size:12px}
+.training-reference-records>div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #E8ECF2}
+.training-reference-records>div>span{white-space:normal}
+.training-dashboard .training-reference-records button{font-size:11px;padding:4px 8px;flex-shrink:0}
+.training-analysis-scope{display:flex;justify-content:space-between;gap:12px;padding:10px 24px;font-size:12px;color:#594781;background:#F7F4FC}
+.training-analysis-scope>span{overflow-wrap:anywhere;min-width:0}
+.training-dashboard .training-analysis-scope>button{border:0;background:transparent;padding:0;color:#7357BA;flex-shrink:0;font-size:12px}
+.training-analysis-panel button:focus-visible,.training-analysis-panel select:focus-visible,.training-analysis-panel [role=region]:focus-visible,.training-factor-summary button:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
+@media(max-width:800px){.training-analysis-detail,.training-sidebar-collapsed .training-analysis-detail{max-width:calc(100vw - 76px);padding:16px}.training-factor-grid{grid-template-columns:minmax(0,1fr)}.training-factor-grid article{border-right:0;border-bottom:1px solid #E8ECF2;padding:14px 0}.training-analysis-total>span{margin-left:0}.training-analysis-table>thead>tr>th:first-child,.training-analysis-table>tbody>tr>th[scope=row]{min-width:160px;max-width:190px}.training-dashboard .training-analysis-table .training-analysis-expand{max-width:170px}.training-funnel-head,.training-funnel-step{grid-template-columns:100px minmax(0,1fr) minmax(0,1fr);gap:12px}}

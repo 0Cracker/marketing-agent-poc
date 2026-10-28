@@ -13,7 +13,7 @@ export function metricChangeRecords(data:TrainingData,filters:Filters,metric:str
  const categories:Record<string,string[]>={adCtr:['change','creative'],cpc:['change','creative'],aov:['change','inventory'],cac:['tracking']};
  const allowed=categories[metric]||['change','creative','incident','inventory','landing','tracking'];
  return selectRecords(data,filters).filter(row=>{
-  if(!allowed.includes(row.category)||(['adCtr','cpc'].includes(metric)&&row.productId))return false;
+  if(!allowed.includes(row.category)||(['adCtr','cpc'].includes(metric)&&row.category==='change'&&row.productId))return false;
   const end=typeof row.values.종료==='string'?row.values.종료.slice(0,10):row.date;
   return row.date<period.end&&(row.date>=period.start||end>=period.start);
  }).toSorted((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
