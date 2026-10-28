@@ -179,17 +179,32 @@
 .training-paired-values .current{color:#604594;font-weight:600}
 .training-paired-delta{text-align:right;font-size:12px;white-space:nowrap}
 .training-detail-comparisons .roas-card{margin-bottom:18px}
-.training-dashboard .training-breadcrumb button:first-child:not([aria-current=page]){display:inline-flex;gap:8px;border:1px solid #DED7EB;border-radius:5px;padding:7px 12px;background:#FFF}
+.training-dashboard .training-breadcrumb button:hover{text-decoration:underline;text-underline-offset:4px}
 .training-dashboard .roas-dashboard-filters{align-items:center;gap:24px}
-.training-measure-info summary{cursor:pointer;list-style-position:inside;padding:7px 0}
 .training-local-device{display:flex;align-items:center;gap:10px;font-size:12px;color:#687487}
 .training-local-device select{font:inherit;color:#354156;padding:6px 10px;border:1px solid #DDE2EB;border-radius:5px;background:#FFF}
 .training-device-followup{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 4px 20px}
 .training-device-followup p{margin:0;font-size:12px;color:#687487}
 .training-device-context{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:#687487}
 .training-dashboard .training-device-context button{border:0;background:transparent;color:#7357BA;font-size:12px;padding:2px 0;text-decoration:underline}
-.training-measure-info{margin-left:auto;position:relative;font-size:11px;color:#788494}
-.training-measure-info p{position:absolute;right:0;top:32px;width:320px;padding:16px;background:#FFF;border:1px solid #E4E8EF;border-radius:6px;line-height:1.8;box-shadow:0 8px 24px #27354B16}
+.training-dashboard .training-measure-info{margin-left:auto;display:inline-flex;gap:5px;align-items:center;border:0;background:transparent;padding:7px 0;font-size:11px;color:#788494;cursor:help}
+.training-measure-tooltip{max-width:min(320px,calc(100vw - 32px));padding:12px 14px;border:1px solid #E4E8EF;background:#FFF;color:#354156;font-size:12px;line-height:1.8;box-shadow:0 8px 24px #27354B16;z-index:60}
+.training-dashboard .training-detail-heading{padding:0;margin-bottom:16px;border:0}
+.training-metric-detail>.training-roas-summary{margin-bottom:22px}
+.training-roas-current>.training-missing-value{font-size:32px;letter-spacing:0}
+.training-comparison-heading{font-size:18px;font-weight:600;color:#27354B;margin:30px 0 8px}
+.training-comparison-intro{font-size:12px;color:#687487;margin:0 0 20px;line-height:1.8}
+.training-change-timeline>ol{list-style:none;margin:18px 0 0;padding:0}
+.training-change-timeline>ol>li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:18px;padding:20px 0;border-top:1px solid #E8ECF2}
+.training-change-timeline time{font-size:12px;color:#788494;padding-top:3px}
+.training-change-timeline h4{font-size:14px;color:#27354B;font-weight:600;margin:0 0 7px}
+.training-change-target{font-size:11px;color:#788494;margin:0 0 12px;line-height:1.7}
+.training-change-timeline dl{display:grid;gap:6px;margin:0}
+.training-change-timeline dl>div{display:grid;grid-template-columns:75px minmax(0,1fr);gap:12px;font-size:12px;line-height:1.7}
+.training-change-timeline dt{color:#788494}.training-change-timeline dd{margin:0;color:#354156;overflow-wrap:anywhere}
+.training-change-check{font-size:12px;color:#604594;margin:14px 0 10px;line-height:1.8}
+.training-dashboard .training-change-timeline button{font-size:11px;padding:4px 0;border:0;background:transparent;color:#7357BA;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.training-change-timeline>ol>li{grid-template-columns:minmax(0,1fr);gap:8px}.training-roas-heading>span{overflow-wrap:anywhere}}
 .training-sort-help{font-size:11px;color:#788494;margin:0 0 12px}
 .training-one-row-table th[scope=row]{min-width:200px;white-space:normal;text-align:left;font-weight:500}
 .training-one-row-table td{min-width:115px}

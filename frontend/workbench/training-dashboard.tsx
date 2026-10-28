@@ -1,20 +1,22 @@
 'use client';
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
-import {ArrowLeft,BarChart3,Layers,Menu,Search,Sparkles,X} from 'lucide-react';
+import {ArrowLeft,BarChart3,Info,Layers,Menu,Search,Sparkles,X} from 'lucide-react';
+import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from '../components/ui/tooltip';
 import {RoasConversation} from './roas-conversation';
 import type {RoasAnswer} from './agent-client';
 import {CartesianGrid,Line,LineChart,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
-import {campaignDisplayName,displayTrainingText,changeTrainingMedia,comparePeriods,metricPeriodSeries,metricValue,metricChange,metricMissingReason,selectBreakdowns,selectFacts,selectRecords,summarize,trainingViews,trainingCostDefinition} from '../../shared/training-dashboard.mjs';
+import {campaignDisplayName,displayTrainingText,changeTrainingMedia,comparePeriods,metricPeriodSeries,metricValue,metricChange,metricMissingReason,selectBreakdowns,selectFacts,summarize,trainingViews,trainingCostDefinition} from '../../shared/training-dashboard.mjs';
 import type {Breakdown,Fact,Filters,Total,TrainingData} from '../../shared/training-dashboard.mjs';
 import './roas-workbench.css';
 import './training-dashboard.css';
 import TrainingScopePicker from './training-scope-picker';
 import {deltaTone,miniPlotDomain,plotUpper,prioritizeColumns} from './training-presentation';
+import {changeRecordValue,metricChangeRecords,recordReadingHint} from './training-investigation';
 
 type Index={contract:string;cases:{id:string;label:string}[];snapshots:{id:string;label:string;asOf:string}[]};
 type Evidence={title:string;rows:object[]};
 type Metric={key:string;label:string;rate?:boolean;unit?:string};
-type TableSettings={dimension?:string;sortKey?:string;sortBasis?:'current'|'change';descending?:boolean;recordCategory?:string};
+type TableSettings={dimension?:string;sortKey?:string;sortBasis?:'current'|'change';descending?:boolean};
 type TableControls={settings:TableSettings;onSettings:(patch:TableSettings)=>void};
 type TableControlFor=(key:string)=>TableControls;
 const dimensions=[['campaign','캠페인'],['channel','채널'],['source','출처'],['device','기기'],['creativeId','소재'],['audienceId','타깃'],['placement','지면'],['keyword','검색어'],['product','상품'],['paymentMethod','결제 수단'],['browser','브라우저']];
@@ -55,13 +57,13 @@ function Delta({before,after,rate=false,metricKey}:{before:number|null;after:num
  return <span className={`training-delta training-delta-${deltaTone(metricKey,before,after,rate)}`}>{change(before,after,rate)}</span>;
 }
 
-function RoasSummary({before,after}:{before:number|null;after:number|null}){
- const tone=deltaTone('roas',before,after,true);
- const path=tone==='neutral'?'M5 24H49M37 12L49 24L37 36':'M5 8L19 23L29 15L48 38M35 38H48V25';
- return <section className={`roas-primary-kpi training-roas-summary training-delta-${tone}`} aria-labelledby="training-roas-title">
-  <h3 id="training-roas-title" className="training-roas-heading">ROAS <span>구매 전환 매출 기준</span></h3>
-  <div className="training-roas-direction"><svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={tone==='positive'?'translate(0 48) scale(1 -1)':undefined}/></svg><p className="training-roas-reference">직전 14일: {fmt(before,true)}</p></div>
-  <div className="training-roas-value-row"><strong className="training-roas-current">{fmt(after,true)}</strong><span className="training-roas-change" title="%p는 퍼센트포인트로, 두 ROAS 비율의 차이입니다.">{tone!=='neutral'&&<svg viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 2H9L5 9Z" transform={tone==='positive'?'translate(0 10) scale(1 -1)':undefined}/></svg>}<Delta metricKey="roas" before={before} after={after} rate/></span></div>
+function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[]}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[]}){
+ const tone=deltaTone(metric.key,before,after,metric.rate),direction=before===null||after===null?0:Math.sign(after-before);
+ const path=direction===0?'M5 24H49M37 12L49 24L37 36':'M5 8L19 23L29 15L48 38M35 38H48V25';
+ return <section className={`roas-primary-kpi training-roas-summary training-delta-${tone}`} aria-labelledby={`training-${metric.key}-title`}>
+  <h3 id={`training-${metric.key}-title`} className="training-roas-heading">{metric.label} <span>{metric.key==='roas'?'구매 전환 매출 기준':metricDescriptions[metric.key]}</span></h3>
+  <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">직전 14일: {fmt(before,metric.rate,metric.unit)}</p></div>
+  <div className="training-roas-value-row"><strong className="training-roas-current">{after===null?<MetricCell value={after} metric={metric} rows={rows}/>:fmt(after,metric.rate,metric.unit)}</strong><span className="training-roas-change" title={metric.rate?'%p는 퍼센트포인트로, 두 비율의 차이입니다.':'직전 14일 대비 상대 증감률입니다.'}>{tone!=='neutral'&&direction!==0&&<svg viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 2H9L5 9Z" transform={direction>0?'translate(0 10) scale(1 -1)':undefined}/></svg>}<Delta metricKey={metric.key} before={before} after={after} rate={metric.rate}/></span></div>
  </section>;
 }
 
@@ -140,13 +142,14 @@ function MetricDetails({metric,data,filters,onEvidence,tableControlFor,onDevice}
  const comparedBefore=summarize(comparedRows.filter(r=>r.periodId==='baseline')),comparedAfter=summarize(comparedRows.filter(r=>r.periodId==='current'));
  const sku=selectBreakdowns(data,filters,'product');
  return <div className="training-metric-detail">
-  <div className="training-detail-heading"><h1><span tabIndex={0} title={metricDescriptions[metric.key]}>{metric.label}</span> 상세 분석</h1><div className="training-detail-values"><div><span>분석 기간</span><strong><MetricCell value={metricValue(after.total,metric.key)} before={metricValue(before.total,metric.key)} metric={metric} rows={after.rows}/></strong></div><div><span>직전 14일</span><b><MetricCell value={metricValue(before.total,metric.key)} metric={metric} rows={before.rows}/></b></div><div><span>직전 대비</span><b><Delta metricKey={metric.key} before={metricValue(before.total,metric.key)} after={metricValue(after.total,metric.key)} rate={metric.rate}/></b></div></div></div>
+  <div className="training-detail-heading"><h1><span tabIndex={0} title={metricDescriptions[metric.key]}>{metric.label}</span> 상세 분석</h1></div>
+  <MetricSummary metric={metric} before={metricValue(before.total,metric.key)} after={metricValue(after.total,metric.key)} rows={after.rows}/>
   {metric.key==='cac'?<section className="roas-card"><h3>CAC 계산에 필요한 정보</h3><p className="roas-data-note">신규 고객 수가 없어 계산할 수 없습니다. 기존 고객의 재구매가 포함될 수 있는 구매 주문 수와 구분합니다.</p><Comparison before={before.total} after={after.total} beforeRows={before.rows} afterRows={after.rows} items={items}/></section>:<>
    <section className="roas-card"><h3>{metric.label} 기간별 추이</h3><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={metric}/></section>
    <section className="roas-card"><h3>계산에 연결된 지표</h3><Comparison before={comparedBefore} after={comparedAfter} beforeRows={comparedRows.filter(r=>r.periodId==='baseline')} afterRows={comparedRows.filter(r=>r.periodId==='current')} items={items}/></section>
    <DeviceComparison metric={metric} data={data} filters={filters} onEvidence={onEvidence} tableControlFor={tableControlFor} onDevice={onDevice}/><div className="training-detail-comparisons"><section className="roas-card"><h3>{metric.key==='aov'?'상품별':'캠페인별'} {metric.label}</h3><PlotLegend/><ComparisonBars rows={metric.key==='aov'?sku:comparedRows} metric={metric} group={r=>metric.key==='aov'?(r as Breakdown).key:r.campaignId} label={key=>metric.key==='aov'?data.products.find(p=>p.id===key)?.label||key:campaignDisplayName(data,key)}/></section></div>
-   <GroupTable title={metric.label+' 캠페인별 수치'} rows={comparedRows} group={r=>r.campaignId} label={key=>campaignDisplayName(data,key)} items={[metric,...items.filter(item=>item.key!==metric.key)].slice(0,5)} onEvidence={onEvidence} {...tableControlFor("detail:"+metric.key)} expanded/>
-   {['cvr','cpa'].includes(metric.key)&&<FunnelComparison before={before.total} after={after.total}/>}
+
+
   </>}
  </div>;
 }
@@ -168,27 +171,24 @@ function DataWorkspace({data,filters,metricKey,preset:requestedPreset,setPreset,
    controls.onSettings({dimension});
    onNotice(`선택한 범위에는 ${dimensions.find(([key])=>key===chosenDimension)?.[1]} 자료가 없어 ${dimensions.find(([key])=>key===dimension)?.[1]}별 비교로 변경했습니다.`);
   }
-  if(dimension==='device'&&filters.device!=='all'){
-   onDevice('all');
-   onNotice('모바일과 PC를 비교하도록 상세 조회 범위를 전체 기기로 변경했습니다.');
-  }
- },[chosenDimension,dimension,controls,onNotice,filters.device,onDevice]);
+ },[chosenDimension,dimension,controls,onNotice]);
  const presetNames:Record<string,string>={performance:'성과 비교',traffic:'유입과 클릭',funnel:'구매 퍼널',commerce:'상품과 매출',payment:'결제 실패',measurement:'계측 대조'};
  const metricSets:Record<string,Metric[]>={performance:metrics,traffic:[{key:'impressions',label:'노출/조회'},{key:'clicks',label:'클릭'},...metrics.filter(m=>['adCtr','contentClickRate','adCpm','contentCpm','cpc'].includes(m.key)),{key:'sessions',label:'랜딩 세션'},{key:'redirectErrors',label:'리디렉션 오류'},{key:'loadMs',label:'평균 로드 시간',unit:'ms'}],funnel:[{key:'sessions',label:'랜딩 세션'},{key:'view',label:'상품 조회'},{key:'viewRate',label:'상품 조회율',rate:true},{key:'cart',label:'장바구니'},{key:'cartRate',label:'장바구니율',rate:true},{key:'checkout',label:'결제 시작'},{key:'beginRate',label:'결제 시작률',rate:true},{key:'purchases',label:'같은 세션 구매'},{key:'sessionCvr',label:'세션 구매율',rate:true},{key:'checkoutRate',label:'결제 완료율',rate:true},{key:'returnPurchases',label:'재방문 구매'}],commerce:[{key:'orders',label:'주문'},{key:'units',label:'수량'},{key:'unitPrice',label:'할인 전 단가',unit:'원'},{key:'listRevenue',label:'할인 전 금액',unit:'원'},{key:'discount',label:'할인액',unit:'원'},{key:'discountRate',label:'금액 할인율',rate:true},{key:'revenue',label:'구매 전환 매출',unit:'원'},{key:'aov',label:'AOV',unit:'원'}],payment:[{key:'checkout',label:'결제 시작'},{key:'paymentAttempts',label:'결제 시도'},{key:'paymentFailures',label:'결제 실패'},{key:'paymentFailureRate',label:'실패율',rate:true}],measurement:[{key:'orders',label:'계측 주문'},{key:'ledgerOrders',label:'주문 원장 주문'},{key:'revenue',label:'계측 구매 전환 매출',unit:'원'},{key:'ledgerRevenue',label:'주문 원장 구매 전환 매출',unit:'원'},{key:'trackingExpected',label:'수집 대상 이벤트'},{key:'trackingReceived',label:'수집 이벤트'},{key:'duplicateEvents',label:'중복 이벤트'}]};
  const availableItems=metricSets[preset]||metrics;
  const extraKeys=metricKey==='cpc'&&preset==='traffic'?['spend']:metricKey==='cvr'&&preset==='funnel'?['cvr','orders']:[];
  const extraItems=[...metrics.filter(item=>extraKeys.includes(item.key)),...(metricKey==='cvr'&&preset==='funnel'?[{key:'clicks',label:'클릭'}]:[])];
  const items=prioritizeColumns([...availableItems,...extraItems],metricKey);
- const facts=selectFacts(data,filters).filter(row=>metricKey!=='adCtr'||row.exposureBasis==='ad_impression');
+ const comparisonFilters=dimension==='device'?{...filters,device:'all'}:filters;
+ const facts=selectFacts(data,comparisonFilters).filter(row=>metricKey!=='adCtr'||row.exposureBasis==='ad_impression');
  const isTraffic=['creativeId','audienceId','placement','keyword','paymentMethod','browser'].includes(dimension);
- let rows:(Fact|Breakdown)[]=dimension==='product'?selectBreakdowns(data,filters,'product'):isTraffic?selectBreakdowns(data,filters,'traffic'):facts;
+ let rows:(Fact|Breakdown)[]=dimension==='product'?selectBreakdowns(data,comparisonFilters,'product'):isTraffic?selectBreakdowns(data,comparisonFilters,'traffic'):facts;
  if(dimension==='keyword')rows=rows.filter(r=>Boolean((r as Breakdown).keyword));
  if(metricKey==='adCtr')rows=rows.filter(r=>r.exposureBasis==='ad_impression');
  const group=(row:Fact|Breakdown)=>dimension==='campaign'?row.campaignId:dimension==='product'?(row as Breakdown).key:dimension==='source'||dimension==='channel'?data.campaigns.find(c=>c.id===row.campaignId)?.[dimension]||'':String(row[dimension as keyof Fact]??(row as Breakdown)[dimension as keyof Breakdown]??'미적용');
  const label=(key:string)=>dimension==='campaign'?campaignDisplayName(data,key):dimension==='product'?data.products.find(p=>p.id===key)?.label||key:names[key]||key;
  const campaignIds=new Set(facts.map(r=>r.campaignId));
  const reach=data.reach.filter(r=>campaignIds.has(r.campaignId)&&(filters.device==='all'||r.device===filters.device));
- return <div className="training-data-workspace"><div className="training-comparison-tabs" aria-label="비교 자료">{availablePresets.map(key=><button key={key} aria-pressed={preset===key} onClick={()=>setPreset(key)}>{presetNames[key]}</button>)}</div><div className="training-breakdown-controls">{dimension!=='device'&&<DeviceSelection device={filters.device} onDevice={onDevice}/ >}{supported.length>1&&<label>행 구분<select aria-label="비교 기준" value={dimension} onChange={e=>{controls.onSettings({dimension:e.target.value});if(e.target.value==='device'&&filters.device!=='all'){onDevice('all');onNotice('모바일과 PC를 비교하도록 상세 조회 범위를 전체 기기로 변경했습니다.');}}}>{dimensions.filter(([key])=>supported.includes(key)).map(([key,title])=><option key={key} value={key}>{title}별 비교</option>)}</select></label>}<span>조회한 데이터를 {dimensions.find(([key])=>key===dimension)?.[1]}별로 비교합니다.</span></div>{preset==='funnel'&&<FunnelComparison before={summarize(facts.filter(r=>r.periodId==='baseline'))} after={summarize(facts.filter(r=>r.periodId==='current'))}/>}{metricKey==='cac'?<section className="roas-card"><h3>CAC 비교 자료 미제공</h3><p className="roas-data-note">신규 고객 수가 없어 캠페인별 CAC와 순위를 계산할 수 없습니다.</p><h3>확인 가능한 집행비</h3><Comparison before={summarize(facts.filter(r=>r.periodId==='baseline'))} after={summarize(facts.filter(r=>r.periodId==='current'))} items={metrics.filter(m=>m.key==='spend')}/></section>:<GroupTable {...controls} title={`${dimensions.find(([key])=>key===dimension)?.[1]}별 기간 비교`} rows={rows} group={group} label={label} items={items} onEvidence={onEvidence} expanded/>}<RecordTable title="운영 근거" records={selectRecords(data,filters).filter(record=>!record.campaignId||campaignIds.has(record.campaignId))} onEvidence={onEvidence} category={controls.settings.recordCategory||'all'} onCategory={recordCategory=>controls.onSettings({recordCategory})} onNotice={onNotice}/><details className="roas-card training-table-disclosure"><summary>캠페인 설정과 상품 기준 정보</summary><div className="training-reference-actions"><button onClick={()=>onEvidence({title:'캠페인 운영 설정',rows:data.campaigns.filter(c=>campaignIds.has(c.id))})}>캠페인 설정 보기</button><button onClick={()=>onEvidence({title:'상품 기준 정보',rows:data.products})}>상품 기준 정보 보기</button></div></details><details className="roas-card training-table-disclosure"><summary>캠페인과 기기별 도달, 빈도</summary><div className="wb-table-scroll"><table><thead><tr><th>캠페인</th><th>기기</th><th>기간</th><th>노출/조회</th><th>도달</th><th>빈도</th></tr></thead><tbody>{reach.map(r=><tr key={`${r.campaignId}-${r.device}-${r.periodId}`}><td>{campaignDisplayName(data,r.campaignId)}</td><td>{names[r.device]}</td><td>{names[r.periodId]}</td><td className="training-delta-neutral">{fmt(r.impressions)}</td><td className="training-delta-neutral">{r.reach===null?<span className="training-missing-value" title="콘텐츠 고유 도달 데이터가 제공되지 않았습니다.">미집계</span>:fmt(r.reach)}</td><td>{r.reach===null?<span className="training-missing-value" title="도달 데이터가 없어 빈도를 계산할 수 없습니다.">미집계</span>:r.reach===0?<span className="training-missing-value" title="도달이 0이어서 빈도를 계산할 수 없습니다.">계산 불가</span>:fmt(ratio(r.impressions,r.reach))}</td></tr>)}</tbody></table></div><p className="roas-data-note">도달은 캠페인과 기기별 14일 집계이며 합산하지 않습니다. 콘텐츠 고유 도달은 미제공입니다.</p></details></div>;
+ return <div className="training-data-workspace"><h2 className="training-comparison-heading">항목별로 변화가 큰 대상을 찾아보세요</h2><p className="training-comparison-intro">아래에서 소재, 타깃이나 기기별 차이를 비교하고, 변경 이력과 시점을 대조하세요.</p>{availablePresets.length>1&&<div className="training-comparison-tabs" aria-label="비교 자료">{availablePresets.map(key=><button key={key} aria-pressed={preset===key} onClick={()=>setPreset(key)}>{presetNames[key]}</button>)}</div>}<div className="training-breakdown-controls">{dimension!=='device'&&<DeviceSelection device={filters.device} onDevice={onDevice}/ >}{supported.length>1&&<label>행 구분<select aria-label="비교 기준" value={dimension} onChange={e=>controls.onSettings({dimension:e.target.value})}>{dimensions.filter(([key])=>supported.includes(key)).map(([key,title])=><option key={key} value={key}>{title}별 비교</option>)}</select></label>}<span>{dimension==='device'?'이 비교 표는 모바일과 PC를 함께 보여줍니다. 상세 조회 기기는 유지됩니다.':`조회한 데이터를 ${dimensions.find(([key])=>key===dimension)?.[1]}별로 비교합니다.`}</span></div>{preset==='funnel'&&<FunnelComparison before={summarize(facts.filter(r=>r.periodId==='baseline'))} after={summarize(facts.filter(r=>r.periodId==='current'))}/>}{metricKey==='cac'?<section className="roas-card"><h3>CAC 비교 자료 미제공</h3><p className="roas-data-note">신규 고객 수가 없어 캠페인별 CAC와 순위를 계산할 수 없습니다.</p><h3>확인 가능한 집행비</h3><Comparison before={summarize(facts.filter(r=>r.periodId==='baseline'))} after={summarize(facts.filter(r=>r.periodId==='current'))} items={metrics.filter(m=>m.key==='spend')}/></section>:<GroupTable {...controls} title={`${dimensions.find(([key])=>key===dimension)?.[1]}별 기간 비교`} rows={rows} group={group} label={label} items={items} onEvidence={onEvidence} expanded/>}<ChangeTimeline data={data} filters={filters} metricKey={metricKey} onEvidence={onEvidence}/><details className="roas-card training-table-disclosure"><summary>광고를 본 사람 수와 1인당 노출 횟수</summary><div className="wb-table-scroll"><table><thead><tr><th>캠페인</th><th>기기</th><th>기간</th><th>노출/조회</th><th>광고를 본 사람 수</th><th>1인당 평균 노출 횟수</th></tr></thead><tbody>{reach.map(r=><tr key={`${r.campaignId}-${r.device}-${r.periodId}`}><td>{campaignDisplayName(data,r.campaignId)}</td><td>{names[r.device]}</td><td>{names[r.periodId]}</td><td className="training-delta-neutral">{fmt(r.impressions)}</td><td className="training-delta-neutral">{r.reach===null?<span className="training-missing-value" title="콘텐츠 고유 도달 데이터가 제공되지 않았습니다.">미집계</span>:fmt(r.reach,false,'명')}</td><td>{r.reach===null?<span className="training-missing-value" title="도달 데이터가 없어 빈도를 계산할 수 없습니다.">미집계</span>:r.reach===0?<span className="training-missing-value" title="도달이 0이어서 빈도를 계산할 수 없습니다.">계산 불가</span>:fmt(ratio(r.impressions,r.reach),false,'회')}</td></tr>)}</tbody></table></div><p className="roas-data-note">광고를 본 사람 수(도달)는 해당 캠페인의 광고를 한 번 이상 본 중복 제거 인원입니다. 1인당 평균 노출 횟수는 광고 노출 수 ÷ 광고를 본 사람 수입니다. 캠페인과 기기 사이에는 같은 사람이 포함될 수 있어 합산하지 않습니다. 콘텐츠 제휴의 고유 조회 인원은 제공되지 않습니다.</p></details></div>;
 }
 
 function trendPoints(rows:(Fact|Breakdown)[],dates:string[][],metric:Metric){
@@ -231,7 +231,7 @@ function GroupTable({title,rows,group,label,items,onEvidence,settings,onSettings
 
 export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=>void;active?:boolean}){
  const [index,setIndex]=useState<Index|null>(null),[data,setData]=useState<TrainingData|null>(null);
- const [caseId,setCaseId]=useState('S16'),[snapshot,setSnapshot]=useState('initial'),[view,setView]=useState('overview');
+ const [caseId,setCaseId]=useState('S16'),[snapshot,setSnapshot]=useState('initial');
  const [selectedMetric,setSelectedMetric]=useState<string|null>(null);
  const [dataPresets,setDataPresets]=useState<Record<string,string>>({});
  const dataPreset=selectedMetric?(dataPresets[selectedMetric]||metricPresets[selectedMetric]?.[0]||'performance'):'performance';
@@ -243,13 +243,13 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
  const [scopeNotice,setScopeNotice]=useState('');
  const [chatOpen,setChatOpen]=useState(false);
  const [conversations,setConversations]=useState<Record<string,{question:string;result:RoasAnswer}[]>>({});
- const chatKey=JSON.stringify([caseId,snapshot,filters.channel,filters.source||'all',filters.campaignId,filters.device,selectedMetric,view]);
+ const chatKey=JSON.stringify([caseId,snapshot,filters.channel,filters.source||'all',filters.campaignId,filters.device,selectedMetric]);
  const closeChat=useCallback(()=>setChatOpen(false),[]);
  const [error,setError]=useState(''),[retry,setRetry]=useState(0),[navOpen,setNavOpen]=useState(false);
  const [evidence,setEvidenceState]=useState<Evidence|null>(null),[query,setQuery]=useState(''),[limit,setLimit]=useState(30);
  const dialog=useRef<HTMLDialogElement>(null);
  const content=useRef<HTMLElement>(null);
- const overviewScroll=useRef(0),detailScroll=useRef(0),pendingScroll=useRef<number|null>(null);
+ const overviewScroll=useRef(0),pendingScroll=useRef<number|null>(null);
  const overviewDisclosures=useRef<boolean[]>([]);
  const evidenceHistory=useRef(new Map<number,Evidence>()),nextEvidenceId=useRef(0);
  function setEvidence(value:Evidence|null){
@@ -258,7 +258,7 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
   if(value){
    const id=++nextEvidenceId.current;evidenceHistory.current.set(id,value);
    // 큰 집계 행을 브라우저 이력에 복사하지 않고 이 화면의 참조만 보관한다.
-   const route={metric:selectedMetric,view,device:filters.device,scroll:window.scrollY,tableSettings,dataPresets};
+   const route={metric:selectedMetric,device:filters.device,scroll:window.scrollY,tableSettings,dataPresets};
    window.history.replaceState({...window.history.state,trainingNavigation:route},'');
    window.history.pushState({...window.history.state,trainingNavigation:{...route,evidenceId:id}},'');
   }else if(window.history.state?.trainingNavigation?.evidenceId){window.history.back();}
@@ -274,7 +274,7 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
    const route=event.state?.trainingNavigation;
    if(!route||(route.metric!==null&&!focusMetrics.some(item=>item.key===route.metric)))return;
    pendingScroll.current=typeof route.scroll==='number'?route.scroll:0;
-   setSelectedMetric(route.metric);setView(route.view==='data'?'data':'overview');setEvidenceState(evidenceHistory.current.get(route.evidenceId)||null);
+   setSelectedMetric(route.metric);setEvidenceState(evidenceHistory.current.get(route.evidenceId)||null);
    if(route.tableSettings)setTableSettings(route.tableSettings);
    if(route.dataPresets)setDataPresets(route.dataPresets);
    if(['all','mobile','desktop'].includes(route.device))setFilters(current=>({...current,device:route.metric===null?'all':route.device}));
@@ -291,22 +291,17 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
    const heading=content.current?.querySelector('h1');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}window.scrollTo({top});
   });
   return()=>cancelAnimationFrame(frame);
- },[view,selectedMetric,evidence]);
- function navigate(metric:string|null,comparison=false){
-  if(!evidence&&metric===selectedMetric&&(comparison?'data':'overview')===view){window.scrollTo({top:0});return;}
+ },[selectedMetric,evidence]);
+ function navigate(metric:string|null){
+  if(!evidence&&metric===selectedMetric){window.scrollTo({top:0});return;}
   if(!selectedMetric){overviewScroll.current=window.scrollY;overviewDisclosures.current=Array.from(content.current?.querySelectorAll('details')||[],node=>node.open);}
-  else if(view==='overview')detailScroll.current=window.scrollY;
-  const top=metric===null?overviewScroll.current:metric===selectedMetric&&!comparison?detailScroll.current:0;
+  const top=metric===null?overviewScroll.current:0;
   const nextDevice=metric===null||metric!==selectedMetric?'all':filters.device;
-  window.history.replaceState({...window.history.state,trainingNavigation:{...window.history.state?.trainingNavigation,metric:selectedMetric,view,device:filters.device,scroll:window.scrollY,tableSettings,dataPresets}},'');
-  window.history.pushState({...window.history.state,trainingNavigation:{metric,view:comparison?'data':'overview',device:nextDevice,scroll:top,tableSettings,dataPresets}},'');
-  pendingScroll.current=top;setFilters(current=>({...current,device:nextDevice}));setSelectedMetric(metric);setView(comparison?'data':'overview');setNavOpen(false);setEvidenceState(null);
+  window.history.replaceState({...window.history.state,trainingNavigation:{...window.history.state?.trainingNavigation,metric:selectedMetric,device:filters.device,scroll:window.scrollY,tableSettings,dataPresets}},'');
+  window.history.pushState({...window.history.state,trainingNavigation:{metric,device:nextDevice,scroll:top,tableSettings,dataPresets}},'');
+  pendingScroll.current=top;setFilters(current=>({...current,device:nextDevice}));setSelectedMetric(metric);setNavOpen(false);setEvidenceState(null);
  }
- function openComparison(){
-  if(!selectedMetric)return;
-  navigate(selectedMetric,true);
- }
- useEffect(()=>{if(active)document.title='마케팅 성과 | '+(selectedMetric?focusMetrics.find(m=>m.key===selectedMetric)?.label+(view==='data'?' 비교 표':' 상세 분석'):'성과 현황');},[active,view,selectedMetric]);
+ useEffect(()=>{if(active)document.title='마케팅 성과 | '+(selectedMetric?focusMetrics.find(m=>m.key===selectedMetric)?.label+' 상세 분석':'성과 현황');},[active,selectedMetric]);
  useEffect(()=>{const controller=new AbortController();fetch('/workbench-data/current/training-index.json',{signal:controller.signal,cache:'no-cache'}).then(async response=>{if(!response.ok)throw Error('사례 목록을 불러오지 못했습니다.');return response.json();}).then((raw:unknown)=>{const value=raw as Index;if(value.contract!=='roas-training/1'||!Array.isArray(value.cases)||!Array.isArray(value.snapshots))throw Error('사례 목록의 규약을 확인하지 못했습니다.');if(!controller.signal.aborted)setIndex(value);}).catch(e=>{if(!controller.signal.aborted)setError(e instanceof Error?e.message:'목록 요청에 실패했습니다.');});return()=>controller.abort();},[retry]);
  useEffect(()=>{if(!index)return;const controller=new AbortController();fetch(`/workbench-data/current/training-${caseId}-${snapshot}.json`,{signal:controller.signal,cache:'no-cache'}).then(async response=>{if(!response.ok)throw Error('성과 데이터를 불러오지 못했습니다.');return response.json();}).then((raw:unknown)=>{const value=raw as TrainingData;if(value.contract!=='roas-training/1'||value.caseId!==caseId||!value.periods.some(p=>p.id==='baseline')||!value.periods.some(p=>p.id==='current'))throw Error('성과 데이터의 규약을 확인하지 못했습니다.');if(!controller.signal.aborted)setData(value);}).catch(e=>{if(!controller.signal.aborted)setError(e instanceof Error?e.message:'데이터 요청에 실패했습니다.');});return()=>controller.abort();},[index,caseId,snapshot,retry]);
  useEffect(()=>{if(evidence){dialog.current?.showModal();dialog.current?.querySelector<HTMLButtonElement>('[aria-label="근거 닫기"]')?.focus();}else dialog.current?.close();},[evidence]);
@@ -328,19 +323,18 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
   <a className="wb-skip" href="#training-content">본문 바로가기</a>
   <aside className="wb-sidebar"><div className="wb-logo"><span><Layers size={19}/></span><div>Marketing<span>데이터 대시보드</span></div><button className="wb-mobile" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}><X size={18}/></button></div><nav aria-label="성과 메뉴">{trainingViews.map(([id,label])=><button key={id} className="active" aria-current={!selectedMetric?'page':undefined} onClick={()=>navigate(null)}><BarChart3 size={17}/>{label}</button>)}</nav><div className="roas-side-bottom"><details className="training-test-cases"><summary>테스트 케이스{caseId!=='S16'&&<small>{index?.cases.find(item=>item.id===caseId)?.label}</small>}</summary><label>테스트 데이터<select aria-label="데이터 사례" value={caseId} onChange={e=>{if(e.target.value!==caseId){resetRequest();setCaseId(e.target.value);}}}><option value="S16">기본 대시보드</option>{index?.cases.filter(item=>item.id!=='S16').map(item=><option key={item.id} value={item.id}>{item.label}</option>)}</select></label><label>보고 기준시점<select aria-label="보고 기준시점" value={snapshot} onChange={e=>{if(e.target.value!==snapshot){resetRequest();setSnapshot(e.target.value);}}}>{index?.snapshots.map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label><p className="training-case-description">{caseDescriptions[caseId]}</p></details><button onClick={onExplore}><Layers size={17}/>(구) 대시보드 확인</button></div></aside>
   {navOpen&&<button className="wb-nav-shade" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}/>}
-  <div className="wb-main"><div className="training-query-context"><header className="wb-header training-navigation-header"><button className="wb-mobile" aria-label="메뉴 열기" onClick={()=>setNavOpen(true)}><Menu size={18}/></button><nav className="training-breadcrumb" aria-label="탐색 경로"><button onClick={()=>navigate(null)} aria-current={!selectedMetric?'page':undefined}>{selectedMetric&&<ArrowLeft size={16}/>}성과 현황</button>{selectedMetric&&<><span aria-hidden="true">/</span>{view==='data'?<><button onClick={()=>navigate(selectedMetric)}>{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</button><span aria-hidden="true">/</span><span aria-current="page">비교 표</span></>:<span aria-current="page">{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</span>}</>}</nav><div className="training-color-legend" aria-label="증감 색상 의미"><span className="training-delta-positive">빨강: 개선</span><span className="training-delta-negative">파랑: 악화</span><span>회색: 중립</span></div><span className="wb-synthetic">가상 데이터</span></header>
+  <div className="wb-main"><div className="training-query-context"><header className="wb-header training-navigation-header"><button className="wb-mobile" aria-label="메뉴 열기" onClick={()=>setNavOpen(true)}><Menu size={18}/></button><nav className="training-breadcrumb" aria-label="탐색 경로"><button onClick={()=>navigate(null)} aria-current={!selectedMetric?'page':undefined}>성과 현황</button>{selectedMetric&&<><span aria-hidden="true">/</span><span aria-current="page">{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</span></>}</nav><div className="training-color-legend" aria-label="증감 색상 의미"><span className="training-delta-positive">빨강: 개선</span><span className="training-delta-negative">파랑: 악화</span><span>회색: 중립</span></div><span className="wb-synthetic">가상 데이터</span></header>
    {before&&after&&<div className="training-analysis-context"><div><span>분석 기간</span><strong>{periodLabel(after.period.start,after.period.end)}</strong></div><div><span>비교</span><strong>직전 14일</strong><small>{periodLabel(before.period.start,before.period.end)}</small></div><div><span>사례</span><strong>{data?.caseId}</strong><span>보고 기준</span><strong>{data&&new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(data.asOf))}</strong></div></div>}
-   <div className="roas-dashboard-filters"><TrainingScopePicker data={data} filters={filters} onCampaign={id=>{setFilters(current=>({...current,channel:'all',source:'all',campaignId:id}));setScopeNotice('');}} onMedia={changeMedia}/>{selectedMetric&&filters.device!=='all'&&<span className="training-device-context">상세 조회: {names[filters.device]}<button onClick={()=>filter('device','all')}>전체 기기로 보기</button></span>}<details className="training-measure-info"><summary>집계 기준</summary><p>매출은 7일 내 마지막 유료 클릭에 기록한 구매 전환 매출입니다. 광고 접점일 기준, 환불과 세금, 배송비 제외.</p></details></div>
+   <div className="roas-dashboard-filters"><TrainingScopePicker data={data} filters={filters} onCampaign={id=>{setFilters(current=>({...current,channel:'all',source:'all',campaignId:id}));setScopeNotice('');}} onMedia={changeMedia}/>{selectedMetric&&filters.device!=='all'&&<span className="training-device-context">상세 조회: {names[filters.device]}<button onClick={()=>filter('device','all')}>전체 기기로 보기</button></span>}<TooltipProvider delayDuration={150}><InfoTooltip><TooltipTrigger className="training-measure-info" aria-label="집계 기준 안내">집계 기준<Info size={13} aria-hidden="true"/></TooltipTrigger><TooltipContent side="bottom" align="end" sideOffset={8} className="training-measure-tooltip">매출은 7일 내 마지막 유료 클릭에 기록한 구매 전환 매출입니다. 광고 접점일 기준이며 환불, 세금과 배송비는 제외합니다.</TooltipContent></InfoTooltip></TooltipProvider></div>
    <nav className="training-page-navigation" aria-label="성과 화면 탐색">
     <button className="training-overview-link" aria-current={!selectedMetric?'page':undefined} onClick={()=>navigate(null)}>{selectedMetric?<ArrowLeft size={17} aria-hidden="true"/>:<BarChart3 size={17} aria-hidden="true"/>}{selectedMetric?'성과 현황으로 돌아가기':'성과 현황'}</button>
     <div className="training-metric-links"><span>지표 상세</span>{focusMetrics.map(item=><button key={item.key} aria-label={`${item.label} 상세로 이동`} aria-current={selectedMetric===item.key?'page':undefined} onClick={()=>navigate(item.key)}>{item.label}</button>)}</div>
-    {selectedMetric&&<div className="training-view-links" role="group" aria-label="상세 화면 보기"><button aria-pressed={view==='overview'} onClick={()=>navigate(selectedMetric)}>상세 분석</button><button aria-pressed={view==='data'} onClick={openComparison}>비교 표와 운영 기록</button></div>}
    </nav>
    <div className="training-scope-notice" role="status">{scopeNotice}</div></div>
    <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<>
-    {(!selectedMetric||view==='data')&&<div className="roas-dashboard-heading"><h1>{selectedMetric?focusMetrics.find(item=>item.key===selectedMetric)?.label+' 비교 표':'성과 현황'}</h1></div>}
-    {view==='overview'&&!selectedMetric&&<RoasSummary before={before.total.rates.roas} after={after.total.rates.roas}/>}
-    {view==='overview'&&(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onEvidence={setEvidence} tableControlFor={tableControlFor} onDevice={device=>filter('device',device)}/>:<>
+    {!selectedMetric&&<div className="roas-dashboard-heading"><h1>성과 현황</h1></div>}
+    {!selectedMetric&&<MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/>}
+    {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onEvidence={setEvidence} tableControlFor={tableControlFor} onDevice={device=>filter('device',device)}/>:<>
      <section className="roas-card training-roas-overview"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button onClick={()=>navigate('roas')}>캠페인별 ROAS 분석</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]}/></section>
      <div className="training-section-heading"><h3>주요 지표 비교</h3><span>지표를 선택하면 상세 분석으로 이동합니다.</span></div>
      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)}/>
@@ -348,19 +342,19 @@ export default function TrainingDashboard({onExplore,active=true}:{onExplore:()=
      <details className="roas-card training-table-disclosure"><summary>전체 성과 지표와 기간별 수치</summary><Comparison before={before.total} after={after.total}/></details>
      <GroupTable title="캠페인별 전체 성과" rows={facts} group={row=>row.campaignId} label={campaignLabel} items={campaignMetrics} {...groupProps}/>
     </>)}
-    {view==='data'&&selectedMetric&&<DataWorkspace data={data} filters={filters} metricKey={selectedMetric} preset={dataPreset} setPreset={setDataPreset} onEvidence={setEvidence} tableControlFor={tableControlFor} onNotice={setScopeNotice} onDevice={device=>filter('device',device)}/>}
+    {selectedMetric&&<DataWorkspace data={data} filters={filters} metricKey={selectedMetric} preset={dataPreset} setPreset={setDataPreset} onEvidence={setEvidence} tableControlFor={tableControlFor} onNotice={setScopeNotice} onDevice={device=>filter('device',device)}/>}
     <details className="roas-dashboard-definitions"><summary>집계 기준과 데이터 범위</summary><p>교육용 자사 상품 3종을 판매하는 쇼핑몰의 가상 집계입니다. 기존 원천의 자사와 경쟁사 상품과는 별도이며 외부 경쟁사 매출은 포함하지 않습니다. 주문 원본과 개인별 행동 원본은 제공하지 않습니다. 할인 후 상품금액에서 세금과 배송비를 제외하며 환불은 이번 분석 범위에서 제외합니다. 구매 전환 매출은 광고를 클릭한 뒤 7일 안에 구매한 금액을 마지막으로 클릭한 유료 광고의 성과로 기록한 매출입니다. 쇼핑몰 전체 매출과 구분하며, 광고 때문에 추가로 발생한 매출을 입증하는 값은 아닙니다. 광고 접점일로 집계합니다. ROAS는 구매 전환 매출/유료 마케팅 집행비, 클릭 기준 구매율은 귀속 주문/클릭, AOV는 구매 전환 매출/주문입니다. 한 주문은 한 분석 대상 상품에 속합니다. 소재, 검색어, 지면 등은 제공된 분할 내에서만 합산합니다. 가격과 재고, 운영 변경 기록은 관련 대상과 적용 시각을 확인하세요.</p><p>{trainingCostDefinition} 상품별과 유입별 비용은 교육용 가상 배분이며 실제 정산 명세가 아닙니다.</p></details>
    </>}</main>
   </div>
   {active&&!chatOpen&&<button id="wb-chat-launcher" className="wb-chat-launcher" aria-label="AI와 대화" title="AI와 대화" aria-haspopup="dialog" aria-expanded={false} aria-controls="wb-agent-panel" disabled={!data||!!error} onClick={()=>setChatOpen(true)}><Sparkles size={25} aria-hidden="true"/></button>}
-  {active&&chatOpen&&data&&!error&&<RoasConversation key={chatKey} data={data} snapshot={snapshot} filters={filters} metric={selectedMetric||''} screenTitle={selectedMetric?`${focusMetrics.find(m=>m.key===selectedMetric)?.label} ${view==='data'?'비교 표':'상세 분석'}`:'성과 현황'} onClose={closeChat} exchanges={conversations[chatKey]||[]} onExchange={exchange=>setConversations(current=>({...current,[chatKey]:[...(current[chatKey]||[]),exchange].slice(-12)}))}/>}
+  {active&&chatOpen&&data&&!error&&<RoasConversation key={chatKey} data={data} snapshot={snapshot} filters={filters} metric={selectedMetric||''} screenTitle={selectedMetric?`${focusMetrics.find(m=>m.key===selectedMetric)?.label} 상세 분석`:'성과 현황'} onClose={closeChat} exchanges={conversations[chatKey]||[]} onExchange={exchange=>setConversations(current=>({...current,[chatKey]:[...(current[chatKey]||[]),exchange].slice(-12)}))}/>}
   <dialog ref={dialog} className="roas-evidence" aria-labelledby="training-evidence-title" onClose={()=>setEvidence(null)}><header><h2 id="training-evidence-title">{evidence?.title}</h2><div className="training-evidence-actions"><button onClick={()=>navigate(null)}>성과 현황</button><button aria-label="근거 닫기" onClick={()=>setEvidence(null)}><X size={18}/></button></div></header><div className="roas-evidence-body"><label className="roas-evidence-search"><Search size={15}/><input aria-label="근거 검색" value={query} onChange={e=>{setQuery(e.target.value);setLimit(30);}} placeholder="내용, 날짜, ID 검색"/></label><p>{evidenceRows.length.toLocaleString('ko-KR')}개 집계 행 또는 상세 기록</p>{evidenceRows.slice(0,limit).map((row,i)=><details key={i}><summary>{displayTrainingText((row as {title?:string}).title||(row as {id?:string}).id||`집계 ${i+1}`)}</summary><EvidenceFields row={row} data={data}/></details>)}{evidenceRows.length>limit&&<button onClick={()=>setLimit(v=>v+30)}>30개 더 보기</button>}</div></dialog>
  </div>;
 }
 
-function RecordTable({title,records,onEvidence,category,onCategory,onNotice}:{title:string;records:TrainingData['records'];onEvidence:(e:Evidence)=>void;category:string;onCategory:(category:string)=>void;onNotice:(message:string)=>void}){
- const categories=[...new Set(records.map(row=>row.category))].sort();
- const selected=category==='all'||!categories.includes(category)?records:records.filter(row=>row.category===category);
- useEffect(()=>{if(category!=='all'&&!categories.includes(category)){onCategory('all');onNotice('선택한 범위에 해당 종류의 운영 기록이 없어 전체 종류로 변경했습니다.');}},[category,categories,onCategory,onNotice]);
- return <section className="roas-card"><div className="roas-card-heading"><h3>{title}</h3><label className="training-record-filter">종류<select aria-label={`${title} 종류`} value={categories.includes(category)?category:'all'} onChange={e=>onCategory(e.target.value)}><option value="all">전체</option>{categories.map(c=><option key={c} value={c}>{recordCategories[c]||c}</option>)}</select></label></div><details className="training-table-disclosure"><summary>{selected.length}건의 기록 보기</summary><div className="wb-table-scroll"><table><thead><tr><th>일시</th><th>종류</th><th>대상</th><th>내용</th><th>기록</th></tr></thead><tbody>{selected.toSorted((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id)).map(row=><tr key={row.id}><td>{row.date}</td><td>{recordCategories[row.category]||row.category}</td><td>{displayTrainingText(row.campaignId||'공통')}, {names[row.device]||row.device}</td><td>{displayTrainingText(row.title)}</td><td><button onClick={()=>onEvidence({title:'개별 상세 기록',rows:[row]})}>상세</button></td></tr>)}</tbody></table></div>{!selected.length&&<p className="roas-data-note">선택한 범위의 기록 0건</p>}</details></section>;
+function ChangeTimeline({data,filters,metricKey,onEvidence}:{data:TrainingData;filters:Filters;metricKey:string;onEvidence:(e:Evidence)=>void}){
+ const records=metricChangeRecords(data,filters,metricKey);
+ return <section className="roas-card training-change-timeline"><h3>수치가 달라진 시점에 무엇이 바뀌었나요?</h3><p className="roas-data-note">분석 기간과 겹치는 관련 변경 {records.length}건입니다. 변경일 전후의 수치를 비교하세요. 기록만으로 원인을 확정할 수는 없습니다.</p>
+  {!records.length?<p className="roas-data-note">선택한 지표와 범위에서 확인할 변경 기록이 없습니다. 변경이 없었다는 뜻은 아닙니다.</p>:<ol>{records.map(row=><li key={row.id}><time dateTime={row.date}>{row.date}</time><div><h4>{displayTrainingText(row.title)}</h4><p className="training-change-target">{row.campaignId?campaignDisplayName(data,row.campaignId):'선택 캠페인 공통'}{row.productId?', '+(data.products.find(product=>product.id===row.productId)?.label||row.productId):''}, {names[row.device]||row.device}</p><dl>{Object.entries(row.values).map(([key,value])=><div key={key}><dt>{key}</dt><dd>{changeRecordValue(value)}</dd></div>)}</dl><p className="training-change-check">{recordReadingHint(row)}</p><button onClick={()=>onEvidence({title:displayTrainingText(row.title),rows:[row]})}>기록 원문 보기</button></div></li>)}</ol>}
+ </section>;
 }

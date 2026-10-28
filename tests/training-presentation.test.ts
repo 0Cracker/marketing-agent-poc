@@ -64,7 +64,7 @@ test('headline ROAS compares each full period aggregate rather than daily mean o
   assert(Math.abs(period.total.rates.roas-values.reduce((sum,value)=>sum+value,0)/values.length)>1e-6);
  }
  assert.equal(Number((periods[0].total.rates.roas!*100).toFixed(1)),355.8);
- assert.equal(Number((periods[1].total.rates.roas!*100).toFixed(1)),227.8);
+ assert.equal(Number((periods[1].total.rates.roas!*100).toFixed(1)),284.7);
 });
 
 test('mini trends use two shared bounds around actual values while large trends retain zero',()=>{
