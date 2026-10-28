@@ -221,10 +221,22 @@
 
 .training-one-row-table th:first-child{position:sticky;left:0;background:#FFF;z-index:2}
 .training-detail-heading h1>span:focus-visible{outline:2px solid #7357BA;outline-offset:4px}
-.training-dashboard .training-sidebar-detail{margin:4px 0 0 18px;padding-left:12px;border-left:1px solid #E4DDED}
-.training-sidebar-detail>span{display:block;padding:8px 10px 5px;font-size:11px;color:#788494}
-.training-sidebar-detail ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
-.training-dashboard .training-sidebar-detail button{width:100%;min-height:36px;padding:7px 12px;font-size:13px}
+.training-dashboard .training-sidebar-detail{margin:6px 0 0 16px}
+.training-dashboard .training-sidebar-group{width:100%;min-height:34px;gap:7px;padding:6px 8px;font-size:12px;font-weight:500;color:#788494;background:transparent}
+.training-sidebar-group svg:last-child{margin-left:auto;transition:transform .12s}
+.training-sidebar-group[aria-expanded=false] svg:last-child{transform:rotate(-90deg)}
+.training-sidebar-detail ul{list-style:none;margin:3px 0 0 16px;padding:0 0 0 12px;border-left:1px solid #DCD5E8;display:grid;gap:3px}
+.training-sidebar-detail ul[hidden]{display:none}
+.training-dashboard .training-sidebar-detail li button{width:100%;min-height:36px;padding:7px 12px;font-size:13px}
+.training-dashboard .wb-logo{padding-inline:12px;gap:8px;flex-shrink:0}
+.training-dashboard .wb-logo>div{font-size:15px}
+.training-dashboard .training-sidebar-collapse{margin-left:auto;padding:4px;min-width:28px;border:0;background:transparent;color:#788494}
+.training-dashboard .training-sidebar-expand{display:none;border:0;padding:4px;background:transparent}
+.training-dashboard .wb-sidebar nav{overflow-y:auto;padding-bottom:12px}
+.training-dashboard .roas-side-bottom{flex-shrink:0}
+@media(min-width:801px){.training-sidebar-collapsed>.wb-sidebar{display:none}.training-sidebar-collapsed .training-sidebar-expand{display:inline-flex}}
+@media(max-width:800px){.training-dashboard .training-sidebar-collapse{display:none}}
+@media(prefers-reduced-motion:reduce){.training-sidebar-group svg:last-child{transition:none}}
 .training-dashboard .wb-sidebar nav button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
 .training-dashboard main h1:focus-visible{outline:2px solid #7357BA;outline-offset:5px}
 #training-campaign-roas{scroll-margin-top:180px}
