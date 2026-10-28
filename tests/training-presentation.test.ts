@@ -94,7 +94,7 @@ test('mini bounds stay readable for flat, zero and unavailable series',()=>{
 test('all directional table metrics share improvement, deterioration and neutral semantics',()=>{
  const [before,after]=comparePeriods(trainingScreenData(undefined,'S16','initial'),filters);
  const low=before.total.rates.cpc!,high=after.total.rates.cpc!;
- for(const key of ['roas','revenue','orders','ledgerOrders','ledgerRevenue','units','returnPurchases','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']){
+ for(const key of ['impressions','clicks','sessions','view','cart','checkout','roas','revenue','orders','ledgerOrders','ledgerRevenue','units','returnPurchases','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']){
   assert.equal(deltaTone(key,low,high),'positive',key);
   assert.equal(deltaTone(key,high,low),'negative',key);
  }
@@ -102,7 +102,7 @@ test('all directional table metrics share improvement, deterioration and neutral
   assert.equal(deltaTone(key,low,high),'negative',key);
   assert.equal(deltaTone(key,high,low),'positive',key);
  }
- for(const key of ['spend','spendShare','impressions','clicks','sessions','view','cart','checkout','paymentAttempts','unitPrice','listRevenue','discount','discountRate','trackingExpected','trackingReceived','reach','frequency','unknown']){
+ for(const key of ['spend','spendShare','paymentAttempts','unitPrice','listRevenue','discount','discountRate','trackingExpected','trackingReceived','reach','frequency','unknown']){
   assert.equal(deltaTone(key,low,high),'neutral',key);
   assert.equal(deltaTone(key,high,low),'neutral',key);
  }
