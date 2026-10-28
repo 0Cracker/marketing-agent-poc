@@ -7,6 +7,26 @@ import {chatSourceRows} from '../shared/roas-chat.mjs';
 import {roasExamples,roasExampleAnswer} from '../frontend/workbench/roas-examples.ts';
 
 const all:Filters={channel:'all',source:'all',campaignId:'all',device:'all'};
+test('overview compares campaign outcomes while drivers explains the metric interactions',()=>{
+ const data=trainingScreenData(undefined,'S16','initial');
+ const overview=roasExampleAnswer(data,all,'overview'),drivers=roasExampleAnswer(data,all,'drivers');
+ assert.match(overview.answer,/29\.3%.*61\.6%/);
+ assert.match(overview.sections!.summary.join(' '),/하락 4개, 상승 2개/);
+ assert.match(overview.sections!.summary.join(' '),/검색 A.*-218%p/);
+ assert.match(overview.sections!.summary.join(' '),/네이버 블로그.*84\.9%p/);
+ assert.match(overview.sections!.summary.join(' '),/Instagram 피드.*120\.7%/);
+ assert.equal(overview.comparison!.rows.length,6);
+ assert.equal(drivers.comparison!.rows.length,1);
+ assert.equal(overview.sources.length,14);
+ assert.equal(drivers.sources.length,2);
+ assert(overview.comparison!.rows.every(row=>row.sourceIds.every(id=>overview.sources.some(source=>source.id===id))));
+ assert(!overview.sections!.summary.some(text=>text.includes('ROAS 변화 기여')));
+ assert(drivers.sections!.summary.some(text=>text.includes('ROAS 변화 기여')));
+ for(const key of ['conclusion','summary','reasoning','actions'] as const)assert.notDeepEqual(overview.sections![key],drivers.sections![key],key+' must answer a different question');
+ const scoped=roasExampleAnswer(data,{...all,campaignId:'EDU-C5',device:'mobile'},'overview');
+ assert.equal(scoped.comparison!.rows.length,1);assert.equal(scoped.comparison!.rows[0].key,'EDU-C5');
+ assert(scoped.sources.filter(source=>source.kind==='breakdown').every(source=>source.key==='EDU-C5'));
+});
 test('examples preserve the first and third questions and split the actual S16 ROAS change',()=>{
  assert.equal(roasExamples[0].question,'ROAS가 직전 기간보다 달라진 이유를 분석해줘');
  assert.equal(roasExamples[2].question,'구매 과정에서 이탈이 늘어난 구간을 찾아줘');

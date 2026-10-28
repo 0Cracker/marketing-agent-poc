@@ -1,6 +1,7 @@
-import {comparePeriods} from '../../shared/training-dashboard.mjs';
+import {campaignDisplayName,comparePeriods,summarize} from '../../shared/training-dashboard.mjs';
 import type {Filters,TrainingData} from '../../shared/training-dashboard.mjs';
-import {chatComparison,chatValue} from '../../shared/roas-chat.mjs';
+import {chatComparison,chatHighlights,chatValue} from '../../shared/roas-chat.mjs';
+import type {ChatSource} from '../../shared/roas-chat.mjs';
 import type {RoasAnswer} from './agent-client';
 
 export const roasExamples=[
@@ -16,7 +17,8 @@ const names=['AOV','CVR','CPC'];
 export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):RoasAnswer{
  const periods=comparePeriods(data,filters);
  const before=periods.find(row=>row.period.id==='baseline')!,after=periods.find(row=>row.period.id==='current')!;
- const sources=[before,after].map(row=>({id:'summary:'+row.period.id,kind:'summary',period:row.period,total:row.total,rowCount:row.rows.length}));
+ const sources:ChatSource[]=[before,after].map(row=>({id:'summary:'+row.period.id,kind:'summary',period:row.period,total:row.total,rowCount:row.rows.length}));
+ let comparison=chatComparison(sources,'roas');
  const a=before.total.rates,b=after.total.rates;
  const sections:NonNullable<RoasAnswer['sections']>={
   conclusion:`ROAS는 ${chatValue(a.roas,'roas')}에서 ${chatValue(b.roas,'roas')}로 변했습니다. ${citations}`,
@@ -26,6 +28,34 @@ export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):R
   sections.conclusion='선택 범위에서 두 기간의 ROAS를 비교할 수 없습니다.';
   sections.reasoning=['비교할 데이터가 없거나 집행비가 0인 기간이 있습니다.'];
   sections.actions=['기간과 캠페인, 기기 필터를 확인하세요.'];
+ }else if(id==='overview'){
+  const growth=(prior:number,current:number)=>prior?signed((current/prior-1)*100,'%'):'직전 값이 0이라 증감률 계산 불가';
+  sections.conclusion=`ROAS는 ${chatValue(a.roas,'roas')} → ${chatValue(b.roas,'roas')}, ${signed((b.roas-a.roas)*100,'%p')}입니다. 매출은 ${growth(before.total.revenue,after.total.revenue)}, 집행비는 ${growth(before.total.spend,after.total.spend)} 변했습니다. ${citations}`;
+  const campaignIds=[...new Set([...before.rows,...after.rows].map(row=>row.campaignId))];
+  const campaignSources=campaignIds.flatMap(key=>[before,after].map(period=>{
+   const rows=period.rows.filter(row=>row.campaignId===key);
+   return {id:`campaign:${key}:${period.period.id}`,kind:'breakdown',dimension:'campaign',key,label:campaignDisplayName(data,key),period:period.period,total:summarize(rows),rowCount:rows.length};
+  }));
+  sources.push(...campaignSources);comparison=chatComparison(campaignSources,'roas');
+  const comparable=comparison?.rows.filter(row=>row.before!==null&&row.after!==null)||[];
+  const declined=comparable.filter(row=>row.after!<row.before!).sort((x,y)=>(x.after!-x.before!)-(y.after!-y.before!));
+  const improved=comparable.filter(row=>row.after!>row.before!).sort((x,y)=>(y.after!-y.before!)-(x.after!-x.before!));
+  sections.summary=[
+   `구매 전환 매출: ${chatValue(before.total.revenue,'revenue')} → ${chatValue(after.total.revenue,'revenue')}, 집행비: ${chatValue(before.total.spend,'spend')} → ${chatValue(after.total.spend,'spend')}. ${citations}`,
+   `비교 가능한 캠페인 ${comparable.length}개 중 ROAS 하락 ${declined.length}개, 상승 ${improved.length}개, 동일 ${comparable.length-declined.length-improved.length}개입니다.`,
+   ...chatHighlights(comparison,['largest_decline','largest_increase','lowest_current']),
+  ];
+  sections.reasoning=[
+   b.roas<a.roas?'선택 범위에서는 매출 대비 집행비 부담이 커졌습니다. 매출이 늘었더라도 집행비가 더 빠르게 늘면 ROAS는 하락합니다.':'선택 범위의 ROAS는 하락하지 않았습니다. 매출과 집행비가 변한 비율을 함께 확인하세요.',
+   '전체 ROAS는 캠페인별 ROAS의 단순 평균이 아니라 전체 구매 전환 매출 ÷ 전체 집행비입니다. 캠페인 자체의 효율 변화와 집행비 배분 변화를 함께 봐야 합니다.',
+   '현재 ROAS가 가장 낮은 캠페인과 하락 폭이 가장 큰 캠페인은 다를 수 있습니다. 위 순위와 그래프는 캠페인 자체의 ROAS 비교이며, 전체 하락에 대한 인과적 기여도 순위는 아닙니다.',
+  ];
+  sections.actions=[
+   declined.length?`${declined[0].label}부터 상세 분석하세요. 집행비 비중과 매출, CPC, 구매율이 언제부터 달라졌는지 기기와 타깃별로 좁혀 확인하세요.`:'하락 캠페인이 없습니다. 개선된 캠페인의 집행비와 매출 규모를 비교해 효율을 유지할 조건을 확인하세요.',
+   improved.length?`${improved[0].label}의 상승도 함께 비교하세요. 상품 구성과 할인, 유입 구성이 다른지 확인한 뒤 예산 확대 가능성을 검토하세요.`:'비교 가능한 다른 캠페인이나 정상 기간을 기준으로 운영 변경 기록을 확인하세요.',
+   '확인한 변화 시점과 운영 기록을 대조하고, 원인이 확인되기 전에는 전체 예산을 일괄 조정하지 마세요.',
+  ];
+  sections.limitations.push('캠페인 비교는 조사할 대상을 좁히는 단계입니다. 운영 변경의 실제 효과와 원인은 추가 확인이 필요합니다.');
  }else if(id==='funnel'){
   const stages=[['sessions','view','랜딩 → 상품 조회'],['view','cart','상품 조회 → 장바구니'],['cart','checkout','장바구니 → 결제 시작'],['checkout','purchases','결제 시작 → 같은 세션 구매']] as const;
   const rows=stages.map(([from,to,label])=>({label,before:before.total[from]?1-before.total[to]/before.total[from]:null,after:after.total[from]?1-after.total[to]/after.total[from]:null}));
@@ -60,7 +90,6 @@ export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):R
    sections.reasoning.push('주문이나 클릭이 0인 기간에는 AOV, CVR, CPC 일부가 정의되지 않아 세 지표의 기여도를 분해하지 않았습니다.');
    sections.actions=['먼저 클릭, 주문, 집행비의 원천 수치를 확인하고 비교 가능한 캠페인 범위로 좁히세요.'];
   }
-  if(id==='overview')sections.summary.unshift(`구매 전환 매출: ${chatValue(before.total.revenue,'revenue')} → ${chatValue(after.total.revenue,'revenue')}, 집행비: ${chatValue(before.total.spend,'spend')} → ${chatValue(after.total.spend,'spend')}. ${citations}`);
  }
- return {answer:sections.conclusion,sections,comparison:chatComparison(sources,'roas'),sources,events:[{tool:'overview',count:sources.length}],mode:'example'};
+ return {answer:sections.conclusion,sections,comparison,sources,events:[{tool:'overview',count:2},...(sources.length>2?[{tool:'breakdown',count:sources.length-2}]:[])],mode:'example'};
 }
