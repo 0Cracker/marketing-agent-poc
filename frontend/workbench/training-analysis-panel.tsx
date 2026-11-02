@@ -34,10 +34,10 @@ function Value({value,metric,rows}:{value:number|null;metric:AnalysisMetric;rows
  const missing=analysisMissingReason(rows,metric.key);
  return <span className="training-missing-value" title={missing.reason}>{missing.label}</span>;
 }
-function CurrentCell({group,metric,totals}:{group:AnalysisGroup;metric:AnalysisMetric;totals:Total[]}){
+function CurrentCell({group,metric,totals,changeFirst=false}:{group:AnalysisGroup;metric:AnalysisMetric;totals:Total[];changeFirst?:boolean}){
  const values=[group.before,group.after].map((t,i)=>group.periodRows[i].length?analysisValue(t,metric.key,totals[i]):null);
  const tone=deltaTone(metric.key,values[0],values[1],metric.rate);
- return <td className="numeric"><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></td>;
+ return <td className="numeric">{changeFirst?<><strong className={`training-delta-${tone}`}>{delta(values[0],values[1],metric)}</strong><small className="training-cell-change"><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></small></>:<><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></>}</td>;
 }
 function EvidenceTable({group,keys,totals,content=false}:{group:AnalysisGroup;keys:string[];totals:Total[];content?:boolean}){
  return <div className="wb-table-scroll"><table className="training-calculation-table"><thead><tr><th>지표</th><th className="numeric">직전 14일</th><th className="numeric">분석 기간</th><th className="numeric">증감</th></tr></thead><tbody>{[...new Set(keys)].map(key=>{
@@ -92,10 +92,10 @@ export function KpiAnalysisPanel(props:PanelProps){
  const sections=metricKey==='cpc'?['ad_impression','content_view']:['all'];
  function toggle(key:string){onSettings({expanded:expanded.includes(key)?expanded.filter(k=>k!==key):[...expanded,key]});}
  function sortHeader(key:string){
-  const impact=key==='impact',active=impact?settings.sortBasis!=='change':settings.sortBasis==='change'&&settings.sortKey===key;
+  const impact=key==='impact',active=impact?settings.sortBasis!=='value':settings.sortBasis==='value'&&settings.sortKey===key;
   const descending=settings.descending??(impact?(analysis.change||0)>=0:true);
   const label=impact?'전체 변화 기여':analysisMetric(key).label;
-  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label"><button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':'증감'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':'change',descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button></span></th>;
+  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label"><button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':'현재값'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':'value',descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button></span></th>;
  }
  return <section className="roas-card training-analysis-panel" id={metricKey==='roas'?'training-campaign-roas':undefined} aria-label={`${metric.label} 원인 분석 표`}>
   <div className="roas-card-heading"><h3>{metric.label} 상세 데이터</h3></div>
@@ -107,7 +107,7 @@ export function KpiAnalysisPanel(props:PanelProps){
    const displayKeys=[keys[0],'impact',...keys.slice(1)];
    return <div key={section} className="training-analysis-section">{section!=='all'&&<h4>{content?'콘텐츠 제휴':'광고 집행'}</h4>}<div className="wb-table-scroll" role="region" tabIndex={0} aria-label={`${metric.label} ${section==='all'?'':content?'콘텐츠':'광고'} 분석 표, 가로 스크롤`}><table className="training-analysis-table"><thead><tr><th>{dimensionNames[dimension]}</th>{displayKeys.map(sortHeader)}</tr></thead><tbody>{chosen.map(g=>{
     const rowId=id+'-'+encodeURIComponent(dimension+':'+g.key),opened=expanded.includes(dimension+':'+g.key);
-    return <Fragment key={g.key}><tr><th scope="row"><button className="training-analysis-expand" aria-expanded={opened} aria-controls={rowId} onClick={()=>toggle(dimension+':'+g.key)}><span aria-hidden="true">{opened?'−':'+'}</span><span className="training-analysis-row-label" title={g.label}>{g.label}</span></button></th>{displayKeys.map(k=>k==='impact'?<td key={k} className={`numeric training-impact-value training-delta-${impactTone(metric,g.impact)}`}>{signed(g.impact,metric)}</td>:<CurrentCell key={k} group={g} metric={analysisMetric(k)} totals={analysis.totals}/>)}</tr><tr id={rowId} hidden={!opened} className="training-analysis-expanded-row"><td colSpan={keys.length+2}>{opened&&<GroupDetails {...props} group={g} dimension={dimension} analysis={analysis} columns={keys}/>}</td></tr></Fragment>;
+    return <Fragment key={g.key}><tr><th scope="row"><button className="training-analysis-expand" aria-expanded={opened} aria-controls={rowId} onClick={()=>toggle(dimension+':'+g.key)}><span aria-hidden="true">{opened?'−':'+'}</span><span className="training-analysis-row-label" title={g.label}>{g.label}</span></button></th>{displayKeys.map(k=>k==='impact'?<td key={k} className={`numeric training-impact-value training-delta-${impactTone(metric,g.impact)}`}>{signed(g.impact,metric)}</td>:<CurrentCell key={k} group={g} metric={analysisMetric(k)} totals={analysis.totals} changeFirst={metricKey==='roas'}/>)}</tr><tr id={rowId} hidden={!opened} className="training-analysis-expanded-row"><td colSpan={keys.length+2}>{opened&&<GroupDetails {...props} group={g} dimension={dimension} analysis={analysis} columns={keys}/>}</td></tr></Fragment>;
    })}</tbody></table></div></div>;
   })}
   {!groups.length&&<p className="training-empty-state">분석 자료 없음</p>}

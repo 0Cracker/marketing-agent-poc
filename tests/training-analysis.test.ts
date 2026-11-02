@@ -124,17 +124,15 @@ test('explanatory metrics precede calculation inputs in analysis columns',()=>{
  assert.deepEqual(analysisColumns.cpc,['cpc','adCpm','adCtr','spend','clicks']);
 });
 
-test('impact order follows overall direction and metric headers sort by change in both directions',()=>{
+test('impact order follows overall direction and metric headers sort by current raw value in both directions',()=>{
  const data:TrainingData=trainingScreenData(undefined,'S16');
  for(const key of ['roas','cpc']){
   const a=analyzeGroups(data,data.facts,key,'campaign'),sorted=sortAnalysisGroups(a,key,{});
   assert(sorted.every((g,i)=>i===0||Math.sign(a.change!)*(sorted[i-1].impact!-g.impact!)>=0));
   for(const sortKey of analysisColumns[key])for(const descending of [true,false]){
-   const sorted=sortAnalysisGroups(a,key,{sortBasis:'change',sortKey,descending});
+   const sorted=sortAnalysisGroups(a,key,{sortBasis:'value',sortKey,descending});
    const values=sorted.map(g=>{
-    const before=analysisValue(g.before,sortKey,a.totals[0]),after=analysisValue(g.after,sortKey,a.totals[1]);
-    if(before===null||after===null)return null;
-    return ['roas','cvr','adCtr','impressionShare'].includes(sortKey)?after-before:before===0?null:(after-before)/before;
+    return g.periodRows[1].length?analysisValue(g.after,sortKey,a.totals[1]):null;
    }).filter(v=>v!==null);
    assert(values.every((v,i)=>!i||(descending?values[i-1]!>=v!:values[i-1]!<=v!)),sortKey);
   }
