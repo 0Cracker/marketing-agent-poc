@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {trainingScreenData} from '../scripts/training-data.mjs';
-import {summarize,trainingCaseIds} from '../shared/training-dashboard.mjs';
+import {metricChange,summarize,trainingCaseIds} from '../shared/training-dashboard.mjs';
 import type {TrainingData} from '../shared/training-dashboard.mjs';
-import {analysisColumns,analysisDimensions,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,factorEffects,scopeTrainingData,sortAnalysisGroups} from '../frontend/workbench/training-analysis.ts';
+import {analysisColumns,analysisDimensions,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,factorEffects,scopeTrainingData,sortAnalysisGroups} from '../frontend/workbench/training-analysis.ts';
 import type {AnalysisDimension} from '../frontend/workbench/training-analysis.ts';
 
 const all={channel:'all',source:'all',campaignId:'all',device:'all'};
@@ -124,15 +124,19 @@ test('explanatory metrics precede calculation inputs in analysis columns',()=>{
  assert.deepEqual(analysisColumns.cpc,['cpc','adCpm','adCtr','spend','clicks']);
 });
 
-test('impact order follows overall direction and metric headers sort by current raw value in both directions',()=>{
+test('ROAS column changes and other metric raw values sort independently',()=>{
  const data:TrainingData=trainingScreenData(undefined,'S16');
  for(const key of ['roas','cpc']){
   const a=analyzeGroups(data,data.facts,key,'campaign'),sorted=sortAnalysisGroups(a,key,{});
   assert(sorted.every((g,i)=>i===0||Math.sign(a.change!)*(sorted[i-1].impact!-g.impact!)>=0));
   for(const sortKey of analysisColumns[key])for(const descending of [true,false]){
-   const sorted=sortAnalysisGroups(a,key,{sortBasis:'value',sortKey,descending});
+   const sortBasis=key==='roas'?'change':'value';
+   const sorted=sortAnalysisGroups(a,key,{sortBasis,sortKey,descending});
    const values=sorted.map(g=>{
-    return g.periodRows[1].length?analysisValue(g.after,sortKey,a.totals[1]):null;
+    const after=g.periodRows[1].length?analysisValue(g.after,sortKey,a.totals[1]):null;
+    if(sortBasis==='value')return after;
+    const before=g.periodRows[0].length?analysisValue(g.before,sortKey,a.totals[0]):null;
+    return metricChange(before,after,analysisMetric(sortKey).rate);
    }).filter(v=>v!==null);
    assert(values.every((v,i)=>!i||(descending?values[i-1]!>=v!:values[i-1]!<=v!)),sortKey);
   }

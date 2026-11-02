@@ -87,15 +87,16 @@ export function KpiAnalysisPanel(props:PanelProps){
  const supported=analysisDimensions(data,filters,metricKey);
  const dimension=settings.dimension&&supported.includes(settings.dimension)?settings.dimension:supported[0]||(metricKey==='adCtr'?'creativeId':'campaign');
  const rows=analysisRows(data,filters,metricKey,dimension),analysis=analyzeGroups(data,rows,metricKey,dimension);
- const groups=sortAnalysisGroups(analysis,metricKey,settings),metric=analysisMetric(metricKey),expanded=settings.expanded||[];
+ const effectiveSettings=metricKey==='roas'&&settings.sortBasis==='value'?{...settings,sortBasis:'change' as const}:settings;
+ const groups=sortAnalysisGroups(analysis,metricKey,effectiveSettings),metric=analysisMetric(metricKey),expanded=settings.expanded||[];
  const columns=analysisColumns[metricKey];
  const sections=metricKey==='cpc'?['ad_impression','content_view']:['all'];
  function toggle(key:string){onSettings({expanded:expanded.includes(key)?expanded.filter(k=>k!==key):[...expanded,key]});}
  function sortHeader(key:string){
-  const impact=key==='impact',active=impact?settings.sortBasis!=='value':settings.sortBasis==='value'&&settings.sortKey===key;
+  const impact=key==='impact',basis=metricKey==='roas'?'change':'value',active=impact?effectiveSettings.sortBasis!=='value'&&effectiveSettings.sortBasis!=='change':effectiveSettings.sortBasis===basis&&effectiveSettings.sortKey===key;
   const descending=settings.descending??(impact?(analysis.change||0)>=0:true);
   const label=impact?'전체 변화 기여':analysisMetric(key).label;
-  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label"><button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':'현재값'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':'value',descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button></span></th>;
+  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label"><button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':metricKey==='roas'?'증감':'현재값'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':basis,descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button></span></th>;
  }
  return <section className="roas-card training-analysis-panel" id={metricKey==='roas'?'training-campaign-roas':undefined} aria-label={`${metric.label} 원인 분석 표`}>
   <div className="roas-card-heading"><h3>{metric.label} 상세 데이터</h3></div>

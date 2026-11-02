@@ -1,10 +1,10 @@
-import {campaignDisplayName,displayTrainingText,metricMissingReason,metricValue,selectBreakdowns,selectFacts,summarize} from '../../shared/training-dashboard.mjs';
+import {campaignDisplayName,displayTrainingText,metricChange,metricMissingReason,metricValue,selectBreakdowns,selectFacts,summarize} from '../../shared/training-dashboard.mjs';
 import type {Breakdown,Fact,Filters,Total,TrainingData} from '../../shared/training-dashboard.mjs';
 
 export type AnalysisMetric={key:string;label:string;rate?:boolean;unit?:string};
 export type AnalysisDimension='campaign'|'device'|'creativeId'|'audienceId'|'placement'|'keyword'|'product';
 export type AnalysisScope={dimension:AnalysisDimension;key:string;label:string;rowIds?:string[]};
-export type AnalysisSettings={dimension?:AnalysisDimension;sortBasis?:'impact'|'value';sortKey?:string;descending?:boolean;expanded?:string[]};
+export type AnalysisSettings={dimension?:AnalysisDimension;sortBasis?:'impact'|'value'|'change';sortKey?:string;descending?:boolean;expanded?:string[]};
 export type AnalysisRow=Fact|Breakdown;
 export const dimensionNames:Record<AnalysisDimension,string>={campaign:'캠페인',device:'기기',creativeId:'소재',audienceId:'타깃',placement:'게재 위치',keyword:'검색어',product:'상품'};
 const pairDefinitions:Record<string,[string,string]>={roas:['revenue','spend'],cpc:['spend','clicks'],adCtr:['clicks','impressions'],cvr:['orders','clicks'],cpa:['spend','orders'],aov:['revenue','orders']};
@@ -82,9 +82,9 @@ export function analyzeGroups(data:TrainingData,rows:AnalysisRow[],metric:string
 export type GroupAnalysis=ReturnType<typeof analyzeGroups>;
 export type AnalysisGroup=GroupAnalysis['groups'][number];
 export function sortAnalysisGroups(analysis:GroupAnalysis,metric:string,settings:AnalysisSettings){
- const basis=settings.sortBasis==='value'?'value':'impact',key=settings.sortKey||metric;
+ const basis=settings.sortBasis==='change'&&metric==='roas'?'change':settings.sortBasis==='value'||settings.sortBasis==='change'?'value':'impact',key=settings.sortKey||metric;
  return [...analysis.groups].sort((a,b)=>{
-  const value=(g:AnalysisGroup)=>basis==='impact'?g.impact:g.periodRows[1].length?analysisValue(g.after,key,analysis.totals[1]):null;
+  const value=(g:AnalysisGroup)=>{if(basis==='impact')return g.impact;const after=g.periodRows[1].length?analysisValue(g.after,key,analysis.totals[1]):null;if(basis==='value')return after;const before=g.periodRows[0].length?analysisValue(g.before,key,analysis.totals[0]):null;return metricChange(before,after,analysisMetric(key).rate);};
   const av=value(a),bv=value(b);if(av===null)return bv===null?a.key.localeCompare(b.key):1;if(bv===null)return -1;
   if(basis==='impact'&&settings.descending===undefined){return (analysis.change===0?Math.abs(bv)-Math.abs(av):Math.sign(analysis.change||1)*(bv-av))||a.key.localeCompare(b.key);}
   return (settings.descending===false?1:-1)*(av-bv)||a.key.localeCompare(b.key);
