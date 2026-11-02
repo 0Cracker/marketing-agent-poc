@@ -266,6 +266,10 @@
 .training-analysis-table td>strong{display:block;font-size:13px;font-weight:600;line-height:20px}
 .training-analysis-table .training-cell-change{font-size:11px;line-height:16px;margin-top:4px}
 .training-dashboard .training-analysis-table th button{display:inline-flex;align-items:center;min-height:20px;padding:0;border:0;background:transparent;color:inherit;font:inherit;line-height:20px;text-align:inherit;white-space:nowrap}
+.training-dashboard .training-analysis-table th .training-column-sort{gap:6px;cursor:pointer}
+.training-dashboard .training-analysis-table th .training-column-sort[data-active=true]{color:#604594;font-weight:600}
+.training-sort-arrows{display:inline-grid;grid-template-rows:7px 7px;align-content:center;font-size:8px;line-height:7px;color:#ABB3C0}
+.training-sort-arrows span[data-active=true]{color:#604594}
 .training-dashboard .training-analysis-table .training-analysis-expand{display:flex;align-items:center;gap:10px;max-width:250px;min-height:40px;text-align:left;color:#354156;font-size:12px;line-height:20px;white-space:normal}
 .training-analysis-expand>span:first-child{flex-shrink:0;width:18px;height:18px;border:1px solid #DED7EB;border-radius:3px;color:#7357BA;line-height:16px;text-align:center}
 .training-analysis-row-label{display:-webkit-box;flex:1;min-width:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:20px}

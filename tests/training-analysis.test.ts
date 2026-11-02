@@ -119,11 +119,24 @@ test('AOV exposes product mix and discounts as distinct observations on the inst
  }
 });
 
-test('impact order follows overall direction and current or delta sorting remains available',()=>{
+test('explanatory metrics precede calculation inputs in analysis columns',()=>{
+ assert.deepEqual(analysisColumns.roas,['roas','cpc','cvr','aov','revenue','spend']);
+ assert.deepEqual(analysisColumns.cpc,['cpc','adCpm','adCtr','spend','clicks']);
+});
+
+test('impact order follows overall direction and metric headers sort by change in both directions',()=>{
  const data:TrainingData=trainingScreenData(undefined,'S16');
  for(const key of ['roas','cpc']){
   const a=analyzeGroups(data,data.facts,key,'campaign'),sorted=sortAnalysisGroups(a,key,{});
   assert(sorted.every((g,i)=>i===0||Math.sign(a.change!)*(sorted[i-1].impact!-g.impact!)>=0));
-  const current=sortAnalysisGroups(a,key,{sortBasis:'current',sortKey:key});assert(current[0].values[1]!>=current.at(-1)!.values[1]!);
+  for(const sortKey of analysisColumns[key])for(const descending of [true,false]){
+   const sorted=sortAnalysisGroups(a,key,{sortBasis:'change',sortKey,descending});
+   const values=sorted.map(g=>{
+    const before=analysisValue(g.before,sortKey,a.totals[0]),after=analysisValue(g.after,sortKey,a.totals[1]);
+    if(before===null||after===null)return null;
+    return ['roas','cvr','adCtr','impressionShare'].includes(sortKey)?after-before:before===0?null:(after-before)/before;
+   }).filter(v=>v!==null);
+   assert(values.every((v,i)=>!i||(descending?values[i-1]!>=v!:values[i-1]!<=v!)),sortKey);
+  }
  }
 });

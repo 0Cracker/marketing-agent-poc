@@ -4,7 +4,7 @@ import type {Breakdown,Fact,Filters,Total,TrainingData} from '../../shared/train
 export type AnalysisMetric={key:string;label:string;rate?:boolean;unit?:string};
 export type AnalysisDimension='campaign'|'device'|'creativeId'|'audienceId'|'placement'|'keyword'|'product';
 export type AnalysisScope={dimension:AnalysisDimension;key:string;label:string;rowIds?:string[]};
-export type AnalysisSettings={dimension?:AnalysisDimension;sortBasis?:'impact'|'current'|'change';sortKey?:string;descending?:boolean;expanded?:string[]};
+export type AnalysisSettings={dimension?:AnalysisDimension;sortBasis?:'impact'|'change';sortKey?:string;descending?:boolean;expanded?:string[]};
 export type AnalysisRow=Fact|Breakdown;
 export const dimensionNames:Record<AnalysisDimension,string>={campaign:'캠페인',device:'기기',creativeId:'소재',audienceId:'타깃',placement:'게재 위치',keyword:'검색어',product:'상품'};
 const pairDefinitions:Record<string,[string,string]>={roas:['revenue','spend'],cpc:['spend','clicks'],adCtr:['clicks','impressions'],cvr:['orders','clicks'],cpa:['spend','orders'],aov:['revenue','orders']};
@@ -22,7 +22,7 @@ export const analysisMetrics:AnalysisMetric[]=[
  {key:'listRevenue',label:'할인 전 금액',unit:'원'},{key:'discount',label:'할인액',unit:'원'},{key:'discountRate',label:'금액 할인율',rate:true},
  {key:'ledgerOrders',label:'주문 원장 주문',unit:'건'},{key:'ledgerRevenue',label:'주문 원장 매출',unit:'원'},{key:'trackingExpected',label:'수집 대상 이벤트',unit:'회'},{key:'trackingReceived',label:'수집 이벤트',unit:'회'},{key:'duplicateEvents',label:'중복 이벤트',unit:'회'},
 ];
-export const analysisColumns:Record<string,string[]>={roas:['roas','revenue','spend','cpc','cvr','aov'],cpc:['cpc','spend','clicks','adCtr','adCpm'],adCtr:['adCtr','clicks','impressions','impressionShare'],cvr:['cvr','clicks','orders','sessionCvr'],cpa:['cpa','spend','orders','cpc','cvr'],aov:['aov','revenue','orders','discountRate']};
+export const analysisColumns:Record<string,string[]>={roas:['roas','cpc','cvr','aov','revenue','spend'],cpc:['cpc','adCpm','adCtr','spend','clicks'],adCtr:['adCtr','impressionShare','clicks','impressions'],cvr:['cvr','sessionCvr','orders','clicks'],cpa:['cpa','cpc','cvr','spend','orders'],aov:['aov','discountRate','revenue','orders']};
 export const analysisMetric=(key:string)=>analysisMetrics.find(metric=>metric.key===key)!;
 export function analysisMissingReason(rows:AnalysisRow[],key:string){
  const denominators:Record<string,string>={impressionShare:'선택 범위 전체 광고 노출수',orderShare:'선택 그룹 전체 주문수',clickShare:'선택 범위 전체 클릭수',realizedPrice:'판매 수량',unitsPerOrder:'귀속 구매 주문수'};
@@ -82,9 +82,9 @@ export function analyzeGroups(data:TrainingData,rows:AnalysisRow[],metric:string
 export type GroupAnalysis=ReturnType<typeof analyzeGroups>;
 export type AnalysisGroup=GroupAnalysis['groups'][number];
 export function sortAnalysisGroups(analysis:GroupAnalysis,metric:string,settings:AnalysisSettings){
- const basis=settings.sortBasis||'impact',key=settings.sortKey||metric,definition=analysisMetric(key);
+ const basis=settings.sortBasis==='change'?'change':'impact',key=settings.sortKey||metric,definition=analysisMetric(key);
  return [...analysis.groups].sort((a,b)=>{
-  const value=(g:AnalysisGroup)=>basis==='impact'?g.impact:basis==='current'?(g.periodRows[1].length?analysisValue(g.after,key,analysis.totals[1]):null):metricChange(g.periodRows[0].length?analysisValue(g.before,key,analysis.totals[0]):null,g.periodRows[1].length?analysisValue(g.after,key,analysis.totals[1]):null,definition?.rate);
+  const value=(g:AnalysisGroup)=>basis==='impact'?g.impact:metricChange(g.periodRows[0].length?analysisValue(g.before,key,analysis.totals[0]):null,g.periodRows[1].length?analysisValue(g.after,key,analysis.totals[1]):null,definition?.rate);
   const av=value(a),bv=value(b);if(av===null)return bv===null?a.key.localeCompare(b.key):1;if(bv===null)return -1;
   if(basis==='impact'&&settings.descending===undefined){return (analysis.change===0?Math.abs(bv)-Math.abs(av):Math.sign(analysis.change||1)*(bv-av))||a.key.localeCompare(b.key);}
   return (settings.descending===false?1:-1)*(av-bv)||a.key.localeCompare(b.key);
