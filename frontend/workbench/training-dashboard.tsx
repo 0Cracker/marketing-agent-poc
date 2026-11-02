@@ -10,7 +10,7 @@ import type {Fact,Filters,Total,TrainingData} from '../../shared/training-dashbo
 import './roas-workbench.css';
 import './training-dashboard.css';
 import TrainingScopePicker from './training-scope-picker';
-import {deltaTone,miniPlotDomain,plotUpper} from './training-presentation';
+import {deltaTone,displayedChange,miniPlotDomain,plotUpper} from './training-presentation';
 import {KpiAnalysisPanel,TermInfo} from './training-analysis-panel';
 import {scopeTrainingData} from './training-analysis';
 import type {AnalysisSettings,AnalysisScope,AnalysisGroup,AnalysisDimension} from './training-analysis';
@@ -43,7 +43,11 @@ const names:Record<string,string>={all:'전체',search:'검색',social:'소셜',
 const metrics:Metric[]=[{key:'roas',label:'ROAS',rate:true},{key:'revenue',label:'구매 전환 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'orders',label:'구매 주문',unit:'건'},{key:'cpc',label:'CPC',unit:'원'},{key:'cvr',label:'클릭 기준 구매율',rate:true},{key:'aov',label:'AOV',unit:'원'},{key:'cpa',label:'구매 CPA',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'contentClickRate',label:'콘텐츠 링크 클릭률',rate:true},{key:'adCpm',label:'광고 CPM',unit:'원'},{key:'contentCpm',label:'조회 1,000회당 비용',unit:'원'}];
 const get=(total:Total,key:string):number|null=>{const pairs:Record<string,[number,number]>={viewRate:[total.view,total.sessions],cartRate:[total.cart,total.view],beginRate:[total.checkout,total.cart],unitPrice:[total.listRevenue,total.units],discountRate:[total.discount,total.listRevenue]};if(key in pairs){const [a,b]=pairs[key];return b?a/b:null;}return key in total.rates?total.rates[key as keyof Total['rates']]:total[key as keyof typeof total] as number;};
 const fmt=(value:number|null|undefined,rate=false,unit='')=>value==null?'—':Number(rate?value*100:value).toLocaleString('ko-KR',{maximumFractionDigits:1})+(rate?'%':unit);
-const change=(a:number|null,b:number|null,rate=false)=>a==null||b==null?'비교 불가':rate?`${b-a>0?'+':''}${fmt((b-a)*100)}%p`:a===0?(b===0?'0%':'기준값 0'):`${b>a?'+':''}${fmt((b/a-1)*100)}%`;
+const change=(a:number|null,b:number|null,rate=false)=>{
+ if(a===null||b===null)return '비교 불가';
+ const delta=displayedChange(a,b,rate);
+ return delta===null?'기준값 0':`${delta>0?'+':''}${fmt(delta)}${rate?'%p':'%'}`;
+};
 const periodLabel=(start:string,end:string)=>`${start.replaceAll('-','.')} ~ ${new Date(Date.parse(end+'T00:00:00Z')-86400000).toISOString().slice(0,10).replaceAll('-','.')}`;
 const ratio=(a:number,b:number|null)=>b?a/b:null;
 function MetricCell({value,metric,rows,before=null}:{value:number|null|undefined;metric:Metric;rows:Fact[];before?:number|null}){
@@ -56,11 +60,11 @@ function Delta({before,after,rate=false,metricKey}:{before:number|null;after:num
 }
 
 function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[]}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[]}){
- const tone=deltaTone(metric.key,before,after,metric.rate),direction=before===null||after===null?0:Math.sign(after-before);
- const path=direction===0?'M5 24H49M37 12L49 24L37 36':'M5 8L19 23L29 15L48 38M35 38H48V25';
+ const tone=deltaTone(metric.key,before,after,metric.rate),visibleDelta=displayedChange(before,after,metric.rate),direction=Math.sign(visibleDelta??0);
+ const path=direction===0?'M5 24H49':'M5 8L19 23L29 15L48 38M35 38H48V25';
  return <section className={`roas-primary-kpi training-roas-summary training-delta-${tone}`} aria-labelledby={`training-${metric.key}-title`}>
   <h3 id={`training-${metric.key}-title`} className="training-roas-heading">{metric.label} <TermInfo label={metric.label} description={metricDescriptions[metric.key]}/></h3>
-  <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">직전 14일: {fmt(before,metric.rate,metric.unit)}</p></div>
+  <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">{before!==null&&after!==null&&direction===0?`직전 14일과 동일 (${fmt(before,metric.rate,metric.unit)})`:`직전 14일: ${fmt(before,metric.rate,metric.unit)}`}</p></div>
   <div className="training-roas-value-row"><strong className="training-roas-current">{after===null?<MetricCell value={after} metric={metric} rows={rows}/>:fmt(after,metric.rate,metric.unit)}</strong><span className="training-roas-change" title={metric.rate?'%p는 퍼센트포인트로, 두 비율의 차이입니다.':'직전 14일 대비 상대 증감률입니다.'}>{tone!=='neutral'&&direction!==0&&<svg viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 2H9L5 9Z" transform={direction>0?'translate(0 10) scale(1 -1)':undefined}/></svg>}<Delta metricKey={metric.key} before={before} after={after} rate={metric.rate}/></span></div>
  </section>;
 }

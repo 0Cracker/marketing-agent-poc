@@ -2,11 +2,18 @@
 const higherIsBetter=new Set(['impressions','clicks','sessions','view','cart','checkout','roas','revenue','orders','ledgerOrders','ledgerRevenue','units','returnPurchases','purchases','cvr','adCtr','contentClickRate','aov','sessionCvr','checkoutRate','viewRate','cartRate','beginRate']);
 const lowerIsBetter=new Set(['cpc','cpa','cac','adCpm','contentCpm','paymentFailureRate','paymentFailures','redirectErrors','loadMs','duplicateEvents']);
 
+export function displayedChange(before:number|null,after:number|null,rate=false):number|null{
+ if(before===null||after===null)return null;
+ const delta=rate?(after-before)*100:before===0?(after===0?0:null):(after/before-1)*100;
+ if(delta===null)return null;
+ return Number(new Intl.NumberFormat('en-US',{maximumFractionDigits:1,useGrouping:false}).format(delta))||0;
+}
+
 export function deltaTone(key:string,before:number|null,after:number|null,rate=false){
  if(before==null||after==null||!Number.isFinite(before)||!Number.isFinite(after)||before===after)return 'neutral';
  // 색도 표시 정밀도를 따른다. 반올림된 +0%, -0%p를 성과 변화로 칠하지 않는다.
- const delta=rate?(after-before)*100:before===0?null:(after/before-1)*100;
- if(delta===null||Number(new Intl.NumberFormat('en-US',{maximumFractionDigits:1,useGrouping:false}).format(delta))===0)return 'neutral';
+ const delta=displayedChange(before,after,rate);
+ if(delta===null||delta===0)return 'neutral';
  const preference=higherIsBetter.has(key)?1:lowerIsBetter.has(key)?-1:0;
  return preference===0?'neutral':(after-before)*preference>0?'positive':'negative';
 }

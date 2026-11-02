@@ -107,3 +107,17 @@ test('all directional table metrics share improvement, deterioration and neutral
   assert.equal(deltaTone(key,high,low),'neutral',key);
  }
 });
+
+test('rounded summary changes keep zero unsigned and preserve nonzero directions',async()=>{
+ const {displayedChange}=await import('../frontend/workbench/training-presentation.ts');
+ assert.equal(displayedChange(0.018,0.018,true),0);
+ assert.equal(displayedChange(0.018,0.018001,true),0);
+ assert.equal(displayedChange(0.018,0.017999,true),0);
+ assert.equal(displayedChange(500,500.1),0);
+ assert.equal(displayedChange(500,499.9),0);
+ assert.equal(displayedChange(0.018,0.019,true),0.1);
+ assert.equal(displayedChange(500,499),-0.2);
+ assert.equal(displayedChange(null,1),null);
+ assert.equal(displayedChange(0,1),null);
+ assert.equal(displayedChange(0,0),0);
+ });
