@@ -26,7 +26,7 @@ function DataWorkbench({onWorkflow}:{onWorkflow:()=>void}){
  const [dataset]=useState('CURRENT'),[connected,setConnected]=useState<Awaited<ReturnType<typeof loadConnectedServices>>|null>(null),[dataLoading,setDataLoading]=useState(true),[dataError,setDataError]=useState(''),[context,setContext]=useState(''),[view,setView]=useState('dashboard'),[toolsOpen,setToolsOpen]=useState(false);
  const [loaded,setLoaded]=useState<{type:string;service:typeof emptyService}|null>(null);
  useEffect(()=>{let active=true;void import('./connected-service').then(m=>m.loadConnectedServices()).then(data=>{if(active){setConnected(data);setMedia(data.service.campaigns.find(c=>c.country==='JP')?.id||'');}}).catch(error=>{if(active){setDataError(error instanceof Error?error.message:'자료를 읽지 못했습니다');}}).finally(()=>{if(active)setDataLoading(false);});return ()=>{active=false;};},[]);
- useEffect(()=>{document.title=`마케팅 데이터 워크벤치 | ${dataset}`;},[dataset]);
+ useEffect(()=>{document.title=`퍼포먼스 마케터 대시보드 PoC | ${dataset}`;},[dataset]);
  useEffect(()=>{if(!connected)return;let active=true;void connected.loadType(type).then(service=>{if(active){setLoaded({type,service});setDataError('');}}).catch(error=>{if(active)setDataError(error instanceof Error?error.message:'자료를 읽지 못했습니다');});return ()=>{active=false;};},[connected,type]);
  const loading=dataLoading||loaded?.type!==type;
  const service=loaded?.service||connected?.service||emptyService;
