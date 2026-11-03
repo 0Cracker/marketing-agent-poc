@@ -1,10 +1,11 @@
 import {Fragment,useId} from 'react';
 import type {ReactNode} from 'react';
-import {metricChange,selectBreakdowns} from '../../shared/training-dashboard.mjs';
+import {selectBreakdowns} from '../../shared/training-dashboard.mjs';
 import type {Filters,Total,TrainingData} from '../../shared/training-dashboard.mjs';
 import {analysisColumns,analysisDimensions,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,dimensionNames,sortAnalysisGroups} from './training-analysis';
 import type {AnalysisDimension,AnalysisGroup,AnalysisMetric,AnalysisSettings} from './training-analysis';
 import {deltaTone} from './training-presentation';
+import {formatMetricValue,formatMetricAbsoluteDelta,formatComparedMetricDelta} from './training-format';
 import {Info} from 'lucide-react';
 import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from '../components/ui/tooltip';
 
@@ -14,20 +15,13 @@ export function TermInfo({label,description}:{label:string;description?:string})
 }
 
 
-const format=(value:number|null,metric:AnalysisMetric,maximumFractionDigits=1)=>value===null?'계산 불가':(metric.rate?value*100:value).toLocaleString('ko-KR',{maximumFractionDigits})+(metric.rate?'%':metric.unit||'');
-function signed(value:number|null,metric:AnalysisMetric){
- if(value===null)return '계산 불가';
- const rounded=Number((value*(metric.rate?100:1)).toFixed(1))||0;
- return (rounded>0?'+':'')+rounded.toLocaleString('ko-KR',{maximumFractionDigits:1})+(metric.rate?'%p':metric.unit||'');
-}
+const format=(value:number|null,metric:AnalysisMetric)=>value===null?'계산 불가':formatMetricValue(value,metric.key,metric.rate,metric.unit);
+function signed(value:number|null,metric:AnalysisMetric){return formatMetricAbsoluteDelta(value,metric.key,metric.rate,metric.unit);}
 function impactTone(metric:AnalysisMetric,value:number|null){
- if(value===null||Number((value*(metric.rate?100:1)).toFixed(1))===0)return 'neutral';
+ if(value===null||value===0||formatMetricAbsoluteDelta(value,metric.key,metric.rate,metric.unit).startsWith('≈0'))return 'neutral';
  return (['cpc','cpa'].includes(metric.key)?value<0:value>0)?'positive':'negative';
 }
-const delta=(before:number|null,after:number|null,metric:AnalysisMetric)=>{
- const value=metricChange(before,after,metric.rate);
- return value===null?(before===0&&after!==null?'기준값 0':'비교 불가'):metric.rate?signed(value,metric):signed(value,{...metric,rate:true}).replace('%p','%');
-};
+const delta=(before:number|null,after:number|null,metric:AnalysisMetric)=>formatComparedMetricDelta(before,after,metric.key,metric.rate);
 
 function Value({value,metric,rows}:{value:number|null;metric:AnalysisMetric;rows:AnalysisGroup['rows']}){
  if(value!==null)return <>{format(value,metric)}</>;
@@ -37,7 +31,7 @@ function Value({value,metric,rows}:{value:number|null;metric:AnalysisMetric;rows
 function CurrentCell({group,metric,totals,changeFirst=false}:{group:AnalysisGroup;metric:AnalysisMetric;totals:Total[];changeFirst?:boolean}){
  const values=[group.before,group.after].map((t,i)=>group.periodRows[i].length?analysisValue(t,metric.key,totals[i]):null);
  const tone=deltaTone(metric.key,values[0],values[1],metric.rate);
- return <td className="numeric">{changeFirst?<><strong className={`training-delta-${tone}`}>{delta(values[0],values[1],metric)}</strong><small className="training-cell-change"><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></small></>:<><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></>}</td>;
+ return <td className="numeric">{changeFirst?<><strong className={`training-delta-${tone}`}>{delta(values[0],values[1],metric)}</strong><small className="training-cell-change">{metric.key==='roas'&&<span className="training-current-label">현재 </span>}<Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></small></>:<><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></>}</td>;
 }
 function EvidenceTable({group,keys,totals,content=false}:{group:AnalysisGroup;keys:string[];totals:Total[];content?:boolean}){
  return <div className="wb-table-scroll"><table className="training-calculation-table"><thead><tr><th>지표</th><th className="numeric">직전 14일</th><th className="numeric">분석 기간</th><th className="numeric">증감</th></tr></thead><tbody>{[...new Set(keys)].map(key=>{
@@ -72,7 +66,8 @@ function GroupDetails({group,dimension,analysis,columns,...props}:{group:Analysi
   <div className="training-analysis-detail-heading"><h4>기간별 데이터</h4><div><button onClick={()=>onNarrow(group,dimension)}>이 대상으로 좁혀 보기</button><button onClick={()=>onEvidence({title:group.label+', 집계 근거',rows:group.rows})}>원천 집계 보기</button></div></div>
   <EvidenceTable group={group} totals={analysis.totals} content={content} keys={[...columns,...extras[metricKey]]}/>
   <details className="training-data-disclosure"><summary>일별 추이</summary>{renderTrend(scoped,metric)}</details>
-  {['cvr','cpa'].includes(metricKey)&&<details className="training-data-disclosure"><summary>구매 퍼널과 결제 데이터</summary>{renderFunnel(group.before,group.after)}<EvidenceTable group={group} totals={analysis.totals} keys={[...funnelKeys,'paymentAttempts','paymentFailures','paymentFailureRate','loadMs','loadTotalMs','loadSamples','redirectErrors','orders','ledgerOrders','revenue','ledgerRevenue','trackingExpected','trackingReceived','duplicateEvents']}/></details>}
+  {metricKey==='cvr'&&<details className="training-data-disclosure"><summary>구매 퍼널과 결제 데이터</summary>{renderFunnel(group.before,group.after)}<EvidenceTable group={group} totals={analysis.totals} keys={[...funnelKeys,'paymentAttempts','paymentFailures','paymentFailureRate','loadMs','loadTotalMs','loadSamples','redirectErrors','orders','ledgerOrders','revenue','ledgerRevenue','trackingExpected','trackingReceived','duplicateEvents']}/></details>}
+  {metricKey==='cpa'&&<details className="training-data-disclosure"><summary>결제 및 계측 데이터</summary><EvidenceTable group={group} totals={analysis.totals} keys={['paymentAttempts','paymentFailures','paymentFailureRate','loadMs','loadTotalMs','loadSamples','redirectErrors','orders','ledgerOrders','revenue','ledgerRevenue','trackingExpected','trackingReceived','duplicateEvents']}/></details>}
   {metricKey==='aov'&&<details className="training-data-disclosure"><summary>상품별 데이터</summary><ProductEvidence data={scoped} filters={filters}/></details>}
   {metricKey==='adCtr'&&<details className="training-data-disclosure"><summary>도달과 빈도</summary><ReachEvidence data={scoped}/></details>}
  </div>;
@@ -96,7 +91,9 @@ export function KpiAnalysisPanel(props:PanelProps){
   const impact=key==='impact',basis=metricKey==='roas'?'change':'value',active=impact?effectiveSettings.sortBasis!=='value'&&effectiveSettings.sortBasis!=='change':effectiveSettings.sortBasis===basis&&effectiveSettings.sortKey===key;
   const descending=settings.descending??(impact?(analysis.change||0)>=0:true);
   const label=impact?'전체 변화 기여':analysisMetric(key).label;
-  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label"><button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':metricKey==='roas'?'증감':'현재값'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':basis,descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button></span></th>;
+   const headerHelp=metricKey!=='roas'?undefined:impact?'전체 ROAS 변화 중 해당 행에 배분된 기여값입니다. 귀속 매출과 집행비 비중 변화를 반영하며, 인과관계를 뜻하지 않습니다. 같은 분석 범위에서 기여값의 합은 전체 변화와 일치합니다.':key==='roas'?'현재 ROAS는 해당 캠페인의 귀속 구매 매출 ÷ 유료 마케팅 집행비 × 100입니다. 증감은 분석 기간에서 직전 기간 값을 뺀 %p입니다. 이 열은 증감 기준으로 정렬됩니다.':label+'의 현재값과 직전 기간 대비 증감을 표시합니다. 이 열은 현재값이 아니라 증감 기준으로 정렬됩니다.';
+  const button=<button className="training-column-sort" data-active={active} aria-label={`${label} ${impact?'기여값':metricKey==='roas'?'증감':'현재값'}, ${active&&descending?'오름차순':'내림차순'} 정렬`} onClick={()=>onSettings({sortKey:key,sortBasis:impact?'impact':basis,descending:active?!descending:true})}>{label}<span className="training-sort-arrow" aria-hidden="true">{active?(descending?'▼':'▲'):null}</span></button>;
+  return <th key={key} className="numeric" aria-sort={active?(impact&&settings.descending===undefined&&analysis.change===0?'other':descending?'descending':'ascending'):'none'}><span className="training-term-label">{headerHelp?<TooltipProvider delayDuration={250}><InfoTooltip><TooltipTrigger asChild>{button}</TooltipTrigger><TooltipContent className="training-measure-tooltip" side="top" sideOffset={7}>{headerHelp}</TooltipContent></InfoTooltip></TooltipProvider>:button}</span></th>;
  }
  return <section className="roas-card training-analysis-panel" id={metricKey==='roas'?'training-campaign-roas':undefined} aria-label={`${metric.label} 원인 분석 표`}>
   <div className="roas-card-heading"><h3>{metric.label} 상세 데이터</h3></div>

@@ -39,12 +39,13 @@ test('the entry metric and its numerator and denominator precede other columns w
  assert.deepEqual(prioritizeColumns(traffic,'cpc').map(item=>item.key),['cpc','spend','clicks','impressions']);
 });
 
-test('displayed zero changes, zero percentage points and unavailable comparisons are neutral',()=>{
+test('displayed precision controls zero neutrality and visible purchase-rate changes retain their direction',()=>{
  assert.equal(deltaTone('cpc',500,500),'neutral');
  assert.equal(deltaTone('cpc',500,500.1),'neutral');
  assert.equal(deltaTone('cpc',500,499.9),'neutral');
- assert.equal(deltaTone('cvr',0.02,0.0201,true),'neutral');
- assert.equal(deltaTone('cvr',0.02,0.0199,true),'neutral');
+ // CVR now displays two decimals: these differences are visible as +0.01 and -0.01%p.
+ assert.equal(deltaTone('cvr',0.02,0.0201,true),'positive');
+ assert.equal(deltaTone('cvr',0.02,0.0199,true),'negative');
  assert.equal(deltaTone('revenue',0,100),'neutral');
  assert.equal(deltaTone('cvr',0,0.01,true),'positive');
  assert.equal(deltaTone('cpc',500,501),'negative');

@@ -306,3 +306,29 @@
 .training-funnel-step b{margin:0;line-height:24px}
 .training-funnel-step small{margin:0;line-height:16px}
 @media(max-width:800px){.training-analysis-detail,.training-sidebar-collapsed .training-analysis-detail{max-width:calc(100vw - 76px);padding:16px}.training-dashboard .training-analysis-table>thead>tr>th{padding:12px}.training-dashboard .training-analysis-table>thead>tr>th:first-child,.training-analysis-table>tbody>tr>th[scope=row]{min-width:160px;max-width:190px}.training-dashboard .training-analysis-table>tbody>tr>th[scope=row],.training-dashboard .training-analysis-table>tbody>tr>th[scope=row]~td{padding:14px 12px}.training-dashboard .training-analysis-table .training-analysis-expand{max-width:170px}.training-analysis-panel .training-calculation-table th,.training-analysis-panel .training-calculation-table td{padding:10px 12px}.training-funnel-head,.training-funnel-step{grid-template-columns:80px minmax(0,1fr) minmax(0,1fr);gap:12px}.training-funnel-step b{font-size:16px}}
+
+/* Compact KPI and trend, without changing the independent chart interactions. */
+.training-metric-hero{display:grid;grid-template-columns:minmax(260px,30%) minmax(0,1fr);align-items:stretch;gap:14px;margin-bottom:18px;min-width:0}
+.training-metric-hero .training-roas-summary{display:flex;flex-direction:column;justify-content:center;min-height:246px;padding:20px 22px}
+.training-metric-hero .training-roas-current{font-size:clamp(30px,3vw,44px);letter-spacing:-1px}
+.training-metric-hero .training-roas-direction>svg{width:38px;height:36px}
+.training-metric-hero .training-metric-hero-chart{min-width:0;padding:18px 20px}
+.training-metric-hero .training-metric-hero-chart>h3{margin-bottom:6px}
+.training-metric-hero .training-chart-legend{margin:8px 0}
+.training-metric-hero .training-period-chart{height:166px;margin:4px 0 0}
+.training-current-label{color:#788494;font-weight:400}
+@media(max-width:880px){
+ .training-metric-hero{grid-template-columns:minmax(0,1fr)}
+ .training-metric-hero .training-roas-summary{min-height:170px}
+ .training-metric-hero .training-period-chart{height:200px}
+}
+
+.training-cpa-related{margin-bottom:18px}
+.training-cpa-related .wb-table-scroll{max-width:100%;overflow-x:auto}
+.training-cpa-related table{min-width:440px;width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.training-cpa-related th,.training-cpa-related td{padding:12px 14px;border-bottom:1px solid #E8ECF2}
+.training-cpa-related th[scope=row]{font-weight:500;text-align:left}
+.training-cpa-related thead th{font-weight:500;font-size:12px;color:#687487}
+.training-dashboard .training-cpa-funnel-link{margin-top:16px;padding:8px 0;border:0;background:transparent;font:inherit;color:#7357BA;cursor:pointer}
+.training-dashboard .training-cpa-funnel-link:hover{text-decoration:underline}
+.training-dashboard .training-cpa-funnel-link:focus-visible{outline:2px solid #7357BA;outline-offset:3px}

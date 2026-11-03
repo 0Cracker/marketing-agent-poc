@@ -9,12 +9,12 @@ export type AnalysisRow=Fact|Breakdown;
 export const dimensionNames:Record<AnalysisDimension,string>={campaign:'캠페인',device:'기기',creativeId:'소재',audienceId:'타깃',placement:'게재 위치',keyword:'검색어',product:'상품'};
 const pairDefinitions:Record<string,[string,string]>={roas:['revenue','spend'],cpc:['spend','clicks'],adCtr:['clicks','impressions'],cvr:['orders','clicks'],cpa:['spend','orders'],aov:['revenue','orders']};
 export const analysisMetrics:AnalysisMetric[]=[
- {key:'roas',label:'ROAS',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'cvr',label:'클릭 기준 CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'aov',label:'AOV',unit:'원'},
+ {key:'roas',label:'ROAS',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'cvr',label:'클릭 기준 구매 CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'aov',label:'AOV',unit:'원'},
  {key:'revenue',label:'귀속 구매 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'clicks',label:'클릭수',unit:'회'},{key:'impressions',label:'광고 노출수',unit:'회'},{key:'orders',label:'귀속 구매 주문수',unit:'건'},
  {key:'adCpm',label:'광고 CPM',unit:'원'},{key:'contentClickRate',label:'콘텐츠 링크 클릭률',rate:true},{key:'contentCpm',label:'조회 1,000회당 비용',unit:'원'},
  {key:'impressionShare',label:'노출 비중',rate:true},{key:'orderShare',label:'주문 비중',rate:true},{key:'spendShare',label:'집행비 비중',rate:true},{key:'clickShare',label:'클릭 비중',rate:true},
  {key:'sessions',label:'랜딩 세션',unit:'회'},{key:'view',label:'상품 조회 세션',unit:'회'},{key:'cart',label:'장바구니 세션',unit:'회'},{key:'checkout',label:'결제 시작 세션',unit:'회'},
- {key:'purchases',label:'같은 세션 구매',unit:'건'},{key:'returnPurchases',label:'재방문 구매',unit:'건'},{key:'sessionCvr',label:'세션 구매율',rate:true},
+ {key:'purchases',label:'동일 세션 구매 건수',unit:'건'},{key:'returnPurchases',label:'재방문 구매',unit:'건'},{key:'sessionCvr',label:'동일 세션 구매율',rate:true},
  {key:'viewRate',label:'상품 조회율',rate:true},{key:'cartRate',label:'장바구니율',rate:true},{key:'beginRate',label:'결제 시작률',rate:true},{key:'checkoutRate',label:'결제 완료율',rate:true},
  {key:'paymentAttempts',label:'결제 시도',unit:'회'},{key:'paymentFailures',label:'결제 실패',unit:'회'},{key:'paymentFailureRate',label:'결제 실패율',rate:true},
  {key:'loadMs',label:'평균 로드 시간',unit:'ms'},{key:'loadTotalMs',label:'로드 시간 합계',unit:'ms'},{key:'loadSamples',label:'로드 측정 횟수',unit:'회'},{key:'redirectErrors',label:'리디렉션 오류',unit:'회'},{key:'units',label:'판매 수량',unit:'개'},
