@@ -1,0 +1,32 @@
+[
+  {
+    "name": "regression",
+    "command": "node --experimental-strip-types --test tests/roas/*.test.mjs tests/roas/*.test.ts",
+    "exitCode": 0,
+    "elapsedMs": 24507
+  },
+  {
+    "name": "types",
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false --pretty false",
+    "exitCode": 0,
+    "elapsedMs": 27477
+  },
+  {
+    "name": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js . --ignore-pattern dist --ignore-pattern .next",
+    "exitCode": 2,
+    "elapsedMs": 32855
+  },
+  {
+    "name": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js . --ignore-pattern dist --ignore-pattern .next",
+    "exitCode": 0,
+    "elapsedMs": 59531
+  },
+  {
+    "name": "build",
+    "command": "node node_modules/vite/bin/vite.js build",
+    "exitCode": 0,
+    "elapsedMs": 35388
+  }
+]

@@ -1,5 +1,7 @@
 # 마케팅 분석, 예산 Agent PoC
 
+2026-11-04 구조 분리: 현재 ROAS는 frontend/roas/, backend/roas/, shared/roas/, data/roas/, scripts/roas/, tests/roas/에 있다. 기존 구현과 원천은 legacy/에 독립 보관한다. 기본 앱에는 구 대시보드 메뉴가 없으며 npm run dev:legacy로 보관 화면을 연다. [분리 계약과 검증](docs/design/roas-legacy-separation.md), [현재 자료](data/README.md)를 우선한다. 아래 이전 경로와 실행 설명은 분리 전 기록을 포함한다.
+
 **[main 배포 화면](https://marketing-agent-poc.vercel.app/workbench) | [dev 배포 화면](https://marketing-agent-poc-git-dev-cracker5.vercel.app/workbench)**
 
 main은 Production, dev는 개발 브랜치 Preview다. 2026-10-27 확인 기준 main은 v0.4.0 (`3c11e42`), dev는 v0.4.3 (`810eeee`)이며 두 배포 모두 Vercel Ready 상태다. 위 고정 주소는 각 브랜치의 후속 배포에 따라 갱신된다.
