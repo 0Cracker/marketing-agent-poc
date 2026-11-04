@@ -1,0 +1,30 @@
+name: Review classification validation
+
+on:
+  push:
+    paths:
+      - "data/roas-review-classification.json"
+      - "data/roas-reviews.json"
+      - "data/roas-product-metadata.json"
+      - "scripts/validate-roas-review-classification.mjs"
+      - "tests/roas-review-classification.test.mjs"
+      - ".github/workflows/review-classification-validation.yml"
+  pull_request:
+    paths:
+      - "data/roas-review-classification.json"
+      - "data/roas-reviews.json"
+      - "data/roas-product-metadata.json"
+      - "scripts/validate-roas-review-classification.mjs"
+      - "tests/roas-review-classification.test.mjs"
+      - ".github/workflows/review-classification-validation.yml"
+
+jobs:
+  verify-review-classification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/validate-roas-review-classification.mjs
+      - run: node --test tests/roas-review-classification.test.mjs

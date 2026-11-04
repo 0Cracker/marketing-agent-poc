@@ -1,0 +1,45 @@
+name: ROAS regression and isolation checks
+on:
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'backend/roas/**'
+      - 'shared/roas/**'
+      - 'scripts/roas/**'
+      - 'data/roas/**'
+      - 'tests/roas/**'
+      - 'evidence/roas-separation-20261104/baseline.json'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
+      - 'eslint.config.mjs'
+      - 'package*.json'
+      - '.github/workflows/dashboard-ux.yml'
+  push:
+    branches: [dev]
+    paths:
+      - 'frontend/**'
+      - 'backend/roas/**'
+      - 'shared/roas/**'
+      - 'scripts/roas/**'
+      - 'data/roas/**'
+      - 'tests/roas/**'
+      - 'evidence/roas-separation-20261104/baseline.json'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
+      - 'eslint.config.mjs'
+      - 'package*.json'
+      - '.github/workflows/dashboard-ux.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit --incremental false --pretty false
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build

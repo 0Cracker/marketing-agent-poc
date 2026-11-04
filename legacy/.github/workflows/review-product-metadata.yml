@@ -1,0 +1,51 @@
+name: Review product metadata contract
+
+on:
+  push:
+    paths:
+      - 'data/roas-product-metadata.json'
+      - 'data/roas-reviews.json'
+      - 'data/roas-review-classification.json'
+      - 'data/training-dashboard.json'
+      - 'data/manifest.json'
+      - 'scripts/training-data.mjs'
+      - 'scripts/current-data.mjs'
+      - 'tests/training-dashboard.test.mjs'
+      - 'tests/review-data-loader.test.mjs'
+      - 'scripts/review-data.mjs'
+      - 'scripts/validate-roas-review-classification.mjs'
+      - 'tests/roas-review-classification.test.mjs'
+      - 'vite.config.ts'
+      - '.github/workflows/review-product-metadata.yml'
+  pull_request:
+    paths:
+      - 'data/roas-product-metadata.json'
+      - 'data/roas-reviews.json'
+      - 'data/roas-review-classification.json'
+      - 'data/training-dashboard.json'
+      - 'data/manifest.json'
+      - 'scripts/training-data.mjs'
+      - 'scripts/current-data.mjs'
+      - 'tests/training-dashboard.test.mjs'
+      - 'tests/review-data-loader.test.mjs'
+      - 'scripts/review-data.mjs'
+      - 'scripts/validate-roas-review-classification.mjs'
+      - 'tests/roas-review-classification.test.mjs'
+      - 'vite.config.ts'
+      - '.github/workflows/review-product-metadata.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - run: npm run test:training
+      - run: node --test tests/review-data-loader.test.mjs
+      - run: node scripts/validate-roas-review-classification.mjs
+      - run: node --test tests/roas-review-classification.test.mjs
+      - run: npm run lint
+      - run: npm run build
