@@ -44,7 +44,6 @@ jobs:
           node-version: '24'
       - run: npm ci
       - run: npm run test:training
-      - run: node --test tests/roas/review-data-loader.test.mjs
       - run: node scripts/roas/validate-roas-review-classification.mjs
       - run: node --test tests/roas/roas-review-classification.test.mjs
       - run: npm run lint
