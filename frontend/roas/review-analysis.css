@@ -74,13 +74,6 @@
 .review-section .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.review-stat-grid{grid-template-columns:1fr}.review-stat{min-height:90px}.review-chart-card,.review-table-card{padding:14px}.review-axis{margin-left:108px;margin-right:105px}.review-bar-row{grid-template-columns:96px minmax(100px,1fr) 90px;gap:7px;font-size:12px;padding:7px 0}.review-search{flex:1 1 100%}.review-card-heading{align-items:start}}
 
-.review-assignment-details{font-size:11px;margin-top:8px;color:#646c80}
-.review-assignment-details summary{cursor:pointer;color:#6c4dae}
-.review-assignment-details ul{padding-left:16px;margin:7px 0 0;display:grid;gap:7px}
-.review-assignment-details li{line-height:1.5}
-.review-assignment-details li strong{font-weight:600}
-.review-assignment-details li span{margin-left:6px;color:#5a477e}
-.review-assignment-details li q{display:block;color:#657083;overflow-wrap:anywhere}
 
 
 /* Keep the review controls consistent with the existing ROAS segment/pill styling.

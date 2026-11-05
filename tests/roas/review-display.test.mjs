@@ -24,7 +24,7 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert.equal([...html.matchAll(/class="review-bar-track review-period-bar (?:before|after)"/g)].length,10);
    assert.match(html,caseId==='S16'?/언급률 <\/span>40\.7%<\/span>/ : /언급률 <\/span>\d+\.\d%<\/span>/);
    assert.match(html,caseId==='S16'?/<span>\(11\/27건\)<\/span>/ : /<span>\(\d+\/12건\)<\/span>/);
-   assert.match(html,/세부 분류, 평가와 근거/);
+   assert.doesNotMatch(html,/세부 분류, 평가와 근거/);
    assert.doesNotMatch(html,/승인 데이터 총|상위 5개, 세부 18개/);
    assert.equal([...html.matchAll(/aria-expanded="false" aria-controls="review-category-detail-/g)].length,5);
    assert.match(html,/aria-label="판매처, 단일 선택"/);

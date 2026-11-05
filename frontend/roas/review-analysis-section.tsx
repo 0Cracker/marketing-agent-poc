@@ -1,7 +1,7 @@
 'use client';
 import {Fragment,useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {ExternalLink,Search,X} from 'lucide-react';
-import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,reviewExperienceLabels,reviewSentimentLabels,sortCategories,sortReviewRows} from './review-analysis';
+import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,sortCategories,sortReviewRows} from './review-analysis';
 import type {CategorySort,ReviewPeriod,ReviewPeriodChoice,ReviewRecord,ReviewSort,ReviewSortField,ReviewView} from './review-analysis';
 import {SelectionButton} from '../components/ui/selection-button';
 import './review-analysis.css';
@@ -30,7 +30,7 @@ function CategoryChips({review}:{review:ReviewRecord}){
  if(review.classification==='unclassified')return <span className="review-category-chip neutral">미분류</span>;
  if(review.classification!=='classified')return <span className="review-muted">분류 확인 대기</span>;
  const count=review.categories.length,visible=all?review.categories:review.categories.slice(0,3);
- return <div><div className="review-chips">{visible.map(item=><span className="review-category-chip" key={item.id}>{item.label}</span>)}{count>3&&<button type="button" className="review-chip-more" aria-expanded={all} onClick={()=>setAll(v=>!v)}>{all?'접기':'+'+(count-3)}</button>}</div>{!!review.assignments?.length&&<details className="review-assignment-details"><summary>세부 분류, 평가와 근거 {review.assignments.length}건</summary><ul>{review.assignments.map((item,index)=><li key={index}><strong>{reviewExperienceLabels[item.experienceId]}</strong> <span>{reviewSentimentLabels[item.sentiment]}</span><q>{item.evidenceQuote}</q></li>)}</ul></details>}</div>;
+ return <div className="review-chips">{visible.map(item=><span className="review-category-chip" key={item.id}>{item.label}</span>)}{count>3&&<button type="button" className="review-chip-more" aria-expanded={all} onClick={()=>setAll(v=>!v)}>{all?'접기':'+'+(count-3)}</button>}</div>;
 }
 function ReviewText({text,search,open,onToggle}:{text:string;search:string;open:boolean;onToggle:()=>void}) {
  const content=useRef<HTMLSpanElement>(null);
