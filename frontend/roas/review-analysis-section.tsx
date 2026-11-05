@@ -1,7 +1,7 @@
 'use client';
-import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
+import {Fragment,useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {ExternalLink,Search,X} from 'lucide-react';
-import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,reviewCategoryLabels,reviewExperienceLabels,reviewSentimentLabels,sortCategories,sortReviewRows} from './review-analysis';
+import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,reviewExperienceLabels,reviewSentimentLabels,sortCategories,sortReviewRows} from './review-analysis';
 import type {CategorySort,ReviewPeriod,ReviewPeriodChoice,ReviewRecord,ReviewSort,ReviewSortField,ReviewView} from './review-analysis';
 import './review-analysis.css';
 
@@ -10,6 +10,8 @@ type Selection=ReadonlySet<string>;
 const ko=(n:number)=>n.toLocaleString('ko-KR');
 const emptyRows:ReviewRecord[]=[];
 const date=(value:string|null)=>value?value.slice(0,10).replaceAll('-','.'):'—';
+const inclusiveEnd=(value:string)=>new Date(Date.parse(value+'T00:00:00Z')-86400000).toISOString().slice(0,10);
+const shortDate=(value:string)=>Number(value.slice(5,7))+'.'+value.slice(8,10);
 const safeLink=(value:string|null|undefined)=>{
  if(!value)return null;
  try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)?url.href:null;}catch{return null;}
@@ -64,10 +66,15 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
  const status=view?.caseId===caseId?view.status:['S16','S17'].includes(caseId)?'awaiting_source':'not_provided';
  const rows=view?.caseId===caseId?view.reviews:emptyRows;
  const ready=status==='ready'||status==='partial';
- const [sources,setSources]=useState<Set<string>>(new Set()),[period,setPeriod]=useState<ReviewPeriodChoice>('current');
+ const [sources,setSources]=useState<Set<string>>(new Set()),[period,setPeriod]=useState<ReviewPeriodChoice>('both');
  const [categories,setCategories]=useState<Set<string>>(new Set()),[searchInput,setSearchInput]=useState(''),[search,setSearch]=useState('');
  const [sort,setSort]=useState<ReviewSort>(defaultReviewSort),[categorySort,setCategorySort]=useState<CategorySort>('many'),[chartExpansion,setChartExpansion]=useState<'auto'|'open'|'closed'>('auto');
  const [expanded,setExpanded]=useState<Set<string>>(new Set()),[page,setPage]=useState(1),[pageSize,setPageSize]=useState(20);
+ const [display,setDisplay]=useState<'distribution'|'comparison'>('distribution');
+ const [openCategories,setOpenCategories]=useState<Set<string>>(new Set());
+ const selectedPeriods=periods.filter(p=>period==='both'||p.id===period).sort((a,b)=>a.start.localeCompare(b.start));
+ const writingRange=selectedPeriods.length?date(selectedPeriods[0].start)+' ~ '+date(inclusiveEnd(selectedPeriods[selectedPeriods.length-1].end)):'기간 확인 불가';
+ const periodLabel=(id:string)=>{const p=periods.find(p=>p.id===id);return p?shortDate(p.start)+'~'+shortDate(inclusiveEnd(p.end)):'기간 확인 불가';};
  const resetPage=useCallback(()=>{setPage(1);setExpanded(new Set());},[]);
  const appliedSearch=useRef('');
  const applySearch=useCallback((value:string)=>{const normalized=value.trim();if(appliedSearch.current===normalized)return;appliedSearch.current=normalized;setSearch(normalized);resetPage();},[resetPage]);
@@ -92,7 +99,7 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
  function toggleSource(id:string){setSources(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});setChartExpansion('auto');resetPage();}
  function toggleCategory(id:string){setCategories(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});setChartExpansion('auto');resetPage();}
  function changeSort(field:ReviewSortField){setSort(old=>({field,direction:old.field===field&&old.direction==='desc'?'asc':'desc'}));resetPage();}
- function reset(){setSources(new Set());setPeriod('current');setCategories(new Set());appliedSearch.current='';setSearchInput('');setSearch('');setSort(defaultReviewSort);setCategorySort('many');setChartExpansion('auto');setPageSize(20);resetPage();}
+ function reset(){setSources(new Set());setPeriod('both');setDisplay('distribution');setOpenCategories(new Set());setCategories(new Set());appliedSearch.current='';setSearchInput('');setSearch('');setSort(defaultReviewSort);setCategorySort('many');setChartExpansion('auto');setPageSize(20);resetPage();}
  const found=filterReviewTable(eligible,categories,search).length;
  if(status==='not_provided')return <section className="review-section" aria-label="상품 1 리뷰 분석"><header className="review-section-title"><h2>리뷰 분석</h2><span>{caseId}, {view?.productName||'쓱쓱샴푸'}</span></header><p className="review-empty" role="status">이 사례에는 상품 1 리뷰 분석 자료가 없습니다.</p></section>;
  if(status==='error')return <section className="review-section" aria-label="상품 1 리뷰 분석"><header className="review-section-title"><h2>리뷰 분석</h2><span>{caseId}, {view?.productName||'쓱쓱샴푸'}</span></header><div className="review-notice error" role="alert"><p>리뷰 데이터를 불러오지 못했습니다. {view?.message||''}</p>{onRetry&&<button onClick={onRetry}>다시 시도</button>}</div></section>;
@@ -103,34 +110,41 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
   {ready&&rows.length===0&&<p className="review-notice" role="status">리뷰 자료가 제공되었지만 적격 원문은 0건입니다.</p>}
   {status==='partial'&&<div className="review-notice" role="alert">일부 결과만 집계됨. {view?.message||''}{view?.invalidCount!==undefined?' (검증 실패 '+ko(view.invalidCount)+'건)':''}{onRetry&&<button onClick={onRetry}>다시 시도</button>}</div>}
   {ready&&(!categoryAllowed||view?.classificationStatus==='error')&&<p className="review-notice" role="status">분류 결과가 미승인 또는 오류 상태입니다. 원문은 조회할 수 있지만 카테고리 수치와 미분류 결과는 표시하지 않습니다. {onRetry&&<button onClick={onRetry}>분류 다시 시도</button>}</p>}
+  <p className="review-writing-range">리뷰 작성일 기준 {writingRange}</p>
   <div className="review-stat-grid">
-   <article className="roas-card review-stat"><span>전체 리뷰 수</span><strong>{ready?ko(summary.count)+'건':'—'}</strong><small>{ready?caseId+' 전체 '+rows.length+'건, 승인 데이터 총 50건':'현재 작성일, 판매처 기준'}</small></article>
+   <article className="roas-card review-stat"><span>조회된 리뷰</span><strong>{ready?ko(summary.count)+'건':'—'}</strong></article>
    <article className="roas-card review-stat"><span>평균 평점</span><strong>{ready?(summary.average===null?'—':summary.average.toFixed(1)+' / 5'):'—'}</strong><small>현재 조회 범위, 미분류 포함</small></article>
    <article className="roas-card review-stat"><span>최다 언급 카테고리</span><strong className="review-top-name">{ready&&categoryAllowed&&summary.top.length?summary.top.slice(0,2).map(v=>v.label).join(', ')+(summary.top.length>2?' +'+(summary.top.length-2):''):'—'}</strong><small>{ready&&categoryAllowed&&summary.top.length?summary.top[0].count+'건 / '+summary.count+'건 ('+(summary.top[0].count/summary.count*100).toFixed(1)+'%)':'현재 조회 범위 기준'}</small></article>
   </div>
   <section className="roas-card review-chart-card" aria-label="카테고리 분포">
-   <header className="review-card-heading"><h3>카테고리 분포</h3><button type="button" onClick={reset}>전체 필터 초기화</button></header>
+   <header className="review-card-heading"><h3>{display==='distribution'?'카테고리 분포':'카테고리 기간 비교'}</h3><button type="button" onClick={reset}>전체 필터 초기화</button></header>
+   <ReviewSegments label="카테고리 보기" options={[{id:'distribution',label:'전체 분포'},{id:'comparison',label:'기간 비교'}]} value={display} onChange={id=>setDisplay(id as 'distribution'|'comparison')}/>
    <div className="review-controls" aria-label="리뷰 공통 필터">
     <div className="review-filter-group"><span className="review-filter-label">판매처</span><div className="review-source-options" role="group" aria-label="판매처, 복수 선택">
      <button type="button" className="review-filter-pill" aria-pressed={!sources.size} disabled={!ready} onClick={()=>{setSources(new Set());setChartExpansion('auto');resetPage();}}>전체 판매처</button>
      {sourceOptions.map(([id,name])=><button type="button" key={id} className="review-filter-pill" aria-pressed={sources.has(id)} disabled={!ready} onClick={()=>toggleSource(id)}>{name}</button>)}
     </div></div>
-    <div className="review-filter-group"><span className="review-filter-label">작성일 기간</span>
-     <ReviewSegments label="리뷰 작성일 기간" options={[{id:'baseline',label:'비교기간 14일'},{id:'current',label:'분석기간 14일'},{id:'both',label:'두 기간 전체'}]} value={period} disabled={!ready} onChange={id=>{setPeriod(id as ReviewPeriodChoice);setChartExpansion('auto');resetPage();}}/>
+    <div className="review-filter-group"><span className="review-filter-label">리뷰 작성일</span>
+     <ReviewSegments label="리뷰 작성일 기간" options={[{id:'both',label:'전체 기간'},{id:'baseline',label:periodLabel('baseline')},{id:'current',label:periodLabel('current')}]} value={period} disabled={!ready} onChange={id=>{setPeriod(id as ReviewPeriodChoice);setChartExpansion('auto');resetPage();}}/>
     </div>
     <div className="review-filter-group"><span className="review-filter-label">카테고리 정렬</span>
      <ReviewSegments label="카테고리 정렬" options={[{id:'many',label:'많은순'},{id:'few',label:'적은순'},{id:'name',label:'가나다순'}]} value={categorySort} disabled={!ready||!categoryAllowed} onChange={id=>setCategorySort(id as CategorySort)}/>
     </div>
    </div>
-   {ready&&categoryAllowed&&eligible.length>0?<><div className="review-axis" aria-hidden="true"><span/><div className="review-axis-ticks">{[0,25,50,75,100].map(n=><span key={n}>{n}%</span>)}</div><span/></div><div className="review-bars">{categoryRows.slice(0,chartOpen?undefined:5).map(cat=><button type="button" className={'review-bar-row '+(categories.has(cat.id)?'selected':'')} aria-pressed={categories.has(cat.id)} onClick={()=>toggleCategory(cat.id)} key={cat.id}><span>{cat.label}</span><span className="review-bar-track"><i style={{width:(cat.percent??0)+'%'}}/></span><strong>{cat.count}건, {cat.percent?.toFixed(1)}%</strong></button>)}</div>
-    {categoryRows.length>5&&<button className="review-show-all" aria-expanded={chartOpen} onClick={()=>setChartExpansion(chartOpen?'closed':'open')}>{chartOpen?'접기':'전체 보기'}</button>}</>:<p className="review-empty">{ready?(categoryAllowed?'표시할 카테고리가 없습니다.':'검증된 카테고리 자료가 없습니다.'):'원문 연동 후 카테고리 분포를 표시합니다.'}</p>}
-   {ready&&categoryAllowed&&<details className="review-comparison"><summary>상위 5개, 세부 18개 카테고리 기간별 변화</summary>
-    <p>비교기간 {ko(periodComparison.baseline)}건, 분석기간 {ko(periodComparison.current)}건. 집계는 각 기간의 고유 리뷰 기준이며 표본 수 차이를 고려해야 합니다.</p>
-    <div className="review-comparison-scroll"><table><thead><tr><th scope="col">구분</th><th scope="col">분류</th><th scope="col">비교기간</th><th scope="col">분석기간</th><th scope="col">변화</th></tr></thead>
-     <tbody>{categoryRows.map(c=>{const before=periodComparison.parentBefore.get(c.id)||0,after=periodComparison.parentNow.get(c.id)||0;return <tr className="review-comparison-parent" key={c.id}><td>상위</td><th scope="row">{c.label}</th><td>{before}건</td><td>{after}건</td><td>{after-before>0?'+':''}{after-before}건</td></tr>;})}
-      {periodComparison.experiences.map(e=>{const before=periodComparison.experienceBefore.get(e.id)||0,after=periodComparison.experienceNow.get(e.id)||0;return <tr key={e.id}><td>{reviewCategoryLabels[e.categoryId]}</td><th scope="row">{e.label}</th><td>{before}건</td><td>{after}건</td><td>{after-before>0?'+':''}{after-before}건</td></tr>;})}</tbody>
+   {display==='distribution'&&(ready&&categoryAllowed&&eligible.length>0?<><div className="review-axis" aria-hidden="true"><span/><div className="review-axis-ticks">{[0,25,50,75,100].map(n=><span key={n}>{n}%</span>)}</div><span/></div><div className="review-bars">{categoryRows.slice(0,chartOpen?undefined:5).map(cat=><div key={cat.id}><button type="button" className={'review-bar-row '+(categories.has(cat.id)?'selected':'')} aria-pressed={categories.has(cat.id)} onClick={()=>toggleCategory(cat.id)} key={cat.id}><span>{cat.label}</span><span className="review-bar-track"><i style={{width:(cat.percent??0)+'%'}}/></span><strong>{cat.count}건, {cat.percent?.toFixed(1)}%</strong></button><details className="review-category-detail"><summary>{cat.label} 세부 분류 보기</summary><ul>{experienceCounts(eligible).filter(e=>e.categoryId===cat.id).map(e=><li key={e.id}><span>{e.label}</span><strong>{e.count}건</strong></li>)}</ul></details></div>)}</div>
+    {categoryRows.length>5&&<button className="review-show-all" aria-expanded={chartOpen} onClick={()=>setChartExpansion(chartOpen?'closed':'open')}>{chartOpen?'접기':'전체 보기'}</button>}</>:<p className="review-empty">{ready?(categoryAllowed?'표시할 카테고리가 없습니다.':'검증된 카테고리 자료가 없습니다.'):'원문 연동 후 카테고리 분포를 표시합니다.'}</p>)}
+   {display==='comparison'&&ready&&categoryAllowed&&<section className="review-comparison" aria-label="카테고리 기간 비교">
+    <p>이전 14일과 이후 14일의 언급 수와 비율을 비교합니다. 판매처 필터가 적용되며, 작성일 선택과 관계없이 두 기간을 비교합니다.</p>
+    <div className="review-comparison-scroll"><table><thead><tr><th scope="col">대분류 / 세분류</th><th scope="col">이전 14일<br/>{periodLabel('baseline')}<br/>리뷰 {periodComparison.baseline}건</th><th scope="col">이후 14일<br/>{periodLabel('current')}<br/>리뷰 {periodComparison.current}건</th><th scope="col">언급 수 변화</th><th scope="col">언급 비율 변화</th></tr></thead>
+     {categoryRows.map(c=>{
+      const open=openCategories.has(c.id);
+      const cells=(before:number,after:number)=><><td>{before}건 ({periodComparison.baseline?(before/periodComparison.baseline*100).toFixed(1)+'%':'—'})</td><td>{after}건 ({periodComparison.current?(after/periodComparison.current*100).toFixed(1)+'%':'—'})</td><td>{after-before>0?'+':''}{after-before}건</td><td>{periodComparison.baseline&&periodComparison.current?((after/periodComparison.current-before/periodComparison.baseline)*100).toFixed(1)+'%p':'—'}</td></>;
+      return <Fragment key={c.id}><tbody><tr className="review-comparison-parent"><th scope="row"><button type="button" aria-expanded={open} aria-controls={'review-subcategories-'+c.id} onClick={()=>setOpenCategories(old=>{const next=new Set(old);if(next.has(c.id))next.delete(c.id);else next.add(c.id);return next;})}>{open?'▾':'▸'} {c.label}</button></th>{cells(periodComparison.parentBefore.get(c.id)||0,periodComparison.parentNow.get(c.id)||0)}</tr></tbody>
+       <tbody id={'review-subcategories-'+c.id} hidden={!open}>{periodComparison.experiences.filter(e=>e.categoryId===c.id).map(e=><tr key={e.id}><th scope="row">{e.label}</th>{cells(periodComparison.experienceBefore.get(e.id)||0,periodComparison.experienceNow.get(e.id)||0)}</tr>)}</tbody>
+      </Fragment>;
+     })}
     </table></div>
-   </details>}
+   </section>}
    <p className="review-hint">한 리뷰가 여러 카테고리에 포함될 수 있어 비율 합계가 100%를 넘을 수 있습니다. 비율의 분모는 판매처, 작성일 조건에 맞는 전체 리뷰입니다.</p>
   </section>
   <div className="review-table-filters"><div className="review-filter-heading"><h3>리뷰 원문 필터</h3><span>선택한 카테고리만 원문 목록에 적용됩니다.</span></div>

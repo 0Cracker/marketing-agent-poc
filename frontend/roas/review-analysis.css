@@ -148,3 +148,10 @@
  .review-axis-ticks{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.review-bar-track i{transition:none}}
+.review-writing-range{margin:0;color:#66758c;font-size:13px}
+.review-category-detail{margin:0 12px 12px;padding:0 11px;color:#66758c;font-size:12px}
+.review-category-detail summary{cursor:pointer;padding:6px 0}
+.review-category-detail ul{list-style:none;padding:8px 12px;margin:0;background:#faf8fd;border-radius:8px}
+.review-category-detail li{display:flex;justify-content:space-between;gap:16px;padding:6px 0}
+.review-comparison-parent button{white-space:normal;text-align:left}
+.review-comparison-scroll th,.review-comparison-scroll td{font-variant-numeric:tabular-nums}
