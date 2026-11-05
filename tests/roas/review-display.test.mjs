@@ -22,12 +22,15 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert(html.indexOf('>기간 비교</button>')<html.indexOf('>전체 분포</button>'));
    assert.doesNotMatch(html,/aria-label="리뷰 작성일 기간"/);
    assert.equal([...html.matchAll(/class="review-bar-track review-period-bar (?:before|after)"/g)].length,10);
-   assert.match(html,caseId==='S16'?/40\.7% \(11\/27건\)/:/\(\d+\/12건\)/);
+   assert.match(html,caseId==='S16'?/언급률 <\/span>40\.7%<\/span>/ : /언급률 <\/span>\d+\.\d%<\/span>/);
+   assert.match(html,caseId==='S16'?/<span>\(11\/27건\)<\/span>/ : /<span>\(\d+\/12건\)<\/span>/);
+   assert.match(html,/세부 분류, 평가와 근거/);
    assert.doesNotMatch(html,/승인 데이터 총|상위 5개, 세부 18개/);
    assert.equal([...html.matchAll(/aria-expanded="false" aria-controls="review-category-detail-/g)].length,5);
    assert.match(html,/aria-label="판매처, 단일 선택"/);
-   const headings=[...html.matchAll(/<th scope="col">([^<]*)<\/th>/g)].map(m=>m[1]);
-   assert(headings.indexOf('리뷰 원문')<headings.indexOf('원문 확인'),'source link follows review text');
+   const header=html.match(/<thead><tr>([\s\S]*?)<\/tr><\/thead>/)[1];
+   const columns=[...header.matchAll(/<th scope="col">(.*?)<\/th>/g)].map(([,cell])=>cell.match(/aria-label="([^"]+) 정렬"/)?.[1]??cell);
+   assert.deepEqual(columns,['분류 카테고리','평점','판매처','리뷰 원문','작성일','원문 확인']);
    assert.match(html,/selection-button/,'filters use the shared selection button');
   }
  }finally{await server.close();}

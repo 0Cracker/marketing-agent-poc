@@ -154,7 +154,13 @@
 .review-period-bars,.wb .review-bar-row .review-period-values{display:grid;grid-template-rows:repeat(3,minmax(14px,auto));gap:4px;align-items:center}
 .review-period-bars .review-period-bar{height:8px}
 .wb .review-bar-row .review-period-values{white-space:normal}
-.review-period-change{color:#6348a3}
+.review-period-change{color:#66758c}
+.review-period-mark{position:relative;display:block;padding-block:3px}
+.review-period-mark:focus-visible{outline:2px solid #7357ba;outline-offset:2px}
+.review-period-tooltip{position:absolute;z-index:2;bottom:100%;left:50%;translate:-50% 0;padding:2px 6px;border-radius:4px;background:#26344a;color:white;font-size:11px;white-space:nowrap;opacity:0;pointer-events:none}
+.review-period-mark:hover .review-period-tooltip,.review-period-mark:focus-visible .review-period-tooltip,.review-bar-row:focus-visible .review-period-tooltip{opacity:1}
+.review-bar-row:focus-visible .review-period-mark:last-child .review-period-tooltip{top:100%;bottom:auto}
+.wb .review-table td{white-space:normal;overflow-wrap:anywhere}
 .review-inline-details:not([hidden]){background:#f2f7f7;box-shadow:inset 2px 0 #a5c4c5;border-radius:0 7px 7px 0}
 .wb .review-inline-details .review-detail-bar>span:first-child{padding-inline-start:22px}
 .review-inline-details .review-bar-track{background:#ddebec}

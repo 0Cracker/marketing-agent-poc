@@ -58,14 +58,24 @@ function ReviewText({text,search,open,onToggle}:{text:string;search:string;open:
 }
 function ReviewRows({rows,search,sort,onSort,expanded,onToggle}:{rows:ReviewRecord[];search:string;sort:ReviewSort;onSort:(field:ReviewSortField)=>void;expanded:Selection;onToggle:(id:string)=>void}){
  return <div className="review-table-scroll" tabIndex={0} aria-label="리뷰 원문 테이블, 가로 스크롤 가능"><table className="review-table">
-  <caption className="sr-only">판매처, 작성일, 평점, 분류 카테고리, 리뷰 원문, 원문 확인</caption>
-  <colgroup><col style={{width:'12%'}}/><col style={{width:'12%'}}/><col style={{width:'8%'}}/><col style={{width:'32%'}}/><col style={{width:'27%'}}/><col style={{width:'9%'}}/></colgroup>
-  <thead><tr><th scope="col"><SortButton title="판매처" field="sourceName" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="작성일" field="writtenAt" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="평점" field="rating" sort={sort} onChange={onSort}/></th><th scope="col">분류 카테고리</th><th scope="col">리뷰 원문</th><th scope="col">원문 확인</th></tr></thead>
+  <caption className="sr-only">분류 카테고리, 평점, 판매처, 리뷰 원문, 작성일, 원문 확인</caption>
+  <colgroup><col style={{width:'18%'}}/><col style={{width:'8%'}}/><col style={{width:'9%'}}/><col style={{width:'43%'}}/><col style={{width:'12%'}}/><col style={{width:'10%'}}/></colgroup>
+  <thead><tr>
+   <th scope="col">분류 카테고리</th>
+   <th scope="col"><SortButton title="평점" field="rating" sort={sort} onChange={onSort}/></th>
+   <th scope="col"><SortButton title="판매처" field="sourceName" sort={sort} onChange={onSort}/></th>
+   <th scope="col">리뷰 원문</th>
+   <th scope="col"><SortButton title="작성일" field="writtenAt" sort={sort} onChange={onSort}/></th>
+   <th scope="col">원문 확인</th>
+  </tr></thead>
   <tbody>{rows.map(row=>{
    const link=safeLink(row.url),open=expanded.has(row.id),text=row.text||'';
-   return <tr key={row.id}><td>{row.sourceName||'—'}</td><td>{date(row.writtenAt)}</td><td>{row.rating===null?'—':row.rating.toFixed(1)+' / 5'}</td>
-    <td><CategoryChips key={row.id} review={row}/></td>
+   return <tr key={row.id}>
+    <td><CategoryChips review={row}/></td>
+    <td>{row.rating===null?'—':row.rating.toFixed(1)+' / 5'}</td>
+    <td>{row.sourceName||'—'}</td>
     <td className="review-text-cell">{text?<ReviewText text={text} search={search} open={open} onToggle={()=>onToggle(row.id)}/>:<span className="review-muted review-no-text">원문 없음</span>}</td>
+    <td>{date(row.writtenAt)}</td>
     <td>{link?<a href={link} target="_blank" rel="noopener noreferrer" aria-label="원문 보기, 새 탭 열림">원문 보기 <ExternalLink size={12} aria-hidden="true"/></a>:<span className="review-muted">링크 없음</span>}</td>
    </tr>;
   })}</tbody>
@@ -97,21 +107,26 @@ function byChange(a:{change:number|null},b:{change:number|null}){
  return Math.abs(b.change??0)-Math.abs(a.change??0);
 }
 
-function ComparisonMarks({before,after,beforeCount,afterCount,beforeTotal,afterTotal,change}:ReturnType<typeof comparisonRates>){
+function ComparisonMarks({before,after,beforeCount,afterCount,beforeTotal,afterTotal,change,focusable=false}:ReturnType<typeof comparisonRates>&{focusable?:boolean}){
  const delta=change===null?null:Number(change.toFixed(1));
  const periods=[
   {id:'before',label:'이전',rate:before,count:beforeCount,total:beforeTotal},
   {id:'after',label:'이후',rate:after,count:afterCount,total:afterTotal},
  ];
  return <>
-  <span className="review-period-bars" aria-hidden="true">
-   {periods.map(({id,rate})=><span key={id} className={'review-bar-track review-period-bar '+id}>
-    {rate!==null&&<i style={{width:rate+'%'}}/>}
+  <span className="review-period-bars">
+   {periods.map(({id,label,rate})=><span key={id} className="review-period-mark" tabIndex={focusable&&rate!==null?0:undefined}>
+    <span className={'review-bar-track review-period-bar '+id} aria-hidden="true">
+     {rate!==null&&<i style={{width:rate+'%'}}/>}
+    </span>
+    {rate!==null&&<span className="review-period-tooltip"><span className="sr-only">{label} 언급률 </span>{rate.toFixed(1)}%</span>}
    </span>)}
   </span>
   <strong className="review-period-values">
-   {periods.map(({id,label,rate,count,total})=><span key={id}>{label} {rate===null?'—':rate.toFixed(1)+'% ('+count+'/'+total+'건)'}</span>)}
-   <span className="review-period-change">{delta===null?'비교 불가':(delta>0?'+':'')+delta.toFixed(1)+'%p'}</span>
+   {periods.map(({id,rate,count,total})=><span key={id}>{rate===null?'—':'('+count+'/'+total+'건)'}</span>)}
+   <span className={'review-period-change '+(delta===null||delta===0?'':delta>0?'training-delta-positive':'training-delta-negative')}>
+    {delta===null?'비교 불가':(delta>0?'+':'')+delta.toFixed(1)+'%p'}
+   </span>
   </strong>
  </>;
 }
@@ -193,8 +208,8 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
    </div>
    {ready&&categoryAllowed&&(display==='comparison'||eligible.length>0)?<>
     {display==='comparison'&&<div className="review-compare-legend">
-     <span><i className="review-period-key before" aria-hidden="true"/>이전 {periodLabel('baseline')}, {ko(periodComparison.baseline)}건</span>
-     <span><i className="review-period-key after" aria-hidden="true"/>이후 {periodLabel('current')}, {ko(periodComparison.current)}건</span>
+     <span><i className="review-period-key before" aria-hidden="true"/> {periodLabel('baseline')}, {ko(periodComparison.baseline)}건</span>
+     <span><i className="review-period-key after" aria-hidden="true"/> {periodLabel('current')}, {ko(periodComparison.current)}건</span>
      <small>언급률 변화 폭 순</small>
     </div>}
     <div className="review-axis" aria-hidden="true"><span/><div className="review-axis-ticks">{[0,25,50,75,100].map(n=><span key={n}>{n}%</span>)}</div><span/></div>
@@ -213,7 +228,7 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
         {open&&(display==='comparison'
          ? periodComparison.experiences.filter(item=>item.categoryId===category.id).map(item=>({
           ...item,...comparisonRates(periodComparison.experienceBefore.get(item.id)??0,periodComparison.experienceNow.get(item.id)??0,periodComparison.baseline,periodComparison.current),
-         })).sort(byChange).map(item=><div className="review-bar-row review-detail-bar" key={item.id}><span>{item.label}</span><ComparisonMarks {...item}/></div>)
+         })).sort(byChange).map(item=><div className="review-bar-row review-detail-bar" key={item.id}><span>{item.label}</span><ComparisonMarks {...item} focusable/></div>)
          : detailRows.map(item=><div className="review-bar-row review-detail-bar" key={item.id}><span>{item.label}</span><DistributionMarks count={item.count} percent={item.percent}/></div>))}
        </div>
       </Fragment>;
