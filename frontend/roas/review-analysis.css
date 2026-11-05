@@ -158,6 +158,11 @@
 .review-dot-track .review-period-key.after{width:7px;height:7px}
 .wb .review-bar-row .review-dot-values{display:grid;gap:2px;white-space:normal}
 .review-dot-values span:last-child{color:#6348a3}
-.review-inline-details:not([hidden]){background:#f8f6fc;box-shadow:inset 2px 0 #d8cbe9;border-radius:0 7px 7px 0}
-.wb .review-inline-details .review-detail-bar>span:first-child{padding-left:8px}
+.review-inline-details:not([hidden]){background:#f2f7f7;box-shadow:inset 2px 0 #a5c4c5;border-radius:0 7px 7px 0}
+.wb .review-inline-details .review-detail-bar>span:first-child{padding-inline-start:22px}
+.review-inline-details .review-bar-track{background:#ddebec}
+.review-inline-details .review-bar-track i{background:#518589}
+@media(max-width:560px){
+ .wb .review-inline-details .review-detail-bar>span:first-child{padding-inline-start:14px;overflow-wrap:anywhere}
+}
 .review-chart-card .review-axis{margin-inline:0;border:1px solid transparent}
