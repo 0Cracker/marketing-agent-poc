@@ -1,8 +1,9 @@
 'use client';
 import {Fragment,useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {ExternalLink,Search,X} from 'lucide-react';
-import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,reviewExperienceLabels,reviewSentimentLabels,sortCategories,sortReviewRows} from './review-analysis';
+import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,reviewCategoryLabels,reviewExperienceLabels,reviewSentimentLabels,sortCategories,sortReviewRows} from './review-analysis';
 import type {CategorySort,ReviewPeriod,ReviewPeriodChoice,ReviewRecord,ReviewSort,ReviewSortField,ReviewView} from './review-analysis';
+import {SelectionButton} from '../components/ui/selection-button';
 import './review-analysis.css';
 
 type Props={caseId:string;asOf:string;periods:ReviewPeriod[];view?:ReviewView;onRetry?:()=>void};
@@ -18,7 +19,7 @@ const safeLink=(value:string|null|undefined)=>{
 };
 function ReviewSegments({label,options,value,onChange,disabled=false}:{label:string;options:{id:string;label:string}[];value:string;onChange:(id:string)=>void;disabled?:boolean}){
  return <div className="roas-segment review-segments" role="group" aria-label={label}>{options.map(option=>
-  <button type="button" key={option.id} disabled={disabled} aria-pressed={value===option.id} onClick={()=>onChange(option.id)}>{option.label}</button>
+  <SelectionButton key={option.id} disabled={disabled} aria-pressed={value===option.id} onClick={()=>onChange(option.id)}>{option.label}</SelectionButton>
  )}</div>;
 }
 function Highlight({text,term}:{text:string;term:string}){
@@ -31,17 +32,41 @@ function CategoryChips({review}:{review:ReviewRecord}){
  const count=review.categories.length,visible=all?review.categories:review.categories.slice(0,3);
  return <div><div className="review-chips">{visible.map(item=><span className="review-category-chip" key={item.id}>{item.label}</span>)}{count>3&&<button type="button" className="review-chip-more" aria-expanded={all} onClick={()=>setAll(v=>!v)}>{all?'접기':'+'+(count-3)}</button>}</div>{!!review.assignments?.length&&<details className="review-assignment-details"><summary>세부 분류, 평가와 근거 {review.assignments.length}건</summary><ul>{review.assignments.map((item,index)=><li key={index}><strong>{reviewExperienceLabels[item.experienceId]}</strong> <span>{reviewSentimentLabels[item.sentiment]}</span><q>{item.evidenceQuote}</q></li>)}</ul></details>}</div>;
 }
+function ReviewText({text,search,open,onToggle}:{text:string;search:string;open:boolean;onToggle:()=>void}) {
+ const content=useRef<HTMLSpanElement>(null);
+ const preview=reviewPreview(text,search);
+ const [clipped,setClipped]=useState(false);
+ useEffect(()=>{
+  const node=content.current;
+  if(!node)return;
+  let active=true;
+  const measure=()=>{
+   if(!active)return;
+   const lineHeight=parseFloat(getComputedStyle(node).lineHeight);
+   setClipped(preview!==text||node.scrollHeight>Math.ceil(lineHeight*2)+1);
+  };
+  measure();
+  const observer=new ResizeObserver(measure);
+  observer.observe(node);
+  void document.fonts.ready.then(measure);
+  return()=>{active=false;observer.disconnect();};
+ },[text,preview,open]);
+ return <div className="review-text-content">
+  <span ref={content} className={open?'review-full':'review-preview'}><Highlight text={open?text:preview} term={search}/></span>
+  {clipped&&<button type="button" className="review-expand-hint" onClick={onToggle} aria-expanded={open} aria-label={open?'리뷰 원문 접기':'리뷰 원문 펼치기'}>{open?'접기':'더 보기'}</button>}
+ </div>;
+}
 function ReviewRows({rows,search,sort,onSort,expanded,onToggle}:{rows:ReviewRecord[];search:string;sort:ReviewSort;onSort:(field:ReviewSortField)=>void;expanded:Selection;onToggle:(id:string)=>void}){
  return <div className="review-table-scroll" tabIndex={0} aria-label="리뷰 원문 테이블, 가로 스크롤 가능"><table className="review-table">
-  <caption className="sr-only">판매처, 작성일, 평점, 분류 카테고리, 원문 확인, 리뷰 원문</caption>
-  <colgroup><col style={{width:'12%'}}/><col style={{width:'12%'}}/><col style={{width:'8%'}}/><col style={{width:'32%'}}/><col style={{width:'9%'}}/><col style={{width:'27%'}}/></colgroup>
-  <thead><tr><th scope="col"><SortButton title="판매처" field="sourceName" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="작성일" field="writtenAt" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="평점" field="rating" sort={sort} onChange={onSort}/></th><th scope="col">분류 카테고리</th><th scope="col">원문 확인</th><th scope="col">리뷰 원문</th></tr></thead>
+  <caption className="sr-only">판매처, 작성일, 평점, 분류 카테고리, 리뷰 원문, 원문 확인</caption>
+  <colgroup><col style={{width:'12%'}}/><col style={{width:'12%'}}/><col style={{width:'8%'}}/><col style={{width:'32%'}}/><col style={{width:'27%'}}/><col style={{width:'9%'}}/></colgroup>
+  <thead><tr><th scope="col"><SortButton title="판매처" field="sourceName" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="작성일" field="writtenAt" sort={sort} onChange={onSort}/></th><th scope="col"><SortButton title="평점" field="rating" sort={sort} onChange={onSort}/></th><th scope="col">분류 카테고리</th><th scope="col">리뷰 원문</th><th scope="col">원문 확인</th></tr></thead>
   <tbody>{rows.map(row=>{
    const link=safeLink(row.url),open=expanded.has(row.id),text=row.text||'';
    return <tr key={row.id}><td>{row.sourceName||'—'}</td><td>{date(row.writtenAt)}</td><td>{row.rating===null?'—':row.rating.toFixed(1)+' / 5'}</td>
     <td><CategoryChips key={row.id} review={row}/></td>
+    <td className="review-text-cell">{text?<ReviewText text={text} search={search} open={open} onToggle={()=>onToggle(row.id)}/>:<span className="review-muted review-no-text">원문 없음</span>}</td>
     <td>{link?<a href={link} target="_blank" rel="noopener noreferrer" aria-label="원문 보기, 새 탭 열림">원문 보기 <ExternalLink size={12} aria-hidden="true"/></a>:<span className="review-muted">링크 없음</span>}</td>
-    <td className="review-text-cell">{text?<button type="button" className={'review-text-button '+(open?'expanded':'collapsed')} onClick={()=>onToggle(row.id)} aria-expanded={open} aria-label={open?'리뷰 원문 접기':'리뷰 원문 펼치기'}><span className={open?'review-full':'review-preview'}><Highlight text={open?text:reviewPreview(text,search)} term={search}/></span><span className="review-expand-hint">{open?'접기':'더 보기'}</span></button>:<span className="review-muted review-no-text">원문 없음</span>}</td>
    </tr>;
   })}</tbody>
  </table></div>;
@@ -68,9 +93,11 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
  const ready=status==='ready'||status==='partial';
  const [sources,setSources]=useState<Set<string>>(new Set()),[period,setPeriod]=useState<ReviewPeriodChoice>('both');
  const [categories,setCategories]=useState<Set<string>>(new Set()),[searchInput,setSearchInput]=useState(''),[search,setSearch]=useState('');
- const [sort,setSort]=useState<ReviewSort>(defaultReviewSort),[categorySort,setCategorySort]=useState<CategorySort>('many'),[chartExpansion,setChartExpansion]=useState<'auto'|'open'|'closed'>('auto');
+ const [sort,setSort]=useState<ReviewSort>(defaultReviewSort),[categorySort,setCategorySort]=useState<CategorySort>('many');
  const [expanded,setExpanded]=useState<Set<string>>(new Set()),[page,setPage]=useState(1),[pageSize,setPageSize]=useState(20);
  const [display,setDisplay]=useState<'distribution'|'comparison'>('distribution');
+ const [focusedCategory,setFocusedCategory]=useState<string|null>(null);
+ const categoryChart=useRef<HTMLDivElement>(null),categoryBack=useRef<HTMLButtonElement>(null);
  const [openCategories,setOpenCategories]=useState<Set<string>>(new Set());
  const selectedPeriods=periods.filter(p=>period==='both'||p.id===period).sort((a,b)=>a.start.localeCompare(b.start));
  const writingRange=selectedPeriods.length?date(selectedPeriods[0].start)+' ~ '+date(inclusiveEnd(selectedPeriods[selectedPeriods.length-1].end)):'기간 확인 불가';
@@ -92,14 +119,21 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
  },[ready,rows,caseId,asOf,periods,sources]);
  const categoryRows=useMemo(()=>sortCategories(categoryCounts(eligible),categorySort),[eligible,categorySort]);
  const summary=useMemo(()=>reviewSummary(eligible),[eligible]);
- const topIds=new Set(categoryRows.slice(0,5).map(r=>r.id));
- const chartOpen=chartExpansion==='open'||(chartExpansion==='auto'&&[...categories].some(id=>id!=='__unclassified__'&&!topIds.has(id)));
+ const detailRows=useMemo(()=>sortCategories(experienceCounts(eligible).filter(e=>e.categoryId===focusedCategory).map(e=>({...e,percent:eligible.length?100*e.count/eligible.length:null})),categorySort),[eligible,focusedCategory,categorySort]);
  const range=useMemo(()=>ready?collectionRange(rows,caseId,asOf):null,[ready,rows,caseId,asOf]);
  const categoryAllowed=view?.classificationStatus==='ready'||(!view?.classificationStatus&&rows.every(r=>r.classification==='classified'||r.classification==='unclassified'));
- function toggleSource(id:string){setSources(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});setChartExpansion('auto');resetPage();}
- function toggleCategory(id:string){setCategories(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});setChartExpansion('auto');resetPage();}
+ function toggleSource(id:string){setSources(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});resetPage();}
+ function toggleCategory(id:string){setCategories(old=>{const next=new Set(old);if(next.has(id))next.delete(id);else next.add(id);return next;});resetPage();}
  function changeSort(field:ReviewSortField){setSort(old=>({field,direction:old.field===field&&old.direction==='desc'?'asc':'desc'}));resetPage();}
- function reset(){setSources(new Set());setPeriod('both');setDisplay('distribution');setOpenCategories(new Set());setCategories(new Set());appliedSearch.current='';setSearchInput('');setSearch('');setSort(defaultReviewSort);setCategorySort('many');setChartExpansion('auto');setPageSize(20);resetPage();}
+ function navigateCategory(id:string|null){
+  const previous=focusedCategory;
+  setFocusedCategory(id);
+  requestAnimationFrame(()=>{
+   const target=id?categoryBack.current:categoryChart.current?.querySelector<HTMLButtonElement>('[data-category="'+previous+'"]');
+   target?.focus({preventScroll:true});
+  });
+ }
+ function reset(){setSources(new Set());setPeriod('both');setDisplay('distribution');setOpenCategories(new Set());setFocusedCategory(null);setCategories(new Set());appliedSearch.current='';setSearchInput('');setSearch('');setSort(defaultReviewSort);setCategorySort('many');setPageSize(20);resetPage();}
  const found=filterReviewTable(eligible,categories,search).length;
  if(status==='not_provided')return <section className="review-section" aria-label="상품 1 리뷰 분석"><header className="review-section-title"><h2>리뷰 분석</h2><span>{caseId}, {view?.productName||'쓱쓱샴푸'}</span></header><p className="review-empty" role="status">이 사례에는 상품 1 리뷰 분석 자료가 없습니다.</p></section>;
  if(status==='error')return <section className="review-section" aria-label="상품 1 리뷰 분석"><header className="review-section-title"><h2>리뷰 분석</h2><span>{caseId}, {view?.productName||'쓱쓱샴푸'}</span></header><div className="review-notice error" role="alert"><p>리뷰 데이터를 불러오지 못했습니다. {view?.message||''}</p>{onRetry&&<button onClick={onRetry}>다시 시도</button>}</div></section>;
@@ -121,18 +155,32 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
    <ReviewSegments label="카테고리 보기" options={[{id:'distribution',label:'전체 분포'},{id:'comparison',label:'기간 비교'}]} value={display} onChange={id=>setDisplay(id as 'distribution'|'comparison')}/>
    <div className="review-controls" aria-label="리뷰 공통 필터">
     <div className="review-filter-group"><span className="review-filter-label">판매처</span><div className="review-source-options" role="group" aria-label="판매처, 복수 선택">
-     <button type="button" className="review-filter-pill" aria-pressed={!sources.size} disabled={!ready} onClick={()=>{setSources(new Set());setChartExpansion('auto');resetPage();}}>전체 판매처</button>
-     {sourceOptions.map(([id,name])=><button type="button" key={id} className="review-filter-pill" aria-pressed={sources.has(id)} disabled={!ready} onClick={()=>toggleSource(id)}>{name}</button>)}
+     <SelectionButton className="review-filter-pill" aria-pressed={!sources.size} disabled={!ready} onClick={()=>{setSources(new Set());resetPage();}}>전체 판매처</SelectionButton>
+     {sourceOptions.map(([id,name])=><SelectionButton key={id} className="review-filter-pill" aria-pressed={sources.has(id)} disabled={!ready} onClick={()=>toggleSource(id)}>{name}</SelectionButton>)}
     </div></div>
     <div className="review-filter-group"><span className="review-filter-label">리뷰 작성일</span>
-     <ReviewSegments label="리뷰 작성일 기간" options={[{id:'both',label:'전체 기간'},{id:'baseline',label:periodLabel('baseline')},{id:'current',label:periodLabel('current')}]} value={period} disabled={!ready} onChange={id=>{setPeriod(id as ReviewPeriodChoice);setChartExpansion('auto');resetPage();}}/>
+     <ReviewSegments label="리뷰 작성일 기간" options={[{id:'both',label:'전체 기간'},{id:'baseline',label:periodLabel('baseline')},{id:'current',label:periodLabel('current')}]} value={period} disabled={!ready} onChange={id=>{setPeriod(id as ReviewPeriodChoice);resetPage();}}/>
     </div>
     <div className="review-filter-group"><span className="review-filter-label">카테고리 정렬</span>
      <ReviewSegments label="카테고리 정렬" options={[{id:'many',label:'많은순'},{id:'few',label:'적은순'},{id:'name',label:'가나다순'}]} value={categorySort} disabled={!ready||!categoryAllowed} onChange={id=>setCategorySort(id as CategorySort)}/>
     </div>
    </div>
-   {display==='distribution'&&(ready&&categoryAllowed&&eligible.length>0?<><div className="review-axis" aria-hidden="true"><span/><div className="review-axis-ticks">{[0,25,50,75,100].map(n=><span key={n}>{n}%</span>)}</div><span/></div><div className="review-bars">{categoryRows.slice(0,chartOpen?undefined:5).map(cat=><div key={cat.id}><button type="button" className={'review-bar-row '+(categories.has(cat.id)?'selected':'')} aria-pressed={categories.has(cat.id)} onClick={()=>toggleCategory(cat.id)} key={cat.id}><span>{cat.label}</span><span className="review-bar-track"><i style={{width:(cat.percent??0)+'%'}}/></span><strong>{cat.count}건, {cat.percent?.toFixed(1)}%</strong></button><details className="review-category-detail"><summary>{cat.label} 세부 분류 보기</summary><ul>{experienceCounts(eligible).filter(e=>e.categoryId===cat.id).map(e=><li key={e.id}><span>{e.label}</span><strong>{e.count}건</strong></li>)}</ul></details></div>)}</div>
-    {categoryRows.length>5&&<button className="review-show-all" aria-expanded={chartOpen} onClick={()=>setChartExpansion(chartOpen?'closed':'open')}>{chartOpen?'접기':'전체 보기'}</button>}</>:<p className="review-empty">{ready?(categoryAllowed?'표시할 카테고리가 없습니다.':'검증된 카테고리 자료가 없습니다.'):'원문 연동 후 카테고리 분포를 표시합니다.'}</p>)}
+   {display==='distribution'&&<>
+    {focusedCategory&&<nav className="review-category-path" aria-label="카테고리 탐색">
+     <SelectionButton ref={categoryBack} onClick={()=>navigateCategory(null)}>대분류 전체</SelectionButton>
+     <span aria-hidden="true">›</span><strong>{reviewCategoryLabels[focusedCategory]}</strong>
+    </nav>}
+    {ready&&categoryAllowed&&eligible.length>0?<>
+     <div className="review-axis" aria-hidden="true"><span/><div className="review-axis-ticks">{[0,25,50,75,100].map(n=><span key={n}>{n}%</span>)}</div><span/></div>
+     <div ref={categoryChart} className="review-bars">
+      {focusedCategory?detailRows.map(item=><div className="review-bar-row review-detail-bar" key={item.id}>
+       <span>{item.label}</span><span className="review-bar-track"><i style={{width:(item.percent??0)+'%'}}/></span><strong>{item.count}건, {item.percent?.toFixed(1)}%</strong>
+      </div>):categoryRows.map(cat=><button type="button" className="review-bar-row" data-category={cat.id} aria-label={cat.label+' 세부분류 보기'} onClick={()=>navigateCategory(cat.id)} key={cat.id}>
+       <span>{cat.label}<span className="review-drill-arrow" aria-hidden="true"> ›</span></span><span className="review-bar-track"><i style={{width:(cat.percent??0)+'%'}}/></span><strong>{cat.count}건, {cat.percent?.toFixed(1)}%</strong>
+      </button>)}
+     </div>
+    </>:<p className="review-empty">{ready?(categoryAllowed?'표시할 카테고리가 없습니다.':'검증된 카테고리 자료가 없습니다.'):'원문 연동 후 카테고리 분포를 표시합니다.'}</p>}
+   </>}
    {display==='comparison'&&ready&&categoryAllowed&&<section className="review-comparison" aria-label="카테고리 기간 비교">
     <p>이전 14일과 이후 14일의 언급 수와 비율을 비교합니다. 판매처 필터가 적용되며, 작성일 선택과 관계없이 두 기간을 비교합니다.</p>
     <div className="review-comparison-scroll"><table><thead><tr><th scope="col">대분류 / 세분류</th><th scope="col">이전 14일<br/>{periodLabel('baseline')}<br/>리뷰 {periodComparison.baseline}건</th><th scope="col">이후 14일<br/>{periodLabel('current')}<br/>리뷰 {periodComparison.current}건</th><th scope="col">언급 수 변화</th><th scope="col">언급 비율 변화</th></tr></thead>
@@ -148,8 +196,8 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
    <p className="review-hint">한 리뷰가 여러 카테고리에 포함될 수 있어 비율 합계가 100%를 넘을 수 있습니다. 비율의 분모는 판매처, 작성일 조건에 맞는 전체 리뷰입니다.</p>
   </section>
   <div className="review-table-filters"><div className="review-filter-heading"><h3>리뷰 원문 필터</h3><span>선택한 카테고리만 원문 목록에 적용됩니다.</span></div>
-   <div className="review-category-options" role="group" aria-label="분류 카테고리, 복수 선택">{categoryRows.map(c=><button type="button" key={c.id} className="review-filter-pill" aria-pressed={categories.has(c.id)} disabled={!ready||!categoryAllowed} onClick={()=>toggleCategory(c.id)}>{c.label}</button>)}
-    <button type="button" className="review-filter-pill review-unclassified" aria-pressed={categories.has('__unclassified__')} disabled={!ready||!categoryAllowed} onClick={()=>toggleCategory('__unclassified__')}>미분류</button>
+   <div className="review-category-options" role="group" aria-label="분류 카테고리, 복수 선택">{categoryRows.map(c=><SelectionButton key={c.id} className="review-filter-pill" aria-pressed={categories.has(c.id)} disabled={!ready||!categoryAllowed} onClick={()=>toggleCategory(c.id)}>{c.label}</SelectionButton>)}
+    <SelectionButton className="review-filter-pill review-unclassified" aria-pressed={categories.has('__unclassified__')} disabled={!ready||!categoryAllowed} onClick={()=>toggleCategory('__unclassified__')}>미분류</SelectionButton>
    </div>
    <label className="review-search"><Search size={15} aria-hidden="true"/><input aria-label="리뷰 원문 검색" placeholder="리뷰 원문 검색" disabled={!ready} value={searchInput} onChange={e=>setSearchInput(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'){e.preventDefault();applySearch(searchInput);}}}/>{searchInput&&<button type="button" aria-label="검색어 삭제" onClick={()=>{setSearchInput('');applySearch('');}}><X size={15}/></button>}</label>
   </div>

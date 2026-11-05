@@ -1,4 +1,5 @@
 'use client';
+import {SelectionButton} from '../components/ui/selection-button';
 import {useRef,useState} from 'react';
 import {ChevronDown,Search,X} from 'lucide-react';
 import {campaignDisplayName,displayTrainingText,trainingMediaOptions} from '../../shared/roas/training-dashboard.mjs';
@@ -34,7 +35,7 @@ export default function TrainingScopePicker({data,filters,onCampaign,onMedia}:{d
   <dialog ref={dialog} className="training-scope-dialog" aria-labelledby="training-scope-title" onClick={event=>{if(event.target===dialog.current)close();}}>
    <header><h2 id="training-scope-title">분석 대상 선택</h2><button aria-label="분석 대상 선택 닫기" onClick={close}><X size={18}/></button></header>
    <div className="training-scope-browser">
-    <div className="training-scope-modes"><button aria-pressed={mode==='campaign'} onClick={()=>setMode('campaign')}>캠페인으로 찾기</button><button aria-pressed={mode==='provider'} onClick={()=>setMode('provider')}>집행처로 찾기</button></div>
+    <div className="training-scope-modes"><SelectionButton aria-pressed={mode==='campaign'} onClick={()=>setMode('campaign')}>캠페인으로 찾기</SelectionButton><SelectionButton aria-pressed={mode==='provider'} onClick={()=>setMode('provider')}>집행처로 찾기</SelectionButton></div>
     <label className="training-scope-search"><Search size={16}/><input ref={search} aria-label="캠페인, 집행처, 유형 검색" placeholder="캠페인명, ID, 집행처 또는 유형 검색" value={query} onChange={event=>setQuery(event.target.value)}/></label>
     <section className="training-scope-catalog" aria-label="전체 캠페인 목록">
     <div className="training-scope-catalog-heading"><h3>{mode==='campaign'?'전체 캠페인':'전체 집행처'}</h3><button onClick={()=>choose('all')}>전체 캠페인 조회</button></div>
