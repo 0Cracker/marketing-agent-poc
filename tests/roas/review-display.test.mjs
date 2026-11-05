@@ -7,7 +7,7 @@ import {reviewQuery} from '../../scripts/roas/review-data.mjs';
 import {readReviewProjection} from '../../frontend/roas/review-projection.ts';
 
 test('review initial render shows all 60/25 reviews and explicit writing dates',async()=>{
- const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true},appType:'custom'});
+ const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true,hmr:false},appType:'custom'});
  try{
   const {default:Section}=await server.ssrLoadModule('/roas/review-analysis-section.tsx');
   for(const caseId of ['S16','S17']){
@@ -21,6 +21,11 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert.match(html,/aria-pressed="true"[^>]*>전체 기간/);
    assert.match(html,/>기간 비교<\/button>/);
    assert.doesNotMatch(html,/승인 데이터 총|상위 5개, 세부 18개/);
+   assert.equal([...html.matchAll(/aria-expanded="false" aria-controls="review-category-detail-/g)].length,5);
+   assert.match(html,/aria-label="판매처, 단일 선택"/);
+   const headings=[...html.matchAll(/<th scope="col">([^<]*)<\/th>/g)].map(m=>m[1]);
+   assert(headings.indexOf('리뷰 원문')<headings.indexOf('원문 확인'),'source link follows review text');
+   assert.match(html,/selection-button/,'filters use the shared selection button');
   }
  }finally{await server.close();}
 });

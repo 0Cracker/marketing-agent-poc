@@ -81,15 +81,6 @@
 .review-assignment-details li strong{font-weight:600}
 .review-assignment-details li span{margin-left:6px;color:#5a477e}
 .review-assignment-details li q{display:block;color:#657083;overflow-wrap:anywhere}
-.review-comparison{margin:18px 0 0;border:1px solid #e3e5ee;border-radius:9px;padding:13px}
-.review-comparison>summary{font-size:13px;font-weight:650;cursor:pointer;color:#514077}
-.review-comparison>p{font-size:12px;color:#697589;margin:10px 0}
-.review-comparison-scroll{max-width:100%;overflow-x:auto}
-.review-comparison table{width:100%;min-width:520px;border-collapse:collapse;font-size:12px}
-.review-comparison th,.review-comparison td{border-bottom:1px solid #ebedf3;padding:8px;text-align:left}
-.review-comparison thead th{background:#f7f6fa;color:#626d82}
-.review-comparison tbody td:nth-child(n+3){white-space:nowrap;font-variant-numeric:tabular-nums}
-.review-comparison-parent{font-weight:650;background:#f9f7fc}
 
 
 /* Keep the review controls consistent with the existing ROAS segment/pill styling.
@@ -149,10 +140,24 @@
 }
 @media(prefers-reduced-motion:reduce){.review-bar-track i{transition:none}}
 .review-writing-range{margin:0;color:#66758c;font-size:13px}
-.review-comparison-parent button{white-space:normal;text-align:left}
-.review-comparison-scroll th,.review-comparison-scroll td{font-variant-numeric:tabular-nums}
 
-.review-category-path{display:flex;align-items:center;gap:10px;margin:0 0 16px;color:#66758c;font-size:13px}
 .review-drill-arrow{color:#8564c3;padding-left:5px}
 .wb .review-detail-bar{cursor:default}
 .wb .review-detail-bar:hover{background:transparent}
+
+.review-compare-legend{display:flex;gap:8px 16px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:12px;color:#4c596b}
+.review-compare-legend span{display:inline-flex;align-items:center;gap:6px}
+.review-compare-legend small{color:#66758c}
+.review-dot-track{position:relative;height:26px;background:linear-gradient(#e1e6ee,#e1e6ee) center/100% 1px no-repeat}
+.review-dot-connector{position:absolute;top:12px;height:2px;background:#827799}
+.review-period-key{display:inline-block;width:8px;height:8px;box-sizing:border-box}
+.review-period-key.before{border:2px solid #5d6b88;border-radius:50%;background:white}
+.review-period-key.after{background:#7044bb;rotate:45deg}
+.review-dot-track .review-period-key{position:absolute;top:13px;translate:-50% -50%}
+.review-dot-track .review-period-key.before{width:13px;height:13px}
+.review-dot-track .review-period-key.after{width:7px;height:7px}
+.wb .review-bar-row .review-dot-values{display:grid;gap:2px;white-space:normal}
+.review-dot-values span:last-child{color:#6348a3}
+.review-inline-details:not([hidden]){background:#f8f6fc;box-shadow:inset 2px 0 #d8cbe9;border-radius:0 7px 7px 0}
+.wb .review-inline-details .review-detail-bar>span:first-child{padding-left:8px}
+.review-chart-card .review-axis{margin-inline:0;border:1px solid transparent}
