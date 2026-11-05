@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-10-27T01:43:38.186Z",
+  "baseline": "8029ac7 + working tree",
+  "caseId": "S16",
+  "snapshot": "initial",
+  "question": "전체 ROAS의 현재 값과 직전 값을 퍼센트로 짧게 비교해줘",
+  "httpStatus": 200,
+  "model": "gemini-3.5-flash-lite",
+  "answer": "전체 ROAS는 직전 기간 355.8%(3.5579)에서 현재 기간 227.8%(2.2777)로 128.0%p 감소했습니다.",
+  "sources": [
+    {
+      "id": "summary:baseline",
+      "roas": 3.557898305188271
+    },
+    {
+      "id": "summary:current",
+      "roas": 2.277741246231626
+    }
+  ],
+  "events": [
+    {
+      "tool": "overview",
+      "count": 14
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+✔ current performance and period change answer different ranking questions (3.8132ms)
+✔ media choices contain real channel/source pairs and discard incompatible campaign selections (38.659ms)
+✔ campaign and audience labels are realistic presentation aliases while source references remain intact (0.7268ms)
+✔ unavailable metrics distinguish incompatible exposure, zero denominator and missing customer counts (2.2648ms)
+✔ metric trends align weekdays, retain dates and use the selected population and proper denominator (16.5687ms)
+✔ all eighteen cases expose the same dashboard contract and complete common data (14.8124ms)
+✔ raw aggregate totals and displayed metrics agree without averaging ratios (37.5965ms)
+✔ each breakdown reconciles to its own parent without cross-joining dimensions (98.7219ms)
+✔ campaign, channel and device filters keep every view on the same population (185.9656ms)
+✔ fifteen scenarios preserve the specified numerical changes (2.3112ms)
+✔ mature snapshot reveals delayed purchases only when the reporting cutoff permits it (9.6193ms)
+✔ scenario evidence supports the intended investigation rather than only headline numbers (22.5427ms)
+✔ mixed scenarios preserve normal measurement and realistic varied daily performance (3.4984ms)
+✔ S16 combines budget growth, a bounded mobile payment incident and offsetting creative improvement (0.701ms)
+✔ S17 combines lower spending, a price-condition change and a later intent improvement (1.2329ms)
+✔ S18 combines stockout, low-price mix, mobile delay and creative response (0.8387ms)
+✔ public endpoints expose projections and keep source packs and review answers private (2045.4462ms)
+✔ existing source files retain their exact baseline bytes and row counts (1035.5596ms)
+✔ regeneration from the preserved catalog matches the installed source pack exactly (1938.6106ms)
+✔ approved semantic corrections preserve numbers except the authorized S06 daily cost allocation (461.943ms)
+✔ production projections retain every case but never emit private source or answer assets (8752.1199ms)
+✔ training merchandise cannot inherit competitor identity or dangling product references (185.0068ms)
+✔ mixed cases have one initial budget per campaign and an unambiguous later setting (0.6236ms)
+✔ public content campaign records disclose click settlement, excluded costs and allocation (2.367ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15410.097

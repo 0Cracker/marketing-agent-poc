@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-26",
+  "userInstruction": "너가한대로 수정 ㄱㄱ 승인해줄게",
+  "approvedScope": {
+    "products": "교육용 EDU-P1~P3 별도 ID와 자사 상품명, 원천 P1A/P1B/P2A 보존, 가격과 성과 수치 유지",
+    "budgets": "S16~S18 공통 60000원 초기 예산 참조를 사례별 240000원 초기 기록으로 대체",
+    "cost": "콘텐츠 클릭당 정산 제휴, 클릭 발생일 비용, 고정 제작비와 제품 제공 원가 제외, 유료 마케팅 집행비 표기"
+  },
+  "observationsAdded": 0,
+  "aggregateRows": 38760,
+  "detailRows": 105,
+  "verification": "전체 numeric cell hashes, source bytes, regenerated payload, 36 API projections and independent Decimal aggregation",
+  "excluded": "고정 협업비 신규 사례, 기존 원천 수정, Git 발행과 배포",
+  "additionalApproval": {
+    "userAnswer": "일별 비용 재배분 승인",
+    "reason": "S06 EDU-C6 클릭 0인 8개 일별 행에 합계 4902원 비용",
+    "scope": "S06 분석기간 EDU-C6의 기기별 일비용과 연결 분할 비용만 재배분. 캠페인, 기기, 상품, 타깃별 14일 비용과 모든 비비용 수치 보존"
+  }
+}

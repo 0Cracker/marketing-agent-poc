@@ -57,3 +57,7 @@ __pycache__/
 
 # Local evaluation execution stores; the JSON run/evidence records are versioned.
 /evidence/v0.4.0/live-questions-*/flow.sqlite*
+
+# Frozen legacy tools keep local execution state out of source control.
+/legacy/work/
+/legacy/.env*
