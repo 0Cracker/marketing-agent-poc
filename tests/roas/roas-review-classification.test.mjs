@@ -19,18 +19,18 @@ const modified = fn => {
   return validateClassification({rawBytes, reviews, pack: cloned, product});
 };
 
-test('50 reviews including 2 unclassified, 5 categories, 18 experiences, 4 sentiment values, and exact evidence', () => {
+test('85 reviews including 4 unclassified, 5 categories, 18 experiences, 4 sentiment values, and exact evidence', () => {
   const result = validateOnDisk();
-  assert.equal(result.reviews, 50);
-  assert.equal(result.unclassifiedCount, 2);
-  assert.deepEqual(result.unclassifiedReviewIds, ['REV-S16-025', 'REV-S17-025']);
+  assert.equal(result.reviews, 85);
+  assert.equal(result.unclassifiedCount, 4);
+  assert.deepEqual(result.unclassifiedReviewIds, ['REV-S16-025', 'REV-S17-025', 'REV-S16-040', 'REV-S16-060']);
   assert.equal(result.categories, 5);
   assert.equal(result.experiences, 18);
-  assert.equal(result.assignments, 63);
+  assert.equal(result.assignments, 106);
   assert.equal(Object.values(result.experienceCounts).reduce((a,b) => a+b,0), result.assignments);
-  assert.equal(Object.values(result.cells).reduce((a,b) => a+b,0), 50);
-  assert.equal(result.experienceCounts.pump_operation, 8);
-  assert.equal(result.experienceCounts.usage_guidance, 1);
+  assert.equal(Object.values(result.cells).reduce((a,b) => a+b,0), 85);
+  assert.equal(result.experienceCounts.pump_operation, 11);
+  assert.equal(result.experienceCounts.usage_guidance, 3);
 });
 
 test('one review has multiple sentiments but counts only once within a parent theme', () => {
@@ -73,9 +73,9 @@ test('wrong parent, unknown sentiment, pending status and changed taxonomy are e
 
 test('S16/S17 A opposite experience, B source-mix reversal and C time split survive', () => {
   const result = validateOnDisk();
-  assert.equal(result.cells['S16|baseline|own_store'], 4);
+  assert.equal(result.cells['S16|baseline|own_store'], 9);
   assert.equal(result.cells['S17|current|virtual_external_1'], 8);
-  assert.equal(result.cells['S16|current|virtual_external_1'], 5);
+  assert.equal(result.cells['S16|current|virtual_external_1'], 13);
   assert.equal(result.cells['S17|current|own_store'], 5);
   assert.ok(result.checks.some(x => x.includes('A/B/C')));
   assert.throws(() => modified(p => {
@@ -86,7 +86,7 @@ test('S16/S17 A opposite experience, B source-mix reversal and C time split surv
 
 
 test('approved unclassified reviews have no categories or evidence and cannot become pending or fake classified', () => {
- const ids=['REV-S16-025','REV-S17-025'];
+ const ids=['REV-S16-025','REV-S17-025','REV-S16-040','REV-S16-060'];
  for(const id of ids){
   const record=pack.reviewClassifications.find(x=>x.reviewId===id);
   assert.equal(record.status,'unclassified');

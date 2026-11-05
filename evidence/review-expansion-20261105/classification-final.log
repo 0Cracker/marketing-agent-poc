@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "sourceSha256": "e6db65aea443f0c3559fd53cd36df2faa128c571af642e16d960d2e720f0e6e1",
+  "reviews": 85,
+  "unclassifiedCount": 4,
+  "unclassifiedReviewIds": [
+    "REV-S16-025",
+    "REV-S17-025",
+    "REV-S16-040",
+    "REV-S16-060"
+  ],
+  "assignments": 106,
+  "categories": 5,
+  "experiences": 18,
+  "sentimentCounts": {
+    "positive": 41,
+    "negative": 40,
+    "neutral": 12,
+    "mixed": 13
+  },
+  "categoryCounts": {
+    "scent": 16,
+    "cleansing_feel": 30,
+    "container_packaging": 28,
+    "volume_usage": 12,
+    "delivery": 8
+  },
+  "experienceCounts": {
+    "scent_preference": 6,
+    "scent_intensity": 4,
+    "scent_longevity": 7,
+    "foam": 8,
+    "residue": 10,
+    "after_feel": 7,
+    "tangling": 4,
+    "texture_application": 7,
+    "pump_operation": 11,
+    "leakage_residue": 6,
+    "container_usability": 5,
+    "product_packaging": 8,
+    "volume_label": 4,
+    "consumption_rate": 5,
+    "usage_guidance": 3,
+    "remaining_check": 3,
+    "delivery_timing": 4,
+    "delivery_condition": 4
+  },
+  "cells": {
+    "S16|baseline|own_store": 9,
+    "S16|baseline|virtual_external_1": 18,
+    "S16|current|own_store": 20,
+    "S16|current|virtual_external_1": 13,
+    "S17|baseline|own_store": 8,
+    "S17|baseline|virtual_external_1": 4,
+    "S17|current|own_store": 5,
+    "S17|current|virtual_external_1": 8
+  },
+  "checks": [
+    "schema",
+    "source sha256",
+    "pump metadata",
+    "85 IDs",
+    "4 approved unclassified",
+    "5/18 dictionary",
+    "exact evidence",
+    "no duplicate experience",
+    "4 sentiment values",
+    "8 cells",
+    "category distinct rollup",
+    "A/B/C S16+S17"
+  ]
+}
