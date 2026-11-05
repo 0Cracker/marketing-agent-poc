@@ -18,8 +18,11 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert.match(html,/리뷰 작성일 기준/);
    assert.match(html,/2026.08.03/);
    assert.match(html,/2026.08.30/);
-   assert.match(html,/aria-pressed="true"[^>]*>전체 기간/);
-   assert.match(html,/>기간 비교<\/button>/);
+   assert.match(html,/aria-pressed="true"[^>]*>기간 비교<\/button>/);
+   assert(html.indexOf('>기간 비교</button>')<html.indexOf('>전체 분포</button>'));
+   assert.doesNotMatch(html,/aria-label="리뷰 작성일 기간"/);
+   assert.equal([...html.matchAll(/class="review-bar-track review-period-bar (?:before|after)"/g)].length,10);
+   assert.match(html,caseId==='S16'?/40\.7% \(11\/27건\)/:/\(\d+\/12건\)/);
    assert.doesNotMatch(html,/승인 데이터 총|상위 5개, 세부 18개/);
    assert.equal([...html.matchAll(/aria-expanded="false" aria-controls="review-category-detail-/g)].length,5);
    assert.match(html,/aria-label="판매처, 단일 선택"/);
