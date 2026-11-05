@@ -1,98 +1,73 @@
-# 마케팅 분석, 예산 Agent PoC
+# 마케팅 분석 Agent PoC
 
-2026-11-04 구조 분리: 현재 ROAS는 frontend/roas/, backend/roas/, shared/roas/, data/roas/, scripts/roas/, tests/roas/에 있다. 기존 구현과 원천은 legacy/에 독립 보관한다. 기본 앱에는 구 대시보드 메뉴가 없으며 npm run dev:legacy로 보관 화면을 연다. [분리 계약과 검증](docs/design/roas-legacy-separation.md), [현재 자료](data/README.md)를 우선한다. 아래 이전 경로와 실행 설명은 분리 전 기록을 포함한다.
+광고 성과가 달라졌을 때, 어디서 변화가 시작됐고 다음에 무엇을 확인하면 좋을지 살펴보는 도구입니다. 퍼포먼스 마케터가 광고비 대비 매출(ROAS)을 확인하고, 지표 상세와 AI 대화를 오가며 판단 근거를 찾을 수 있어요.
 
-**[main 배포 화면](https://marketing-agent-poc.vercel.app/workbench) | [dev 배포 화면](https://marketing-agent-poc-git-dev-cracker5.vercel.app/workbench)**
+현재는 가상 데이터로 분석 흐름을 확인하는 PoC입니다. 실제 광고 집행은 하지 않습니다.
 
-main은 Production, dev는 개발 브랜치 Preview다. 2026-10-27 확인 기준 main은 v0.4.0 (`3c11e42`), dev는 v0.4.3 (`810eeee`)이며 두 배포 모두 Vercel Ready 상태다. 위 고정 주소는 각 브랜치의 후속 배포에 따라 갱신된다.
+[메인 화면](https://marketing-agent-poc.vercel.app/workbench) | [개발 미리보기](https://marketing-agent-poc-git-dev-cracker5.vercel.app/workbench)
 
-**작업 폴더는 이 저장소 하나다.** 프런트, 백엔드, CURRENT 데이터, 문서, 검증 도구를 모두 여기서 실행한다. [문서 안내](docs/README.md)에서 버전, 더블 다이아몬드, AI 교훈, 결과 근거를 찾는다.
+## 이렇게 써요
 
-이 README는 현재 dev 구조를 설명한다. 기본 화면은 ROAS 교육 대시보드이며, 성과 현황에서 지표 상세, 비교 표, 운영 근거로 이동한다. S01~S18 사례와 캠페인, 매체, 기기별 조회, 직전 14일 비교를 제공한다. 기존 데이터 탐색 화면은 `(구) 대시보드` 메뉴로 남겨 두었다.
+1. **성과 현황에서 변화를 봐요.** S01~S18 중 사례를 고르고 캠페인, 매체, 기기 등으로 범위를 좁혀요. 분석 기간의 ROAS와 주요 지표를 직전 14일과 비교할 수 있습니다.
+2. **눈에 띄는 지표를 열어요.** 상세 화면에서 기간별 수치와 항목별 증감을 비교해요. 표의 행을 펼치면 집계 내역과 관련 운영 기록을 확인할 수 있습니다.
+3. **해석이 막히면 AI에 물어봐요.** “이번 기간에 ROAS가 왜 떨어졌나요?”처럼 질문하면 현재 화면의 조회 범위를 바탕으로 결론, 판단 근거, 다음 확인 항목을 정리해 줍니다. 답변에 포함된 표, 그래프, 인용 자료도 함께 확인할 수 있어요.
 
-ROAS 대화는 현재 조회 범위의 집계와 원천 행을 읽어 결론, 결과 정리, 판단 근거와 액션을 제시한다. 비교 표, 그래프와 인용 원천을 답변 안에서 확인할 수 있다. 데이터 연결에 온톨로지 설정은 필요하지 않다. 가상 교육 자료를 사용하며 실제 광고 집행은 비활성이다. 구현과 한계는 [ROAS 대시보드 설계](docs/design/roas-training-dashboard.md), [v0.4.2 API 변경](docs/iterations/v0.4.2.md), [v0.4.3 화면 변경](docs/iterations/v0.4.3.md)을 따른다.
+리뷰 분석 메뉴에서는 사례에 연결된 리뷰를 따로 살펴볼 수 있습니다.
 
-화면과 AI 서버는 분리되어 있다. 대시보드는 Vite가 제공하는 자료로 조회하고, AI 대화는 별도 로컬 서버를 사용한다. 기본 서버는 외부 모델 없이 동작하며 `--live`를 지정하면 실제 모델을 호출한다. 기존 분석, Hill 모형 기반 예산 검토와 승인 흐름도 백엔드에 보존되어 있다.
+## 화면과 AI 서버가 연결되는 방식
+
+```mermaid
+flowchart LR
+    U["사용자"] --> UI["ROAS 대시보드와 채팅<br/>React, TypeScript, Vite"]
+    UI -->|"성과, 리뷰 조회"| DATA["사례별 조회 데이터"]
+    UI -->|"/agent-api"| API["로컬 Node.js API"]
+    API -->|"조회 범위에 맞춰 집계, 근거 확인"| RAW["ROAS 원천 데이터"]
+    RAW -->|"빌드 시 조회 데이터 생성"| DATA
+    API -->|"--live 실행 시"| MODEL["Gemini"]
+```
+
+대시보드는 Vite가 제공하는 사례별 성과와 리뷰 데이터를 읽습니다. 채팅 서버를 띄우지 않아도 화면을 둘러볼 수 있어요. 채팅에 질문하면 별도 Node.js API가 같은 사례의 원천 데이터에서 수치와 근거를 가져옵니다. 기본 실행에서는 모델 호출을 로컬 응답으로 대체하고, `--live`로 실행하면 Gemini를 호출합니다.
+
+Vercel에는 화면과 조회용 데이터가 올라갑니다. 배포 화면에서 채팅을 쓰려면 로컬 API 서버를 실행하고 연결을 설정해야 합니다. [배포와 API 연결 설정](docs/deployment.md)
 
 ## 폴더 구조
 
 ```text
 marketing-agent-poc/
-├─ frontend/       Vite 진입점(src/), ROAS 화면과 대화(workbench/), 기존 CTI 화면(app/)
-├─ backend/        ROAS 대화 API, 기존 분석과 예산, 승인, SQLite, 모델 연결
-├─ shared/         대시보드 집계, 지표와 비교, ROAS 답변 계약
-├─ data/           CURRENT 자료, 교육 대시보드, manifest와 원천 보존
-├─ docs/           버전, 설계, AI 교훈, 연구, 레퍼런스
-├─ evidence/       검증 결과, 실패, 캡처 원본
-├─ scripts/        로컬 서버, Vite 자료 제공과 빌드, 조회와 검산 도구
-├─ tests/          회귀 검사
-├─ work/           로컬 DB, 이번 실행 로그 (Git 제외)
-└─ archive/        과거 스냅샷, 백업 (Git 제외)
+├─ frontend/roas/  성과 현황, 지표 상세, 리뷰, 채팅 화면
+├─ backend/roas/   채팅 API, 데이터 조회, 모델 연결
+├─ shared/roas/    화면과 서버가 함께 쓰는 지표 집계, 답변 형식
+├─ data/roas/      사례 데이터와 파일 목록
+├─ scripts/roas/   로컬 API 실행, Vite 데이터 제공, 검산
+├─ tests/roas/     현재 ROAS 회귀 테스트
+├─ legacy/        구 CTI 대시보드, 분석과 예산 검토, 당시 데이터
+├─ docs/          설계, 버전별 개발 일지, AI 활용 교훈
+└─ evidence/      검증 결과와 화면 캡처
 ```
 
-별도 프로젝트 폴더, worktree는 사용하지 않는다. 온톨로지용 Python/Java 검증 도구는 내부 `.tools/ontology-validation/`에 둔다. 앱 실행에는 필요하지 않으며 RDF/SHACL, HermiT, OOPS 검증에 사용한다. Git 추적에서는 제외한다. 과거 보고서의 이전 경로는 실행 당시 기록으로 보존한다.
+구 CTI 대시보드는 `npm run dev:legacy`로 별도로 열 수 있습니다. [현재 데이터 안내](data/README.md), [ROAS와 구 대시보드 분리 기록](docs/design/roas-legacy-separation.md)
 
-## 실행, 검증
+## 로컬에서 실행하기
 
-아래 명령은 모두 이 저장소 루트에서 실행한다. Node.js 최소 버전은 `package.json` 기준 22.13.0이며, Vercel은 24.x를 사용한다. 로컬 백엔드는 `node:sqlite`를 사용한다.
+Node.js 22.13.0 이상이 필요합니다. 저장소 루트에서 아래 명령을 실행하고 브라우저에서 `http://127.0.0.1:5173/workbench`를 열면 됩니다.
 
 ```powershell
 npm ci --include=dev --include=optional
-npm run start:agents
-# 별도 터미널
 npm run dev
-# 화면: http://127.0.0.1:5173/workbench
 ```
 
-실제 모델은 기존 서버용 `.env.local` 설정을 유지하고 `npm run start:agents -- --live`로 시작한다. 모델 호출 예산은 실행 전에 정한다. 로컬 Vite는 `/agent-api` 요청을 기본 `127.0.0.1:8788` 서버로 전달한다. Vercel 화면에서 로컬 서버를 연결하는 공개 API 주소, 허용 Origin과 브라우저 권한 설정은 [배포 설정](docs/deployment.md)을 따른다. API 키와 SQLite 실행 기록은 로컬 PC에 둔다.
+채팅도 써보려면 별도 터미널에서 `npm run start:agents`를 실행하세요. 실제 모델을 연결할 때는 서버용 `.env.local`을 설정하고 `npm run start:agents -- --live`로 실행합니다. ROAS 회귀 검사는 `npm run test:roas`로 실행할 수 있습니다.
 
-변경 범위에 맞춰 아래 검사를 실행한다. `data:training`은 자료 생성 명령이므로 일반 실행이나 검증 절차에 포함하지 않는다.
+## 버전별 개발 기록
 
-```powershell
-npm run test:agents
-npm run test:roas
-npm run test:training
-node --experimental-strip-types --test tests/agent-client.test.ts tests/agent-answer.test.ts tests/agent-presentation.test.ts
-node node_modules/typescript/bin/tsc --noEmit --incremental false
-npm run lint
-npm run build
-```
+| 버전 | 바뀐 점 |
+| --- | --- |
+| [v0.1.0](docs/iterations/v0.1.0.md) | CTI 고정 시연을 만들고 분석 근거에서 실행안 검토까지 이어지는 흐름을 구성했어요. |
+| [v0.2.0](docs/iterations/v0.2.0.md) | 마케팅 원천을 공통 형식으로 조회할 수 있게 정리하고, 질문별 검산과 온톨로지 검증을 추가했어요. |
+| [v0.3.0](docs/iterations/v0.3.0.md) | 대시보드와 당시 기준 데이터(CURRENT)를 한곳에서 조회할 수 있게 합쳤어요. |
+| [v0.4.0](docs/iterations/v0.4.0.md) | 분석, 예산 검토, 승인 흐름을 대화 화면에 연결했어요. 이후 같은 버전의 후속 작업으로 ROAS 전용 대시보드와 사례별 지표 상세 화면을 구성했어요. |
+| [v0.4.1](docs/iterations/v0.4.1.md)~[v0.4.7](docs/iterations/v0.4.7.md) | 기존 ROAS 화면의 데이터와 탐색을 개선하고, 조회 API, 채팅 답변, 사례별 예시 질문을 다듬었어요. |
+| [v0.4.8](docs/iterations/v0.4.8.md)~[v0.4.18](docs/iterations/v0.4.18.md) | 상세 비교 표, KPI 표시, 정렬, 사이드바를 여러 차례 손봤어요. |
+| [v0.4.19](docs/iterations/v0.4.19.md) | 현재 ROAS 앱을 구 CTI 대시보드와 분리했어요. 구 화면과 데이터는 `legacy/`에 모아 별도로 실행할 수 있게 했습니다. |
 
-## 배포와 개발 기록
-
-Vercel은 같은 프로젝트에서 main의 Production과 dev의 Preview를 운영한다. 화면 배포만으로 AI 서버가 실행되지는 않는다. 방문자가 AI 대화를 사용하려면 같은 PC에서 로컬 서버를 실행하고 연결을 허용해야 한다. 대시보드 조회와 AI 연결의 검증 범위는 구분한다.
-
-- [배포 설정](docs/deployment.md): Vercel 빌드, main과 dev, 로컬 AI 서버 연결.
-- [개발 운영 절차](docs/DEVELOPMENT-WORKFLOW.md): dev 세부 커밋, main Squash 병합과 발행 규칙.
-- [버전 대응표](docs/iterations/version-history.md): 버전과 커밋, 통합 이력.
-- [dev 패치 검증](evidence/dev-patches-20261027/validation.md): v0.4.2와 v0.4.3의 자동 검증, 한계.
-
-과거 [Sites 시연](https://marketing-canvas-poc-1008.gogoseo110416586.chatgpt.site)은 보존 링크다. 현재 Git main 또는 dev와 일치하는 배포로 취급하지 않는다.
-
-## 기존 CTI 고정 시연, v0.1.0 기록
-
-아래는 `/`의 기존 CTI 시연 설명이다. 현재 `/workbench`의 ROAS 교육 대시보드와 구분한다. 2026-10-20 통합 당시 기록은 [최종 반영 기록](docs/design/semantic-changes-20261020.md)에 보존한다.
-
-A 원인 분석 → 다섯 단계의 분석 과정, 원천/산식, 반대 근거 → 실행안 검토 → CS/제품 조사 계획 승인 → Mock 업무 요청 등록. 이어 E를 선택하면 결측 때문에 성과, 예산 판단을 보류하고 계측 복구를 요청합니다.
-
-- A: 고객 경험 조사. 광고 배분 유지.
-- B: 경쟁사 활동, 수집 범위 조사. 자사 예산 유지.
-- C: 현행 유지 대비 14일 광고 배분 실험. 계측과 무작위 분할 준비 후 조건부 검증.
-- D: 리뷰 조사와 광고 유지의 분리.
-- E: 판단 보류, 계측 복구. 전체 CTI와 예산 계산 차단.
-- F: 현행 유지, 2주 관찰. 근거 없는 확대를 피함.
-
-오늘 필요한 결정은 대시보드 첫 영역에 표시합니다. 답변은 채팅 안에서 완결되며, 상세 화면은 선택 사항입니다. 담당 팀, 기한, 확인 자료, 완료 산출물, 성공/중단 조건, 후속 판단이 실행안에 포함됩니다. 실제 업무 전달, 광고 집행은 하지 않습니다.
-
-## 기존 CTI 데이터와 작성 근거
-
-- frontend/lib/demo-scenarios.ts: 6개 사례, 18개 고정 응답, 36개 월 기록, 원천/검산, 다섯 단계 분석, 차별화된 실행안. 앱은 이 정적 콘텐츠를 표시합니다.
-- scripts/author-demo.mjs: 작성 단계 계산, 콘텐츠 생성. 앱에서 호출하지 않습니다.
-- scripts/scenario-decisions.mjs: 시나리오별 판단 규칙과 실행안의 작성 원본.
-- tests/demo.test.ts: 수식, 리뷰/매체 합계, 결측, 월별 사건 정합성, 예산 및 대응 차별화 검산.
-
-CTI는 A+B 내 검색, 긍정 리뷰, 참여, 노출 비중의 가중 합계(.35/.25/.20/.20)입니다. 매출, 구매 확률, 전체 시장 점유율, 광고 효율이 아닙니다. 가중치, 검토 임계값, 승인 조건은 검증되지 않은 PoC 가정입니다. 산술적 변화와 원인 가설은 구분합니다.
-
-예산 이동은 C 한 사례만 제안합니다. 나머지 관측 가능 사례는 현행 배분 유지, E는 계산 보류입니다. C의 모의 곡선은 관측점 하나에 맞춘 가정 함수이며 실제 효과를 추정하지 않습니다. 1,200만원 월간 비교와 대조/실험 각 300만원의 제한 실험을 구분합니다. 성공 기준은 실제 CPM, CVR, 충분한 표본으로 검증할 계획이며 이 Mock에는 전환 자료가 없습니다.
-
-파일럿 목표는 자료 정리, 검산, 근거 검토, 실행안 작성의 시간과 누락을 줄이는 것입니다. 시간 절감 수치는 미측정입니다. React/Vite/TypeScript와 기존 Recharts를 사용하며 새 의존성은 추가하지 않았습니다.
+패치별 변경과 검증, 커밋 대응, 설계 문서는 아래에서 더 볼 수 있어요. [버전별 개선 일지](docs/iterations/README.md), [버전 대응표](docs/iterations/version-history.md), [전체 문서 안내](docs/README.md)
