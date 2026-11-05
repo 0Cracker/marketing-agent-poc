@@ -1,0 +1,31 @@
+✔ overview compares campaign outcomes while drivers explains the metric interactions (1668.3872ms)
+✔ examples preserve the first and third questions and split the actual S16 ROAS change (14.0194ms)
+✔ all existing cases and snapshots keep source rows, scoped totals and contribution sums consistent (24698.8158ms)
+✔ funnel answers use stage abandonment rates and handle an empty selection (28.4183ms)
+✔ existing cases and snapshots reconcile the centered contributions and ratio totals in every supported partition (17518.0886ms)
+✔ S07 isolates the complete 100 percentage-point ROAS decline as budget mix change (30.3137ms)
+✔ S16 ROAS contributions preserve the AOV offset, CVR and CPC deterioration and the full change (6.4306ms)
+✔ CPA and CPC factor replacement sums agree across ads and content without mixing exposure bases (158.1058ms)
+✔ dimensions use actual campaign-qualified traffic, restrict keywords to search and exclude content from CTR (15.9659ms)
+✔ zero orders and new creatives retain finite contribution while unavailable ratios are not fabricated (24.3489ms)
+✔ traffic narrowing updates the complete selected totals and never invents a product cross-tab (22.8757ms)
+✔ AOV exposes product mix and discounts as distinct observations on the installed single-item orders (32.6318ms)
+✔ impact order follows overall direction and current or delta sorting remains available (8.1684ms)
+✔ CTR changes show current targeting and creative changes, not initial settings or product discounts (1824.1851ms)
+✔ all existing cases keep change records scoped and unmodified with a concrete reading hint (5002.669ms)
+✔ the same numerical direction means opposite performance for ROAS and purchase costs (2537.3873ms)
+✔ one visible axis encloses both periods for all existing cases and KPI trends (2608.3406ms)
+✔ the entry metric and its numerator and denominator precede other columns without changing source order (1.3316ms)
+✔ displayed zero changes, zero percentage points and unavailable comparisons are neutral (2.5957ms)
+✔ headline ROAS compares each full period aggregate rather than daily mean or last-day ROAS (39.593ms)
+✔ mini trends use two shared bounds around actual values while large trends retain zero (1187.9042ms)
+✔ mini bounds stay readable for flat, zero and unavailable series (1.0638ms)
+✔ all directional table metrics share improvement, deterioration and neutral semantics (24.4647ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27972.4252

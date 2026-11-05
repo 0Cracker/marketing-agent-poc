@@ -1,0 +1,800 @@
+{
+  "date": "2026-10-26",
+  "method": "actual HTTP responses compared to independently selected raw JSON source, ratios recomputed from input counts",
+  "responses": 36,
+  "status": "passed",
+  "results": [
+    {
+      "caseId": "S01",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1800000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "caseId": "S01",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1800000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "caseId": "S02",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S02",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S03",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 3360000,
+          "roas": 2.8
+        }
+      ]
+    },
+    {
+      "caseId": "S03",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 3360000,
+          "roas": 2.8
+        }
+      ]
+    },
+    {
+      "caseId": "S04",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 168,
+          "revenue": 6720000,
+          "roas": 5.6
+        }
+      ]
+    },
+    {
+      "caseId": "S04",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 168,
+          "revenue": 6720000,
+          "roas": 5.6
+        }
+      ]
+    },
+    {
+      "caseId": "S05",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S05",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S06",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 600000,
+          "orders": 84,
+          "revenue": 3360000,
+          "roas": 5.6
+        }
+      ]
+    },
+    {
+      "caseId": "S06",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 600000,
+          "orders": 84,
+          "revenue": 3360000,
+          "roas": 5.6
+        }
+      ]
+    },
+    {
+      "caseId": "S07",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 90,
+          "revenue": 3600000,
+          "roas": 3
+        }
+      ]
+    },
+    {
+      "caseId": "S07",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 90,
+          "revenue": 3600000,
+          "roas": 3
+        }
+      ]
+    },
+    {
+      "caseId": "S08",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 2400000,
+          "orders": 180,
+          "revenue": 7200000,
+          "roas": 3
+        }
+      ]
+    },
+    {
+      "caseId": "S08",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 2400000,
+          "orders": 180,
+          "revenue": 7200000,
+          "roas": 3
+        }
+      ]
+    },
+    {
+      "caseId": "S09",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 80,
+          "revenue": 3200000,
+          "roas": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "caseId": "S09",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 80,
+          "revenue": 3200000,
+          "roas": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "caseId": "S10",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 2400000,
+          "orders": 144,
+          "revenue": 5760000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S10",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 2400000,
+          "orders": 144,
+          "revenue": 5760000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S11",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S11",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S12",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 84,
+          "revenue": 4200000,
+          "roas": 3.5
+        }
+      ]
+    },
+    {
+      "caseId": "S12",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 84,
+          "revenue": 4200000,
+          "roas": 3.5
+        }
+      ]
+    },
+    {
+      "caseId": "S13",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S13",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S14",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S14",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S15",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 72,
+          "revenue": 2880000,
+          "roas": 2.4
+        }
+      ]
+    },
+    {
+      "caseId": "S15",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        },
+        {
+          "period": "current",
+          "spend": 1200000,
+          "orders": 120,
+          "revenue": 4800000,
+          "roas": 4
+        }
+      ]
+    },
+    {
+      "caseId": "S16",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 16929052,
+          "orders": 1180,
+          "revenue": 38560000,
+          "roas": 2.277741246231626
+        }
+      ]
+    },
+    {
+      "caseId": "S16",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 16929052,
+          "orders": 1180,
+          "revenue": 38560000,
+          "roas": 2.277741246231626
+        }
+      ]
+    },
+    {
+      "caseId": "S17",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 4629724,
+          "orders": 488,
+          "revenue": 21155000,
+          "roas": 4.569386857618294
+        }
+      ]
+    },
+    {
+      "caseId": "S17",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 4629724,
+          "orders": 488,
+          "revenue": 21155000,
+          "roas": 4.569386857618294
+        }
+      ]
+    },
+    {
+      "caseId": "S18",
+      "snapshot": "initial",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 12924599,
+          "orders": 900,
+          "revenue": 29920000,
+          "roas": 2.3149654391598533
+        }
+      ]
+    },
+    {
+      "caseId": "S18",
+      "snapshot": "mature",
+      "status": 200,
+      "sourceMatch": true,
+      "periods": [
+        {
+          "period": "baseline",
+          "spend": 10478096,
+          "orders": 963,
+          "revenue": 37280000,
+          "roas": 3.557898305188271
+        },
+        {
+          "period": "current",
+          "spend": 12924599,
+          "orders": 900,
+          "revenue": 29920000,
+          "roas": 2.3149654391598533
+        }
+      ]
+    }
+  ]
+}

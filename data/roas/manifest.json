@@ -1,0 +1,31 @@
+{
+  "contract": "roas-data/1",
+  "files": [
+    {
+      "file": "training-dashboard.json",
+      "bytes": 28326584,
+      "sha256": "4ada40bb6153fcc40cdaa2654c48aaa3cccd46c489a1558ad888d5a0d2e80c66"
+    },
+    {
+      "file": "roas-reviews.json",
+      "bytes": 24668,
+      "sha256": "f40aeb577c550ee3928cd044b45fa83253bee751b234de5c3ca4a874700de4e0"
+    },
+    {
+      "file": "roas-review-classification.json",
+      "bytes": 26626,
+      "sha256": "b1febf7a996ff039600c75957af99f3633d6f836e41a3ce5c08df20d660172de"
+    },
+    {
+      "file": "roas-product-metadata.json",
+      "bytes": 243,
+      "sha256": "7349c2c37f1c7238d1ae1973aacafd501a595c4c56f31a8e44310de1be6491cd"
+    },
+    {
+      "file": "source-ads.jsonl",
+      "bytes": 41633,
+      "sha256": "c2f25dc1637ba2d80c2cef6bee5355b0438062d3bad42a183d0bf1f9082e0f6f"
+    }
+  ],
+  "data_sha256": "7cf35f6f427475ff2650f7802a1412feb7b12349edc38a6e2d0fbe0d93bd9203"
+}

@@ -1,0 +1,12 @@
+{
+  "contract": "roas-product-metadata/1",
+  "products": [
+    {
+      "productId": "EDU-P1",
+      "productName": "쓱쓱샴푸",
+      "categoryId": "shampoo",
+      "categoryName": "샴푸",
+      "containerType": "pump_bottle"
+    }
+  ]
+}

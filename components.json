@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "frontend/app/globals.css",
+    "css": "frontend/roas/base.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""

@@ -1,0 +1,642 @@
+{
+  "baseCommit": "3c11e4237c4d74e9efd96fbe5cab4a7391dc4651",
+  "sourceSha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+  "manifest": {
+    "contract": "marketing-current/1",
+    "screen_contract": "workbench-model/1",
+    "schema_sha256": "67db10232e3d4957ded48cb7d42a2c1e7ac805b062dbfd40252e062154ac3edf",
+    "source_created_at": "2026-10-19T05:06:31.333Z",
+    "rows": 41341,
+    "preserved_rows": 63650,
+    "source_files": 151,
+    "files": [
+      {
+        "type": "T01",
+        "file": "products.jsonl",
+        "rows": 6,
+        "bytes": 6196,
+        "sha256": "ecbfa2a36749ba9a3769856c5c32293c0acdf2980293376b06a9ba57afb77860"
+      },
+      {
+        "type": "T02",
+        "file": "identity-mappings.jsonl",
+        "rows": 108,
+        "bytes": 124740,
+        "sha256": "5096f6ce6c2492b24fca27c85fa5e58ec88261df0e13e4059029f32b89ab3a79"
+      },
+      {
+        "type": "T03",
+        "file": "market-sales.jsonl",
+        "rows": 432,
+        "bytes": 573833,
+        "sha256": "4ce19981aefda18a452299e054f6bf4448dd80b7669d84c45b60289be8aada5a"
+      },
+      {
+        "type": "T04",
+        "file": "purchase-surveys.jsonl",
+        "rows": 108,
+        "bytes": 153924,
+        "sha256": "48aa4dae930ea2fc6570ac50d9974bd2ab708c063c72740938ff8db9add47c6c"
+      },
+      {
+        "type": "T05",
+        "file": "search-interest.jsonl",
+        "rows": 216,
+        "bytes": 281232,
+        "sha256": "52a5a9224b85dd2928436751462844ac4cd780b5ad83f8628de783b6095a6e54"
+      },
+      {
+        "type": "T06",
+        "file": "keyword-demand.jsonl",
+        "rows": 216,
+        "bytes": 278401,
+        "sha256": "0467584542ca18fac4b43d17802fd2d46629efc9a537865566328a0d2405f563"
+      },
+      {
+        "type": "T07",
+        "file": "organic-search.jsonl",
+        "rows": 432,
+        "bytes": 552442,
+        "sha256": "dffe916550731e7463cd5a7e02a8d31804b2cd125e3bf35ecaf99102e0dd8f18"
+      },
+      {
+        "type": "T08",
+        "file": "prices.jsonl",
+        "rows": 1512,
+        "bytes": 2002266,
+        "sha256": "e16b10296675d0e121c59b5c61485e45a7c84c2fcdac8b896c8832e4ab9bcfd3"
+      },
+      {
+        "type": "T09",
+        "file": "promotions.jsonl",
+        "rows": 54,
+        "bytes": 67851,
+        "sha256": "b211de55d25f6602e34b0d6edae23d30481b2d8a97cf92c5f7d57893aa136d40"
+      },
+      {
+        "type": "T10",
+        "file": "public-ads.jsonl",
+        "rows": 156,
+        "bytes": 192660,
+        "sha256": "8298cfaf7040f0ee80ada743a6eac4718eb1a08c66ad99b73191958e949624d4"
+      },
+      {
+        "type": "T11",
+        "file": "publications.jsonl",
+        "rows": 54,
+        "bytes": 79009,
+        "sha256": "3af98dfee76687f9e376e8c66dc914028535233f5460e7e5fbabad3631d47a95"
+      },
+      {
+        "type": "T12",
+        "file": "campaigns.jsonl",
+        "rows": 20,
+        "bytes": 29250,
+        "sha256": "2f22418bf5901b2b06192198717bcbe3d1de46d89289d77f94a90481b87de051"
+      },
+      {
+        "type": "T13",
+        "file": "ad-performance.jsonl",
+        "rows": 848,
+        "bytes": 1319847,
+        "sha256": "3cfcd3b0e8798dec8961e4c3478594a6a994e393fd6a0798003d68a0ef19d698"
+      },
+      {
+        "type": "T14",
+        "file": "ad-breakdowns.jsonl",
+        "rows": 1120,
+        "bytes": 1638842,
+        "sha256": "fd2de56115e2cdc2b807b8373e8cde8eb7c38e620eca7e27d03ee3be63d91cd5"
+      },
+      {
+        "type": "T15",
+        "file": "auction-insights.jsonl",
+        "rows": 144,
+        "bytes": 180802,
+        "sha256": "57a65dca52d8fd209b488fba4d5e79a8d8da7e28ce53e9cfcdeaa990587db8f2"
+      },
+      {
+        "type": "T16",
+        "file": "creatives.jsonl",
+        "rows": 80,
+        "bytes": 118715,
+        "sha256": "1b0b5530ae43bd9bfe85855f0b6c8288bd5d4b6f0e0703a9964585bc6b2f893d"
+      },
+      {
+        "type": "T17",
+        "file": "web-events.jsonl",
+        "rows": 8088,
+        "bytes": 10445185,
+        "sha256": "1ea9ce654275424332b8015fa30012c7f93d86f4abcba942599c633a50a8942c"
+      },
+      {
+        "type": "T18",
+        "file": "commerce-events.jsonl",
+        "rows": 13196,
+        "bytes": 16868092,
+        "sha256": "527d82e8482d32ed99807b58a51298ba169a1b243591d9a6aa78282e8c8c4de9"
+      },
+      {
+        "type": "T19",
+        "file": "order-lines.jsonl",
+        "rows": 2015,
+        "bytes": 3014200,
+        "sha256": "a976229d378e63f9c38eea9398895823c37f398b0bcd04206d4913fe40b54015"
+      },
+      {
+        "type": "T20",
+        "file": "refunds.jsonl",
+        "rows": 239,
+        "bytes": 318309,
+        "sha256": "fc56db364d5c426232b123392c4be0de2f6a115d104760d0e01f71fe10373f08"
+      },
+      {
+        "type": "T21",
+        "file": "costs.jsonl",
+        "rows": 144,
+        "bytes": 176496,
+        "sha256": "39d8d4062daa323bd310f5cbc004cfff0a16b3fe8b63f9a48bfb0250bee3260e"
+      },
+      {
+        "type": "T22",
+        "file": "inventory.jsonl",
+        "rows": 336,
+        "bytes": 376625,
+        "sha256": "589908ad878418c12adaa2d4c37f19733d5db42996f60c1834d219c35a9b1de5"
+      },
+      {
+        "type": "T23",
+        "file": "distribution-fulfilment.jsonl",
+        "rows": 1232,
+        "bytes": 1463946,
+        "sha256": "e472d27c6bdecc89f3b802d14af44f5e6b2c597c46474ba973f5e54090dd69a8"
+      },
+      {
+        "type": "T24",
+        "file": "reviews.jsonl",
+        "rows": 2576,
+        "bytes": 3396775,
+        "sha256": "079f2485e9852c26f994b6eb418902553becea2976c6627161f454fd87758a1c"
+      },
+      {
+        "type": "T25",
+        "file": "review-annotations.jsonl",
+        "rows": 4820,
+        "bytes": 6410967,
+        "sha256": "ea89e2303704e8b96be637ce67518705752037fbdcd5f73fae4268ebf9c63c18"
+      },
+      {
+        "type": "T26",
+        "file": "customer-inquiries.jsonl",
+        "rows": 546,
+        "bytes": 697224,
+        "sha256": "2724303362ba8ef5ba425d34114db79eb7bda414ed9c8f0c371ccd03debc82d0"
+      },
+      {
+        "type": "T27",
+        "file": "owned-content.jsonl",
+        "rows": 108,
+        "bytes": 167263,
+        "sha256": "8b76bc99004a29d331852d1d40f694320dc0ca20283ef5251822070411d4d716"
+      },
+      {
+        "type": "T28",
+        "file": "social-comments.jsonl",
+        "rows": 1078,
+        "bytes": 1240102,
+        "sha256": "6ea16b4cb40bc4c2c5a8eef4699c2254ece08d53b115849fda27b32d088378a4"
+      },
+      {
+        "type": "T29",
+        "file": "creator-collaborations.jsonl",
+        "rows": 18,
+        "bytes": 26437,
+        "sha256": "bbeeb1cd1ec6b99aadcfcaa453742c3aee45eddd150bb439a7f9c000e050526e"
+      },
+      {
+        "type": "T30",
+        "file": "customer-cohorts.jsonl",
+        "rows": 204,
+        "bytes": 284296,
+        "sha256": "e3d9c6b1e593f25d4b428c556b5abb82ecacba504dc3ec5d17a312766728a943"
+      },
+      {
+        "type": "T31",
+        "file": "crm-performance.jsonl",
+        "rows": 204,
+        "bytes": 259166,
+        "sha256": "d4923d2c7cbbb933490cb91a37fa774fa93167aea78575481ba2dd1b102d2498"
+      },
+      {
+        "type": "T32",
+        "file": "brand-surveys.jsonl",
+        "rows": 108,
+        "bytes": 187028,
+        "sha256": "065b36d23364322ff4072951034b6ea07bab8b777d1b8c1fa811cf6b54c0ca2e"
+      },
+      {
+        "type": "T33",
+        "file": "public-statistics.jsonl",
+        "rows": 72,
+        "bytes": 92259,
+        "sha256": "bc5eb48c1efe59cfa7a1ac0a6526cd141fe3bcefe338b4762eb86f5ec46d8428"
+      },
+      {
+        "type": "T34",
+        "file": "weather-calendar.jsonl",
+        "rows": 168,
+        "bytes": 215428,
+        "sha256": "27695ef569b2159e32ac4b06bc7d91240bd2ab05f18b506fb960d66cfebb0a70"
+      },
+      {
+        "type": "T35",
+        "file": "change-events.jsonl",
+        "rows": 108,
+        "bytes": 151992,
+        "sha256": "534c16d569d8b9b95da45c26181b41f4b0f8b420b43ad83e3958f52cb33db46b"
+      },
+      {
+        "type": "T36",
+        "file": "collection-runs.jsonl",
+        "rows": 216,
+        "bytes": 280348,
+        "sha256": "0d0c1137135b8e96e6af7191dfe4db395ef6562ceeed0cda1102b0abdc802e27"
+      },
+      {
+        "type": "T37",
+        "file": "site-events.jsonl",
+        "rows": 35,
+        "bytes": 41256,
+        "sha256": "28f745c26fa79c4e966ad9a7851a15e898b5073b02bffda18a42b1680d531b64"
+      },
+      {
+        "type": "T38",
+        "file": "experiments.jsonl",
+        "rows": 72,
+        "bytes": 115926,
+        "sha256": "8ebf031462408a62f1adbccf9dd984841ecde07459be4277d2b6f0b2e397ab7f"
+      },
+      {
+        "type": "T39",
+        "file": "budget-models.jsonl",
+        "rows": 72,
+        "bytes": 160170,
+        "sha256": "945530667273003e442a0fadf6191d1e89c0eaef8a915608c936877c57a2c5fc"
+      },
+      {
+        "type": "T40",
+        "file": "budget-policies.jsonl",
+        "rows": 36,
+        "bytes": 52737,
+        "sha256": "4525bf28e08fef8235caa736066daef055bd947ca2ceffa369a42856fccb6ccd"
+      },
+      {
+        "type": "H01",
+        "file": "sales-reports.jsonl",
+        "rows": 144,
+        "bytes": 301484,
+        "sha256": "1a8079a5c8ab4ebe787ec21052d120d6879e1484642a1a781429ff5eba02b8f1"
+      }
+    ],
+    "metadata": [
+      {
+        "file": "definitions.json",
+        "sha256": "182013eb5c76e6d52cb8b17e256c287e0574d02856c413879c17623b3cf19b31"
+      },
+      {
+        "file": "product-presentation.json",
+        "sha256": "2a971a2b896737fcb02dcf34ff15f88dce02f980a2c1f52a7d687e06c34399ef"
+      },
+      {
+        "file": "training-dashboard.json",
+        "bytes": 28191084,
+        "sha256": "31a5a985ccf289e69549e07f0d0a39adc8c448bf234ee52d7e45fc9a27fe9a40",
+        "public": false,
+        "contract": "roas-training/1"
+      }
+    ],
+    "decisions": {
+      "independent_archive": 1446,
+      "nonconforming": 790,
+      "active": 41341,
+      "replaced": 20000,
+      "selection_excluded": 73
+    },
+    "scope_ids": {
+      "KR": [
+        "D008-KR-sample"
+      ],
+      "JP": [
+        "D008-JP-sample"
+      ],
+      "US": [
+        "D008-US-sample"
+      ]
+    },
+    "policy": "One current comparison scenario plus valid shared product definitions. Independent historical samples and invalid records are excluded from KPI totals; all physical inputs and per-row decisions remain archived. R001 is an independent approved workflow sample; scope_ids remains the default D008 selection. Explicit R001 selection is registered in definitions.json scenario_profiles. R002, R003 and R004 are explicitly approved independent diversity cases selected by scenario profile; default scopes and R001 remain unchanged.",
+    "period": {
+      "start": "2024-10-01",
+      "end": "2026-10-01"
+    },
+    "pending_by_type": {},
+    "data_sha256": "0f013f0a59de02923b63b0c0720b740dd606768a8795fdb02a9e6a92c392311a"
+  },
+  "packs": [
+    {
+      "caseId": "S01",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "7ef2593a81ee98861a435bf3fa0a62d955a6b95f345897134bc1eda290481710",
+      "breakdownNumbersSha256": "73de5a92f0416ef372e2bcc05f682277b80805d5fbe73a2cab214270ec1e2151",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S02",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "72769e8e7919b1dfac00617311429b88c494d43217d802d6859947a35c50de27",
+      "breakdownNumbersSha256": "cd25f78194df624f6f6d17b625be94703f75189b8129300051cade76d20a5834",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S03",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "a1acc12374928ea6a055098fba412735515e66513b18361f395989861fa8d2ed",
+      "breakdownNumbersSha256": "4f6b03113ade3a97254fd59d6ec6609d9b2b0829dfe5c9795166558c2c1383d6",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S04",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "bfaa29e1acbc59958bdfc261ef35a2ea6f27a5f58c9b3399d9caff80e6e11e7c",
+      "breakdownNumbersSha256": "322cbbb3b6e0d8a5999caa90e00dd073e2ad6ac475062caa222ca5abceb91f7c",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S05",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "ba519dc79e7c0425ad3bc759d2ac8000b15af9ff661f170796a8f40047805fce",
+      "breakdownNumbersSha256": "29009873eb9328db623e6c5cc2c11e4e28fe669e79ffdd35e552896fc91b9a87",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S06",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "91652be160a0f86a206a6c460affb8c5b2076d8eaf6ea816002122840f7654b3",
+      "breakdownNumbersSha256": "97b5b2444563fe9bc33fb9cd3a5228982894d640295916a64376bc89be7e157b",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S07",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "4f2f01adc74c52f023ee6babb9050fb72d07b51c9cce91477293587f86fbb994",
+      "breakdownNumbersSha256": "027811d7dd4fd8bd6b447178367781c42c91e190fbfb2134b9d3e9d671fc16da",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S08",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "54b19ddd5e4321d9de6825a7bac0d3da0a0444b438909ae494ad22e27f4a8bf0",
+      "breakdownNumbersSha256": "6c1c12229e43769e542d8e13960b68962e086f0f7c741983e86630fc64d6ce3c",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S09",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "f88d713dde6abe0d4f11116d3cf0231c265c125a3303386a09867e64177405b5",
+      "breakdownNumbersSha256": "366f40ad1740d5a88a131026bd26a0a116a2a085b8dc213d4dd463ae268a4ad2",
+      "reachSha256": "92204440cc8a1f6dd4204648aed806904a388006d2afddf09ed7507736046dcb"
+    },
+    {
+      "caseId": "S10",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "3a51b09a5cb7c98f60f9835d76b63174470322bb2b122e73bc3b3ac01db10864",
+      "breakdownNumbersSha256": "ad29ade2f44f7cbe54f4ac171b98a7fa781758f1dfeb09f34f72e7fd85ec4a62",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S11",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "e685d4970ec4fcf5cd84d7bb05d7bc3ac4b5181e453e4e166e8a2a3cb9f6ecf6",
+      "breakdownNumbersSha256": "1b8fe74ce73aad2f63a62142b47c901b610b67f4935c7e21fb74e5b7ef897712",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S12",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "28eaf184b02914d29cda13dec58fd38668763ced01a52803f4c2179314f357aa",
+      "breakdownNumbersSha256": "d043cdb88db6f83ea190ff07cb6144cba7f2f996b4ba64e6b036340fed1998d9",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S13",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "14a5f4e8038c5da7f5ff2e79ce84547000f8dfc9604ee4d4f18ab5a279412012",
+      "breakdownNumbersSha256": "83a2b9912aea390ac834695490222d141d63da60836d197ddf3cdb0446fe10e5",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S14",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "751bae0928b30e09b94c7d97c1b906987e1ca13cc1efb462292e3f3b73eaaeb1",
+      "breakdownNumbersSha256": "f8e9437a4a7e7da94f4072cea2f7afb390044a91119c9a4f8c9df8015675f9f7",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S15",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "8b7cf66a7a441aa56c1bb1bd97ad5fa5fa1bdb36873cfde0d7aa84a9bd9b8d48",
+      "breakdownNumbersSha256": "f84702b2293e808005cd8ed181744a2dd31277b796324fc1dd768c0753bb58c9",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    },
+    {
+      "caseId": "S16",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "014db7159e22b4af3d198a256f063d149b358963c1b71acd236ea15d5f2cc44c",
+      "breakdownNumbersSha256": "69a5b68a68fff41dd9c91ac92926136608a5fd6d309a73c5e4dec78f834ced16",
+      "reachSha256": "12c84ee072d9f1696f870ad6804d207f5899423a01dcdd3cb94ea2b86c791cf7"
+    },
+    {
+      "caseId": "S17",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "89da7f631901bebca36e9a5551a5beb2d8db4a339adaab3fa6b1da9453ee9bba",
+      "breakdownNumbersSha256": "245680be25cadc706e09101368edee3be6a052469b32dbca4154a3b49ded609a",
+      "reachSha256": "915db6c5202fffa573840bec53c229de9fed8996c30f2958cd35f75bee3d0a47"
+    },
+    {
+      "caseId": "S18",
+      "asOf": "2026-08-31T00:00:00+09:00",
+      "factsSha256": "c13c297ef056793962b4468a8b9eb8e52da300008c6b51df0b4b44423b919e82",
+      "breakdownNumbersSha256": "5332d4327e14e8c96fda6ff528ac303e9db00e92c1daf574eccaa27115e18399",
+      "reachSha256": "4332368341780dae1e44e4734c6e09385a9c49c1d02fe79ffbe57435ef112de7"
+    },
+    {
+      "caseId": "S15",
+      "asOf": "2026-09-07T00:00:00+09:00",
+      "factsSha256": "88f1f7528807540ea120f9077aaff889ee2a0dad25710ee4624a5d39c68148bb",
+      "breakdownNumbersSha256": "5dbe9e4da25489e845658c2bc3f0be00f8c1afd3458f7e3f6e47f85a82713cd7",
+      "reachSha256": "5c5e36a4a0a62d5b1a18697e3586d73394d7e2a86e089cf45d0f4d49c5d8d8df"
+    }
+  ],
+  "records": 105,
+  "initialGitStatus": " M docs/README.md\n M docs/design/roas-training-dashboard.md\n M frontend/workbench/training-dashboard.css\n M frontend/workbench/training-dashboard.tsx\n M shared/training-dashboard.d.mts\n M shared/training-dashboard.mjs\n M tests/training-dashboard.test.mjs\n?? docs/research/campaign-media-taxonomy-20261026.md\n?? evidence/independent-marketer-20261026/\n?? evidence/ux-taxonomy-20261026/\n",
+  "s06CostBaseline": {
+    "factsWithoutSpendSha256": "8b6bc3218f64afecb82f1e14cf4297a397c288aa5bf0388f09869e276c050e2d",
+    "breakdownsWithoutSpendSha256": "ae59223460aba892722f7d784c29ad6d20ce2d5f72fb7739beb34ce6995c6cba",
+    "periodSpendGroups": [
+      [
+        "facts",
+        {
+          "baseline|EDU-C1|mobile||": 120000,
+          "baseline|EDU-C1|desktop||": 80000,
+          "baseline|EDU-C2|mobile||": 120000,
+          "baseline|EDU-C2|desktop||": 80000,
+          "baseline|EDU-C3|mobile||": 120000,
+          "baseline|EDU-C3|desktop||": 80000,
+          "baseline|EDU-C4|mobile||": 120000,
+          "baseline|EDU-C4|desktop||": 80000,
+          "baseline|EDU-C5|mobile||": 120000,
+          "baseline|EDU-C5|desktop||": 80000,
+          "baseline|EDU-C6|mobile||": 120000,
+          "baseline|EDU-C6|desktop||": 80000,
+          "current|EDU-C1|mobile||": 108000,
+          "current|EDU-C1|desktop||": 72000,
+          "current|EDU-C2|mobile||": 12000,
+          "current|EDU-C2|desktop||": 8000,
+          "current|EDU-C3|mobile||": 108000,
+          "current|EDU-C3|desktop||": 72000,
+          "current|EDU-C4|mobile||": 12000,
+          "current|EDU-C4|desktop||": 8000,
+          "current|EDU-C5|mobile||": 108000,
+          "current|EDU-C5|desktop||": 72000,
+          "current|EDU-C6|mobile||": 12000,
+          "current|EDU-C6|desktop||": 8000
+        }
+      ],
+      [
+        "breakdowns",
+        {
+          "baseline|EDU-C1|mobile|product|EDU-P1": 33336,
+          "baseline|EDU-C1|mobile|product|EDU-P2": 53334,
+          "baseline|EDU-C1|mobile|product|EDU-P3": 33330,
+          "baseline|EDU-C1|mobile|traffic|core": 60004,
+          "baseline|EDU-C1|mobile|traffic|extended": 59996,
+          "baseline|EDU-C1|desktop|product|EDU-P1": 26672,
+          "baseline|EDU-C1|desktop|product|EDU-P2": 26665,
+          "baseline|EDU-C1|desktop|product|EDU-P3": 26663,
+          "baseline|EDU-C1|desktop|traffic|core": 40004,
+          "baseline|EDU-C1|desktop|traffic|extended": 39996,
+          "baseline|EDU-C2|mobile|product|EDU-P1": 40005,
+          "baseline|EDU-C2|mobile|product|EDU-P2": 40000,
+          "baseline|EDU-C2|mobile|product|EDU-P3": 39995,
+          "baseline|EDU-C2|mobile|traffic|core": 60004,
+          "baseline|EDU-C2|mobile|traffic|extended": 59996,
+          "baseline|EDU-C2|desktop|product|EDU-P1": 20001,
+          "baseline|EDU-C2|desktop|product|EDU-P2": 40000,
+          "baseline|EDU-C2|desktop|product|EDU-P3": 19999,
+          "baseline|EDU-C2|desktop|traffic|core": 40004,
+          "baseline|EDU-C2|desktop|traffic|extended": 39996,
+          "baseline|EDU-C3|mobile|product|EDU-P1": 33336,
+          "baseline|EDU-C3|mobile|product|EDU-P2": 53334,
+          "baseline|EDU-C3|mobile|product|EDU-P3": 33330,
+          "baseline|EDU-C3|mobile|traffic|core": 60004,
+          "baseline|EDU-C3|mobile|traffic|extended": 59996,
+          "baseline|EDU-C3|desktop|product|EDU-P1": 26672,
+          "baseline|EDU-C3|desktop|product|EDU-P2": 26665,
+          "baseline|EDU-C3|desktop|product|EDU-P3": 26663,
+          "baseline|EDU-C3|desktop|traffic|core": 40004,
+          "baseline|EDU-C3|desktop|traffic|extended": 39996,
+          "baseline|EDU-C4|mobile|product|EDU-P1": 40005,
+          "baseline|EDU-C4|mobile|product|EDU-P2": 40000,
+          "baseline|EDU-C4|mobile|product|EDU-P3": 39995,
+          "baseline|EDU-C4|mobile|traffic|core": 60004,
+          "baseline|EDU-C4|mobile|traffic|extended": 59996,
+          "baseline|EDU-C4|desktop|product|EDU-P1": 20001,
+          "baseline|EDU-C4|desktop|product|EDU-P2": 40000,
+          "baseline|EDU-C4|desktop|product|EDU-P3": 19999,
+          "baseline|EDU-C4|desktop|traffic|core": 40004,
+          "baseline|EDU-C4|desktop|traffic|extended": 39996,
+          "baseline|EDU-C5|mobile|product|EDU-P1": 33336,
+          "baseline|EDU-C5|mobile|product|EDU-P2": 53334,
+          "baseline|EDU-C5|mobile|product|EDU-P3": 33330,
+          "baseline|EDU-C5|mobile|traffic|core": 60004,
+          "baseline|EDU-C5|mobile|traffic|extended": 59996,
+          "baseline|EDU-C5|desktop|product|EDU-P1": 26672,
+          "baseline|EDU-C5|desktop|product|EDU-P2": 26665,
+          "baseline|EDU-C5|desktop|product|EDU-P3": 26663,
+          "baseline|EDU-C5|desktop|traffic|core": 40004,
+          "baseline|EDU-C5|desktop|traffic|extended": 39996,
+          "baseline|EDU-C6|mobile|product|EDU-P1": 40005,
+          "baseline|EDU-C6|mobile|product|EDU-P2": 40000,
+          "baseline|EDU-C6|mobile|product|EDU-P3": 39995,
+          "baseline|EDU-C6|mobile|traffic|core": 60004,
+          "baseline|EDU-C6|mobile|traffic|extended": 59996,
+          "baseline|EDU-C6|desktop|product|EDU-P1": 20001,
+          "baseline|EDU-C6|desktop|product|EDU-P2": 40000,
+          "baseline|EDU-C6|desktop|product|EDU-P3": 19999,
+          "baseline|EDU-C6|desktop|traffic|core": 40004,
+          "baseline|EDU-C6|desktop|traffic|extended": 39996,
+          "current|EDU-C1|mobile|product|EDU-P1": 33752,
+          "current|EDU-C1|mobile|product|EDU-P2": 40500,
+          "current|EDU-C1|mobile|product|EDU-P3": 33748,
+          "current|EDU-C1|mobile|traffic|core": 54004,
+          "current|EDU-C1|mobile|traffic|extended": 53996,
+          "current|EDU-C1|desktop|product|EDU-P1": 19638,
+          "current|EDU-C1|desktop|product|EDU-P2": 32728,
+          "current|EDU-C1|desktop|product|EDU-P3": 19634,
+          "current|EDU-C1|desktop|traffic|core": 36004,
+          "current|EDU-C1|desktop|traffic|extended": 35996,
+          "current|EDU-C2|mobile|product|EDU-P1": 0,
+          "current|EDU-C2|mobile|product|EDU-P2": 12000,
+          "current|EDU-C2|mobile|product|EDU-P3": 0,
+          "current|EDU-C2|mobile|traffic|core": 6004,
+          "current|EDU-C2|mobile|traffic|extended": 5996,
+          "current|EDU-C2|desktop|product|EDU-P1": 2402,
+          "current|EDU-C2|desktop|product|EDU-P2": 3200,
+          "current|EDU-C2|desktop|product|EDU-P3": 2398,
+          "current|EDU-C2|desktop|traffic|core": 4005,
+          "current|EDU-C2|desktop|traffic|extended": 3995,
+          "current|EDU-C3|mobile|product|EDU-P1": 33752,
+          "current|EDU-C3|mobile|product|EDU-P2": 40500,
+          "current|EDU-C3|mobile|product|EDU-P3": 33748,
+          "current|EDU-C3|mobile|traffic|core": 54004,
+          "current|EDU-C3|mobile|traffic|extended": 53996,
+          "current|EDU-C3|desktop|product|EDU-P1": 19638,
+          "current|EDU-C3|desktop|product|EDU-P2": 32728,
+          "current|EDU-C3|desktop|product|EDU-P3": 19634,
+          "current|EDU-C3|desktop|traffic|core": 36004,
+          "current|EDU-C3|desktop|traffic|extended": 35996,
+          "current|EDU-C4|mobile|product|EDU-P1": 0,
+          "current|EDU-C4|mobile|product|EDU-P2": 12000,
+          "current|EDU-C4|mobile|product|EDU-P3": 0,
+          "current|EDU-C4|mobile|traffic|core": 6004,
+          "current|EDU-C4|mobile|traffic|extended": 5996,
+          "current|EDU-C4|desktop|product|EDU-P1": 2402,
+          "current|EDU-C4|desktop|product|EDU-P2": 3200,
+          "current|EDU-C4|desktop|product|EDU-P3": 2398,
+          "current|EDU-C4|desktop|traffic|core": 4005,
+          "current|EDU-C4|desktop|traffic|extended": 3995,
+          "current|EDU-C5|mobile|product|EDU-P1": 33752,
+          "current|EDU-C5|mobile|product|EDU-P2": 40500,
+          "current|EDU-C5|mobile|product|EDU-P3": 33748,
+          "current|EDU-C5|mobile|traffic|core": 54004,
+          "current|EDU-C5|mobile|traffic|extended": 53996,
+          "current|EDU-C5|desktop|product|EDU-P1": 19638,
+          "current|EDU-C5|desktop|product|EDU-P2": 32728,
+          "current|EDU-C5|desktop|product|EDU-P3": 19634,
+          "current|EDU-C5|desktop|traffic|core": 36004,
+          "current|EDU-C5|desktop|traffic|extended": 35996,
+          "current|EDU-C6|mobile|product|EDU-P1": 0,
+          "current|EDU-C6|mobile|product|EDU-P2": 12000,
+          "current|EDU-C6|mobile|product|EDU-P3": 0,
+          "current|EDU-C6|mobile|traffic|core": 6004,
+          "current|EDU-C6|mobile|traffic|extended": 5996,
+          "current|EDU-C6|desktop|product|EDU-P1": 2402,
+          "current|EDU-C6|desktop|product|EDU-P2": 3200,
+          "current|EDU-C6|desktop|product|EDU-P3": 2398,
+          "current|EDU-C6|desktop|traffic|core": 4005,
+          "current|EDU-C6|desktop|traffic|extended": 3995
+        }
+      ]
+    ],
+    "unchangedCostRowsSha256": "877e1320492de767ef1a5d2c5d34bb06bd10498360416b449abaf1ed7c29a0fe"
+  }
+}
