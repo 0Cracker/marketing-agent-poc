@@ -22,10 +22,11 @@ function statusFor(code){
 // Loopback development API. Session capability + exact Origin/Host checks prevent
 // another website from using a browser to approve local changes. Model and key
 // selection stay server-side. Live Ads and arbitrary tool endpoints stay disabled.
-export function createAgentServer(_flow,{origins=['http://127.0.0.1:5173','http://localhost:5173'],runtimeInfo={mode:'offline_model_substitute',externalModelEnabled:false},roasChat}={}){
+export function createAgentServer(_flow,{origins=['http://127.0.0.1:5173','http://localhost:5173'],runtimeInfo={mode:'offline_model_substitute',externalModelEnabled:false},roasChat,runRoutes}={}){
   requireThat(['offline_model_substitute','remote_model'].includes(runtimeInfo.mode)&&runtimeInfo.externalModelEnabled===(runtimeInfo.mode==='remote_model'),'provider_configuration');
   const sessionInfo={mode:runtimeInfo.mode,externalModelEnabled:runtimeInfo.externalModelEnabled,...(runtimeInfo.dataHash?{dataHash:runtimeInfo.dataHash,dataContract:runtimeInfo.dataContract}:{}),...(runtimeInfo.models?{models:{analysis:runtimeInfo.models.analysis,budget:runtimeInfo.models.budget}}:{})};
   const token=randomBytes(32).toString('hex');
+  const runs=typeof runRoutes==='function'?runRoutes({token,origins}):runRoutes;
   const server=http.createServer(async(req,res)=>{
     try{
       const port=server.address()?.port;
@@ -47,6 +48,7 @@ export function createAgentServer(_flow,{origins=['http://127.0.0.1:5173','http:
       }
       const url=new URL(req.url,'http://127.0.0.1');
       if(req.method==='GET'&&url.pathname==='/agent-api/session')return json(res,200,{token,...sessionInfo,realAdsEnabled:false});
+      if(runs&&await runs.handle(req,res))return;
       const supplied=Buffer.from(String(req.headers['x-agent-token']||''));
       const expected=Buffer.from(token);requireThat(supplied.length===expected.length&&timingSafeEqual(supplied,expected),'csrf_denied');
       if(req.method==='POST'&&url.pathname==='/agent-api/roas/chat'){

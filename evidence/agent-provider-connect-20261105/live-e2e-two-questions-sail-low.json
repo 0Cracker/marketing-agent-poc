@@ -1,0 +1,831 @@
+{
+  "date": "2026-11-05",
+  "mode": "actual_http_sqlite_tools_and_live_model_transports",
+  "note": "Diagnostic-only explicit live authorization bypasses the normal unverified-billing guard. This is NOT a vendor billing proof.",
+  "providerReadiness": [
+    {
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gateway",
+      "model": "zai/glm-5.3-flash",
+      "configured": false,
+      "eligible": false,
+      "reason": "missing_key"
+    },
+    {
+      "provider": "sail",
+      "model": "zai-org/GLM-5.3-Flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "jev",
+      "model": "jev-latest",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    }
+  ],
+  "results": [
+    {
+      "question": "ROAS가 떨어진 이유에 대해서 각 지표별로 연관시켜서 심층분석해줘. 그리고 이를 보완하려면 어떤 캠페인에서 어떤 후속 액션을취하는게 좋아?",
+      "index": 1,
+      "runId": "91577141-0d48-4589-9d8f-99241cd48a01",
+      "route": "deep",
+      "status": "withheld",
+      "stopReason": "call_limit",
+      "causeStatus": "undetermined",
+      "elapsedMs": 196121,
+      "usage": {
+        "modelAttempts": 6,
+        "inputTokens": 75276,
+        "outputTokens": 15772,
+        "toolCalls": 6
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 81,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 276
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 35,
+          "count": 6
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 13,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 14,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 5620
+        },
+        {
+          "seq": 15,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 16,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 112,
+          "count": 6
+        },
+        {
+          "seq": 17,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 112,
+          "count": 6
+        },
+        {
+          "seq": 18,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 111,
+          "count": 6
+        },
+        {
+          "seq": 19,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 112,
+          "count": 6
+        },
+        {
+          "seq": 20,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 21,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 22,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 5356
+        },
+        {
+          "seq": 23,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 24,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 25,
+          "kind": "model_success",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 71454
+        },
+        {
+          "seq": 26,
+          "kind": "stage",
+          "stage": "verifying"
+        },
+        {
+          "seq": 27,
+          "kind": "verification",
+          "stage": "verifying",
+          "status": "withheld",
+          "errorCode": "invalid_final_schema",
+          "count": 0
+        },
+        {
+          "seq": 28,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 29,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 30,
+          "kind": "model_success",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 66442
+        },
+        {
+          "seq": 31,
+          "kind": "stage",
+          "stage": "verifying"
+        },
+        {
+          "seq": 32,
+          "kind": "verification",
+          "stage": "verifying",
+          "status": "withheld",
+          "errorCode": "invalid_final_schema",
+          "count": 0
+        },
+        {
+          "seq": 33,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 34,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 35,
+          "kind": "model_success",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 45266
+        },
+        {
+          "seq": 36,
+          "kind": "stage",
+          "stage": "verifying"
+        },
+        {
+          "seq": 37,
+          "kind": "verification",
+          "stage": "verifying",
+          "status": "withheld",
+          "errorCode": "invalid_final_schema",
+          "count": 0
+        },
+        {
+          "seq": 38,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "withheld",
+          "errorCode": "call_limit"
+        }
+      ],
+      "result": null
+    },
+    {
+      "question": "각 캠페인별 ROAS 추이 어떻게 되는지 정리해줘.",
+      "index": 2,
+      "runId": "ea616b22-5363-4128-932b-0a24c7d6d000",
+      "route": "deep",
+      "status": "completed",
+      "stopReason": "gemini_sufficient",
+      "causeStatus": "not_assessed",
+      "elapsedMs": 35543,
+      "usage": {
+        "modelAttempts": 3,
+        "inputTokens": 11376,
+        "outputTokens": 2462,
+        "toolCalls": 3
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 32,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 241
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "trend",
+          "status": "ready",
+          "elapsedMs": 52,
+          "count": 24
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 13,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 26,
+          "count": 6
+        },
+        {
+          "seq": 14,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 15,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 16,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 3183
+        },
+        {
+          "seq": 17,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 18,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 19,
+          "kind": "model_success",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 31249
+        },
+        {
+          "seq": 20,
+          "kind": "stage",
+          "stage": "verifying"
+        },
+        {
+          "seq": 21,
+          "kind": "verification",
+          "stage": "verifying",
+          "status": "completed",
+          "count": 15
+        },
+        {
+          "seq": 22,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "completed",
+          "errorCode": "gemini_sufficient"
+        }
+      ],
+      "result": {
+        "evidenceIds": [
+          "EV-3d982784ffd4-1",
+          "EV-3d982784ffd4-2"
+        ],
+        "limitations": [],
+        "verification": {
+          "passed": true
+        },
+        "answer": "캠페인별 ROAS 추이는 이번 실행 데이터로는 확정할 수 없으며, 전체 ROAS는 기간 약 355.79%에서 현재 약 284.72%로 -71.07%p 하락했습니다. 캠페인 차원 재조회 후 세부 정리를 이어가는 것을 권고합니다.\n전체 ROAS는 기간 약 355.79%에서 현재 약 284.72%로 -71.07%p 하락했습니다.\n하락 배경: 집행비 +61.57%, 매출 +29.29%로 광고비 증가분이 매출 증가를 따라가지 못했습니다.\n클릭은 +44.12% 늘었지만 CVR은 -0.73%p 하락해 효율 저하가 확인됩니다.\n캠페인별 세부 수치는 이번 실행에서 반환되지 않아 후속 조회(metric_detail: roas × campaign)가 필요합니다.\nscope.metric=roas로 전체 ROAS 개요와 추이, 캠페인 차원 상세 조회가 실행되었습니다.\n캠페인 차원 결과의 개별 수치가 이 응답에 포함되지 않아 검증된 캠페인별 ROAS 값을 인용할 수 없습니다.\n검증된 개요 수치(전체 ROAS, spend, revenue, clicks, cvr 등)만 근거로 사용했습니다.\n캠페인별 정리는 추가 도구 조회로만 산출 가능하며 원문 데이터 임의 생성은 배제했습니다.\nmetric_detail(지표 roas, 차원 campaign)을 재조회해 캠페인별 기간 대비 ROAS를 확정합니다.\n필요 시 trend를 캠페인 차원으로 재요청해 일별 ROAS 추이를 확인합니다.\nROAS 하락 캠페인이 확인되면 해당 캠페인의 집행비·전환 데이터를 교차 검증합니다.\n캠페인별 ROAS 수치는 이번 실행에서 검증된 형태로 제공되지 않아 산출하지 않았습니다.\n원인 규칙은 평가 대상이 아니며 개요 수치는 상관 관계만 보여줍니다.\n비용은 유료 집행비 기준이며 고정 협업비·제작비·제품 제공 원가는 제외됩니다.",
+        "sections": {
+          "conclusion": "캠페인별 ROAS 추이는 이번 실행 데이터로는 확정할 수 없으며, 전체 ROAS는 기간 약 355.79%에서 현재 약 284.72%로 -71.07%p 하락했습니다. 캠페인 차원 재조회 후 세부 정리를 이어가는 것을 권고합니다.",
+          "summary": [
+            "전체 ROAS는 기간 약 355.79%에서 현재 약 284.72%로 -71.07%p 하락했습니다.",
+            "하락 배경: 집행비 +61.57%, 매출 +29.29%로 광고비 증가분이 매출 증가를 따라가지 못했습니다.",
+            "클릭은 +44.12% 늘었지만 CVR은 -0.73%p 하락해 효율 저하가 확인됩니다.",
+            "캠페인별 세부 수치는 이번 실행에서 반환되지 않아 후속 조회(metric_detail: roas × campaign)가 필요합니다."
+          ],
+          "reasoning": [
+            "scope.metric=roas로 전체 ROAS 개요와 추이, 캠페인 차원 상세 조회가 실행되었습니다.",
+            "캠페인 차원 결과의 개별 수치가 이 응답에 포함되지 않아 검증된 캠페인별 ROAS 값을 인용할 수 없습니다.",
+            "검증된 개요 수치(전체 ROAS, spend, revenue, clicks, cvr 등)만 근거로 사용했습니다.",
+            "캠페인별 정리는 추가 도구 조회로만 산출 가능하며 원문 데이터 임의 생성은 배제했습니다."
+          ],
+          "actions": [
+            "metric_detail(지표 roas, 차원 campaign)을 재조회해 캠페인별 기간 대비 ROAS를 확정합니다.",
+            "필요 시 trend를 캠페인 차원으로 재요청해 일별 ROAS 추이를 확인합니다.",
+            "ROAS 하락 캠페인이 확인되면 해당 캠페인의 집행비·전환 데이터를 교차 검증합니다."
+          ],
+          "limitations": [
+            "캠페인별 ROAS 수치는 이번 실행에서 검증된 형태로 제공되지 않아 산출하지 않았습니다.",
+            "원인 규칙은 평가 대상이 아니며 개요 수치는 상관 관계만 보여줍니다.",
+            "비용은 유료 집행비 기준이며 고정 협업비·제작비·제품 제공 원가는 제외됩니다."
+          ]
+        }
+      }
+    }
+  ],
+  "providerTrace": [
+    {
+      "at": "2026-11-05T08:44:25.169Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:44:25.444Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 275
+    },
+    {
+      "at": "2026-11-05T08:44:25.626Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:44:31.245Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 5619
+    },
+    {
+      "at": "2026-11-05T08:44:32.079Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:44:37.434Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 5355
+    },
+    {
+      "at": "2026-11-05T08:44:37.506Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:45:48.959Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 71453
+    },
+    {
+      "at": "2026-11-05T08:45:48.980Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:46:55.421Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 66441
+    },
+    {
+      "at": "2026-11-05T08:46:55.444Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:47:40.709Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 45265
+    },
+    {
+      "at": "2026-11-05T08:47:41.116Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:47:41.356Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 240
+    },
+    {
+      "at": "2026-11-05T08:47:41.698Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:47:44.880Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 3182
+    },
+    {
+      "at": "2026-11-05T08:47:44.926Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:48:16.175Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 31249
+    }
+  ],
+  "transportTrace": [
+    {
+      "provider": "api.typesafe.ai",
+      "status": 200,
+      "actualModel": "jev-1.14.0",
+      "contentType": "undefined",
+      "contentLength": 0,
+      "jsonValid": false,
+      "usage": {
+        "input_tokens": 2486,
+        "output_tokens": 80
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 415,
+      "jsonValid": true,
+      "contentStart": "{\"decision\":\"continue\",\"toolCalls\":[{\"name\":\"metric_detail\",\"args\":{\"metric\":\"cvr\",\"dimension\":\"campaign\",\"scopeRole\":\"primary\"}},{\"name\":\"metric_detail\",\"args\":{\"metric\":\"spend\",\"dimension\":\"campaign",
+      "reasoningLength": 137,
+      "usage": {
+        "prompt_tokens": 7638,
+        "completion_tokens": 133,
+        "total_tokens": 7771,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 36
+        }
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 146,
+      "jsonValid": true,
+      "contentStart": "{\"decision\":\"continue\",\"toolCalls\":[{\"name\":\"metric_detail\",\"args\":{\"metric\":\"paymentFailureRate\",\"dimension\":\"campaign\",\"scopeRole\":\"primary\"}}]}",
+      "reasoningLength": 488,
+      "usage": {
+        "prompt_tokens": 14786,
+        "completion_tokens": 133,
+        "total_tokens": 14919,
+        "prompt_tokens_details": {
+          "cached_tokens": 7168
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 101
+        }
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 11884,
+      "jsonValid": true,
+      "contentStart": "{\n  \"sections\": {\n    \"summary\": [\n      \"ROAS가 355.8%에서 284.7%로 -71.07%p 하락했습니다. 하락의 구조는 ① 매체 캠페인 집행비 급증(전체 spend +61.6%), ② CPC +12.1% 상승, ③ CVR -0.73%p 하락이 결합된 결과입니다.\",\n      \"캠페인별로 보면 집행비를 늘린 4개 매",
+      "reasoningLength": 801,
+      "usage": {
+        "prompt_tokens": 16784,
+        "completion_tokens": 5997,
+        "total_tokens": 22781,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 209
+        }
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 10354,
+      "jsonValid": true,
+      "contentStart": "{\"sections\":{\"summary\":[\"전체 ROAS는 355.8%에서 284.7%로 -71.07%p 하락했다. 매출은 +29.3% 증가했지만 집행비가 +61.6% 증가해 분모 증가가 더 컸다.\",\"클릭은 +44.1% 증가했으나 CVR은 4.89%에서 4.16%로 -0.73%p 하락했고, CPC는 531.9원에서 596.3원으로 +12.1% 상승해 C",
+      "reasoningLength": 944,
+      "usage": {
+        "prompt_tokens": 16791,
+        "completion_tokens": 5545,
+        "total_tokens": 22336,
+        "prompt_tokens_details": {
+          "cached_tokens": 16384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 243
+        }
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 7372,
+      "jsonValid": true,
+      "contentStart": "{\"runId\":\"91577141-0d48-4589-9d8f-99241cd48a01\",\"sections\":{\"summary\":[\"ROAS가 355.8%에서 284.7%로 -71.1%p 하락한 원인은 유료 마케팅 집행비가 61.6% 증가한 반면 매출은 29.3%만 증가한 데 있습니다.\",\"CVR이 4.89%에서 4.16%로 0.73%p 하락했고, CPC도 5",
+      "usage": {
+        "prompt_tokens": 16791,
+        "completion_tokens": 3884,
+        "total_tokens": 20675,
+        "prompt_tokens_details": {
+          "cached_tokens": 16769
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1
+        }
+      }
+    },
+    {
+      "provider": "api.typesafe.ai",
+      "status": 200,
+      "actualModel": "jev-1.14.0",
+      "contentType": "undefined",
+      "contentLength": 0,
+      "jsonValid": false,
+      "usage": {
+        "input_tokens": 2448,
+        "output_tokens": 79
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 32,
+      "jsonValid": true,
+      "contentStart": "{\"decision\":\"gemini_sufficient\"}",
+      "reasoningLength": 216,
+      "usage": {
+        "prompt_tokens": 3487,
+        "completion_tokens": 53,
+        "total_tokens": 3540,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 44
+        }
+      }
+    },
+    {
+      "provider": "api.sailresearch.com",
+      "status": 200,
+      "actualModel": "zai-org/GLM-5.3-Flash",
+      "finishReason": "stop",
+      "contentType": "string",
+      "contentLength": 4461,
+      "jsonValid": true,
+      "contentStart": "{\n  \"runId\": \"ea616b22-5363-4128-932b-0a24c7d6d000\",\n  \"scope\": {\n    \"caseId\": \"S16\",\n    \"snapshot\": \"initial\",\n    \"metric\": \"roas\",\n    \"screenTitle\": \"Performance Overview\",\n    \"filters\": {\"chan",
+      "reasoningLength": 668,
+      "usage": {
+        "prompt_tokens": 5441,
+        "completion_tokens": 2330,
+        "total_tokens": 7771,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 132
+        }
+      }
+    }
+  ]
+}

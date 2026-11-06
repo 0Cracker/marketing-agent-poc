@@ -1,3 +1,5 @@
+import type {RunRequest,RunState,RunExecutionStatus} from './agent-run';
+
 export type AgentScope={batch:string;country:string;scopeId:string;productIds:string[];start:string;end:string;asOf:string;dataHash?:string};
 export type ScreenSelection={dataset:string;country:string;month:string;productIds:string[];asOf:string;dataHash?:string;period?:{start:string;end:string}};
 export type Fact={id:string;recordId:string;field:string;value:string|number|null;unit:string;product?:string;availability?:string};
@@ -41,10 +43,25 @@ export function createAgentClient(fetcher:typeof fetch=fetch,base='/agent-api'){
     if(!response.ok)throw Error(data.error||'server_error');return data;
   }
   async function run(path:string,body?:unknown){const data=await request(path,body) as Envelope;if(!data.run?.id||!data.run.status)throw Error('response_invalid');return data.run;}
-  return {session,roasChat:async(body:unknown)=>await request('/roas/chat',body) as RoasAnswer,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
+  async function startRoasRun(payload:RunRequest){
+    const data=await request('/roas/runs',payload) as {runId?:string;executionStatus?:RunExecutionStatus};
+    if(!data.runId||!data.executionStatus)throw Error('response_invalid');
+    return {runId:data.runId,executionStatus:data.executionStatus};
+  }
+  async function getRoasRun(runId:string){
+    const state=await request('/roas/runs/'+encodeURIComponent(runId)) as RunState;
+    if(state.runId!==runId||!state.executionStatus)throw Error('response_invalid');
+    return state;
+  }
+  async function cancelRoasRun(runId:string){
+    const state=await request('/roas/runs/'+encodeURIComponent(runId)+'/cancel',{}) as RunState;
+    if(state.runId!==runId||!state.executionStatus)throw Error('response_invalid');
+    return state;
+  }
+  return {session,startRoasRun,getRoasRun,cancelRoasRun,roasChat:async(body:unknown)=>await request('/roas/chat',body) as RoasAnswer,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
     action:(id:string,action:'approve'|'reject'|'revise'|'resume'|'cancel',body:unknown)=>run(`/runs/${encodeURIComponent(id)}/${action}`,body),
     budgetInputs:async(id:string)=>await request(`/runs/${encodeURIComponent(id)}/budget-inputs`) as BudgetInputs,
     evidence:async(id:string,ids:string[])=>await request(`/runs/${encodeURIComponent(id)}/evidence`,{ids}) as {records:Record<string,unknown>[]}};
 }
 
-export const errorText=(code:string)=>({quota_exhausted:'모델 호출 한도에 도달했습니다. 다른 키로 자동 재시도하지 않습니다. 한도 회복 후 저장된 실행을 재개해 주세요.',model_unavailable:'모델 공급자가 일시적으로 응답할 수 없습니다. 저장된 실행은 유지됩니다. 잠시 기다린 뒤 직접 재개해 주세요. 자동 재시도하지 않습니다.',model_timeout:'모델 응답 시간이 초과됐습니다. 저장된 실행을 확인한 뒤 재개할 수 있습니다.',model_protocol:'모델 응답 형식을 검증하지 못해 결과를 보류했습니다.',model_context_limit:'모델에 전달할 자료가 현재 제한을 넘었습니다. 제품·기간 범위를 좁혀 주세요.',model_failed:'모델 호출을 완료하지 못했습니다. 저장된 실행과 연결 상태를 확인해 주세요.',provider_configuration:'서버의 모델·키 선택 설정을 확인해 주세요.',analysis_changed:'후속 분석으로 근거가 바뀌어 기존 제안과 승인이 무효화됐습니다. 최신 분석으로 예산을 다시 검토해 주세요.',proposal_revised:'제안이 수정돼 기존 승인이 무효화됐습니다.',server_unavailable:'분석 서버에 연결할 수 없습니다. 서버 실행 상태를 확인한 뒤 다시 연결해 주세요.',request_outcome_unknown:'응답을 받지 못했습니다. 같은 변경을 반복하기 전에 저장된 실행을 다시 확인해 주세요.',inputs_changed:'자료가 변경되어 이전 실행은 만료됐습니다. 화면과 서버의 통합 자료를 맞춘 뒤 새 분석을 시작해 주세요.',unsupported_dataset:'현재 통합 자료에서 분석을 시작해 주세요.',scope_country:'국가 하나를 선택해 주세요.',scope_month:'분석할 기준월을 선택해 주세요.',scope_products:'분석할 제품을 선택해 주세요.',scope_asof:'화면의 조회 기준시각을 확인할 수 없습니다.',version_conflict:'다른 요청에서 내용이 바뀌었습니다. 저장된 결과를 다시 불러와 주세요.',analysis_stale:'분석이 변경됐습니다. 최신 분석으로 예산을 다시 검토해 주세요.',data_unavailable:'선택한 시점에 사용할 수 있는 자료가 없습니다.',period_incomparable:'선택 기간을 같은 기준으로 비교할 수 없습니다.',budget_inputs_missing:'이 범위에서 사용할 예산 후보·모형·정책이 부족합니다.',approval_expired:'승인 유효기간이 지났습니다.',proposal_not_editable:'이미 처리 중이거나 무효화된 제안은 수정할 수 없습니다.',response_invalid:'서버 응답을 확인할 수 없습니다. 저장된 실행을 다시 확인해 주세요.'} as Record<string,string>)[code]||'요청을 처리하지 못했습니다. 범위와 저장된 결과를 확인해 주세요.';
+export const errorText=(code:string)=>({quota_exhausted:'모델 호출 한도에 도달했습니다. 다른 키로 자동 재시도하지 않습니다. 한도 회복 후 저장된 실행을 재개해 주세요.',models_unavailable:'사용 가능한 모델이 없어 분석을 완료하지 못했습니다. 연결 상태와 모델 설정을 확인해 주세요.',gateway_not_configured:'QA 인증 게이트웨이가 구성되지 않았습니다. 운영자에게 문의해 주세요.',gateway_disconnected:'QA 인증 게이트웨이에 연결할 수 없습니다.',authentication_required:'분석 권한을 확인하지 못했습니다. QA 접속 인증을 확인해 주세요.',idempotency_conflict:'같은 요청 ID로 다른 분석이 요청됐습니다. 기존 실행 상태를 확인해 주세요.',run_in_progress:'이 대화에서 분석이 진행 중입니다. 기존 실행을 확인하거나 취소해 주세요.',concurrency_limited:'동시 분석 수를 초과했습니다. 진행 중인 실행을 먼저 확인해 주세요.',rate_limited:'요청 횟수 제한에 도달했습니다. 잠시 뒤 다시 시도해 주세요.',model_budget_exhausted:'공용 QA 모델 호출 한도에 도달했습니다.',model_unavailable:'모델 공급자가 일시적으로 응답할 수 없습니다. 저장된 실행은 유지됩니다. 잠시 기다린 뒤 직접 재개해 주세요. 자동 재시도하지 않습니다.',model_timeout:'모델 응답 시간이 초과됐습니다. 저장된 실행을 확인한 뒤 재개할 수 있습니다.',model_protocol:'모델 응답 형식을 검증하지 못해 결과를 보류했습니다.',model_context_limit:'모델에 전달할 자료가 현재 제한을 넘었습니다. 제품·기간 범위를 좁혀 주세요.',model_failed:'모델 호출을 완료하지 못했습니다. 저장된 실행과 연결 상태를 확인해 주세요.',provider_configuration:'서버의 모델·키 선택 설정을 확인해 주세요.',analysis_changed:'후속 분석으로 근거가 바뀌어 기존 제안과 승인이 무효화됐습니다. 최신 분석으로 예산을 다시 검토해 주세요.',proposal_revised:'제안이 수정돼 기존 승인이 무효화됐습니다.',server_unavailable:'분석 서버에 연결할 수 없습니다. 서버 실행 상태를 확인한 뒤 다시 연결해 주세요.',request_outcome_unknown:'응답을 받지 못했습니다. 같은 변경을 반복하기 전에 저장된 실행을 다시 확인해 주세요.',inputs_changed:'자료가 변경되어 이전 실행은 만료됐습니다. 화면과 서버의 통합 자료를 맞춘 뒤 새 분석을 시작해 주세요.',unsupported_dataset:'현재 통합 자료에서 분석을 시작해 주세요.',scope_country:'국가 하나를 선택해 주세요.',scope_month:'분석할 기준월을 선택해 주세요.',scope_products:'분석할 제품을 선택해 주세요.',scope_asof:'화면의 조회 기준시각을 확인할 수 없습니다.',version_conflict:'다른 요청에서 내용이 바뀌었습니다. 저장된 결과를 다시 불러와 주세요.',analysis_stale:'분석이 변경됐습니다. 최신 분석으로 예산을 다시 검토해 주세요.',data_unavailable:'선택한 시점에 사용할 수 있는 자료가 없습니다.',period_incomparable:'선택 기간을 같은 기준으로 비교할 수 없습니다.',budget_inputs_missing:'이 범위에서 사용할 예산 후보·모형·정책이 부족합니다.',approval_expired:'승인 유효기간이 지났습니다.',proposal_not_editable:'이미 처리 중이거나 무효화된 제안은 수정할 수 없습니다.',response_invalid:'서버 응답을 확인할 수 없습니다. 저장된 실행을 다시 확인해 주세요.'} as Record<string,string>)[code]||'요청을 처리하지 못했습니다. 범위와 저장된 결과를 확인해 주세요.';
