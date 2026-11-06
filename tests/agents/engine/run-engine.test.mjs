@@ -18,7 +18,7 @@ function harness({pick=poolCandidates,invoke=()=>goodFinish(),tool=(job)=>job.na
   job.name==='review_summary'?{status:'not_provided',evidenceIds:[]}:
   job.name==='metric_detail'?{status:'ready',metric:'roas',periods:[{id:'current',value:3,numerator:300,denominator:100,evidenceId:'metric:current'}]}:
   job.name==='evidence'?{status:'ready',items:job.args.evidenceIds,evidenceIds:job.args.evidenceIds}:
-  {status:'empty',rows:[]},verify=()=>({valid:true}),clock=Date.now}={}) {
+  {status:'empty',rows:[]},clock=Date.now}={}) {
  const invoked=[],tools=[],factories=[],disposed=[];
  const providerPool={eligibleCandidates:({role})=>pick[role]||[],invokeOnce:async args=>{
    invoked.push(args);return {output:await invoke(args,invoked.length),actualModel:args.candidate.model,usage:{inputTokens:10,outputTokens:12}};
@@ -26,7 +26,7 @@ function harness({pick=poolCandidates,invoke=()=>goodFinish(),tool=(job)=>job.na
  const toolRuntimeFactory=async args=>{
    factories.push(args);
    return {metricCatalog:()=>({metrics:['roas']}),toolSchemas:()=>[{name:'metric_detail'}],
-     execute:async job=>{tools.push(job);return tool(job);},verifyEvidence:verify,
+     execute:async job=>{tools.push(job);return tool(job);},
      dispose:async()=>{disposed.push(args.runId);}};
  };
  const engine=createRunEngine({providerPool,toolRuntimeFactory,clock});
@@ -59,7 +59,8 @@ test('quick: prefetches overview AND review summary, one normal model, persists 
  assert.equal(end.usage.normalAttempts,1);assert.equal(end.usage.exceptionAttempts,0);
  assert.equal(h.factories.length,1);assert.equal(h.disposed.length,1);
  assert(end.events.some(e=>e.kind==='tool_result'&&e.tool==='review_summary'&&e.status==='not_provided'));
- assert(end.events.some(e=>e.kind==='verification'&&e.status==='completed'));
+ assert(!end.events.some(e=>e.kind==='verification'));
+ assert.equal(end.result.answer,goodFinish());
  assert.deepEqual(end.events.map(x=>x.seq),end.events.map((_x,i)=>i+1));
  assert(!JSON.stringify(end.events).includes('instruction'));
  assert(!JSON.stringify(end).includes('apiKey'));
@@ -145,7 +146,7 @@ test('deep: quota switch shares one run/snapshot/evidence without reloading, tot
  assert.deepEqual(h.invoked.map(x=>x.candidate.model),['jev-choice','g-deep','v-deep','g-final']);
  assert.equal(end.usage.modelAttempts,4);
  assert.equal(h.factories.length,1);assert.equal(h.tools.filter(t=>t.name==='overview').length,1);
- assert.equal(end.result.evidenceIds.length,2);
+ assert(end.result.evidenceIds.includes('EV-current'));
 });
 
 test('deep: insufficient_evidence forbids subsequent tool reads, including any final answer tool requests',async()=>{
@@ -247,13 +248,13 @@ test('review category evidence IDs from nested evidenceIds remain citable',async
  assert(end.result.evidenceIds.includes('EV-review-category'));
 });
 
-test('core source-hash mismatch stops without any model invocation',async()=>{
+test('source hashes are metadata and do not block answer generation',async()=>{
  const h=harness({tool:job=>job.name==='overview'?{...overview,dataHash:'tampered'}:
    {status:'not_provided'}});
  const end=await done(h.engine,(await start(h.engine)).runId);
- assert.equal(end.runStatus,'withheld');
- assert.equal(end.stopReason,'validation_failed');
- assert.equal(h.invoked.length,0);
+ assert.equal(end.runStatus,'completed');
+ assert.equal(end.result.answer,goodFinish());
+ assert.equal(h.invoked.length,1);
 });
 
 

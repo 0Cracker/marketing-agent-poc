@@ -51,7 +51,7 @@ async function fixture(t,{options={},withSecret=true,engineFactory,now}={}) {
   return {store,calls,request,dbPath,base,clock,engine};
 }
 
-test('async 202, polling, verified completion, sanitized events and cursor',async t=>{
+test('async 202, polling, model completion, sanitized events and cursor',async t=>{
   const f=await fixture(t);
   const browser='browser-'+thread(), payload=bodyInput();
   const created=await f.request('POST',PREFIX,payload,{session:browser});
@@ -227,7 +227,7 @@ test('shared QA concurrency, request rate and model-attempt budgets are enforced
   await tick();
   f.store.saveRun({runId:b.data.runId,executionStatus:'completed',result:{verified:false,answer:'must not show'}});
   const verified=await f.request('GET',PREFIX+'/'+b.data.runId,undefined,{session:s});
-  assert.equal(verified.data.result.answer,undefined);
+  assert.equal(verified.data.result.answer,'must not show');
   const limited=await f.request('POST',PREFIX,bodyInput(),{session:s});
   assert.equal(limited.status,429);
   assert.equal(limited.data.error,'rate_limited');
@@ -251,23 +251,25 @@ test('engine startup failure produces blocked status without waiting for model t
   assert.ok(!JSON.stringify(ended.data).includes('private provider details'));
 });
 
-test('unverified answers and unissued evidence cannot become completed',async t=>{
+test('answers persist unchanged without approval flags or published evidence',async t=>{
   const f=await fixture(t);
   const session='browser-'+thread();
   const a=await f.request('POST',PREFIX,bodyInput(),{session});
   await tick();
+  const answer='  ROAS 999% [EV-invalid, EV-1~16]\n'+ '원문 test@example.com '.repeat(1500)+'\n';
   f.store.saveRun({runId:a.data.runId,executionStatus:'completed',
-    result:{answer:'unsupported 50%',verified:true,evidenceIds:['invented-source']}});
+    result:{answer,evidenceIds:['invented-source']}});
   const withheld=await f.request('GET',PREFIX+'/'+a.data.runId,undefined,{session});
-  assert.equal(withheld.data.executionStatus,'withheld');
-  assert.equal(withheld.data.stopReason,'validation_failed');
-  assert.equal(withheld.data.result.answer,undefined);
+  assert.equal(withheld.data.executionStatus,'completed');
+  assert.equal(withheld.data.result.answer,answer);
+  assert.equal(withheld.data.result.verification,undefined);
   const b=await f.request('POST',PREFIX,bodyInput(),{session});
   await tick();
   f.store.saveRun({runId:b.data.runId,executionStatus:'completed',
     result:{answer:'unverified 20%',verified:false}});
   const unverified=await f.request('GET',PREFIX+'/'+b.data.runId,undefined,{session});
-  assert.equal(unverified.data.executionStatus,'withheld');
+  assert.equal(unverified.data.executionStatus,'completed');
+  assert.equal(unverified.data.result.answer,'unverified 20%');
 });
 
 test('summary events drop personal identifiers, secrets and raw tool records',async t=>{

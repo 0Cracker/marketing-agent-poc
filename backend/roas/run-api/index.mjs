@@ -149,7 +149,7 @@ export function createRunRoutes({engine,store,authContext}={}) {
           const scopeFingerprint=fingerprint(stable(input.scope));
           const claimed=store.claimRun({runId:randomUUID(),...user,threadId:input.threadId,clientRequestId:input.clientRequestId,inputHash,scope:input.scope,scopeFingerprint});
           if(!claimed.duplicate) {
-            // Non-blocking: C owns its snapshot, timers and verified result.
+            // Non-blocking: C owns its snapshot, execution and model result.
             void Promise.resolve().then(()=>engine.start({runId:claimed.runId,...input,accountId:user.accountId,browserId:user.browserId}))
               .then(run=>{
                 if(run?.runId&&run.runId!==claimed.runId)throw new RunApiError('engine_run_id_mismatch');

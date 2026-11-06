@@ -28,12 +28,14 @@ test('ROAS all eighteen cases and both snapshots reuse screen sums, with no muta
  }
 });
 
-test('ROAS rejects stale data, invalid cases/snapshots, forged filters and raw records before model calls',async()=>{
+test('ROAS rejects invalid query inputs but treats hashes as metadata',async()=>{
  let calls=0;const chat=createRoasChat({model:async()=>{calls++;return finish(['summary:current']);}});
  const input=request();
- for(const scope of [{...input.scope,caseId:'../secret'},{...input.scope,snapshot:'future'},{...input.scope,dataHash:'stale'},{...input.scope,filters:{...input.scope.filters,device:'tablet'}},{...input.scope,filters:{...input.scope.filters,campaignId:'missing'}},{...input.scope,filters:{...input.scope.filters,source:'secret'}}])await assert.rejects(chat({...input,scope}));
+ for(const scope of [{...input.scope,caseId:'../secret'},{...input.scope,snapshot:'future'},{...input.scope,filters:{...input.scope.filters,device:'tablet'}},{...input.scope,filters:{...input.scope.filters,campaignId:'missing'}},{...input.scope,filters:{...input.scope.filters,source:'secret'}}])await assert.rejects(chat({...input,scope}));
  await assert.rejects(chat({...input,rawRecords:[]}));await assert.rejects(chat({...input,question:''}));
  assert.equal(calls,0);
+ const stale=await chat({...input,scope:{...input.scope,dataHash:'stale'}});
+ assert.equal(stale.mode,'remote_model');
 });
 
 test('ROAS scoped model tools return only chosen campaign/device, use existing records, and retain followups',async()=>{
@@ -79,18 +81,22 @@ test('ROAS pagination, empty searches and all breakdown dimensions remain comple
  }})(input);
 });
 
-test('ROAS refuses invented citations, duplicate calls, invalid arguments and excess turns',async()=>{
+test('ROAS tool calls retain input checks without policing final content',async()=>{
  const input=request();
- const badCitation=finish(['summary:current']);badCitation.finish.reasoning=['보고 [invented]'];
- for(const model of [async()=>finish(['invented']),async()=>badCitation,async()=>({tool:'trend',args:{}}),async()=>({tool:'records',args:{limit:25}}),async()=>({tool:'records',args:{path:'../private'}}),async()=>({finish:{answer:'',evidenceIds:[]}})])await assert.rejects(createRoasChat({model})(input));
+ const badCitation=finish(['invented']);badCitation.finish.reasoning=['보고 [invented]'];
+ const direct=await createRoasChat({model:async()=>badCitation})(input);
+ assert.equal(direct.sections.reasoning[0],'보고 [invented]');
+ const markdown='ROAS 999% [EV-invalid]';
+ assert.equal((await createRoasChat({model:async()=>markdown})(input)).answer,markdown);
+ for(const model of [async()=>({tool:'trend',args:{}}),async()=>({tool:'records',args:{limit:25}}),async()=>({tool:'records',args:{path:'../private'}})])await assert.rejects(createRoasChat({model})(input));
  let offset=0;await assert.rejects(createRoasChat({model:async()=>({tool:'records',args:{offset:offset++,limit:1}})})(input),/roas_query_limit/);
 });
 
-test('ROAS grouped and numbered references normalize to retrieved source IDs',async()=>{
+test('ROAS grouped and numbered references remain exactly as written',async()=>{
  const action=finish(['summary:current']);action.finish.conclusion='확인 [1] [summary:baseline, summary:current]';
  const result=await createRoasChat({model:async()=>action})(request());
- assert.equal(result.sections.conclusion,'확인 [summary:current] [summary:baseline] [summary:current]');
- assert.deepEqual(result.sources.map(row=>row.id),['summary:current','summary:baseline']);
+ assert.equal(result.sections.conclusion,action.finish.conclusion);
+ assert.deepEqual(result.sources.map(row=>row.id),['summary:current']);
 });
 
 test('ROAS structured sections and comparison use actual source values, with reconstructable raw rows',async()=>{
@@ -104,9 +110,11 @@ test('ROAS structured sections and comparison use actual source values, with rec
  const mixed=[...result.sources,{...result.sources[0],id:'campaign:EDU-C1:baseline',kind:'breakdown',dimension:'campaign',key:'EDU-C1'}];assert.equal(chatComparison(mixed,'roas'),null);
  assert.equal(chatComparison(result.sources.slice(0,1),'roas'),null);
  for(const comparison of [{metric:'roas',sourceIds:['summary:current']},{metric:'none',sourceIds:['summary:current']},{metric:'none',sourceIds:[],highlights:['lowest_current']},{metric:'roas',sourceIds:['summary:baseline','summary:current'],values:[10,20]}]){
-  await assert.rejects(createRoasChat({model:async()=>({finish:{...action.finish,comparison}})})(input));
+  const response=await createRoasChat({model:async()=>({finish:{...action.finish,comparison}})})(input);
+  assert.equal(response.sections.conclusion,action.finish.conclusion);
  }
- await assert.rejects(createRoasChat({model:async()=>({finish:{...action.finish,actions:[]}})})(input),/model_protocol/);
+ const response=await createRoasChat({model:async()=>({finish:{...action.finish,actions:[]}})})(input);
+ assert.deepEqual(response.sections.actions,[]);
 });
 
 test('ROAS raw evidence matches every provided breakdown and selected device',async()=>{
@@ -131,17 +139,18 @@ test('ROAS comparison leaves zero-purchase AOV unavailable rather than drawing a
  assert.equal(result.comparison.rows[0].after,null);assert.equal(chatValue(result.comparison.rows[0].after,'aov'),'계산 불가');
 });
 
-test('ROAS ranking conclusions distinguish current minimum from largest decline and prevent cherry-picking',async()=>{
+test('ROAS supplies ranking calculations without rewriting or rejecting model conclusions',async()=>{
  const input=request();let saved;
  const chat=createRoasChat({model:async context=>{
   assert(context.rankingFacts.some(text=>text.includes('Instagram 피드')&&text.includes('120.7%')));
   const ids=context.campaigns.map(row=>row.id),action=finish(ids);action.finish.comparison={metric:'roas',sourceIds:ids,highlights:['lowest_current','largest_decline']};saved=action;return action;
  }});
  const result=await chat(input);
- assert.match(result.sections.conclusion,/Instagram 피드.*120\.7%/);assert.match(result.sections.conclusion,/검색 A.*-218%p/);
+ assert.equal(result.sections.conclusion,saved.finish.conclusion);
  assert.equal(chatHighlights(result.comparison,['lowest_current']).length,1);
  const partial={...saved.finish,comparison:{...saved.finish.comparison,sourceIds:saved.finish.comparison.sourceIds.slice(0,4)}};
- await assert.rejects(createRoasChat({model:async()=>({finish:partial})})(input),/model_protocol/);
+ const subset=await createRoasChat({model:async()=>({finish:partial})})(input);
+ assert.equal(subset.sections.conclusion,partial.conclusion);
 });
 
 test('ROAS HTTP endpoint keeps session token/origin checks and validates input',async()=>{
@@ -167,8 +176,7 @@ test('ROAS uses the existing provider transport with its own answer protocol',as
  await createRoasChat({model})(request());
  assert.match(sent.systemInstruction.parts[0].text,/ROAS dashboard/);assert(!sent.systemInstruction.parts[0].text.includes('market_compare'));
  assert(sent.generationConfig.responseJsonSchema.anyOf.some(choice=>choice.properties.finish));
- const references=sent.generationConfig.responseJsonSchema.anyOf.find(choice=>choice.properties.finish).properties.finish.properties.evidenceIds.items.enum;
- assert(references.includes('campaign:EDU-C1:current'));assert(!references.includes('invented'));
+ assert.deepEqual(sent.generationConfig.responseJsonSchema.anyOf.find(choice=>choice.properties.finish).properties.finish,{type:'object'});
 });
 
 test('ROAS and catalog share model pacing while selecting their own protocols',async()=>{

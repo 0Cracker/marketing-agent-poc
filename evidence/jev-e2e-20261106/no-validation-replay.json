@@ -1,0 +1,30 @@
+{
+  "mode": "recorded-provider-replay-no-network-model-calls",
+  "source": "run-1793953789300.json",
+  "runs": [
+    {
+      "question": "현재 ROAS 알려줘",
+      "route": "quick",
+      "status": "completed",
+      "modelAttempts": 2,
+      "answerCharacters": 734,
+      "exactAnswerPreserved": true,
+      "sqliteRestore": true,
+      "serverRendered": true,
+      "validationEvents": 0,
+      "html": "replay-quick-no-validation.html"
+    },
+    {
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "route": "deep",
+      "status": "completed",
+      "modelAttempts": 4,
+      "answerCharacters": 2765,
+      "exactAnswerPreserved": true,
+      "sqliteRestore": true,
+      "serverRendered": true,
+      "validationEvents": 0,
+      "html": "replay-deep-no-validation.html"
+    }
+  ]
+}

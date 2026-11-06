@@ -77,7 +77,7 @@ async function fixture(t,{invoke,maxModelAttemptsPerDay=60}={}) {
   return {request,getTerminal,invocations,store,engine};
 }
 
-test('real seven-tool runtime and SQLite: HTTP 202 -> verified result, restored logs, same runId',async t=>{
+test('real seven-tool runtime and SQLite: HTTP 202 -> model answer, restored logs, same runId',async t=>{
   const f=await fixture(t,{invoke:({input})=>{
     assert.equal(input.overviewClaims,undefined);
     return finishFromData(input);
@@ -93,19 +93,32 @@ test('real seven-tool runtime and SQLite: HTTP 202 -> verified result, restored 
   assert.equal(result.executionStatus,'completed',JSON.stringify({status:result.executionStatus,reason:result.stopReason,events:result.events}).slice(0,1800));
   assert.equal(result.runId,accepted.body.runId);
   assert.equal(result.route,'quick');
-  assert.equal(result.result?.verification?.passed,true);
+  assert.equal(result.result?.verification,undefined);
   assert.match(result.result?.answer||'',/ROAS/);
   assert.equal(result.usage.modelAttempts,1);
   assert.deepEqual(f.invocations,['gemini']);
   assert(result.events.some(e=>e.tool==='overview'&&e.kind==='tool_result'));
   assert(result.events.some(e=>e.tool==='review_summary'&&e.kind==='tool_result'));
   assert(result.events.some(e=>e.kind==='model_success'));
-  assert(result.events.some(e=>e.kind==='verification'));
+  assert(!result.events.some(e=>e.kind==='verification'));
   assert(!JSON.stringify(result).includes('rawRecord'));
   assert(!JSON.stringify(result).includes('prompt'));
   const refreshed=await f.request('GET','/'+accepted.body.runId);
   assert.equal(refreshed.body.executionStatus,'completed');
   assert.equal(refreshed.body.result.answer,result.result.answer);
+});
+
+test('model text survives HTTP, SQLite and repeated reads without content validation',async t=>{
+  const answer='  ROAS 999%입니다. [EV-invalid, EV-1~16]\n\n인용 없는 답변 test@example.com';
+  const f=await fixture(t,{invoke:()=>answer});
+  const accepted=await f.request('POST','',sample());
+  const result=await f.getTerminal(accepted.body.runId);
+  assert.equal(result.executionStatus,'completed');
+  assert.equal(result.result.answer,answer);
+  assert.equal(result.result.verification,undefined);
+  assert(!result.events.some(e=>e.kind==='verification'||e.kind.startsWith('check_final_')||e.kind==='check_tool_evidence'));
+  const restored=await f.request('GET','/'+accepted.body.runId);
+  assert.equal(restored.body.result.answer,answer);
 });
 
 test('real SQLite bridge: same-model quota errors move directly to Gateway and Sail',async t=>{

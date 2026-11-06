@@ -21,19 +21,10 @@ function eventValue(e={}) {
 }
 function resultValue(result,status) {
   if(!result||typeof result!=='object')return null;
-  const verified=result.verified===true||result.verification?.passed===true;
-  const out={evidenceIds:ids(result.evidenceIds),limitations:ids(result.limitations).slice(0,30),verification:{passed:verified}};
-if(verified&&['completed','partial'].includes(status)) {
-    const answer=safe(result.answer,20000);if(answer!==undefined)out.answer=answer;
-    const sections=result.sections;
-    if(sections&&typeof sections==='object'&&!Array.isArray(sections)) {
-      const conclusion=safe(sections.conclusion,1000);
-      const lists=['summary','reasoning','actions','limitations'];
-      if(conclusion!==undefined&&lists.every(k=>Array.isArray(sections[k])&&sections[k].length<=4&&
-          sections[k].every(v=>safe(v,1000)!==undefined))) {
-        out.sections={conclusion,...Object.fromEntries(lists.map(k=>[k,sections[k]]))};
-      }
-    }
+  const out={evidenceIds:ids(result.evidenceIds),limitations:ids(result.limitations).slice(0,30)};
+  if(['completed','partial'].includes(status)) {
+    if(typeof result.answer==='string')out.answer=result.answer;
+    if(result.sections)out.sections=result.sections;
   }
   return out;
 }
@@ -170,16 +161,11 @@ export function createRunStore({dbPath,now=Date.now,maxConcurrentRuns=2,maxStart
         if(executionStatus&&!['queued','running',...terminal].includes(executionStatus))throw new RunApiError('invalid_status');
         const requested=executionStatus||row.execution_status,done=terminal.has(requested),t=time();
         if(row.execution_status==='running'&&requested==='queued')throw new RunApiError('invalid_status_transition');
-        const finalAnswer=['completed','partial'].includes(requested);
-        const unverified=finalAnswer&&!(result?.verified===true||result?.verification?.passed===true);
-        const unissued=done&&ids(result?.evidenceIds).some(id=>!db.prepare('SELECT 1 FROM roas_evidence WHERE run_id=? AND evidence_id=?').get(runId,id));
-        const status=unverified||unissued?'withheld':requested;
-        if(unverified||unissued)stopReason='validation_failed';
         db.prepare('UPDATE roas_runs SET execution_status=?,stage=?,route=?,source_hashes_json=?,cause_status=?,stop_reason=?,result_json=?,usage_json=?,terminal_at=?,expires_at=?,version=version+1 WHERE run_id=? AND terminal_at IS NULL')
-          .run(status,safe(stage,90)||(done?'terminal':row.stage),safe(route,90)||row.route,
+          .run(requested,safe(stage,90)||(done?'terminal':row.stage),safe(route,90)||row.route,
             sourceHashes===undefined?row.source_hashes_json:JSON.stringify(hashesValue(sourceHashes)),
             ['not_assessed','confirmed','undetermined'].includes(causeStatus)?causeStatus:row.cause_status,
-            safe(stopReason,90)||row.stop_reason,done?JSON.stringify(resultValue(result,status)):null,
+            safe(stopReason,90)||row.stop_reason,done?JSON.stringify(resultValue(result,requested)):null,
             usage===undefined?row.usage_json:JSON.stringify(usageValue(usage)),
             done?t:null,done?t+30*DAY:null,runId);
         if(event)append(runId,event,t);return true;

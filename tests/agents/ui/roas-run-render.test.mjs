@@ -25,23 +25,23 @@ test('run component shows only actual tool/model events, fallback, and cancel bu
  assert.match(html,/분석 취소/);
  assert.doesNotMatch(html,/인과관계 확정/);
 });
-test('completed with undetermined cause displays only verified answer',()=>{
+test('completed with undetermined cause displays the answer',()=>{
  const html=render({state:{runId,executionStatus:'completed',causeStatus:'undetermined',
-  result:{answer:'검증된 분석 내용',verification:{passed:true},evidenceIds:['ev:verified']},events:[]}});
+  result:{answer:'검증된 분석 내용',evidenceIds:['ev:verified']},events:[]}});
  assert.match(html,/분석 완료, 원인 미확정/);
  assert.match(html,/검증된 분석 내용/);
  assert.match(html,/ev:verified/);
  assert.doesNotMatch(html,/분석 취소/);
 });
-test('unverified answer cannot be displayed as completed evidence',()=>{
+test('answer displays without approval flags or citation requirements',()=>{
  const html=render({state:{runId,executionStatus:'completed',
   result:{answer:'검증되지 않은 숫자 999%',verification:{passed:false},evidenceIds:[]},events:[]}});
- assert.match(html,/검증된 답변 원문을 서버에서 제공하지 않았습니다/);
- assert.doesNotMatch(html,/999%/);
+ assert.match(html,/999%/);
+ assert.doesNotMatch(html,/답변을 받지 못했습니다/);
 });
-test('verified Markdown renders a table and escapes embedded HTML',()=>{
+test('Markdown renders a table and escapes embedded HTML',()=>{
  const html=render({state:{runId,executionStatus:'completed',events:[],
-  result:{verification:{passed:true},answer:'**결론**\n\n| 지표 | 값 |\n| --- | --- |\n| 캠페인 \\| ROAS | [EV-sample] |\n\n<img src=x onerror=alert(1)>'}}});
+  result:{answer:'**결론**\n\n| 지표 | 값 |\n| --- | --- |\n| 캠페인 \\| ROAS | [EV-sample] |\n\n<img src=x onerror=alert(1)>'}}});
  assert.match(html,/<strong>결론<\/strong>/);
  assert.match(html,/<th scope="col">지표<\/th>/);
  assert.match(html,/<td>캠페인 \| ROAS<\/td>/);

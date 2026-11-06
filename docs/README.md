@@ -1,5 +1,7 @@
 # 문서 안내
 
+2026-11-06 사용자 지시로 에이전트의 답변 자동 검증과 보류 처리를 제거했다. 서버는 도구 조회와 계산 후 모델 Markdown을 그대로 저장하고 전달한다. [현재 계약과 확인 결과](design/agent-development-sdd.md#3612-답변-자동-검증-제거-2026-11-06-사용자-확정)를 우선한다.
+
 2026-11-06 ROAS 에이전트 통합 코드를 `marketing-agent-poc`에 반영했다. 이 폴더에서 `npm run dev:agent:mock`으로 실행할 수 있다. [반영 범위와 검증](handoffs/agent-parallel-20261104/08-integration-results.md#2026-11-06-단일-작업-폴더-반영), [기존 실모델 E2E 기록](../evidence/agent-provider-connect-20261105/), [진단 스크립트](../scripts/roas/diagnostics/)를 같은 저장소에서 관리한다.
 
 2026-11-04 AI Agent 병렬 구현 인계: [6개 병렬 작업과 최종 통합 지침서](handoffs/agent-parallel-20261104/README.md), [공통 인터페이스 계약](handoffs/agent-parallel-20261104/00-shared-contract.md)을 작성했다. **기존 Gemini 키를 보존하고 Vercel/Sail/Jev 키는 사용자가 추후 `.env.local`에 추가**하도록 설계했다. 실제 구현, 모델 호출, API 키 연결, 커밋과 푸시는 이 문서 인계에 포함되지 않는다.
