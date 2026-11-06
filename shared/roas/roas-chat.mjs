@@ -1,6 +1,10 @@
 import {selectFacts,selectBreakdowns,selectRecords} from './training-dashboard.mjs';
 
-export const chatMetrics={roas:{label:'ROAS',unit:'%',rate:true},spend:{label:'유료 마케팅 집행비',unit:'원'},revenue:{label:'구매 전환 매출',unit:'원'},orders:{label:'주문',unit:'건'},clicks:{label:'클릭',unit:'회'},cpc:{label:'CPC',unit:'원'},cvr:{label:'클릭 기준 구매율',unit:'%',rate:true},cpa:{label:'주문당 광고비, CPA',unit:'원'},aov:{label:'주문당 구매금액, AOV',unit:'원'},adCtr:{label:'광고 CTR',unit:'%',rate:true},paymentFailureRate:{label:'결제 실패율',unit:'%',rate:true}};
+export const chatMetrics={roas:{label:'ROAS',unit:'%',rate:true},spend:{label:'유료 마케팅 집행비',unit:'원'},revenue:{label:'구매 전환 매출',unit:'원'},orders:{label:'주문',unit:'건'},clicks:{label:'클릭',unit:'회'},cpc:{label:'CPC',unit:'원'},cvr:{label:'클릭 기준 구매율',unit:'%',rate:true},cpa:{label:'주문당 광고비, CPA',unit:'원'},aov:{label:'주문당 구매금액, AOV',unit:'원'},adCtr:{label:'광고 CTR',unit:'%',rate:true},paymentFailureRate:{label:'결제 실패율',unit:'%',rate:true},
+  contentClickRate:{label:'콘텐츠 링크 클릭률',unit:'%',rate:true},
+  adCpm:{label:'광고 CPM',unit:'원'},
+  contentCpm:{label:'조회 1,000회당 비용',unit:'원'},
+};
 export function chatValue(value,metric){return value==null?'계산 불가':(chatMetrics[metric]?.rate?value*100:value).toLocaleString('ko-KR',{maximumFractionDigits:1})+(chatMetrics[metric]?.unit||'');}
 
 // Only one complete breakdown at a time: never mix aggregate levels or average ratios.

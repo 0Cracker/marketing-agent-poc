@@ -1,0 +1,16 @@
+
+> marketing-agent-poc@0.4.19 lint
+> eslint . --ignore-pattern dist --ignore-pattern .next
+
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\docs\research\marketing-ontology\batches\D005\generate.mjs
+  58:11  warning  'chars' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\docs\research\marketing-ontology\batches\D005\validate.mjs
+  2:39  warning  'counts' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\박시형\Desktop\Marketing\marketing-agent-poc\tests\roas\review-display.test.mjs
+  5:8  warning  'fs' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 3 problems (0 errors, 3 warnings)
+

@@ -1,0 +1,185 @@
+
+> marketing-agent-poc@0.4.19 test
+> node --experimental-strip-types --test tests/roas/*.test.mjs tests/roas/*.test.ts
+
+✔ ROAS all eighteen cases and both snapshots reuse screen sums, with no mutations (7980.468ms)
+✔ ROAS rejects stale data, invalid cases/snapshots, forged filters and raw records before model calls (223.1442ms)
+✔ ROAS scoped model tools return only chosen campaign/device, use existing records, and retain followups (218.3369ms)
+✔ ROAS pagination, empty searches and all breakdown dimensions remain complete and non-overlapping (667.2082ms)
+✔ ROAS refuses invented citations, duplicate calls, invalid arguments and excess turns (1296.4851ms)
+✔ ROAS grouped and numbered references normalize to retrieved source IDs (298.0916ms)
+✔ ROAS structured sections and comparison use actual source values, with reconstructable raw rows (740.7895ms)
+✔ ROAS raw evidence matches every provided breakdown and selected device (1793.1492ms)
+✔ ROAS comparison leaves zero-purchase AOV unavailable rather than drawing a false zero (268.7015ms)
+✔ ROAS ranking conclusions distinguish current minimum from largest decline and prevent cherry-picking (231.4661ms)
+✔ ROAS HTTP endpoint keeps session token/origin checks and validates input (599.185ms)
+✔ ROAS uses the existing provider transport with its own answer protocol (169.179ms)
+✔ ROAS and catalog share model pacing while selecting their own protocols (113.541ms)
+✔ review navigation preserves the common chat launcher and an open conversation (5.8975ms)
+✔ dashboard reporting cutoff stays on the existing initial snapshot without a selector (2.1616ms)
+✔ fixed 14-day review periods are start-inclusive and end-exclusive (4.7066ms)
+✔ text search matches a contiguous phrase without HTML interpolation (2.122ms)
+✔ empty approved selection never invents ratings, percentages, categories or collection dates (1.6033ms)
+✔ malformed and unapproved data cannot masquerade as not-provided or zero records (0.9088ms)
+✔ approved 50-review source: periods, source OR and deduplicated counts (6.357ms)
+(node:25028) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✔ review initial render shows all 25 reviews and explicit writing dates (21283.5211ms)
+✖ approved S16 expansion adds 35 reviews, preserves original 50 except the approved source label (4.5052ms)
+✖ approved new rating cells produce exactly 4.00 own-store current mean and retain the source-mix contrast (2.8208ms)
+✖ new primary topics, multi-experience counts, dates and delayed collection match the plan (1.4704ms)
+✖ both snapshots reach UI projection with 60/25 reviews and 27/33 S16 period counts (745.8515ms)
+✔ read-only UI projection keeps 25 original reviews, one unclassified and exact evidence per case (805.7264ms)
+✔ all 5/18 display dictionaries and parents match the approved taxonomy bytes (2.2791ms)
+✔ classification filter and text search never modify the common population counts (10.6387ms)
+✔ unavailable, tampered and partial payloads do not masquerade as complete data (23.9439ms)
+✔ review navigation is a sidebar page and ROAS data filters are not passed into it (1.6294ms)
+✔ review controls render existing dashboard segments and toggleable category pills, not checkboxes (2.1106ms)
+✔ damaged projection cannot silently change classifications, dates or review identity (37.0983ms)
+✔ exhaustive independent review rollup oracle across both cases and snapshots, 3 periods, 4 sources, all 64 category combinations (1315.7395ms)
+✔ overview compares campaign outcomes while drivers explains the metric interactions (766.3002ms)
+✔ examples preserve the first and third questions and split the actual S16 ROAS change (39.4989ms)
+✔ all existing cases and snapshots keep source rows, scoped totals and contribution sums consistent (11891.1693ms)
+✔ funnel answers use stage abandonment rates and handle an empty selection (7.6824ms)
+✔ ROAS and purchase rate use different display precision without changing raw values (56.102ms)
+✔ currency is rounded only at display and small changes do not falsely say zero (1.39ms)
+✔ table and KPI comparisons share the same percentage scaling (0.7624ms)
+✔ 50 reviews including 2 unclassified, 5 categories, 18 experiences, 4 sentiment values, and exact evidence (13.0074ms)
+✔ one review has multiple sentiments but counts only once within a parent theme (9.9159ms)
+✔ a changed raw source, missing IDs, duplicate annotations and bad quotes fail closed (4.1375ms)
+✔ wrong parent, unknown sentiment, pending status and changed taxonomy are errors (4.4847ms)
+✔ S16/S17 A opposite experience, B source-mix reversal and C time split survive (5.7684ms)
+✔ approved unclassified reviews have no categories or evidence and cannot become pending or fake classified (7.3013ms)
+✔ REV-DATA-01: approved 50 synthetic product reviews and four coverage declarations exist (6.7471ms)
+✔ all 36 training and review projections preserve baseline results with independently owned identity (2968.811ms)
+✔ reproduction uses the approved 28 copied sources and produces identical installed bytes (3797.4536ms)
+✔ default data plugin emits only current projections and denies raw or old data URLs (2780.3015ms)
+✔ active source imports and filesystem paths cannot refer to legacy implementation (639.3553ms)
+✔ missing or damaged optional review data never blocks performance, startup or production projections (256.5537ms)
+✔ real ROAS server starts independently and serves authenticated chat while old APIs stay unavailable (2936.8813ms)
+✔ existing cases and snapshots reconcile the centered contributions and ratio totals in every supported partition (9484.4479ms)
+✔ S07 isolates the complete 100 percentage-point ROAS decline as budget mix change (5.1527ms)
+✔ S16 ROAS contributions preserve the AOV offset, CVR and CPC deterioration and the full change (4.9208ms)
+✔ CPA and CPC factor replacement sums agree across ads and content without mixing exposure bases (404.5673ms)
+✔ dimensions use actual campaign-qualified traffic, restrict keywords to search and exclude content from CTR (57.1036ms)
+✔ zero orders and new creatives retain finite contribution while unavailable ratios are not fabricated (43.726ms)
+✔ traffic narrowing updates the complete selected totals and never invents a product cross-tab (80.4537ms)
+✔ AOV exposes product mix and discounts as distinct observations on the installed single-item orders (64.6697ms)
+✔ explanatory metrics precede calculation inputs in analysis columns (0.8035ms)
+✔ ROAS column changes and other metric raw values sort independently (138.579ms)
+✔ the same numerical direction means opposite performance for ROAS and purchase costs (764.3124ms)
+✔ one visible axis encloses both periods for all existing cases and KPI trends (987.179ms)
+✔ the entry metric and its numerator and denominator precede other columns without changing source order (1.0588ms)
+✔ displayed precision controls zero neutrality and visible purchase-rate changes retain their direction (1.7386ms)
+✔ headline ROAS compares each full period aggregate rather than daily mean or last-day ROAS (26.4924ms)
+✔ mini trends use two shared bounds around actual values while large trends retain zero (614.1648ms)
+✔ mini bounds stay readable for flat, zero and unavailable series (0.6274ms)
+✔ all directional table metrics share improvement, deterioration and neutral semantics (22.4761ms)
+✔ rounded summary changes keep zero unsigned and preserve nonzero directions (5.1713ms)
+ℹ tests 72
+ℹ suites 0
+ℹ pass 68
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23411.619
+
+✖ failing tests:
+
+test at tests\roas\review-expansion.test.mjs:17:1
+✖ approved S16 expansion adds 35 reviews, preserves original 50 except the approved source label (4.5052ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  50 !== 85
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-expansion.test.mjs:18:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 50,
+    expected: 85,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-expansion.test.mjs:37:1
+✖ approved new rating cells produce exactly 4.00 own-store current mean and retain the source-mix contrast (2.8208ms)
+  AssertionError [ERR_ASSERTION]: baseline/own_store
+  + actual - expected
+  
+    [
+      0,
+      0,
+      0,
+  +   0,
+  +   0
+  -   3,
+  -   2
+    ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-expansion.test.mjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 0, 0, 0, 0, 0 ],
+    expected: [ 0, 0, 0, 3, 2 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-expansion.test.mjs:51:1
+✖ new primary topics, multi-experience counts, dates and delayed collection match the plan (1.4704ms)
+  AssertionError [ERR_ASSERTION]: scent_preference
+  + actual - expected
+  
+    [
+  +   0,
+  +   0
+  -   1,
+  -   1
+    ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-expansion.test.mjs:57:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 0, 0 ],
+    expected: [ 1, 1 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-expansion.test.mjs:70:1
+✖ both snapshots reach UI projection with 60/25 reviews and 27/33 S16 period counts (745.8515ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  25 !== 60
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-expansion.test.mjs:76:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 25,
+    expected: 60,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

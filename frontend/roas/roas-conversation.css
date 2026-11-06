@@ -11,3 +11,24 @@
 @media(max-width:600px){.wb-answer-screen-context{padding:12px 16px}.wb .wb-answer-conclusion>ul{font-size:14px}.wb-answer-comparison figcaption>small{margin-left:0}.wb-chat-connection{flex-wrap:wrap}.wb-chat-connection>button{margin-left:25px}.wb .wb-answer-table th,.wb .wb-answer-table td{font-size:10px;padding:9px 6px}}
 
 .wb .wb-answer-bar.wb-answer-change b{color:inherit}
+
+/* Run details inherit the existing chat typography, spacing, and purple palette. */
+.wb-run-progress{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;background:#FAF9FD;color:#675577;font-size:12px}
+.wb .wb-run-progress p{margin:0;line-height:1.6}
+.wb .wb-run-progress button,.wb .wb-chat-working button{min-height:30px;flex-shrink:0;border:1px solid #E6DDEE;border-radius:7px;background:#FFF;color:#714C8C;padding:5px 9px;font-size:11px}
+.wb .wb-run-progress button:disabled,.wb .wb-chat-working button:disabled{opacity:.6}
+.wb-run-answer .wb-answer-conclusion p{font-size:14px;line-height:1.8;color:#45394F;white-space:pre-wrap;overflow-wrap:anywhere}
+.wb .wb-run-unavailable{font-size:12px;color:#887794;line-height:1.8;overflow-wrap:anywhere}
+.wb-run-metadata{display:grid;gap:6px;min-width:0}
+.wb .wb-run-metadata p{font-size:11px;color:#84748F;overflow-wrap:anywhere}
+.wb-run-metadata code{font-size:10px}
+.wb-run-log-line{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.wb-run-log-line strong{font-size:11px;color:#6A5280;font-weight:600}
+.wb-run-log-line time{font-size:10px;color:#9D90A9;white-space:nowrap}
+.wb .wb-answer-process li{padding:5px 0;overflow-wrap:anywhere}
+.wb .wb-answer-process li p{font-size:11px;line-height:1.6;margin:3px 0;color:#877B91}
+.wb .wb-answer-process li .wb-run-evidence-ids{color:#6C5790}
+.wb .wb-run-storage-warning{font-size:11px;color:#A66D58;margin:0 0 8px}
+.wb .wb-chat-working{flex-wrap:wrap;line-height:1.7}
+.wb .wb-chat-working button{white-space:normal}
+@media(max-width:600px){.wb-run-progress{flex-wrap:wrap}.wb .wb-run-progress button{min-height:36px}}

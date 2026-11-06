@@ -12,7 +12,7 @@
     "start": "vite preview --host 127.0.0.1 --port 5173",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "test": "node --experimental-strip-types --test tests/roas/*.test.mjs tests/roas/*.test.ts",
-    "test:agents": "node --experimental-strip-types --test tests/roas/agent.test.mjs",
+    "test:agents": "node --experimental-strip-types --test tests/roas/agent.test.mjs tests/agents/providers/*.test.mjs tests/agents/tools/*.test.mjs tests/agents/engine/*.test.mjs tests/agents/run-api/*.test.mjs tests/agents/ui/*.test.mjs tests/agents/integration/*.test.mjs",
     "test:roas": "npm test",
     "test:training": "node --test tests/roas/separation.test.mjs",
     "data:training": "node scripts/roas/generate-training-dashboard.mjs",
@@ -20,7 +20,9 @@
     "test:legacy": "node --experimental-strip-types legacy/tests/marketing.test.ts && node --experimental-strip-types legacy/tests/demo.test.ts",
     "start:legacy-agents": "node legacy/scripts/agent-server.mjs",
     "dev:legacy": "vite --config vite.legacy.config.ts --host 127.0.0.1 --port 5174",
-    "db:generate:legacy": "drizzle-kit generate --config legacy/drizzle.config.ts"
+    "db:generate:legacy": "drizzle-kit generate --config legacy/drizzle.config.ts",
+    "dev:agent": "node scripts/roas/dev-agent.mjs",
+    "dev:agent:mock": "node scripts/roas/dev-agent.mjs --mock"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
