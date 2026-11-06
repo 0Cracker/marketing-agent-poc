@@ -1,0 +1,45 @@
+name: ROAS Agent mock and regression
+on:
+  push:
+    paths:
+      - 'backend/roas/**'
+      - 'frontend/roas/**'
+      - 'scripts/roas/**'
+      - 'shared/roas/**'
+      - 'data/roas/**'
+      - 'vite.config.ts'
+      - 'tests/agents/**'
+      - 'tests/roas/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/roas-agent-qa.yml'
+  pull_request:
+    paths:
+      - 'backend/roas/**'
+      - 'frontend/roas/**'
+      - 'scripts/roas/**'
+      - 'shared/roas/**'
+      - 'data/roas/**'
+      - 'vite.config.ts'
+      - 'tests/agents/**'
+      - 'tests/roas/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/roas-agent-qa.yml'
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:agents
+      - run: npm run test:roas
+      - run: npm run test:training
+      - run: npm run lint
+      - run: npm run build

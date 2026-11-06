@@ -1,4 +1,5 @@
 import {SelectionButton} from '../components/ui/selection-button';
+import {RunMarkdown} from './run-markdown';
 import {useEffect,useRef,useState} from 'react';
 import {Sparkles,X,ArrowRight,ArrowUpRight,ArrowDownRight} from 'lucide-react';
 import {displayTrainingText} from '../../shared/roas/training-dashboard.mjs';
@@ -53,4 +54,73 @@ function SourceDetails({source,data,filters}:{source:ChatSource;data:TrainingDat
   <h4>원천 데이터 {rows.length}행</h4><p className="wb-answer-source-note">인용한 집계에 실제로 포함된 행입니다. 각 행에서 전체 필드를 펼칠 수 있습니다.</p>
   <div className="wb-answer-raw-rows">{rows.slice(0,limit).map(row=><details key={row.id}><summary><span>{'title' in row?displayTrainingText(row.title):`${row.date}, ${displayTrainingText(row.campaignId||'공통')}, ${row.device==='mobile'?'모바일':row.device==='desktop'?'PC':'공통'}`}</span><small>{row.id}</small></summary>{'values' in row?<dl>{Object.entries(row.values).map(([key,value])=><div key={key}><dt>{key}</dt><dd>{displayTrainingText(value)}</dd></div>)}</dl>:<dl>{(['spend','revenue','orders'] as const).map(key=><div key={key}><dt>{({spend:'집행비',revenue:'구매 전환 매출',orders:'주문'})[key]}</dt><dd>{chatValue(row[key],key)}</dd></div>)}</dl>}<details><summary>전체 필드 JSON</summary><pre>{JSON.stringify(row,null,2)}</pre></details></details>)}</div>{rows.length>limit&&<button className="wb-answer-more" onClick={()=>setLimit(n=>n+12)}>12행 더 보기</button>}
  </>;
+}
+
+import type {RunEvent,RunState} from './agent-run';
+import {isTerminal,runStatusLabel,stageLabel,toolLabel,wasModelFallback} from './agent-run';
+
+const eventLabels:Record<string,string>={
+ accepted:'분석 요청 접수',stage:'단계 변경',tool_result:'도구 조회 결과',
+ tool_rejected:'도구 요청 거절',model_attempt:'모델 호출',
+ model_success:'모델 응답',model_error:'모델 오류',verification:'수치와 근거 검증',
+ cancel_requested:'분석 취소 요청',cancelled:'분석 취소',terminal:'실행 종료',
+ failure:'실행 오류',engine_error:'실행 엔진 오류'
+};
+const toolStatuses:Record<string,string>={ready:'조회 완료',empty:'해당 자료 없음',not_provided:'자료 미제공',pending:'자료 준비 중',error:'조회 오류'};
+function eventTime(at?:string|number){
+ if(at===undefined)return '';
+ const time=new Date(at);
+ return Number.isFinite(time.getTime())?time.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}):'';
+}
+function RunLogEntry({event,fallback,fallbackReason}:{event:RunEvent;fallback:boolean;fallbackReason?:string}){
+ const elapsed=event.elapsedMs??event.elapsed;
+ const pieces=[
+  event.tool&&toolLabel(event.tool),
+  event.model&&[event.provider,event.model].filter(Boolean).join(' / '),
+  event.transport,
+  event.argsSummary&&'입력 '+event.argsSummary,
+  fallbackReason&&'전환 근거 '+fallbackReason,
+  event.billingBucket&&'호출 구분 '+event.billingBucket,
+  event.status&&(toolStatuses[event.status]||event.status),
+  (event.count??event.rowCount)!==undefined&&'조회 '+(event.count??event.rowCount)+'건',
+  elapsed!==undefined&&'소요 '+elapsed+'ms',
+  event.errorCode&&'오류 '+event.errorCode
+ ].filter(Boolean);
+ return <li><div className="wb-run-log-line"><strong>{fallback?'다른 모델로 전환 중':eventLabels[event.kind||'']||stageLabel(event.stage)}</strong><time>{eventTime(event.at)}</time></div>
+  {pieces.length>0&&<p>{pieces.join(', ')}</p>}
+  {event.evidenceIds?.length?<p className="wb-run-evidence-ids">근거 ID: {event.evidenceIds.join(', ')}</p>:null}
+ </li>;
+}
+export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;onCancel?:()=>void;cancelling?:boolean}){
+ const done=isTerminal(state),verified=state.result?.verified===true||state.result?.verification?.passed===true;
+ const sections=verified?state.result?.sections:undefined;
+ const answer=verified?state.result?.answer:undefined;
+ const evidences=state.result?.evidenceIds||[];
+ const events=state.events||[];
+ return <section className="wb-agent-result wb-structured-answer wb-run-answer" aria-label="비동기 분석 결과">
+  <h2><Sparkles size={15}/>마케팅 AI<span role="status">{runStatusLabel(state)}</span></h2>
+  {!done&&<div className="wb-run-progress"><p>{stageLabel(state.stage)}{state.route?' ('+(state.route==='deep'?'심층 조사':'빠른 조회')+')':''}</p>
+    {onCancel&&<button type="button" disabled={cancelling} onClick={onCancel}>{cancelling?'취소 요청 중':'분석 취소'}</button>}
+  </div>}
+  {done&&sections?.conclusion?<div className="wb-answer-conclusion"><h3>핵심 결론</h3><p>{sections.conclusion}</p></div>:null}
+  {done&&!sections&&answer?<RunMarkdown answer={answer}/>:null}
+  {done&&verified&&sections?.summary?.length?<section className="wb-answer-section"><h3>결과 정리</h3><ul>{sections.summary.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
+  {done&&verified&&sections?.reasoning?.length?<section className="wb-answer-section"><h3>판단 근거</h3><ul>{sections.reasoning.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
+  {done&&verified&&sections?.actions?.length?<section className="wb-answer-section wb-answer-actions"><h3>최종 추천 액션</h3><ol>{sections.actions.map((item,i)=><li key={i}>{item}</li>)}</ol></section>:null}
+  {done&&(!verified||!(sections?.conclusion||answer))&&<p className="wb-run-unavailable">{state.executionStatus==='completed'?'검증된 답변 원문을 서버에서 제공하지 않았습니다.':'검증된 완료 답변이 없습니다.'} {state.stopReason&&'종료 사유: '+state.stopReason}</p>}
+  {done&&verified&&<div className="wb-answer-limits">{sections?.limitations?.map((text,i)=><p key={i}>{text}</p>)}{state.result?.limitations?.map((text,i)=><p key={'limit'+i}>{text}</p>)}</div>}
+  <details className="wb-answer-references"><summary>실행 정보와 근거 {evidences.length}개</summary>
+   <div className="wb-run-metadata"><p>실행 ID: <code>{state.runId}</code></p>
+    {state.route&&<p>조사 유형: {state.route==='deep'?'심층 조사':'빠른 조회'}</p>}
+    {state.scopeFingerprint&&<p>조회 범위 식별값: {state.scopeFingerprint}</p>}
+    {state.appliedScope?.dataHash&&<p>자료 해시: {state.appliedScope.dataHash}</p>}
+    {state.usage?.modelAttempts!==undefined&&<p>모델 호출: {state.usage.modelAttempts}회</p>}
+    {evidences.length>0&&<p>검증 근거 ID: {evidences.join(', ')}</p>}
+    {state.sourceHashes&&Object.keys(state.sourceHashes).length>0&&<p>원천 버전 해시: {Object.entries(state.sourceHashes).map(([name,hash])=>name+' '+hash).join(', ')}</p>}
+   </div>
+  </details>
+  <details className="wb-answer-process" open={!done}><summary>실제 조회, 모델 호출 기록 {events.length}건</summary>
+   {events.length?<ol>{events.map((event,i)=><RunLogEntry key={event.seq??i} event={event} fallback={wasModelFallback(events,i)} fallbackReason={wasModelFallback(events,i)?events.slice(0,i).reverse().find(entry=>entry.kind==='model_error')?.errorCode:undefined}/>)}</ol>:<p>아직 서버에서 전달한 실행 기록이 없습니다.</p>}
+  </details>
+ </section>;
 }
