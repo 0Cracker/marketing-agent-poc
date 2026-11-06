@@ -47,7 +47,7 @@ Pass the identical store instance into createRunEngine. C may use:
 - store.publishEvidence({runId,evidence:{evidenceId,sourceHash,sourceVersion,periodId,tool,sourceRowIds}})
 - store.claimModelAttempt({runId,accountId}) BEFORE each external model call. This enforces the shared daily attempt budget in addition to C's quick/deep per-run caps. A controls paid-risk and provider eligibility.
 
-C final result must provide verified=true (or verification.passed=true), a plain result.answer string and actually published evidence IDs. Unverified answer or unissued ID is withheld. D persists source hashes, event summaries, verified result and usage, but NEVER raw run snapshot, tool JSON, private reasoning or prompt histories.
+C returns the model Markdown in result.answer without content validation. D stores and returns the answer unchanged, without approval flags or citation checks. Evidence IDs track tool lookup results; they do not certify answer accuracy. D persists source hashes, event summaries, result and usage, but NEVER raw run snapshots, tool JSON, private reasoning or prompt histories.
 
 GET polls SQLite only so it cannot stall behind a model call. C must persist each stage via store.saveRun/recordEvent; C engine.getRun({runId}) remains a separate engine interface but D does not wait on it. C engine.cancel({runId,reason:'user_cancelled'}) must stop future calls and abort in-flight calls best-effort. D atomically commits cancellation before notification; later completion cannot overwrite it.
 

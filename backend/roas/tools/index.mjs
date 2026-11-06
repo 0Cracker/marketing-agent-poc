@@ -79,55 +79,14 @@ function validScope(request, data) {
       !['channel','source','campaignId'].every(key => typeof request.filters[key] === 'string') ||
       !['channel','source'].every(key => request.filters[key] === 'all' ||
         data.campaigns.some(campaign => campaign[key] === request.filters[key])) ||
-      (request.filters.campaignId !== 'all' && !data.campaigns.some(campaign => campaign.id === request.filters.campaignId)) ||
-      data.caseId !== request.caseId || data.contract !== 'roas-training/1' ||
-      !Array.isArray(data.periods) || data.periods.length !== 2 ||
-      data.periods.some((period, index) => period.id !== dates[index]) ||
-      !Array.isArray(data.facts) || !Array.isArray(data.breakdowns) || !Array.isArray(data.records)) {
+      (request.filters.campaignId !== 'all' && !data.campaigns.some(campaign => campaign.id === request.filters.campaignId))) {
     fail('unsupported_scope');
   }
   if (!data.campaigns.some(campaign =>
     (request.filters.campaignId === 'all' || request.filters.campaignId === campaign.id) &&
     (request.filters.channel === 'all' || request.filters.channel === campaign.channel) &&
     (request.filters.source === 'all' || request.filters.source === campaign.source))) fail('unsupported_scope');
-  if (request.asOf && request.asOf !== data.asOf) fail('inputs_changed');
-  if (request.periods && JSON.stringify(request.periods) !== JSON.stringify(data.periods)) fail('inputs_changed');
 }
-function checkedReview(review, data) {
-  if (!isObject(review) || !['ready','not_provided','pending','error'].includes(review.status)) {
-    return {status:'error', errorCode:'REVIEW_DATA_UNAVAILABLE', reviews:[]};
-  }
-  if (review.status !== 'ready') return review;
-  try {
-    if (review.dataHash !== data.dataHash || review.asOf !== data.asOf ||
-        !['S16','S17'].includes(data.caseId) || review.caseId !== data.caseId ||
-        review.productId !== 'EDU-P1' || review.productName !== '쓱쓱샴푸' ||
-        review.classificationStatus !== 'ready' ||
-        !Array.isArray(review.reviews) ||
-        !Array.isArray(review.periods) || review.periods.length !== 2) fail('review_inputs_changed');
-    const ids = new Set();
-    const periodCounts = new Map(data.periods.map(period => [period.id, 0]));
-    for (const item of review.reviews) {
-      const period = data.periods.find(period => inPeriod(item.writtenAt.slice(0,10), period));
-      if (ids.has(item.id) || !item.id.startsWith('REV-' + data.caseId + '-') ||
-          item.caseId !== data.caseId || item.productId !== 'EDU-P1' ||
-          !sources.slice(1).includes(item.sourceId) || !Number.isInteger(item.rating) ||
-          !Array.isArray(item.experiences) || !['classified','unclassified'].includes(item.classification) ||
-          item.experiences.some(a => !item.text.includes(a.evidenceQuote)) ||
-          !period ||
-          !(Date.parse(item.collectedAt) < Date.parse(data.asOf))) fail('review_inputs_changed');
-      ids.add(item.id);
-      periodCounts.set(period.id, periodCounts.get(period.id) + 1);
-    }
-    if (data.periods.some((period,index) =>
-      review.periods[index]?.id !== period.id ||
-      review.periods[index].count !== periodCounts.get(period.id))) fail('review_inputs_changed');
-    return review;
-  } catch {
-    return {status:'error', errorCode:'REVIEW_DATA_UNAVAILABLE', reviews:[]};
-  }
-}
-
 // The server supplies run identity, scope and data loader. Model arguments cannot select files or dates.
 export async function createToolRuntime({directory, scope, runId, issuedAt, now = () => new Date(), sourceLoader} = {}) {
   if (typeof runId !== 'string' || !runId.trim() || runId.length > 128 ||
@@ -149,19 +108,13 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
     const data = clone(loaded.data);
     validScope(rawScope, data);
     const hash = sha256(data);
-    if (!sourceLoader && typeof rawScope.dataHash !== 'string') fail('request_invalid');
-    if (rawScope.dataHash !== undefined && rawScope.dataHash !== hash) fail('inputs_changed');
-    const review = checkedReview(clone(loaded.review ?? {status:'error'}), data);
+    const review = clone(loaded.review ?? {status:'error',reviews:[]});
     const filters = clone(rawScope.filters);
     const lockedScope = freeze({caseId:rawScope.caseId, snapshot:rawScope.snapshot,
       filters, dataHash:hash, ...(rawScope.metric ? {metric:rawScope.metric} : {})});
     const pack = {data:freeze(data), review:freeze(review), scope:lockedScope, hash,
-      fingerprint:sha256(lockedScope),
       sourceHash:sha256({dataHash:hash, review, filters}),
-      factsById:new Map(data.facts.map(row => [row.id,row])),
-      breakdownsById:new Map(data.breakdowns.map(row => [row.id,row])),
-      recordsById:new Map(data.records.map(row => [row.id,row])),
-      reviewsById:new Map((review.reviews ?? []).map(row => [row.id,row]))};
+      reviewsById:new Map((review.reviews??[]).map(row=>[row.id,row]))};
     snapshots.set(role, pack);
   }
   let disposed = false, sequence = 0;
@@ -175,125 +128,24 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
     const evidenceId = 'EV-' + sha256(runId).slice(0,12) + '-' + (++sequence);
     const item = freeze({
       evidenceId, runId, role, kind, source, periodId, issuedAt:startedAt,
-      sourceHash:pack.sourceHash, scopeFingerprint:pack.fingerprint,
-      sourceRecordIds:rows.map(row => row.id), rowsHash:sha256(rows), payload:clone(payload),
+      sourceHash:pack.sourceHash,
+      sourceRecordIds:rows.map(row => row.id), payload:clone(payload),
     });
     issued.set(evidenceId, item);
     return evidenceId;
   }
-  const sourceMap = (pack, source) => ({
-    facts:pack.factsById, breakdowns:pack.breakdownsById,
-    records:pack.recordsById, reviews:pack.reviewsById,
-  })[source];
-  function checkId(evidenceId) {
-    if (disposed) return {ok:false, code:'runtime_disposed'};
-    const item = issued.get(evidenceId);
-    if (!item || item.runId !== runId) return {ok:false,code:'evidence_not_issued'};
-    const pack = snapshots.get(item.role);
-    if (!pack || pack.sourceHash !== item.sourceHash ||
-        pack.fingerprint !== item.scopeFingerprint) return {ok:false,code:'inputs_changed'};
-    const map = sourceMap(pack, item.source);
-    const rows = item.sourceRecordIds.map(id => map?.get(id));
-    if (rows.some(row => !row) || sha256(rows) !== item.rowsHash ||
-        rows.some(row => item.periodId && item.source !== 'records' &&
-          (item.source === 'reviews'
-            ? !inPeriod(row.writtenAt.slice(0,10), pack.data.periods.find(p => p.id === item.periodId))
-            : row.periodId !== item.periodId))) return {ok:false,code:'inputs_changed'};
-    return {ok:true,item,pack,rows};
-  }
-  function checkClaims(claims, checked) {
-    if (claims === undefined) return [];
-    if (!Array.isArray(claims)) return ['claims_invalid'];
-    const issues = [];
-    for (const [index, claim] of claims.entries()) {
-      if (!allowed(claim, ['metric','value','unit','periodId','scopeRole','evidenceIds']) ||
-          !Array.isArray(claim.evidenceIds) || !claim.evidenceIds.length || claim.evidenceIds.length > 24 ||
-          new Set(claim.evidenceIds).size !== claim.evidenceIds.length ||
-          !['baseline','current','change'].includes(claim.periodId) ||
-          !snapshots.has(claim.scopeRole) || !(claim.metric in metrics) ||
-          !(claim.value === null || typeof claim.value === 'number' && Number.isFinite(claim.value))) {
-        issues.push('claim_invalid:' + index); continue;
-      }
-      const matches = claim.evidenceIds.map(id => checked.get(id));
-      if (matches.some(result => !result?.ok || result.item.role !== claim.scopeRole ||
-          !['facts','breakdowns'].includes(result.item.source))) {
-        issues.push('claim_evidence_invalid:' + index); continue;
-      }
-      const sourcesInClaim = new Set(matches.map(result => result.item.source));
-      if (sourcesInClaim.size !== 1) { issues.push('claim_mixed_aggregation:' + index); continue; }
-      const pairs = new Map();
-      for (const result of matches) {
-        const {periodId,kind,payload} = result.item;
-        if (!dates.includes(periodId) || !['summary','metric','daily'].includes(kind)) {
-          issues.push('claim_evidence_invalid:' + index); break;
-        }
-        const key = payload.dimension === undefined ? 'all' : payload.dimension + ':' + payload.key;
-        if (!pairs.has(periodId)) pairs.set(periodId, {keys:new Set(),rows:[],ids:new Set()});
-        const target = pairs.get(periodId);
-        target.keys.add(key);
-        for (const row of result.rows) {
-          if (target.ids.has(row.id)) {issues.push('claim_duplicate_rows:' + index); break;}
-          target.ids.add(row.id);target.rows.push(row);
-        }
-      }
-      if (issues.some(code => code.endsWith(':' + index))) continue;
-      const expectedPeriods = claim.periodId === 'change' ? dates : [claim.periodId];
-      if (pairs.size !== expectedPeriods.length ||
-          expectedPeriods.some(period => !pairs.has(period)) ||
-          [...pairs.values()].some(pair => pair.keys.size !== 1) ||
-          new Set([...pairs.values()].map(pair => [...pair.keys][0])).size !== 1) {
-        issues.push('claim_period_invalid:' + index); continue;
-      }
-      const def = metrics[claim.metric];
-      let expected, unit = def.unit;
-      if (claim.periodId === 'change') {
-        const before = metricResult(pairs.get('baseline').rows, claim.metric).value;
-        const after = metricResult(pairs.get('current').rows, claim.metric).value;
-        unit = def.rate ? '%p' : '%';
-        expected = before === null || after === null ? null :
-          def.rate ? (after - before) * 100 :
-            before === 0 ? (after === 0 ? 0 : null) : (after / before - 1) * 100;
-      } else {
-        expected = metricResult(pairs.get(claim.periodId).rows, claim.metric).value;
-        if (def.rate && expected !== null) expected *= 100;
-      }
-      if (claim.unit !== unit ||
-          !(expected === null && claim.value === null ||
-            expected !== null && claim.value !== null &&
-            Math.abs(expected - claim.value) <= Math.max(1,Math.abs(expected)) * 1e-9)) {
-        issues.push('claim_value_mismatch:' + index);
-      }
-    }
-    return issues;
-  }
-  function verifyEvidence({evidenceIds, claims} = {}) {
-    if (claims !== undefined && !Array.isArray(claims)) return {valid:false,issues:[{errorCode:'claims_invalid'}],items:[]};
-    if (!Array.isArray(evidenceIds) || evidenceIds.length < 1 || evidenceIds.length > 24 ||
-        new Set(evidenceIds).size !== evidenceIds.length ||
-        evidenceIds.some(id => typeof id !== 'string' || id.length > 128)) {
-      return {valid:false, issues:['request_invalid'], items:[]};
-    }
-    const checked = new Map(evidenceIds.map(id => [id,checkId(id)]));
-    const issues = [...checked.entries()].filter(([, result]) => !result.ok)
-      .map(([id,result]) => ({evidenceId:id,errorCode:result.code}));
-    for (const claim of claims ?? []) {
-      if (isObject(claim) && Array.isArray(claim.evidenceIds) &&
-          claim.evidenceIds.some(id => !checked.has(id))) {
-        issues.push({errorCode:'claim_evidence_not_supplied'}); break;
-      }
-    }
-    if (!issues.length) issues.push(...checkClaims(claims, checked).map(errorCode => ({errorCode})));
-    return {
-      valid:!issues.length, issues,
-      items:[...checked.values()].filter(result => result.ok).map(({item}) => ({
-        evidenceId:item.evidenceId, kind:item.kind, sourceRecordIds:clone(item.sourceRecordIds),
-        scopeRole:item.role, periodId:item.periodId, sourceHash:item.sourceHash,
-        sourceVersion:clone(snapshots.get(item.role).data.dataHash),
-        ...(item.kind === 'record' || item.kind === 'review_record'
-          ? {rawRecord:clone(item.payload)} : {summary:clone(item.payload)}),
-        verified:true,
-      })),
-    };
+  function evidenceItems(evidenceIds=[]) {
+    if(disposed)fail('runtime_disposed');
+    return evidenceIds.flatMap(id=>{
+      const item=issued.get(id);
+      return item?[{
+        evidenceId:item.evidenceId,kind:item.kind,sourceRecordIds:clone(item.sourceRecordIds),
+        scopeRole:item.role,periodId:item.periodId,sourceHash:item.sourceHash,
+        sourceVersion:snapshots.get(item.role).data.dataHash,
+        ...(item.kind==='record'||item.kind==='review_record'
+          ?{rawRecord:clone(item.payload)}:{summary:clone(item.payload)})
+      }]:[];
+    });
   }
   function toolSchemas() {
     if (disposed) fail('runtime_disposed');
@@ -322,7 +174,7 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
         {...reviewProps,experienceId:{type:'string'},sentiment:textEnum(['positive','negative','neutral','mixed']),
           reviewIds:{type:'array',items:{type:'string'},minItems:1,maxItems:24,uniqueItems:true},
           query:safeQuery,...paging}),
-      schema('evidence','같은 run에서 실제 발행한 증거 ID만 재조회하고 원천 검증',
+      schema('evidence','같은 run에서 발행한 근거 ID로 조회 결과를 다시 읽기',
         {evidenceIds:{type:'array',items:{type:'string'},minItems:1,maxItems:24,uniqueItems:true}},
         ['evidenceIds']),
     ];
@@ -585,12 +437,10 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
     try {
       validate(name,args);
       if (name === 'evidence') {
-        const verification=verifyEvidence({evidenceIds:args.evidenceIds});
-        return {...base(),status:verification.valid?'ready':'error',
-          ...(verification.valid?{items:verification.items,missing:[]}:
-            {items:[],errorCode:verification.issues[0]?.errorCode ?? 'request_invalid',
-             limitations:['발행되지 않았거나 원천이 일치하지 않는 Evidence ID입니다.']}),
-          evidenceIds:verification.valid?args.evidenceIds:[]};
+        const items=evidenceItems(args.evidenceIds);
+        const found=new Set(items.map(item=>item.evidenceId));
+        return {...base(),status:items.length?'ready':'empty',items,
+          missing:args.evidenceIds.filter(id=>!found.has(id)),evidenceIds:items.map(item=>item.evidenceId)};
       }
       const pack=getPack(args.scopeRole), role=args.scopeRole;
       const actions={overview,metric_detail:metricDetail,trend,records,
@@ -600,7 +450,7 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
       const response=!disposed && snapshots.has('primary') ? meta(snapshots.get('primary'),'primary') :
         {scope:null, reportingBasis:null,dataHash:null,sourceVersion:null,evidenceIds:[],limitations:[]};
       return {...response,status:'error',errorCode:error.code ?? 'tool_failed',
-        limitations:['요청을 검증하거나 원천 자료를 조회할 수 없습니다.']};
+        limitations:['요청한 자료를 조회할 수 없습니다.']};
     }
   }
   function optionCatalog() {
@@ -618,6 +468,6 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
       reviewIds:reviewRows(pack,{}).map(row=>row.id)
     };
   }
-  return Object.freeze({metricCatalog,toolSchemas,optionCatalog,execute,verifyEvidence,
+  return Object.freeze({metricCatalog,toolSchemas,optionCatalog,execute,evidenceItems,
     async dispose() {if (disposed) return;disposed=true;issued.clear();snapshots.clear();}});
 }

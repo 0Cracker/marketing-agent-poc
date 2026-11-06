@@ -1,7 +1,6 @@
 import {createHash,randomUUID} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {firstJevRequest,firstPlan,jevState,optionCalls,optionJevRequest,readJevAnswers} from './jev-plan.mjs';
-import {verifyMarkdownAnswer} from './verify-markdown.mjs';
 import {dimensions,metrics} from '../tools/metrics.mjs';
 import {chatValue} from '../../../shared/roas/roas-chat.mjs';
 import {metricChange} from '../../../shared/roas/training-dashboard.mjs';
@@ -251,8 +250,8 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
         try {
           output=format==='jev'?readJevAnswers(input,response?.output):
             format==='markdown'?response?.output:parseResponse(response);
-          if(format==='markdown'&&!limitString(output,20000))throw stopError('model_protocol');
-          emit(run,'check_model_response',{status:'passed',model,provider});
+          if(format==='markdown'&&typeof output!=='string')throw stopError('model_protocol');
+          if(format!=='markdown')emit(run,'check_model_response',{status:'passed',model,provider});
         } catch(error) {
           emit(run,'check_model_response',{status:'failed',model,provider,errorCode:safeCode(error?.code)});
           throw error;
@@ -320,36 +319,24 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
         const size=Buffer.byteLength(JSON.stringify(result));
         const byteLimit=useJev?100*1024:MAX_RESULT_BYTES;
         if(size>byteLimit||run.usage.resultBytes+size>byteLimit)throw stopError('tool_result_limit');
-        if(run.scope.dataHash&&result.dataHash&&result.dataHash!==run.scope.dataHash){
-          emit(run,'check_tool_evidence',{tool:job.name,status:'failed',errorCode:'inputs_changed'});
-          run.integrityError='inputs_changed';throw stopError('inputs_changed');
-        }
         run.usage.resultBytes+=size;
         return {job,result,elapsedMs:nowMs(clock)-started};
       }catch(e){return {job,result:{status:'error',errorCode:e?.code||'tool_failed'},elapsedMs:nowMs(clock)-started};}
     }));
-    if(run.integrityError)throw stopError(run.integrityError);
     for(const {job,result,elapsedMs} of outcomes) {
       if(run.cancelled)break;
       const ids=[...collectIds(result)];
-      // Persist source-checked evidence metadata, never raw tool records.
-       if (typeof store?.publishEvidence === 'function' && ids.length) {
-         for (let offset=0;offset<ids.length;offset+=24) {
-           const verified=toolRuntime.verifyEvidence({evidenceIds:ids.slice(offset,offset+24),claims:[]});
-           if (!verified?.valid) {
-             emit(run,'check_tool_evidence',{tool:job.name,status:'failed',errorCode:'validation_failed'});
-             throw stopError('validation_failed');
-           }
-           for (const item of verified.items) {
-             await store.publishEvidence({runId:run.runId,evidence:{
-               evidenceId:item.evidenceId,sourceHash:item.sourceHash,
-               sourceVersion:item.sourceVersion,periodId:item.periodId,
-               tool:job.name,sourceRowIds:item.sourceRecordIds
-             }});
-           }
-         }
-       }
-       for(const id of ids)run.issued.add(id);
+      // Persist lookup metadata, never raw tool records.
+      if (typeof store?.publishEvidence === 'function') {
+        for (const item of toolRuntime.evidenceItems?.(ids)||[]) {
+          await store.publishEvidence({runId:run.runId,evidence:{
+            evidenceId:item.evidenceId,sourceHash:item.sourceHash,
+            sourceVersion:item.sourceVersion,periodId:item.periodId,
+            tool:job.name,sourceRowIds:item.sourceRecordIds
+          }});
+        }
+      }
+      for(const id of ids)run.issued.add(id);
       const entry={name:job.name,args:job.args,scopeRole:job.args.scopeRole||'primary',result};
       run.retrieved.push(entry);
       emit(run,'tool_result',{tool:job.name,status:result.status,count:result.rows?.length??result.records?.length??
@@ -373,16 +360,12 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
     if(serialized.length>55000)throw stopError('model_context_limit');
     return context;
   }
-  async function finalStep(run,toolRuntime,role,context) {
+  async function finalStep(run,role,context) {
     stage(run,'final_answer');
     const response=await requestModel(run,role,{...context,results:answerResults(context.results)},
       {final:true,format:'markdown'});
     if(!response)return null;
-    stage(run,'verifying');
-    const result=verifyMarkdownAnswer(response.output,toolRuntime,run.retrieved,[],(check,status,errorCode)=>
-      emit(run,'check_final_'+check,{status,errorCode}));
-    emit(run,'verification',{status:result.status,errorCode:result.issues?.[0],evidenceIds:result.evidenceIds||[]});
-    return {result};
+    return {result:{status:'completed',answer:response.output,evidenceIds:[...run.issued],limitations:[]}};
   }
   async function jevWorkflow(run,toolRuntime) {
     const catalog=toolRuntime.metricCatalog();
@@ -430,21 +413,13 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
     const results=run.retrieved.map(({name,args,result})=>({name,args,result}));
     limitations.push(...results.filter(({result})=>result.status!=='ready')
       .map(({name,result})=>name+': '+result.status));
-    if(!run.issued.size) {
-      run.stopReason='insufficient_evidence';
-      return {status:'partial',answer:'현재 조회 범위에서 답변에 사용할 검증된 근거를 찾지 못했습니다.',
-        evidenceIds:[],limitations};
-    }
     stage(run,'final_answer');
     const response=await requestModel(run,run.route==='quick'?'quick_answer':'deep_final',
       {...state,route:run.route,results:answerResults(results),limitations},{format:'markdown',final:true});
     if(!response)throw stopError(run.lastModelError||'models_unavailable');
-    stage(run,'verifying');
-    const result=verifyMarkdownAnswer(response.output,toolRuntime,results,limitations,(check,status,errorCode,argsSummary)=>
-      emit(run,'check_final_'+check,{status,errorCode,argsSummary}));
-    emit(run,'verification',{status:result.status,errorCode:result.issues?.[0],evidenceIds:result.evidenceIds||[]});
-    run.stopReason=result.issues?.[0]||'gemini_sufficient';
-    return result;
+    run.stopReason='gemini_sufficient';
+    return {status:limitations.length?'partial':'completed',answer:response.output,
+      evidenceIds:[...run.issued],limitations};
   }
   async function perform(run) {
     let toolRuntime;
@@ -458,10 +433,8 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
         scope:comparisonScope?{primary,comparison:comparisonScope}:clone(primary),issuedAt:run.startedAt,
         now:()=>nowMs(clock)});
       stopped(run);
-      if(!toolRuntime||typeof toolRuntime.execute!=='function'||typeof toolRuntime.verifyEvidence!=='function')
+      if(!toolRuntime||typeof toolRuntime.execute!=='function')
         throw stopError('data_unavailable');
-      const snapshot=toolRuntime.snapshotInfo?.();
-      if(snapshot?.dataHash&&snapshot.dataHash!==run.scope.dataHash)throw stopError('inputs_changed');
       if(useJev) {
         run.result=await jevWorkflow(run,toolRuntime);
         stopped(run);
@@ -510,7 +483,7 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
         if(!decided&&!run.stopReason)run.stopReason='call_limit';
       }
       stopped(run);
-      const outcome=await finalStep(run,toolRuntime,run.route==='quick'?'quick_answer':'deep_final',
+      const outcome=await finalStep(run,run.route==='quick'?'quick_answer':'deep_final',
         modelContext(run,toolRuntime));
       if(!outcome) {
         run.executionStatus=run.usage.modelAttempts===0?'blocked':'withheld';
@@ -527,7 +500,7 @@ export function createRunEngine({toolRuntimeFactory,providerPool,store,clock=Dat
       if(code==='user_cancelled'){run.runStatus='cancelled';run.stopReason='user_cancelled';run.executionStatus=useJev?'cancelled':run.result?.status==='completed'?'partial':'withheld';}
       else if(code==='time_limit'){run.runStatus=run.result?.status==='partial'?'partial':'withheld';run.executionStatus=run.runStatus;run.stopReason='time_limit';}
       else {run.runStatus=['data_unavailable','models_unavailable','model_budget_exhausted','run_not_active'].includes(code)?'blocked':'withheld';
-        run.executionStatus=run.runStatus;run.stopReason=code==='inputs_changed'?'validation_failed':code;}
+        run.executionStatus=run.runStatus;run.stopReason=code;}
       emit(run,'failure',{errorCode:run.stopReason});
     } finally {
       clearTimeout(timer);

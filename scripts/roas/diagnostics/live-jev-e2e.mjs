@@ -108,7 +108,7 @@ try {
     while(true) {
       const response=await fetch(base+'/roas/runs/'+active.accepted.runId,{headers:{'x-agent-token':session.token}});
       const state=await response.json();
-      for(const event of state.events?.slice(previous)||[])if(['stage','model_plan','verification','failure'].includes(event.kind))
+      for(const event of state.events?.slice(previous)||[])if(['stage','model_plan','failure'].includes(event.kind))
         console.log(JSON.stringify({question:expectedRoute,...event}));
       previous=state.events?.length||0;
       active.state=state;save();

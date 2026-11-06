@@ -13,7 +13,7 @@ export type RunState={
  scopeFingerprint?:string;appliedScope?:RunScope;sourceHashes?:Record<string,string>;
  stopReason?:string;startedAt?:number|string;terminalAt?:number|string;
  events?:RunEvent[];lastEventSeq?:number;usage?:{modelAttempts?:number;toolCalls?:number;reportedCostUsd?:number};
- result?:{answer?:string;sections?:{conclusion?:string;summary?:string[];reasoning?:string[];actions?:string[];limitations?:string[]};evidenceIds?:string[];limitations?:string[];verification?:{passed?:boolean};verified?:boolean}|null;
+ result?:{answer?:string;sections?:{conclusion?:string;summary?:string[];reasoning?:string[];actions?:string[];limitations?:string[]};evidenceIds?:string[];limitations?:string[]}|null;
 };
 export type RunScope={caseId:string;snapshot:string;filters:Record<string,string>;dataHash:string;metric:string;screenTitle:string};
 export type RunRequest={question:string;scope:RunScope;history:{role:'user'|'assistant';content:string}[];threadId:string;clientRequestId:string};
@@ -38,7 +38,7 @@ export const runStatusLabel=(state:RunState)=>{
 export const stageLabel=(stage?:string)=>({
  queued:'분석 대기',scope_locked:'조회 범위 확인',routed:'분석 경로 선택',
  overview:'자료 조회',retrieving:'자료 조회',classifying:'분석 경로와 도구 선택',choosing_options:'조회 조건 선택',
- reasoning:'분석',final_answer:'답변 작성',verifying:'근거 검증',
+ reasoning:'분석',final_answer:'답변 작성',
  terminal:'결과 정리'
 } as Record<string,string>)[stage||'']||'분석 진행 중';
 export const toolLabel=(tool?:string)=>({
@@ -58,7 +58,6 @@ export function entryAnswer(entry:ConversationEntry):string|null{
  if(entry.kind==='example')return entry.result.answer;
  const s=entry.state;
  if(!s||!['completed','partial'].includes(s.executionStatus)||!s.result)return null;
- if(s.result.verified!==true&&s.result.verification?.passed!==true)return null;
  return s.result.answer||s.result.sections?.conclusion||null;
 }
 export function recentRunHistory(entries:ConversationEntry[]):RunRequest['history']{

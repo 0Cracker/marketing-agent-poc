@@ -5,7 +5,6 @@ import {setTimeout as wait} from 'node:timers/promises';
 import {createRunEngine} from '../../../backend/roas/engine/index.mjs';
 import {createMockProviderPool} from '../../../backend/roas/mock-provider.mjs';
 import {createProviderPool} from '../../../backend/roas/providers/index.mjs';
-import {verifyMarkdownAnswer} from '../../../backend/roas/engine/verify-markdown.mjs';
 import {optionCalls,optionJevRequest,readJevAnswers} from '../../../backend/roas/engine/jev-plan.mjs';
 import {createToolRuntime} from '../../../backend/roas/tools/index.mjs';
 import {trainingScreenData} from '../../../scripts/roas/training-data.mjs';
@@ -103,37 +102,45 @@ test('provider quota responses switch Gemini to Gateway and Sail without billing
   assert(run.events.some(event=>event.kind==='model_fallback'&&event.provider==='sail'));
 });
 
-test('Markdown verification rejects mismatched numbers and fabricated evidence',async()=>{
-  const runtime=await createToolRuntime({scope,runId:'markdown-check'});
-  try {
-    const result=await runtime.execute({name:'overview',args:{scopeRole:'primary'}});
-    const period=result.periods.find(period=>period.id==='current');
-    const results=[{name:'overview',result}];
-    const expected=(period.totals.roas*100).toFixed(1);
-    assert.equal(verifyMarkdownAnswer('ROAS **'+expected+'%** ['+period.evidenceId+']',runtime,results).status,'completed');
-    assert.deepEqual(verifyMarkdownAnswer('ROAS 999% ['+period.evidenceId+']',runtime,results).issues,['numeric_mismatch']);
-    assert.deepEqual(verifyMarkdownAnswer('ROAS는 999%입니다. ['+period.evidenceId+']',runtime,results).issues,['numeric_mismatch']);
-    const before=result.periods.find(item=>item.id==='baseline');
-    const change=(100*(before.totals.roas-period.totals.roas)).toFixed(1);
-    const grouped='ROAS는 '+change+'%포인트 하락했습니다. ['+before.evidenceId+', '+period.evidenceId+']';
-    const verified=verifyMarkdownAnswer(grouped,runtime,results);
-    assert.equal(verified.status,'completed');
-    assert.deepEqual(verified.evidenceIds,[before.evidenceId,period.evidenceId]);
-    assert(!verified.answer.includes(', EV-'));
-    const spend=(100*(period.totals.spend/before.totals.spend-1)).toFixed(1);
-    const currentCvr=(period.totals.cvr*100).toFixed(1);
-    const mixed='지출 비용은 '+spend+'% 증가했고 CVR은 '+currentCvr+'%입니다 ['+before.evidenceId+', '+period.evidenceId+']';
-    assert.equal(verifyMarkdownAnswer(mixed,runtime,results).status,'completed');
-    const records=await runtime.execute({name:'records',args:{scopeRole:'primary',category:'change'}});
-    const budgetRecord=records.records.find(row=>String(row.values.변경전).includes('240000'));
-    const combined='일예산은 240,000원에서 420,000원으로 바뀌었습니다 ['+budgetRecord.evidenceId+']. '+
-      '현재 ROAS는 '+expected+'%입니다 ['+period.evidenceId+'].';
-    assert.equal(verifyMarkdownAnswer(combined,runtime,[...results,{name:'records',result:records}]).status,'completed');
-    assert.deepEqual(verifyMarkdownAnswer('ROAS 999%\n['+period.evidenceId+']',runtime,results).issues,['missing_numeric_citation']);
-    assert.deepEqual(verifyMarkdownAnswer('ROAS '+expected+'% [EV-invalid]',runtime,results).issues,['source_verification_failed']);
-  } finally {
-    await runtime.dispose();
+test('quick and deep forward Markdown unchanged, without numeric or citation gates',async()=>{
+  const answer='ROAS는 999%입니다. [EV-invalid, EV-range-1~16]\n\n인용 없는 복합 문장도 그대로 전달합니다.';
+  for(const route of ['quick','deep']) {
+    const pool=createMockProviderPool();
+    const engine=createRunEngine({workflow:'jev',toolRuntimeFactory:createToolRuntime,providerPool:{
+      ...pool,invokeOnce:async params=>{
+        if(params.format==='markdown')return {output:answer};
+        const response=await pool.invokeOnce(params);
+        if(params.input.questions.route)response.output.answers.route={type:'choice',choice:route,
+          probabilities:{quick:route==='quick'?1:0,deep:route==='deep'?1:0},confidence:1};
+        return response;
+      }
+    }});
+    const run=await runToEnd(engine,'현재 ROAS 알려줘','raw-'+route);
+    assert.equal(run.executionStatus,'completed');
+    assert.equal(run.result.answer,answer);
+    assert.equal(run.result.verification,undefined);
+    assert(!run.events.some(e=>e.stage==='verifying'||e.kind==='verification'||e.kind.startsWith('check_final_')));
   }
+});
+
+test('Jev selecting no tools still sends the question to the answer model',async()=>{
+  const pool=createMockProviderPool(),formats=[];
+  const engine=createRunEngine({workflow:'jev',toolRuntimeFactory:createToolRuntime,providerPool:{
+    ...pool,invokeOnce:async params=>{
+      formats.push(params.format);
+      if(params.format==='markdown') {
+        assert.deepEqual(params.input.results,[]);
+        return {output:'현재 조회한 데이터가 없습니다.'};
+      }
+      const response=await pool.invokeOnce(params);
+      for(const answer of Object.values(response.output.answers))if(answer.type==='noul')answer.noul=0;
+      return response;
+    }
+  }});
+  const run=await runToEnd(engine,'현재 ROAS 알려줘','no-tools');
+  assert.equal(run.executionStatus,'completed');
+  assert.equal(run.result.answer,'현재 조회한 데이터가 없습니다.');
+  assert.deepEqual(formats,['jev','markdown']);
 });
 
 test('cancel stops a pending Jev request without an execution deadline',async()=>{

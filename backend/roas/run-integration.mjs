@@ -9,12 +9,11 @@ export function createRunPersistence(store) {
     },
     async updateRun(state) {
       const status=state.executionStatus||state.runStatus;
-      const verified=['completed','partial'].includes(status)&&state.result?.status===status;
       store.saveRun({
         runId:state.runId,executionStatus:status,stage:state.stage,
         route:state.route,causeStatus:state.causeStatus,stopReason:state.stopReason,
         sourceHashes:{roas:state.appliedScope.dataHash},
-        result:verified?{...state.result,verified:true}:undefined,
+        result:state.result,
         usage:state.usage
       });
     },

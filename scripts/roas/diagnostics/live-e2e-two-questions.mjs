@@ -75,7 +75,6 @@ async function testQuestion(question,index){
  console.log('FINISHED',JSON.stringify({index,runId:out.runId,route:out.route,status:out.status,stopReason:out.stopReason,
   elapsedMs:out.elapsedMs,usage:out.usage,toolCalls:out.events.filter(e=>e.kind==='tool_result'),
   modelAttempts:out.events.filter(e=>e.kind==='model_attempt'),
-  verification:out.events.filter(e=>e.kind==='verification'),
   answer:out.result?.answer||null}).slice(0,18000));
  return out;
 }
