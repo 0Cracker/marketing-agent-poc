@@ -63,7 +63,7 @@ test('actual local server: no-Origin GET, mocked completion, restart recovery, a
   assert.equal(completed.executionStatus,'completed',completed.stopReason);
   assert(completed.events.some(e=>e.kind==='model_success'&&e.provider==='mock'));
   assert.match(completed.result.answer,/ROAS/);
-  assert.equal(completed.result.verification.passed,true);
+  assert.equal(completed.result.verification,undefined);
   const page=await fetch(traceBase+'/agent-trace');
   assert.equal(page.status,200);
   assert.match(await page.text(),/원본 보기/);
@@ -77,7 +77,7 @@ test('actual local server: no-Origin GET, mocked completion, restart recovery, a
   assert.equal(recent[0].runId,runId);
   const trace=await (await fetch(traceBase+'/agent-trace/runs/'+runId+'?afterEventSeq=1')).json();
   assert.deepEqual(trace.events,completed.events.slice(1));
-  assert(trace.events.some(e=>e.kind==='check_final_format'&&e.status==='passed'));
+  assert(!trace.events.some(e=>e.kind.startsWith('check_final_')||e.kind==='verification'));
   assert.equal(trace.route,'quick');
   assert.equal(trace.scope.caseId,'S16');
   assert.match(trace.publishedAnswer,/ROAS/);

@@ -49,11 +49,11 @@ test('unknown start outcome preserves payload to retry the SAME clientRequestId'
  const accepted=await client.startRoasRun(request);
  assert.equal(accepted.runId,runId);assert.equal(starts,2);
 });
-test('run history only uses verified answers and event fallback reflects actual model switches',()=>{
+test('run history retains answers without approval flags and fallback reflects model switches',()=>{
  const unverified={kind:'run',question:'허위 수치',request,clientRequestId:'a',state:{runId,executionStatus:'completed',result:{answer:'신뢰할 수 없음',verification:{passed:false}}}};
  const verified={kind:'run',question:'지표 질문',request,clientRequestId:'b',state:{runId,executionStatus:'partial',result:{answer:'검증 완료',verification:{passed:true}}}};
- assert.equal(entryAnswer(unverified),null);
- assert.deepEqual(recentRunHistory([unverified,verified]),[{role:'user',content:'지표 질문'},{role:'assistant',content:'검증 완료'}]);
+ assert.equal(entryAnswer(unverified),'신뢰할 수 없음');
+ assert.deepEqual(recentRunHistory([unverified,verified]),[{role:'user',content:'허위 수치'},{role:'assistant',content:'신뢰할 수 없음'},{role:'user',content:'지표 질문'},{role:'assistant',content:'검증 완료'}]);
  assert.equal(isTerminal(verified.state),true);
  assert.equal(toolLabel('metric_detail'),'지표 세부 데이터 조회');
  const events=[{kind:'model_attempt',model:'gemini-A',provider:'gemini'}, {kind:'model_error',model:'gemini-A',provider:'gemini',errorCode:'quota_exhausted'},

@@ -114,15 +114,13 @@ const labels={
   empty:'빈 결과', not_provided:'자료 없음',
   scope_locked:'요청 접수', routed:'실행 경로 결정', overview:'기초 자료 조회',
   classifying:'분석 경로와 도구 선택', choosing_options:'조회 조건 선택', retrieving:'자료 조회', reasoning:'모델 분석',
-  final_answer:'답변 생성', verifying:'답변 검증', terminal:'종료',
+  final_answer:'답변 생성', terminal:'종료',
   accepted:'요청 접수', tool_start:'도구 입력 통과, 조회 시작', tool_rejected:'도구 요청 거절',
-  tool_result:'도구 결과', check_tool_evidence:'조회 근거 확인',
+  tool_result:'도구 결과',
   model_attempt:'모델 호출', model_success:'모델 응답', model_fallback:'모델 전환',
   model_error:'모델 호출 실패', check_model_response:'모델 응답 파싱',
-  model_plan:'모델의 다음 동작', server_plan:'서버 보완 조회', answer_draft:'검증할 답변 초안',
-  check_final_format:'답변 형식 검사', check_final_evidence:'근거 검사',
-  check_final_numbers:'수치 검사', answer_retry:'답변 재생성',
-  verification:'검증 결과', failure:'실행 오류', tool_dispose_error:'도구 정리 실패'
+  model_plan:'모델의 다음 동작', server_plan:'서버 보완 조회',
+  failure:'실행 오류', tool_dispose_error:'도구 정리 실패'
 };
 const failureKinds=new Set(['model_error','tool_rejected','failure','tool_dispose_error']);
 const failed=e=>failureKinds.has(e.kind)||['failed','error','withheld','partial'].includes(e.status);
@@ -131,7 +129,7 @@ const label=value=>labels[value]||value||'기록 없음';
 const time=value=>new Date(value).toLocaleTimeString('ko-KR',{hour12:false});
 const duration=row=>((Math.max(0,(row.terminalAt??Date.now())-row.startedAt))/1000).toFixed(1)+'초';
 const node=(tag,value)=>{const el=document.createElement(tag);el.textContent=value;return el;};
-let selected='', generation=0, seq=0, rawSeq=-1, signature='', group=null, attempts=0;
+let selected='', generation=0, seq=0, rawSeq=-1, signature='';
 let lane=null, laneName='', route=null;
 const toolNames={overview:'광고 성과 개요',review_summary:'리뷰 집계',metric_detail:'지표 상세',trend:'일별 지표 추이',
   records:'운영 기록',review_records:'리뷰 기록',evidence:'근거 조회'};
@@ -139,9 +137,7 @@ const units={overview:'기간',review_summary:'기간',metric_detail:'그룹 또
   records:'기록',review_records:'리뷰',evidence:'근거'};
 const roles={first_tool_classifier:'첫 추가 조회 선택',deep_reasoning:'추가 조회 여부 판단',
   quick_answer:'빠른 조회 답변 생성',deep_final:'심층 분석 답변 생성'};
-const reasons={missing_final_field:'필수 필드 누락',invalid_final_schema:'답변 구조가 형식 규칙을 위반함',
-  source_verification_failed:'저장된 원천으로 근거를 확인하지 못함',evidence_not_issued:'이 실행에서 발급하지 않은 근거 ID',
-  numeric_mismatch:'제출한 수치와 원천 재계산값이 다름',model_protocol:'모델 출력이 응답 규약에 맞지 않음',
+const reasons={model_protocol:'모델 출력이 응답 규약에 맞지 않음',
   duplicate_call:'같은 입력의 도구를 이미 실행함',tool_limit:'도구 호출 한도에 도달함'};
 
 async function read(url) {
@@ -153,7 +149,7 @@ function select(id) {
   if(selected===id)return;
   selected=id;
   generation++;
-  seq=0; rawSeq=-1; group=null; attempts=0;
+  seq=0; rawSeq=-1;
   lane=null; laneName=''; route=null;
   steps.replaceChildren();
   original.open=false; original.hidden=true;
@@ -202,7 +198,7 @@ function stageDescription(stage) {
     choosing_options:'선택된 도구의 조회 조건을 판단합니다.',
     reasoning:'모델이 확보한 자료를 보고 추가 조회와 답변 생성 중 다음 동작을 결정합니다.',
     retrieving:'도구별 조회 입력과 반환 결과입니다.',
-    final_answer:'조회한 자료를 답변 모델에 전달하고, 반환된 초안을 서버 검증에 넘깁니다.'
+    final_answer:'조회한 자료를 답변 모델에 전달하고, 받은 Markdown 답변을 그대로 반환합니다.'
   }[stage];
 }
 function describeEvent(e) {
@@ -216,55 +212,26 @@ function describeEvent(e) {
       return e.argsSummary||((count??'집계되지 않은')+'개 '+(units[e.tool]||'결과')+'를 반환했습니다.');
     case 'model_attempt': return [e.model||'모델',e.provider,roles[e.argsSummary]].filter(Boolean).join(' / ');
     case 'model_success': return (e.model||'모델')+' 응답을 받아 현재 단계에서 처리했습니다.';
-    case 'check_model_response': return failed(e)?why:'모델 응답을 읽었습니다. 필요한 필드와 내용은 후속 단계에서 검사합니다.';
+    case 'check_model_response': return failed(e)?why:'도구 선택을 위한 구조화 응답을 읽었습니다.';
     case 'model_plan':
       if(e.status==='gemini_sufficient')return '수집된 자료로 답변 생성에 진행하기로 했습니다.';
       if(e.status==='insufficient_evidence')return '근거가 부족하다고 보고 추가 조회를 종료했습니다.';
       if(!count)return '추가 도구를 요청하지 않았습니다.';
       return (e.argsSummary||count+'개 도구')+' 요청'+(e.status==='skipped'?' / 호출 한도로 실행하지 않음':'');
-    case 'answer_retry': return '검증에서 발견한 문제를 모델에 전달해 답변을 다시 생성합니다.'+(why?' '+why+'.':'');
-    case 'check_final_format': case 'check_final_evidence': case 'check_final_numbers':
-      if(e.status==='skipped')return '앞 검사에서 실패해 이 검사는 실행하지 않았습니다.';
-      if(why)return why+(e.argsSummary?' / '+e.argsSummary:'');
-      return {check_final_format:'필수 필드와 답변 구조를 확인했습니다.',
-        check_final_evidence:'인용한 근거가 이 실행에서 발급되었고 원천 자료와 맞는지 확인했습니다.',
-        check_final_numbers:'답변 수치를 원천 자료와 대조했습니다.'}[e.kind];
     case 'terminal':
-      return e.status==='completed'?'검증된 답변을 반환하고 실행을 종료했습니다.':
+      return e.status==='completed'?'모델 답변을 반환하고 실행을 종료했습니다.':
         '실행을 종료했습니다.'+(why?' '+why+'.':'');
     default: return [e.argsSummary,why].filter(Boolean).join(' / ');
   }
 }
 function appendEvent(e) {
-  if(e.kind==='accepted'||e.kind==='stage'&&e.stage!=='verifying') {
+  if(e.kind==='accepted'||e.kind==='stage') {
     const stage=e.kind==='accepted'?'scope_locked':e.stage;
     if(stage==='scope_locked'&&laneName===stage)return;
     if(stage==='retrieving'&&laneName==='overview')return;
     if(stage==='routed')route=e.argsSummary||route;
-    group=null;laneName=stage;
+    laneName=stage;
     lane=newStage(label(stage),stageDescription(stage));
-    return;
-  }
-  if(e.kind==='stage'&&e.stage==='verifying') {
-    laneName='verifying';
-    lane=newStage('답변 검증','형식, 근거, 수치를 검사한 뒤 반환 여부를 결정합니다.');
-    group=node('details','');
-    group.open=true;
-    group.append(node('summary','답변 검증 '+(++attempts)+'차, 진행 중'));
-    lane.append(group);
-    return;
-  }
-  if(group&&e.kind==='verification') {
-    group.firstChild.textContent='답변 검증 '+attempts+'차, '+(e.status==='completed'?'통과':label(e.status));
-    group.firstChild.className=failed(e)?'failed':'passed';
-    if(failed(e))group.open=true;
-    if(group.children.length===1) {
-      const legacy=node('p',['검사별 상세 기록 없음',e.errorCode].filter(Boolean).join(' / '));
-      legacy.className='meta';
-      group.append(legacy);
-    }
-    if(e.count!==undefined)group.append(node('small','검증된 수치 주장 '+e.count+'건'));
-    group=null;
     return;
   }
   if(!lane||e.kind==='terminal')lane=newStage(e.kind==='terminal'?'종료':'실행 기록');
@@ -281,7 +248,7 @@ function appendEvent(e) {
     detail.append(node('summary','근거 ID '+e.evidenceIds.length+'개'),node('code',e.evidenceIds.join(', ')));
     entry.append(detail);
   }
-  (group&&e.kind.startsWith('check_final_')?group:lane).append(entry);
+  lane.append(entry);
 }
 async function showOriginal() {
   if(!selected||!original.open||rawSeq===seq)return;

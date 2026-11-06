@@ -62,7 +62,7 @@ import {isTerminal,runStatusLabel,stageLabel,toolLabel,wasModelFallback} from '.
 const eventLabels:Record<string,string>={
  accepted:'분석 요청 접수',stage:'단계 변경',tool_result:'도구 조회 결과',
  tool_rejected:'도구 요청 거절',model_attempt:'모델 호출',
- model_success:'모델 응답',model_error:'모델 오류',verification:'수치와 근거 검증',
+ model_success:'모델 응답',model_error:'모델 오류',
  cancel_requested:'분석 취소 요청',cancelled:'분석 취소',terminal:'실행 종료',
  failure:'실행 오류',engine_error:'실행 엔진 오류'
 };
@@ -92,9 +92,9 @@ function RunLogEntry({event,fallback,fallbackReason}:{event:RunEvent;fallback:bo
  </li>;
 }
 export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;onCancel?:()=>void;cancelling?:boolean}){
- const done=isTerminal(state),verified=state.result?.verified===true||state.result?.verification?.passed===true;
- const sections=verified?state.result?.sections:undefined;
- const answer=verified?state.result?.answer:undefined;
+ const done=isTerminal(state);
+ const sections=state.result?.sections;
+ const answer=state.result?.answer;
  const evidences=state.result?.evidenceIds||[];
  const events=state.events||[];
  return <section className="wb-agent-result wb-structured-answer wb-run-answer" aria-label="비동기 분석 결과">
@@ -104,18 +104,18 @@ export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;on
   </div>}
   {done&&sections?.conclusion?<div className="wb-answer-conclusion"><h3>핵심 결론</h3><p>{sections.conclusion}</p></div>:null}
   {done&&!sections&&answer?<RunMarkdown answer={answer}/>:null}
-  {done&&verified&&sections?.summary?.length?<section className="wb-answer-section"><h3>결과 정리</h3><ul>{sections.summary.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
-  {done&&verified&&sections?.reasoning?.length?<section className="wb-answer-section"><h3>판단 근거</h3><ul>{sections.reasoning.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
-  {done&&verified&&sections?.actions?.length?<section className="wb-answer-section wb-answer-actions"><h3>최종 추천 액션</h3><ol>{sections.actions.map((item,i)=><li key={i}>{item}</li>)}</ol></section>:null}
-  {done&&(!verified||!(sections?.conclusion||answer))&&<p className="wb-run-unavailable">{state.executionStatus==='completed'?'검증된 답변 원문을 서버에서 제공하지 않았습니다.':'검증된 완료 답변이 없습니다.'} {state.stopReason&&'종료 사유: '+state.stopReason}</p>}
-  {done&&verified&&<div className="wb-answer-limits">{sections?.limitations?.map((text,i)=><p key={i}>{text}</p>)}{state.result?.limitations?.map((text,i)=><p key={'limit'+i}>{text}</p>)}</div>}
+  {done&&sections?.summary?.length?<section className="wb-answer-section"><h3>결과 정리</h3><ul>{sections.summary.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
+  {done&&sections?.reasoning?.length?<section className="wb-answer-section"><h3>판단 근거</h3><ul>{sections.reasoning.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
+  {done&&sections?.actions?.length?<section className="wb-answer-section wb-answer-actions"><h3>최종 추천 액션</h3><ol>{sections.actions.map((item,i)=><li key={i}>{item}</li>)}</ol></section>:null}
+  {done&&!(sections?.conclusion||answer)&&<p className="wb-run-unavailable">답변을 받지 못했습니다. {state.stopReason&&'종료 사유: '+state.stopReason}</p>}
+  {done&&<div className="wb-answer-limits">{sections?.limitations?.map((text,i)=><p key={i}>{text}</p>)}{state.result?.limitations?.map((text,i)=><p key={'limit'+i}>{text}</p>)}</div>}
   <details className="wb-answer-references"><summary>실행 정보와 근거 {evidences.length}개</summary>
    <div className="wb-run-metadata"><p>실행 ID: <code>{state.runId}</code></p>
     {state.route&&<p>조사 유형: {state.route==='deep'?'심층 조사':'빠른 조회'}</p>}
     {state.scopeFingerprint&&<p>조회 범위 식별값: {state.scopeFingerprint}</p>}
     {state.appliedScope?.dataHash&&<p>자료 해시: {state.appliedScope.dataHash}</p>}
     {state.usage?.modelAttempts!==undefined&&<p>모델 호출: {state.usage.modelAttempts}회</p>}
-    {evidences.length>0&&<p>검증 근거 ID: {evidences.join(', ')}</p>}
+    {evidences.length>0&&<p>조회 근거 ID: {evidences.join(', ')}</p>}
     {state.sourceHashes&&Object.keys(state.sourceHashes).length>0&&<p>원천 버전 해시: {Object.entries(state.sourceHashes).map(([name,hash])=>name+' '+hash).join(', ')}</p>}
    </div>
   </details>

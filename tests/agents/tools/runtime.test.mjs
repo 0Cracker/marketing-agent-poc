@@ -64,11 +64,11 @@ test('overview preserves existing summarize and original case/snapshot filters',
   assert.equal(result.reportingBasis.periodEndExclusive,true);
 });
 
-test('dashboard exposure metrics use the matching source rows and verify in answers',async()=>{
+test('dashboard exposure metrics calculate from matching source rows',async()=>{
   const definitions=[
-    ['contentClickRate','content_view','clicks',1,'%'],
-    ['adCpm','ad_impression','spend',1000,'원'],
-    ['contentCpm','content_view','spend',1000,'원'],
+    ['contentClickRate','content_view','clicks',1],
+    ['adCpm','ad_impression','spend',1000],
+    ['contentCpm','content_view','spend',1000],
   ];
   const catalog=tools.metricCatalog().metricCapabilities;
   const allMetrics=catalog.map(metric=>metric.id);
@@ -83,14 +83,14 @@ test('dashboard exposure metrics use the matching source rows and verify in answ
   const trendDay=trend.days[0];
   const currentRows=selectFacts(trainingScreenData(undefined,'S16','initial'),filters)
     .filter(row=>row.periodId==='current');
-  for(const [metric,basis,field,multiplier,unit] of definitions){
+  for(const [metric,basis,field,multiplier] of definitions){
     const detail=await execute('metric_detail',{metric,dimension:'campaign'});
     assert.equal(detail.status,'ready');
     const detailCurrent=detail.periods.find(period=>period.id==='current');
-    for(const [,,evidence,component,rows] of [
-      ['overview',overview,overviewCurrent,overviewCurrent.components[metric],currentRows],
-      ['metric_detail',detail,detailCurrent,detailCurrent,currentRows],
-      ['trend',trend,trendDay,trendDay.components[metric],currentRows.filter(row=>row.date===trendDay.date)],
+    for(const [component,rows] of [
+      [overviewCurrent.components[metric],currentRows],
+      [detailCurrent,currentRows],
+      [trendDay.components[metric],currentRows.filter(row=>row.date===trendDay.date)],
     ]){
       const eligible=rows.filter(row=>row.exposureBasis===basis);
       const numerator=eligible.reduce((total,row)=>total+row[field],0);
@@ -101,11 +101,6 @@ test('dashboard exposure metrics use the matching source rows and verify in answ
       assert.equal(component.denominator,denominator);
       assert.equal(component.value,raw);
       assert.equal(component.rowCount,eligible.length);
-      const evidenceIds=[evidence.evidenceId];
-      const claim={metric,value:unit==='%'?raw*100:raw,unit,periodId:'current',scopeRole:'primary',evidenceIds};
-      assert.equal(tools.verifyEvidence({evidenceIds,claims:[claim]}).valid,true);
-      claim.value+=1;
-      assert.equal(tools.verifyEvidence({evidenceIds,claims:[claim]}).valid,false);
     }
   }
 });
@@ -221,38 +216,16 @@ test('review summary and records: approved S16/S17 counts, quotes, coverage, pag
   } finally {await s01.dispose();}
 });
 
-test('Evidence ledger binds run, period, source fingerprint and numeric claims',async()=>{
+test('Evidence registry retrieves issued lookup results and reports absent IDs',async()=>{
   const overview=await execute('overview');
-  const [baseId,currentId]=overview.evidenceIds;
-  const checked=tools.verifyEvidence({evidenceIds:[baseId,currentId]});
-  assert.equal(checked.valid,true);
-  assert.equal(checked.items.length,2);
-  const first=overview.periods[0];
-  const valid=tools.verifyEvidence({evidenceIds:[baseId],claims:[{
-    metric:'roas',value:first.totals.roas*100,unit:'%',periodId:'baseline',
-    scopeRole:'primary',evidenceIds:[baseId],
-  }]});
-  assert.equal(valid.valid,true);
-  assert.equal(tools.verifyEvidence({evidenceIds:[baseId],claims:[{
-    metric:'roas',value:first.totals.roas,unit:'%',periodId:'baseline',
-    scopeRole:'primary',evidenceIds:[baseId],
-  }]}).valid,false);
-  assert.equal(tools.verifyEvidence({evidenceIds:[baseId],claims:[{
-    metric:'cvr',value:0,unit:'%',periodId:'current',
-    scopeRole:'primary',evidenceIds:[baseId],
-  }]}).valid,false);
-  const diff=(overview.periods[1].totals.roas-overview.periods[0].totals.roas)*100;
-  assert.equal(tools.verifyEvidence({evidenceIds:[baseId,currentId],claims:[{
-    metric:'roas',value:diff,unit:'%p',periodId:'change',
-    scopeRole:'primary',evidenceIds:[baseId,currentId],
-  }]}).valid,true);
-  assert.equal((await execute('evidence',{evidenceIds:[baseId]})).items[0].verified,true);
-  assert.equal((await execute('evidence',{evidenceIds:['EV-other-run-1']})).errorCode,'evidence_not_issued');
-  const other=await createToolRuntime({scope:scopeFor(),runId:'another-run'});
-  try {
-    const foreign=(await other.execute({name:'overview',args:{scopeRole:'primary'}})).evidenceIds[0];
-    assert.equal(tools.verifyEvidence({evidenceIds:[foreign]}).valid,false);
-  } finally {await other.dispose();}
+  const result=await execute('evidence',{evidenceIds:overview.evidenceIds});
+  assert.equal(result.status,'ready');
+  assert.equal(result.items.length,2);
+  assert.equal(result.items[0].summary.totals.roas,overview.periods[0].totals.roas);
+  assert.equal(result.items[0].verified,undefined);
+  const missing=await execute('evidence',{evidenceIds:['EV-other-run-1']});
+  assert.equal(missing.status,'empty');
+  assert.deepEqual(missing.missing,['EV-other-run-1']);
 });
 
 test('immutable run snapshot survives external loader mutation, disposal revokes evidence',async()=>{
@@ -269,10 +242,10 @@ test('immutable run snapshot survives external loader mutation, disposal revokes
   const reviews=await runtime.execute({name:'review_records',args:{scopeRole:'primary',reviewIds:['REV-S16-020']}});
   assert.deepEqual(before.periods.map(p=>p.totals),afterChange.periods.map(p=>p.totals));
   assert.equal(count,1);
-  assert.equal(runtime.verifyEvidence({evidenceIds:before.evidenceIds}).valid,true);
+  assert.equal(runtime.evidenceItems(before.evidenceIds).length,2);
   assert.notEqual(reviews.reviews[0]?.text,'changed after the snapshot');
   await runtime.dispose();
-  assert.equal(runtime.verifyEvidence({evidenceIds:before.evidenceIds}).valid,false);
+  assert.throws(()=>runtime.evidenceItems(before.evidenceIds),/runtime_disposed/);
   assert.equal((await runtime.execute({name:'overview',args:{scopeRole:'primary'}})).errorCode,'runtime_disposed');
 });
 
@@ -321,7 +294,7 @@ test('controlled existing-row selection preserves null denominator and true empt
   }finally{await e.dispose();}
 });
 
-test('primary and comparison locks remain distinct, Evidence cannot cross scope roles',async()=>{
+test('primary and comparison queries retain their own source metadata',async()=>{
   const runtime=await createToolRuntime({runId:'two-scope-run',
     scope:{primary:scopeFor('S16'),comparison:scopeFor('S17')}});
   try{
@@ -331,17 +304,15 @@ test('primary and comparison locks remain distinct, Evidence cannot cross scope 
     assert.equal(compare.scope.caseId,'S17');
     assert.equal(main.status,'ready');assert.equal(compare.status,'ready');
     assert.notEqual(main.dataHash,compare.dataHash);
-    assert.equal(runtime.verifyEvidence({evidenceIds:[main.evidenceIds[0],compare.evidenceIds[0]]}).valid,true);
-    assert.equal(runtime.verifyEvidence({evidenceIds:[compare.evidenceIds[0]],claims:[{
-      metric:'cvr',value:0,unit:'%',periodId:'baseline',scopeRole:'primary',
-      evidenceIds:[compare.evidenceIds[0]],
-    }]}).valid,false);
+    const items=runtime.evidenceItems([main.evidenceIds[0],compare.evidenceIds[0]]);
+    assert.deepEqual(items.map(item=>item.scopeRole),['primary','comparison']);
     assert.equal((await runtime.execute({name:'metric_detail',args:{
       scopeRole:'not-approved',metric:'cvr',
     }})).errorCode,'unsupported_scope');
   }finally{await runtime.dispose();}
-  await assert.rejects(createToolRuntime({runId:'stale-scope',
-    scope:scopeFor('S16','initial',{dataHash:'0'.repeat(64)})}),/inputs_changed/);
+  const stale=await createToolRuntime({runId:'stale-scope',scope:scopeFor('S16','initial',{dataHash:'0'.repeat(64)})});
+  try {assert.equal((await stale.execute({name:'overview',args:{scopeRole:'primary'}})).status,'ready');}
+  finally {await stale.dispose();}
 });
 
 test('review category counts retain multi-assignment, and period/source filters remain distinct',async()=>{

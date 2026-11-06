@@ -8,7 +8,7 @@
 | 002 | 두 역할 B 흐름·Node 오프라인 TDD | B 사용자 채택 / 실행 기반 구현 판단 | v0.4.0 (당시 v0.2.0) | [결정](decision-002.md) |
 | 003 | 공통 조사 flow와 온톨로지 추가 비교 | 의도의 개별 결정과 답변 경로 자동 구분 사용자 확정, SDD 세부 인터뷰 중 | 버전 미확정, 에이전트 개발 기획 | [Intent](../design/agent-development-intent.md), [SDD](../design/agent-development-sdd.md) |
 
-2026-11-06 에이전트 후속 결정은 [Jev 두 단계 요청 계약](../design/agent-development-sdd.md#36-jev-두-단계-요청-계약-2026-11-06)에 기록한다. 도구 지표 세 개를 추가했고, Jev 계약은 규약과 예시 작성 범위다.
+2026-11-06 에이전트 후속 결정은 [Jev 두 단계 요청 계약](../design/agent-development-sdd.md#36-jev-두-단계-요청-계약-2026-11-06)에 기록한다. 도구 지표 세 개와 두 단계 Jev 요청을 연결했고, 이후 사용자 지시로 [답변 자동 검증을 제거](../design/agent-development-sdd.md#3612-답변-자동-검증-제거-2026-11-06-사용자-확정)했다. 서버는 도구 조회와 계산, 모델 답변 전달을 담당한다.
 
 2026-10-16 후속 적용: [D005와 공통 사전의 역할·사용자 선택](../research/marketing-ontology/common-contract/structure-decision-20261016.md). 원천 보존·공통 의미 구분 원칙을 유지하며 전역 사전 적합 게이트와 가상 반올림을 구현했다. [v0.2.0 기록](../iterations/v0.2.0.md#9-d005-역할-확정가상-반올림전역-계약-게이트--2026-10-16)에 근거와 미완료 상태를 연결했다.
 
