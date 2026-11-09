@@ -60,7 +60,7 @@
 .training-dashboard .training-indicator-title>span{font-size:14px;font-weight:600;color:#27354B}
 .training-indicator-value{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:8px;min-width:0}
 .training-indicator-value>strong{font-size:26px;font-weight:600;line-height:1.3;font-variant-numeric:tabular-nums;white-space:nowrap}
-.training-indicator-value>.training-delta{font-size:12px;white-space:nowrap}
+.training-indicator-value>.training-delta{font-size:14px;white-space:nowrap}
 .training-dashboard .training-delta-positive{color:#C43D42}
 .training-dashboard .training-delta-negative{color:#236AB9}
 .training-dashboard .training-delta-neutral{color:#687487}
