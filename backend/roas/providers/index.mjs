@@ -8,8 +8,8 @@ const CATALOG = [
 ];
 const ORDER = {
   quick_answer:['gemini-lite','gateway-lite','sail-open'],
-  deep_reasoning:['gemini-deep','gemini-lite','gateway-lite','sail-open'],
-  deep_final:['gemini-deep','gemini-lite','gateway-lite','sail-open'],
+  deep_reasoning:['gemini-deep','gateway-lite','sail-open'],
+  deep_final:['gemini-deep','gateway-lite','sail-open'],
   first_tool_classifier:['jev-choice','gemini-lite','gateway-lite','sail-open']
 };
 const URLS = {
