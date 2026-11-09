@@ -98,7 +98,8 @@ test('provider quota responses switch Gemini to Gateway and Sail without billing
   assert.deepEqual(called,['jev','gemini','gateway','sail']);
   assert.equal(run.usage.modelAttempts,4);
   assert.equal(run.usage.exceptionAttempts,2);
-  assert.equal(pool.providerStatus({role:'deep_final'}).find(candidate=>candidate.id==='gemini-lite').reason,'quota_exhausted');
+  assert.equal(pool.providerStatus({role:'deep_final'}).some(candidate=>candidate.id==='gemini-lite'),false);
+  assert.equal(pool.providerStatus({role:'deep_final'}).find(candidate=>candidate.id==='gemini-deep').reason,'quota_exhausted');
   assert(run.events.some(event=>event.kind==='model_fallback'&&event.provider==='sail'));
 });
 
