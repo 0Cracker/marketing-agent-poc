@@ -12,13 +12,15 @@ const render=props=>renderToStaticMarkup(createElement(RoasRunView,props));
 
 test('run component shows only actual tool/model events, fallback, and cancel button',()=>{
  const html=render({onCancel:()=>{},state:{runId,executionStatus:'running',stage:'retrieving',route:'deep',events:[
-  {seq:1,kind:'model_error',model:'gemini-A',provider:'gemini',errorCode:'quota_exhausted',at:1700000000000},
+  {seq:1,kind:'model_error',model:'gemini-A',provider:'gemini',errorCode:'quota_exhausted',
+   failurePhase:'http_status',causeCode:'RESOURCE_EXHAUSTED',httpStatus:429,at:1700000000000},
   {seq:2,kind:'model_attempt',model:'sail-B',provider:'sail',transport:'api',billingBucket:'free',at:1700000001000},
   {seq:3,kind:'tool_result',tool:'metric_detail',status:'not_provided',count:0,elapsedMs:5,evidenceIds:['ev:1']}
  ]}});
  assert.match(html,/분석 진행 중/);
  assert.match(html,/심층 조사/);
  assert.match(html,/다른 모델로 전환 중/);
+ assert.match(html,/실패 구간 http_status, 원래 코드 RESOURCE_EXHAUSTED, HTTP 429/);
  assert.match(html,/자료 미제공/);
  assert.match(html,/지표 세부 데이터 조회/);
  assert.match(html,/근거 ID.*ev:1/);

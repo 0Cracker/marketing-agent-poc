@@ -13,7 +13,7 @@ import {trainingScreenData} from '../training-data.mjs';
 
 if(!process.argv.includes('--live'))throw Error('Pass --live to make real Jev and generation calls.');
 const root=path.resolve(import.meta.dirname,'../../..');
-const reportDirectory=path.join(root,'evidence','jev-e2e-20261106');
+const reportDirectory=path.join(root,'evidence','jev-e2e-'+new Date().toISOString().slice(0,10).replaceAll('-',''));
 fs.mkdirSync(reportDirectory,{recursive:true});
 const reportPath=path.join(reportDirectory,'run-'+Date.now()+'.json');
 const env={...process.env};
@@ -41,7 +41,11 @@ const providerPool={providerStatus:pool.providerStatus,eligibleCandidates:pool.e
       return response;
     } catch(error) {
       attempt.errorCode=error.code||'unknown';
-      console.log(JSON.stringify({kind:'model_error',provider:attempt.provider,errorCode:attempt.errorCode}));
+      attempt.failurePhase=error.failurePhase;
+      attempt.causeCode=error.causeCode;
+      attempt.httpStatus=error.httpStatus;
+      console.log(JSON.stringify({kind:'model_error',provider:attempt.provider,model:attempt.model,
+        errorCode:attempt.errorCode,failurePhase:attempt.failurePhase,causeCode:attempt.causeCode,httpStatus:attempt.httpStatus}));
       throw error;
     } finally {attempt.elapsedMs=Date.now()-start;save();}
   }};
@@ -97,6 +101,7 @@ try {
     ['quick','현재 ROAS 알려줘'],
     ['deep','캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?']
   ]) {
+    if(process.argv.includes('--deep-only')&&expectedRoute!=='deep')continue;
     active={question,expectedRoute,attempts:[],tools:[],request:{question,scope,history:[],threadId:randomUUID(),clientRequestId:randomUUID()}};
     report.runs.push(active);save();
     const start=Date.now();

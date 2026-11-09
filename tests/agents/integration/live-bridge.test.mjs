@@ -27,9 +27,8 @@ function finishFromData(input) {
   const data=input.results.find(item=>item.name==='overview')?.result;
   assert(data,'real overview must be available');
   const period=data.periods.find(item=>item.id==='current');
-  const evidenceId=period.evidenceId;
-  const value=period.totals.roas*100;
-  return '현재 ROAS '+value.toFixed(1)+'% ['+evidenceId+']';
+  assert.equal(typeof period.display.roas,'string');
+  return '현재 ROAS '+period.display.roas;
 }
 async function fixture(t,{invoke,maxModelAttemptsPerDay=60}={}) {
   const dir=mkdtempSync(join(tmpdir(),'agent-real-bridge-'));
@@ -123,7 +122,9 @@ test('model text survives HTTP, SQLite and repeated reads without content valida
 
 test('real SQLite bridge: same-model quota errors move directly to Gateway and Sail',async t=>{
   const f=await fixture(t,{invoke:({candidate,input})=>{
-    if(candidate.provider==='gemini')throw Object.assign(Error('rate'),{code:'rate_limited'});
+    if(candidate.provider==='gemini')throw Object.assign(Error('rate'),{
+      code:'rate_limited',failurePhase:'http_status',causeCode:'RESOURCE_EXHAUSTED',httpStatus:429
+    });
     if(candidate.provider==='gateway')throw Object.assign(Error('credits'),{code:'credits_exhausted'});
     return finishFromData(input);
   }});
@@ -133,6 +134,13 @@ test('real SQLite bridge: same-model quota errors move directly to Gateway and S
   assert.deepEqual(f.invocations,['gemini','gateway','sail']);
   assert.equal(result.usage.modelAttempts,3);
   assert.equal(result.events.filter(e=>e.kind==='model_error').length,2);
+  const failed=result.events.find(e=>e.kind==='model_error'&&e.provider==='gemini');
+  assert.equal(failed.stage,'final_answer');
+  assert.equal(failed.role,'quick_answer');
+  assert.equal(failed.attemptIndex,1);
+  assert.equal(failed.failurePhase,'http_status');
+  assert.equal(failed.causeCode,'RESOURCE_EXHAUSTED');
+  assert.equal(failed.httpStatus,429);
   assert(result.events.some(e=>e.kind==='model_attempt'&&e.provider==='sail'));
 });
 

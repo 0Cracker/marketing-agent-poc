@@ -1,6 +1,6 @@
 {
   "name": "marketing-agent-poc",
-  "version": "0.4.23",
+  "version": "0.4.24",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -9,6 +9,7 @@
     "install:ci": "node scripts/install-ci.mjs",
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "vite build",
+    "build:agent-trace": "vite build --config vite.agent-trace.config.ts",
     "start": "vite preview --host 127.0.0.1 --port 5173",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "test": "node --experimental-strip-types --test tests/roas/*.test.mjs tests/roas/*.test.ts",
@@ -16,12 +17,15 @@
     "test:roas": "npm test",
     "test:training": "node --test tests/roas/separation.test.mjs",
     "data:training": "node scripts/roas/generate-training-dashboard.mjs",
+    "prestart:agents": "npm run build:agent-trace",
     "start:agents": "node scripts/roas/agent-server.mjs",
     "test:legacy": "node --experimental-strip-types legacy/tests/marketing.test.ts && node --experimental-strip-types legacy/tests/demo.test.ts",
     "start:legacy-agents": "node legacy/scripts/agent-server.mjs",
     "dev:legacy": "vite --config vite.legacy.config.ts --host 127.0.0.1 --port 5174",
     "db:generate:legacy": "drizzle-kit generate --config legacy/drizzle.config.ts",
+    "predev:agent": "npm run build:agent-trace",
     "dev:agent": "node scripts/roas/dev-agent.mjs",
+    "predev:agent:mock": "npm run build:agent-trace",
     "dev:agent:mock": "node scripts/roas/dev-agent.mjs --mock"
   },
   "dependencies": {

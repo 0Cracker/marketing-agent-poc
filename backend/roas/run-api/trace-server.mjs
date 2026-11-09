@@ -1,21 +1,37 @@
 import {createServer} from 'node:http';
-import {readFileSync} from 'node:fs';
-import {createHash} from 'node:crypto';
+import {existsSync,readFileSync} from 'node:fs';
+import {createHash,randomBytes} from 'node:crypto';
+import {createRunRoutes,RunApiError} from './index.mjs';
 
-export function createTraceServer(store) {
+const chatBuild=new URL('../../../.agent-state/trace-ui/',import.meta.url);
+const fonts=new URL('../../../frontend/public/fonts/',import.meta.url);
+const contentTypes={js:'text/javascript',css:'text/css',woff2:'font/woff2'};
+
+export function createTraceServer(store,{engine,loadData,mode,port:tracePort}={}) {
   const html=readFileSync(new URL('./trace.html',import.meta.url),'utf8').replace(/\r\n?/g,'\n');
   const scriptHash=createHash('sha256').update(html.match(/<script>([\s\S]*?)<\/script>/)[1]).digest('base64');
-  const server=createServer((req,res)=>{
-    function send(status,body,htmlResponse=false) {
+  const origins=new Set(['http://127.0.0.1:'+tracePort,'http://localhost:'+tracePort]);
+  const token=engine?randomBytes(32).toString('hex'):null;
+  const routes=engine&&createRunRoutes({store,engine,authContext:{
+    allowedOrigins:origins,
+    verify({req}) {
+      if(req.headers['x-agent-token']!==token)throw new RunApiError('authentication_required');
+      return {accountId:'qa-local',browserId:'operator-local-browser'};
+    }
+  }});
+  const server=createServer(async(req,res)=>{
+    function send(status,body,type='application/json',chat=false) {
+      const csp=chat?"default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'none'; form-action 'none'":
+        `default-src 'none'; script-src 'sha256-${scriptHash}'; style-src 'unsafe-inline'; connect-src 'self'; frame-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'`;
       res.writeHead(status,{
-        'content-type':(htmlResponse?'text/html':'application/json')+'; charset=utf-8',
+        'content-type':type+(type==='font/woff2'?'':'; charset=utf-8'),
         'cache-control':'no-store',
         'x-content-type-options':'nosniff',
         'cross-origin-resource-policy':'same-origin',
         'referrer-policy':'no-referrer',
-        'content-security-policy':`default-src 'none'; script-src 'sha256-${scriptHash}'; style-src 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'`
+        'content-security-policy':csp
       });
-      res.end(htmlResponse?body:JSON.stringify(body));
+      res.end(type==='application/json'?JSON.stringify(body):body);
     }
     const {host,origin,'sec-fetch-site':site}=req.headers;
     const port=server.address()?.port;
@@ -25,10 +41,26 @@ export function createTraceServer(store) {
        (origin&&origin!==`http://${host}`)||(site&&!['same-origin','none'].includes(site)&&!shellRequest)) {
       return send(403,{error:'local_only'});
     }
-    if(req.method!=='GET')return send(405,{error:'read_only'});
     try {
       const url=new URL(req.url,'http://127.0.0.1');
-      if(url.pathname==='/agent-trace')return send(200,html,true);
+      if(routes&&await routes.handle(req,res))return;
+      if(req.method!=='GET')return send(405,{error:'method_not_allowed'});
+      if(url.pathname==='/agent-trace')return send(200,html,'text/html');
+      if(routes&&url.pathname==='/agent-api/session')return send(200,{token,mode,externalModelEnabled:mode==='remote_model',realAdsEnabled:false});
+      if(loadData&&url.pathname==='/agent-trace/data')return send(200,loadData());
+      if(url.pathname==='/agent-trace/chat') {
+        const entry=new URL('agent-trace-chat.html',chatBuild);
+        const ready=routes&&existsSync(entry);
+        return send(ready?200:503,ready?readFileSync(entry):
+          '<!doctype html><html lang="ko"><meta charset="utf-8"><p>채팅을 열려면 npm run build:agent-trace 실행 후 새로고침해 주세요.</p></html>',
+          'text/html',true);
+      }
+      const asset=url.pathname.match(/^\/assets\/([a-z0-9_-]+\.(js|css))$/i);
+      const font=url.pathname.match(/^\/fonts\/(PretendardVariable\.woff2|SUIT-Variable\.woff2)$/);
+      if(asset||font) {
+        const resource=asset?new URL('assets/'+asset[1],chatBuild):new URL(font[1],fonts);
+        if(existsSync(resource))return send(200,readFileSync(resource),contentTypes[asset?asset[2]:'woff2']);
+      }
       if(url.pathname==='/agent-trace/runs')return send(200,store.listTraceRuns());
       const run=url.pathname.match(/^\/agent-trace\/runs\/([a-f0-9-]{36})(\/original)?$/i);
       if(!run)return send(404,{error:'not_found'});
@@ -37,6 +69,7 @@ export function createTraceServer(store) {
       const result=store.getTraceRun(run[1],Number(after),Boolean(run[2]));
       return result?send(200,result):send(404,{error:'run_not_found'});
     } catch {
+      if(res.headersSent)return res.end();
       return send(500,{error:'trace_unavailable'});
     }
   });

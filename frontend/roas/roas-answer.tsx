@@ -84,7 +84,10 @@ function RunLogEntry({event,fallback,fallbackReason}:{event:RunEvent;fallback:bo
   event.status&&(toolStatuses[event.status]||event.status),
   (event.count??event.rowCount)!==undefined&&'조회 '+(event.count??event.rowCount)+'건',
   elapsed!==undefined&&'소요 '+elapsed+'ms',
-  event.errorCode&&'오류 '+event.errorCode
+  event.errorCode&&'오류 '+event.errorCode,
+  event.failurePhase&&'실패 구간 '+event.failurePhase,
+  event.causeCode&&'원래 코드 '+event.causeCode,
+  event.httpStatus&&'HTTP '+event.httpStatus
  ].filter(Boolean);
  return <li><div className="wb-run-log-line"><strong>{fallback?'다른 모델로 전환 중':eventLabels[event.kind||'']||stageLabel(event.stage)}</strong><time>{eventTime(event.at)}</time></div>
   {pieces.length>0&&<p>{pieces.join(', ')}</p>}

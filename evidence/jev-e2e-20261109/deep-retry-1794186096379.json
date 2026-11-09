@@ -1,0 +1,21 @@
+{
+  "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+  "scope": {
+    "caseId": "S16",
+    "snapshot": "initial",
+    "metric": "roas",
+    "screenTitle": "성과 현황",
+    "filters": {
+      "channel": "all",
+      "source": "all",
+      "campaignId": "all",
+      "device": "all"
+    },
+    "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+  },
+  "startedAt": "2026-11-09T01:01:36.379Z",
+  "mode": "live chat client via Vite proxy",
+  "waitUntilTerminal": true,
+  "browserInteraction": "disabled in Work settings",
+  "harnessError": "ERR_ASSERTION"
+}

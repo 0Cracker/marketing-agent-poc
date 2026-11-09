@@ -6,7 +6,7 @@ import {
   trainingCaseIds, trainingCostDefinition, metricMissingReason,
 } from '../../../shared/roas/training-dashboard.mjs';
 import {chatValue} from '../../../shared/roas/roas-chat.mjs';
-import {dimensions, dimensionRows, groupKey, keyFor, metricCapabilities, metricResult, metricRows, metrics} from './metrics.mjs';
+import {dashboardDimensions, dimensions, dimensionRows, groupKey, keyFor, metricCapabilities, metricResult, metricRows, metrics} from './metrics.mjs';
 
 const sha256 = value => createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
 const clone = value => structuredClone(value);
@@ -22,7 +22,8 @@ const isObject = value => value !== null && typeof value === 'object' && !Array.
 const allowed = (object, keys) => isObject(object) && Object.keys(object).every(key => keys.includes(key));
 const dates = ['baseline', 'current'];
 const sources = ['all', 'own_store', 'virtual_external_1'];
-const toolNames = Object.freeze(['overview', 'metric_detail', 'trend', 'records', 'review_summary', 'review_records', 'evidence']);
+const isSearchOnly = (pack, facts) => facts.length > 0 &&
+  facts.every(row => pack.data.campaigns.find(campaign => campaign.id === row.campaignId)?.channel === 'search');
 const periodOption = ['both', ...dates];
 const limits = (args, total) => {
   const offset = args.offset ?? 0, limit = args.limit ?? 24;
@@ -147,11 +148,15 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
       }]:[];
     });
   }
-  function toolSchemas() {
+  function toolSchemas({workflow} = {}) {
     if (disposed) fail('runtime_disposed');
     const roles = [...snapshots.keys()], scoped = commonProps(roles);
-    const catalogs = [...snapshots.values()].flatMap(pack => metricCapabilities(pack.data, pack.scope.filters));
-    const offered = [...new Set(catalogs.flatMap(row => row.availableDimensions))];
+    const offered = [...new Set([...snapshots.values()].flatMap(pack => {
+      const catalog=metricCapabilities(pack.data,pack.scope.filters);
+      if(workflow!=='jev')return catalog.flatMap(row=>row.availableDimensions);
+      const searchOnly=isSearchOnly(pack,selectFacts(pack.data,pack.scope.filters));
+      return catalog.flatMap(row=>dashboardDimensions(row.id,searchOnly).filter(dimension=>row.availableDimensions.includes(dimension)));
+    }))];
     const metricList = Object.keys(metrics);
     const period = {periodId:textEnum(periodOption)};
     const reviewProps = {
@@ -161,11 +166,16 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
     return [
       schema('overview','기간별 전체 KPI, 분자와 분모, ROAS 및 리뷰 제공 상태',
         {...scoped,metrics:{type:'array',items:textEnum(metricList),minItems:1,maxItems:metricList.length,uniqueItems:true}}),
-      schema('metric_detail','지표 세부 데이터 조회: 산식, 기초 필드, 직전/현재, 지표별 제공 차원',
-        {...scoped,metric:textEnum(metricList),dimension:textEnum(offered),...paging},['scopeRole','metric']),
+      ...(workflow === 'jev' ? [
+        schema('metric_components','지표 하나의 산식, 단위, 직전과 현재의 분자, 분모와 계산값',
+          {...scoped,metric:textEnum(metricList)},['scopeRole','metric']),
+        schema('metric_breakdown','지표 하나를 한 분석 단위로 나눈 그룹별 직전, 현재와 증감',
+          {...scoped,metric:textEnum(metricList),dimension:textEnum(offered),...paging},['scopeRole','metric','dimension']),
+      ] : [schema('metric_detail','지표 세부 데이터 조회: 산식, 기초 필드, 직전/현재, 지표별 제공 차원',
+        {...scoped,metric:textEnum(metricList),dimension:textEnum(offered),...paging},['scopeRole','metric'])]),
       schema('trend','승인된 기간의 실제 일별 ROAS 등 지표 추이',
         {...scoped,metrics:{type:'array',items:textEnum(metricList),minItems:1,maxItems:metricList.length,uniqueItems:true},
-          granularity:textEnum(['day']),...period,...paging}),
+          granularity:textEnum(['day']),...period,...paging},workflow==='jev'?['scopeRole','metrics','periodId']:undefined),
       schema('records','광고 운영 변경 기록 원문, 시점은 인과 증거가 아님',
         {...scoped,category:{type:'string'},query:safeQuery,...paging}),
       schema('review_summary','S16/S17 쓱쓱샴푸 리뷰 기간/판매처별 분류 집계',
@@ -187,16 +197,17 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
   }
   function validate(name, args) {
     if (disposed) fail('runtime_disposed');
-    if (!toolNames.includes(name)) fail('tool_unknown');
     if (!isObject(args)) fail('request_invalid');
     const keys = {
       overview:['scopeRole','metrics'], metric_detail:['scopeRole','metric','dimension','offset','limit'],
+      metric_components:['scopeRole','metric'], metric_breakdown:['scopeRole','metric','dimension','offset','limit'],
       trend:['scopeRole','metrics','granularity','periodId','offset','limit'],
       records:['scopeRole','category','query','offset','limit'],
       review_summary:['scopeRole','productId','sourceId','periodId','categoryId'],
       review_records:['scopeRole','productId','sourceId','periodId','categoryId','experienceId','sentiment','reviewIds','query','offset','limit'],
       evidence:['evidenceIds'],
     };
+    if (!Object.hasOwn(keys,name)) fail('tool_unknown');
     if (!allowed(args, keys[name])) fail('request_invalid');
     if (name === 'evidence') return;
     if (!snapshots.has(args.scopeRole)) fail('unsupported_scope');
@@ -204,8 +215,9 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
         args.metrics.length > Object.keys(metrics).length ||
         new Set(args.metrics).size !== args.metrics.length ||
         args.metrics.some(metric => !(metric in metrics)))) fail('request_invalid');
-    if (name === 'metric_detail' && !(args.metric in metrics)) fail('unsupported_metric');
-    if (name === 'metric_detail' && args.dimension !== undefined &&
+    if (['metric_detail','metric_components','metric_breakdown'].includes(name) && !Object.hasOwn(metrics,args.metric))
+      fail('unsupported_metric');
+    if ((name === 'metric_breakdown' || name === 'metric_detail' && args.dimension !== undefined) &&
         !dimensions.includes(args.dimension)) fail('unsupported_scope');
     if (name === 'trend' && args.granularity !== undefined && args.granularity !== 'day') fail('unsupported_scope');
     if (['trend','review_summary','review_records'].includes(name) &&
@@ -215,7 +227,7 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
       if (args.productId !== undefined && args.productId !== 'EDU-P1' ||
           args.sourceId !== undefined && !sources.includes(args.sourceId)) fail('unsupported_scope');
     }
-    if (['metric_detail','trend','records','review_records'].includes(name) &&
+    if (['metric_detail','metric_breakdown','trend','records','review_records'].includes(name) &&
         (args.offset !== undefined && (!Number.isSafeInteger(args.offset) || args.offset < 0) ||
          args.limit !== undefined && (!Number.isSafeInteger(args.limit) || args.limit < 1 || args.limit > 24))) fail('request_invalid');
   }
@@ -238,15 +250,14 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
       evidenceIds:periods.map(period => period.evidenceId).filter(Boolean),
       limitations:status === 'empty' ? ['선택된 필터의 원천 행이 없습니다.'] : []};
   }
-  function metricDetail(pack,role,args) {
+  function metricScope(pack,role,args) {
     const capabilities = metricCapabilities(pack.data,pack.scope.filters).find(row => row.id === args.metric);
-    const dimension = args.dimension;
-    const common = {...base(role),metric:args.metric,metricDefinition:definition(args.metric),
+    return {...base(role),metric:args.metric,metricDefinition:definition(args.metric),status:capabilities.availability,
       availability:capabilities.availability,relatedMetrics:capabilities.relatedMetrics,
-      supportedDimensions:capabilities.availableDimensions};
-    if (capabilities.availability !== 'ready') return {...common,status:capabilities.availability,
-      periods:[],limitations:capabilities.limitations};
-    if (dimension && !capabilities.availableDimensions.includes(dimension)) fail('unsupported_scope');
+      supportedDimensions:capabilities.availableDimensions,limitations:[...capabilities.limitations]};
+  }
+  function metricComponents(pack,role,args,scope=metricScope(pack,role,args)) {
+    if (scope.status !== 'ready') return {...scope,periods:[]};
     const facts = selectFacts(pack.data,pack.scope.filters);
     const periods = pack.data.periods.map(period => {
       const rows = metricRows(facts.filter(row => row.periodId === period.id),args.metric);
@@ -255,38 +266,59 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
         {metric:args.metric, ...result});
       return {id:period.id,start:period.start,end:period.end,...result,evidenceId};
     });
-    const output = {...common,status:'ready',periods,
-      evidenceIds:periods.map(row=>row.evidenceId),
-      limitations:[...capabilities.limitations]};
+    const output = {...scope,periods,evidenceIds:periods.map(row=>row.evidenceId),limitations:[...scope.limitations]};
     if (periods.some(period => period.denominator === 0)) {
       output.limitations.push(metricMissingReason(facts,args.metric).reason);
     }
-    if (!dimension) return output;
-    const dimensionData = metricRows(dimensionRows(pack.data,pack.scope.filters,dimension),args.metric);
+    return output;
+  }
+  function metricGroups(pack,role,args,withDelta=false) {
+    const {dimension,metric}=args;
+    const dimensionData = metricRows(dimensionRows(pack.data,pack.scope.filters,dimension),metric);
     const keys = [...new Set(dimensionData.map(row=>groupKey(keyFor(row,dimension))))].sort();
     const {offset,limit,nextOffset,truncated} = limits(args,keys.length);
     const groups = keys.slice(offset,offset+limit).map(key => {
       const pairs = Object.fromEntries(pack.data.periods.map(period => {
         const rows = dimensionData.filter(row => row.periodId === period.id &&
           groupKey(keyFor(row,dimension)) === key);
-        const calculated = metricResult(rows,args.metric);
+        const calculated = metricResult(rows,metric);
+        if (withDelta && !rows.length) calculated.value=null;
         const evidenceId = issue(pack,role,'metric',dimension === 'campaign' || dimension === 'device' ? 'facts':'breakdowns',
-          rows,period.id,{metric:args.metric,dimension,key,...calculated});
+          rows,period.id,{metric,dimension,key,...calculated});
         return [period.id,{...calculated,evidenceId}];
       }));
       const label = dimension === 'campaign' ? campaignDisplayName(pack.data,key) :
         dimension === 'product' ? pack.data.products.find(p=>p.id===key)?.label ?? key :
         key === '__unspecified__' ? '미기록' : key;
-      return {key,label,...pairs};
+      const {current,baseline}=pairs;
+      return {key,label,...pairs,...(withDelta ? {delta:Number.isFinite(current.value) && Number.isFinite(baseline.value)
+        ? current.value-baseline.value : null} : {})};
     });
-    output.dimension=dimension;output.groups=groups;output.total=keys.length;
-    output.nextOffset=nextOffset;output.truncated=truncated;
-    output.evidenceIds.push(...groups.flatMap(group=>dates.map(id=>group[id].evidenceId)));
-    output.limitations.push('서로 다른 분해 차원을 중복 합산하지 않습니다.');
+    const limitations=['서로 다른 분해 차원을 중복 합산하지 않습니다.'];
     if (dimension === 'product' || dimensions.indexOf(dimension) >= 3)
-      output.limitations.push('상품/트래픽의 집행비는 합성 배분 원천입니다.');
-    if (truncated) output.limitations.push('일부 그룹만 반환되었습니다. 다음 페이지를 확인해야 전체입니다.');
-    return output;
+      limitations.push('상품/트래픽의 집행비는 합성 배분 원천입니다.');
+    if (truncated) limitations.push('일부 그룹만 반환되었습니다. 다음 페이지를 확인해야 전체입니다.');
+    return {dimension,groups,total:keys.length,nextOffset,truncated,
+      evidenceIds:groups.flatMap(group=>dates.map(id=>group[id].evidenceId)),limitations};
+  }
+  function metricBreakdown(pack,role,args) {
+    const scope=metricScope(pack,role,args);
+    if (scope.status !== 'ready') return {...scope,dimension:args.dimension,groups:[],total:0};
+    const searchOnly=args.dimension === 'keyword' && isSearchOnly(pack,selectFacts(pack.data,pack.scope.filters));
+    if (!scope.supportedDimensions.includes(args.dimension) ||
+        !dashboardDimensions(args.metric,searchOnly).includes(args.dimension)) fail('unsupported_scope');
+    const groups=metricGroups(pack,role,args,true);
+    return {...scope,...groups,limitations:[...scope.limitations,...groups.limitations]};
+  }
+  function metricDetail(pack,role,args) {
+    const scope=metricScope(pack,role,args);
+    if (scope.status === 'ready' && args.dimension && !scope.supportedDimensions.includes(args.dimension))
+      fail('unsupported_scope');
+    const components=metricComponents(pack,role,args,scope);
+    if (scope.status !== 'ready' || !args.dimension) return components;
+    const groups=metricGroups(pack,role,args);
+    return {...components,...groups,evidenceIds:[...components.evidenceIds,...groups.evidenceIds],
+      limitations:[...components.limitations,...groups.limitations]};
   }
   function trend(pack,role,args) {
     const periodId = args.periodId ?? 'both';
@@ -443,7 +475,7 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
           missing:args.evidenceIds.filter(id=>!found.has(id)),evidenceIds:items.map(item=>item.evidenceId)};
       }
       const pack=getPack(args.scopeRole), role=args.scopeRole;
-      const actions={overview,metric_detail:metricDetail,trend,records,
+      const actions={overview,metric_detail:metricDetail,metric_components:metricComponents,metric_breakdown:metricBreakdown,trend,records,
         review_summary:reviewSummary,review_records:reviewRecords};
       return clone(actions[name](pack,role,args));
     } catch (error) {
@@ -460,7 +492,7 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
     const periods=pack.review.status==='ready'?pack.review.periods:[];
     return {
       recordCategories:[...new Set(recordRows(pack).map(row=>row.category))],
-      searchOnly:facts.length>0&&facts.every(row=>pack.data.campaigns.find(campaign=>campaign.id===row.campaignId)?.channel==='search'),
+      searchOnly:isSearchOnly(pack,facts),
       reviewStatus:pack.review.status,
       reviewSources:unique(reviewRows(pack,{}).map(({sourceId,sourceName})=>({sourceId,sourceName})),'sourceId'),
       reviewCategories:unique(periods.flatMap(period=>period.categories||[]),'categoryId'),

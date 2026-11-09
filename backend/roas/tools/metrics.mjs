@@ -39,6 +39,11 @@ export const metrics = Object.freeze(Object.fromEntries(Object.entries(sources).
   }),
 ])));
 export const dimensions = Object.freeze(['campaign', 'device', 'product', 'creativeId', 'audienceId', 'placement', 'keyword', 'browser', 'paymentMethod']);
+export function dashboardDimensions(metric, searchOnly) {
+  if (metric === 'adCtr') return ['creativeId', 'placement', 'audienceId', ...(searchOnly ? ['keyword'] : [])];
+  if (metric === 'cpc') return ['campaign', 'placement', 'audienceId', ...(searchOnly ? ['keyword'] : [])];
+  return ['roas', 'cvr', 'cpa', 'aov'].includes(metric) ? ['campaign', 'device', 'audienceId'] : [];
+}
 const trafficDimensions = new Set(dimensions.slice(3));
 export const keyFor = (row, dimension) => dimension === 'campaign' ? row.campaignId :
   dimension === 'product' ? row.key : row[dimension];

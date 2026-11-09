@@ -10,6 +10,6 @@ test('explicit local mock never accesses real provider transports',async()=>{
   const decide=await pool.invokeOnce({instruction:'You decide follow-up tools',input:{}});
   assert.equal(decide.output.decision,'gemini_sufficient');
   const output=await pool.invokeOnce({format:'markdown',instruction:'Markdown',
-    input:{results:[{name:'overview',result:{periods:[{id:'current',evidenceId:'EV-TEST-1',totals:{roas:2.5}}]}}]}});
+    input:{results:[{name:'overview',result:{periods:[{id:'current',display:{roas:'250.0%'}}]}}]}});
   assert.match(output.output,/250\.0%/);
 });

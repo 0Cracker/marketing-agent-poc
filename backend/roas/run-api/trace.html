@@ -20,17 +20,19 @@
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--paper); color: var(--ink); }
-  header, main { max-width: 1120px; margin: auto; }
+  header, main { max-width: 1500px; margin: auto; }
   header { padding: 28px 24px 16px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; }
   h1, h2, p { margin: 0; }
   h1 { font-size: 25px; letter-spacing: -.025em; }
   h2 { font-size: 17px; }
-  main { display: grid; grid-template-columns: minmax(190px, 250px) minmax(0, 1fr); gap: 16px; padding: 0 24px 32px; }
+  main { display: grid; grid-template-columns: minmax(320px, 460px) minmax(145px, 200px) minmax(0, 1fr); gap: 16px; padding: 0 24px 32px; }
   aside, article { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; align-self: start; }
+  #trace-chat { width: 100%; height: calc(100dvh - 110px); min-height: 440px; position: sticky; top: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  #runs { max-height: 60vh; overflow: auto; }
+  #selected { overflow-wrap: anywhere; }
   ul, ol { list-style: none; margin: 12px 0 0; padding: 0; }
   #runs li + li { border-top: 1px solid var(--line); }
-  #run-lookup { margin-top: 8px; }
-  #run-lookup input { width: 100%; font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 4px 6px; margin: 3px 0 5px; }
+  #run-list-hint, #empty { margin-top: 6px; }
   button { font: inherit; color: inherit; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); padding: 5px 10px; cursor: pointer; }
   #runs button { width: 100%; text-align: left; border: 0; padding: 9px 7px; }
   button:hover, [aria-current=true] { background: var(--paper); }
@@ -60,32 +62,37 @@
   #original label { display: block; }
   #original input { display: block; max-width: 100%; }
   pre { white-space: pre-wrap; max-height: 22rem; overflow: auto; background: var(--paper); padding: 10px; margin: 8px 0 0; }
+  @media (max-width: 1000px) {
+    main { grid-template-columns: minmax(300px, 400px) minmax(0, 1fr); }
+    #trace-chat { grid-row: 1 / span 2; }
+    article { grid-column: 2; }
+    #runs { max-height: 160px; }
+  }
   @media (max-width: 660px) {
     header { padding: 16px 12px 10px; }
     main { grid-template-columns: minmax(0, 1fr); padding-inline: 12px; }
-    #runs { max-height: 13rem; overflow: auto; }
+    #trace-chat { position: static; grid-row: auto; height: min(70dvh, 560px); }
+    article { grid-column: auto; }
+    #runs { max-height: 9rem; }
   }
 </style>
 </head>
 <body>
-<header><h1>Agent Trace</h1><p id="connection" role="status">로컬 서버 연결 중</p></header>
+<header><div><h1>Agent Trace</h1><p class="meta">마케팅 AI 대화, S16 초기 스냅샷, 전체 필터</p></div><p id="connection" role="status">로컬 서버 연결 중</p></header>
 <main>
+  <iframe id="trace-chat" src="/agent-trace/chat" title="마케팅 AI 대화, S16 초기 스냅샷"></iframe>
   <aside aria-labelledby="run-list-title">
     <h2 id="run-list-title">최근 실행</h2>
-    <form id="run-lookup">
-      <label for="run-id" class="meta">실행 ID로 찾기</label>
-      <input id="run-id" type="text" maxlength="36" required
-        pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}">
-      <button type="submit">열기</button>
-    </form>
-    <ul id="runs"></ul><p id="empty" hidden>아직 실행이 없습니다.</p>
+    <p id="run-list-hint" class="meta">실행을 선택하면 처리 과정과 답변이 표시됩니다.</p>
+    <ul id="runs" aria-label="최근 실행 목록"></ul>
+    <p id="empty" class="meta" hidden>아직 실행이 없습니다. 채팅에서 질문을 보내면 여기에 표시됩니다.</p>
   </aside>
   <article aria-labelledby="selected">
     <h2 id="selected">실행을 선택하세요</h2>
     <p id="run-status" class="meta"></p>
     <p id="scope" class="meta"></p>
     <ol id="steps" aria-label="실행 단계"></ol>
-    <section id="published" hidden><h3>반환한 답변 요약</h3><p id="published-text"></p></section>
+    <section id="published" hidden><h3>반환한 답변</h3><p id="published-text"></p></section>
     <details id="original" hidden>
       <summary>원본 보기</summary>
       <p><strong>저장된 이벤트 JSON</strong> <small>한 줄에 한 건</small> <button type="button" id="copy">복사</button></p>
@@ -127,13 +134,17 @@ const failed=e=>failureKinds.has(e.kind)||['failed','error','withheld','partial'
 const status=row=>row.executionStatus==='completed'&&row.hadFailure?'복구 완료':label(row.executionStatus);
 const label=value=>labels[value]||value||'기록 없음';
 const time=value=>new Date(value).toLocaleTimeString('ko-KR',{hour12:false});
+const runDate=new Intl.DateTimeFormat('ko-KR',{dateStyle:'short',timeStyle:'medium',hour12:false,timeZone:'Asia/Seoul'});
+const routeNames={quick:'빠른 조회',deep:'심층 분석'};
 const duration=row=>((Math.max(0,(row.terminalAt??Date.now())-row.startedAt))/1000).toFixed(1)+'초';
 const node=(tag,value)=>{const el=document.createElement(tag);el.textContent=value;return el;};
 let selected='', generation=0, seq=0, rawSeq=-1, signature='';
 let lane=null, laneName='', route=null;
-const toolNames={overview:'광고 성과 개요',review_summary:'리뷰 집계',metric_detail:'지표 상세',trend:'일별 지표 추이',
+const toolNames={overview:'광고 성과 개요',review_summary:'리뷰 집계',metric_detail:'지표 상세',
+  metric_components:'지표 계산 내역',metric_breakdown:'그룹별 성과 비교',trend:'일별 지표 추이',
   records:'운영 기록',review_records:'리뷰 기록',evidence:'근거 조회'};
-const units={overview:'기간',review_summary:'기간',metric_detail:'그룹 또는 기간',trend:'일자',
+const units={overview:'기간',review_summary:'기간',metric_detail:'그룹 또는 기간',
+  metric_components:'기간',metric_breakdown:'그룹',trend:'일자',
   records:'기록',review_records:'리뷰',evidence:'근거'};
 const roles={first_tool_classifier:'첫 추가 조회 선택',deep_reasoning:'추가 조회 여부 판단',
   quick_answer:'빠른 조회 답변 생성',deep_final:'심층 분석 답변 생성'};
@@ -171,10 +182,13 @@ function showRuns(rows) {
   const focused=runs.contains(document.activeElement)?document.activeElement.dataset.id:null;
   runs.replaceChildren(...rows.map(row=>{
     const li=node('li','');
-    const button=node('button',status(row)+'  #'+row.runId.slice(0,8));
+    const title=[row.caseId,routeNames[row.route]].filter(Boolean).join(' ')||'분석 실행';
+    const button=node('button','');
+    button.append(node('strong',title));
     button.type='button'; button.dataset.id=row.runId;
     button.setAttribute('aria-current',row.runId===selected);
-    button.append(node('small',time(row.startedAt)+'  /  '+label(row.stage)));
+    button.append(node('small',runDate.format(row.startedAt)),
+      node('small',[status(row),row.executionStatus==='running'&&label(row.stage)].filter(Boolean).join(', ')));
     button.onclick=()=>select(row.runId);
     li.append(button);
     return li;
@@ -212,8 +226,11 @@ function describeEvent(e) {
       return e.argsSummary||((count??'집계되지 않은')+'개 '+(units[e.tool]||'결과')+'를 반환했습니다.');
     case 'model_attempt': return [e.model||'모델',e.provider,roles[e.argsSummary]].filter(Boolean).join(' / ');
     case 'model_success': return (e.model||'모델')+' 응답을 받아 현재 단계에서 처리했습니다.';
+    case 'model_error': return [e.model,why,e.failurePhase&&'실패 구간 '+e.failurePhase,
+      e.causeCode&&'원래 코드 '+e.causeCode,e.httpStatus&&'HTTP '+e.httpStatus].filter(Boolean).join(' / ');
     case 'check_model_response': return failed(e)?why:'도구 선택을 위한 구조화 응답을 읽었습니다.';
     case 'model_plan':
+      if(e.status==='uncertain')return e.argsSummary||'일부 조회 조건이 불확실합니다.';
       if(e.status==='gemini_sufficient')return '수집된 자료로 답변 생성에 진행하기로 했습니다.';
       if(e.status==='insufficient_evidence')return '근거가 부족하다고 보고 추가 조회를 종료했습니다.';
       if(!count)return '추가 도구를 요청하지 않았습니다.';
@@ -231,7 +248,9 @@ function appendEvent(e) {
     if(stage==='retrieving'&&laneName==='overview')return;
     if(stage==='routed')route=e.argsSummary||route;
     laneName=stage;
-    lane=newStage(label(stage),stageDescription(stage));
+    const questionCount=['classifying','choosing_options'].includes(stage)&&Number.isInteger(e.count)
+      ? ' Jev 질문 '+e.count+'개.' : '';
+    lane=newStage(label(stage),stageDescription(stage)+questionCount);
     return;
   }
   if(!lane||e.kind==='terminal')lane=newStage(e.kind==='terminal'?'종료':'실행 기록');
@@ -297,11 +316,12 @@ async function poll() {
     setTimeout(poll,1300);
   }
 }
+window.addEventListener('message',event=>{
+  if(event.origin!==window.location.origin||event.source!==get('trace-chat').contentWindow)return;
+  const {type,runId}=event.data||{};
+  if(type==='agent-trace-run'&&typeof runId==='string'&&/^[a-f0-9-]{36}$/i.test(runId))select(runId);
+});
 original.addEventListener('toggle',showOriginal);
-get('run-lookup').onsubmit=event=>{
-  event.preventDefault();
-  select(get('run-id').value.toLowerCase());
-};
 async function copyText(button,content) {
   const normal=button.textContent;
   button.disabled=true;

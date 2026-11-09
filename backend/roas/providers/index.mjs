@@ -22,13 +22,16 @@ const MAX_BODY_BYTES = 524288;
 const MAX_INPUT_CHARS = 120000;
 
 export class ProviderError extends Error {
-  constructor(code) {
+  constructor(code, {failurePhase,causeCode,httpStatus}={}) {
     super(code);
     this.name = 'ProviderError';
     this.code = ERRORS.has(code) ? code : 'model_failed';
+    if(failurePhase) this.failurePhase=failurePhase;
+    if(causeCode) this.causeCode=causeCode;
+    if(httpStatus) this.httpStatus=httpStatus;
   }
 }
-const fail = code => {throw new ProviderError(code);};
+const fail = (code,details) => {throw new ProviderError(code,details);};
 const isRecord = x => x !== null && typeof x === 'object' && !Array.isArray(x);
 const safeKey = value => typeof value === 'string' && value.trim() ? value.trim() : null;
 const sortKeys = (a,b) => a.localeCompare(b,undefined,{numeric:true});
@@ -83,7 +86,7 @@ function httpError(status,body,provider) {
 function responsePayload(candidate,instruction,input,responseSchema,format) {
   let prompt;
   try {prompt=typeof input === 'string' ? input : JSON.stringify(input);} catch {fail('model_protocol');}
-  if (typeof prompt !== 'string' || prompt.length > MAX_INPUT_CHARS ||
+  if (typeof prompt !== 'string' || (format!=='markdown' && prompt.length > MAX_INPUT_CHARS) ||
       typeof instruction !== 'string' || !instruction.trim() || instruction.length > 20000) fail('model_protocol');
   if (responseSchema !== undefined) {
     if (!isRecord(responseSchema)) fail('model_protocol');
@@ -180,16 +183,16 @@ export function createProviderPool({env={},fetchImpl=globalThis.fetch,clock=Date
     providerStatus:status,
     eligibleCandidates:options=>status(options).filter(c=>c.eligible),
     async invokeOnce({candidate,instruction,input,responseSchema,signal,timeoutMs=20000,format}={}) {
-      if (!isRecord(candidate) || typeof candidate.id !== 'string') fail('provider_configuration');
+      const configuration={failurePhase:'configuration'};
+      if (!isRecord(candidate) || typeof candidate.id !== 'string') fail('provider_configuration',configuration);
       const spec = registry.get(candidate.id);
-      if (!spec || (responseSchema && !spec.jsonSchema)) fail('provider_configuration');
+      if (!spec || (responseSchema && !spec.jsonSchema)) fail('provider_configuration',configuration);
       const selected = status({role:undefined}).find(c=>c.id===candidate.id);
-      if (!selected?.configured) fail('provider_configuration');
-      if (!selected.eligible) fail(ERRORS.has(selected.reason) ? selected.reason : 'provider_configuration');
+      if (!selected?.configured) fail('provider_configuration',configuration);
+      if (!selected.eligible) fail(ERRORS.has(selected.reason) ? selected.reason : 'provider_configuration',configuration);
       if ((timeoutMs!==null&&(!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>maxTimeoutMs)) ||
-          typeof fetchImpl !== 'function') fail('provider_configuration');
-      if (signal?.aborted) fail('model_timeout');
-      const body = responsePayload(spec,instruction,input,responseSchema,format);
+          typeof fetchImpl !== 'function') fail('provider_configuration',configuration);
+      if (signal?.aborted) fail('model_timeout',{failurePhase:'before_request'});
       const key = keys[spec.provider];
       const url = spec.provider === 'gemini'
         ? 'https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(spec.model) + ':generateContent'
@@ -201,18 +204,27 @@ export function createProviderPool({env={},fetchImpl=globalThis.fetch,clock=Date
       signal?.addEventListener('abort',abort,{once:true});
       const timer = timeoutMs===null?undefined:setTimeout(abort,timeoutMs);
       const started = now();
-      let response;
+      let response, failurePhase='request_payload';
       try {
+        const payload=responsePayload(spec,instruction,input,responseSchema,format);
+        const body=JSON.stringify(payload);
         safeEvent(onEvent,{stage:'attempt',model:spec.model,provider:spec.provider,transport:selected.transport,billingBucket:selected.billingBucket});
-        response = await fetchImpl(url,{method:'POST',headers,body:JSON.stringify(body),signal:controller.signal,redirect:'error',cache:'no-store'});
+        failurePhase='response_headers';
+        response = await fetchImpl(url,{method:'POST',headers,body,signal:controller.signal,redirect:'error',cache:'no-store'});
         if (!response || typeof response.status !== 'number' || typeof response.text !== 'function') fail('model_protocol');
+        failurePhase='response_body';
         const raw = await response.text();
         if (typeof raw !== 'string' || Buffer.byteLength(raw,'utf8') > MAX_BODY_BYTES || controller.signal.aborted) fail(controller.signal.aborted ? 'model_timeout' : 'model_protocol');
+        failurePhase='response_json';
         let data;
         try {data=JSON.parse(raw);} catch {fail('model_protocol');}
-        if (!response.ok) fail(httpError(response.status,data,spec.provider));
+        if (!response.ok) {
+          failurePhase='http_status';
+          fail(httpError(response.status,data,spec.provider),{causeCode:data?.error?.status??data?.error?.code??data?.code});
+        }
+        failurePhase='response_output';
         const output = extract(spec,data,format);
-        if (spec.provider === 'jev' && format!=='jev' && !Object.hasOwn(body.questions.first_tool.criteria,output.choice)) fail('model_protocol');
+        if (spec.provider === 'jev' && format!=='jev' && !Object.hasOwn(payload.questions.first_tool.criteria,output.choice)) fail('model_protocol');
         if (responseSchema && (!isRecord(output) && !Array.isArray(output))) fail('model_protocol');
         safeEvent(onEvent,{stage:'completed',model:spec.model,provider:spec.provider,elapsedMs:Math.max(0,now()-started)});
         return {output,actualModel:typeof data.model === 'string' && data.model.length <= 128 ? data.model : spec.model,
@@ -220,9 +232,16 @@ export function createProviderPool({env={},fetchImpl=globalThis.fetch,clock=Date
       } catch (error) {
         const code = error instanceof ProviderError ? error.code
           : controller.signal.aborted || signal?.aborted || error?.name === 'TimeoutError' ? 'model_timeout' : 'model_failed';
+        const originalCode=error instanceof ProviderError ? error.causeCode
+          : [error?.cause?.code,error?.code,error?.name].find(value=>typeof value==='string');
+        const details={failurePhase};
+        if(typeof originalCode==='string'&&/^[a-z][a-z0-9_-]{0,63}$/i.test(originalCode)&&!originalCode.includes(key))
+          details.causeCode=originalCode;
+        if(Number.isInteger(response?.status)&&response.status>=100&&response.status<=599)
+          details.httpStatus=response.status;
         if (code === 'quota_exhausted' || code === 'credits_exhausted') exhausted.set(spec.provider,code);
-        safeEvent(onEvent,{stage:'failed',model:spec.model,provider:spec.provider,elapsedMs:Math.max(0,now()-started),errorCode:code});
-        fail(code);
+        safeEvent(onEvent,{stage:'failed',model:spec.model,provider:spec.provider,elapsedMs:Math.max(0,now()-started),errorCode:code,...details});
+        fail(code,details);
       } finally {
         clearTimeout(timer);
         signal?.removeEventListener('abort',abort);

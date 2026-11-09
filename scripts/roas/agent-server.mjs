@@ -3,7 +3,7 @@ import path from 'node:path';
 import {parseEnv} from 'node:util';
 import {fileURLToPath} from 'node:url';
 import {roasManifest,dataDirectory} from './data.mjs';
-import {trainingIndex} from './training-data.mjs';
+import {trainingIndex,trainingScreenData} from './training-data.mjs';
 import {createRoasChat} from '../../backend/roas/roas-agent.mjs';
 import {createAgentServer} from '../../backend/roas/agent-http.mjs';
 import {createProviderPool} from '../../backend/roas/providers/index.mjs';
@@ -68,7 +68,9 @@ const server=createAgentServer(null,{
   }
 });
 server.on('error',error=>{console.error('ROAS server failed: '+error.code);process.exitCode=1;store.close();});
-const traceServer=createTraceServer(store);
+const traceServer=createTraceServer(store,{port:tracePort,engine:runEngine,
+  mode:eligible?'remote_model':'offline_model_substitute',
+  loadData:()=>trainingScreenData(directory,'S16','initial')});
 traceServer.on('error',error=>console.error('Agent Trace failed: '+error.code));
 server.listen(port,'127.0.0.1',()=>{
   // Keep Trace off the Agent API listener that an external QA gateway can forward.
