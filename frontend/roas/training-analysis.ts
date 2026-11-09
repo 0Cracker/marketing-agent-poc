@@ -2,11 +2,21 @@ import {campaignDisplayName,displayTrainingText,metricChange,metricMissingReason
 import type {Breakdown,Fact,Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
 
 export type AnalysisMetric={key:string;label:string;rate?:boolean;unit?:string};
-export type AnalysisDimension='campaign'|'device'|'creativeId'|'audienceId'|'placement'|'keyword'|'product';
+export type AnalysisDimension='campaign'|'campaignUnit'|'device'|'creativeId'|'audienceId'|'placement'|'keyword'|'product';
 export type AnalysisScope={dimension:AnalysisDimension;key:string;label:string;rowIds?:string[]};
 export type AnalysisSettings={dimension?:AnalysisDimension;sortBasis?:'impact'|'value'|'change';sortKey?:string;descending?:boolean;expanded?:string[]};
 export type AnalysisRow=Fact|Breakdown;
-export const dimensionNames:Record<AnalysisDimension,string>={campaign:'캠페인',device:'기기',creativeId:'소재',audienceId:'타깃',placement:'게재 위치',keyword:'검색어',product:'상품'};
+export const dimensionNames:Record<AnalysisDimension,string>={campaign:'캠페인',campaignUnit:'집행 항목',device:'기기',creativeId:'소재',audienceId:'타깃',placement:'게재 위치',keyword:'검색어',product:'상품'};
+// EDU-C1~C6 are execution units. The parent identity is explicit, never inferred from a matching display name.
+const campaignParents:Record<string,{id:string;label:string}>={
+ 'EDU-C1':{id:'EDU-G1',label:'8월 구매 캠페인'},'EDU-C2':{id:'EDU-G1',label:'8월 구매 캠페인'},
+ 'EDU-C3':{id:'EDU-G1',label:'8월 구매 캠페인'},'EDU-C4':{id:'EDU-G1',label:'8월 구매 캠페인'},
+ 'EDU-C5':{id:'EDU-G2',label:'8월 콘텐츠 제휴'},'EDU-C6':{id:'EDU-G2',label:'8월 콘텐츠 제휴'},
+};
+export function campaignUnitLabel(data:TrainingData,id:string){
+ const name=campaignDisplayName(data,id),parent=campaignParents[id]?.label;
+ return parent&&name.startsWith(parent+' | ')?name.slice(parent.length+3):name;
+}
 const pairDefinitions:Record<string,[string,string]>={roas:['revenue','spend'],cpc:['spend','clicks'],adCtr:['clicks','impressions'],cvr:['orders','clicks'],cpa:['spend','orders'],aov:['revenue','orders']};
 export const analysisMetrics:AnalysisMetric[]=[
  {key:'roas',label:'ROAS',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'cvr',label:'클릭 기준 구매 CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'aov',label:'AOV',unit:'원'},
@@ -23,6 +33,7 @@ export const analysisMetrics:AnalysisMetric[]=[
  {key:'ledgerOrders',label:'주문 원장 주문',unit:'건'},{key:'ledgerRevenue',label:'주문 원장 매출',unit:'원'},{key:'trackingExpected',label:'수집 대상 이벤트',unit:'회'},{key:'trackingReceived',label:'수집 이벤트',unit:'회'},{key:'duplicateEvents',label:'중복 이벤트',unit:'회'},
 ];
 export const analysisColumns:Record<string,string[]>={roas:['roas','cpc','cvr','aov','revenue','spend'],cpc:['cpc','adCpm','adCtr','spend','clicks'],adCtr:['adCtr','impressionShare','clicks','impressions'],cvr:['cvr','sessionCvr','orders','clicks'],cpa:['cpa','cpc','cvr','spend','orders'],aov:['aov','discountRate','revenue','orders']};
+export const analysisDisplayKeys=(metricKey:string,keys:string[])=>metricKey==='roas'?['impact',...keys]:[keys[0],'impact',...keys.slice(1)];
 export const analysisMetric=(key:string)=>analysisMetrics.find(metric=>metric.key===key)!;
 export function analysisMissingReason(rows:AnalysisRow[],key:string){
  const denominators:Record<string,string>={impressionShare:'선택 범위 전체 광고 노출수',orderShare:'선택 그룹 전체 주문수',clickShare:'선택 범위 전체 클릭수',realizedPrice:'판매 수량',unitsPerOrder:'귀속 구매 주문수'};
@@ -34,19 +45,21 @@ export function analysisValue(total:Total,key:string,overall:Total=total):number
  return key in ratios?divide(...ratios[key]):metricValue(total,key);
 }
 export function groupKey(row:AnalysisRow,dimension:AnalysisDimension):string{
- if(dimension==='campaign')return row.campaignId;
+ if(dimension==='campaign')return campaignParents[row.campaignId]?.id||row.campaignId;
+ if(dimension==='campaignUnit')return row.campaignId;
  if(dimension==='device')return row.device;
  if(dimension==='product')return (row as Breakdown).key;
  return JSON.stringify([row.campaignId,(row as Breakdown)[dimension]]);
 }
 export function groupLabel(data:TrainingData,row:AnalysisRow,dimension:AnalysisDimension):string{
- if(dimension==='campaign')return campaignDisplayName(data,row.campaignId);
+ if(dimension==='campaign')return campaignParents[row.campaignId]?.label||campaignDisplayName(data,row.campaignId);
+ if(dimension==='campaignUnit')return campaignUnitLabel(data,row.campaignId);
  if(dimension==='device')return row.device==='mobile'?'모바일':'PC';
  if(dimension==='product')return data.products.find(p=>p.id===(row as Breakdown).key)?.label||(row as Breakdown).key;
  return displayTrainingText(campaignDisplayName(data,row.campaignId)+', '+(row as Breakdown)[dimension]);
 }
 export function analysisRows(data:TrainingData,filters:Filters,metric:string,dimension:AnalysisDimension):AnalysisRow[]{
- const rows=dimension==='product'?selectBreakdowns(data,filters,'product'):['campaign','device'].includes(dimension)?selectFacts(data,filters):selectBreakdowns(data,filters,'traffic');
+ const rows=dimension==='product'?selectBreakdowns(data,filters,'product'):['campaign','campaignUnit','device'].includes(dimension)?selectFacts(data,filters):selectBreakdowns(data,filters,'traffic');
  return rows.filter(row=>(metric!=='adCtr'||row.exposureBasis==='ad_impression')&&(dimension!=='keyword'||Boolean((row as Breakdown).keyword)));
 }
 export function analysisDimensions(data:TrainingData,filters:Filters,metric:string):AnalysisDimension[]{

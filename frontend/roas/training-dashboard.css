@@ -332,3 +332,15 @@
 .training-dashboard .training-cpa-funnel-link{margin-top:16px;padding:8px 0;border:0;background:transparent;font:inherit;color:#7357BA;cursor:pointer}
 .training-dashboard .training-cpa-funnel-link:hover{text-decoration:underline}
 .training-dashboard .training-cpa-funnel-link:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
+
+/* Keep campaign totals visually distinct while retaining the existing table and drill-down affordances. */
+.training-analysis-table>tbody>tr.training-campaign-group-row>th[scope=row],.training-analysis-table>tbody>tr.training-campaign-group-row>td{background:#F7F6FB}
+.training-campaign-group-row .training-analysis-row-label{font-weight:600}
+.training-analysis-table>tbody>tr.training-campaign-child-row>th[scope=row],.training-analysis-table>tbody>tr.training-campaign-child-row>td{background:#FCFCFE}
+.training-dashboard .training-analysis-table>tbody>tr.training-campaign-child-row>th[scope=row]{padding-left:34px}
+.training-campaign-child-row .training-analysis-row-label{font-weight:400}
+.training-campaign-parent-details{background:#FAFBFD;padding:12px 24px 18px}
+.training-campaign-parent-details>summary{padding:8px 0;color:#604594;cursor:pointer;font-size:12px}
+.training-campaign-parent-details>.training-analysis-detail{padding:12px 0 0;border:0;background:transparent}
+.training-campaign-parent-details>summary:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
+@media(max-width:800px){.training-dashboard .training-analysis-table>tbody>tr.training-campaign-child-row>th[scope=row]{padding-left:24px}.training-campaign-parent-details{padding:12px}}
