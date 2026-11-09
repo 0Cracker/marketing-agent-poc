@@ -1,0 +1,674 @@
+{
+  "commit": "df3db7f2d4ecf5f97323a104b84018c874d5b988",
+  "startedAt": "2026-11-09T00:20:32.342Z",
+  "mode": "remote_model",
+  "pageHttpStatus": 200,
+  "scope": {
+    "caseId": "S16",
+    "snapshot": "initial",
+    "metric": "roas",
+    "screenTitle": "성과 현황",
+    "filters": {
+      "channel": "all",
+      "source": "all",
+      "campaignId": "all",
+      "device": "all"
+    },
+    "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+  },
+  "method": "Frontend client through Vite proxy, live providers, HTTP polling, React server rendering",
+  "browserInteraction": "blocked by Work settings",
+  "runs": [
+    {
+      "expectedRoute": "quick",
+      "question": "현재 ROAS 알려줘",
+      "startedAt": "2026-11-09T00:20:32.344Z",
+      "accepted": {
+        "runId": "eee8aa90-44c8-4d34-b752-b674cbafee25",
+        "executionStatus": "queued"
+      },
+      "state": {
+        "runId": "eee8aa90-44c8-4d34-b752-b674cbafee25",
+        "runStatus": "completed",
+        "executionStatus": "completed",
+        "stage": "terminal",
+        "route": "quick",
+        "scopeFingerprint": "bad46ebe7f51b3bb7798c030e1b1bd6decad5dd7fdfc3404b8fa14817448bd7e",
+        "appliedScope": {
+          "caseId": "S16",
+          "snapshot": "initial",
+          "metric": "roas",
+          "screenTitle": "성과 현황",
+          "filters": {
+            "channel": "all",
+            "source": "all",
+            "campaignId": "all",
+            "device": "all"
+          },
+          "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+        },
+        "sourceHashes": {
+          "roas": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+        },
+        "causeStatus": "not_assessed",
+        "stopReason": "gemini_sufficient",
+        "startedAt": 1794183638637,
+        "terminalAt": 1794183641395,
+        "result": {
+          "evidenceIds": [
+            "EV-7bd4b6cb6c3e-1",
+            "EV-7bd4b6cb6c3e-2"
+          ],
+          "limitations": [],
+          "answer": "현재 ROAS는 기준 기간(2026-08-03 ~ 2026-08-17) 355.8%에서 현재 기간(2026-08-17 ~ 2026-08-31) 284.7%로 71.1%포인트 감소했습니다 [EV-7bd4b6cb6c3e-1, EV-7bd4b6cb6c3e-2]."
+        },
+        "usage": {
+          "modelAttempts": 2,
+          "inputTokens": 7442,
+          "outputTokens": 272,
+          "toolCalls": 1
+        },
+        "events": [
+          {
+            "seq": 1,
+            "at": 1794183638637,
+            "evidenceIds": [],
+            "stage": "scope_locked",
+            "status": "queued",
+            "kind": "accepted"
+          },
+          {
+            "seq": 2,
+            "at": 1794183638679,
+            "evidenceIds": [],
+            "stage": "scope_locked",
+            "kind": "stage"
+          },
+          {
+            "seq": 3,
+            "at": 1794183638705,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "kind": "stage"
+          },
+          {
+            "seq": 4,
+            "at": 1794183638706,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-latest",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_attempt",
+            "argsSummary": "first_tool_classifier"
+          },
+          {
+            "seq": 5,
+            "at": 1794183638947,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-latest",
+            "provider": "jev",
+            "status": "passed",
+            "kind": "check_model_response"
+          },
+          {
+            "seq": 6,
+            "at": 1794183638972,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-1.14.0",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_success",
+            "elapsedMs": 252
+          },
+          {
+            "seq": 7,
+            "at": 1794183638972,
+            "evidenceIds": [],
+            "stage": "routed",
+            "kind": "stage",
+            "argsSummary": "quick"
+          },
+          {
+            "seq": 8,
+            "at": 1794183638974,
+            "evidenceIds": [],
+            "stage": "routed",
+            "kind": "model_plan",
+            "argsSummary": "overview",
+            "count": 1
+          },
+          {
+            "seq": 9,
+            "at": 1794183638977,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "kind": "stage"
+          },
+          {
+            "seq": 10,
+            "at": 1794183638977,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "overview",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary"
+          },
+          {
+            "seq": 11,
+            "at": 1794183638977,
+            "evidenceIds": [
+              "EV-7bd4b6cb6c3e-1",
+              "EV-7bd4b6cb6c3e-2"
+            ],
+            "stage": "retrieving",
+            "tool": "overview",
+            "status": "ready",
+            "kind": "tool_result",
+            "argsSummary": "직전 ROAS 355.79% / 현재 ROAS 284.72%",
+            "count": 2,
+            "elapsedMs": 24
+          },
+          {
+            "seq": 12,
+            "at": 1794183638978,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "kind": "stage"
+          },
+          {
+            "seq": 13,
+            "at": 1794183638978,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "model": "gemini-3.5-flash-lite",
+            "provider": "gemini",
+            "transport": "gemini_direct",
+            "billingBucket": "google_project",
+            "kind": "model_attempt",
+            "argsSummary": "quick_answer"
+          },
+          {
+            "seq": 14,
+            "at": 1794183641394,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "model": "gemini-3.5-flash-lite",
+            "provider": "gemini",
+            "transport": "gemini_direct",
+            "billingBucket": "google_project",
+            "kind": "model_success",
+            "elapsedMs": 2419
+          },
+          {
+            "seq": 15,
+            "at": 1794183641395,
+            "evidenceIds": [],
+            "stage": "terminal",
+            "status": "completed",
+            "errorCode": "gemini_sufficient",
+            "kind": "terminal"
+          }
+        ],
+        "lastEventSeq": 15,
+        "version": 6
+      },
+      "elapsedMs": 9465,
+      "markdownRendered": true,
+      "answerLength": 143,
+      "unavailableRendered": false
+    },
+    {
+      "expectedRoute": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "startedAt": "2026-11-09T00:20:41.831Z",
+      "accepted": {
+        "runId": "6997e635-bb91-44e9-bc23-2423713303cc",
+        "executionStatus": "queued"
+      },
+      "state": {
+        "runId": "6997e635-bb91-44e9-bc23-2423713303cc",
+        "runStatus": "running",
+        "executionStatus": "running",
+        "stage": "final_answer",
+        "route": "deep",
+        "scopeFingerprint": "bad46ebe7f51b3bb7798c030e1b1bd6decad5dd7fdfc3404b8fa14817448bd7e",
+        "appliedScope": {
+          "caseId": "S16",
+          "snapshot": "initial",
+          "metric": "roas",
+          "screenTitle": "성과 현황",
+          "filters": {
+            "channel": "all",
+            "source": "all",
+            "campaignId": "all",
+            "device": "all"
+          },
+          "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+        },
+        "sourceHashes": {},
+        "startedAt": 1794183641837,
+        "usage": {},
+        "events": [
+          {
+            "seq": 1,
+            "at": 1794183641837,
+            "evidenceIds": [],
+            "stage": "scope_locked",
+            "status": "queued",
+            "kind": "accepted"
+          },
+          {
+            "seq": 2,
+            "at": 1794183641865,
+            "evidenceIds": [],
+            "stage": "scope_locked",
+            "kind": "stage"
+          },
+          {
+            "seq": 3,
+            "at": 1794183641877,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "kind": "stage"
+          },
+          {
+            "seq": 4,
+            "at": 1794183641877,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-latest",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_attempt",
+            "argsSummary": "first_tool_classifier"
+          },
+          {
+            "seq": 5,
+            "at": 1794183642042,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-latest",
+            "provider": "jev",
+            "status": "passed",
+            "kind": "check_model_response"
+          },
+          {
+            "seq": 6,
+            "at": 1794183642056,
+            "evidenceIds": [],
+            "stage": "classifying",
+            "model": "jev-1.14.0",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_success",
+            "elapsedMs": 166
+          },
+          {
+            "seq": 7,
+            "at": 1794183642057,
+            "evidenceIds": [],
+            "stage": "routed",
+            "kind": "stage",
+            "argsSummary": "deep"
+          },
+          {
+            "seq": 8,
+            "at": 1794183642058,
+            "evidenceIds": [],
+            "stage": "routed",
+            "kind": "model_plan",
+            "argsSummary": "overview, metric_detail, trend, records",
+            "count": 4
+          },
+          {
+            "seq": 9,
+            "at": 1794183642058,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "kind": "stage"
+          },
+          {
+            "seq": 10,
+            "at": 1794183642058,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "overview",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary"
+          },
+          {
+            "seq": 11,
+            "at": 1794183642058,
+            "evidenceIds": [],
+            "stage": "choosing_options",
+            "kind": "stage"
+          },
+          {
+            "seq": 12,
+            "at": 1794183642058,
+            "evidenceIds": [],
+            "stage": "choosing_options",
+            "model": "jev-latest",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_attempt",
+            "argsSummary": "first_tool_classifier"
+          },
+          {
+            "seq": 13,
+            "at": 1794183642058,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-1",
+              "EV-b67b035dcb8b-2"
+            ],
+            "stage": "choosing_options",
+            "tool": "overview",
+            "status": "ready",
+            "kind": "tool_result",
+            "argsSummary": "직전 ROAS 355.79% / 현재 ROAS 284.72%",
+            "count": 2,
+            "elapsedMs": 14
+          },
+          {
+            "seq": 14,
+            "at": 1794183642291,
+            "evidenceIds": [],
+            "stage": "choosing_options",
+            "model": "jev-latest",
+            "provider": "jev",
+            "status": "passed",
+            "kind": "check_model_response"
+          },
+          {
+            "seq": 15,
+            "at": 1794183642304,
+            "evidenceIds": [],
+            "stage": "choosing_options",
+            "model": "jev-1.14.0",
+            "provider": "jev",
+            "transport": "typesafe_systemone",
+            "billingBucket": "jev",
+            "kind": "model_success",
+            "elapsedMs": 236
+          },
+          {
+            "seq": 16,
+            "at": 1794183642305,
+            "evidenceIds": [],
+            "stage": "choosing_options",
+            "status": "uncertain",
+            "kind": "model_plan",
+            "argsSummary": "일부 옵션 판단이 불확실합니다.",
+            "count": 27
+          },
+          {
+            "seq": 17,
+            "at": 1794183642306,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "kind": "stage"
+          },
+          {
+            "seq": 18,
+            "at": 1794183642306,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "metric_detail",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "metric=roas, dimension=campaign, scopeRole=primary"
+          },
+          {
+            "seq": 19,
+            "at": 1794183642306,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "trend",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary, granularity=day, periodId=both"
+          },
+          {
+            "seq": 20,
+            "at": 1794183642308,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "records",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary"
+          },
+          {
+            "seq": 21,
+            "at": 1794183642308,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-3",
+              "EV-b67b035dcb8b-4",
+              "EV-b67b035dcb8b-5",
+              "EV-b67b035dcb8b-6",
+              "EV-b67b035dcb8b-7",
+              "EV-b67b035dcb8b-8",
+              "EV-b67b035dcb8b-9",
+              "EV-b67b035dcb8b-10",
+              "EV-b67b035dcb8b-11",
+              "EV-b67b035dcb8b-12",
+              "EV-b67b035dcb8b-13",
+              "EV-b67b035dcb8b-14",
+              "EV-b67b035dcb8b-15",
+              "EV-b67b035dcb8b-16"
+            ],
+            "stage": "retrieving",
+            "tool": "metric_detail",
+            "status": "ready",
+            "kind": "tool_result",
+            "argsSummary": "직전 roas 355.8% / 현재 roas 284.7% / 6개 그룹 반환",
+            "count": 6,
+            "elapsedMs": 12
+          },
+          {
+            "seq": 22,
+            "at": 1794183642310,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-17",
+              "EV-b67b035dcb8b-18",
+              "EV-b67b035dcb8b-19",
+              "EV-b67b035dcb8b-20",
+              "EV-b67b035dcb8b-21",
+              "EV-b67b035dcb8b-22",
+              "EV-b67b035dcb8b-23",
+              "EV-b67b035dcb8b-24",
+              "EV-b67b035dcb8b-25",
+              "EV-b67b035dcb8b-26",
+              "EV-b67b035dcb8b-27",
+              "EV-b67b035dcb8b-28",
+              "EV-b67b035dcb8b-29",
+              "EV-b67b035dcb8b-30",
+              "EV-b67b035dcb8b-31",
+              "EV-b67b035dcb8b-32",
+              "EV-b67b035dcb8b-33",
+              "EV-b67b035dcb8b-34",
+              "EV-b67b035dcb8b-35",
+              "EV-b67b035dcb8b-36",
+              "EV-b67b035dcb8b-37",
+              "EV-b67b035dcb8b-38",
+              "EV-b67b035dcb8b-39",
+              "EV-b67b035dcb8b-40"
+            ],
+            "stage": "retrieving",
+            "tool": "trend",
+            "status": "ready",
+            "kind": "tool_result",
+            "argsSummary": "2026-08-03 ~ 2026-08-26 일별 자료 24일",
+            "count": 24,
+            "elapsedMs": 12
+          },
+          {
+            "seq": 23,
+            "at": 1794183642311,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-41",
+              "EV-b67b035dcb8b-42",
+              "EV-b67b035dcb8b-43",
+              "EV-b67b035dcb8b-44",
+              "EV-b67b035dcb8b-45",
+              "EV-b67b035dcb8b-46",
+              "EV-b67b035dcb8b-47",
+              "EV-b67b035dcb8b-48",
+              "EV-b67b035dcb8b-49",
+              "EV-b67b035dcb8b-50",
+              "EV-b67b035dcb8b-51",
+              "EV-b67b035dcb8b-52",
+              "EV-b67b035dcb8b-53",
+              "EV-b67b035dcb8b-54",
+              "EV-b67b035dcb8b-55",
+              "EV-b67b035dcb8b-56",
+              "EV-b67b035dcb8b-57",
+              "EV-b67b035dcb8b-58",
+              "EV-b67b035dcb8b-59",
+              "EV-b67b035dcb8b-60",
+              "EV-b67b035dcb8b-61",
+              "EV-b67b035dcb8b-62",
+              "EV-b67b035dcb8b-63",
+              "EV-b67b035dcb8b-64"
+            ],
+            "stage": "retrieving",
+            "tool": "records",
+            "status": "ready",
+            "kind": "tool_result",
+            "count": 24,
+            "elapsedMs": 13
+          },
+          {
+            "seq": 24,
+            "at": 1794183642312,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "kind": "stage"
+          },
+          {
+            "seq": 25,
+            "at": 1794183642313,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "trend",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary, granularity=day, periodId=both"
+          },
+          {
+            "seq": 26,
+            "at": 1794183642313,
+            "evidenceIds": [],
+            "stage": "retrieving",
+            "tool": "records",
+            "status": "running",
+            "kind": "tool_start",
+            "argsSummary": "scopeRole=primary"
+          },
+          {
+            "seq": 27,
+            "at": 1794183642314,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-65",
+              "EV-b67b035dcb8b-66",
+              "EV-b67b035dcb8b-67",
+              "EV-b67b035dcb8b-68"
+            ],
+            "stage": "retrieving",
+            "tool": "trend",
+            "status": "ready",
+            "kind": "tool_result",
+            "argsSummary": "2026-08-27 ~ 2026-08-30 일별 자료 4일",
+            "count": 4,
+            "elapsedMs": 2
+          },
+          {
+            "seq": 28,
+            "at": 1794183642314,
+            "evidenceIds": [
+              "EV-b67b035dcb8b-69",
+              "EV-b67b035dcb8b-70",
+              "EV-b67b035dcb8b-71",
+              "EV-b67b035dcb8b-72",
+              "EV-b67b035dcb8b-73",
+              "EV-b67b035dcb8b-74",
+              "EV-b67b035dcb8b-75",
+              "EV-b67b035dcb8b-76",
+              "EV-b67b035dcb8b-77"
+            ],
+            "stage": "retrieving",
+            "tool": "records",
+            "status": "ready",
+            "kind": "tool_result",
+            "count": 9,
+            "elapsedMs": 2
+          },
+          {
+            "seq": 29,
+            "at": 1794183642317,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "kind": "stage"
+          },
+          {
+            "seq": 30,
+            "at": 1794183642318,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "model": "gemini-3.8-flash",
+            "provider": "gemini",
+            "transport": "gemini_direct",
+            "billingBucket": "google_project",
+            "kind": "model_attempt",
+            "argsSummary": "deep_final"
+          }
+        ],
+        "lastEventSeq": 30,
+        "version": 8
+      },
+      "elapsedMs": 149933,
+      "markdownRendered": false,
+      "answerLength": 0,
+      "unavailableRendered": false,
+      "cleanup": {
+        "checkedAt": "2026-11-09T00:23:26.558Z",
+        "beforeStatus": "running",
+        "beforeStage": "final_answer",
+        "lastEvents": [
+          {
+            "seq": 29,
+            "at": 1794183642317,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "kind": "stage"
+          },
+          {
+            "seq": 30,
+            "at": 1794183642318,
+            "evidenceIds": [],
+            "stage": "final_answer",
+            "model": "gemini-3.8-flash",
+            "provider": "gemini",
+            "transport": "gemini_direct",
+            "billingBucket": "google_project",
+            "kind": "model_attempt",
+            "argsSummary": "deep_final"
+          }
+        ],
+        "status": "cancelled",
+        "reason": "user_cancelled"
+      }
+    }
+  ],
+  "finishedAt": "2026-11-09T00:23:12.285Z"
+}

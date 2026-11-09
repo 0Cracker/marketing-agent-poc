@@ -5,6 +5,7 @@ export type RunEvent={
  seq?:number;at?:string|number;kind?:string;stage?:string;tool?:string;model?:string;
  provider?:string;transport?:string;billingBucket?:string;status?:string;
  errorCode?:string;count?:number;rowCount?:number;elapsed?:number;elapsedMs?:number;
+ failurePhase?:string;causeCode?:string;httpStatus?:number;
  evidenceIds?:string[];argsSummary?:string;
 };
 export type RunState={
@@ -42,7 +43,8 @@ export const stageLabel=(stage?:string)=>({
  terminal:'결과 정리'
 } as Record<string,string>)[stage||'']||'분석 진행 중';
 export const toolLabel=(tool?:string)=>({
- overview:'성과 요약',metric_detail:'지표 세부 데이터 조회',trend:'추이 조회',
+ overview:'성과 요약',metric_detail:'지표 세부 데이터 조회',metric_components:'지표 계산 내역',
+ metric_breakdown:'그룹별 성과 비교',trend:'추이 조회',
  records:'운영 기록 조회',review_summary:'리뷰 요약',review_records:'리뷰 원문 조회',
  evidence:'근거 재조회'
 } as Record<string,string>)[tool||'']||tool||'';

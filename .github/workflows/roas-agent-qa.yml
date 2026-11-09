@@ -4,6 +4,9 @@ on:
     paths:
       - 'backend/roas/**'
       - 'frontend/roas/**'
+      - 'frontend/src/agent-trace-chat.*'
+      - 'frontend/agent-trace-chat.html'
+      - 'vite.agent-trace.config.ts'
       - 'scripts/roas/**'
       - 'shared/roas/**'
       - 'data/roas/**'
@@ -17,6 +20,9 @@ on:
     paths:
       - 'backend/roas/**'
       - 'frontend/roas/**'
+      - 'frontend/src/agent-trace-chat.*'
+      - 'frontend/agent-trace-chat.html'
+      - 'vite.agent-trace.config.ts'
       - 'scripts/roas/**'
       - 'shared/roas/**'
       - 'data/roas/**'
@@ -43,3 +49,4 @@ jobs:
       - run: npm run test:training
       - run: npm run lint
       - run: npm run build
+      - run: npm run build:agent-trace

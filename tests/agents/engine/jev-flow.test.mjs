@@ -13,8 +13,17 @@ const data=trainingScreenData(undefined,'S16','initial');
 const scope={caseId:'S16',snapshot:'initial',dataHash:createHash('sha256').update(JSON.stringify(data)).digest('hex'),
   filters:{channel:'all',source:'all',campaignId:'all',device:'all'}};
 
-async function runToEnd(engine,question,id) {
-  const {runId}=await engine.start({question,scope,threadId:id,clientRequestId:id});
+function decisions(questions,{choices={},scores={}}={}) {
+  return {answers:Object.fromEntries(Object.entries(questions).map(([id,question])=>{
+    if(question.type==='noul')return [id,{type:'noul',noul:scores[id]??0}];
+    const choice=choices[id]??(id==='route'?'quick':id==='metric_scope'?'catalog':'not_needed');
+    return [id,{type:'choice',choice,confidence:1,
+      probabilities:Object.fromEntries(Object.keys(question.criteria).map(key=>[key,Number(key===choice)]))}];
+  }))};
+}
+
+async function runToEnd(engine,question,id,history=[]) {
+  const {runId}=await engine.start({question,scope,history,threadId:id,clientRequestId:id});
   let run;
   for(let i=0;i<300;i++){run=await engine.getRun({runId});if(run.terminalAt)break;await wait(10);}
   return run;
@@ -28,13 +37,10 @@ test('two-stage Jev retains metric and dimension pairs and sends one Markdown ge
     async invokeOnce({input,format,timeoutMs}){
       invocations.push({input,format,timeoutMs});
       if(input.questions) {
-        const matches=new Set(input.questions.route?['need_metric_detail']:['detail_roas_campaign','detail_cvr_device']);
-        return {output:{answers:Object.fromEntries(Object.entries(input.questions).map(([id,q])=>[id,q.type==='choice'
-          ?{type:'choice',choice:'quick',probabilities:{quick:1,deep:0},confidence:1}
-          :{type:'noul',noul:matches.has(id)?1:0}]))}};
+        return {output:decisions(input.questions,{scores:{need_metric_breakdown:1,metric_roas:1,metric_cvr:1,
+          breakdown_roas_campaign:1,breakdown_cvr_device:1}})};
       }
-      const ids=input.results.map(row=>row.result.groups[0].current.evidenceId);
-      return {output:'**캠페인별 ROAS와 기기별 CVR** '+ids.map(id=>'['+id+']').join(' ')};
+      return {output:'**캠페인별 ROAS와 기기별 CVR**'};
     }
   }});
   const run=await runToEnd(engine,question,'compare');
@@ -43,11 +49,15 @@ test('two-stage Jev retains metric and dimension pairs and sends one Markdown ge
   assert(invocations.every(call=>call.timeoutMs===null));
   assert.equal(invocations[0].input.state.user_question,question);
   assert.equal(invocations[1].input.state.user_question,question);
-  assert.equal(Object.keys(invocations[0].input.questions).length,8);
+  assert.equal(Object.keys(invocations[0].input.questions).length,24);
+  assert.equal(Object.keys(invocations[1].input.questions).length,6);
+  assert(invocations[2].input.results.every(result=>result.name==='metric_breakdown'));
   assert.deepEqual(invocations[2].input.results.map(({args})=>[args.metric,args.dimension]),[
     ['roas','campaign'],['cvr','device'],
   ]);
-  assert.match(invocations[2].input.results[0].result.groups[0].current.display,/%$/);
+  const detail=invocations[2].input.results[0].result;
+  assert.equal(detail.metricDefinition.unit,'%');
+  assert.equal(typeof detail.groups[0].current.value,'number');
   assert.match(run.result.answer,/\*\*캠페인별 ROAS/);
 });
 
@@ -61,8 +71,118 @@ test('a direct ROAS lookup skips the options request, while an unspecified campa
   assert.deepEqual(formats.splice(0),['jev','markdown']);
   const deep=await runToEnd(engine,'캠페인별로 성과를 분석해줘','deep');
   assert.equal(deep.executionStatus,'completed');
-  assert.deepEqual(formats,['jev','jev','markdown']);
+  assert.deepEqual(formats.splice(0),['jev','jev','markdown']);
   assert.match(deep.result.answer,/\| 분석 단위 \| 현재 ROAS \|/);
+  const components=await runToEnd(engine,'ROAS 산식과 분모를 알려줘','components');
+  assert.equal(components.executionStatus,'completed');
+  assert.deepEqual(formats,['jev','jev','markdown']);
+  assert.match(components.result.answer,/구매 매출 \d+원 ÷ 집행비 \d+원/);
+});
+
+test('records use confident filters or retrieve the full scope',()=>{
+  const request={state:{option_candidates:{
+    change:{tool:'records',args:{category:'change'}},
+    campaign:{tool:'records',args:{category:'campaign'}},
+    incident:{tool:'records',args:{category:'incident'}},
+  }}};
+  for(const [scores,expected] of [
+    [[.72,.69,.33],[{category:'change'}]],
+    [[.72,.70,.33],[{category:'change'},{category:'campaign'}]],
+    [[.69,.67,.33],[{}]],
+    [[.49,.48,.33],[{}]],
+  ]) {
+    const answers=Object.fromEntries(Object.keys(request.state.option_candidates)
+      .map((id,index)=>[id,{type:'noul',noul:scores[index]}]));
+    const {calls,missing}=optionCalls(request,answers,['records']);
+    assert.deepEqual(calls.map(call=>call.args),expected);
+    assert.deepEqual(missing,[]);
+  }
+});
+
+test('S16 uses 24 and 11 decisions and preserves all six groups, 28 dates and 33 records',async t=>{
+  const formats=[],jevInputs=[];
+  let modelInput;
+  const engine=createRunEngine({workflow:'jev',toolRuntimeFactory:createToolRuntime,providerPool:{
+    eligibleCandidates:({role})=>[{id:role,provider:role==='first_tool_classifier'?'jev':'gemini',eligible:true}],
+    async invokeOnce({input,format}) {
+      formats.push(format);
+      if(format==='markdown'){modelInput=input;return {output:'운영 기록 분석 결과'};}
+      jevInputs.push(input);
+      const scores={need_overview:.9,need_metric_breakdown:.95,need_trend:.86,need_records:.84,metric_roas:.91,metric_cvr:.68,
+        breakdown_roas_campaign:.9,records_change:.69,records_campaign:.67,records_incident:.33};
+      return {output:decisions(input.questions,{scores,choices:{route:'deep',trend_roas_period:'both'}})};
+    }
+  }});
+  const run=await runToEnd(engine,'캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?','borderline-records');
+  assert.equal(run.executionStatus,'completed');
+  assert.deepEqual(formats,['jev','jev','markdown']);
+  assert.deepEqual(jevInputs.map(input=>Object.keys(input.questions).length),[24,11]);
+  assert.equal(jevInputs[0].state.tools.metric_detail,undefined);
+  assert(!Object.keys(jevInputs[1].questions).some(id=>id.includes('cvr')||id==='metric_specified'));
+  assert.deepEqual(run.events.filter(event=>event.kind==='stage'&&['classifying','choosing_options'].includes(event.stage))
+    .map(event=>event.count),[24,11]);
+  assert(run.events.some(event=>event.status==='uncertain'&&event.argsSummary.includes('일부 지표')));
+  const inputBytes=jevInputs.map(input=>Buffer.byteLength(JSON.stringify(input)));
+  t.diagnostic(`S16 Jev input bytes by stage: ${inputBytes.join(', ')}`);
+  assert(inputBytes[1]<47090/2);
+  assert(inputBytes[0]+inputBytes[1]<54431);
+  const queries=run.events.filter(event=>event.kind==='tool_start'&&event.tool==='records');
+  assert.equal(queries.length,2);
+  assert(queries.every(event=>event.argsSummary==='scopeRole=primary'));
+  assert.deepEqual(modelInput.results.filter(item=>item.name!=='overview').map(({result})=>
+    result.groups?.length??result.days?.length??result.records?.length),[6,28,33]);
+  assert.equal(modelInput.results.find(item=>item.name==='trend').args.periodId,'both');
+  const sent=JSON.stringify(modelInput);
+  assert.match(sent,/PAYMENT_CALLBACK_TIMEOUT/);
+  assert.match(sent,/일예산 420000/);
+  assert.match(sent,/입찰방식/);
+  assert.match(sent,/배송약속/);
+  assert.match(sent,/정산단가/);
+});
+
+test('Jev resolves follow-up context and preserves separate functions, periods and unsupported requests',async()=>{
+  const history=[{role:'user',text:'ROAS를 먼저 보여줘.'},{role:'assistant',text:'현재 ROAS는 284.7%입니다.'}];
+  const scenarios=[
+    {question:'그 지표를 휴대폰이랑 PC로 나눠 봐',history,
+      scores:{need_metric_breakdown:1,metric_roas:1,breakdown_roas_device:1},
+      expected:[['metric_breakdown',{metric:'roas',dimension:'device'}]]},
+    {question:'ROAS 산식이랑 현재 CVR 및 직전 CPC 일별 추이',
+      scores:{need_metric_components:1,need_trend:1,metric_roas:1,metric_cvr:1,metric_cpc:1,components_roas:1,components_cvr:.45},
+      choices:{trend_cvr_period:'current',trend_cpc_period:'baseline'},
+      expected:[['metric_components',{metric:'roas'}],['trend',{metrics:['cpc'],periodId:'baseline',granularity:'day'}],
+        ['trend',{metrics:['cvr'],periodId:'current',granularity:'day'}]]},
+    {question:'ROAS 산식과 CAC 산식',partial:true,choices:{metric_scope:'unresolved'},
+      scores:{need_metric_components:1,metric_roas:1,components_roas:1},expected:[['metric_components',{metric:'roas'}]]},
+    {question:'CAC 산식을 알려줘',partial:true,choices:{metric_scope:'unresolved'},
+      scores:{need_metric_components:1},expected:[],jevCalls:1},
+    {question:'7월 ROAS 일별 추이',partial:true,choices:{metric_scope:'unresolved',trend_roas_period:'unresolved'},
+      scores:{need_trend:1,metric_roas:1},expected:[]},
+    {question:'7월 ROAS 산식과 캠페인별 비교',partial:true,choices:{metric_scope:'unresolved'},
+      scores:{need_metric_components:1,need_metric_breakdown:1,metric_roas:1},expected:[]},
+  ];
+  for(const [index,scenario] of scenarios.entries()) {
+    let jevCalls=0,queries;
+    const engine=createRunEngine({workflow:'jev',toolRuntimeFactory:createToolRuntime,providerPool:{
+      eligibleCandidates:({role})=>[{id:role,provider:role==='first_tool_classifier'?'jev':'gemini'}],
+      async invokeOnce({input,format}) {
+        if(format==='markdown') {
+          queries=input.results.map(({name,args:{scopeRole,...args}})=>{
+            assert.equal(scopeRole,'primary');
+            return [name,args];
+          });
+          return {output:'조회 결과'};
+        }
+        jevCalls++;
+        assert.deepEqual(input.state.recent_history,scenario.history??[]);
+        assert.equal(input.state.user_question,scenario.question);
+        return {output:decisions(input.questions,scenario)};
+      }
+    }});
+    const run=await runToEnd(engine,scenario.question,'options-'+index,scenario.history);
+    assert.equal(run.executionStatus,scenario.partial?'partial':'completed',JSON.stringify(run.result));
+    assert.deepEqual(queries,scenario.expected);
+    assert.equal(jevCalls,scenario.jevCalls??2);
+  }
 });
 
 test('provider quota responses switch Gemini to Gateway and Sail without billing proof or duplicate Gemini attempts',async()=>{
@@ -74,9 +194,7 @@ test('provider quota responses switch Gemini to Gateway and Sail without billing
       const body=JSON.parse(request.body);
       if(url.includes('systemone')){
         called.push('jev');
-        return response(200,{answers:Object.fromEntries(Object.entries(body.questions).map(([id,q])=>[id,q.type==='choice'
-          ?{type:'choice',choice:'deep',probabilities:{quick:0,deep:1},confidence:1}
-          :{type:'noul',noul:id==='need_overview'?1:0}]))});
+        return response(200,decisions(body.questions,{choices:{route:'deep'},scores:{need_overview:1}}));
       }
       if(url.includes('googleapis')){
         called.push('gemini');
@@ -89,7 +207,7 @@ test('provider quota responses switch Gemini to Gateway and Sail without billing
       called.push('sail');
       const context=JSON.parse(body.messages.find(message=>message.role==='user').content);
       const current=context.results[0].result.periods.find(period=>period.id==='current');
-      return response(200,{choices:[{message:{content:'현재 ROAS는 '+current.display.roas+'입니다. ['+current.evidenceId+']'}}]});
+      return response(200,{choices:[{message:{content:'현재 ROAS는 '+current.display.roas+'입니다.'}}]});
     }
   });
   const engine=createRunEngine({workflow:'jev',toolRuntimeFactory:createToolRuntime,providerPool:pool});

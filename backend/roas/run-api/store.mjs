@@ -12,11 +12,12 @@ const safe = (v, n=180) => typeof v==='string' && v.length<=n && !sensitive.test
 const ids = a => Array.isArray(a) ? a.filter(v=>safe(v,128)!==undefined).slice(0,100) : [];
 function eventValue(e={}) {
   const out={evidenceIds:ids(e.evidenceIds)};
-  for(const k of ['stage','tool','model','provider','transport','billingBucket','status','errorCode','kind']) {
+  for(const k of ['stage','tool','model','provider','transport','billingBucket','status','errorCode','kind','role','failurePhase','causeCode']) {
     const v=safe(e[k],100);if(v!==undefined)out[k]=v;
   }
   if(safe(e.argsSummary)!==undefined)out.argsSummary=e.argsSummary;
-  for(const k of ['count','rowCount','elapsed','elapsedMs']) if(Number.isFinite(e[k])&&e[k]>=0)out[k]=e[k];
+  for(const k of ['count','rowCount','elapsed','elapsedMs','attemptIndex']) if(Number.isFinite(e[k])&&e[k]>=0)out[k]=e[k];
+  if(Number.isInteger(e.httpStatus)&&e.httpStatus>=100&&e.httpStatus<=599)out.httpStatus=e.httpStatus;
   return out;
 }
 function resultValue(result,status) {
@@ -122,7 +123,8 @@ export function createRunStore({dbPath,now=Date.now,maxConcurrentRuns=2,maxStart
       tx(()=>prune(time()));const row=lookup(runId,accountId,browserId);return row?view(row,afterEventSeq):null;
     },
     listTraceRuns() {
-      return db.prepare(`SELECT run_id AS runId, execution_status AS executionStatus, stage,
+      return db.prepare(`SELECT run_id AS runId, execution_status AS executionStatus, stage, route,
+        json_extract(scope_json,'$.caseId') AS caseId,
         started_at AS startedAt, terminal_at AS terminalAt, stop_reason AS stopReason,
         EXISTS(SELECT 1 FROM roas_events e WHERE e.run_id=r.run_id AND
           (json_extract(e.event_json,'$.status') IN ('failed','error','withheld','partial')

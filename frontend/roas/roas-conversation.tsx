@@ -14,7 +14,7 @@ import './agent-chat.css';
 import './roas-conversation.css';
 
 type Exchange={question:string;result:RoasAnswer};
-type Props={data:TrainingData;snapshot:string;filters:Filters;metric:string;screenTitle:string;localScopeLabel?:string;onClearScope?:()=>void;onClose:()=>void;exchanges:Exchange[];onExchange:(exchange:Exchange)=>void};
+type Props={data:TrainingData;snapshot:string;filters:Filters;metric:string;screenTitle:string;localScopeLabel?:string;onClearScope?:()=>void;onClose?:()=>void;apiBase?:string;onRunSelected?:(runId:string)=>void;exchanges:Exchange[];onExchange:(exchange:Exchange)=>void};
 const transportErrors=['server_unavailable','request_outcome_unknown','not_found'];
 const connectionError=(code:string)=>({server_unavailable:'AI 서버가 꺼져 있거나 응답하지 않습니다. 서버 실행 후 다시 연결해 주세요.',roas_query_limit:'조회 횟수 제한에 도달했습니다.',model_timeout:'모델 응답 시간이 초과됐습니다.',request_outcome_unknown:'응답을 받지 못했습니다. 새 요청을 만들지 않고 기존 요청 ID를 확인해 주세요.',inputs_changed:'화면과 서버의 데이터가 다릅니다. 화면을 새로고침해 주세요.',not_found:'서버에 해당 실행 정보가 없습니다. 보관 기간 또는 인증 상태를 확인해 주세요.'} as Record<string,string>)[code]||errorText(code);
 const periodLabel=(start:string,end:string)=>start.slice(5).replace('-','.')+' ~ '+new Date(Date.parse(end+'T00:00:00Z')-86400000).toISOString().slice(5,10).replace('-','.');
@@ -31,8 +31,8 @@ function activeRun(entries:ConversationEntry[]):RunEntry|undefined{
 function startScope(data:TrainingData,snapshot:string,filters:Filters,dataHash:string,metric:string,screenTitle:string):RunScope{
  return {caseId:data.caseId,snapshot,filters:{channel:filters.channel,source:filters.source||'all',campaignId:filters.campaignId,device:filters.device},dataHash,metric,screenTitle};
 }
-export function RoasConversation({data,snapshot,filters,metric,screenTitle,localScopeLabel,onClearScope,onClose,exchanges,onExchange}:Props){
- const [client]=useState(()=>createAgentClient(fetch,import.meta.env.VITE_AGENT_API_URL||'/agent-api'));
+export function RoasConversation({data,snapshot,filters,metric,screenTitle,localScopeLabel,onClearScope,onClose,exchanges,onExchange,apiBase,onRunSelected}:Props){
+ const [client]=useState(()=>createAgentClient(fetch,apiBase??(import.meta.env.VITE_AGENT_API_URL||'/agent-api')));
  const [question,setQuestion]=useState(''),[conversation,setConversation]=useState<SavedConversation|null>(null);
  const [connected,setConnected]=useState(false),[connecting,setConnecting]=useState(true),[mode,setMode]=useState('');
  const [busy,setBusy]=useState(false),[errorCode,setError]=useState(''),[pollError,setPollError]=useState(''),[cancelling,setCancelling]=useState(false),[storageError,setStorageError]=useState(false);
@@ -61,6 +61,9 @@ export function RoasConversation({data,snapshot,filters,metric,screenTitle,local
   if(conversation&&!saveConversation(storage(),contextKey,{...conversation,updatedAt:Date.now()}))queueMicrotask(()=>{if(alive.current)setStorageError(true);});
  },[conversation,contextKey]);
  const entries=conversation?.entries||[];
+ const latestRunId=entries.findLast(entry=>entry.kind==='run'&&entry.runId);
+ const selectedRunId=latestRunId?.kind==='run'?latestRunId.runId:undefined;
+ useEffect(()=>{if(selectedRunId)onRunSelected?.(selectedRunId);},[selectedRunId,onRunSelected]);
  const active=activeRun(entries);
  const activeId=active?.runId;
  useEffect(()=>{

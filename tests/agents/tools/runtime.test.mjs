@@ -146,6 +146,47 @@ test('metric_detail recalculates raw ratios, group pairs and pagination',async()
   assert.equal((await execute('metric_detail',{metric:'cvr',dimension:'campaign',offset:7})).errorCode,'request_invalid');
 });
 
+test('Jev metric tools split aggregate components from paged groups and enforce exposed axes',async()=>{
+  const schemas=tools.toolSchemas({workflow:'jev'});
+  assert.deepEqual(schemas.map(tool=>tool.name),['overview','metric_components','metric_breakdown','trend','records',
+    'review_summary','review_records','evidence']);
+  const breakdownSchema=schemas.find(tool=>tool.name==='metric_breakdown');
+  assert.deepEqual(breakdownSchema.parameters.required,['scopeRole','metric','dimension']);
+  assert.deepEqual(schemas.find(tool=>tool.name==='trend').parameters.required,['scopeRole','metrics','periodId']);
+  assert(!breakdownSchema.parameters.properties.dimension.enum.includes('keyword'));
+  assert(!breakdownSchema.parameters.properties.dimension.enum.includes('product'));
+  const legacy=await execute('metric_detail',{metric:'roas',dimension:'campaign',limit:2});
+  const components=await execute('metric_components',{metric:'roas'});
+  const breakdown=await execute('metric_breakdown',{metric:'roas',dimension:'campaign',limit:2});
+  const compareValues=result=>{
+    const values={...result};
+    delete values.evidenceId;
+    return values;
+  };
+  assert.deepEqual(components.periods.map(compareValues),legacy.periods.map(compareValues));
+  assert.equal(components.groups,undefined);
+  assert.equal(breakdown.periods,undefined);
+  assert.equal(breakdown.nextOffset,2);
+  assert.equal(breakdown.evidenceIds.length,4);
+  for(const [index,group] of breakdown.groups.entries()) {
+    assert.equal(group.key,legacy.groups[index].key);
+    for(const period of ['baseline','current'])
+      assert.deepEqual(compareValues(group[period]),compareValues(legacy.groups[index][period]));
+    assert.equal(group.delta,group.current.value-group.baseline.value);
+  }
+  const creative=await execute('metric_breakdown',{metric:'adCtr',dimension:'creativeId'});
+  const unavailable=creative.groups.find(group=>group.current.value===null||group.baseline.value===null);
+  assert.equal(unavailable.delta,null);
+  assert.equal((await execute('metric_components',{metric:'roas',dimension:'campaign'})).errorCode,'request_invalid');
+  assert.equal((await execute('metric_breakdown',{metric:'roas'})).errorCode,'unsupported_scope');
+  assert.equal((await execute('metric_breakdown',{metric:'cvr',dimension:'product'})).errorCode,'unsupported_scope');
+  assert.equal((await execute('metric_breakdown',{metric:'cpc',dimension:'keyword'})).errorCode,'unsupported_scope');
+  const search=await createToolRuntime({runId:'search-keyword',scope:scopeFor('S16','initial',{filters:{...filters,channel:'search'}})});
+  try {
+    assert.equal((await search.execute({name:'metric_breakdown',args:{scopeRole:'primary',metric:'cpc',dimension:'keyword'}})).status,'ready');
+  } finally {await search.dispose();}
+});
+
 test('trend keeps real dates and records enforce asOf and query scope',async()=>{
   const first=await execute('trend',{limit:24});
   const next=await execute('trend',{offset:24,limit:24});

@@ -8,6 +8,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {randomUUID,createHash} from 'node:crypto';
 import {trainingScreenData} from '../../../scripts/roas/training-data.mjs';
+import {createAgentClient} from '../../../frontend/roas/agent-client.ts';
 
 const root=new URL('../../../',import.meta.url);
 const origin='http://127.0.0.1:5173';
@@ -23,7 +24,11 @@ async function serve(port,dbPath,tracePort) {
   let errors='';
   child.stderr.on('data',chunk=>{errors+=chunk.toString();});
   await Promise.race([
-    once(child.stdout,'data'),
+    new Promise(resolve=>{
+      child.stdout.on('data',chunk=>{
+        if(chunk.toString().includes('/agent-trace'))resolve();
+      });
+    }),
     once(child,'exit').then(([code])=>{throw Error('mock exited '+code+': '+errors);}),
     new Promise((_,reject)=>setTimeout(()=>reject(Error('mock startup timeout '+errors)),8000).unref())
   ]);
@@ -42,16 +47,31 @@ test('actual local server: no-Origin GET, mocked completion, restart recovery, a
   t.after(async()=>{await stop(child);rmSync(directory,{recursive:true,force:true});});
   const session1=await (await fetch(base+'/session')).json();
   assert.equal(session1.mode,'offline_model_substitute');
+  const traceSessionPath=traceBase+'/agent-api/session';
+  const traceOrigin=traceBase;
+  assert.equal((await fetch(traceSessionPath,{headers:{origin}})).status,403);
+  assert.equal((await fetch(traceSessionPath,{headers:{'sec-fetch-site':'same-site'}})).status,403);
+  const traceClient=createAgentClient(fetch,traceBase+'/agent-api');
+  const traceSession=await traceClient.session();
+  assert.equal(traceSession.mode,session1.mode);
+  assert.equal(traceSession.realAdsEnabled,false);
+  assert.notEqual(traceSession.token,session1.token);
   const data=trainingScreenData(undefined,'S16','initial');
+  assert.deepEqual(await (await fetch(traceBase+'/agent-trace/data')).json(),data);
   const scope={caseId:'S16',snapshot:'initial',metric:'roas',screenTitle:'성과 현황',
     filters:{channel:'all',source:'all',campaignId:'all',device:'all'},
     dataHash:createHash('sha256').update(JSON.stringify(data)).digest('hex')};
   const request={question:'현재 ROAS 알려줘',scope,history:[],
     threadId:randomUUID(),clientRequestId:randomUUID()};
-  const begin=await fetch(base+'/roas/runs',{method:'POST',headers:{
-    origin,'content-type':'application/json','x-agent-token':session1.token},body:JSON.stringify(request)});
+  const traceRuns=traceBase+'/agent-api/roas/runs';
+  const post=(token,requestOrigin)=>fetch(traceRuns,{method:'POST',headers:{
+    origin:requestOrigin,'content-type':'application/json','x-agent-token':token},body:JSON.stringify(request)});
+  assert.equal((await post(traceSession.token,origin)).status,403);
+  assert.equal((await post(session1.token,traceOrigin)).status,401);
+  const begin=await post(traceSession.token,traceOrigin);
   assert.equal(begin.status,202,await begin.clone().text());
   const {runId}=await begin.json();
+  assert.equal((await traceClient.getRoasRun(runId)).runId,runId);
   let completed;
   for(let i=0;i<80;i++) {
     const poll=await fetch(base+'/roas/runs/'+runId,{headers:{'x-agent-token':session1.token}});
@@ -66,7 +86,11 @@ test('actual local server: no-Origin GET, mocked completion, restart recovery, a
   assert.equal(completed.result.verification,undefined);
   const page=await fetch(traceBase+'/agent-trace');
   assert.equal(page.status,200);
-  assert.match(await page.text(),/원본 보기/);
+  const markup=await page.text();
+  assert.match(markup,/원본 보기/);
+  assert.match(markup,/aria-label="최근 실행 목록"/);
+  assert.doesNotMatch(markup,/실행 ID로 찾기|run-lookup/);
+  assert.match(markup,/<iframe[^>]+src="\/agent-trace\/chat"/);
   const navigation={'sec-fetch-site':'cross-site'};
   assert.equal((await fetch(traceBase+'/agent-trace',{headers:navigation})).status,200);
   assert.equal((await fetch(traceBase+'/agent-trace/runs',{headers:navigation})).status,403);
@@ -75,6 +99,9 @@ test('actual local server: no-Origin GET, mocked completion, restart recovery, a
   assert.equal((await fetch(base+'/../agent-trace/runs')).status,403);
   const recent=await (await fetch(traceBase+'/agent-trace/runs')).json();
   assert.equal(recent[0].runId,runId);
+  assert.equal(recent[0].caseId,'S16');
+  assert.equal(recent[0].route,'quick');
+  assert.equal(recent[0].startedAt,completed.startedAt);
   const trace=await (await fetch(traceBase+'/agent-trace/runs/'+runId+'?afterEventSeq=1')).json();
   assert.deepEqual(trace.events,completed.events.slice(1));
   assert(!trace.events.some(e=>e.kind.startsWith('check_final_')||e.kind==='verification'));

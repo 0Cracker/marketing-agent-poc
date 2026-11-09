@@ -220,7 +220,32 @@ test('HTTP errors are typed, sanitized and never retried',async()=>{
     await rejection(()=>p.invokeOnce({candidate:selected(p,id),...opts}),code);
     assert.equal(calls,1,id);
     assert.equal(events.at(-1).errorCode,code,id);
+    assert.equal(events.at(-1).failurePhase,'http_status',id);
+    assert.equal(events.at(-1).httpStatus,status,id);
     assert.ok(!JSON.stringify(events).includes('key-one'));
+  }
+});
+
+test('transport failures preserve the native code and distinguish headers from body',async()=>{
+  for(const [failurePhase,causeCode] of [
+    ['response_headers','UND_ERR_HEADERS_TIMEOUT'],
+    ['response_body','UND_ERR_BODY_TIMEOUT']
+  ]) {
+    const failure=new TypeError('sensitive response text',{cause:{code:causeCode}});
+    const fetchImpl=async()=>{
+      if(failurePhase==='response_headers')throw failure;
+      return {status:200,ok:true,text:async()=>{throw failure;}};
+    };
+    const events=[];
+    const p=pool({fetchImpl,onEvent:event=>events.push(event)});
+    const httpStatus=failurePhase==='response_body'?200:undefined;
+    await assert.rejects(()=>p.invokeOnce({candidate:selected(p,'gemini-lite'),...opts,timeoutMs:null}),
+      error=>error.code==='model_failed'&&error.failurePhase===failurePhase&&
+        error.causeCode===causeCode&&error.httpStatus===httpStatus);
+    assert.equal(events.at(-1).failurePhase,failurePhase);
+    assert.equal(events.at(-1).causeCode,causeCode);
+    assert.equal(events.at(-1).httpStatus,httpStatus);
+    assert.doesNotMatch(JSON.stringify(events),/sensitive response text/);
   }
 });
 

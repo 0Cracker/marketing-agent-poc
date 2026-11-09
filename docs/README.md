@@ -1,5 +1,9 @@
 # 문서 안내
 
+2026-11-09 Jev의 지표 상세를 계산 내역과 그룹 비교로 분리하고, 1차에서 고른 지표의 차원과 기간만 2차에서 판단한다. [질문, 도구 계약과 인수 기준](design/agent-development-sdd.md#3617-jev-지표-선별과-조회-기능-분리-2026-11-09).
+
+2026-11-09 최종 생성 모델 입력에서 내부 메타데이터와 ROAS 단독 일별 조회의 중복 전체 집계를 제외한다. 요청한 지표 값과 계산 근거는 보존한다. [현재 전달 계약과 검증](design/agent-development-sdd.md#3615-최종-생성용-조회-데이터-보존-2026-11-09).
+
 2026-11-06 사용자 지시로 에이전트의 답변 자동 검증과 보류 처리를 제거했다. 서버는 도구 조회와 계산 후 모델 Markdown을 그대로 저장하고 전달한다. [현재 계약과 확인 결과](design/agent-development-sdd.md#3612-답변-자동-검증-제거-2026-11-06-사용자-확정)를 우선한다.
 
 2026-11-06 ROAS 에이전트 통합 코드를 `marketing-agent-poc`에 반영했다. 이 폴더에서 `npm run dev:agent:mock`으로 실행할 수 있다. [반영 범위와 검증](handoffs/agent-parallel-20261104/08-integration-results.md#2026-11-06-단일-작업-폴더-반영), [기존 실모델 E2E 기록](../evidence/agent-provider-connect-20261105/), [진단 스크립트](../scripts/roas/diagnostics/)를 같은 저장소에서 관리한다.
