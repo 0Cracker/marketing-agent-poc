@@ -113,3 +113,13 @@ Vercel의 System Environment Variables 노출을 확인한다. 함수는 VERCEL_
 - npm test: 기존 ROAS 회귀 73/73 성공
 - 미실행: cloudflared 설치, Quick Tunnel 실개설, 브랜치 푸시, Vercel Preview 배포, Preview에서 터널을 거친 실연결, QA Preview와 환경변수 정리. 위 항목은 실행 승인 이후 확인 필요
 - 실제 임시 토큰과 터널 주소는 생성하거나 보관하지 않았으며, 기존 Agent/SQLite/모델 키는 사용하지 않았다.
+
+### 2026-11-10 QA 실연결 진행 기록 (후속)
+
+- 승인 후 QA 브랜치에 로컬 검증 완료 구현을 커밋하고 GitHub로 푸시했다. 초기 QA 커밋은 a42e49c이며 main, dev는 변경하지 않았다.
+- Windows에 Cloudflare cloudflared 2026.10.7을 설치하고 기존 Agent와 분리한 localhost:18788 서버에 Quick Tunnel을 개설했다.
+- 발급된 HTTPS trycloudflare.com 임시 주소에서 직접 검증했다. 서버 간 토큰 누락 시 401, 정상 토큰 시 200, Trace 경로 접근 시 404.
+- 테스트 서버를 중지하자 Quick Tunnel 직접 요청은 502를 반환했다. 같은 포트로 서버만 다시 기동한 후 같은 터널 주소에서 200으로 복구됐다. **Vercel API의 503 응답 검증과는 다른 테스트이다.**
+- GitHub의 Vercel 배포 상태가 success로 확인되어 QA 브랜치 Preview 빌드 완료가 확인됐다.
+- Vercel CLI는 로컬 계정이 로그인되어 있지 않아 브랜치 한정 3개 환경변수 등록 및 Preview API 실왕복 검증은 아직 미완료다. Vercel 계정 연결 이후 진행해야 한다.
+- 보안상 토큰 및 Quick Tunnel 임시 URL은 Git, 배포 문서에 기록하지 않았다. 현재 로컬 테스트 서버와 Quick Tunnel은 다음 연결 단계까지 실행 중이며 완료 후 종료 및 QA 환경변수 정리가 필요하다.
