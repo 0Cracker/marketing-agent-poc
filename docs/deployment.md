@@ -123,3 +123,32 @@ Vercel의 System Environment Variables 노출을 확인한다. 함수는 VERCEL_
 - GitHub의 Vercel 배포 상태가 success로 확인되어 QA 브랜치 Preview 빌드 완료가 확인됐다.
 - Vercel CLI는 로컬 계정이 로그인되어 있지 않아 브랜치 한정 3개 환경변수 등록 및 Preview API 실왕복 검증은 아직 미완료다. Vercel 계정 연결 이후 진행해야 한다.
 - 보안상 토큰 및 Quick Tunnel 임시 URL은 Git, 배포 문서에 기록하지 않았다. 현재 로컬 테스트 서버와 Quick Tunnel은 다음 연결 단계까지 실행 중이며 완료 후 종료 및 QA 환경변수 정리가 필요하다.
+
+### 2026-11-10 최종 실연결 인수 결과와 QA 종료
+
+QA 브랜치 qa/quick-tunnel-smoke-20261110의 Vercel Preview에서 Cloudflare Quick Tunnel을 거쳐
+로컬 Node 127.0.0.1:18788까지 실제 호출에 성공했다. Preview 전용 임시 변수 3개만
+설정했고 기존 Agent API, SQLite, 모델 키는 사용하지 않았다.
+
+| 실제 호출 | HTTP | 결과 |
+| --- | --- | --- |
+| 정상 호출자 토큰으로 Preview API 호출 | 200 | {"ok":true,"source":"quick-tunnel-smoke"} |
+| 호출자 토큰 누락 및 오입력 | 401 | 터널로 전송하지 않음 |
+| Quick Tunnel 직접 호출, 서버 토큰 누락 | 401 | 인증 차단 |
+| Quick Tunnel에서 /trace 접근 | 404 | 기존 서버 경로 차단 |
+| 로컬 테스트 서버 중지 후 Preview 정상 인증 요청 | 503 | smoke_test_unavailable |
+| 동일한 로컬 포트로 서버 재시작 후 Preview 재호출 | 200 | 고정 JSON 응답 복구 |
+
+인증되지 않은 일반 Preview 요청은 Vercel SSO가 302로 먼저 로그인 화면으로 보낸다.
+실제 앱 응답 검증은 Vercel CLI의 인증된 테스트 요청으로 수행했다.
+CLI가 자동 생성한 프로젝트 단위의 보호 우회용 자격증명 1개는 검증 후 철회했다.
+철회 후 보호 우회용 자격증명 0개, SSO 보호 유지 및 Git fork protection 활성 상태를 확인했다.
+
+종료 단계에서 QA 브랜치 전용 QUICK_TUNNEL_ORIGIN, QUICK_TUNNEL_CALLER_TOKEN,
+QUICK_TUNNEL_SERVER_TOKEN을 삭제했고 목록 재조회 결과가 0개였다.
+검증용 Vercel Preview 배포 3건을 개별적으로 삭제했고,
+Quick Tunnel과 전용 Node 서버를 종료했다. 사용한 임시 토큰은 기록하지 않았다.
+단, Git 문서 커밋의 푸시로 새로운 Preview가 자동 생성되는 경우 별도로 정리해야 한다.
+
+이 검증은 네트워크 및 인증 경계만을 다룬다.
+PoC 화면 로그인, 실제 Agent 실행, 게이트웨이 서명 검증 및 운영 안정성은 후속 범위다.
