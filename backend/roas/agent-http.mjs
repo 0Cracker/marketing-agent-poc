@@ -27,6 +27,7 @@ export function createAgentServer(_flow,{origins=['http://127.0.0.1:5173','http:
   const sessionInfo={mode:runtimeInfo.mode,externalModelEnabled:runtimeInfo.externalModelEnabled,...(runtimeInfo.dataHash?{dataHash:runtimeInfo.dataHash,dataContract:runtimeInfo.dataContract}:{}),...(runtimeInfo.models?{models:{analysis:runtimeInfo.models.analysis,budget:runtimeInfo.models.budget}}:{})};
   const token=randomBytes(32).toString('hex');
   const runs=typeof runRoutes==='function'?runRoutes({token,origins}):runRoutes;
+  const gatewayOnly=Boolean(process.env.AGENT_QA_GATEWAY_SECRET);
   const server=http.createServer(async(req,res)=>{
     try{
       const port=server.address()?.port;
@@ -47,8 +48,10 @@ export function createAgentServer(_flow,{origins=['http://127.0.0.1:5173','http:
         res.writeHead(204);res.end();return;
       }
       const url=new URL(req.url,'http://127.0.0.1');
+      if(gatewayOnly&&url.pathname!=='/agent-api/roas/runs'&&!url.pathname.startsWith('/agent-api/roas/runs/'))throw new FlowError('not_found');
       if(req.method==='GET'&&url.pathname==='/agent-api/session')return json(res,200,{token,...sessionInfo,realAdsEnabled:false});
       if(runs&&await runs.handle(req,res))return;
+      if(gatewayOnly)throw new FlowError('not_found');
       const supplied=Buffer.from(String(req.headers['x-agent-token']||''));
       const expected=Buffer.from(token);requireThat(supplied.length===expected.length&&timingSafeEqual(supplied,expected),'csrf_denied');
       if(req.method==='POST'&&url.pathname==='/agent-api/roas/chat'){

@@ -26,9 +26,19 @@ export function scopeFromScreen(s:ScreenSelection):AgentScope{
 export const snapshotKey=(scope:AgentScope,evidenceIds:string[])=>'marketing-agent/1:'+JSON.stringify([scope,[...evidenceIds].sort()]);
 
 export function createAgentClient(fetcher:typeof fetch=fetch,base='/agent-api'){
+  const qa=base==='/api/qa';
   let token:string|null=null;
+  async function login(password:string){
+    if(!qa)throw Error('unsupported_server_mode');
+    const response=await fetcher(base+'/login',{method:'POST',credentials:'same-origin',cache:'no-store',
+      headers:{'content-type':'application/json'},body:JSON.stringify({password})});
+    const value=await response.json() as Envelope;
+    if(!response.ok)throw Error(value.error||'authentication_required');
+    token=null;return session();
+  }
+  async function logout(){if(!qa)return;const response=await fetcher(base+'/logout',{method:'POST',credentials:'same-origin'});if(!response.ok)throw Error('server_unavailable');token=null;}
   async function session(){
-    let response:Response;try{response=await fetcher(base+'/session',{cache:'no-store'});}catch{throw Error('server_unavailable');}
+    let response:Response;try{response=await fetcher(base+'/session',{cache:'no-store',credentials:'same-origin'});}catch{throw Error('server_unavailable');}
     let data:Envelope;try{data=await response.json() as Envelope;}catch{throw Error('server_unavailable');}
     if(!response.ok||!data.token)throw Error(data.error||'server_unavailable');
     if(!['offline_model_substitute','remote_model'].includes(data.mode||'')||data.realAdsEnabled!==false||(data.mode==='remote_model'&&data.externalModelEnabled!==true))throw Error('unsupported_server_mode');
@@ -36,7 +46,7 @@ export function createAgentClient(fetcher:typeof fetch=fetch,base='/agent-api'){
   }
   async function request(path:string,body?:unknown,retry=true):Promise<unknown>{
     if(!token)await session();
-    let response:Response;try{response=await fetcher(base+path,{method:body===undefined?'GET':'POST',cache:'no-store',headers:{'content-type':'application/json','x-agent-token':token!},body:body===undefined?undefined:JSON.stringify(body)});}catch{throw Error('request_outcome_unknown');}
+    let response:Response;try{response=await fetcher(qa?base+'/agent?route='+encodeURIComponent('/agent-api'+path):base+path,{method:body===undefined?'GET':'POST',credentials:'same-origin',cache:'no-store',headers:qa?{'content-type':'application/json'}:{'content-type':'application/json','x-agent-token':token!},body:body===undefined?undefined:JSON.stringify(body)});}catch{throw Error('request_outcome_unknown');}
     let data:Envelope;try{data=await response.json() as Envelope;}catch{throw Error('response_invalid');}
     // Only this rejection is known to happen before an operation starts.
     if(response.status===403&&data.error==='csrf_denied'&&retry){token=null;return request(path,body,false);}
@@ -58,7 +68,7 @@ export function createAgentClient(fetcher:typeof fetch=fetch,base='/agent-api'){
     if(state.runId!==runId||!state.executionStatus)throw Error('response_invalid');
     return state;
   }
-  return {session,startRoasRun,getRoasRun,cancelRoasRun,roasChat:async(body:unknown)=>await request('/roas/chat',body) as RoasAnswer,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
+  return {session,login,logout,startRoasRun,getRoasRun,cancelRoasRun,roasChat:async(body:unknown)=>await request('/roas/chat',body) as RoasAnswer,analyze:(body:unknown)=>run('/analysis',body),budget:(body:unknown)=>run('/budget',body),getRun:(id:string)=>run('/runs/'+encodeURIComponent(id)),
     action:(id:string,action:'approve'|'reject'|'revise'|'resume'|'cancel',body:unknown)=>run(`/runs/${encodeURIComponent(id)}/${action}`,body),
     budgetInputs:async(id:string)=>await request(`/runs/${encodeURIComponent(id)}/budget-inputs`) as BudgetInputs,
     evidence:async(id:string,ids:string[])=>await request(`/runs/${encodeURIComponent(id)}/evidence`,{ids}) as {records:Record<string,unknown>[]}};

@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'backend/roas/**'
+      - 'api/qa/**'
       - 'frontend/roas/**'
       - 'frontend/src/agent-trace-chat.*'
       - 'frontend/agent-trace-chat.html'
@@ -19,6 +20,7 @@ on:
   pull_request:
     paths:
       - 'backend/roas/**'
+      - 'api/qa/**'
       - 'frontend/roas/**'
       - 'frontend/src/agent-trace-chat.*'
       - 'frontend/agent-trace-chat.html'

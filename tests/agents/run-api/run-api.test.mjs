@@ -39,7 +39,7 @@ async function fixture(t,{options={},withSecret=true,engineFactory,now}={}) {
     const nowValue=clock();
     const moment=nowValue instanceof Date?nowValue.getTime():nowValue;
     const claim={iss:'qa-access-gateway',aud:'roas-agent',sub:'qa-shared',session,
-      iat:iat??moment,exp:exp??moment+45000};
+      nonce:randomUUID(),iat:iat??moment,exp:exp??moment+45000};
     const assertion=Buffer.from(JSON.stringify(claim)).toString('base64url');
     const signature=createHmac('sha256',KEY).update(method+'\n'+path+'\n'+createHash('sha256').update(raw).digest('hex')+'\n'+assertion).digest('hex');
     const requestHeaders={...(origin===null?{}:{origin}),...(payload===undefined?{}:{'content-type':'application/json'}),

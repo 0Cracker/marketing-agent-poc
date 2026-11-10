@@ -80,6 +80,8 @@ export function createGatewayAuth({secret, audience='roas-agent', allowedOrigins
   const key=typeof secret==='string'?Buffer.from(secret):secret;
   const ready=Buffer.isBuffer(key)&&key.length>=32;
   const origins=new Set(allowedOrigins);
+  // Single local Agent listener: reject any duplicate HMAC proof until it expires.
+  const consumed=new Map();
   return {
     allowedOrigins:origins,
     verify({req, rawBody=Buffer.alloc(0)}) {
@@ -97,6 +99,11 @@ export function createGatewayAuth({secret, audience='roas-agent', allowedOrigins
         typeof claim.session!=='string'||!idPattern.test(claim.session))reject('invalid_assertion');
       if(!Number.isSafeInteger(claim.iat)||!Number.isSafeInteger(claim.exp)||claim.exp-claim.iat>60000||
         claim.iat>at+5000||claim.exp<=at)reject('expired_assertion');
+      for(const [proof,expiry] of consumed)if(expiry<=at)consumed.delete(proof);
+      const proof=signature.toLowerCase();
+      if(consumed.has(proof))reject('invalid_assertion');
+      if(consumed.size>=4096)reject('rate_limited');
+      consumed.set(proof,claim.exp);
       return {accountId:'qa-shared',browserId:claim.session};
     }
   };
