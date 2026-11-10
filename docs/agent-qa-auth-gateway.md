@@ -128,3 +128,9 @@ CI: `.github/workflows/roas-agent-qa.yml`에서 API 경로 변경에도 Agent �
 5. 장기 운영에는 사용자 정의 DNS와 Named Tunnel, 중앙 집중식 로그인 제한, 세션 강제 폐기, 유출 시 키 교체 절차가 필요하다. Quick Tunnel은 단기 QA 검증용으로만 사용한다.
 
 **외부 실연결 상태:** 해당 Worktree에서 Vercel CLI 로그인과 배포 연결 설정, Cloudflare Tunnel 실행 환경은 아직 확보되지 않아 Preview → Tunnel → 운영자 PC 전체 왕복은 검증 전이다. 외부 E2E 완료로 표시하지 않는다.
+
+## dev 브랜치 Preview 배포 (2026-11-10, v0.4.25)
+
+QA 인증 게이트웨이 코드가 dev에 포함되어도 기본적으로 자동 활성화되지 않는다. `config()`가 `VERCEL_ENV=preview` 및 `VERCEL_GIT_COMMIT_REF===QA_GATEWAY_BRANCH`를 검사하기 때문이다. dev Preview에서 로그인하려면 Vercel 프로젝트 환경변수를 **Preview의 dev 브랜치에만** 적용하고 `QA_GATEWAY_ENABLED=true`, `QA_GATEWAY_BRANCH=dev`, `QA_LOGIN_PASSWORD`, `QA_SESSION_SECRET`, `AGENT_QA_GATEWAY_SECRET`, `QA_TUNNEL_ORIGIN`을 설정한다. QA 전용 브랜치의 설정값만 등록하면 dev에서는 `503 gateway_not_configured`가 정상이다. 키는 Git이나 브라우저에 노출하지 않는다.
+
+기존 `feat/agent-auth-gateway-20261110` 브랜치 Preview를 계속 사용한다면 해당 브랜치에서는 `QA_GATEWAY_BRANCH=feat/agent-auth-gateway-20261110`로 개별 설정한다. Vercel 배포 성공은 외부 Tunnel E2E의 성공을 뜻하지 않는다. Tunnel과 로컬 Agent가 실행되어 있어야 한다.
