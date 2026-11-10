@@ -17,6 +17,7 @@ const eslintConfig = defineConfig([
     ".tools/**",
     // Local work products are Git-ignored and must not block application lint.
     "work/**",
+    ".agent-state/**",
     "next-env.d.ts",
   ]),
   {

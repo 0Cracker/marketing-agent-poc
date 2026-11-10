@@ -1,4 +1,5 @@
 import {useCallback,useEffect,useRef,useState} from 'react';
+import type {FormEvent} from 'react';
 import {ArrowUp,Sparkles,Monitor,AlertCircle,RefreshCw} from 'lucide-react';
 import {campaignDisplayName} from '../../shared/roas/training-dashboard.mjs';
 import type {Filters,TrainingData} from '../../shared/roas/training-dashboard.mjs';
@@ -32,12 +33,21 @@ function startScope(data:TrainingData,snapshot:string,filters:Filters,dataHash:s
  return {caseId:data.caseId,snapshot,filters:{channel:filters.channel,source:filters.source||'all',campaignId:filters.campaignId,device:filters.device},dataHash,metric,screenTitle};
 }
 export function RoasConversation({data,snapshot,filters,metric,screenTitle,localScopeLabel,onClearScope,onClose,exchanges,onExchange,apiBase,onRunSelected}:Props){
- const [client]=useState(()=>createAgentClient(fetch,apiBase??(import.meta.env.VITE_AGENT_API_URL||'/agent-api')));
+ const gatewayBase=apiBase??(import.meta.env.PROD?'/api/qa':(import.meta.env.VITE_AGENT_API_URL||'/agent-api'));
+ const [client]=useState(()=>createAgentClient(fetch,gatewayBase));
+ const [loginPassword,setLoginPassword]=useState(''),[loginBusy,setLoginBusy]=useState(false);
  const [question,setQuestion]=useState(''),[conversation,setConversation]=useState<SavedConversation|null>(null);
  const [connected,setConnected]=useState(false),[connecting,setConnecting]=useState(true),[mode,setMode]=useState('');
  const [busy,setBusy]=useState(false),[errorCode,setError]=useState(''),[pollError,setPollError]=useState(''),[cancelling,setCancelling]=useState(false),[storageError,setStorageError]=useState(false);
  const input=useRef<HTMLTextAreaElement>(null),thread=useRef<HTMLDivElement>(null),alive=useRef(true),sending=useRef(false),connectionAttempt=useRef({value:0});
  const contextKey='roas-agent-runs/1:'+JSON.stringify([data.caseId,snapshot,filters.channel,filters.source||'all',filters.campaignId,filters.device,metric,screenTitle,localScopeLabel||'']);
+ async function loginQa(e:FormEvent<HTMLFormElement>){
+  e.preventDefault();if(loginBusy||!loginPassword)return;
+  setLoginBusy(true);setError('');
+  try{const session=await client.login(loginPassword);setMode(session.mode||'');setConnected(true);}
+  catch(e){setError((e as Error).message||'authentication_required');setConnected(false);}
+  finally{setLoginPassword('');setLoginBusy(false);setConnecting(false);}
+ }
  const reconnect=useCallback(async()=>{
   if(localScopeLabel){setConnecting(false);setConnected(false);return;}
   const attempt=++connectionAttempt.current.value;setConnecting(true);setError('');
@@ -81,7 +91,7 @@ export function RoasConversation({data,snapshot,filters,metric,screenTitle,local
     if(isTerminal(state))return;
    }catch(e){
     if(closed)return;
-    setPollError((e as Error).message||'server_unavailable');delay=Math.min(delay*2,8000);
+    const code=(e as Error).message||'server_unavailable';setPollError(code);if(code==='authentication_required'){setConnected(false);setError(code);}delay=Math.min(delay*2,8000);
    }
    if(!closed)timer=setTimeout(()=>{void poll();},delay);
   }
@@ -107,7 +117,7 @@ export function RoasConversation({data,snapshot,filters,metric,screenTitle,local
    const code=(e as Error).message||'server_error';
    if(alive.current){
     changeEntries(items=>updateRun(items,entry.clientRequestId,item=>({...item,error:code})));
-    if(transportErrors.includes(code))setConnected(false);
+    if(transportErrors.includes(code)||code==='authentication_required'){setConnected(false);setError(code);}
    }
   }finally{sending.current=false;if(alive.current){setBusy(false);input.current?.focus();}}
  }
@@ -156,8 +166,8 @@ export function RoasConversation({data,snapshot,filters,metric,screenTitle,local
    <div className="wb-chat-compose-area wb-roas-compose-area">
     {pollError&&<div className="wb-chat-connection is-error" role="alert"><AlertCircle size={16}/><div><strong>실행 상태 조회에 문제가 있습니다</strong><p>{connectionError(pollError)} 기존 runId는 유지되며 새 분석을 시작하지 않습니다.</p></div></div>}
     {storageError&&<p className="wb-run-storage-warning" role="status">이 브라우저에서는 대화 자동 저장을 사용할 수 없습니다. 창을 닫기 전에 결과를 확인하세요.</p>}
-    {localScopeLabel?<div className="wb-chat-connection" role="status"><Monitor size={16}/><div><strong>세부 범위는 예시 답변으로 확인하세요</strong><p>현재 AI 조회는 캠페인과 기기 범위를 지원합니다. 예시 답변은 선택한 세부 집계로 계산합니다.</p></div><button type="button" onClick={onClearScope}>세부 범위 해제</button></div>:(connecting||errorCode||!connected)&&<div className={'wb-chat-connection '+(connecting?'is-connecting':'is-error')} role={connecting?'status':'alert'}>{connecting?<RefreshCw size={16}/>:<AlertCircle size={16}/>}<div><strong>{connecting?'AI 서버 연결 확인 중':!connected?'AI 서버에 연결할 수 없습니다':'요청을 확인하지 못했습니다'}</strong>{!connecting&&<p>{connectionError(errorCode||'server_unavailable')}{!connected&&' 예시 답변은 연결 없이 볼 수 있습니다.'}</p>}</div>{!connecting&&<button type="button" onClick={()=>void reconnect()}>{!connected?'다시 연결':'연결 확인'}</button>}</div>}
-    <form className="wb-chat-compose wb-roas-composer" onSubmit={e=>{e.preventDefault();ask();}}><textarea ref={input} aria-label="분석 질문" rows={2} maxLength={2000} value={question} disabled={busy||!!active||!!localScopeLabel} placeholder={active?'분석이 끝난 뒤 질문할 수 있습니다':entries.length?'이어서 궁금한 점을 물어보세요':'데이터에 대해 무엇이 궁금하세요?'} onChange={e=>setQuestion(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();ask();}}}/><div className="wb-chat-compose-tools"><button type="submit" className="wb-chat-send" aria-label="질문 보내기" disabled={busy||!!active||!conversation||!connected||connecting||!question.trim()}><ArrowUp size={17}/></button></div></form><p className="wb-chat-footnote">{active?.state?runStatusLabel(active.state):mode==='offline_model_substitute'?'오프라인 연결 확인':'AI 답변의 수치와 근거를 확인하세요.'}<span>Enter 전송, Shift+Enter 줄바꿈</span></p>
+    {localScopeLabel?<div className="wb-chat-connection" role="status"><Monitor size={16}/><div><strong>세부 범위는 예시 답변으로 확인하세요</strong><p>현재 AI 조회는 캠페인과 기기 범위를 지원합니다. 예시 답변은 선택한 세부 집계로 계산합니다.</p></div><button type="button" onClick={onClearScope}>세부 범위 해제</button></div>:(connecting||errorCode||!connected)&&<div className={'wb-chat-connection '+(connecting?'is-connecting':'is-error')} role={connecting?'status':'alert'}>{connecting?<RefreshCw size={16}/>:<AlertCircle size={16}/>}<div><strong>{connecting?'AI 서버 연결 확인 중':!connected?'AI 서버에 연결할 수 없습니다':'요청을 확인하지 못했습니다'}</strong>{!connecting&&<p>{connectionError(errorCode||'server_unavailable')}{!connected&&' 예시 답변은 연결 없이 볼 수 있습니다.'}</p>}</div>{!connecting&&gatewayBase!=='/api/qa'&&<button type="button" onClick={()=>void reconnect()}>{!connected?'다시 연결':'연결 확인'}</button>}{!connecting&&gatewayBase==='/api/qa'&&!connected&&!['authentication_required','rate_limited'].includes(errorCode)&&<button type="button" onClick={()=>void reconnect()}>다시 연결</button>}{!connecting&&gatewayBase==='/api/qa'&&!connected&&['authentication_required','rate_limited'].includes(errorCode)&&<form onSubmit={e=>void loginQa(e)} style={{display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}><input type="password" aria-label="QA 접속 비밀번호" autoComplete="current-password" placeholder="QA 비밀번호" value={loginPassword} onChange={e=>setLoginPassword(e.target.value)} disabled={loginBusy} required style={{minWidth:140,maxWidth:220,padding:'8px 10px',border:'1px solid var(--border,#d0d5dd)',borderRadius:8}}/><button type="submit" disabled={loginBusy}>{loginBusy?'확인 중':'로그인'}</button></form>}</div>}
+    <form className="wb-chat-compose wb-roas-composer" onSubmit={e=>{e.preventDefault();ask();}}><textarea ref={input} aria-label="분석 질문" rows={2} maxLength={2000} value={question} disabled={busy||!!active||!!localScopeLabel} placeholder={active?'분석이 끝난 뒤 질문할 수 있습니다':entries.length?'이어서 궁금한 점을 물어보세요':'데이터에 대해 무엇이 궁금하세요?'} onChange={e=>setQuestion(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();ask();}}}/><div className="wb-chat-compose-tools"><button type="submit" className="wb-chat-send" aria-label="질문 보내기" disabled={busy||!!active||!conversation||!connected||connecting||!question.trim()}><ArrowUp size={17}/></button></div></form><p className="wb-chat-footnote">{active?.state?runStatusLabel(active.state):mode==='offline_model_substitute'?'오프라인 연결 확인':'AI 답변의 수치와 근거를 확인하세요.'}<span>Enter 전송, Shift+Enter 줄바꿈{gatewayBase==='/api/qa'&&connected&&<button type="button" style={{marginLeft:10,textDecoration:'underline'}} onClick={()=>{void client.logout().then(()=>{setConnected(false);setError('authentication_required');}).catch(()=>setError('server_unavailable'));}}>로그아웃</button>}</span></p>
    </div>
   </section>
  </AgentPanelShell>;
