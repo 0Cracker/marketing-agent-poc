@@ -1,4 +1,4 @@
-import {SelectionButton} from '../components/ui/selection-button';
+import {SelectionButton} from './components/ui/selection-button';
 import {RunMarkdown} from './run-markdown';
 import {useEffect,useRef,useState} from 'react';
 import {Sparkles,X,ArrowRight,ArrowUpRight,ArrowDownRight} from 'lucide-react';

@@ -1,0 +1,1229 @@
+{
+  "startedAt": "2026-11-10T04:28:54.374Z",
+  "mode": "mock_fixed_generation",
+  "verifyOnly": false,
+  "scope": {
+    "caseId": "S16",
+    "snapshot": "initial",
+    "metric": "roas",
+    "screenTitle": "성과 현황",
+    "filters": {
+      "channel": "all",
+      "source": "all",
+      "campaignId": "all",
+      "device": "all"
+    },
+    "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+  },
+  "maxLiveCalls": 27,
+  "liveAttempts": 22,
+  "externalGenerationCalls": 0,
+  "runs": [
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "overview",
+          "metric_breakdown",
+          "trend",
+          "records"
+        ],
+        "metrics": [
+          "roas"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          },
+          {
+            "name": "trend",
+            "args": {
+              "metrics": [
+                "roas"
+              ],
+              "periodId": "both",
+              "granularity": "day"
+            }
+          },
+          {
+            "name": "records",
+            "args": {}
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        11
+      ],
+      "serialBytes": [
+        16885,
+        7134
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        },
+        {
+          "tool": "trend",
+          "returned": 24,
+          "total": 28,
+          "nextOffset": 24
+        },
+        {
+          "tool": "records",
+          "returned": 24,
+          "total": 33,
+          "nextOffset": 24
+        },
+        {
+          "tool": "trend",
+          "returned": 4,
+          "total": 28,
+          "nextOffset": null
+        },
+        {
+          "tool": "records",
+          "returned": 9,
+          "total": 33,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "overview",
+          "metric_breakdown",
+          "trend",
+          "records"
+        ],
+        "metrics": [
+          "roas"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          },
+          {
+            "name": "trend",
+            "args": {
+              "metrics": [
+                "roas"
+              ],
+              "periodId": "both",
+              "granularity": "day"
+            }
+          },
+          {
+            "name": "records",
+            "args": {}
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        11
+      ],
+      "serialBytes": [
+        16885,
+        7134
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        },
+        {
+          "tool": "trend",
+          "returned": 24,
+          "total": 28,
+          "nextOffset": 24
+        },
+        {
+          "tool": "records",
+          "returned": 24,
+          "total": 33,
+          "nextOffset": 24
+        },
+        {
+          "tool": "trend",
+          "returned": 4,
+          "total": 28,
+          "nextOffset": null
+        },
+        {
+          "tool": "records",
+          "returned": 9,
+          "total": 33,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "overview",
+          "metric_breakdown",
+          "trend",
+          "records"
+        ],
+        "metrics": [
+          "roas"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          },
+          {
+            "name": "trend",
+            "args": {
+              "metrics": [
+                "roas"
+              ],
+              "periodId": "both",
+              "granularity": "day"
+            }
+          },
+          {
+            "name": "records",
+            "args": {}
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        11
+      ],
+      "serialBytes": [
+        16885,
+        7134
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "roas"
+            ],
+            "periodId": "both",
+            "granularity": "day",
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        },
+        {
+          "name": "records",
+          "args": {
+            "scopeRole": "primary",
+            "offset": 24
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        },
+        {
+          "tool": "trend",
+          "returned": 24,
+          "total": 28,
+          "nextOffset": 24
+        },
+        {
+          "tool": "records",
+          "returned": 24,
+          "total": 33,
+          "nextOffset": 24
+        },
+        {
+          "tool": "trend",
+          "returned": 4,
+          "total": 28,
+          "nextOffset": null
+        },
+        {
+          "tool": "records",
+          "returned": 9,
+          "total": 33,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "paired",
+      "question": "캠페인별 ROAS와 기기별 CVR",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          },
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "cvr",
+              "dimension": "device"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        6
+      ],
+      "serialBytes": [
+        16445,
+        4239
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "cvr",
+            "dimension": "device",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 2,
+          "total": 2,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "question": "그 지표를 휴대폰이랑 PC로 나눠 봐",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "device"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        3
+      ],
+      "serialBytes": [
+        16663,
+        2565
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "device",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 2,
+          "total": 2,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "formula",
+      "question": "ROAS 산식과 직전 CVR 일별 추이",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_components",
+          "trend"
+        ],
+        "metrics": [
+          "roas",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "roas"
+            }
+          },
+          {
+            "name": "trend",
+            "args": {
+              "metrics": [
+                "cvr"
+              ],
+              "periodId": "baseline",
+              "granularity": "day"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        4
+      ],
+      "serialBytes": [
+        16495,
+        3175
+      ],
+      "latencyMs": [
+        0,
+        0
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "roas",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "trend",
+          "args": {
+            "metrics": [
+              "cvr"
+            ],
+            "periodId": "baseline",
+            "granularity": "day",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "trend",
+          "returned": 14,
+          "total": 14,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "unsupported",
+      "question": "CAC 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [],
+        "metrics": [],
+        "scope": "unresolved",
+        "uncertainMetrics": 0,
+        "uncertain": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": false,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16235
+      ],
+      "latencyMs": [
+        0
+      ],
+      "actualJobs": [],
+      "queryCounts": []
+    }
+  ],
+  "replays": [
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 1,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:28:54.736Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 1,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:28:54.738Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 2,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:28:54.847Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 2,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:28:54.849Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 3,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:28:54.966Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 3,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:28:54.968Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    }
+  ],
+  "comparison": {
+    "quick": {
+      "pairs": [
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            0
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            0
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            0
+          ],
+          "valid": false
+        }
+      ],
+      "confirmed": false,
+      "oldMedianMs": null,
+      "newMedianMs": null
+    },
+    "deep": {
+      "pairs": [
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            0,
+            0
+          ],
+          "newBytes": [
+            16885,
+            7134
+          ],
+          "newLatencyMs": [
+            0,
+            0
+          ],
+          "valid": true
+        },
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            0,
+            0
+          ],
+          "newBytes": [
+            16885,
+            7134
+          ],
+          "newLatencyMs": [
+            0,
+            0
+          ],
+          "valid": true
+        },
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            0,
+            0
+          ],
+          "newBytes": [
+            16885,
+            7134
+          ],
+          "newLatencyMs": [
+            0,
+            0
+          ],
+          "valid": true
+        }
+      ],
+      "confirmed": true,
+      "oldMedianMs": 0,
+      "newMedianMs": 0
+    }
+  },
+  "passed": true,
+  "attempts": [
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:28:54.443Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:28:54.547Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:28:54.653Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:28:54.771Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 7134,
+      "startedAt": "2026-11-10T04:28:54.782Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:28:54.884Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 7134,
+      "startedAt": "2026-11-10T04:28:54.895Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:28:55.000Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 7134,
+      "startedAt": "2026-11-10T04:28:55.010Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "paired",
+      "stage": 1,
+      "bytes": 16445,
+      "startedAt": "2026-11-10T04:28:55.121Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "paired",
+      "stage": 2,
+      "bytes": 4239,
+      "startedAt": "2026-11-10T04:28:55.122Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "history",
+      "stage": 1,
+      "bytes": 16663,
+      "startedAt": "2026-11-10T04:28:55.234Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "history",
+      "stage": 2,
+      "bytes": 2565,
+      "startedAt": "2026-11-10T04:28:55.236Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "formula",
+      "stage": 1,
+      "bytes": 16495,
+      "startedAt": "2026-11-10T04:28:55.356Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "formula",
+      "stage": 2,
+      "bytes": 3175,
+      "startedAt": "2026-11-10T04:28:55.358Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    },
+    {
+      "kind": "run",
+      "caseId": "unsupported",
+      "stage": 1,
+      "bytes": 16235,
+      "startedAt": "2026-11-10T04:28:55.455Z",
+      "succeeded": true,
+      "elapsedMs": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T04:28:55.529Z"
+}

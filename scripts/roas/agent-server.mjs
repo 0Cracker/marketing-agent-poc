@@ -18,7 +18,7 @@ const root=fileURLToPath(new URL('../../',import.meta.url));
 // Environment variables already set by the process take precedence over local files.
 // Only missing values are read; never print API keys or environment contents.
 for(const name of ['.env.local','.env']) {
-  const filename=path.join(root,name);
+  const filename=path.join(process.env.AGENT_ENV_DIR||root,name);
   if(fs.existsSync(filename)) {
     for(const [key,value] of Object.entries(parseEnv(fs.readFileSync(filename,'utf8'))))
       if(!process.env[key])process.env[key]=value;

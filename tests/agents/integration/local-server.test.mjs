@@ -5,7 +5,7 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {join,dirname} from 'node:path';
 import {randomUUID,createHash} from 'node:crypto';
 import {trainingScreenData} from '../../../scripts/roas/training-data.mjs';
 import {createAgentClient} from '../../../frontend/roas/agent-client.ts';
@@ -18,7 +18,7 @@ async function freePort() {
 }
 async function serve(port,dbPath,tracePort) {
   const env={...process.env,AGENT_PORT:String(port),AGENT_DB_PATH:dbPath,
-    AGENT_UI_ORIGINS:origin,AGENT_TRACE_PORT:String(tracePort)};
+    AGENT_UI_ORIGINS:origin,AGENT_TRACE_PORT:String(tracePort),AGENT_ENV_DIR:dirname(dbPath)};
   const child=spawn(process.execPath,['scripts/roas/agent-server.mjs','--mock'],
     {cwd:root,env,stdio:['ignore','pipe','pipe']});
   let errors='';

@@ -1,5 +1,7 @@
 # 기술·기획 의사결정
 
+2026-11-10 결정 003 후속: [ROAS 온톨로지 설계 정본](../design/roas-ontology-architecture.md)에 현재 ROAS/리뷰 우선, 관계 탐색 개선, 서버 메모리 사용, 양쪽 후속 조회 1회와 채팅 방식 선택이라는 사용자 결정을 기록했다. 세부 관계/제약/Tool/API/DB 변경은 개별 승인 전 제안이며 구현은 미착수다. [작업 지시서](../handoffs/roas-ontology-implementation.md)를 함께 따른다.
+
 재검토할 가치가 있는 선택만 `decision-NNN.md`에 기록한다. 작은 선택은 Iteration의 Develop에 남긴다. 기존 설계 (이전 파일 `poc-v2-initial-design.md`, 현재 미보존)·응답 계약 (이전 파일 `agent-contract.md`, 현재 미보존)·시나리오 (이전 파일 `scenario-playbook.md`, 현재 미보존)를 먼저 확인하고 같은 내용의 문서를 복제하지 않는다.
 
 | 번호 | 주제 | 상태 | 관련 Iteration | 문서 |

@@ -1,5 +1,5 @@
 'use client';
-import {SelectionButton} from '../components/ui/selection-button';
+import {SelectionButton} from './components/ui/selection-button';
 import {useRef,useState} from 'react';
 import {ChevronDown,Search,X} from 'lucide-react';
 import {campaignDisplayName,displayTrainingText,trainingMediaOptions} from '../../shared/roas/training-dashboard.mjs';

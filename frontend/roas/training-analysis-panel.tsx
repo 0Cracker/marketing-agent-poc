@@ -7,7 +7,7 @@ import type {AnalysisDimension,AnalysisGroup,AnalysisMetric,AnalysisSettings} fr
 import {deltaTone} from './training-presentation';
 import {formatMetricValue,formatMetricAbsoluteDelta,formatComparedMetricDelta} from './training-format';
 import {Info} from 'lucide-react';
-import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from '../components/ui/tooltip';
+import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from './components/ui/tooltip';
 
 export function TermInfo({label,description}:{label:string;description?:string}){
  if(!description)return null;

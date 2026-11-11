@@ -1,0 +1,1731 @@
+{
+  "startedAt": "2026-11-10T04:32:17.436Z",
+  "mode": "jev_live_fixed_generation",
+  "verifyOnly": false,
+  "scope": {
+    "caseId": "S16",
+    "snapshot": "initial",
+    "metric": "roas",
+    "screenTitle": "성과 현황",
+    "filters": {
+      "channel": "all",
+      "source": "all",
+      "campaignId": "all",
+      "device": "all"
+    },
+    "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+  },
+  "maxLiveCalls": 27,
+  "jevAttempts": 22,
+  "realJevAttempts": 22,
+  "externalGenerationCalls": 0,
+  "runs": [
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": [
+          "metric_components"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 1
+        },
+        "need_overview": 0.97,
+        "need_metric_components": 0.59,
+        "need_metric_breakdown": 0.05,
+        "need_trend": 0.04,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.02,
+        "need_evidence": 0.04,
+        "metric_roas": 0.58,
+        "metric_spend": 0.39,
+        "metric_revenue": 0.42,
+        "metric_orders": 0.17,
+        "metric_clicks": 0.14,
+        "metric_cpc": 0.06,
+        "metric_cvr": 0.08,
+        "metric_cpa": 0.04,
+        "metric_aov": 0.05,
+        "metric_adCtr": 0.05,
+        "metric_paymentFailureRate": 0.04,
+        "metric_contentClickRate": 0.04,
+        "metric_adCpm": 0.05,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.9
+        }
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        273
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": [
+          "metric_components"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 1
+        },
+        "need_overview": 0.97,
+        "need_metric_components": 0.49,
+        "need_metric_breakdown": 0.04,
+        "need_trend": 0.04,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.02,
+        "need_evidence": 0.04,
+        "metric_roas": 0.57,
+        "metric_spend": 0.38,
+        "metric_revenue": 0.45,
+        "metric_orders": 0.16,
+        "metric_clicks": 0.14,
+        "metric_cpc": 0.06,
+        "metric_cvr": 0.08,
+        "metric_cpa": 0.04,
+        "metric_aov": 0.06,
+        "metric_adCtr": 0.04,
+        "metric_paymentFailureRate": 0.04,
+        "metric_contentClickRate": 0.03,
+        "metric_adCpm": 0.05,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.91
+        }
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        208
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "quick",
+      "question": "현재 ROAS 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "overview"
+        ],
+        "metrics": [],
+        "scope": "catalog",
+        "uncertainMetrics": 0,
+        "uncertain": [
+          "metric_components"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 1
+        },
+        "need_overview": 0.98,
+        "need_metric_components": 0.62,
+        "need_metric_breakdown": 0.04,
+        "need_trend": 0.04,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.02,
+        "need_evidence": 0.04,
+        "metric_roas": 0.73,
+        "metric_spend": 0.47,
+        "metric_revenue": 0.5,
+        "metric_orders": 0.14,
+        "metric_clicks": 0.11,
+        "metric_cpc": 0.05,
+        "metric_cvr": 0.07,
+        "metric_cpa": 0.05,
+        "metric_aov": 0.06,
+        "metric_adCtr": 0.04,
+        "metric_paymentFailureRate": 0.04,
+        "metric_contentClickRate": 0.03,
+        "metric_adCpm": 0.05,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.9
+        }
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": true,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16315
+      ],
+      "latencyMs": [
+        180
+      ],
+      "actualJobs": [
+        {
+          "name": "overview",
+          "args": {
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "overview",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas",
+          "spend",
+          "revenue",
+          "clicks",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 4,
+        "uncertain": [
+          "overview",
+          "metric_components",
+          "trend"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "deep",
+          "score": 1
+        },
+        "need_overview": 0.52,
+        "need_metric_components": 0.67,
+        "need_metric_breakdown": 0.98,
+        "need_trend": 0.44,
+        "need_records": 0.3,
+        "need_review_summary": 0.11,
+        "need_review_records": 0.07,
+        "need_evidence": 0.07,
+        "metric_roas": 0.97,
+        "metric_spend": 0.85,
+        "metric_revenue": 0.84,
+        "metric_orders": 0.69,
+        "metric_clicks": 0.7,
+        "metric_cpc": 0.67,
+        "metric_cvr": 0.8,
+        "metric_cpa": 0.5,
+        "metric_aov": 0.66,
+        "metric_adCtr": 0.24,
+        "metric_paymentFailureRate": 0.22,
+        "metric_contentClickRate": 0.11,
+        "metric_adCpm": 0.17,
+        "metric_contentCpm": 0.13,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.97
+        }
+      },
+      "secondScores": {
+        "breakdown_roas_campaign": 0.92,
+        "breakdown_roas_device": 0.11,
+        "breakdown_roas_audienceId": 0.16,
+        "breakdown_cvr_campaign": 0.3,
+        "breakdown_cvr_device": 0.08,
+        "breakdown_cvr_audienceId": 0.16
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_tool",
+          "details": {
+            "expected": [
+              "overview",
+              "metric_breakdown",
+              "trend",
+              "records"
+            ],
+            "actual": [
+              "metric_breakdown"
+            ],
+            "expectedRoute": "deep",
+            "route": "deep"
+          }
+        },
+        {
+          "kind": "first_metric",
+          "details": {
+            "expected": [
+              "roas"
+            ],
+            "actual": [
+              "roas",
+              "spend",
+              "revenue",
+              "clicks",
+              "cvr"
+            ]
+          }
+        },
+        {
+          "kind": "second_pair_period",
+          "details": {
+            "expected": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"overview\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"records\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"trend\",\"args\":{\"granularity\":\"day\",\"metrics\":[\"roas\"],\"periodId\":\"both\",\"scopeRole\":\"primary\"}}"
+            ],
+            "actual": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}"
+            ]
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "trend",
+            "expected": 28,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "records",
+            "expected": 33,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        }
+      ],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        6
+      ],
+      "serialBytes": [
+        16885,
+        4283
+      ],
+      "latencyMs": [
+        184,
+        190
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas",
+          "spend",
+          "revenue",
+          "clicks",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 4,
+        "uncertain": [
+          "overview",
+          "metric_components",
+          "trend"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "deep",
+          "score": 1
+        },
+        "need_overview": 0.52,
+        "need_metric_components": 0.68,
+        "need_metric_breakdown": 0.98,
+        "need_trend": 0.42,
+        "need_records": 0.28,
+        "need_review_summary": 0.09,
+        "need_review_records": 0.06,
+        "need_evidence": 0.07,
+        "metric_roas": 0.97,
+        "metric_spend": 0.87,
+        "metric_revenue": 0.85,
+        "metric_orders": 0.66,
+        "metric_clicks": 0.71,
+        "metric_cpc": 0.69,
+        "metric_cvr": 0.81,
+        "metric_cpa": 0.46,
+        "metric_aov": 0.63,
+        "metric_adCtr": 0.23,
+        "metric_paymentFailureRate": 0.26,
+        "metric_contentClickRate": 0.1,
+        "metric_adCpm": 0.17,
+        "metric_contentCpm": 0.13,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.95
+        }
+      },
+      "secondScores": {
+        "breakdown_roas_campaign": 0.92,
+        "breakdown_roas_device": 0.12,
+        "breakdown_roas_audienceId": 0.19,
+        "breakdown_cvr_campaign": 0.35,
+        "breakdown_cvr_device": 0.1,
+        "breakdown_cvr_audienceId": 0.18
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_tool",
+          "details": {
+            "expected": [
+              "overview",
+              "metric_breakdown",
+              "trend",
+              "records"
+            ],
+            "actual": [
+              "metric_breakdown"
+            ],
+            "expectedRoute": "deep",
+            "route": "deep"
+          }
+        },
+        {
+          "kind": "first_metric",
+          "details": {
+            "expected": [
+              "roas"
+            ],
+            "actual": [
+              "roas",
+              "spend",
+              "revenue",
+              "clicks",
+              "cvr"
+            ]
+          }
+        },
+        {
+          "kind": "second_pair_period",
+          "details": {
+            "expected": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"overview\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"records\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"trend\",\"args\":{\"granularity\":\"day\",\"metrics\":[\"roas\"],\"periodId\":\"both\",\"scopeRole\":\"primary\"}}"
+            ],
+            "actual": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}"
+            ]
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "trend",
+            "expected": 28,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "records",
+            "expected": 33,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        }
+      ],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        6
+      ],
+      "serialBytes": [
+        16885,
+        4283
+      ],
+      "latencyMs": [
+        197,
+        192
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "deep"
+      },
+      "first": {
+        "route": "deep",
+        "selected": [
+          "metric_components",
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas",
+          "spend",
+          "revenue",
+          "orders",
+          "clicks",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 3,
+        "uncertain": [
+          "overview",
+          "trend"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "deep",
+          "score": 1
+        },
+        "need_overview": 0.55,
+        "need_metric_components": 0.72,
+        "need_metric_breakdown": 0.98,
+        "need_trend": 0.42,
+        "need_records": 0.26,
+        "need_review_summary": 0.09,
+        "need_review_records": 0.06,
+        "need_evidence": 0.06,
+        "metric_roas": 0.96,
+        "metric_spend": 0.87,
+        "metric_revenue": 0.84,
+        "metric_orders": 0.72,
+        "metric_clicks": 0.7,
+        "metric_cpc": 0.69,
+        "metric_cvr": 0.8,
+        "metric_cpa": 0.45,
+        "metric_aov": 0.63,
+        "metric_adCtr": 0.27,
+        "metric_paymentFailureRate": 0.2,
+        "metric_contentClickRate": 0.07,
+        "metric_adCpm": 0.16,
+        "metric_contentCpm": 0.13,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.95
+        }
+      },
+      "secondScores": {
+        "components_roas": 0.89,
+        "components_spend": 0.69,
+        "components_revenue": 0.8,
+        "components_orders": 0.84,
+        "components_clicks": 0.7,
+        "components_cvr": 0.49,
+        "breakdown_roas_campaign": 0.93,
+        "breakdown_roas_device": 0.1,
+        "breakdown_roas_audienceId": 0.13,
+        "breakdown_cvr_campaign": 0.54,
+        "breakdown_cvr_device": 0.11,
+        "breakdown_cvr_audienceId": 0.23
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "roas"
+            }
+          },
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "revenue"
+            }
+          },
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "orders"
+            }
+          },
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "clicks"
+            }
+          },
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_tool",
+          "details": {
+            "expected": [
+              "overview",
+              "metric_breakdown",
+              "trend",
+              "records"
+            ],
+            "actual": [
+              "metric_components",
+              "metric_breakdown"
+            ],
+            "expectedRoute": "deep",
+            "route": "deep"
+          }
+        },
+        {
+          "kind": "first_metric",
+          "details": {
+            "expected": [
+              "roas"
+            ],
+            "actual": [
+              "roas",
+              "spend",
+              "revenue",
+              "orders",
+              "clicks",
+              "cvr"
+            ]
+          }
+        },
+        {
+          "kind": "second_pair_period",
+          "details": {
+            "expected": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"overview\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"records\",\"args\":{\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"trend\",\"args\":{\"granularity\":\"day\",\"metrics\":[\"roas\"],\"periodId\":\"both\",\"scopeRole\":\"primary\"}}"
+            ],
+            "actual": [
+              "{\"name\":\"metric_breakdown\",\"args\":{\"dimension\":\"campaign\",\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"clicks\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"orders\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"revenue\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"roas\",\"scopeRole\":\"primary\"}}"
+            ]
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "trend",
+            "expected": 28,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        },
+        {
+          "kind": "pagination",
+          "details": {
+            "tool": "records",
+            "expected": 33,
+            "received": 0,
+            "allPages": false,
+            "pageTotals": []
+          }
+        }
+      ],
+      "benchmark": true,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        12
+      ],
+      "serialBytes": [
+        16885,
+        7319
+      ],
+      "latencyMs": [
+        185,
+        180
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "roas",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "revenue",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "orders",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "clicks",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "paired",
+      "question": "캠페인별 ROAS와 기기별 CVR",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas",
+          "clicks",
+          "cvr"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 3,
+        "uncertain": []
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 0.99
+        },
+        "need_overview": 0.08,
+        "need_metric_components": 0.17,
+        "need_metric_breakdown": 0.97,
+        "need_trend": 0.05,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.03,
+        "need_evidence": 0.05,
+        "metric_roas": 0.96,
+        "metric_spend": 0.56,
+        "metric_revenue": 0.52,
+        "metric_orders": 0.51,
+        "metric_clicks": 0.74,
+        "metric_cpc": 0.1,
+        "metric_cvr": 0.91,
+        "metric_cpa": 0.09,
+        "metric_aov": 0.12,
+        "metric_adCtr": 0.06,
+        "metric_paymentFailureRate": 0.05,
+        "metric_contentClickRate": 0.04,
+        "metric_adCpm": 0.06,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.77
+        }
+      },
+      "secondScores": {
+        "breakdown_roas_campaign": 0.91,
+        "breakdown_roas_device": 0.05,
+        "breakdown_roas_audienceId": 0.08,
+        "breakdown_cvr_campaign": 0.06,
+        "breakdown_cvr_device": 0.86,
+        "breakdown_cvr_audienceId": 0.06
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "campaign"
+            }
+          },
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "cvr",
+              "dimension": "device"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_metric",
+          "details": {
+            "expected": [
+              "roas",
+              "cvr"
+            ],
+            "actual": [
+              "roas",
+              "clicks",
+              "cvr"
+            ]
+          }
+        }
+      ],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        6
+      ],
+      "serialBytes": [
+        16445,
+        4239
+      ],
+      "latencyMs": [
+        180,
+        171
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "campaign",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "cvr",
+            "dimension": "device",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 6,
+          "total": 6,
+          "nextOffset": null
+        },
+        {
+          "tool": "metric_breakdown",
+          "returned": 2,
+          "total": 2,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "question": "그 지표를 휴대폰이랑 PC로 나눠 봐",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "completed",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_breakdown"
+        ],
+        "metrics": [
+          "roas"
+        ],
+        "scope": "catalog",
+        "uncertainMetrics": 2,
+        "uncertain": []
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 1
+        },
+        "need_overview": 0.07,
+        "need_metric_components": 0.07,
+        "need_metric_breakdown": 0.96,
+        "need_trend": 0.03,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.02,
+        "need_evidence": 0.05,
+        "metric_roas": 0.88,
+        "metric_spend": 0.4,
+        "metric_revenue": 0.39,
+        "metric_orders": 0.19,
+        "metric_clicks": 0.16,
+        "metric_cpc": 0.08,
+        "metric_cvr": 0.11,
+        "metric_cpa": 0.05,
+        "metric_aov": 0.06,
+        "metric_adCtr": 0.04,
+        "metric_paymentFailureRate": 0.03,
+        "metric_contentClickRate": 0.03,
+        "metric_adCpm": 0.04,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.97
+        }
+      },
+      "secondScores": {
+        "breakdown_roas_campaign": 0.04,
+        "breakdown_roas_device": 0.94,
+        "breakdown_roas_audienceId": 0.04
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_breakdown",
+            "args": {
+              "metric": "roas",
+              "dimension": "device"
+            }
+          }
+        ],
+        "missing": []
+      },
+      "passed": true,
+      "failures": [],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        3
+      ],
+      "serialBytes": [
+        16663,
+        2565
+      ],
+      "latencyMs": [
+        251,
+        311
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_breakdown",
+          "args": {
+            "metric": "roas",
+            "dimension": "device",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_breakdown",
+          "returned": 2,
+          "total": 2,
+          "nextOffset": null
+        }
+      ]
+    },
+    {
+      "id": "formula",
+      "question": "ROAS 산식과 직전 CVR 일별 추이",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_components",
+          "trend"
+        ],
+        "metrics": [
+          "roas",
+          "spend",
+          "revenue",
+          "cvr"
+        ],
+        "uncertainMetrics": 2,
+        "uncertain": []
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 0.98
+        },
+        "need_overview": 0.08,
+        "need_metric_components": 0.93,
+        "need_metric_breakdown": 0.06,
+        "need_trend": 0.92,
+        "need_records": 0.02,
+        "need_review_summary": 0.02,
+        "need_review_records": 0.02,
+        "need_evidence": 0.05,
+        "metric_roas": 0.97,
+        "metric_spend": 0.82,
+        "metric_revenue": 0.76,
+        "metric_orders": 0.62,
+        "metric_clicks": 0.63,
+        "metric_cpc": 0.09,
+        "metric_cvr": 0.91,
+        "metric_cpa": 0.05,
+        "metric_aov": 0.12,
+        "metric_adCtr": 0.05,
+        "metric_paymentFailureRate": 0.05,
+        "metric_contentClickRate": 0.03,
+        "metric_adCpm": 0.05,
+        "metric_contentCpm": 0.05,
+        "metric_scope": {
+          "choice": "catalog",
+          "score": 0.67
+        }
+      },
+      "secondScores": {
+        "components_roas": 0.92,
+        "components_spend": 0.79,
+        "components_revenue": 0.83,
+        "components_cvr": 0.36,
+        "trend_roas_period": {
+          "choice": "not_needed",
+          "score": 0.48
+        },
+        "trend_spend_period": {
+          "choice": "not_needed",
+          "score": 0.88
+        },
+        "trend_revenue_period": {
+          "choice": "not_needed",
+          "score": 0.68
+        },
+        "trend_cvr_period": {
+          "choice": "baseline",
+          "score": 0.54
+        }
+      },
+      "second": {
+        "calls": [
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "roas"
+            }
+          },
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "spend"
+            }
+          },
+          {
+            "name": "metric_components",
+            "args": {
+              "metric": "revenue"
+            }
+          }
+        ],
+        "missing": [
+          "trend"
+        ]
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_metric",
+          "details": {
+            "expected": [
+              "roas",
+              "cvr"
+            ],
+            "actual": [
+              "roas",
+              "spend",
+              "revenue",
+              "cvr"
+            ]
+          }
+        },
+        {
+          "kind": "second_pair_period",
+          "details": {
+            "expected": [
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"trend\",\"args\":{\"granularity\":\"day\",\"metrics\":[\"cvr\"],\"periodId\":\"baseline\",\"scopeRole\":\"primary\"}}"
+            ],
+            "actual": [
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"revenue\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"roas\",\"scopeRole\":\"primary\"}}",
+              "{\"name\":\"metric_components\",\"args\":{\"metric\":\"spend\",\"scopeRole\":\"primary\"}}"
+            ]
+          }
+        }
+      ],
+      "benchmark": false,
+      "jevCalls": 2,
+      "questionCounts": [
+        24,
+        8
+      ],
+      "serialBytes": [
+        16495,
+        5685
+      ],
+      "latencyMs": [
+        180,
+        174
+      ],
+      "actualJobs": [
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "roas",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "spend",
+            "scopeRole": "primary"
+          }
+        },
+        {
+          "name": "metric_components",
+          "args": {
+            "metric": "revenue",
+            "scopeRole": "primary"
+          }
+        }
+      ],
+      "queryCounts": [
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_components",
+          "returned": 2
+        },
+        {
+          "tool": "metric_components",
+          "returned": 2
+        }
+      ]
+    },
+    {
+      "id": "unsupported",
+      "question": "CAC 알려줘",
+      "fixedGenerationCalls": 1,
+      "state": {
+        "executionStatus": "partial",
+        "stopReason": "gemini_sufficient",
+        "route": "quick"
+      },
+      "first": {
+        "route": "quick",
+        "selected": [
+          "metric_components"
+        ],
+        "metrics": [],
+        "scope": "unresolved",
+        "uncertainMetrics": 1,
+        "uncertain": [
+          "overview"
+        ]
+      },
+      "firstScores": {
+        "route": {
+          "choice": "quick",
+          "score": 1
+        },
+        "need_overview": 0.68,
+        "need_metric_components": 0.73,
+        "need_metric_breakdown": 0.1,
+        "need_trend": 0.07,
+        "need_records": 0.06,
+        "need_review_summary": 0.05,
+        "need_review_records": 0.03,
+        "need_evidence": 0.06,
+        "metric_roas": 0.15,
+        "metric_spend": 0.45,
+        "metric_revenue": 0.23,
+        "metric_orders": 0.27,
+        "metric_clicks": 0.27,
+        "metric_cpc": 0.12,
+        "metric_cvr": 0.11,
+        "metric_cpa": 0.17,
+        "metric_aov": 0.08,
+        "metric_adCtr": 0.06,
+        "metric_paymentFailureRate": 0.05,
+        "metric_contentClickRate": 0.05,
+        "metric_adCpm": 0.09,
+        "metric_contentCpm": 0.1,
+        "metric_scope": {
+          "choice": "unresolved",
+          "score": 0.81
+        }
+      },
+      "passed": false,
+      "failures": [
+        {
+          "kind": "first_tool",
+          "details": {
+            "expected": [],
+            "actual": [
+              "metric_components"
+            ],
+            "expectedRoute": "quick",
+            "route": "quick"
+          }
+        }
+      ],
+      "benchmark": false,
+      "jevCalls": 1,
+      "questionCounts": [
+        24
+      ],
+      "serialBytes": [
+        16235
+      ],
+      "latencyMs": [
+        227
+      ],
+      "actualJobs": [],
+      "queryCounts": []
+    }
+  ],
+  "replays": [
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 1,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:32:18.415Z",
+      "succeeded": true,
+      "elapsedMs": 230
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 1,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:32:18.646Z",
+      "succeeded": true,
+      "elapsedMs": 228
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 2,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:32:19.333Z",
+      "succeeded": true,
+      "elapsedMs": 177
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 2,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:32:19.510Z",
+      "succeeded": true,
+      "elapsedMs": 234
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 3,
+      "stage": 1,
+      "bytes": 7341,
+      "startedAt": "2026-11-10T04:32:20.200Z",
+      "succeeded": true,
+      "elapsedMs": 177
+    },
+    {
+      "kind": "replay",
+      "caseId": "deep",
+      "pair": 3,
+      "stage": 2,
+      "bytes": 47090,
+      "startedAt": "2026-11-10T04:32:20.379Z",
+      "succeeded": true,
+      "elapsedMs": 235
+    }
+  ],
+  "attempts": [
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:32:17.512Z",
+      "succeeded": true,
+      "elapsedMs": 273
+    },
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:32:17.865Z",
+      "succeeded": true,
+      "elapsedMs": 208
+    },
+    {
+      "kind": "run",
+      "caseId": "quick",
+      "stage": 1,
+      "bytes": 16315,
+      "startedAt": "2026-11-10T04:32:18.147Z",
+      "succeeded": true,
+      "elapsedMs": 180
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:32:18.919Z",
+      "succeeded": true,
+      "elapsedMs": 184
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 4283,
+      "startedAt": "2026-11-10T04:32:19.105Z",
+      "succeeded": true,
+      "elapsedMs": 190
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:32:19.786Z",
+      "succeeded": true,
+      "elapsedMs": 197
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 4283,
+      "startedAt": "2026-11-10T04:32:19.986Z",
+      "succeeded": true,
+      "elapsedMs": 192
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 1,
+      "bytes": 16885,
+      "startedAt": "2026-11-10T04:32:20.664Z",
+      "succeeded": true,
+      "elapsedMs": 185
+    },
+    {
+      "kind": "run",
+      "caseId": "deep",
+      "stage": 2,
+      "bytes": 7319,
+      "startedAt": "2026-11-10T04:32:20.851Z",
+      "succeeded": true,
+      "elapsedMs": 180
+    },
+    {
+      "kind": "run",
+      "caseId": "paired",
+      "stage": 1,
+      "bytes": 16445,
+      "startedAt": "2026-11-10T04:32:21.111Z",
+      "succeeded": true,
+      "elapsedMs": 180
+    },
+    {
+      "kind": "run",
+      "caseId": "paired",
+      "stage": 2,
+      "bytes": 4239,
+      "startedAt": "2026-11-10T04:32:21.293Z",
+      "succeeded": true,
+      "elapsedMs": 171
+    },
+    {
+      "kind": "run",
+      "caseId": "history",
+      "stage": 1,
+      "bytes": 16663,
+      "startedAt": "2026-11-10T04:32:21.582Z",
+      "succeeded": true,
+      "elapsedMs": 251
+    },
+    {
+      "kind": "run",
+      "caseId": "history",
+      "stage": 2,
+      "bytes": 2565,
+      "startedAt": "2026-11-10T04:32:21.836Z",
+      "succeeded": true,
+      "elapsedMs": 311
+    },
+    {
+      "kind": "run",
+      "caseId": "formula",
+      "stage": 1,
+      "bytes": 16495,
+      "startedAt": "2026-11-10T04:32:22.239Z",
+      "succeeded": true,
+      "elapsedMs": 180
+    },
+    {
+      "kind": "run",
+      "caseId": "formula",
+      "stage": 2,
+      "bytes": 5685,
+      "startedAt": "2026-11-10T04:32:22.421Z",
+      "succeeded": true,
+      "elapsedMs": 174
+    },
+    {
+      "kind": "run",
+      "caseId": "unsupported",
+      "stage": 1,
+      "bytes": 16235,
+      "startedAt": "2026-11-10T04:32:22.710Z",
+      "succeeded": true,
+      "elapsedMs": 227
+    }
+  ],
+  "comparison": {
+    "quick": {
+      "pairs": [
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            273
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            208
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [],
+          "oldLatencyMs": [],
+          "newBytes": [
+            16315
+          ],
+          "newLatencyMs": [
+            180
+          ],
+          "valid": false
+        }
+      ],
+      "simulated": false,
+      "confirmed": false,
+      "oldMedianMs": null,
+      "newMedianMs": null
+    },
+    "deep": {
+      "pairs": [
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            230,
+            228
+          ],
+          "newBytes": [
+            16885,
+            4283
+          ],
+          "newLatencyMs": [
+            184,
+            190
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            177,
+            234
+          ],
+          "newBytes": [
+            16885,
+            4283
+          ],
+          "newLatencyMs": [
+            197,
+            192
+          ],
+          "valid": false
+        },
+        {
+          "oldBytes": [
+            7341,
+            47090
+          ],
+          "oldLatencyMs": [
+            177,
+            235
+          ],
+          "newBytes": [
+            16885,
+            7319
+          ],
+          "newLatencyMs": [
+            185,
+            180
+          ],
+          "valid": false
+        }
+      ],
+      "simulated": false,
+      "confirmed": false,
+      "oldMedianMs": null,
+      "newMedianMs": null
+    }
+  },
+  "passed": false,
+  "finishedAt": "2026-11-10T04:32:22.964Z"
+}
