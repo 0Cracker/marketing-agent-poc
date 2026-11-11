@@ -11,6 +11,11 @@ import {createRunStore,createRunRoutes,RunApiError} from '../../../backend/roas/
 import {createRunPersistence,createHttpRunEngine} from '../../../backend/roas/run-integration.mjs';
 import {trainingScreenData} from '../training-data.mjs';
 
+if (process.argv.includes('--classification-only')) {
+  const {runClassificationDiagnostics}=await import('./jev-classification.mjs');
+  const result=await runClassificationDiagnostics();
+  if(!result.passed)process.exitCode=1;
+} else {
 if(!process.argv.includes('--live'))throw Error('Pass --live to make real Jev and generation calls.');
 const root=path.resolve(import.meta.dirname,'../../..');
 const reportDirectory=path.join(root,'evidence','jev-e2e-'+new Date().toISOString().slice(0,10).replaceAll('-',''));
@@ -131,4 +136,5 @@ try {
   report.finishedAt=new Date().toISOString();save();
   console.log('REPORT '+reportPath);
   await new Promise(resolve=>server.close(resolve));store.close();
+}
 }

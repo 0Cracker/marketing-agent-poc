@@ -40,12 +40,11 @@ marketing-agent-poc/
 ├─ data/roas/      사례 데이터와 파일 목록
 ├─ scripts/roas/   로컬 API 실행, Vite 데이터 제공, 검산
 ├─ tests/roas/     현재 ROAS 회귀 테스트
-├─ legacy/        구 CTI 대시보드, 분석과 예산 검토, 당시 데이터
 ├─ docs/          설계, 버전별 개발 일지, AI 활용 교훈
 └─ evidence/      검증 결과와 화면 캡처
 ```
 
-구 CTI 대시보드는 `npm run dev:legacy`로 별도로 열 수 있습니다. [현재 데이터 안내](data/README.md), [ROAS와 구 대시보드 분리 기록](docs/design/roas-legacy-separation.md)
+현재 ROAS 화면에서 사용하는 버튼과 툴팁은 `frontend/roas/components/ui/`에 모았습니다. 기존 CTI 대시보드와 과거 원천 데이터는 현재 체크아웃에서 제거했으며, 정리 이전 Git 커밋 `f2cb8e9`에서 복원할 수 있습니다. [현재 데이터 안내](data/README.md), [과거 ROAS 분리 기록](docs/design/roas-legacy-separation.md)
 
 ## 로컬에서 실행하기
 

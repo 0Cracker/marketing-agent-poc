@@ -2,16 +2,16 @@ import reviewTaxonomy from '../../../data/roas/roas-review-classification.json' 
 import {dashboardDimensions} from '../tools/metrics.mjs';
 
 const need = {
-  overview:['현재 조회 범위의 KPI 한 개의 값 또는 여러 KPI의 기간 집계가 필요하다.',
-    '전체 KPI 값이 필요 없고 산식, 그룹 비교나 추이만으로 충분하다.'],
-  metric_components:['지표 산식, 분자, 분모 또는 실제 계산 구성값이 필요하다.',
-    '지표 값, 그룹 순위나 날짜별 흐름만 필요하다.'],
+  overview:['현재 조회 범위의 KPI 한 개 값만 요청해도 이 도구를 선택한다. 전체 KPI 값, 두 기간의 변화 또는 그룹 비교의 전체 기준선이 필요할 때도 선택한다. ROAS 하락 원인과 개선 우선순위에는 캠페인별 값과 별도로 전체 ROAS 기준선이 필요하다.',
+    '전체 기간 집계나 전체 기준선이 필요 없고 명시된 산식, 그룹별 값 또는 일별 흐름만으로 충분하다.'],
+  metric_components:['지원되는 지표의 산식, 분자·분모나 계산 구성값 자체를 명시적으로 요청한다. 다른 조회와 별개로 산식 설명이 필요하다.',
+    '산식을 요청하지 않은 원인 진단이나 값 비교다. overview와 metric_breakdown은 분자와 분모를 이미 반환한다. 미지원 지표의 산식 요청은 unresolved로 처리하고 이 도구를 선택하지 않는다.'],
   metric_breakdown:['그룹별 값, 순위 또는 기간 증감을 따로 비교해야 한다.',
     '캠페인이나 기기가 언급돼도 적용된 필터의 전체값만 필요하다.'],
-  trend:['날짜별 흐름, 변곡 시점 또는 사건 전후의 일별 관측이 필요하다.',
-    '직전과 현재의 기간 집계 두 개만으로 충분하다.'],
-  records:['캠페인 설정, 운영 변경 또는 장애의 내용이나 시점이 필요하다.',
-    '성과 수치나 다른 자료로 요청에 답할 수 있다.'],
+  trend:['일별 추이를 명시했거나, 원인 분석과 개선 우선순위처럼 시간 흐름을 확인해야 한다. 원인·왜·개선을 묻는 분석에는 기간 집계만으로 사건 전후 변화 시점을 검증할 수 없으므로 일별 추이 확인이 필요하다.',
+    '직접 값·순위·그룹 비교만 요청하고 일별 시점이나 원인 분석, 개선 근거 확인이 전혀 필요하지 않다.'],
+  records:['왜 변했는지, 원인 후보 또는 개선 우선순위를 판단하려면 캠페인 설정, 운영 변경 및 장애 기록의 사실·시점 확인이 필요하다. 기록과 성과의 동시 발생은 인과 증거가 아니다.',
+    '성과 값, 산식, 그룹 비교만 요청하고 운영 원인이나 개선 결정에는 관심이 없다.'],
   review_summary:['리뷰 건수, 평균 평점 또는 주제, 판매처, 기간별 집계가 필요하다.',
     '개별 원문 또는 다른 자료만 필요하다.'],
   review_records:['실제 리뷰 원문, 개별 사례 또는 인용이 필요하다.',
@@ -72,10 +72,10 @@ export function firstJevRequest(state,toolRuntime,options,catalog) {
     .map(metric=>[metric.id,{label:metric.label,meaning:metricNeeds[metric.id],
       dimensions:dashboardDimensions(metric.id,options.searchOnly).filter(d=>metric.availableDimensions.includes(d))}]));
   for(const [id,{label}] of Object.entries(metric_options))
-    questions['metric_'+id]=noul(label+' 지표가 계산 내역, 그룹 비교 또는 일별 추이에 필요한가요?',
-      '원문이나 최근 대화에서 가리키는 지표이거나 진단에 직접 필요하다. 해당 지표의 의미는 state.metric_options를 참고한다.',
-      '단순히 관련 있거나 다른 의미의 지표, 개요에서 값만 확인할 지표다. 특정 지표 없는 일반 효율은 metric_scope에서 판단한다.');
-  questions.metric_scope={type:'choice',instructions:'원문이 요구하는 광고 성과 지표, 차원, 필터와 기간을 현재 조회 범위로 표현할 수 있나요?',criteria:metricScope};
+    questions['metric_'+id]=noul(label+' 지표 자체를 독립적으로 산식 조회, 그룹 비교 또는 일별 추이로 요청했나요?',
+      '원문에서 이 지표를 직접 명시했거나 직전 대화에서 지칭했다. 명시되지 않아도 이 지표 자체의 조회 없이는 질문을 해결할 수 없다.',
+      '다른 지표의 계산에만 쓰이는 입력값이다. 예를 들어 ROAS의 매출·집행비, CVR의 주문·클릭은 해당 지표 조회에 이미 포함된다. 원인 분석에 관련 있다는 이유만으로 별도 지표를 선택하지 않는다. 개요에서 값만 확인할 지표도 제외한다.');
+  questions.metric_scope={type:'choice',instructions:'원문의 지표, 차원, 필터와 기간을 지원 범위와 대조하세요. ROAS와 CVR, 직전(baseline) 일별 추이는 지원되며 CAC(신규 고객 획득 비용)는 지원 지표가 아닙니다. 지원되지 않는 요청을 CPA 등으로 대체하지 마세요.',criteria:metricScope};
   return {state:{...state,tools,metric_options,dimension_labels:dimensionLabels,decision_rules:decisionRules},questions};
 }
 
@@ -123,9 +123,9 @@ export function optionJevRequest(state,selected,catalog,available,issued,selecte
     if(tool==='metric_components')for(const metric of metrics) {
       const id='components_'+metric.id;
       option_candidates[id]={tool,args:{metric:metric.id}};
-      questions[id]=noul(metric.label+'의 산식이나 계산 구성값을 답에 포함해야 하나요?',
-        '이 지표의 산식, 분자, 분모 또는 실제 구성값이 필요하고 잠긴 기간과 필터의 내역으로 충족할 수 있다.',
-        '이 지표는 다른 도구에만 필요하거나, 사용자가 지정한 기간 또는 필터가 현재 범위 밖이다.');
+      questions[id]=noul(metric.label+' 지표 자체의 산식 또는 계산 내역을 별도로 설명해 달라는 요청인가요?',
+        '사용자가 이 지표 자체의 산식, 구성값을 요청했다. 이 조회가 분자와 분모를 함께 반환한다.',
+        '이 지표는 다른 산식의 입력값일 뿐 별도 산식을 요청하지 않았다. 예를 들어 ROAS 산식 설명에는 components_roas 하나면 충분하며 components_spend와 components_revenue는 불필요하다.');
     }
     if(tool==='metric_breakdown')for(const metric of metrics) {
       const dimensions=dashboardDimensions(metric.id,available.searchOnly).filter(d=>metric.availableDimensions.includes(d));
@@ -140,12 +140,13 @@ export function optionJevRequest(state,selected,catalog,available,issued,selecte
     if(tool==='trend')for(const metric of metrics) {
       const id='trend_'+metric.id+'_period';
       option_candidates[id]={tool,args:{metrics:[metric.id]}};
-      questions[id]={type:'choice',instructions:metric.label+'의 일별 흐름이 필요한지, 필요하다면 어느 기간인지 고르세요.',criteria:trendPeriods};
+      questions[id]={type:'choice',instructions:'원문과 최근 대화에서 '+metric.label+' 자체의 일별 추이를 요청했는지 판정하세요. 직전 또는 이전 비교 기간이면 baseline, 현재면 current, 두 기간이나 기간 미지정 변곡 분석이면 both, 이 지표 추이가 필요 없으면 not_needed를 선택합니다. 분자·분모로 언급된 지표를 추이 대상으로 바꾸지 마세요.',criteria:trendPeriods};
     }
     if(tool==='records') {
       for(const category of available.recordCategories||[]) {
         const label=recordLabels[category]||category;
-        add('records_'+category,tool,{category},label+' 기록');
+        add('records_'+category,tool,{category},label+' 기록',
+          '사용자가 이 기록 분류만 조회하라고 명시적으로 범위를 제한했다. 일반적인 원인 분석이나 개선 순위를 물었다면 다른 분류의 설정, 사고, 추적 기록도 필요하므로 선택하지 않는다.');
         searchTerms.forEach((query,i)=>add('records_'+category+'_query_'+i,tool,{category,query},'“'+query+'”로 좁힌 '+label+' 기록'));
       }
     }

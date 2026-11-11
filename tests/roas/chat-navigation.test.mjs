@@ -11,5 +11,5 @@ test('review navigation preserves the common chat launcher and an open conversat
  assert(!launcher.includes('!reviewPage'),'review page must expose the common launcher');
  assert(!panel.includes('!reviewPage'),'review page must expose the open chat panel');
  assert(!ui.includes('if(showReview)setChatOpen(false)'),'navigation must preserve the open panel');
- assert(ui.includes("screenTitle={reviewPage?'리뷰 분석':"),'the chat identifies the review page');
+ assert(ui.includes("screenTitle={recordsPage?'운영 기록':reviewPage?'리뷰 분석':"),'the chat identifies both records and review pages');
 });

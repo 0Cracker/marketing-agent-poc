@@ -1,4 +1,5 @@
 import {campaignDisplayName,displayTrainingText,metricChange,metricMissingReason,metricValue,selectBreakdowns,selectFacts,summarize} from '../../shared/roas/training-dashboard.mjs';
+import {roasImpactPp} from '../../shared/roas/roas-impact.mjs';
 import type {Breakdown,Fact,Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
 
 export type AnalysisMetric={key:string;label:string;rate?:boolean;unit?:string};
@@ -84,7 +85,9 @@ export function analyzeGroups(data:TrainingData,rows:AnalysisRow[],metric:string
   const D=totals.map(t=>t[denominator as keyof Total] as number),weights=d.map((v,i)=>divide(v,D[i]));
   const values=n.map((v,i)=>periodRows[i].length?divide(v,d[i]):null);
   // Center the mix effect so moving spend to below-average efficiency has a negative ROAS effect.
-  const impact=center===null?null:n[1]/D[1]-n[0]/D[0]-center*(weights[1]!-weights[0]!);
+  const roasContribution=metric==='roas'?roasImpactPp(totals[0],totals[1],pair[0],pair[1]):null;
+  const impact=metric==='roas'?(roasContribution===null?null:roasContribution/100)
+   :center===null?null:n[1]/D[1]-n[0]/D[0]-center*(weights[1]!-weights[0]!);
   const separable=impact!==null&&values.every(v=>v!==null);
   const efficiency=separable?(weights[0]!+weights[1]!)/2*(values[1]!-values[0]!):null;
   const mix=separable?(weights[1]!-weights[0]!)*((values[0]!+values[1]!)/2-center!):null;

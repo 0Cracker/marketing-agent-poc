@@ -85,8 +85,9 @@ test('review navigation is a sidebar page and ROAS data filters are not passed i
  const file=fs.readFileSync(new URL('../../frontend/roas/training-dashboard.tsx',import.meta.url),'utf8');
  const nav=file.indexOf('성과 현황</button><div className="training-sidebar-detail">');
  const metricGroup=file.indexOf('지표 상세<ChevronDown',nav);
- const review=file.indexOf('</ul></div><button className={reviewPage?',metricGroup);
- assert(nav>0&&metricGroup>nav&&review>metricGroup,'Metric Details must stay under Performance Overview, then Review Analysis is a separate sibling');
+ const records=file.indexOf('<History size={17}/>운영 기록</button>',metricGroup);
+ const review=file.indexOf('<Search size={17}/>리뷰 분석</button>',records);
+ assert(nav>0&&metricGroup>nav&&records>metricGroup&&review>records,'Metric Details, Operational Records and Review Analysis must remain sibling entries');
  assert(file.includes('<div hidden={!reviewPage}><ReviewAnalysisSection'),'Review UI stays mounted to preserve same-case filters across sidebar and back navigation');
  assert(file.includes('view={reviewView}'));
  assert(!file.includes('<ReviewAnalysisSection key={caseId} caseId={caseId} asOf={data.asOf}'));

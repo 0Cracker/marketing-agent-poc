@@ -49,6 +49,7 @@ jobs:
       - run: npm run test:agents
       - run: npm run test:roas
       - run: npm run test:training
+      - run: npx tsc --noEmit
       - run: npm run lint
       - run: npm run build
       - run: npm run build:agent-trace

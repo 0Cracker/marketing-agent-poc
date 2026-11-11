@@ -17,19 +17,13 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "paths": {
       "@/*": [
         "./frontend/*"
       ]
     },
     "types": [
-      "node",
-      "@cloudflare/workers-types"
+      "node"
     ],
     "allowImportingTsExtensions": true
   },
@@ -39,8 +33,6 @@
     "tests/roas/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "examples",
-    "legacy"
+    "node_modules"
   ]
 }

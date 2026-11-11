@@ -6,6 +6,7 @@ import {
   trainingCaseIds, trainingCostDefinition, metricMissingReason,
 } from '../../../shared/roas/training-dashboard.mjs';
 import {chatValue} from '../../../shared/roas/roas-chat.mjs';
+import {roasImpactPp,roasScopeDeltaPp} from '../../../shared/roas/roas-impact.mjs';
 import {dashboardDimensions, dimensions, dimensionRows, groupKey, keyFor, metricCapabilities, metricResult, metricRows, metrics} from './metrics.mjs';
 
 const sha256 = value => createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
@@ -275,6 +276,9 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
   function metricGroups(pack,role,args,withDelta=false) {
     const {dimension,metric}=args;
     const dimensionData = metricRows(dimensionRows(pack.data,pack.scope.filters,dimension),metric);
+    const impactScope = metric === 'roas' && dimension === 'campaign'
+      ? Object.fromEntries(dates.map(id => [id,summarize(dimensionData.filter(row => row.periodId === id))]))
+      : null;
     const keys = [...new Set(dimensionData.map(row=>groupKey(keyFor(row,dimension))))].sort();
     const {offset,limit,nextOffset,truncated} = limits(args,keys.length);
     const groups = keys.slice(offset,offset+limit).map(key => {
@@ -292,13 +296,17 @@ export async function createToolRuntime({directory, scope, runId, issuedAt, now 
         key === '__unspecified__' ? '미기록' : key;
       const {current,baseline}=pairs;
       return {key,label,...pairs,...(withDelta ? {delta:Number.isFinite(current.value) && Number.isFinite(baseline.value)
-        ? current.value-baseline.value : null} : {})};
+        ? current.value-baseline.value : null} : {}),
+        ...(withDelta && impactScope ? {impactPp:roasImpactPp(impactScope.baseline,impactScope.current,
+          {revenue:baseline.numerator,spend:baseline.denominator},
+          {revenue:current.numerator,spend:current.denominator})} : {})};
     });
     const limitations=['서로 다른 분해 차원을 중복 합산하지 않습니다.'];
     if (dimension === 'product' || dimensions.indexOf(dimension) >= 3)
       limitations.push('상품/트래픽의 집행비는 합성 배분 원천입니다.');
     if (truncated) limitations.push('일부 그룹만 반환되었습니다. 다음 페이지를 확인해야 전체입니다.');
     return {dimension,groups,total:keys.length,nextOffset,truncated,
+      ...(withDelta && impactScope ? {scopeDeltaPp:roasScopeDeltaPp(impactScope.baseline,impactScope.current)} : {}),
       evidenceIds:groups.flatMap(group=>dates.map(id=>group[id].evidenceId)),limitations};
   }
   function metricBreakdown(pack,role,args) {

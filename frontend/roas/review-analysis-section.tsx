@@ -3,7 +3,7 @@ import {Fragment,useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {ExternalLink,Search,X} from 'lucide-react';
 import {categoryCounts,collectionRange,defaultReviewSort,eligibleReviewRows,experienceCounts,filterReviewTable,highlightParts,reviewPreview,reviewSummary,sortCategories,sortReviewRows} from './review-analysis';
 import type {CategorySort,ReviewPeriod,ReviewPeriodChoice,ReviewRecord,ReviewSort,ReviewSortField,ReviewView} from './review-analysis';
-import {SelectionButton} from '../components/ui/selection-button';
+import {SelectionButton} from './components/ui/selection-button';
 import './review-analysis.css';
 
 type Props={caseId:string;asOf:string;periods:ReviewPeriod[];view?:ReviewView;onRetry?:()=>void};
