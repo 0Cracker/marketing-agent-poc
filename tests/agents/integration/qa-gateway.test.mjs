@@ -55,6 +55,15 @@ test('preview and scoped branch must be explicitly enabled, fail closed',async()
   }
 });
 
+test('QA login allows 8-character password but rejects 7-character configuration',async()=>{
+  const seven=createQaGateway({env:{...env(),QA_LOGIN_PASSWORD:'1234567'}});
+  assert.equal((await run(seven,'session',request('GET'))).status,503);
+  const eight=createQaGateway({env:{...env(),QA_LOGIN_PASSWORD:'12345678'}});
+  assert.equal((await run(eight,'session',request('GET'))).status,401);
+  assert.equal((await run(eight,'login',request('POST',{body:{password:'12345678'}}))).status,200);
+  assert.equal((await run(eight,'login',request('POST',{body:{password:'incorrect'}}))).status,401);
+});
+
 test('shared QA login, HttpOnly secure cookie, session, logout and origin checks',async()=>{
   const gateway=createQaGateway({env:env()});
   assert.equal((await run(gateway,'session',request())).status,401);
