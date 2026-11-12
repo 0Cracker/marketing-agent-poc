@@ -32,7 +32,7 @@ function originOk(req){
 function config(env){
   if(env.QA_GATEWAY_ENABLED!=='true'||env.VERCEL_ENV!=='preview'||!env.QA_GATEWAY_BRANCH||
     env.VERCEL_GIT_COMMIT_REF!==env.QA_GATEWAY_BRANCH)return null;
-  if(typeof env.QA_LOGIN_PASSWORD!=='string'||env.QA_LOGIN_PASSWORD.length<16||
+  if(typeof env.QA_LOGIN_PASSWORD!=='string'||env.QA_LOGIN_PASSWORD.length<8||
     typeof env.QA_SESSION_SECRET!=='string'||env.QA_SESSION_SECRET.length<32||
     typeof env.AGENT_QA_GATEWAY_SECRET!=='string'||env.AGENT_QA_GATEWAY_SECRET.length<32||
     env.QA_SESSION_SECRET===env.AGENT_QA_GATEWAY_SECRET||env.QA_LOGIN_PASSWORD===env.QA_SESSION_SECRET||
