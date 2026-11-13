@@ -2,12 +2,12 @@ import {Fragment,useId} from 'react';
 import type {ReactNode} from 'react';
 import {selectBreakdowns} from '../../shared/roas/training-dashboard.mjs';
 import type {Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
-import {analysisColumns,analysisDimensions,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,dimensionNames,sortAnalysisGroups} from './training-analysis';
+import {analysisColumns,analysisDimensions,analysisDisplayKeys,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,dimensionNames,sortAnalysisGroups} from './training-analysis';
 import type {AnalysisDimension,AnalysisGroup,AnalysisMetric,AnalysisSettings} from './training-analysis';
 import {deltaTone} from './training-presentation';
 import {formatMetricValue,formatMetricAbsoluteDelta,formatComparedMetricDelta} from './training-format';
 import {Info} from 'lucide-react';
-import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from '../components/ui/tooltip';
+import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from './components/ui/tooltip';
 
 export function TermInfo({label,description}:{label:string;description?:string}){
  if(!description)return null;
@@ -57,13 +57,13 @@ function ProductEvidence({data,filters}:{data:TrainingData;filters:Filters}){
  return <section className="training-product-evidence"><div className="wb-table-scroll"><table className="training-analysis-table"><thead><tr><th><span className="training-term-label">상품</span></th>{columns.map(k=><th key={k} className="numeric"><span className="training-term-label">{analysisMetric(k).label}</span></th>)}</tr></thead><tbody>{analysis.groups.map(g=><Fragment key={g.key}><tr><th scope="row">{g.label}</th>{columns.map(k=><CurrentCell key={k} group={g} metric={analysisMetric(k)} totals={analysis.totals}/>)}</tr><tr><td colSpan={columns.length+1}><details><summary>{g.label}, 직전값과 계산 근거</summary><EvidenceTable group={g} totals={analysis.totals} keys={[...columns,'units','listRevenue','discount']}/></details></td></tr></Fragment>)}</tbody></table></div></section>;
 }
 
-function GroupDetails({group,dimension,analysis,columns,...props}:{group:AnalysisGroup;dimension:AnalysisDimension;analysis:ReturnType<typeof analyzeGroups>;columns:string[]}&PanelProps){
+function GroupDetails({group,dimension,analysis,columns,allowNarrow=true,...props}:{group:AnalysisGroup;dimension:AnalysisDimension;analysis:ReturnType<typeof analyzeGroups>;columns:string[];allowNarrow?:boolean}&PanelProps){
  const {data,metricKey,filters,onNarrow,onEvidence,renderTrend,renderFunnel}=props;
  const metric=analysisMetric(metricKey),scoped=groupData(data,group),content=group.rows.every(r=>r.exposureBasis==='content_view');
  const extras:Record<string,string[]>={roas:['clicks','orders','spendShare'],cpc:['impressions','clickShare'],adCtr:['spend','adCpm'],cvr:['returnPurchases'],cpa:['clicks','aov'],aov:['units','listRevenue','discount','unitPrice','realizedPrice','unitsPerOrder']};
  const funnelKeys=['sessions','view','viewRate','cart','cartRate','checkout','beginRate','purchases','checkoutRate','sessionCvr','returnPurchases'];
  return <div className="training-analysis-detail">
-  <div className="training-analysis-detail-heading"><h4>기간별 데이터</h4><div><button onClick={()=>onNarrow(group,dimension)}>이 대상으로 좁혀 보기</button><button onClick={()=>onEvidence({title:group.label+', 집계 근거',rows:group.rows})}>원천 집계 보기</button></div></div>
+  <div className="training-analysis-detail-heading"><h4>기간별 데이터</h4><div>{allowNarrow&&<button onClick={()=>onNarrow(group,dimension)}>이 대상으로 좁혀 보기</button>}<button onClick={()=>onEvidence({title:group.label+', 집계 근거',rows:group.rows})}>원천 집계 보기</button></div></div>
   <EvidenceTable group={group} totals={analysis.totals} content={content} keys={[...columns,...extras[metricKey]]}/>
   <details className="training-data-disclosure"><summary>일별 추이</summary>{renderTrend(scoped,metric)}</details>
   {metricKey==='cvr'&&<details className="training-data-disclosure"><summary>구매 퍼널과 결제 데이터</summary>{renderFunnel(group.before,group.after)}<EvidenceTable group={group} totals={analysis.totals} keys={[...funnelKeys,'paymentAttempts','paymentFailures','paymentFailureRate','loadMs','loadTotalMs','loadSamples','redirectErrors','orders','ledgerOrders','revenue','ledgerRevenue','trackingExpected','trackingReceived','duplicateEvents']}/></details>}
@@ -84,6 +84,8 @@ export function KpiAnalysisPanel(props:PanelProps){
  const rows=analysisRows(data,filters,metricKey,dimension),analysis=analyzeGroups(data,rows,metricKey,dimension);
  const effectiveSettings=metricKey==='roas'&&settings.sortBasis==='value'?{...settings,sortBasis:'change' as const}:settings;
  const groups=sortAnalysisGroups(analysis,metricKey,effectiveSettings),metric=analysisMetric(metricKey),expanded=settings.expanded||[];
+ // Compute child contributions against the same full selection, so children sum to the parent contribution.
+ const childGroups=dimension==='campaign'?sortAnalysisGroups(analyzeGroups(data,rows,metricKey,'campaignUnit'),metricKey,effectiveSettings):[];
  const columns=analysisColumns[metricKey];
  const sections=metricKey==='cpc'?['ad_impression','content_view']:['all'];
  function toggle(key:string){onSettings({expanded:expanded.includes(key)?expanded.filter(k=>k!==key):[...expanded,key]});}
@@ -102,10 +104,27 @@ export function KpiAnalysisPanel(props:PanelProps){
   {sections.map(section=>{
    const chosen=section==='all'?groups:groups.filter(g=>g.rows.every(r=>r.exposureBasis===section));if(!chosen.length)return null;
    const content=section==='content_view',keys=content?columns.map(k=>k==='adCtr'?'contentClickRate':k==='adCpm'?'contentCpm':k):columns;
-   const displayKeys=[keys[0],'impact',...keys.slice(1)];
+   const displayKeys=analysisDisplayKeys(metricKey,keys);
    return <div key={section} className="training-analysis-section">{section!=='all'&&<h4>{content?'콘텐츠 제휴':'광고 집행'}</h4>}<div className="wb-table-scroll" role="region" tabIndex={0} aria-label={`${metric.label} ${section==='all'?'':content?'콘텐츠':'광고'} 분석 표, 가로 스크롤`}><table className="training-analysis-table"><thead><tr><th>{dimensionNames[dimension]}</th>{displayKeys.map(sortHeader)}</tr></thead><tbody>{chosen.map(g=>{
     const rowId=id+'-'+encodeURIComponent(dimension+':'+g.key),opened=expanded.includes(dimension+':'+g.key);
-    return <Fragment key={g.key}><tr><th scope="row"><button className="training-analysis-expand" aria-expanded={opened} aria-controls={rowId} onClick={()=>toggle(dimension+':'+g.key)}><span aria-hidden="true">{opened?'−':'+'}</span><span className="training-analysis-row-label" title={g.label}>{g.label}</span></button></th>{displayKeys.map(k=>k==='impact'?<td key={k} className={`numeric training-impact-value training-delta-${impactTone(metric,g.impact)}`}>{signed(g.impact,metric)}</td>:<CurrentCell key={k} group={g} metric={analysisMetric(k)} totals={analysis.totals} changeFirst={metricKey==='roas'}/>)}</tr><tr id={rowId} hidden={!opened} className="training-analysis-expanded-row"><td colSpan={keys.length+2}>{opened&&<GroupDetails {...props} group={g} dimension={dimension} analysis={analysis} columns={keys}/>}</td></tr></Fragment>;
+    const children=dimension==='campaign'?childGroups.filter(child=>g.rows.some(row=>row.campaignId===child.key)):[];
+    const hasChildren=children.length>1;
+    const cells=(item:AnalysisGroup)=>displayKeys.map(k=>k==='impact'
+     ?<td key={k} className={'numeric training-impact-value training-delta-'+impactTone(metric,item.impact)}>{signed(item.impact,metric)}</td>
+     :<CurrentCell key={k} group={item} metric={analysisMetric(k)} totals={analysis.totals} changeFirst={metricKey==='roas'}/>);
+    return <Fragment key={g.key}>
+     <tr className={hasChildren?'training-campaign-group-row':undefined}><th scope="row"><button className="training-analysis-expand" aria-expanded={opened} aria-controls={rowId} onClick={()=>toggle(dimension+':'+g.key)}><span aria-hidden="true">{opened?'−':'+'}</span><span className="training-analysis-row-label" title={g.label}>{g.label}</span></button></th>{cells(g)}</tr>
+     {hasChildren&&opened&&children.map(child=>{
+      const childKey='campaignUnit:'+child.key,childId=id+'-unit-'+encodeURIComponent(child.key),childOpen=expanded.includes(childKey);
+      return <Fragment key={child.key}>
+       <tr className="training-campaign-child-row"><th scope="row"><button className="training-analysis-expand" aria-expanded={childOpen} aria-controls={childId} onClick={()=>toggle(childKey)}><span aria-hidden="true">{childOpen?'−':'+'}</span><span className="training-analysis-row-label" title={child.label}>{child.label}</span></button></th>{cells(child)}</tr>
+       <tr id={childId} hidden={!childOpen} className="training-analysis-expanded-row"><td colSpan={keys.length+2}>{childOpen&&<GroupDetails {...props} group={child} dimension="campaign" analysis={analysis} columns={keys}/>}</td></tr>
+      </Fragment>;
+     })}
+     <tr id={rowId} hidden={!opened} className="training-analysis-expanded-row"><td colSpan={keys.length+2}>{opened&&(hasChildren
+      ?<details className="training-campaign-parent-details"><summary>캠페인 전체 기간별 데이터 및 근거</summary><GroupDetails {...props} group={g} dimension={dimension} analysis={analysis} columns={keys} allowNarrow={false}/></details>
+      :<GroupDetails {...props} group={g} dimension={dimension} analysis={analysis} columns={keys}/>)}</td></tr>
+    </Fragment>;
    })}</tbody></table></div></div>;
   })}
   {!groups.length&&<p className="training-empty-state">분석 자료 없음</p>}

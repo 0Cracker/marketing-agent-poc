@@ -1,0 +1,73 @@
+{
+  "ok": true,
+  "url": "http://127.0.0.1:5189/",
+  "notes": [
+    {
+      "label": "sidebar has performance and review buttons",
+      "value": [
+        "성과 현황",
+        "리뷰 분석"
+      ]
+    },
+    {
+      "label": "S16 current 13",
+      "value": {
+        "title": "리뷰 분석현재 사례: S16, 쓱쓱샴푸 (EDU-P1), 가상 리뷰자료 제공",
+        "count": 13
+      }
+    },
+    {
+      "label": "5 parents and 18 detail rows",
+      "value": {
+        "bars": 5,
+        "comparison": 23
+      }
+    },
+    {
+      "label": "table 13 and evidence detail",
+      "value": {
+        "count": 13,
+        "assignments": 12
+      }
+    },
+    {
+      "label": "screenshot",
+      "file": "evidence/review-ui-integration-20261103/s16-current.png"
+    },
+    {
+      "label": "both periods include 25 S16 reviews",
+      "value": 25
+    },
+    {
+      "label": "one unclassified row, unchanged population",
+      "value": {
+        "summary": 25,
+        "table": 1,
+        "neutral": 1
+      }
+    },
+    {
+      "label": "S17 reset to current and all categories",
+      "value": {
+        "title": "리뷰 분석현재 사례: S17, 쓱쓱샴푸 (EDU-P1), 가상 리뷰자료 제공",
+        "summary": 13,
+        "period": "current",
+        "table": 13
+      }
+    },
+    {
+      "label": "S01 shows unavailable state, not zero",
+      "value": {
+        "empty": true,
+        "hasStats": false
+      }
+    },
+    {
+      "label": "ROAS overview remains separate",
+      "value": {
+        "overview": true,
+        "reviewEmbedded": false
+      }
+    }
+  ]
+}

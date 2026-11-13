@@ -1,0 +1,76 @@
+{
+  "contract": "roas-review-candidates/1",
+  "status": "approved_and_integrated",
+  "purpose": "현재 18개 세부 경험에 해당하지 않는 리뷰의 미분류 처리 검증",
+  "baseReviewCount": 48,
+  "proposedReviewCount": 50,
+  "reviewCandidates": [
+    {
+      "review": {
+        "id": "REV-S16-025",
+        "caseId": "S16",
+        "productId": "EDU-P1",
+        "sourceId": "virtual_external_1",
+        "sourceName": "가상 외부 판매처",
+        "writtenAt": "2026-08-24T18:20:00+09:00",
+        "collectedAt": "2026-08-26T23:05:00+09:00",
+        "rating": 3,
+        "ratingScale": 5,
+        "text": "운동한 날에만 이 샴푸를 쓰고 있어서 평소 쓰던 거랑 뭐가 다른지 아직 모르겠어요. 몇 번 더 써 본 다음에 판단하려고 합니다."
+      },
+      "proposedClassification": {
+        "reviewId": "REV-S16-025",
+        "status": "unclassified",
+        "assignments": []
+      },
+      "qa": {
+        "candidateType": "경험 대상 미특정, 판정 보류",
+        "rationale": "사용 횟수와 비교 계획을 설명할 뿐 향, 세정, 용기, 용량 및 사용량, 배송 중 어느 항목에도 실제 경험 근거가 없음",
+        "verificationStatus": "user_approved_integrated"
+      }
+    },
+    {
+      "review": {
+        "id": "REV-S17-025",
+        "caseId": "S17",
+        "productId": "EDU-P1",
+        "sourceId": "own_store",
+        "sourceName": "자사몰",
+        "writtenAt": "2026-08-27T09:15:00+09:00",
+        "collectedAt": "2026-08-28T23:05:00+09:00",
+        "rating": 3,
+        "ratingScale": 5,
+        "text": "행사 때 샀으니 가격은 괜찮았는데 정가에 또 살지는 모르겠어요. 집에서는 다들 그냥 쓰자고 해서 일단 욕실에 뒀습니다."
+      },
+      "proposedClassification": {
+        "reviewId": "REV-S17-025",
+        "status": "unclassified",
+        "assignments": []
+      },
+      "qa": {
+        "candidateType": "가격과 재구매 의향, 승인된 5개 상위 카테고리 밖",
+        "rationale": "행사 가격과 정가 재구매 의사에 대한 의견이며 용량 또는 소진 속도에 대한 평가는 없음. 기존 18개로 강제 분류하면 오분류",
+        "verificationStatus": "user_approved_integrated"
+      }
+    }
+  ],
+  "validation": {
+    "existingReviews": 48,
+    "newCandidates": 2,
+    "totalIfApproved": 50,
+    "allIdUnique": true,
+    "normalizedPairCount": 1225,
+    "normalizedExactDuplicatePairs": 0,
+    "withinSourceRange": true,
+    "unapprovedAdditionDoesNotChangeOriginal": true,
+    "finalSourceReviewSha256": "f40aeb577c550ee3928cd044b45fa83253bee751b234de5c3ca4a874700de4e0",
+    "integratedReviewCount": 50
+  },
+  "adoptionNotes": [
+    "Both records integrated into roas-reviews.json",
+    "Both records integrated into classification sidecar as unclassified with zero assignments",
+    "Existing 48 review entries preserved",
+    "S16 and S17 have 12 baseline and 13 current reviews; category counts exclude unclassified reviews"
+  ],
+  "approval": "2026-11-03 user explicitly approved two candidates without modification"
+}

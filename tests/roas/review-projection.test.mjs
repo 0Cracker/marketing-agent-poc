@@ -13,19 +13,19 @@ const load=id=>{
  return {dto,view};
 };
 
-test('read-only UI projection keeps 25 original reviews, one unclassified and exact evidence per case',()=>{
+test('read-only UI projection keeps 60/25 approved reviews and exact evidence per case',()=>{
  let all=[];
  for(const id of ['S16','S17']){
   const {dto,view}=load(id);
   assert.equal(view.productName,'쓱쓱샴푸');
-  assert.equal(view.reviews.length,25);
-  assert.equal(new Set(view.reviews.map(r=>r.id)).size,25);
+  assert.equal(view.reviews.length,id==='S16'?60:25);
+  assert.equal(new Set(view.reviews.map(r=>r.id)).size,id==='S16'?60:25);
   const baseline=eligibleReviewRows(view.reviews,id,dto.asOf,periods,'baseline',new Set());
   const current=eligibleReviewRows(view.reviews,id,dto.asOf,periods,'current',new Set());
-  assert.equal(baseline.length,12);assert.equal(current.length,13);
-  assert.equal(view.reviews.filter(r=>r.classification==='unclassified').length,1);
-  assert.equal(filterReviewTable(current,new Set(['__unclassified__']),'').length,1);
-  assert.equal(reviewSummary(current).count,13,'unclassified counts in the rating denominator');
+  assert.equal(baseline.length,id==='S16'?27:12);assert.equal(current.length,id==='S16'?33:13);
+  assert.equal(view.reviews.filter(r=>r.classification==='unclassified').length,id==='S16'?3:1);
+  assert.equal(filterReviewTable(current,new Set(['__unclassified__']),'').length,id==='S16'?2:1);
+  assert.equal(reviewSummary(current).count,id==='S16'?33:13,'unclassified counts in the rating denominator');
   assert.equal(view.reviews.filter(r=>r.classification==='classified').every(r=>r.assignments.length>0),true);
   for(const row of view.reviews)for(const a of row.assignments){
    assert(row.text.includes(a.evidenceQuote));
@@ -33,18 +33,18 @@ test('read-only UI projection keeps 25 original reviews, one unclassified and ex
    assert(Object.hasOwn(reviewCategoryLabels,a.categoryId));
   }
   const totals=categoryCounts(current);
-  assert.equal(totals.length,5);assert(totals.every(c=>c.count<=13&&Math.abs(c.percent-c.count/13*100)<1e-10));
+  assert.equal(totals.length,5);assert(totals.every(c=>c.count<=current.length&&Math.abs(c.percent-c.count/current.length*100)<1e-10));
   assert.equal(totals.reduce((sum,c)=>sum+c.count,0),new Set(current.filter(r=>r.classification==='classified').map(r=>r.id)).size+
    current.filter(r=>r.classification==='classified').reduce((n,r)=>n+Math.max(0,r.categories.length-1),0));
   assert.deepEqual([eligibleReviewRows(view.reviews,id,dto.asOf,periods,'baseline',new Set(['own_store'])).length,
-   eligibleReviewRows(view.reviews,id,dto.asOf,periods,'current',new Set(['own_store'])).length],id==='S16'?[4,8]:[8,5]);
+   eligibleReviewRows(view.reviews,id,dto.asOf,periods,'current',new Set(['own_store'])).length],id==='S16'?[9,20]:[8,5]);
   all=all.concat(view.reviews);
  }
- assert.equal(all.length,50);
- assert.equal(new Set(all.map(r=>r.id)).size,50);
- assert.equal(all.filter(r=>r.classification==='unclassified').length,2);
+ assert.equal(all.length,85);
+ assert.equal(new Set(all.map(r=>r.id)).size,85);
+ assert.equal(all.filter(r=>r.classification==='unclassified').length,4);
  assert.equal(new Set(all.flatMap(r=>r.assignments.map(a=>a.experienceId))).size,18);
- assert.equal(experienceCounts(all).reduce((sum,e)=>sum+e.count,0),63);
+ assert.equal(experienceCounts(all).reduce((sum,e)=>sum+e.count,0),106);
 });
 test('all 5/18 display dictionaries and parents match the approved taxonomy bytes',()=>{
  const pack=JSON.parse(fs.readFileSync(new URL('../../data/roas/roas-review-classification.json',import.meta.url),'utf8'));
@@ -57,35 +57,37 @@ test('classification filter and text search never modify the common population c
  const current=eligibleReviewRows(view.reviews,'S16',dto.asOf,periods,'current',new Set());
  const original=reviewSummary(current),originalCategories=categoryCounts(current);
  const filtered=filterReviewTable(current,new Set(['__unclassified__']),'');
- assert.equal(filtered.length,1);assert.deepEqual(filtered[0].categories,[]);
+ assert.equal(filtered.length,2);assert.deepEqual(filtered[0].categories,[]);
  const query=filterReviewTable(current,new Set(),'펌프');
  assert(query.every(r=>r.text.toLocaleLowerCase().includes('펌프')));
  assert.deepEqual(reviewSummary(current),original);
  assert.deepEqual(categoryCounts(current),originalCategories);
- assert.equal(reviewSummary(current).average,current.reduce((n,r)=>n+r.rating,0)/13);
+ assert.equal(reviewSummary(current).average,current.reduce((n,r)=>n+r.rating,0)/33);
 });
 test('unavailable, tampered and partial payloads do not masquerade as complete data',()=>{
  const unavailable=reviewQuery({caseId:'S01'});
  assert.equal(readReviewProjection(unavailable,'S01',unavailable.asOf).status,'not_provided');
  const {dto}=load('S16');
+ const sample=dto.reviews.findIndex(r=>r.experiences.length>0);
  assert.equal(readReviewProjection(dto,'S17',dto.asOf).status,'error');
  assert.equal(readReviewProjection(dto,'S16','2026-09-07T00:00:00+09:00').status,'error');
- const malformed=structuredClone(dto);malformed.reviews[0].experiences[0].evidenceQuote='근거가 아닌 텍스트';
+ const malformed=structuredClone(dto);malformed.reviews[sample].experiences[0].evidenceQuote='근거가 아닌 텍스트';
  const partially=readReviewProjection(malformed,'S16',dto.asOf);
  assert.equal(partially.status,'partial');
  assert.equal(partially.invalidCount,1);
- assert.equal(partially.reviews.length,24);
+ assert.equal(partially.reviews.length,59);
  const bad=structuredClone(dto);bad.reviews=bad.reviews.map(r=>({...r,classification:'unclassified'}));
  const invalid=readReviewProjection(bad,'S16',dto.asOf);
  assert.equal(invalid.status,'partial');
- assert.equal(invalid.reviews.length,1,'only the genuinely unclassified row survives');
+ assert.equal(invalid.reviews.length,3,'only the genuinely unclassified row survives');
 });
 test('review navigation is a sidebar page and ROAS data filters are not passed into it',()=>{
  const file=fs.readFileSync(new URL('../../frontend/roas/training-dashboard.tsx',import.meta.url),'utf8');
  const nav=file.indexOf('성과 현황</button><div className="training-sidebar-detail">');
  const metricGroup=file.indexOf('지표 상세<ChevronDown',nav);
- const review=file.indexOf('</ul></div><button className={reviewPage?',metricGroup);
- assert(nav>0&&metricGroup>nav&&review>metricGroup,'Metric Details must stay under Performance Overview, then Review Analysis is a separate sibling');
+ const records=file.indexOf('<History size={17}/>운영 기록</button>',metricGroup);
+ const review=file.indexOf('<Search size={17}/>리뷰 분석</button>',records);
+ assert(nav>0&&metricGroup>nav&&records>metricGroup&&review>records,'Metric Details, Operational Records and Review Analysis must remain sibling entries');
  assert(file.includes('<div hidden={!reviewPage}><ReviewAnalysisSection'),'Review UI stays mounted to preserve same-case filters across sidebar and back navigation');
  assert(file.includes('view={reviewView}'));
  assert(!file.includes('<ReviewAnalysisSection key={caseId} caseId={caseId} asOf={data.asOf}'));
@@ -106,18 +108,19 @@ test('review controls render existing dashboard segments and toggleable category
 
 test('damaged projection cannot silently change classifications, dates or review identity',()=>{
  const {dto}=load('S16');
+ const sample=dto.reviews.findIndex(r=>r.experiences.length>0);
  const run=edit=>{const payload=structuredClone(dto);edit(payload);return readReviewProjection(payload,'S16',dto.asOf);};
  const cases=[
-  d=>{d.reviews[0].id='REV-S17-999';},
-  d=>{d.reviews[0].id='REV-S16-999';},
-  d=>{d.reviews[0].experiences[0].categoryId='delivery';d.reviews[0].categories=[...new Set(d.reviews[0].experiences.map(a=>a.categoryId))];},
-  d=>{d.reviews[0].experiences.push({...d.reviews[0].experiences[0]});},
-  d=>{d.reviews[0].collectedAt='2026-09-30T00:00:00+09:00';},
-  d=>{d.reviews[0].writtenAt='2026-09-01T00:00:00+09:00';d.reviews[0].collectedAt='2026-09-02T00:00:00+09:00';},
+  d=>{d.reviews[sample].id='REV-S17-999';},
+  d=>{d.reviews[sample].id='REV-S16-999';},
+  d=>{d.reviews[sample].experiences[0].categoryId=d.reviews[sample].experiences[0].categoryId==='delivery'?'scent':'delivery';d.reviews[sample].categories=[...new Set(d.reviews[sample].experiences.map(a=>a.categoryId))];},
+  d=>{d.reviews[sample].experiences.push({...d.reviews[sample].experiences[0]});},
+  d=>{d.reviews[sample].collectedAt='2026-09-30T00:00:00+09:00';},
+  d=>{d.reviews[sample].writtenAt='2026-09-01T00:00:00+09:00';d.reviews[sample].collectedAt='2026-09-02T00:00:00+09:00';},
  ];
- for(const edit of cases){const view=run(edit);assert.equal(view.status,'partial');assert.equal(view.reviews.length,24);}
+ for(const edit of cases){const view=run(edit);assert.equal(view.status,'partial');assert.equal(view.reviews.length,59);}
  assert.equal(run(d=>{d.reviews=[];}).status,'error','zero verified rows is a whole-query error');
- assert.equal(run(d=>{d.reviews.push({...d.reviews[0],id:'REV-S16-026'});}).status,'error','payloads larger than 25 cannot inflate the approved population');
+ assert.equal(run(d=>{d.reviews.push({...d.reviews[sample],id:'REV-S16-061'});}).status,'error','payloads larger than 60 cannot inflate the approved population');
  assert.equal(run(d=>{d.status='not_provided';}).status,'error','provided reviews cannot be reported as missing');
  const noClass=run(d=>{d.classificationStatus='error';});
  assert.equal(noClass.classificationStatus,'error');

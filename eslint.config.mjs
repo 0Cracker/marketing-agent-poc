@@ -1,34 +1,13 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
-
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  {rules:{"@next/next/no-html-link-for-pages":"off"}},
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "archive/**",
-    "legacy/**",
-    ".tools/**",
-    // Local work products are Git-ignored and must not block application lint.
-    "work/**",
-    "next-env.d.ts",
-  ]),
-  {
-    files: ["frontend/components/ui/**/*.{ts,tsx}", "frontend/hooks/use-mobile.ts"],
-    rules: {
-      // These files are vendored verbatim from shadcn@4.17.0. Keep the
-      // registry source intact while applying the stricter rules to Site code.
-      "@typescript-eslint/no-unused-vars": "off",
-      "react-hooks/purity": "off",
-      "react-hooks/set-state-in-effect": "off",
-    },
-  },
+import {defineConfig,globalIgnores} from 'eslint/config';
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import hooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+export default defineConfig([
+ globalIgnores(['dist/**','node_modules/**','.next/**','.vinext/**','work/**','archive/**','.tools/**','outputs/**','.sites-runtime/**','.wrangler/**','coverage/**','.agent-state/**']),
+ {files:['**/*.{js,cjs,mjs}'],...js.configs.recommended,languageOptions:{globals:{...globals.node,...globals.browser}},rules:{'no-unused-vars':['warn',{argsIgnorePattern:'^_',varsIgnorePattern:'^_'}]}},
+ ...tseslint.configs.recommended,
+ {files:['**/*.{js,cjs,mjs}'],rules:{'@typescript-eslint/no-unused-vars':['warn',{argsIgnorePattern:'^_',varsIgnorePattern:'^_'}]}},
+ {files:['**/*.{ts,tsx,mts}'],languageOptions:{globals:{...globals.node,...globals.browser}},rules:{'@typescript-eslint/no-explicit-any':'off','@typescript-eslint/no-unused-vars':['warn',{argsIgnorePattern:'^_',varsIgnorePattern:'^_'}]}},
+ {files:['frontend/**/*.{ts,tsx}'],plugins:{'react-hooks':hooks},rules:{'react-hooks/rules-of-hooks':'error','react-hooks/exhaustive-deps':'warn'}}
 ]);
-
-export default eslintConfig;

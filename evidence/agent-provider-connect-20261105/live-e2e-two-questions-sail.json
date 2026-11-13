@@ -1,0 +1,504 @@
+{
+  "date": "2026-11-05",
+  "mode": "actual_http_sqlite_tools_and_live_model_transports",
+  "note": "Diagnostic-only explicit live authorization bypasses the normal unverified-billing guard. This is NOT a vendor billing proof.",
+  "providerReadiness": [
+    {
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gateway",
+      "model": "zai/glm-5.3-flash",
+      "configured": false,
+      "eligible": false,
+      "reason": "missing_key"
+    },
+    {
+      "provider": "sail",
+      "model": "zai-org/GLM-5.3-Flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "jev",
+      "model": "jev-latest",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    }
+  ],
+  "results": [
+    {
+      "question": "ROAS가 떨어진 이유에 대해서 각 지표별로 연관시켜서 심층분석해줘. 그리고 이를 보완하려면 어떤 캠페인에서 어떤 후속 액션을취하는게 좋아?",
+      "index": 1,
+      "runId": "2fce09e2-5063-4206-b838-103e8729939f",
+      "route": "deep",
+      "status": "withheld",
+      "stopReason": "model_protocol",
+      "causeStatus": "not_assessed",
+      "elapsedMs": 286415,
+      "usage": {
+        "modelAttempts": 4,
+        "inputTokens": 10165,
+        "outputTokens": 5170,
+        "toolCalls": 6
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 29,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 239
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 18,
+          "count": 6
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 13,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 14,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "elapsedMs": 76802
+        },
+        {
+          "seq": 15,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 16,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 89,
+          "count": 6
+        },
+        {
+          "seq": 17,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 89,
+          "count": 6
+        },
+        {
+          "seq": 18,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 89,
+          "count": 6
+        },
+        {
+          "seq": 19,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 89,
+          "count": 2
+        },
+        {
+          "seq": 20,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 21,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 22,
+          "kind": "model_error",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "errorCode": "model_protocol",
+          "elapsedMs": 61591
+        },
+        {
+          "seq": 23,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 24,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 25,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "errorCode": "model_protocol",
+          "elapsedMs": 146525
+        },
+        {
+          "seq": 26,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "withheld",
+          "errorCode": "model_protocol"
+        }
+      ],
+      "result": null
+    },
+    {
+      "question": "각 캠페인별 ROAS 추이 어떻게 되는지 정리해줘.",
+      "index": 2,
+      "runId": "db62b9bb-436c-44ff-8782-a4eba61c5233",
+      "route": "deep",
+      "status": "withheld",
+      "stopReason": "model_protocol",
+      "causeStatus": "not_assessed",
+      "elapsedMs": 299176,
+      "usage": {
+        "modelAttempts": 3,
+        "inputTokens": 2448,
+        "outputTokens": 79,
+        "toolCalls": 3
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 38,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 251
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "trend",
+          "status": "ready",
+          "elapsedMs": 48,
+          "count": 0
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 13,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 25,
+          "count": 6
+        },
+        {
+          "seq": 14,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 15,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 16,
+          "kind": "model_error",
+          "stage": "reasoning",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "errorCode": "model_protocol",
+          "elapsedMs": 161598
+        },
+        {
+          "seq": 17,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 18,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail"
+        },
+        {
+          "seq": 19,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "zai-org/GLM-5.3-Flash",
+          "provider": "sail",
+          "errorCode": "model_protocol",
+          "elapsedMs": 136507
+        },
+        {
+          "seq": 20,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "withheld",
+          "errorCode": "model_protocol"
+        }
+      ],
+      "result": null
+    }
+  ],
+  "providerTrace": [
+    {
+      "at": "2026-11-05T08:27:29.332Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:27:29.570Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 238
+    },
+    {
+      "at": "2026-11-05T08:27:29.675Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:28:46.477Z",
+      "stage": "completed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 76802
+    },
+    {
+      "at": "2026-11-05T08:28:47.214Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:29:48.803Z",
+      "stage": "failed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 61589,
+      "errorCode": "model_protocol"
+    },
+    {
+      "at": "2026-11-05T08:29:48.862Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:32:15.385Z",
+      "stage": "failed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 146523,
+      "errorCode": "model_protocol"
+    },
+    {
+      "at": "2026-11-05T08:32:15.855Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:32:16.105Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 250
+    },
+    {
+      "at": "2026-11-05T08:32:16.621Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:34:58.219Z",
+      "stage": "failed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 161598,
+      "errorCode": "model_protocol"
+    },
+    {
+      "at": "2026-11-05T08:34:58.265Z",
+      "stage": "attempt",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "transport": "openai_compatible",
+      "billingBucket": "sail"
+    },
+    {
+      "at": "2026-11-05T08:37:14.771Z",
+      "stage": "failed",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "sail",
+      "elapsedMs": 136506,
+      "errorCode": "model_protocol"
+    }
+  ]
+}

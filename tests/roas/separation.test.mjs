@@ -11,14 +11,16 @@ import {roasDataPlugin} from '../../scripts/roas/plugin.mjs';
 const root=path.resolve(import.meta.dirname,'../..');
 const hash=v=>createHash('sha256').update(typeof v==='string'?v:JSON.stringify(v)).digest('hex');
 const baseline=JSON.parse(fs.readFileSync(path.join(root,'evidence/roas-separation-20261104/baseline.json')));
-test('all 36 training and review projections preserve baseline results with independently owned identity',()=>{
+test('all 36 training and unaffected review projections preserve baseline results with independently owned identity',()=>{
  const manifest=roasManifest();
  for(let i=1;i<=18;i++)for(const snapshot of ['initial','mature']){
   const id=`S${String(i).padStart(2,'0')}`,key=`${id}-${snapshot}`;
   const {dataHash,...pack}=trainingScreenData(undefined,id,snapshot);assert.equal(dataHash,manifest.data_sha256);assert.equal(hash(pack),baseline.training[key],key);
-  const {dataHash:reviewHash,...review}=reviewAsset(`review-${key}.json`);assert.equal(reviewHash,manifest.data_sha256);assert.equal(hash(review),baseline.review[key],key);
+  const {dataHash:reviewHash,...review}=reviewAsset(`review-${key}.json`);assert.equal(reviewHash,manifest.data_sha256);if(!['S16','S17'].includes(id))assert.equal(hash(review),baseline.review[key],key);
+  else {assert.equal(review.status,'ready');assert.equal(review.reviews.length,id==='S16'?60:25);}
  }
- for(const [file,expected]of Object.entries(baseline.files))assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root,'data/roas',file))).digest('hex'),expected,file);
+ // The original 50 rows and frozen taxonomy are checked by review-expansion.test.mjs.
+ for(const [file,expected]of Object.entries(baseline.files).filter(([name])=>!['roas-reviews.json','roas-review-classification.json','manifest.json'].includes(name)))assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root,'data/roas',file))).digest('hex'),expected,file);
 });
 test('reproduction uses the approved 28 copied sources and produces identical installed bytes',()=>{
  const catalog=sourceCatalog();assert.equal(catalog.records.length,28);

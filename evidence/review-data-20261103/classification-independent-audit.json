@@ -1,0 +1,60 @@
+{
+  "audit": "independent Python standard library implementation (automatic validation, not independent human reviewer)",
+  "sourceReviewSha256": "b74c7e8e357f85159402d860ba5f606079899ac481a545bdf4c4260d4a5e1ebf",
+  "reviews": 48,
+  "classifications": 48,
+  "assignments": 63,
+  "categories": {
+    "scent": "향",
+    "cleansing_feel": "세정 및 사용감",
+    "container_packaging": "용기와 포장",
+    "volume_usage": "용량 및 사용량",
+    "delivery": "배송"
+  },
+  "categoriesDistinctCount": {
+    "container_packaging": 19,
+    "cleansing_feel": 16,
+    "scent": 10,
+    "volume_usage": 6,
+    "delivery": 4
+  },
+  "experienceDistinctCount": {
+    "pump_operation": 8,
+    "foam": 5,
+    "scent_longevity": 5,
+    "product_packaging": 4,
+    "residue": 6,
+    "after_feel": 3,
+    "scent_intensity": 2,
+    "leakage_residue": 4,
+    "consumption_rate": 3,
+    "scent_preference": 4,
+    "volume_label": 3,
+    "delivery_condition": 2,
+    "container_usability": 4,
+    "tangling": 2,
+    "texture_application": 4,
+    "delivery_timing": 2,
+    "usage_guidance": 1,
+    "remaining_check": 1
+  },
+  "sentimentCount": {
+    "positive": 24,
+    "neutral": 7,
+    "negative": 23,
+    "mixed": 9
+  },
+  "cells": {
+    "S16|baseline|own_store": 4,
+    "S16|baseline|virtual_external_1": 8,
+    "S16|current|own_store": 8,
+    "S16|current|virtual_external_1": 4,
+    "S17|baseline|own_store": 8,
+    "S17|baseline|virtual_external_1": 4,
+    "S17|current|own_store": 4,
+    "S17|current|virtual_external_1": 8
+  },
+  "normalizedPairCount": 1128,
+  "normalizedExactDuplicates": 0,
+  "failures": []
+}

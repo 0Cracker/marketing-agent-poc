@@ -51,29 +51,29 @@ test('malformed and unapproved data cannot masquerade as not-provided or zero re
  assert.equal(readApprovedReviewRows({contract:'wrong',coverage:[],reviews:[]},'S16').status,'error');
  assert.equal(readApprovedReviewRows({contract:'roas-reviews/1',subjectCategory:'shampoo',coverage:[],reviews:[]},'S16').status,'error');
 });
-// Run the approved source contract unconditionally with the 50-review integration.
+// Run the approved source contract unconditionally with the 85-review integration.
 const rawFile=path.resolve(import.meta.dirname,'../../data/roas/roas-reviews.json');
-test('approved 50-review source: periods, source OR and deduplicated counts', {},()=>{
+test('approved 85-review source: periods, source OR and deduplicated counts', {},()=>{
  const bundle=JSON.parse(fs.readFileSync(rawFile,'utf8'));
  const both=readApprovedReviewRows(bundle,'S16');
  assert.equal(both.status,'ready');
  assert.equal(both.classificationStatus,'pending');
- assert.equal(both.reviews.length,25);
+ assert.equal(both.reviews.length,60);
  for(const caseId of ['S16','S17']){
   const view=readApprovedReviewRows(bundle,caseId);
   const allCurrent=eligibleReviewRows(view.reviews,caseId,asOf,periods,'current',new Set());
   const allBaseline=eligibleReviewRows(view.reviews,caseId,asOf,periods,'baseline',new Set());
   const whole=eligibleReviewRows(view.reviews,caseId,asOf,periods,'both',new Set());
-  assert.equal(allCurrent.length,13);
-  assert.equal(allBaseline.length,12);
-  assert.equal(whole.length,25);
-  assert.equal(reviewSummary(allCurrent).count,13);
-  assert.equal(new Set(whole.map(r=>r.id)).size,25);
+  assert.equal(allCurrent.length,caseId==='S16'?33:13);
+  assert.equal(allBaseline.length,caseId==='S16'?27:12);
+  assert.equal(whole.length,caseId==='S16'?60:25);
+  assert.equal(reviewSummary(allCurrent).count,caseId==='S16'?33:13);
+  assert.equal(new Set(whole.map(r=>r.id)).size,caseId==='S16'?60:25);
   const ownBaseline=eligibleReviewRows(view.reviews,caseId,asOf,periods,'baseline',new Set(['own_store']));
   const ownCurrent=eligibleReviewRows(view.reviews,caseId,asOf,periods,'current',new Set(['own_store']));
-  assert.deepEqual([ownBaseline.length,ownCurrent.length],caseId==='S16'?[4,8]:[8,5]);
+  assert.deepEqual([ownBaseline.length,ownCurrent.length],caseId==='S16'?[9,20]:[8,5]);
   const external=eligibleReviewRows(view.reviews,caseId,asOf,periods,'both',new Set(['virtual_external_1']));
-  assert.equal(external.length,caseId==='S16'?13:12);
+  assert.equal(external.length,caseId==='S16'?31:12);
   assert.equal(collectionRange(view.reviews,caseId,asOf)?.first,'2026-08-04');
   const c=reviewSummary(whole);
   assert(c.average!==null&&c.average>=1&&c.average<=5);

@@ -1,11 +1,16 @@
 # 기술·기획 의사결정
 
+2026-11-10 결정 003 후속: [ROAS 온톨로지 설계 정본](../design/roas-ontology-architecture.md)에 현재 ROAS/리뷰 우선, 관계 탐색 개선, 서버 메모리 사용, 양쪽 후속 조회 1회와 채팅 방식 선택이라는 사용자 결정을 기록했다. 세부 관계/제약/Tool/API/DB 변경은 개별 승인 전 제안이며 구현은 미착수다. [작업 지시서](../handoffs/roas-ontology-implementation.md)를 함께 따른다.
+
 재검토할 가치가 있는 선택만 `decision-NNN.md`에 기록한다. 작은 선택은 Iteration의 Develop에 남긴다. 기존 설계 (이전 파일 `poc-v2-initial-design.md`, 현재 미보존)·응답 계약 (이전 파일 `agent-contract.md`, 현재 미보존)·시나리오 (이전 파일 `scenario-playbook.md`, 현재 미보존)를 먼저 확인하고 같은 내용의 문서를 복제하지 않는다.
 
 | 번호 | 주제 | 상태 | 관련 Iteration | 문서 |
 | --- | --- | --- | --- | --- |
 | 001 | 조사 근거 연결·온톨로지·데이터 사전 승인 | 원칙 채택 / 상세 제안 | 버전 미확정, 조사 작업 | [결정](decision-001.md) |
 | 002 | 두 역할 B 흐름·Node 오프라인 TDD | B 사용자 채택 / 실행 기반 구현 판단 | v0.4.0 (당시 v0.2.0) | [결정](decision-002.md) |
+| 003 | 공통 조사 flow와 온톨로지 추가 비교 | 의도의 개별 결정과 답변 경로 자동 구분 사용자 확정, SDD 세부 인터뷰 중 | 버전 미확정, 에이전트 개발 기획 | [Intent](../design/agent-development-intent.md), [SDD](../design/agent-development-sdd.md) |
+
+2026-11-06 에이전트 후속 결정은 [Jev 두 단계 요청 계약](../design/agent-development-sdd.md#36-jev-두-단계-요청-계약-2026-11-06)에 기록한다. 도구 지표 세 개와 두 단계 Jev 요청을 연결했고, 이후 사용자 지시로 [답변 자동 검증을 제거](../design/agent-development-sdd.md#3612-답변-자동-검증-제거-2026-11-06-사용자-확정)했다. 서버는 도구 조회와 계산, 모델 답변 전달을 담당한다.
 
 2026-10-16 후속 적용: [D005와 공통 사전의 역할·사용자 선택](../research/marketing-ontology/common-contract/structure-decision-20261016.md). 원천 보존·공통 의미 구분 원칙을 유지하며 전역 사전 적합 게이트와 가상 반올림을 구현했다. [v0.2.0 기록](../iterations/v0.2.0.md#9-d005-역할-확정가상-반올림전역-계약-게이트--2026-10-16)에 근거와 미완료 상태를 연결했다.
 

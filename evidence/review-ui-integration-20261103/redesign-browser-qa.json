@@ -1,0 +1,136 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "label": "menu hierarchy",
+      "value": [
+        {
+          "tag": "BUTTON",
+          "label": "성과 현황"
+        },
+        {
+          "tag": "DIV",
+          "label": "지표 상세CTRCPCCVRCPAA"
+        },
+        {
+          "tag": "BUTTON",
+          "label": "리뷰 분석"
+        }
+      ]
+    },
+    {
+      "label": "view scope and top share",
+      "value": {
+        "scope": "S16 전체 25건, 승인 데이터 총 50건",
+        "top": "4건 / 13건 (30.8%)"
+      }
+    },
+    {
+      "label": "no native checkboxes or selects",
+      "value": {
+        "checkboxes": 0,
+        "selects": 0,
+        "pills": 9
+      }
+    },
+    {
+      "label": "real chart bar widths",
+      "value": [
+        {
+          "name": "세정 및 사용감4건, 30.8%",
+          "display": "grid",
+          "track": 760,
+          "fill": 233.84375,
+          "ratio": 0.3076891447368421
+        },
+        {
+          "name": "용기와 포장4건, 30.8%",
+          "display": "grid",
+          "track": 760,
+          "fill": 233.84375,
+          "ratio": 0.3076891447368421
+        },
+        {
+          "name": "향3건, 23.1%",
+          "display": "grid",
+          "track": 760,
+          "fill": 175.375,
+          "ratio": 0.23075657894736842
+        },
+        {
+          "name": "용량 및 사용량2건, 15.4%",
+          "display": "grid",
+          "track": 760,
+          "fill": 116.921875,
+          "ratio": 0.15384457236842106
+        },
+        {
+          "name": "배송1건, 7.7%",
+          "display": "grid",
+          "track": 760,
+          "fill": 58.453125,
+          "ratio": 0.07691200657894737
+        }
+      ]
+    },
+    {
+      "label": "18 detail categories",
+      "value": 23
+    },
+    {
+      "label": "chart bar selects matching category pill",
+      "value": {
+        "pressed": "true",
+        "pill": "세정 및 사용감",
+        "summary": "13건"
+      }
+    },
+    {
+      "label": "single source current",
+      "value": {
+        "summary": "5건",
+        "pill": "true"
+      }
+    },
+    {
+      "label": "source OR",
+      "value": "13건"
+    },
+    {
+      "label": "both period 25",
+      "value": {
+        "summary": "25건",
+        "period": "두 기간 전체"
+      }
+    },
+    {
+      "label": "unclassified row and denominator",
+      "value": {
+        "count": "25건",
+        "table": "리뷰 원문 1건",
+        "chip": "미분류"
+      }
+    },
+    {
+      "label": "S17 resets",
+      "value": {
+        "period": "분석기간 14일",
+        "table": "리뷰 원문 13건"
+      }
+    },
+    {
+      "label": "unavailable not zero",
+      "value": {
+        "empty": true,
+        "cards": 0
+      }
+    },
+    {
+      "label": "ROAS unchanged navigation",
+      "value": {
+        "overview": true,
+        "reviewHidden": true
+      }
+    }
+  ]
+}

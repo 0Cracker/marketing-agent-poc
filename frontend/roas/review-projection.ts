@@ -11,7 +11,8 @@ export function readReviewProjection(input:unknown,caseId:string,asOf:string):Re
  if(dto.status==='error')return error(typeof dto.message==='string'?dto.message:'리뷰 데이터 검증 오류');
  if(dto.status==='not_provided')return dto.reviews.length?error('미제공 사례에서 리뷰가 반환되었습니다.'):{caseId,status:'not_provided',reviews:[],productName:'쓱쓱샴푸'};
  if(dto.status!=='ready')return error('알 수 없는 리뷰 제공 상태입니다.');
- if(dto.reviews.length>25)return error('사례별 승인된 25건을 초과하는 원문이 반환되었습니다.');
+ const expectedCount=caseId==='S16'?60:25;
+ if(dto.reviews.length>expectedCount)return error('사례별 승인된 원문 수를 초과하는 원문이 반환되었습니다.');
  const validSentiments=reviewSentimentLabels as Record<string,string>;
  const ids=new Set<string>(),valid:ReviewRecord[]=[];
  const firstDay=Date.parse('2026-08-03T00:00:00+09:00'),lastDay=Date.parse('2026-08-31T00:00:00+09:00'),cutoff=Date.parse(asOf);
@@ -36,7 +37,7 @@ export function readReviewProjection(input:unknown,caseId:string,asOf:string):Re
    assignments.push(a as ReviewAssignment);
   }
   const uniqueCategories=[...new Set(assignments.map(a=>a.categoryId))];
-  const validRow=typeof row.id==='string'&&/^REV-S(16|17)-0(0[1-9]|1[0-9]|2[0-5])$/.test(row.id)&&
+  const validRow=typeof row.id==='string'&&/^REV-S(16|17)-\d{3}$/.test(row.id)&&Number(row.id.slice(-3))>=1&&Number(row.id.slice(-3))<=expectedCount&&
    !ids.has(row.id)&&row.id.startsWith('REV-'+caseId+'-')&&row.caseId===caseId&&row.productId==='EDU-P1'&&
    typeof row.sourceId==='string'&&['own_store','virtual_external_1'].includes(row.sourceId)&&
    typeof row.sourceName==='string'&&!!row.sourceName.trim()&&
@@ -60,7 +61,7 @@ export function readReviewProjection(input:unknown,caseId:string,asOf:string):Re
  }
  if(!['S16','S17'].includes(caseId))return error('미제공 사례에 리뷰가 전달되었습니다.');
  if(!valid.length)return error('검증 가능한 리뷰 원문이 없습니다.');
- if(valid.length+invalidCount!==25)invalidCount+=Math.abs(25-valid.length-invalidCount);
+ if(valid.length+invalidCount!==expectedCount)invalidCount+=Math.abs(expectedCount-valid.length-invalidCount);
  const classificationReady=dto.classificationStatus==='ready';
  return {caseId,productName:'쓱쓱샴푸',reviews:classificationReady?valid:valid.map(row=>({...row,categories:[],assignments:[],classification:'pending'})),
   status:invalidCount?'partial':'ready',classificationStatus:classificationReady?'ready':'error',

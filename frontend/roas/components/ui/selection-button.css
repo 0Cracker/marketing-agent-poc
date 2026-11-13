@@ -1,0 +1,5 @@
+:root{--selection-control-radius:8px}
+.wb .selection-button[data-slot="button"]{border-radius:var(--selection-control-radius);font-family:inherit}
+.wb .selection-button[data-slot="button"]:not(:disabled){cursor:pointer}
+.wb .selection-button[data-slot="button"]:focus-visible{outline:2px solid #7357ba;outline-offset:2px}
+.wb .selection-button[data-slot="button"]:disabled{opacity:.55;cursor:default}

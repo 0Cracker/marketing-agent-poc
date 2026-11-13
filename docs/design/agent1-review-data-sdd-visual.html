@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Agent1 리뷰 데이터 SDD, 설계 시각화</title>
+  <style>
+    :root{--ink:#1c2c3e;--muted:#5f7184;--line:#dce4eb;--paper:#f5f8fa;--white:#fff;--navy:#233b50;--teal:#167d79;--teal2:#d8f0eb;--amber:#a56a17;--amber2:#fff3d9;--red:#b74f5b;--red2:#fff0f1;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--sans:"Pretendard Variable","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}a{color:var(--teal);text-underline-offset:3px}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #e3a348;outline-offset:3px}button{cursor:pointer}::selection{background:#c8e8e4}
+    .shell{max-width:1180px;margin:auto;padding:0 32px}.topbar{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.top-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 32px;max-width:1180px;margin:auto}.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.025em;white-space:nowrap}.mark{display:grid;place-items:center;width:34px;height:34px;background:var(--navy);color:white;font-size:14px;border-radius:7px}.links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:18px}.links a{font-size:12px;color:var(--muted);text-decoration:none}.links a:hover{color:var(--teal)}main{padding:34px 0 70px}.hero{display:grid;grid-template-columns:1.35fr .65fr;background:var(--navy);color:#fff;border-radius:14px;overflow:hidden}.hero-main{padding:43px 48px 46px}.eyebrow{display:block;color:#a7d1d0;font:700 12px/1.5 var(--sans);letter-spacing:.04em}.hero h1{font-size:clamp(29px,3.7vw,44px);line-height:1.2;letter-spacing:-.06em;margin:17px 0 16px;font-weight:820}.hero p{max-width:570px;color:#d3dde5;margin:0;font-size:14px}.hero-side{background:#1a3042;padding:46px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}.side-state{border-top:2px solid #79c4b7;padding-top:12px}.side-state strong{display:block;font-size:20px;letter-spacing:-.02em}.side-state p{font-size:12px;margin-top:8px}.side-mark{font-size:40px;font-weight:800;line-height:1;color:#87c9bf;letter-spacing:-.04em}.tiny{font-size:12px;color:var(--muted)}.hero .tiny{color:#b7c9d6}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);border:1px solid var(--line);border-radius:12px;margin:20px 0 56px;overflow:hidden}.metric{padding:22px 24px;border-right:1px solid var(--line)}.metric:last-child{border-right:0}.metric .number{display:block;font:770 34px/1.15 var(--sans);letter-spacing:-.045em}.metric .label{font-size:12px;color:var(--muted);display:block;margin-top:9px}.section{scroll-margin-top:96px;margin:0 0 57px}.heading{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;border-bottom:1px solid #cbd7df;padding:0 0 16px;margin-bottom:24px}.heading h2{margin:0;font-size:24px;letter-spacing:-.04em;line-height:1.4}.heading p{margin:0;max-width:530px;color:var(--muted);font-size:13px;text-align:right}.kicker{display:block;font-weight:700;font-size:12px;color:var(--teal);margin-bottom:7px}.dual{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}.panel{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px}.panel h3,.simple-heading{margin:0 0 10px;font-size:17px;letter-spacing:-.03em}.panel p{margin:6px 0 0;color:var(--muted);font-size:13px}.scope-list{padding:0;margin:22px 0 0;list-style:none}.scope-list li{padding:12px 0;border-top:1px solid var(--line);font-size:13px;display:flex;justify-content:space-between;gap:16px}.scope-list span:last-child{font-weight:700}.yes{color:var(--teal)}.no{color:var(--muted)}.legend-note{font-size:12px;color:var(--muted);margin-top:15px}.callout{border-left:4px solid var(--teal);background:#eaf4f2;padding:16px 20px;margin-top:18px;border-radius:0 8px 8px 0;font-size:13px}.callout strong{color:#146d6a}
+    .switcher{display:inline-flex;gap:4px;background:#e6ecef;border-radius:9px;padding:4px}.switcher button{border:0;background:transparent;color:#455769;font-weight:700;padding:7px 20px;border-radius:6px}.switcher button[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 4px #243b5020}.charthead{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.legend{display:flex;gap:17px;font-size:12px;color:var(--muted);margin:12px 0 30px}.legend span{display:flex;align-items:center;gap:7px}.dot{display:inline-block;width:10px;height:10px;border-radius:2px}.dot.own{background:var(--teal)}.dot.external{background:#7b96af}.chart-row{display:grid;grid-template-columns:113px minmax(0,1fr) 52px;align-items:center;gap:18px;margin-bottom:26px}.chart-row .rowname{font-weight:700;font-size:13px}.chart-row .rowname small{display:block;font-weight:400;color:var(--muted);font-size:11px}.stacked{display:flex;width:100%;border-radius:7px;overflow:hidden;background:#e8edf1;height:50px}.seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;min-width:0;white-space:nowrap}.seg.own{background:var(--teal)}.seg.external{background:#7b96af}.sum{text-align:right;font-weight:800;font-size:22px}.chart-end{border-top:1px solid var(--line);padding-top:17px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.inline-data{font-family:var(--mono);font-size:12px;color:#516476}.table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}th{color:#5e7183;background:#f1f5f7;font-size:12px}th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}tr:last-child td{border-bottom:0}.tonal{background:#e9f2f1}.timeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:27px 0 19px}.time-step{position:relative;border:1px solid var(--line);padding:20px;background:#fff;border-radius:10px}.time-step:after{content:"";position:absolute;left:calc(100% + 1px);width:12px;top:50%;height:2px;background:#bac9d3}.time-step:last-child:after{display:none}.time-step .date{font:800 22px/1.35 var(--sans);color:var(--ink)}.time-step p{font-size:13px;color:var(--muted);margin:8px 0 0}.time-step:first-child{border-top:4px solid var(--teal)}.time-step:nth-child(2){border-top:4px solid #829ab0}.time-step:last-child{border-top:4px solid #c49139}.formula{display:inline-block;background:#edf3f6;padding:5px 9px;border-radius:5px;color:#2b5064;font:12px/1.5 var(--mono);margin:5px 0}.requirements{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.req{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}.req .top{display:flex;align-items:center;gap:13px;padding:19px 22px;border-bottom:1px solid var(--line)}.req .letter{background:#e1efed;color:var(--teal);width:36px;height:36px;border-radius:9px;display:grid;place-items:center;font-size:19px;font-weight:800}.req h3{font-size:15px;margin:0}.req .content{padding:17px 22px 23px}.req p{font-size:13px;color:var(--muted);margin:0 0 13px}.req strong{font-size:13px}.req .foot{border-top:1px solid var(--line);padding:12px 22px;color:#537a78;background:#f7fbfa;font-size:12px}.taxonomy{display:grid;grid-template-columns:1fr 1fr;gap:15px}.taxo-item{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:15px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:18px 19px}.taxo-item:last-child{grid-column:1/-1}.taxo-item .name{font-weight:750}.taxo-item .sub{font-size:12px;color:var(--muted)}.rail{display:flex;flex-wrap:wrap;gap:7px}.pill{font-size:12px;background:#eef4f6;border:1px solid #d6e2e8;color:#344f62;padding:4px 9px;border-radius:6px}.unclassified{background:#fff8e9;border:1px solid #efd6a9;color:#6d511d;padding:18px 20px;border-radius:9px;margin-top:14px;font-size:13px}.math-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.math-item{border-left:3px solid #91b7bd;padding:7px 14px;background:#f8fafb}.math-item strong{font-size:13px;display:block}.math-item code{font:12px/1.5 var(--mono);color:#4d6674}.math-item p{font-size:12px;color:var(--muted);margin:4px 0 0}.status-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}.status-buttons{display:grid;gap:9px}.status-buttons button{text-align:left;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink);padding:14px 16px;font-weight:700}.status-buttons button[aria-pressed="true"]{border-color:var(--teal);background:#eaf5f3;box-shadow:inset 3px 0 0 var(--teal)}.status-detail{border:1px solid var(--line);background:white;padding:28px;border-radius:10px;min-height:232px}.status-detail .state-label{font:12px/1.4 var(--mono);color:var(--muted)}.status-detail h3{font-size:22px;margin:12px 0 13px}.status-detail p{font-size:13px;color:var(--muted);margin:0}.status-result{border-top:1px solid var(--line);margin-top:20px;padding-top:14px;display:flex;gap:15px;flex-wrap:wrap;font-size:12px}.status-result span{background:#edf3f6;padding:4px 9px;border-radius:4px}.pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:25px 0 15px}.stage{background:white;border:1px solid var(--line);border-top:4px solid #9eb4c1;border-radius:8px;padding:15px 13px;min-height:125px}.stage:first-child{border-top-color:var(--teal)}.stage h3{font-size:13px;margin:7px 0 7px}.stage p{font-size:11px;margin:0;color:var(--muted)}.stage .stepnum{font:12px var(--mono);color:var(--muted)}.decision-list{display:grid;grid-template-columns:1fr 1fr;gap:15px}.decision{padding:19px 22px;background:white;border:1px solid var(--line);border-radius:9px}.decision h3{margin:0;font-size:15px}.decision p{margin:7px 0 12px;font-size:13px;color:var(--muted)}.decision small{font-size:11px;color:var(--amber);background:var(--amber2);padding:4px 8px;border-radius:4px}.footer{padding:28px 0 42px;border-top:1px solid #d1dee5;color:var(--muted);font-size:12px}.footer .foot-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}.footer a{margin-right:16px}.hide-print{display:initial}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.hero-side{flex-direction:row;align-items:center;padding:23px 34px}.dual,.status-layout{grid-template-columns:1fr}.requirements{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(3,1fr)}.taxonomy{grid-template-columns:1fr}.taxo-item:last-child{grid-column:auto}.links{display:none}.heading{display:block}.heading p{text-align:left;margin-top:7px}.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+    @media (max-width:600px){.shell{padding:0 17px}.top-inner{padding:10px 17px}.hero-main{padding:31px 26px}.hero-side{padding:20px 26px}.metrics{margin-bottom:38px}.metric{padding:16px}.metric .number{font-size:27px}.section{margin-bottom:40px}.heading h2{font-size:20px}.panel{padding:19px}.chart-row{grid-template-columns:81px minmax(0,1fr) 31px;gap:8px}.stacked{height:43px}.seg{font-size:11px}.sum{font-size:15px}.timeline{grid-template-columns:1fr}.time-step:after{display:none}.math-grid,.decision-list{grid-template-columns:1fr}.taxo-item{grid-template-columns:1fr;gap:8px}.pipeline{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:29px}}
+    @media print{body{background:white}main{padding-top:10px}.topbar,.hide-print{display:none!important}.section{break-inside:avoid}.hero,.metrics,.panel,.req,.taxo-item,.decision,.stage{box-shadow:none!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.shell{max-width:none}.hero h1{font-size:30px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="top-inner"><a class="brand" href="#top"><span class="mark" aria-hidden="true">A1</span><span>리뷰 데이터 설계 검토</span></a><nav class="links" aria-label="문서 목차"><a href="#scope">적용 범위</a><a href="#allocation">배분</a><a href="#dates">날짜 기준</a><a href="#validation">분석 적합성</a><a href="#taxonomy">분류</a><a href="#states">자료 상태</a><a href="#approval">승인</a></nav></div></div>
+  <main class="shell" id="top">
+    <header class="hero">
+      <div class="hero-main">
+        <span class="eyebrow">2026.11.03, Agent1 데이터 SDD 시각화</span>
+        <h1>리뷰 48건을<br>어떻게 읽고 검증할 것인가</h1>
+        <p>S16, S17에만 리뷰를 연결하고, 다른 16개 ROAS 사례의 성과는 그대로 둡니다. 원문, 기간, 판매처, 분류와 검증 기준을 개발 전 한눈에 검토하는 설계 자료입니다.</p>
+      </div>
+      <div class="hero-side">
+        <div class="side-state"><span class="eyebrow">진행 단계</span><strong>SDD 구체화, 승인 대기</strong><p>실제 리뷰 데이터 0건 생성, 앱 기능 구현과 테스트 수행 전</p></div>
+        <div><div class="side-mark">02 / 06</div><div class="tiny">intent-to-done의 사양 및 계획 단계</div></div>
+      </div>
+    </header>
+    <div class="metrics" aria-label="설계 범위 핵심 수치">
+      <div class="metric"><span class="number">18</span><span class="label">기존 ROAS 사례, 전부 보존</span></div>
+      <div class="metric"><span class="number">2</span><span class="label">리뷰 제공 대상, S16과 S17</span></div>
+      <div class="metric"><span class="number">48</span><span class="label">승인 범위의 예정 리뷰 수, 미생성</span></div>
+      <div class="metric"><span class="number">4</span><span class="label">예정 제공 범위 선언, 미생성</span></div>
+    </div>
+
+    <section class="section" id="scope">
+      <div class="heading"><div><span class="kicker">확정된 범위</span><h2>상품 정체성과 리뷰 제공 여부는 별개</h2></div><p>EDU-P1은 18개 사례 모두 샴푸지만, 리뷰 제공은 S16과 S17에만 한정됩니다.</p></div>
+      <div class="dual">
+        <div class="panel">
+          <h3>사례 전체 범위</h3><p>실제 사례와 상품 수치는 기존 데이터가 기준입니다. 아래는 리뷰 자료의 제공 범위를 나타낸 설계 도식입니다.</p>
+          <ul class="scope-list">
+            <li><span>S01~S15, EDU-P1</span><span class="no">리뷰 미제공</span></li>
+            <li><span>S16, EDU-P1</span><span class="yes">24건 예정</span></li>
+            <li><span>S17, EDU-P1</span><span class="yes">24건 예정</span></li>
+            <li><span>S18, EDU-P1</span><span class="no">리뷰 미제공</span></li>
+            <li><span>EDU-P2, EDU-P3</span><span class="no">리뷰 미제공</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>바꾸면 안 되는 것</h3>
+          <ul class="scope-list" style="margin-top:9px">
+            <li><span>매체 성과, ROAS와 KPI</span><span class="yes">유지</span></li>
+            <li><span>기간, 두 보고 시점</span><span class="yes">유지</span></li>
+            <li><span>EDU-P2, EDU-P3 품목</span><span class="yes">유지</span></li>
+            <li><span>기존 상품명과 정가</span><span class="yes">유지</span></li>
+            <li><span>광고, 주문, 고객과 리뷰의 개인 연결</span><span class="no">생성 금지</span></li>
+          </ul>
+          <div class="callout"><strong>추가 승인 대상</strong><div>전 사례 EDU-P1에 적용할 “샴푸” 품목 메타데이터의 실제 저장 방식은 아직 확정되지 않았습니다.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="allocation">
+      <div class="heading"><div><span class="kicker">확정된 수량 계획</span><h2>판매처가 바뀌는 24건씩의 구성</h2></div><p>사례를 전환하면 비교기간과 분석기간의 판매처별 계획 수량을 확인할 수 있습니다.</p></div>
+      <div class="dual">
+        <div class="panel">
+          <div class="charthead"><h3 id="case-heading" style="margin:0">S16, 각 기간 12건</h3><div class="switcher hide-print" role="group" aria-label="사례 선택"><button type="button" id="case-s16" aria-pressed="true">S16</button><button type="button" id="case-s17" aria-pressed="false">S17</button></div></div>
+          <div class="legend"><span><i class="dot own" aria-hidden="true"></i> 자사몰</span><span><i class="dot external" aria-hidden="true"></i> 가상 외부 판매처</span></div>
+          <div id="allocation-chart" aria-live="polite"></div>
+          <div class="chart-end"><span id="case-description">S16은 자사몰 비중이 4건에서 8건으로 증가합니다.</span><span class="inline-data">사례당 24건, 총 48건</span></div>
+        </div>
+        <div class="panel">
+          <h3>전체 배분 계약</h3>
+          <div class="table-scroll"><table><thead><tr><th>사례와 기간</th><th class="num">자사몰</th><th class="num">외부</th><th class="num">합계</th></tr></thead><tbody>
+            <tr><td>S16, 비교기간</td><td class="num">4</td><td class="num">8</td><td class="num">12</td></tr>
+            <tr><td>S16, 분석기간</td><td class="num">8</td><td class="num">4</td><td class="num">12</td></tr>
+            <tr><td>S17, 비교기간</td><td class="num">8</td><td class="num">4</td><td class="num">12</td></tr>
+            <tr><td>S17, 분석기간</td><td class="num">4</td><td class="num">8</td><td class="num">12</td></tr>
+            <tr class="tonal"><td><strong>전체</strong></td><td class="num"><strong>24</strong></td><td class="num"><strong>24</strong></td><td class="num"><strong>48</strong></td></tr>
+          </tbody></table></div>
+          <p class="legend-note">한 리뷰가 여러 카테고리에 속해도 원문은 1건입니다. 위 숫자는 실제 생성된 관측값이 아니라 확정한 배분 계획입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dates">
+      <div class="heading"><div><span class="kicker">확정된 날짜 계약</span><h2>작성일로 묶고, 수집일로 사용 가능성을 판단</h2></div><p>수집일이 분석기간에 속하더라도 리뷰의 비교기간 귀속은 바뀌지 않습니다.</p></div>
+      <div class="panel">
+        <div class="timeline">
+          <div class="time-step"><div class="tiny">리뷰 작성일, 기간 분류의 기준</div><div class="date">8월 15일</div><p>비교기간에 작성했다고 가정한 날짜 판정 예시</p></div>
+          <div class="time-step"><div class="tiny">자료 수집일, 확보 여부의 기준</div><div class="date">8월 18일</div><p>분석기간에 확보했더라도 리뷰는 비교기간에 귀속</p></div>
+          <div class="time-step"><div class="tiny">ROAS 초기 보고 기준</div><div class="date">8월 31일 00:00</div><p>이 시각 이전에 확보한 원문만 표시, KST</p></div>
+        </div>
+        <div><span class="formula">writtenAt ∈ [period.start, period.end)</span> <span class="formula">writtenAt ≤ collectedAt &lt; asOf</span></div>
+        <p>비교기간은 8월 3일~16일, 분석기간은 8월 17일~30일입니다. 두 기간 모두 종료 시각은 제외합니다. 후속 보고 기준 9월 7일에도 승인 범위의 48건은 동일해야 합니다. 위 날짜는 <strong>판정 설명용 예시</strong>이며 실제 리뷰 레코드가 아닙니다.</p>
+      </div>
+    </section>
+
+    <section class="section" id="validation">
+      <div class="heading"><div><span class="kicker">사례별 필수 인수 조건</span><h2>A, B, C 세 가지를 S16과 S17에서 각각 충족</h2></div><p>리뷰 수량만 맞추면 합격이 아닙니다. 원문과 독립 검산으로 분석 적합성을 확인합니다.</p></div>
+      <div class="requirements">
+        <article class="req"><div class="top"><span class="letter">A</span><h3>같은 측면의 상반된 경험</h3></div><div class="content"><p>같은 제품과 작성기간, 같은 평가 측면에서 서로 다른 두 리뷰가 상반된 경험을 뒷받침해야 합니다.</p><strong>검사 방법</strong><p>리뷰 ID 두 개, 각각의 원문 인용과 세부 경험 코드를 대조합니다. 한 리뷰의 두 측면만으로 통과하지 않습니다.</p></div><div class="foot">S16 1쌍 이상, S17 1쌍 이상</div></article>
+        <article class="req"><div class="top"><span class="letter">B</span><h3>전체와 판매처 추세의 차이</h3></div><div class="content"><p>전체 평점 또는 상위 측면의 언급 비율 변화 방향이 최소 한 판매처 내부 방향과 반대여야 합니다.</p><strong>검사 방법</strong><p>각 판매처의 실제 분모로 가중 계산하고, 두 변화량의 곱이 음수인지 확인합니다. 변화 없음은 반대 방향으로 세지 않습니다.</p></div><div class="foot">전체 변화 × 판매처 변화 &lt; 0</div></article>
+        <article class="req"><div class="top"><span class="letter">C</span><h3>작성, 수집, 성과의 시간 순서</h3></div><div class="content"><p>비교기간에 작성하고 분석기간에 수집된 후기도 올바른 기간에 배치하고, 늦게 작성된 리뷰를 앞선 ROAS 변화의 원인으로 단정하지 않습니다.</p><strong>검사 방법</strong><p>사례별 시간선과 원문 ID를 대조하고, 구매일과 실제 경험 발생일이 없다는 한계를 기록합니다.</p></div><div class="foot">사례별 시간선과 보고 기준 검수</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="taxonomy">
+      <div class="heading"><div><span class="kicker">승인이 필요한 분류 체계</span><h2>상위 5개 측면과 세부 경험, 하나의 원문</h2></div><p>상위 체계와 코드 및 저장 방식은 SDD 제안입니다. 실제 분류 결과는 아직 없습니다.</p></div>
+      <div class="taxonomy">
+        <div class="taxo-item"><div class="name">향</div><div class="rail"><span class="pill">은은한 향 만족</span><span class="pill">강한 향 불만</span></div></div>
+        <div class="taxo-item"><div class="name">세정 및 사용감</div><div class="rail"><span class="pill">세정 만족</span><span class="pill">건조감 불만</span></div></div>
+        <div class="taxo-item"><div class="name">용기와 포장</div><div class="rail"><span class="pill">용기 사용 편리</span><span class="pill">누수 경험</span></div></div>
+        <div class="taxo-item"><div class="name">용량 안내</div><div class="rail"><span class="pill">안내 명확</span><span class="pill">안내 혼란</span></div></div>
+        <div class="taxo-item"><div class="name">배송</div><div class="rail"><span class="pill">과정 만족</span><span class="pill">배송 지연</span></div></div>
+      </div>
+      <div class="unclassified"><strong>미분류도 정상적인 결과입니다.</strong> 원문에 근거가 없으면 카테고리를 강제로 달지 않습니다. 미분류 리뷰 역시 전체 표본 수와 원문 목록에 남습니다. 검수 전 상태는 미분류와 구별해 공개를 보류합니다.</div>
+      <div class="math-grid">
+        <div class="math-item"><strong>전체 표본 수</strong><code>N = 서로 다른 리뷰 ID 수</code><p>미분류 포함, 복수 카테고리라도 리뷰 1건</p></div>
+        <div class="math-item"><strong>상위 카테고리 비율</strong><code>n_c / N × 100</code><p>분모 0이면 계산 불가, 비율 합계 100% 초과 가능</p></div>
+        <div class="math-item"><strong>세부 경험 건수</strong><code>n_e = 경험별 고유 ID 수</code><p>세부 경험의 비율은 이번 필수 산출물이 아님</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="states">
+      <div class="heading"><div><span class="kicker">추가 계약 제안</span><h2>미제공, 제공 범위 내 0건, 오류는 다른 상태</h2></div><p>상태를 선택해 데이터 계약의 반환 의미를 확인할 수 있습니다. 실제 API 응답은 아닙니다.</p></div>
+      <div class="status-layout">
+        <div class="status-buttons hide-print" role="group" aria-label="상태 종류 선택"><button type="button" data-status="not_provided" aria-pressed="true">자료 미제공</button><button type="button" data-status="provided_empty" aria-pressed="false">제공 범위 내 0건</button><button type="button" data-status="error" aria-pressed="false">조회 또는 무결성 오류</button></div>
+        <div class="status-detail" id="status-display" aria-live="polite"><div class="state-label" id="status-code">not_provided</div><h3 id="status-name">자료 미제공</h3><p id="status-copy">제공 선언이 없는 사례입니다. 0건이라고 답하지 않고, 제공된 리뷰 자료가 없다고 구분합니다.</p><div class="status-result" id="status-result"><span>건수: 해당 없음</span><span>평균: 해당 없음</span></div></div>
+      </div>
+      <div class="callout"><strong>두 층의 상태</strong><div>사례 자체의 제공 여부와, 선택한 판매처,기간,보고 기준에서 적격 리뷰가 0건인지 구별합니다. 원시 파일이나 제공 선언이 훼손되었다면 '미제공'이 아니라 오류입니다.</div></div>
+    </section>
+
+    <section class="section" id="approval">
+      <div class="heading"><div><span class="kicker">intent-to-done, 현재 단계와 향후 순서</span><h2>현재는 SDD, 다음 단계는 승인 후 테스트</h2></div><p>아래 순서는 실행 계획입니다. 테스트 코드, 실제 원문 생성, API와 화면 구현은 아직 진행하지 않았습니다.</p></div>
+      <div class="pipeline">
+        <div class="stage"><span class="stepnum">P0, 확인</span><h3>현황과 기준선</h3><p>18사례, 스냅샷, 기존 보존 계약 확인</p></div>
+        <div class="stage"><span class="stepnum">P1, 대기</span><h3>인수 테스트 RED</h3><p>승인된 계약부터 테스트로 고정</p></div>
+        <div class="stage"><span class="stepnum">P2, 대기</span><h3>원문과 상품 정의</h3><p>48건과 전 사례 공통 품목 의미</p></div>
+        <div class="stage"><span class="stepnum">P3, 대기</span><h3>분류와 별도 검수</h3><p>복수 분류, 미분류, QA 이력</p></div>
+        <div class="stage"><span class="stepnum">P4, 대기</span><h3>조회, 해시, 배포</h3><p>무결성 검사와 읽기 전용 인터페이스</p></div>
+        <div class="stage"><span class="stepnum">P5, 별도</span><h3>UI, 독립 검증</h3><p>별도 UI/UX SDD 승인과 후속 단계</p></div>
+      </div>
+      <h3 class="simple-heading" style="margin:25px 0 12px">승인받아야 할 네 가지 설계 결정</h3>
+      <div class="decision-list">
+        <div class="decision"><h3>1. 상품 1 공통 품목 메타데이터</h3><p>기존 가격과 성과 팩을 건드리지 않고 S01~S18의 EDU-P1이 샴푸임을 표현하는 저장 구조</p><small>새 메타데이터 계약, 승인 대기</small></div>
+        <div class="decision"><h3>2. 제공 범위 선언의 상세 필드</h3><p>사례 × 제품 × 판매처 4개 선언, 두 기간 참조와 누락 시 오류 처리</p><small>coverage 세부 스키마, 승인 대기</small></div>
+        <div class="decision"><h3>3. 분류 sidecar와 QA 이력</h3><p>48건 원문과 분류를 ID로 연결하고 복수 태그 및 미분류, 근거를 별도 검수</p><small>신규 분류 계약, 승인 대기</small></div>
+        <div class="decision"><h3>4. 사례/선택 범위 이중 상태</h3><p>미제공, 필터 결과 0건, 조회 오류를 별도로 제공하는 읽기 전용 조회 계약</p><small>신규 DTO와 배포 등록, 승인 대기</small></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell foot-inner"><div>Agent1 리뷰 데이터 SDD 설계 설명 자료, 생성된 고객 리뷰나 실제 화면이 아닙니다.</div><div><a href="agent1-review-data-sdd.md">전체 SDD 원문</a><a href="agent1-intent.md">확정 Intent</a><a href="../research/marketing-ontology/data-proposal.md">데이터 승인 기록</a></div></div></footer>
+  <script>
+    "use strict";
+    const distributions={
+      S16:{baseline:{own:4,external:8},current:{own:8,external:4},description:"S16은 자사몰 비중이 4건에서 8건으로 증가합니다."},
+      S17:{baseline:{own:8,external:4},current:{own:4,external:8},description:"S17은 자사몰 비중이 8건에서 4건으로 감소합니다."}
+    };
+    function showCase(caseId){
+      const data=distributions[caseId];
+      if(!data)return;
+      document.getElementById("case-heading").textContent=caseId+", 각 기간 12건";
+      document.getElementById("case-description").textContent=data.description;
+      document.querySelectorAll("#allocation .switcher button").forEach(function(button){
+        button.setAttribute("aria-pressed",String(button.id==="case-"+caseId.toLowerCase()));
+      });
+      const chart=document.getElementById("allocation-chart");
+      chart.textContent="";
+      [["baseline","비교기간","08.03~08.16"],["current","분석기간","08.17~08.30"]].forEach(function(item){
+        const values=data[item[0]],total=values.own+values.external;
+        const row=document.createElement("div");row.className="chart-row";
+        const label=document.createElement("div");label.className="rowname";label.textContent=item[1];
+        const small=document.createElement("small");small.textContent=item[2];label.appendChild(small);
+        const track=document.createElement("div");track.className="stacked";
+        [["own",values.own],["external",values.external]].forEach(function(entry){
+          const segment=document.createElement("div");segment.className="seg "+entry[0];
+          segment.style.width=(entry[1]/total*100)+"%";
+          segment.textContent=entry[1]+"건";track.appendChild(segment);
+        });
+        const sum=document.createElement("div");sum.className="sum";sum.textContent=total;
+        row.append(label,track,sum);chart.appendChild(row);
+      });
+    }
+    document.getElementById("case-s16").addEventListener("click",function(){showCase("S16")});
+    document.getElementById("case-s17").addEventListener("click",function(){showCase("S17")});
+    const statusMessages={
+      not_provided:{name:"자료 미제공",copy:"전체 제공 카탈로그에서 이 사례의 리뷰가 제공되지 않습니다. 실제 고객 후기 0건이나 불만 없음으로 해석하지 않습니다.",results:["건수: 해당 없음","평균: 해당 없음"]},
+      provided_empty:{name:"제공 범위 내 0건",copy:"원문 제공 선언은 유효하지만, 선택한 작성기간과 보고 기준까지 확보된 적격 원문이 없습니다. 사례의 자료 제공 자체는 유지됩니다.",results:["선택 표본: 0건","평균: 계산 불가"]},
+      error:{name:"조회 또는 무결성 오류",copy:"파일 읽기 실패, 해시 불일치, 제공 선언 누락 등으로 값을 신뢰할 수 없습니다. 미제공이나 0건으로 바꾸지 않고 오류를 유지합니다.",results:["건수: 표시 보류","검산: 실패/미확인"]}
+    };
+    function showStatus(key){
+      const item=statusMessages[key];if(!item)return;
+      document.querySelectorAll("[data-status]").forEach(function(button){button.setAttribute("aria-pressed",String(button.dataset.status===key))});
+      document.getElementById("status-code").textContent=key;
+      document.getElementById("status-name").textContent=item.name;
+      document.getElementById("status-copy").textContent=item.copy;
+      const result=document.getElementById("status-result");result.textContent="";
+      item.results.forEach(function(value){const span=document.createElement("span");span.textContent=value;result.appendChild(span)});
+    }
+    document.querySelectorAll("[data-status]").forEach(function(button){button.addEventListener("click",function(){showStatus(button.dataset.status)})});
+    showCase("S16");showStatus("not_provided");
+  </script>
+</body>
+</html>

@@ -8,8 +8,8 @@ import {validateClassification} from './validate-roas-review-classification.mjs'
 
 // Approved source bytes, independent of the mandatory ROAS manifest.
 const approvedHashes={
- 'roas-reviews.json':'f40aeb577c550ee3928cd044b45fa83253bee751b234de5c3ca4a874700de4e0',
- 'roas-review-classification.json':'b1febf7a996ff039600c75957af99f3633d6f836e41a3ce5c08df20d660172de',
+ 'roas-reviews.json':'e6db65aea443f0c3559fd53cd36df2faa128c571af642e16d960d2e720f0e6e1',
+ 'roas-review-classification.json':'49f25e184f6722db9fde3c2ed139431c467cd51a2f11902e12f60ba9f7376077',
  'roas-product-metadata.json':'7349c2c37f1c7238d1ae1973aacafd501a595c4c56f31a8e44310de1be6491cd',
 };
 const sources=['own_store','virtual_external_1'];
@@ -44,7 +44,7 @@ export function validateReviewBundle(bundle,metadata,periods){
   if(coverage.has(key))fail('REVIEW_COVERAGE_INVALID');
   coverage.add(key);
  }
- if(coverage.size!==4||bundle.reviews.length!==50)fail('REVIEW_COVERAGE_INVALID');
+ if(coverage.size!==4||bundle.reviews.length!==85)fail('REVIEW_COVERAGE_INVALID');
  const ids=new Set(),counts=new Map();
  for(const row of bundle.reviews){
   if(!validKeys(row,['id','caseId','productId','sourceId','sourceName','writtenAt','collectedAt','rating','ratingScale','text'])||
@@ -63,8 +63,8 @@ export function validateReviewBundle(bundle,metadata,periods){
  }
  for(const caseId of ['S16','S17'])for(const periodId of periodIds)for(const sourceId of sources){
   const own=sourceId==='own_store',before=periodId==='baseline';
-  const expected=(caseId==='S16')===(before===own)?4:8;
-  const expectedCount=expected+(!before&&((caseId==='S16'&&!own)||(caseId==='S17'&&own))?1:0);
+  const expectedCount=caseId==='S16'?(before?(own?9:18):(own?20:13)):(before?(own?8:4):(own?5:8));
+
   if(counts.get([caseId,sourceId,periodId].join(':'))!==expectedCount)fail('REVIEW_DISTRIBUTION_INVALID');
  }
  return product;

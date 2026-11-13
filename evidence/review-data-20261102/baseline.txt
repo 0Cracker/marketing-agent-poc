@@ -1,0 +1,42 @@
+✔ existing cases and snapshots reconcile the centered contributions and ratio totals in every supported partition (8238.1983ms)
+✔ S07 isolates the complete 100 percentage-point ROAS decline as budget mix change (4.7088ms)
+✔ S16 ROAS contributions preserve the AOV offset, CVR and CPC deterioration and the full change (5.926ms)
+✔ CPA and CPC factor replacement sums agree across ads and content without mixing exposure bases (163.4411ms)
+✔ dimensions use actual campaign-qualified traffic, restrict keywords to search and exclude content from CTR (14.1728ms)
+✔ zero orders and new creatives retain finite contribution while unavailable ratios are not fabricated (33.6977ms)
+✔ traffic narrowing updates the complete selected totals and never invents a product cross-tab (12.0532ms)
+✔ AOV exposes product mix and discounts as distinct observations on the installed single-item orders (34.262ms)
+✔ explanatory metrics precede calculation inputs in analysis columns (1.1309ms)
+✔ impact order follows overall direction and metric headers sort by change in both directions (55.1266ms)
+✔ current performance and period change answer different ranking questions (9.8582ms)
+✔ media choices contain real channel/source pairs and discard incompatible campaign selections (61.5446ms)
+✔ campaign and audience labels are realistic presentation aliases while source references remain intact (1.771ms)
+✔ unavailable metrics distinguish incompatible exposure, zero denominator and missing customer counts (5.1332ms)
+✔ metric trends align weekdays, retain dates and use the selected population and proper denominator (35.8116ms)
+✔ all eighteen cases expose the same dashboard contract and complete common data (25.4173ms)
+✔ raw aggregate totals and displayed metrics agree without averaging ratios (87.1251ms)
+✔ each breakdown reconciles to its own parent without cross-joining dimensions (182.7557ms)
+✔ campaign, channel and device filters keep every view on the same population (458.1385ms)
+✔ fifteen scenarios preserve the specified numerical changes (10.8365ms)
+✔ mature snapshot reveals delayed purchases only when the reporting cutoff permits it (36.6971ms)
+✔ scenario evidence supports the intended investigation rather than only headline numbers (66.448ms)
+✔ mixed scenarios preserve normal measurement and realistic varied daily performance (11.305ms)
+✔ S16 combines budget growth, a bounded mobile payment incident and offsetting creative improvement (2.0692ms)
+✔ S17 combines lower spending, a price-condition change and a later intent improvement (2.4812ms)
+✔ S18 combines stockout, low-price mix, mobile delay and creative response (2.0044ms)
+✔ public endpoints expose projections and keep source packs and review answers private (7429.9024ms)
+✔ existing source files retain their exact baseline bytes and row counts (2458.389ms)
+✔ regeneration from the preserved catalog matches the installed source pack exactly (4529.1262ms)
+✔ approved corrections preserve numbers except S06 daily cost and S16 current money fields (1089.6502ms)
+✔ production projections retain every case but never emit private source or answer assets (11292.2276ms)
+✔ training merchandise cannot inherit competitor identity or dangling product references (270.28ms)
+✔ mixed cases have one initial budget per campaign and an unambiguous later setting (0.7839ms)
+✔ public content campaign records disclose click settlement, excluded costs and allocation (3.101ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29686.225

@@ -61,3 +61,6 @@ __pycache__/
 # Frozen legacy tools keep local execution state out of source control.
 /legacy/work/
 /legacy/.env*
+
+# Local SQLite run history is private runtime state.
+/.agent-state/
