@@ -1,0 +1,115 @@
+
+> marketing-agent-poc@0.4.19 build
+> vite build
+
+vite v8.0.13 building client environment for production...
+[2K
+(node:8008) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+/fonts/SUIT-Variable.woff2 referenced in /fonts/SUIT-Variable.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/fonts/PretendardVariable.woff2 referenced in /fonts/PretendardVariable.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+transforming...✓ 2600 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/favicon.svg                                        0.23 kB │ gzip:   0.18 kB
+dist/window.svg                                         0.38 kB │ gzip:   0.22 kB
+dist/file.svg                                           0.39 kB │ gzip:   0.26 kB
+dist/workbench-data/roas/review-S01-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S01-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S02-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S02-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S03-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S03-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S04-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S04-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S05-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S05-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S06-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S06-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S07-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S07-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S08-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S08-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S09-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S09-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S10-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S10-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S11-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S11-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S12-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S12-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S13-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S13-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S14-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S14-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S15-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S15-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S18-initial.json        0.47 kB │ gzip:   0.30 kB
+dist/workbench-data/roas/review-S18-mature.json         0.47 kB │ gzip:   0.30 kB
+dist/index.html                                         0.53 kB │ gzip:   0.40 kB
+dist/workbench-data/roas/training-index.json            0.88 kB │ gzip:   0.32 kB
+dist/globe.svg                                          1.03 kB │ gzip:   0.54 kB
+dist/fonts/README.md                                    1.11 kB
+dist/fonts/SUIT-LICENSE.txt                             4.47 kB │ gzip:   2.00 kB
+dist/fonts/Pretendard-LICENSE.txt                       4.51 kB │ gzip:   2.02 kB
+dist/workbench-data/roas/review-S17-initial.json       22.62 kB │ gzip:   4.03 kB
+dist/workbench-data/roas/review-S17-mature.json        22.62 kB │ gzip:   4.03 kB
+dist/workbench-data/roas/review-S16-initial.json       51.76 kB │ gzip:   8.68 kB
+dist/workbench-data/roas/review-S16-mature.json        51.76 kB │ gzip:   8.69 kB
+dist/fonts/SUIT-Variable.woff2                        624.53 kB
+dist/workbench-data/roas/training-S06-initial.json  1,488.62 kB │ gzip:  48.01 kB
+dist/workbench-data/roas/training-S06-mature.json   1,488.62 kB │ gzip:  48.02 kB
+dist/workbench-data/roas/training-S15-initial.json  1,489.39 kB │ gzip:  49.20 kB
+dist/workbench-data/roas/training-S13-initial.json  1,489.62 kB │ gzip:  49.36 kB
+dist/workbench-data/roas/training-S13-mature.json   1,489.62 kB │ gzip:  49.36 kB
+dist/workbench-data/roas/training-S14-initial.json  1,489.93 kB │ gzip:  49.50 kB
+dist/workbench-data/roas/training-S14-mature.json   1,489.93 kB │ gzip:  49.50 kB
+dist/workbench-data/roas/training-S09-initial.json  1,490.20 kB │ gzip:  48.79 kB
+dist/workbench-data/roas/training-S09-mature.json   1,490.20 kB │ gzip:  48.80 kB
+dist/workbench-data/roas/training-S11-initial.json  1,490.23 kB │ gzip:  48.60 kB
+dist/workbench-data/roas/training-S11-mature.json   1,490.23 kB │ gzip:  48.61 kB
+dist/workbench-data/roas/training-S12-initial.json  1,490.26 kB │ gzip:  48.60 kB
+dist/workbench-data/roas/training-S12-mature.json   1,490.26 kB │ gzip:  48.61 kB
+dist/workbench-data/roas/training-S02-initial.json  1,491.23 kB │ gzip:  48.83 kB
+dist/workbench-data/roas/training-S02-mature.json   1,491.23 kB │ gzip:  48.83 kB
+dist/workbench-data/roas/training-S01-initial.json  1,491.31 kB │ gzip:  49.49 kB
+dist/workbench-data/roas/training-S01-mature.json   1,491.31 kB │ gzip:  49.49 kB
+dist/workbench-data/roas/training-S15-mature.json   1,491.41 kB │ gzip:  49.26 kB
+dist/workbench-data/roas/training-S03-initial.json  1,491.42 kB │ gzip:  50.06 kB
+dist/workbench-data/roas/training-S03-mature.json   1,491.42 kB │ gzip:  50.06 kB
+dist/workbench-data/roas/training-S07-initial.json  1,491.86 kB │ gzip:  50.35 kB
+dist/workbench-data/roas/training-S07-mature.json   1,491.86 kB │ gzip:  50.35 kB
+dist/workbench-data/roas/training-S05-initial.json  1,492.72 kB │ gzip:  50.40 kB
+dist/workbench-data/roas/training-S05-mature.json   1,492.72 kB │ gzip:  50.40 kB
+dist/workbench-data/roas/training-S04-initial.json  1,492.99 kB │ gzip:  49.62 kB
+dist/workbench-data/roas/training-S04-mature.json   1,492.99 kB │ gzip:  49.63 kB
+dist/workbench-data/roas/training-S10-initial.json  1,495.81 kB │ gzip:  52.32 kB
+dist/workbench-data/roas/training-S10-mature.json   1,495.81 kB │ gzip:  52.32 kB
+dist/workbench-data/roas/training-S08-initial.json  1,496.87 kB │ gzip:  51.44 kB
+dist/workbench-data/roas/training-S08-mature.json   1,496.87 kB │ gzip:  51.44 kB
+dist/workbench-data/roas/training-S17-initial.json  1,534.73 kB │ gzip:  77.22 kB
+dist/workbench-data/roas/training-S17-mature.json   1,534.73 kB │ gzip:  77.22 kB
+dist/workbench-data/roas/training-S18-initial.json  1,544.46 kB │ gzip:  86.92 kB
+dist/workbench-data/roas/training-S18-mature.json   1,544.46 kB │ gzip:  86.92 kB
+dist/workbench-data/roas/training-S16-initial.json  1,544.70 kB │ gzip:  88.91 kB
+dist/workbench-data/roas/training-S16-mature.json   1,544.70 kB │ gzip:  88.91 kB
+dist/fonts/PretendardVariable.woff2                 2,057.68 kB
+dist/assets/training-dashboard-DjikjgQq.css           100.54 kB │ gzip:  17.99 kB
+dist/assets/index-C3jDr7TO.css                        185.86 kB │ gzip:  29.62 kB
+dist/assets/index-DJ_f9JpA.js                         192.69 kB │ gzip:  61.10 kB
+dist/assets/training-dashboard-DKBZpuij.js            574.32 kB │ gzip: 174.00 kB
+
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - vite:css (60%)
+  - rolldown:vite-resolve (29%)
+  - roas-only-data (4%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 35.60s

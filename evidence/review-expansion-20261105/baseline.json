@@ -1,0 +1,381 @@
+{
+  "head": "6a029e0",
+  "originalCount": 50,
+  "originals": [
+    {
+      "id": "REV-S16-001",
+      "sourceName": "자사몰",
+      "recordSha256": "804a6e2899e43f9e102a81568e880e2ce57e2058d036af4c1cad730c9d2c9982",
+      "classificationSha256": "4f10ebc3c186fad44d17caf727baed3ca294e37e17c80dc20d2407d29b003815"
+    },
+    {
+      "id": "REV-S16-002",
+      "sourceName": "자사몰",
+      "recordSha256": "2747068dd00870bb491df6299cf4eef52d9e6dd2a467226b95af64f5cd09d2fc",
+      "classificationSha256": "9a021c66e9fb3822912cd9c850223326256566733afadb4fd9a84f902993d44b"
+    },
+    {
+      "id": "REV-S16-003",
+      "sourceName": "자사몰",
+      "recordSha256": "4bcd062ae57ce0b8ee9dcf35b984b31e5060c554fc0a2ad311fcf552b70e0651",
+      "classificationSha256": "f04b000cdc64a60e1245e30587f2e9db455983b11f47705c41b062f040596886"
+    },
+    {
+      "id": "REV-S16-004",
+      "sourceName": "자사몰",
+      "recordSha256": "83e83da8c2c42e51cb1c0e9a5a7e3e4a9df2f43c693c93e446c8624408e78826",
+      "classificationSha256": "2751d49161136b5df13b8a2bf5b47ed530f97f4bfe19189ecb534014ba3285f4"
+    },
+    {
+      "id": "REV-S16-005",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "6a3ffc5a4ff413fd3ec40d63c673842b3581bfac99b0475abf71e13ce2bd8115",
+      "classificationSha256": "d552833743fc543d4d4fa5b068405e1275dbcad1355c5b7561b15ab3f6b10a2f"
+    },
+    {
+      "id": "REV-S16-006",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "8d31bce92efdb9ae6979863792fbc28752dcc13ae38cf58a86ee8b7549591c6d",
+      "classificationSha256": "4d27ac6d50ce6cbb738ed9181651b8ea78d61bd714e7113c5a810dbfb61019ae"
+    },
+    {
+      "id": "REV-S16-007",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "ee26c15c173f661631677508d2ce9829d2ec68881dea09073bb901d727fc5784",
+      "classificationSha256": "28321319cb7bdeb41bc02328d2897895994be53f87938406b8e16b92a73801a4"
+    },
+    {
+      "id": "REV-S16-008",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "ecf674a20cc6de6298816a8db06b572338062fbfdf149dbaec8fd86499a69a4c",
+      "classificationSha256": "66a9b4bc1c580077b4cca30df2b48969d912d104155691a9a39f1ac3f753547a"
+    },
+    {
+      "id": "REV-S16-009",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "7a2bc51f8c7668c5599096da5408447b820a10552271ec29ec133cf7d090e27a",
+      "classificationSha256": "5b06414d2c7760426705a0530ea1947fe352737d52e2fba6f0b58c164e2e2deb"
+    },
+    {
+      "id": "REV-S16-010",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "e7aebcc6ad6d4cccf10c575d5c7b60aa532855dfa1ed2a76d5b13958abbcf8e1",
+      "classificationSha256": "4c939572feef5f6dd849a5f681fde70240699f2d19d6855da66543621a3220df"
+    },
+    {
+      "id": "REV-S16-011",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "b5ab6065113c38556390a1af139f18fdf528e754b00af22f2d2ae3ca3e0b11d7",
+      "classificationSha256": "2adfc7ea09f4baadf5fb88156e157855129509caae7eda588cca16206f0945d3"
+    },
+    {
+      "id": "REV-S16-012",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "506f2d48a7b55a311818a434e813c219469542ecd63040962bff496e483324f7",
+      "classificationSha256": "8af2e58dae044c96988b4056eb0f76321aa97208aba382fd1fdfcd48c50fd39c"
+    },
+    {
+      "id": "REV-S16-013",
+      "sourceName": "자사몰",
+      "recordSha256": "462ecb24d185662bc3fa832143f6f8f9506e1ed00931c89a54065fc8ff81e1d4",
+      "classificationSha256": "e29d2c970cbfd8db7a5de07377c9bde70572d3714933c5d04a4cfcb98379f56a"
+    },
+    {
+      "id": "REV-S16-014",
+      "sourceName": "자사몰",
+      "recordSha256": "ecf408be5c4b2c0d2008e82873b6baf9d130033843d004674f44c942403beaaf",
+      "classificationSha256": "71b99627c7752dadc4a8fbac661bd4d130aa0fa7112ece5c446b0976ac49395b"
+    },
+    {
+      "id": "REV-S16-015",
+      "sourceName": "자사몰",
+      "recordSha256": "1ea203f67a32641f61a885d4dacc2275113b02cf253f4f3ab9efe97e6dd6db67",
+      "classificationSha256": "a87be73d50b0dd5564de0e8128961e4a596da1ffe202fe10a80a5618bc507dd0"
+    },
+    {
+      "id": "REV-S16-016",
+      "sourceName": "자사몰",
+      "recordSha256": "7d6fd9da5eea52dac1e691b81c9fba3235b8c099a64d8fc296ff5fe75c7860ba",
+      "classificationSha256": "877ebf264ae003f87cc21611940a49b45f1fbb731f7c3e060d0e446dcd396655"
+    },
+    {
+      "id": "REV-S16-017",
+      "sourceName": "자사몰",
+      "recordSha256": "d50ce53a7e6db15dd482d73d864651efa33f1847976673686412455733faa1e1",
+      "classificationSha256": "371bfbef6882c448a39496a73c68e6f338a2b2ac3ae85f8089b12c379cfc58e9"
+    },
+    {
+      "id": "REV-S16-018",
+      "sourceName": "자사몰",
+      "recordSha256": "3bb1956f95e665b3646094dcb8e028e7cf474413837b51877f00174e9f13834a",
+      "classificationSha256": "859870fc1b41b8dc2e635d2a6f7c7c6a106380ad56127306fdec956761a5125a"
+    },
+    {
+      "id": "REV-S16-019",
+      "sourceName": "자사몰",
+      "recordSha256": "e0c3709099448a305d42f6b4e28a45492a375fc9b846933252cf5cf8d61538a6",
+      "classificationSha256": "0ef87011c5f66ccd89bcf84906ff527d6d907a0d37c5490503ba59bcba198cac"
+    },
+    {
+      "id": "REV-S16-020",
+      "sourceName": "자사몰",
+      "recordSha256": "a35dbb864a0dd3ba2ccfbd85f7f03e68dc1a5d8c694d72e4e9676b597c381eb0",
+      "classificationSha256": "6a7f3a566635f377fab44c38d93c114234d6ba31d794c6e5996c0b317d42dad4"
+    },
+    {
+      "id": "REV-S16-021",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "32d2e376c57e1332eb36d67c817a4152928ebff3ff09dbc630ce78da872d0d03",
+      "classificationSha256": "25d473185b38fd6e00983edfbcb0a884baf5844e24c4b7f2182f5829369dab1f"
+    },
+    {
+      "id": "REV-S16-022",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "259610a8d0e1bdc69a29b8e36b6ca28b79888bda88052abf5b3647eed1976aff",
+      "classificationSha256": "0b7f64ff3ece9c7d2561d559f6d896fefa4c04c6c790116f610ece5edbc28a82"
+    },
+    {
+      "id": "REV-S16-023",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "0b2c3cd1d293eb3b433dc14c587c5b69025bd5575690a6a8aa8f77f8225b7c4e",
+      "classificationSha256": "65db583520f21b5e33393009ba2c72fbd6038ccb16dab55091975883edb4a0e8"
+    },
+    {
+      "id": "REV-S16-024",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "334cc220c22561a2d64e6c7d337bc7d6acfabfc62f48561372e60bfaebcce4a0",
+      "classificationSha256": "f77e1419ed1c000d4b4948751a0e5cd1e55bcb5356c0c90ea0f881afde9e5598"
+    },
+    {
+      "id": "REV-S16-025",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "a084fbf6881c60970144ade485b3268005a7e39c046127d7e3807136b7f8f4db",
+      "classificationSha256": "5da5aaab9c61afc17805f33c3676676557c956de9042ff3f9e652c6ab90c41ce"
+    },
+    {
+      "id": "REV-S17-001",
+      "sourceName": "자사몰",
+      "recordSha256": "f8865ec543226300f1104274288e2b803f199115315be493c9dc658f2f576c71",
+      "classificationSha256": "8e64ae8138562488b5dfb6d95a4d6d0c623f4ab742d38caa655e3b608ec4020a"
+    },
+    {
+      "id": "REV-S17-002",
+      "sourceName": "자사몰",
+      "recordSha256": "211a804c5dabae6008f4505625a3d05e65835ae7758d1a0b145dad7a046bb257",
+      "classificationSha256": "c637eceb73a2d5e91260c0bc96b9f598e561e980bd1c919f38b910e7836e5096"
+    },
+    {
+      "id": "REV-S17-003",
+      "sourceName": "자사몰",
+      "recordSha256": "ae410a066dfb2549efca11805dcb21fbffb705f2d6ef5c0d82a492285b825e3c",
+      "classificationSha256": "96a7c62ac7ecf95292fb6272a8937ee582ee476b38ac6c984f12606cf2aa61b7"
+    },
+    {
+      "id": "REV-S17-004",
+      "sourceName": "자사몰",
+      "recordSha256": "330c163c970d33fb1038af3033e0764ea4c8709e5ff59e44b8fa348df02abc17",
+      "classificationSha256": "b688fa25436607574055a6a2aea2980188384cf23bcfc7443010afd8363188a1"
+    },
+    {
+      "id": "REV-S17-005",
+      "sourceName": "자사몰",
+      "recordSha256": "d4c054af2a7e0ca836b1769cb61c5444bbca50ad884e059657471afe1e1a4daf",
+      "classificationSha256": "e2dc36accbc0689e348b4fcab412bbd18a018e1267a6725cad1907d9cbc29472"
+    },
+    {
+      "id": "REV-S17-006",
+      "sourceName": "자사몰",
+      "recordSha256": "03842f8c7a51d991cd8b2a58de21ee2efb7065dda5b75a3878ce7b537cfcff94",
+      "classificationSha256": "b7b781b34cfea3817f25e92c6a754188fe7819e135fb62652f549e60b4fd56af"
+    },
+    {
+      "id": "REV-S17-007",
+      "sourceName": "자사몰",
+      "recordSha256": "31a0faf510905ef34aee3c40fbc71c014477f8ff4c7917dd3992ca76592cb4d6",
+      "classificationSha256": "3b10bc76c8fd01443b013da65899def5775be3e35a81d7791ad5aecb0f5fe3c1"
+    },
+    {
+      "id": "REV-S17-008",
+      "sourceName": "자사몰",
+      "recordSha256": "b5e62491fe596934a85142eb0d482f358e7cef20e39e9f7e8e4f538c841e61da",
+      "classificationSha256": "d40d5c1454e3e1c5613ba9f62e6aa7f18236246196e7bf86e6a939093c829203"
+    },
+    {
+      "id": "REV-S17-009",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "686795fab65419aa3ca908ea80b4cdfac74abe37dd0dc9cbc0a4742d606b77ed",
+      "classificationSha256": "b806c27c790d669612e616c805cc6114da2f25d7a07533e747a31e1bb2a6fefc"
+    },
+    {
+      "id": "REV-S17-010",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "875f2fa75473c20a9c233f46782883c36463c735ac0894d14ba88bc328e950c7",
+      "classificationSha256": "b32600c084b7ebca63064fc17ad215b39a5733ff36e741b363f6862742a5b57f"
+    },
+    {
+      "id": "REV-S17-011",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "a057d445f95a089ef32118bc34acf2db692011ea916c9517bf7985aa66f17c4a",
+      "classificationSha256": "38f1bc2048e8fe76be405e12fecaff9c9d3168719575e763bab6e5500bb07625"
+    },
+    {
+      "id": "REV-S17-012",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "d8965ae6ccdb268a27648d3dbac6ac7bec1570f943c2fdd18ce055c59c6ed69c",
+      "classificationSha256": "0643adc41d9dd93bfa477789cd12278c81d82fe25a81976ed1c75cbcd33de598"
+    },
+    {
+      "id": "REV-S17-013",
+      "sourceName": "자사몰",
+      "recordSha256": "79958fa548a04e5d194c53e4cabbb2561b4864d31c18c6d60ca2ccdd4b5ddd0e",
+      "classificationSha256": "e99f6ef60acab5e64f2c90ea75e1a69757b89a781ee952b88daef30a26d25662"
+    },
+    {
+      "id": "REV-S17-014",
+      "sourceName": "자사몰",
+      "recordSha256": "99d32b1866bbec1b9d3bb37e835ddc723258ad6ee488f40c04e4061b0dc4e4db",
+      "classificationSha256": "968dc109a7f23f5274c16235c432aaa5eef6d75dd353a69ca91067bbe3812f7c"
+    },
+    {
+      "id": "REV-S17-015",
+      "sourceName": "자사몰",
+      "recordSha256": "5d860f22fdecb09de0d00d7a33d191e6f61867fedaad00a7890e34f2e5332a58",
+      "classificationSha256": "5bf89692e3aeb2fe5761be2b05fc339eacdb0e7cba42cc11098e9756b8d43e2f"
+    },
+    {
+      "id": "REV-S17-016",
+      "sourceName": "자사몰",
+      "recordSha256": "7f23c916cb30dd11db96ed019d6468f0afb8a100d2bf5699a2a6abf4bdac036f",
+      "classificationSha256": "ae757ef057db11961782b29cf1346320c9c3ac4b94ffd498533ce0be82a55f35"
+    },
+    {
+      "id": "REV-S17-017",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "c9699e8c1fb60c8ea6271387c513d23d0a2651a90f9bd99185fb35c44ca032ad",
+      "classificationSha256": "32f4bf660a9d71347208952fc2fa5174e6ebe923027fd7fba88ba0d7bcb8f797"
+    },
+    {
+      "id": "REV-S17-018",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "b8078ae70b8c91365c81bc0cbaff25621292adf10882d013b058c6fc6bcde6c5",
+      "classificationSha256": "0db37a4988baf883aae7d3a127c276768fefde103e3aa06160696c72202a0d85"
+    },
+    {
+      "id": "REV-S17-019",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "4b685b3f7d9d3a6c5a9f00dbe14e3f7326968d3aef71f0ff8651a25f5f443ad5",
+      "classificationSha256": "c2854285a22da1af97f9c7ab2a3bc8768a858dbb555f8b13744312bd0613b63a"
+    },
+    {
+      "id": "REV-S17-020",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "7782428e8262b31439184808fd2bb04d25b354659d0ac9cc81e178a02081dfa2",
+      "classificationSha256": "733ceafe55e2d4f99f3c2fcdecafb03be5a1ed4f9e5013330245e9bfb64d2d9e"
+    },
+    {
+      "id": "REV-S17-021",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "511c9e4e8573de276cbc623ee5dbf52c84aac15fc5db1d10f0c31dab54d1f6f7",
+      "classificationSha256": "07fee2efaa778bada3e9650fd37b9158ba15cd235ed1d3fad2ac8a676abfd2cc"
+    },
+    {
+      "id": "REV-S17-022",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "8b565c681020469cb569917748b1c4fd52ddbcf6e07b828de4ee4ad3eb1c5f1b",
+      "classificationSha256": "f89cca6aebe63d27d5f436c51d6f10ef4d86b7f668cc5b1e3d5a95d33f86faa3"
+    },
+    {
+      "id": "REV-S17-023",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "5712a7b99f1d46dfcfc055715f9b42ae5a0af94864f246fcdc3645f2f4b42938",
+      "classificationSha256": "13e2802f66324e12b57562659c08320f863137beaec9ca144da5a59ddb2b93f5"
+    },
+    {
+      "id": "REV-S17-024",
+      "sourceName": "가상 외부 판매처",
+      "recordSha256": "787ce15ca0ee57f46e045c411b075c6312b58a1afb5b5e3d988682f27b081d25",
+      "classificationSha256": "34befaa456ac91c3a8d1b9c771df79f21472897392b6673fbbe97f425ddc5ab9"
+    },
+    {
+      "id": "REV-S17-025",
+      "sourceName": "자사몰",
+      "recordSha256": "3e87d97d192e73e1d9be8fe74a1c6dc0e40d592db432c86ddfbe7c1d901e895f",
+      "classificationSha256": "20cfa7f61243dd6176cf72533a4229dc2fe6fd80845e4bca8f4864629bc17b25"
+    }
+  ],
+  "files": {
+    "training-dashboard.json": "4ada40bb6153fcc40cdaa2654c48aaa3cccd46c489a1558ad888d5a0d2e80c66",
+    "manifest.json": "5ee94babdec8896b43d7ce6dde2cca07b5a50a33f6f036805a7adf1d9ce6ba47",
+    "roas-product-metadata.json": "7349c2c37f1c7238d1ae1973aacafd501a595c4c56f31a8e44310de1be6491cd"
+  },
+  "coverage": [
+    {
+      "caseId": "S16",
+      "productId": "EDU-P1",
+      "sourceId": "own_store",
+      "periodIds": [
+        "baseline",
+        "current"
+      ]
+    },
+    {
+      "caseId": "S16",
+      "productId": "EDU-P1",
+      "sourceId": "virtual_external_1",
+      "periodIds": [
+        "baseline",
+        "current"
+      ]
+    },
+    {
+      "caseId": "S17",
+      "productId": "EDU-P1",
+      "sourceId": "own_store",
+      "periodIds": [
+        "baseline",
+        "current"
+      ]
+    },
+    {
+      "caseId": "S17",
+      "productId": "EDU-P1",
+      "sourceId": "virtual_external_1",
+      "periodIds": [
+        "baseline",
+        "current"
+      ]
+    }
+  ],
+  "taxonomySha256": "f41780187c696b128d945c4f1dffa7eb416831d782b24a746f179aef9a4dca05",
+  "manifest": {
+    "contract": "roas-data/1",
+    "files": [
+      {
+        "file": "training-dashboard.json",
+        "bytes": 28326584,
+        "sha256": "4ada40bb6153fcc40cdaa2654c48aaa3cccd46c489a1558ad888d5a0d2e80c66"
+      },
+      {
+        "file": "roas-reviews.json",
+        "bytes": 24668,
+        "sha256": "f40aeb577c550ee3928cd044b45fa83253bee751b234de5c3ca4a874700de4e0"
+      },
+      {
+        "file": "roas-review-classification.json",
+        "bytes": 26626,
+        "sha256": "b1febf7a996ff039600c75957af99f3633d6f836e41a3ce5c08df20d660172de"
+      },
+      {
+        "file": "roas-product-metadata.json",
+        "bytes": 243,
+        "sha256": "7349c2c37f1c7238d1ae1973aacafd501a595c4c56f31a8e44310de1be6491cd"
+      },
+      {
+        "file": "source-ads.jsonl",
+        "bytes": 41633,
+        "sha256": "c2f25dc1637ba2d80c2cef6bee5355b0438062d3bad42a183d0bf1f9082e0f6f"
+      }
+    ],
+    "data_sha256": "7cf35f6f427475ff2650f7802a1412feb7b12349edc38a6e2d0fbe0d93bd9203"
+  }
+}

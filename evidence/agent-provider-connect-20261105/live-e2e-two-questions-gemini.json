@@ -1,0 +1,552 @@
+{
+  "date": "2026-11-05",
+  "mode": "actual_http_sqlite_tools_and_live_model_transports",
+  "note": "Diagnostic-only explicit live authorization bypasses the normal unverified-billing guard. This is NOT a vendor billing proof.",
+  "providerReadiness": [
+    {
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "gateway",
+      "model": "zai/glm-5.3-flash",
+      "configured": false,
+      "eligible": false,
+      "reason": "missing_key"
+    },
+    {
+      "provider": "sail",
+      "model": "zai-org/GLM-5.3-Flash",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    },
+    {
+      "provider": "jev",
+      "model": "jev-latest",
+      "configured": true,
+      "eligible": true,
+      "reason": "ready"
+    }
+  ],
+  "results": [
+    {
+      "question": "ROAS가 떨어진 이유에 대해서 각 지표별로 연관시켜서 심층분석해줘. 그리고 이를 보완하려면 어떤 캠페인에서 어떤 후속 액션을취하는게 좋아?",
+      "index": 1,
+      "runId": "59e8aeed-859e-4565-91e3-f3ac2d5dccce",
+      "route": "deep",
+      "status": "withheld",
+      "stopReason": "call_limit",
+      "causeStatus": "not_assessed",
+      "elapsedMs": 16780,
+      "usage": {
+        "modelAttempts": 5,
+        "inputTokens": 10969,
+        "outputTokens": 94,
+        "toolCalls": 2
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 28,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 245
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 17,
+          "count": 6
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 13,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini"
+        },
+        {
+          "seq": 14,
+          "kind": "model_error",
+          "stage": "reasoning",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 2255
+        },
+        {
+          "seq": 15,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini"
+        },
+        {
+          "seq": 16,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini",
+          "elapsedMs": 5079
+        },
+        {
+          "seq": 17,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 18,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini"
+        },
+        {
+          "seq": 19,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 7538
+        },
+        {
+          "seq": 20,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini"
+        },
+        {
+          "seq": 21,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 1231
+        },
+        {
+          "seq": 22,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "withheld",
+          "errorCode": "call_limit"
+        }
+      ],
+      "result": null
+    },
+    {
+      "question": "각 캠페인별 ROAS 추이 어떻게 되는지 정리해줘.",
+      "index": 2,
+      "runId": "fdbbe311-4342-4891-90c9-3f42d8f9ac6a",
+      "route": "deep",
+      "status": "withheld",
+      "stopReason": "call_limit",
+      "causeStatus": "not_assessed",
+      "elapsedMs": 142092,
+      "usage": {
+        "modelAttempts": 5,
+        "inputTokens": 5905,
+        "outputTokens": 93,
+        "toolCalls": 3
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "accepted",
+          "stage": "scope_locked",
+          "status": "queued"
+        },
+        {
+          "seq": 2,
+          "kind": "stage",
+          "stage": "scope_locked"
+        },
+        {
+          "seq": 3,
+          "kind": "stage",
+          "stage": "routed"
+        },
+        {
+          "seq": 4,
+          "kind": "stage",
+          "stage": "overview"
+        },
+        {
+          "seq": 5,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 6,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "overview",
+          "status": "ready",
+          "elapsedMs": 25,
+          "count": 2
+        },
+        {
+          "seq": 7,
+          "kind": "stage",
+          "stage": "classifying"
+        },
+        {
+          "seq": 8,
+          "kind": "model_attempt",
+          "stage": "classifying",
+          "model": "jev-latest",
+          "provider": "jev"
+        },
+        {
+          "seq": 9,
+          "kind": "model_success",
+          "stage": "classifying",
+          "model": "jev-1.14.0",
+          "provider": "jev",
+          "elapsedMs": 231
+        },
+        {
+          "seq": 10,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 11,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "trend",
+          "status": "ready",
+          "elapsedMs": 30,
+          "count": 0
+        },
+        {
+          "seq": 12,
+          "kind": "stage",
+          "stage": "retrieving"
+        },
+        {
+          "seq": 13,
+          "kind": "tool_result",
+          "stage": "retrieving",
+          "tool": "metric_detail",
+          "status": "ready",
+          "elapsedMs": 21,
+          "count": 6
+        },
+        {
+          "seq": 14,
+          "kind": "stage",
+          "stage": "reasoning"
+        },
+        {
+          "seq": 15,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini"
+        },
+        {
+          "seq": 16,
+          "kind": "model_error",
+          "stage": "reasoning",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 6230
+        },
+        {
+          "seq": 17,
+          "kind": "model_attempt",
+          "stage": "reasoning",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini"
+        },
+        {
+          "seq": 18,
+          "kind": "model_success",
+          "stage": "reasoning",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini",
+          "elapsedMs": 50555
+        },
+        {
+          "seq": 19,
+          "kind": "stage",
+          "stage": "final_answer"
+        },
+        {
+          "seq": 20,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini"
+        },
+        {
+          "seq": 21,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "gemini-3.8-flash",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 79841
+        },
+        {
+          "seq": 22,
+          "kind": "model_attempt",
+          "stage": "final_answer",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini"
+        },
+        {
+          "seq": 23,
+          "kind": "model_error",
+          "stage": "final_answer",
+          "model": "gemini-3.5-flash-lite",
+          "provider": "gemini",
+          "errorCode": "model_unavailable",
+          "elapsedMs": 4754
+        },
+        {
+          "seq": 24,
+          "kind": "terminal",
+          "stage": "terminal",
+          "status": "withheld",
+          "errorCode": "call_limit"
+        }
+      ],
+      "result": null
+    }
+  ],
+  "providerTrace": [
+    {
+      "at": "2026-11-05T08:23:14.138Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:23:14.382Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 244
+    },
+    {
+      "at": "2026-11-05T08:23:14.493Z",
+      "stage": "attempt",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:23:16.747Z",
+      "stage": "failed",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "elapsedMs": 2254,
+      "errorCode": "model_unavailable"
+    },
+    {
+      "at": "2026-11-05T08:23:16.763Z",
+      "stage": "attempt",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:23:21.841Z",
+      "stage": "completed",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "elapsedMs": 5078
+    },
+    {
+      "at": "2026-11-05T08:23:21.868Z",
+      "stage": "attempt",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:23:29.406Z",
+      "stage": "failed",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "elapsedMs": 7538,
+      "errorCode": "model_unavailable"
+    },
+    {
+      "at": "2026-11-05T08:23:29.419Z",
+      "stage": "attempt",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:23:30.650Z",
+      "stage": "failed",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "elapsedMs": 1231,
+      "errorCode": "model_unavailable"
+    },
+    {
+      "at": "2026-11-05T08:23:30.917Z",
+      "stage": "attempt",
+      "model": "jev-latest",
+      "provider": "jev",
+      "transport": "typesafe_systemone",
+      "billingBucket": "jev"
+    },
+    {
+      "at": "2026-11-05T08:23:31.147Z",
+      "stage": "completed",
+      "model": "jev-latest",
+      "provider": "jev",
+      "elapsedMs": 230
+    },
+    {
+      "at": "2026-11-05T08:23:31.411Z",
+      "stage": "attempt",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:23:37.641Z",
+      "stage": "failed",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "elapsedMs": 6230,
+      "errorCode": "model_unavailable"
+    },
+    {
+      "at": "2026-11-05T08:23:37.655Z",
+      "stage": "attempt",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:24:28.209Z",
+      "stage": "completed",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "elapsedMs": 50554
+    },
+    {
+      "at": "2026-11-05T08:24:28.247Z",
+      "stage": "attempt",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:25:48.086Z",
+      "stage": "failed",
+      "model": "gemini-3.8-flash",
+      "provider": "gemini",
+      "elapsedMs": 79839,
+      "errorCode": "model_unavailable"
+    },
+    {
+      "at": "2026-11-05T08:25:48.111Z",
+      "stage": "attempt",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "transport": "gemini_direct",
+      "billingBucket": "google_project"
+    },
+    {
+      "at": "2026-11-05T08:25:52.864Z",
+      "stage": "failed",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "gemini",
+      "elapsedMs": 4753,
+      "errorCode": "model_unavailable"
+    }
+  ]
+}

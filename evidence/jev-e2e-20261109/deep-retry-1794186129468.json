@@ -1,0 +1,513 @@
+{
+  "question": "캠페인별 ROAS가 왜 떨어졌고 어떤 캠페인부터 개선해야 해?",
+  "scope": {
+    "caseId": "S16",
+    "snapshot": "initial",
+    "metric": "roas",
+    "screenTitle": "성과 현황",
+    "filters": {
+      "channel": "all",
+      "source": "all",
+      "campaignId": "all",
+      "device": "all"
+    },
+    "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+  },
+  "startedAt": "2026-11-09T01:02:09.468Z",
+  "mode": "live chat client via Vite proxy",
+  "waitUntilTerminal": true,
+  "browserInteraction": "disabled in Work settings",
+  "accepted": {
+    "runId": "4c7c02c5-2823-449b-b055-8935bd53f527",
+    "executionStatus": "queued"
+  },
+  "state": {
+    "runId": "4c7c02c5-2823-449b-b055-8935bd53f527",
+    "runStatus": "completed",
+    "executionStatus": "partial",
+    "stage": "terminal",
+    "route": "deep",
+    "scopeFingerprint": "bad46ebe7f51b3bb7798c030e1b1bd6decad5dd7fdfc3404b8fa14817448bd7e",
+    "appliedScope": {
+      "caseId": "S16",
+      "snapshot": "initial",
+      "metric": "roas",
+      "screenTitle": "성과 현황",
+      "filters": {
+        "channel": "all",
+        "source": "all",
+        "campaignId": "all",
+        "device": "all"
+      },
+      "dataHash": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+    },
+    "sourceHashes": {
+      "roas": "9cc99b08fd1b9a8cef4889f7eed20c04084051290f965c1c13849513288adee9"
+    },
+    "causeStatus": "undetermined",
+    "stopReason": "gemini_sufficient",
+    "startedAt": 1794186129946,
+    "terminalAt": 1794186435807,
+    "result": {
+      "evidenceIds": [
+        "EV-ccfe8fb75e1e-1",
+        "EV-ccfe8fb75e1e-2",
+        "EV-ccfe8fb75e1e-3",
+        "EV-ccfe8fb75e1e-4",
+        "EV-ccfe8fb75e1e-5",
+        "EV-ccfe8fb75e1e-6",
+        "EV-ccfe8fb75e1e-7",
+        "EV-ccfe8fb75e1e-8",
+        "EV-ccfe8fb75e1e-9",
+        "EV-ccfe8fb75e1e-10",
+        "EV-ccfe8fb75e1e-11",
+        "EV-ccfe8fb75e1e-12",
+        "EV-ccfe8fb75e1e-13",
+        "EV-ccfe8fb75e1e-14",
+        "EV-ccfe8fb75e1e-15",
+        "EV-ccfe8fb75e1e-16",
+        "EV-ccfe8fb75e1e-17",
+        "EV-ccfe8fb75e1e-18",
+        "EV-ccfe8fb75e1e-19",
+        "EV-ccfe8fb75e1e-20",
+        "EV-ccfe8fb75e1e-21",
+        "EV-ccfe8fb75e1e-22",
+        "EV-ccfe8fb75e1e-23",
+        "EV-ccfe8fb75e1e-24",
+        "EV-ccfe8fb75e1e-25",
+        "EV-ccfe8fb75e1e-26",
+        "EV-ccfe8fb75e1e-27",
+        "EV-ccfe8fb75e1e-28",
+        "EV-ccfe8fb75e1e-29",
+        "EV-ccfe8fb75e1e-30",
+        "EV-ccfe8fb75e1e-31",
+        "EV-ccfe8fb75e1e-32",
+        "EV-ccfe8fb75e1e-33",
+        "EV-ccfe8fb75e1e-34",
+        "EV-ccfe8fb75e1e-35",
+        "EV-ccfe8fb75e1e-36",
+        "EV-ccfe8fb75e1e-37",
+        "EV-ccfe8fb75e1e-38",
+        "EV-ccfe8fb75e1e-39",
+        "EV-ccfe8fb75e1e-40",
+        "EV-ccfe8fb75e1e-41",
+        "EV-ccfe8fb75e1e-42",
+        "EV-ccfe8fb75e1e-43",
+        "EV-ccfe8fb75e1e-44",
+        "EV-ccfe8fb75e1e-45",
+        "EV-ccfe8fb75e1e-46",
+        "EV-ccfe8fb75e1e-47",
+        "EV-ccfe8fb75e1e-48",
+        "EV-ccfe8fb75e1e-49",
+        "EV-ccfe8fb75e1e-50",
+        "EV-ccfe8fb75e1e-51",
+        "EV-ccfe8fb75e1e-52"
+      ],
+      "limitations": [
+        "evidence: 도구 필요 여부 불확실"
+      ],
+      "answer": "캠페인별 ROAS 하락은 검색 및 피드 광고 캠페인에서 예산 증액과 타깃 확장 후 효율이 저하된 것과 연관이 있으며, 개선은 효율이 가장 낮은 인스타그램 피드 캠페인부터 검토하는 것을 제안합니다 [EV-ccfe8fb75e1e-6, EV-ccfe8fb75e1e-8, EV-ccfe8fb75e1e-10, EV-ccfe8fb75e1e-12, EV-ccfe8fb75e1e-45, EV-ccfe8fb75e1e-46, EV-ccfe8fb75e1e-47, EV-ccfe8fb75e1e-48].\n\n### 1. ROAS 하락 원인 분석 후보\n전체 ROAS는 비교 기간 355.8%(3.56)에서 현재 기간 284.7%(2.85)로 71.1%p 하락했습니다 [EV-ccfe8fb75e1e-1, EV-ccfe8fb75e1e-2]. \n\n* **운영 변경 사항**: 2026년 8월 17일에 주요 광고 캠페인(구글 검색 A·B, 페이스북/인스타그램 피드)의 일예산이 240,000원에서 420,000원으로 증액되고 기존 관심 집단에서 확장 집단으로 타깃이 변경되었습니다 [EV-ccfe8fb75e1e-45, EV-ccfe8fb75e1e-46, EV-ccfe8fb75e1e-47, EV-ccfe8fb75e1e-48]. 동시에 자사 상품 1~3의 할인율이 20%에서 0%로 변경되었습니다 [EV-ccfe8fb75e1e-42, EV-ccfe8fb75e1e-43, EV-ccfe8fb75e1e-44].\n* **캠페인별 변화**: 콘텐츠 제휴 캠페인을 제외한 유료 광고 캠페인들의 ROAS가 전반적으로 하락했습니다 [EV-ccfe8fb75e1e-5 ~ EV-ccfe8fb75e1e-16].\n\n### 2. 캠페인별 ROAS 비교 및 개선 우선순위\n현재 기간 기준 ROAS가 가장 낮아 우선적으로 개선해야 할 캠페인은 **8월 구매 캠페인 | Instagram 피드**입니다.\n\n| 캠페인명 | 기준 기간 ROAS | 현재 기간 ROAS | 변화량 | [EV-ccfe8fb75e1e-5 ~ EV-ccfe8fb75e1e-16] |\n| :--- | :--- | :--- | :--- | :--- |\n| 8월 구매 캠페인 \\| Instagram 피드 | 178.6% (1.79) | 120.7% (1.21) | -57.9%p | [EV-ccfe8fb75e1e-11, EV-ccfe8fb75e1e-12] |\n| 8월 구매 캠페인 \\| 검색 B | 193.9% (1.94) | 137.0% (1.37) | -56.9%p | [EV-ccfe8fb75e1e-7, EV-ccfe8fb75e1e-8] |\n| 8월 구매 캠페인 | Facebook 피드 | 550.6% (5.51) | 370.2% (3.70) | -180.5%p | [EV-ccfe8fb75e1e-9, EV-ccfe8fb75e1e-10] |\n| 8월 구매 캠페인 | 검색 A | 596.6% (5.97) | 378.6% (3.79) | -218.0%p | [EV-ccfe8fb75e1e-5, EV-ccfe8fb75e1e-6] |\n| 8월 콘텐츠 제휴 \\| Instagram | 173.9% (1.74) | 211.6% (2.12) | +37.7%p | [EV-ccfe8fb75e1e-15, EV-ccfe8fb75e1e-16] |\n| 8월 콘텐츠 제휴 \\| 네이버 블로그 | 510.2% (5.10) | 595.0% (5.95) | +84.9%p | [EV-ccfe8fb75e1e-13, EV-ccfe8fb75e1e-14] |\n\n* *표 셀 안의 세로줄 기호 앞에는 마크다운 문법에 따라 백슬래시(`\\|`)가 사용되었습니다.*"
+    },
+    "usage": {
+      "modelAttempts": 4,
+      "inputTokens": 54497,
+      "outputTokens": 2750,
+      "toolCalls": 5
+    },
+    "events": [
+      {
+        "seq": 1,
+        "at": 1794186129946,
+        "evidenceIds": [],
+        "stage": "scope_locked",
+        "status": "queued",
+        "kind": "accepted"
+      },
+      {
+        "seq": 2,
+        "at": 1794186129985,
+        "evidenceIds": [],
+        "stage": "scope_locked",
+        "kind": "stage"
+      },
+      {
+        "seq": 3,
+        "at": 1794186130018,
+        "evidenceIds": [],
+        "stage": "classifying",
+        "kind": "stage"
+      },
+      {
+        "seq": 4,
+        "at": 1794186130018,
+        "evidenceIds": [],
+        "stage": "classifying",
+        "model": "jev-latest",
+        "provider": "jev",
+        "transport": "typesafe_systemone",
+        "billingBucket": "jev",
+        "kind": "model_attempt",
+        "argsSummary": "first_tool_classifier"
+      },
+      {
+        "seq": 5,
+        "at": 1794186130220,
+        "evidenceIds": [],
+        "stage": "classifying",
+        "model": "jev-latest",
+        "provider": "jev",
+        "status": "passed",
+        "kind": "check_model_response"
+      },
+      {
+        "seq": 6,
+        "at": 1794186130248,
+        "evidenceIds": [],
+        "stage": "classifying",
+        "model": "jev-1.14.0",
+        "provider": "jev",
+        "transport": "typesafe_systemone",
+        "billingBucket": "jev",
+        "kind": "model_success",
+        "elapsedMs": 213
+      },
+      {
+        "seq": 7,
+        "at": 1794186130248,
+        "evidenceIds": [],
+        "stage": "routed",
+        "kind": "stage",
+        "argsSummary": "deep"
+      },
+      {
+        "seq": 8,
+        "at": 1794186130250,
+        "evidenceIds": [],
+        "stage": "routed",
+        "kind": "model_plan",
+        "argsSummary": "overview, metric_detail, trend, records",
+        "count": 4
+      },
+      {
+        "seq": 9,
+        "at": 1794186130250,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "kind": "stage"
+      },
+      {
+        "seq": 10,
+        "at": 1794186130250,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "tool": "overview",
+        "status": "running",
+        "kind": "tool_start",
+        "argsSummary": "scopeRole=primary"
+      },
+      {
+        "seq": 11,
+        "at": 1794186130250,
+        "evidenceIds": [],
+        "stage": "choosing_options",
+        "kind": "stage"
+      },
+      {
+        "seq": 12,
+        "at": 1794186130250,
+        "evidenceIds": [],
+        "stage": "choosing_options",
+        "model": "jev-latest",
+        "provider": "jev",
+        "transport": "typesafe_systemone",
+        "billingBucket": "jev",
+        "kind": "model_attempt",
+        "argsSummary": "first_tool_classifier"
+      },
+      {
+        "seq": 13,
+        "at": 1794186130250,
+        "evidenceIds": [
+          "EV-ccfe8fb75e1e-1",
+          "EV-ccfe8fb75e1e-2"
+        ],
+        "stage": "choosing_options",
+        "tool": "overview",
+        "status": "ready",
+        "kind": "tool_result",
+        "argsSummary": "직전 ROAS 355.79% / 현재 ROAS 284.72%",
+        "count": 2,
+        "elapsedMs": 27
+      },
+      {
+        "seq": 14,
+        "at": 1794186130513,
+        "evidenceIds": [],
+        "stage": "choosing_options",
+        "model": "jev-latest",
+        "provider": "jev",
+        "status": "passed",
+        "kind": "check_model_response"
+      },
+      {
+        "seq": 15,
+        "at": 1794186130529,
+        "evidenceIds": [],
+        "stage": "choosing_options",
+        "model": "jev-1.14.0",
+        "provider": "jev",
+        "transport": "typesafe_systemone",
+        "billingBucket": "jev",
+        "kind": "model_success",
+        "elapsedMs": 267
+      },
+      {
+        "seq": 16,
+        "at": 1794186130530,
+        "evidenceIds": [],
+        "stage": "choosing_options",
+        "status": "uncertain",
+        "kind": "model_plan",
+        "argsSummary": "일부 옵션 판단이 불확실합니다.",
+        "count": 27
+      },
+      {
+        "seq": 17,
+        "at": 1794186130531,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "kind": "stage"
+      },
+      {
+        "seq": 18,
+        "at": 1794186130532,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "tool": "metric_detail",
+        "status": "running",
+        "kind": "tool_start",
+        "argsSummary": "metric=roas, dimension=campaign, scopeRole=primary"
+      },
+      {
+        "seq": 19,
+        "at": 1794186130533,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "tool": "trend",
+        "status": "running",
+        "kind": "tool_start",
+        "argsSummary": "scopeRole=primary, granularity=day, periodId=both"
+      },
+      {
+        "seq": 20,
+        "at": 1794186130535,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "tool": "records",
+        "status": "running",
+        "kind": "tool_start",
+        "argsSummary": "scopeRole=primary"
+      },
+      {
+        "seq": 21,
+        "at": 1794186130536,
+        "evidenceIds": [
+          "EV-ccfe8fb75e1e-3",
+          "EV-ccfe8fb75e1e-4",
+          "EV-ccfe8fb75e1e-5",
+          "EV-ccfe8fb75e1e-6",
+          "EV-ccfe8fb75e1e-7",
+          "EV-ccfe8fb75e1e-8",
+          "EV-ccfe8fb75e1e-9",
+          "EV-ccfe8fb75e1e-10",
+          "EV-ccfe8fb75e1e-11",
+          "EV-ccfe8fb75e1e-12",
+          "EV-ccfe8fb75e1e-13",
+          "EV-ccfe8fb75e1e-14",
+          "EV-ccfe8fb75e1e-15",
+          "EV-ccfe8fb75e1e-16"
+        ],
+        "stage": "retrieving",
+        "tool": "metric_detail",
+        "status": "ready",
+        "kind": "tool_result",
+        "argsSummary": "직전 roas 355.8% / 현재 roas 284.7% / 6개 그룹 반환",
+        "count": 6,
+        "elapsedMs": 16
+      },
+      {
+        "seq": 22,
+        "at": 1794186130537,
+        "evidenceIds": [
+          "EV-ccfe8fb75e1e-17",
+          "EV-ccfe8fb75e1e-18",
+          "EV-ccfe8fb75e1e-19",
+          "EV-ccfe8fb75e1e-20",
+          "EV-ccfe8fb75e1e-21",
+          "EV-ccfe8fb75e1e-22",
+          "EV-ccfe8fb75e1e-23",
+          "EV-ccfe8fb75e1e-24",
+          "EV-ccfe8fb75e1e-25",
+          "EV-ccfe8fb75e1e-26",
+          "EV-ccfe8fb75e1e-27",
+          "EV-ccfe8fb75e1e-28",
+          "EV-ccfe8fb75e1e-29",
+          "EV-ccfe8fb75e1e-30",
+          "EV-ccfe8fb75e1e-31",
+          "EV-ccfe8fb75e1e-32",
+          "EV-ccfe8fb75e1e-33",
+          "EV-ccfe8fb75e1e-34",
+          "EV-ccfe8fb75e1e-35",
+          "EV-ccfe8fb75e1e-36",
+          "EV-ccfe8fb75e1e-37",
+          "EV-ccfe8fb75e1e-38",
+          "EV-ccfe8fb75e1e-39",
+          "EV-ccfe8fb75e1e-40"
+        ],
+        "stage": "retrieving",
+        "tool": "trend",
+        "status": "ready",
+        "kind": "tool_result",
+        "argsSummary": "2026-08-03 ~ 2026-08-26 일별 자료 24일",
+        "count": 24,
+        "elapsedMs": 16
+      },
+      {
+        "seq": 23,
+        "at": 1794186130537,
+        "evidenceIds": [
+          "EV-ccfe8fb75e1e-41",
+          "EV-ccfe8fb75e1e-42",
+          "EV-ccfe8fb75e1e-43",
+          "EV-ccfe8fb75e1e-44",
+          "EV-ccfe8fb75e1e-45",
+          "EV-ccfe8fb75e1e-46",
+          "EV-ccfe8fb75e1e-47",
+          "EV-ccfe8fb75e1e-48"
+        ],
+        "stage": "retrieving",
+        "tool": "records",
+        "status": "ready",
+        "kind": "tool_result",
+        "count": 8,
+        "elapsedMs": 16
+      },
+      {
+        "seq": 24,
+        "at": 1794186130539,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "kind": "stage"
+      },
+      {
+        "seq": 25,
+        "at": 1794186130539,
+        "evidenceIds": [],
+        "stage": "retrieving",
+        "tool": "trend",
+        "status": "running",
+        "kind": "tool_start",
+        "argsSummary": "scopeRole=primary, granularity=day, periodId=both"
+      },
+      {
+        "seq": 26,
+        "at": 1794186130540,
+        "evidenceIds": [
+          "EV-ccfe8fb75e1e-49",
+          "EV-ccfe8fb75e1e-50",
+          "EV-ccfe8fb75e1e-51",
+          "EV-ccfe8fb75e1e-52"
+        ],
+        "stage": "retrieving",
+        "tool": "trend",
+        "status": "ready",
+        "kind": "tool_result",
+        "argsSummary": "2026-08-27 ~ 2026-08-30 일별 자료 4일",
+        "count": 4,
+        "elapsedMs": 1
+      },
+      {
+        "seq": 27,
+        "at": 1794186130546,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "kind": "stage"
+      },
+      {
+        "seq": 28,
+        "at": 1794186130546,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "model": "gemini-3.8-flash",
+        "provider": "gemini",
+        "transport": "gemini_direct",
+        "billingBucket": "google_project",
+        "kind": "model_attempt",
+        "argsSummary": "deep_final"
+      },
+      {
+        "seq": 29,
+        "at": 1794186430678,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "model": "gemini-3.8-flash",
+        "provider": "gemini",
+        "transport": "gemini_direct",
+        "billingBucket": "google_project",
+        "errorCode": "model_failed",
+        "kind": "model_error",
+        "elapsedMs": 300133
+      },
+      {
+        "seq": 30,
+        "at": 1794186430681,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "model": "gemini-3.5-flash-lite",
+        "provider": "gemini",
+        "errorCode": "model_failed",
+        "kind": "model_fallback"
+      },
+      {
+        "seq": 31,
+        "at": 1794186430681,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "model": "gemini-3.5-flash-lite",
+        "provider": "gemini",
+        "transport": "gemini_direct",
+        "billingBucket": "google_project",
+        "kind": "model_attempt",
+        "argsSummary": "deep_final"
+      },
+      {
+        "seq": 32,
+        "at": 1794186435807,
+        "evidenceIds": [],
+        "stage": "final_answer",
+        "model": "gemini-3.5-flash-lite",
+        "provider": "gemini",
+        "transport": "gemini_direct",
+        "billingBucket": "google_project",
+        "kind": "model_success",
+        "elapsedMs": 5128
+      },
+      {
+        "seq": 33,
+        "at": 1794186435807,
+        "evidenceIds": [],
+        "stage": "terminal",
+        "status": "partial",
+        "errorCode": "gemini_sufficient",
+        "kind": "terminal"
+      }
+    ],
+    "lastEventSeq": 33,
+    "version": 9
+  },
+  "elapsedMs": 306219,
+  "markdownRendered": true,
+  "answerLength": 1756,
+  "renderPath": "evidence/jev-e2e-20261109/deep-retry-1794186129468.html",
+  "finishedAt": "2026-11-09T01:07:18.088Z"
+}

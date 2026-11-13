@@ -135,7 +135,7 @@ export function readApprovedReviewRows(input:unknown,caseId:string):ReviewView {
  const counts=new Map<string,number>();
  const fields=['id','caseId','productId','sourceId','sourceName','writtenAt','collectedAt','rating','ratingScale','text'];
  const cutOff=Date.parse('2026-08-31T00:00:00+09:00');
- if(all.length!==50)return {caseId,status:'error',reviews:[],message:'승인된 원문 50건의 수량을 확인할 수 없습니다.'};
+ if(all.length!==85)return {caseId,status:'error',reviews:[],message:'승인된 원문 85건의 수량을 확인할 수 없습니다.'};
  for(const row of all){
   if(!row||typeof row!=='object'||Object.keys(row).length!==fields.length||fields.some(key=>!Object.hasOwn(row,key))||
    typeof row.id!=='string'||ids.has(row.id)||!['S16','S17'].includes(String(row.caseId))||row.productId!=='EDU-P1'||!['own_store','virtual_external_1'].includes(String(row.sourceId))||
@@ -155,7 +155,7 @@ export function readApprovedReviewRows(input:unknown,caseId:string):ReviewView {
   if(row.caseId===caseId)reviews.push({id:row.id,caseId:String(row.caseId),productId:'EDU-P1',sourceId:String(row.sourceId),sourceName:row.sourceName,writtenAt:row.writtenAt,collectedAt:row.collectedAt,rating:Number(row.rating),text:row.text,categories:[],classification:'pending'});
  }
  for(const c of ['S16','S17'])for(const period of ['baseline','current'])for(const source of ['own_store','virtual_external_1']){
-  const expected=c==='S16'?(period==='baseline'?(source==='own_store'?4:8):(source==='own_store'?8:5)):
+  const expected=c==='S16'?(period==='baseline'?(source==='own_store'?9:18):(source==='own_store'?20:13)):
    (period==='baseline'?(source==='own_store'?8:4):(source==='own_store'?5:8));
   if(counts.get([c,source,period].join(':'))!==expected)
    return {caseId,status:'error',reviews:[],message:'사례, 판매처, 기간별 승인된 배분과 다릅니다.'};

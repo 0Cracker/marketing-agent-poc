@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {trainingScreenData} from '../../scripts/roas/training-data.mjs';
 import {metricChange,summarize,trainingCaseIds} from '../../shared/roas/training-dashboard.mjs';
 import type {TrainingData} from '../../shared/roas/training-dashboard.mjs';
-import {analysisColumns,analysisDimensions,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,factorEffects,scopeTrainingData,sortAnalysisGroups} from '../../frontend/roas/training-analysis.ts';
+import {analysisColumns,analysisDimensions,analysisDisplayKeys,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,factorEffects,scopeTrainingData,sortAnalysisGroups} from '../../frontend/roas/training-analysis.ts';
 import type {AnalysisDimension} from '../../frontend/roas/training-analysis.ts';
 
 const all={channel:'all',source:'all',campaignId:'all',device:'all'};
@@ -37,8 +37,8 @@ test('existing cases and snapshots reconcile the centered contributions and rati
  assert.equal(checks,1080);assert(zeroGroups>0,'actual zero-denominator and new/ended groups are covered');
 });
 
-test('S07 isolates the complete 100 percentage-point ROAS decline as budget mix change',()=>{
- const data:TrainingData=trainingScreenData(undefined,'S07'),analysis=analyzeGroups(data,data.facts,'roas','campaign');
+test('S07 isolates the complete 100 percentage-point ROAS decline as budget mix change at execution-unit level',()=>{
+ const data:TrainingData=trainingScreenData(undefined,'S07'),analysis=analyzeGroups(data,data.facts,'roas','campaignUnit');
  near(analysis.overall[0]!,4);near(analysis.overall[1]!,3);
  for(const g of analysis.groups){near(g.efficiency!,0);assert(g.mix!<0);assert(g.impact!<0);}
  near(analysis.groups.reduce((s,g)=>s+g.mix!,0),-1);
@@ -122,6 +122,8 @@ test('AOV exposes product mix and discounts as distinct observations on the inst
 test('explanatory metrics precede calculation inputs in analysis columns',()=>{
  assert.deepEqual(analysisColumns.roas,['roas','cpc','cvr','aov','revenue','spend']);
  assert.deepEqual(analysisColumns.cpc,['cpc','adCpm','adCtr','spend','clicks']);
+ assert.deepEqual(analysisDisplayKeys('roas',analysisColumns.roas),['impact','roas','cpc','cvr','aov','revenue','spend']);
+ assert.deepEqual(analysisDisplayKeys('cpc',analysisColumns.cpc),['cpc','impact','adCpm','adCtr','spend','clicks']);
 });
 
 test('ROAS column changes and other metric raw values sort independently',()=>{
@@ -141,4 +143,37 @@ test('ROAS column changes and other metric raw values sort independently',()=>{
    assert(values.every((v,i)=>!i||(descending?values[i-1]!>=v!:values[i-1]!<=v!)),sortKey);
   }
  }
+});
+
+test('campaign analysis aggregates execution units by explicit parent, preserving ratios, contributions, and filters',()=>{
+ const data:TrainingData=trainingScreenData(undefined,'S16'),rows=analysisRows(data,all,'roas','campaign');
+ const parents=analyzeGroups(data,rows,'roas','campaign'),units=analyzeGroups(data,rows,'roas','campaignUnit');
+ assert.deepEqual(parents.groups.map(g=>g.key).sort(),['EDU-G1','EDU-G2']);
+ assert.equal(units.groups.length,6);
+ for(const [parentId,childIds,label] of [
+  ['EDU-G1',['EDU-C1','EDU-C2','EDU-C3','EDU-C4'],'8월 구매 캠페인'],
+  ['EDU-G2',['EDU-C5','EDU-C6'],'8월 콘텐츠 제휴'],
+ ] as const){
+  const parent=parents.groups.find(g=>g.key===parentId)!;
+  assert.equal(parent.label,label);
+  assert.deepEqual([...new Set(parent.rows.map(r=>r.campaignId))].sort(),[...childIds].sort());
+  for(const period of ['baseline','current'] as const){
+   const selected=parent.rows.filter(r=>r.periodId===period),summary=summarize(selected);
+   assert.equal(summary.spend,period==='current'?parent.after.spend:parent.before.spend);
+   assert.equal(summary.revenue,period==='current'?parent.after.revenue:parent.before.revenue);
+   near(summary.rates.roas!,analysisValue(period==='current'?parent.after:parent.before,'roas')!);
+   near(summary.rates.cpc!,analysisValue(period==='current'?parent.after:parent.before,'cpc')!);
+   near(summary.rates.cvr!,analysisValue(period==='current'?parent.after:parent.before,'cvr')!);
+   near(summary.rates.aov!,analysisValue(period==='current'?parent.after:parent.before,'aov')!);
+  }
+  near(units.groups.filter(g=>childIds.includes(g.key as never)).reduce((sum,g)=>sum+g.impact!,0),parent.impact!);
+ }
+ const purchase=parents.groups.find(g=>g.key==='EDU-G1')!;
+ const single=analyzeGroups(data,analysisRows(data,{...all,campaignId:'EDU-C1'},'roas','campaign'),'roas','campaign');
+ assert.equal(single.groups.length,1);
+ assert.equal(single.groups[0].label,purchase.label);
+ assert(single.groups[0].rows.every(r=>r.campaignId==='EDU-C1'));
+ assert(single.groups[0].after.spend<purchase.after.spend,'subunit filter must not silently include sibling spend');
+ assert.equal(units.groups.find(g=>g.key==='EDU-C1')!.label,'검색 A');
+ assert.equal(units.groups.find(g=>g.key==='EDU-C6')!.label,'Instagram');
 });

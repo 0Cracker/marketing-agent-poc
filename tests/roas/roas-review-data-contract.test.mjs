@@ -6,12 +6,12 @@ import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'../..');
 const file=path.join(root,'data','roas','roas-reviews.json');
 
-test('REV-DATA-01: approved 50 synthetic product reviews and four coverage declarations exist',()=>{
+test('REV-DATA-01: approved 85 synthetic product reviews and four coverage declarations exist',()=>{
  assert(fs.existsSync(file),'approved roas-reviews/1 dataset is not yet implemented');
  const data=JSON.parse(fs.readFileSync(file,'utf8'));
  assert.equal(data.contract,'roas-reviews/1');
  assert.equal(data.subjectCategory,'shampoo');
- assert.equal(data.reviews.length,50);
+ assert.equal(data.reviews.length,85);
  assert.equal(data.coverage.length,4);
  const ids=new Set();
  for(const r of data.reviews){
@@ -27,9 +27,9 @@ test('REV-DATA-01: approved 50 synthetic product reviews and four coverage decla
  }
  for(const caseId of ['S16','S17']){
   const rows=data.reviews.filter(r=>r.caseId===caseId);
-  assert.equal(rows.length,25);
+  assert.equal(rows.length,caseId==='S16'?60:25);
   const before=rows.filter(r=>r.writtenAt.slice(0,10)>='2026-08-03'&&r.writtenAt.slice(0,10)<='2026-08-16');
   const after=rows.filter(r=>r.writtenAt.slice(0,10)>='2026-08-17'&&r.writtenAt.slice(0,10)<='2026-08-30');
-  assert.equal(before.length,12);assert.equal(after.length,13);
+  assert.equal(before.length,caseId==='S16'?27:12);assert.equal(after.length,caseId==='S16'?33:13);
  }
 });

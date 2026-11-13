@@ -33,7 +33,7 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
   fail(pack.productId === 'EDU-P1' && pack.sourceReviewSha256 === sha, 'review source hash mismatch');
   fail(product.contract === 'roas-product-metadata/1' &&
     product.products.some(p => p.productId === 'EDU-P1' && p.containerType === 'pump_bottle'), 'product metadata');
-  fail(reviews.contract === 'roas-reviews/1' && reviews.reviews.length === 50 &&
+  fail(reviews.contract === 'roas-reviews/1' && reviews.reviews.length === 85 &&
     reviews.coverage.length === 4, 'source reviews contract/count');
   fail(Object.keys(labels).length === pack.categories.length && unique(pack.categories.map(c => c.id)),
     'category count/duplicate');
@@ -46,10 +46,10 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
     e.definition.trim().length >= 8, 'bad experience: ' + e.id);
   fail(pack.sentiments.length === 4 && unique(pack.sentiments.map(s => s.id)) &&
     sentiments.every(s => pack.sentiments.some(x => x.id === s && typeof x.label === 'string')), 'sentiment contract');
-  fail(pack.reviewClassifications.length === 50 && unique(pack.reviewClassifications.map(x => x.reviewId)),
+  fail(pack.reviewClassifications.length === 85 && unique(pack.reviewClassifications.map(x => x.reviewId)),
     'classification coverage');
   const originalById = new Map(reviews.reviews.map(r => [r.id, r]));
-  fail(originalById.size === 50, 'source IDs');
+  fail(originalById.size === 85, 'source IDs');
   const cells = new Map();
   const byCategory = new Map(pack.categories.map(c => [c.id, new Set()]));
   const byExperience = new Map(pack.experiences.map(e => [e.id, new Set()]));
@@ -86,12 +86,12 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
     if (!cells.has(k)) cells.set(k, []);
     cells.get(k).push(r.rating);
   }
-  fail(unclassified.length === 2 &&
-    ['REV-S16-025', 'REV-S17-025'].every(id => unclassified.includes(id)),
+  fail(unclassified.length === 4 &&
+    ['REV-S16-025', 'REV-S17-025', 'REV-S16-040', 'REV-S16-060'].every(id => unclassified.includes(id)),
     'approved unclassified IDs');
   const cellsExpected = {
-    'S16|baseline|own_store':4, 'S16|baseline|virtual_external_1':8,
-    'S16|current|own_store':8, 'S16|current|virtual_external_1':5,
+    'S16|baseline|own_store':9, 'S16|baseline|virtual_external_1':18,
+    'S16|current|own_store':20, 'S16|current|virtual_external_1':13,
     'S17|baseline|own_store':8, 'S17|baseline|virtual_external_1':4,
     'S17|current|own_store':5, 'S17|current|virtual_external_1':8,
   };
@@ -103,6 +103,7 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
     return vals.reduce((a,b) => a+b, 0)/vals.length;
   };
   fail(mean('S16','current') > mean('S16','baseline') &&
+    mean('S16','current','own_store') === 4 &&
     mean('S16','current','own_store') < mean('S16','baseline','own_store'), 'B S16');
   fail(mean('S17','current') > mean('S17','baseline') &&
     mean('S17','current','virtual_external_1') < mean('S17','baseline','virtual_external_1'), 'B S17');
@@ -117,7 +118,7 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
   }
   fail([...byExperience.values()].every(ids => ids.size > 0), 'approved experience has no source evidence');
   for (const [cid, ids] of byCategory) {
-    fail(ids.size <= 50, 'parent count > 50');
+    fail(ids.size <= 85, 'parent count > 85');
     for (const e of pack.experiences.filter(x => x.categoryId === cid))
       fail(byExperience.get(e.id).size <= ids.size, 'sub-theme count > parent');
   }
@@ -129,7 +130,7 @@ export function validateClassification({rawBytes, reviews, pack, product}) {
     categoryCounts: Object.fromEntries([...byCategory].map(([c, ids]) => [c, ids.size])),
     experienceCounts: Object.fromEntries([...byExperience].map(([e, ids]) => [e, ids.size])),
     cells: Object.fromEntries([...cells].map(([c, ids]) => [c, ids.length])),
-    checks: ['schema', 'source sha256', 'pump metadata', '50 IDs', '2 approved unclassified', '5/18 dictionary',
+    checks: ['schema', 'source sha256', 'pump metadata', '85 IDs', '4 approved unclassified', '5/18 dictionary',
       'exact evidence', 'no duplicate experience', '4 sentiment values', '8 cells',
       'category distinct rollup', 'A/B/C S16+S17'],
   };

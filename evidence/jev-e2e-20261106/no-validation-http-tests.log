@@ -1,0 +1,24 @@
+✔ real seven-tool runtime and SQLite: HTTP 202 -> model answer, restored logs, same runId (773.1281ms)
+✔ model text survives HTTP, SQLite and repeated reads without content validation (278.584ms)
+✔ real SQLite bridge: same-model quota errors move directly to Gateway and Sail (308.349ms)
+✔ account-level model attempt cap rejects further provider calls before transport (257.4617ms)
+✔ HTTP cancellation cannot be overwritten by a later model completion (380.7115ms)
+✔ async 202, polling, model completion, sanitized events and cursor (268.3722ms)
+✔ duplicate request is idempotent, changed payload conflicts, active thread is exclusive (169.7331ms)
+✔ cancel wins terminal race and never publishes late model output (150.941ms)
+✔ real SQLite survives restart, interrupts incomplete runs, keeps completed for 30 days (209.0938ms)
+✔ auth required on GET POST cancel, unsigned forwarded headers do not authenticate (78.0351ms)
+✔ unconfigured gateway fails closed, CORS only for allowed origin (54.3348ms)
+✔ invalid JSON, content type, unsupported scope and request size are rejected (54.976ms)
+✔ shared QA concurrency, request rate and model-attempt budgets are enforced (117.5927ms)
+✔ engine startup failure produces blocked status without waiting for model timeout (68.6547ms)
+✔ answers persist unchanged without approval flags or published evidence (89.6121ms)
+✔ summary events drop personal identifiers, secrets and raw tool records (72.7516ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2200.6864

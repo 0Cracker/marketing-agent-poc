@@ -1,0 +1,255 @@
+
+> marketing-agent-poc@0.4.19 test
+> node --experimental-strip-types --test tests/roas/*.test.mjs tests/roas/*.test.ts
+
+✔ ROAS all eighteen cases and both snapshots reuse screen sums, with no mutations (16281.4927ms)
+✔ ROAS rejects stale data, invalid cases/snapshots, forged filters and raw records before model calls (315.4864ms)
+✔ ROAS scoped model tools return only chosen campaign/device, use existing records, and retain followups (475.5817ms)
+✔ ROAS pagination, empty searches and all breakdown dimensions remain complete and non-overlapping (1369.7582ms)
+✔ ROAS refuses invented citations, duplicate calls, invalid arguments and excess turns (970.507ms)
+✔ ROAS grouped and numbered references normalize to retrieved source IDs (255.2894ms)
+✔ ROAS structured sections and comparison use actual source values, with reconstructable raw rows (632.5006ms)
+✔ ROAS raw evidence matches every provided breakdown and selected device (898.1468ms)
+✔ ROAS comparison leaves zero-purchase AOV unavailable rather than drawing a false zero (148.5178ms)
+✔ ROAS ranking conclusions distinguish current minimum from largest decline and prevent cherry-picking (214.43ms)
+✔ ROAS HTTP endpoint keeps session token/origin checks and validates input (912.2463ms)
+✔ ROAS uses the existing provider transport with its own answer protocol (233.4289ms)
+✔ ROAS and catalog share model pacing while selecting their own protocols (160.9164ms)
+✔ review navigation preserves the common chat launcher and an open conversation (6.9487ms)
+✔ dashboard reporting cutoff stays on the existing initial snapshot without a selector (4.0777ms)
+✔ fixed 14-day review periods are start-inclusive and end-exclusive (3.3813ms)
+✔ text search matches a contiguous phrase without HTML interpolation (3.5076ms)
+✔ empty approved selection never invents ratings, percentages, categories or collection dates (2.2327ms)
+✔ malformed and unapproved data cannot masquerade as not-provided or zero records (1.3424ms)
+✔ approved 85-review source: periods, source OR and deduplicated counts (12.7087ms)
+오후 3:48:58 [vite] (client) Re-optimizing dependencies because vite config has changed
+오후 3:49:00 [vite] (client) [optimizer] bundling dependencies...
+(node:17488) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✖ review initial render shows all 60/25 reviews and explicit writing dates (36494.3961ms)
+✔ approved S16 expansion adds 35 reviews, preserves original 50 except the approved source label (160.3774ms)
+✔ approved new rating cells produce exactly 4.00 own-store current mean and retain the source-mix contrast (2.4786ms)
+✔ new primary topics, multi-experience counts, dates and delayed collection match the plan (655.0295ms)
+✖ both snapshots reach UI projection with 60/25 reviews and 27/33 S16 period counts (1571.8755ms)
+✖ read-only UI projection keeps 60/25 approved reviews and exact evidence per case (2056.7575ms)
+✔ all 5/18 display dictionaries and parents match the approved taxonomy bytes (3.1397ms)
+✖ classification filter and text search never modify the common population counts (11.4554ms)
+✖ unavailable, tampered and partial payloads do not masquerade as complete data (48.6623ms)
+✔ review navigation is a sidebar page and ROAS data filters are not passed into it (3.193ms)
+✔ review controls render existing dashboard segments and toggleable category pills, not checkboxes (3.0813ms)
+✖ damaged projection cannot silently change classifications, dates or review identity (24.2877ms)
+✖ exhaustive independent review rollup oracle across both cases and snapshots, 3 periods, 4 sources, all 64 category combinations (1550.393ms)
+✔ overview compares campaign outcomes while drivers explains the metric interactions (1158.2369ms)
+✔ examples preserve the first and third questions and split the actual S16 ROAS change (7.0904ms)
+✔ all existing cases and snapshots keep source rows, scoped totals and contribution sums consistent (16490.85ms)
+✔ funnel answers use stage abandonment rates and handle an empty selection (8.5093ms)
+✔ ROAS and purchase rate use different display precision without changing raw values (103.2446ms)
+✔ currency is rounded only at display and small changes do not falsely say zero (1.8044ms)
+✔ table and KPI comparisons share the same percentage scaling (1.3277ms)
+✔ 85 reviews including 4 unclassified, 5 categories, 18 experiences, 4 sentiment values, and exact evidence (82.4135ms)
+✔ one review has multiple sentiments but counts only once within a parent theme (19.5639ms)
+✔ a changed raw source, missing IDs, duplicate annotations and bad quotes fail closed (8.3654ms)
+✔ wrong parent, unknown sentiment, pending status and changed taxonomy are errors (5.4666ms)
+✔ S16/S17 A opposite experience, B source-mix reversal and C time split survive (13.6045ms)
+✔ approved unclassified reviews have no categories or evidence and cannot become pending or fake classified (10.8118ms)
+✔ REV-DATA-01: approved 85 synthetic product reviews and four coverage declarations exist (15.3479ms)
+✖ all 36 training and unaffected review projections preserve baseline results with independently owned identity (1020.5131ms)
+✔ reproduction uses the approved 28 copied sources and produces identical installed bytes (7970.7643ms)
+✔ default data plugin emits only current projections and denies raw or old data URLs (3115.0718ms)
+✔ active source imports and filesystem paths cannot refer to legacy implementation (737.7947ms)
+✔ missing or damaged optional review data never blocks performance, startup or production projections (273.6321ms)
+✔ real ROAS server starts independently and serves authenticated chat while old APIs stay unavailable (5989.6663ms)
+✔ existing cases and snapshots reconcile the centered contributions and ratio totals in every supported partition (13279.6224ms)
+✔ S07 isolates the complete 100 percentage-point ROAS decline as budget mix change (8.6574ms)
+✔ S16 ROAS contributions preserve the AOV offset, CVR and CPC deterioration and the full change (6.4117ms)
+✔ CPA and CPC factor replacement sums agree across ads and content without mixing exposure bases (366.9973ms)
+✔ dimensions use actual campaign-qualified traffic, restrict keywords to search and exclude content from CTR (40.2096ms)
+✔ zero orders and new creatives retain finite contribution while unavailable ratios are not fabricated (98.3889ms)
+✔ traffic narrowing updates the complete selected totals and never invents a product cross-tab (23.7058ms)
+✔ AOV exposes product mix and discounts as distinct observations on the installed single-item orders (99.8888ms)
+✔ explanatory metrics precede calculation inputs in analysis columns (0.7473ms)
+✔ ROAS column changes and other metric raw values sort independently (112.2255ms)
+✔ the same numerical direction means opposite performance for ROAS and purchase costs (1144.7601ms)
+✔ one visible axis encloses both periods for all existing cases and KPI trends (1960.2926ms)
+✔ the entry metric and its numerator and denominator precede other columns without changing source order (1.7824ms)
+✔ displayed precision controls zero neutrality and visible purchase-rate changes retain their direction (3.0815ms)
+✔ headline ROAS compares each full period aggregate rather than daily mean or last-day ROAS (8.9336ms)
+✔ mini trends use two shared bounds around actual values while large trends retain zero (1296.8323ms)
+✔ mini bounds stay readable for flat, zero and unavailable series (0.9764ms)
+✔ all directional table metrics share improvement, deterioration and neutral semantics (15.0302ms)
+✔ rounded summary changes keep zero unsigned and preserve nonzero directions (3.0941ms)
+ℹ tests 72
+ℹ suites 0
+ℹ pass 64
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42298.1435
+
+✖ failing tests:
+
+test at tests\roas\review-display.test.mjs:9:1
+✖ review initial render shows all 60/25 reviews and explicit writing dates (36494.3961ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /조회된 리뷰<\/span><strong>60건/. Input:
+  
+  '<section class="review-section" aria-label="상품 1 리뷰 분석"><header class="review-section-title"><h2>리뷰 분석</h2><span>S16, 쓱쓱샴푸</span></header><div class="review-notice error" role="alert"><p>리뷰 데이터를 불러오지 못했습니다. 사례, 상품 또는 보고 기준과 리뷰 데이터가 일치하지 않습니다.</p></div></section>'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-display.test.mjs:16:11)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<section class="review-section" aria-label="상품 1 리뷰 분석"><header class="review-section-title"><h2>리뷰 분석</h2><span>S16, 쓱쓱샴푸</span></header><div class="review-notice error" role="alert"><p>리뷰 데이터를 불러오지 못했습니다. 사례, 상품 또는 보고 기준과 리뷰 데이터가 일치하지 않습니다.</p></div></section>',
+    expected: /조회된 리뷰<\/span><strong>60건/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-expansion.test.mjs:71:1
+✖ both snapshots reach UI projection with 60/25 reviews and 27/33 S16 period counts (1571.8755ms)
+  AssertionError [ERR_ASSERTION]: S16/initial
+  
+  'error' !== 'ready'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-expansion.test.mjs:74:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-projection.test.mjs:16:1
+✖ read-only UI projection keeps 60/25 approved reviews and exact evidence per case (2056.7575ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'error' !== 'ready'
+  
+      at load (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:12:9)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:19:20)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-projection.test.mjs:55:1
+✖ classification filter and text search never modify the common population counts (11.4554ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'error' !== 'ready'
+  
+      at load (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:12:9)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:56:19)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-projection.test.mjs:67:1
+✖ unavailable, tampered and partial payloads do not masquerade as complete data (48.6623ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'error'
+  - 'not_provided'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:69:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'not_provided',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-projection.test.mjs:108:1
+✖ damaged projection cannot silently change classifications, dates or review identity (24.2877ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'error' !== 'ready'
+  
+      at load (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:12:9)
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-projection.test.mjs:109:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\review-ui-exhaustive.test.mjs:17:1
+✖ exhaustive independent review rollup oracle across both cases and snapshots, 3 periods, 4 sources, all 64 category combinations (1550.393ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'error' !== 'ready'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/review-ui-exhaustive.test.mjs:22:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'ready',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\roas\separation.test.mjs:14:1
+✖ all 36 training and unaffected review projections preserve baseline results with independently owned identity (1020.5131ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - '7cf35f6f427475ff2650f7802a1412feb7b12349edc38a6e2d0fbe0d93bd9203'
+  
+      at TestContext.<anonymous> (file:///C:/Users/%EB%B0%95%EC%8B%9C%ED%98%95/Desktop/Marketing/marketing-agent-poc/tests/roas/separation.test.mjs:19:82)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: '7cf35f6f427475ff2650f7802a1412feb7b12349edc38a6e2d0fbe0d93bd9203',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

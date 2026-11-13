@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Trace</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --paper: light-dark(#f5f7fa, #101821);
+    --panel: light-dark(#fff, #182430);
+    --ink: light-dark(#172737, #e5edf5);
+    --muted: light-dark(#4d5f73, #a9bbcc);
+    --line: light-dark(#d4dce6, #374a5f);
+    --accent: light-dark(#075b8e, #9ed8fa);
+    --good: light-dark(#166345, #95dbb7);
+    --warn: light-dark(#805100, #ffce78);
+    --bad: light-dark(#a22438, #ffa1ae);
+    font: 15px/1.55 system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); }
+  header, main { max-width: 1500px; margin: auto; }
+  header { padding: 28px 24px 16px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; }
+  h1, h2, p { margin: 0; }
+  h1 { font-size: 25px; letter-spacing: -.025em; }
+  h2 { font-size: 17px; }
+  main { display: grid; grid-template-columns: minmax(320px, 460px) minmax(145px, 200px) minmax(0, 1fr); gap: 16px; padding: 0 24px 32px; }
+  aside, article { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; align-self: start; }
+  #trace-chat { width: 100%; height: calc(100dvh - 110px); min-height: 440px; position: sticky; top: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  #runs { max-height: 60vh; overflow: auto; }
+  #selected { overflow-wrap: anywhere; }
+  ul, ol { list-style: none; margin: 12px 0 0; padding: 0; }
+  #runs li + li { border-top: 1px solid var(--line); }
+  #run-list-hint, #empty { margin-top: 6px; }
+  button { font: inherit; color: inherit; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); padding: 5px 10px; cursor: pointer; }
+  #runs button { width: 100%; text-align: left; border: 0; padding: 9px 7px; }
+  button:hover, [aria-current=true] { background: var(--paper); }
+  #runs button[aria-current=true] { box-shadow: inset 3px 0 var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  small, .meta { color: var(--muted); font-size: 13px; }
+  #runs small { display: block; }
+  code, pre { font-family: ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+  #steps { border-left: 2px solid var(--line); margin: 15px 0 16px 4px; padding-left: 12px; }
+  #steps > li { border-bottom: 1px solid var(--line); }
+  #steps details, #original { padding: 8px 0; }
+  .step { padding: 10px 0; }
+  .step h3, #published h3 { font-size: 15px; margin: 0 0 3px; }
+  .step p { overflow-wrap: anywhere; }
+  .entry { padding: 6px 0; margin-left: 14px; }
+  .entry small { display: block; }
+  #scope { margin: 4px 0 0; }
+  #published { border-top: 1px solid var(--line); padding: 12px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  summary { cursor: pointer; font-weight: 600; }
+  details details { margin-left: 15px; }
+  .meta { margin-left: 16px; overflow-wrap: anywhere; }
+  .failed { color: var(--bad); }
+  .passed { color: var(--good); }
+  .warning { color: var(--warn); }
+  #original { border-top: 1px solid var(--line); }
+  #original p, #original label, #original button { margin-top: 8px; }
+  #original label { display: block; }
+  #original input { display: block; max-width: 100%; }
+  pre { white-space: pre-wrap; max-height: 22rem; overflow: auto; background: var(--paper); padding: 10px; margin: 8px 0 0; }
+  @media (max-width: 1000px) {
+    main { grid-template-columns: minmax(300px, 400px) minmax(0, 1fr); }
+    #trace-chat { grid-row: 1 / span 2; }
+    article { grid-column: 2; }
+    #runs { max-height: 160px; }
+  }
+  @media (max-width: 660px) {
+    header { padding: 16px 12px 10px; }
+    main { grid-template-columns: minmax(0, 1fr); padding-inline: 12px; }
+    #trace-chat { position: static; grid-row: auto; height: min(70dvh, 560px); }
+    article { grid-column: auto; }
+    #runs { max-height: 9rem; }
+  }
+</style>
+</head>
+<body>
+<header><div><h1>Agent Trace</h1><p class="meta">마케팅 AI 대화, S16 초기 스냅샷, 전체 필터</p></div><p id="connection" role="status">로컬 서버 연결 중</p></header>
+<main>
+  <iframe id="trace-chat" src="/agent-trace/chat" title="마케팅 AI 대화, S16 초기 스냅샷"></iframe>
+  <aside aria-labelledby="run-list-title">
+    <h2 id="run-list-title">최근 실행</h2>
+    <p id="run-list-hint" class="meta">실행을 선택하면 처리 과정과 답변이 표시됩니다.</p>
+    <ul id="runs" aria-label="최근 실행 목록"></ul>
+    <p id="empty" class="meta" hidden>아직 실행이 없습니다. 채팅에서 질문을 보내면 여기에 표시됩니다.</p>
+  </aside>
+  <article aria-labelledby="selected">
+    <h2 id="selected">실행을 선택하세요</h2>
+    <p id="run-status" class="meta"></p>
+    <p id="scope" class="meta"></p>
+    <ol id="steps" aria-label="실행 단계"></ol>
+    <section id="published" hidden><h3>반환한 답변</h3><p id="published-text"></p></section>
+    <details id="original" hidden>
+      <summary>원본 보기</summary>
+      <p><strong>저장된 이벤트 JSON</strong> <small>한 줄에 한 건</small> <button type="button" id="copy">복사</button></p>
+      <pre id="raw" tabindex="0"></pre>
+      <label>이 실행의 진단 파일 열기 (.json, .md)
+        <input id="file" type="file" accept=".json,.md">
+      </label>
+      <p class="meta">선택한 파일은 이 브라우저에서만 열립니다. 진단에 필요한 파일만 선택하세요.</p>
+      <p id="file-status" role="status"></p>
+      <button id="copy-file" type="button" hidden>파일 원문 복사</button>
+      <pre id="file-text" tabindex="0" hidden></pre>
+    </details>
+  </article>
+</main>
+<script>
+const get=id=>document.getElementById(id);
+const runs=get('runs'), steps=get('steps'), original=get('original');
+const raw=get('raw'), file=get('file'), fileText=get('file-text'), fileStatus=get('file-status');
+const copyFile=get('copy-file');
+const path='/agent-trace/runs';
+const labels={
+  queued:'접수', running:'진행 중', completed:'완료', partial:'부분 답변', withheld:'답변 보류',
+  blocked:'실행 차단', interrupted:'서버 중단', cancelled:'취소',
+  passed:'통과', failed:'실패', skipped:'건너뜀', ready:'조회 성공', error:'실패',
+  gemini_sufficient:'답변 생성으로 진행', insufficient_evidence:'근거 부족',
+  empty:'빈 결과', not_provided:'자료 없음',
+  scope_locked:'요청 접수', routed:'실행 경로 결정', overview:'기초 자료 조회',
+  classifying:'분석 경로와 도구 선택', choosing_options:'조회 조건 선택', retrieving:'자료 조회', reasoning:'모델 분석',
+  final_answer:'답변 생성', terminal:'종료',
+  accepted:'요청 접수', tool_start:'도구 입력 통과, 조회 시작', tool_rejected:'도구 요청 거절',
+  tool_result:'도구 결과',
+  model_attempt:'모델 호출', model_success:'모델 응답', model_fallback:'모델 전환',
+  model_error:'모델 호출 실패', check_model_response:'모델 응답 파싱',
+  model_plan:'모델의 다음 동작', server_plan:'서버 보완 조회',
+  failure:'실행 오류', tool_dispose_error:'도구 정리 실패'
+};
+const failureKinds=new Set(['model_error','tool_rejected','failure','tool_dispose_error']);
+const failed=e=>failureKinds.has(e.kind)||['failed','error','withheld','partial'].includes(e.status);
+const status=row=>row.executionStatus==='completed'&&row.hadFailure?'복구 완료':label(row.executionStatus);
+const label=value=>labels[value]||value||'기록 없음';
+const time=value=>new Date(value).toLocaleTimeString('ko-KR',{hour12:false});
+const runDate=new Intl.DateTimeFormat('ko-KR',{dateStyle:'short',timeStyle:'medium',hour12:false,timeZone:'Asia/Seoul'});
+const routeNames={quick:'빠른 조회',deep:'심층 분석'};
+const duration=row=>((Math.max(0,(row.terminalAt??Date.now())-row.startedAt))/1000).toFixed(1)+'초';
+const node=(tag,value)=>{const el=document.createElement(tag);el.textContent=value;return el;};
+let selected='', generation=0, seq=0, rawSeq=-1, signature='';
+let lane=null, laneName='', route=null;
+const toolNames={overview:'광고 성과 개요',review_summary:'리뷰 집계',metric_detail:'지표 상세',
+  metric_components:'지표 계산 내역',metric_breakdown:'그룹별 성과 비교',trend:'일별 지표 추이',
+  records:'운영 기록',review_records:'리뷰 기록',evidence:'근거 조회'};
+const units={overview:'기간',review_summary:'기간',metric_detail:'그룹 또는 기간',
+  metric_components:'기간',metric_breakdown:'그룹',trend:'일자',
+  records:'기록',review_records:'리뷰',evidence:'근거'};
+const roles={first_tool_classifier:'첫 추가 조회 선택',deep_reasoning:'추가 조회 여부 판단',
+  quick_answer:'빠른 조회 답변 생성',deep_final:'심층 분석 답변 생성'};
+const reasons={model_protocol:'모델 출력이 응답 규약에 맞지 않음',
+  duplicate_call:'같은 입력의 도구를 이미 실행함',tool_limit:'도구 호출 한도에 도달함'};
+
+async function read(url) {
+  const response=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(4500)});
+  if(!response.ok)throw Error(response.status===404?'실행 기록을 찾을 수 없습니다.':'로컬 서버 연결 끊김');
+  return response.json();
+}
+function select(id) {
+  if(selected===id)return;
+  selected=id;
+  generation++;
+  seq=0; rawSeq=-1;
+  lane=null; laneName=''; route=null;
+  steps.replaceChildren();
+  original.open=false; original.hidden=true;
+  raw.textContent=''; file.value=''; fileText.hidden=true; copyFile.hidden=true;
+  fileText.textContent=''; fileStatus.textContent='';
+  get('selected').textContent='실행 '+id;
+  get('run-status').textContent='실행 기록을 불러오는 중';
+  get('scope').textContent='';
+  get('published').hidden=true;
+  get('published-text').textContent='';
+  for(const button of runs.querySelectorAll('button'))button.setAttribute('aria-current',button.dataset.id===id);
+}
+function showRuns(rows) {
+  if(!selected&&rows.length)select(rows[0].runId);
+  get('empty').hidden=rows.length!==0;
+  const next=JSON.stringify(rows);
+  if(next===signature)return;
+  signature=next;
+  const focused=runs.contains(document.activeElement)?document.activeElement.dataset.id:null;
+  runs.replaceChildren(...rows.map(row=>{
+    const li=node('li','');
+    const title=[row.caseId,routeNames[row.route]].filter(Boolean).join(' ')||'분석 실행';
+    const button=node('button','');
+    button.append(node('strong',title));
+    button.type='button'; button.dataset.id=row.runId;
+    button.setAttribute('aria-current',row.runId===selected);
+    button.append(node('small',runDate.format(row.startedAt)),
+      node('small',[status(row),row.executionStatus==='running'&&label(row.stage)].filter(Boolean).join(', ')));
+    button.onclick=()=>select(row.runId);
+    li.append(button);
+    return li;
+  }));
+  if(focused)runs.querySelector('button[data-id="'+focused+'"]')?.focus();
+}
+function newStage(name,description) {
+  const li=node('li','');li.className='step';
+  li.append(node('h3',name));
+  if(description)li.append(node('p',description));
+  steps.append(li);
+  return li;
+}
+function stageDescription(stage) {
+  return {
+    scope_locked:'화면에서 선택한 사례, 시점과 필터를 이번 실행에 고정합니다.',
+    routed:route==='quick'?'빠른 조회로 분기했습니다. 광고 개요와 리뷰 집계로 답변을 준비합니다.':
+      route==='deep'?'심층 분석으로 분기했습니다. 광고 개요를 읽고 모델이 추가 조회를 선택합니다.':'선택한 실행 경로가 기록되어 있지 않습니다.',
+    overview:'서버가 기본 지표를 읽어 분석에 사용할 자료를 준비합니다.',
+    classifying:'모델이 분석 경로와 조회에 필요한 도구를 판단합니다.',
+    choosing_options:'선택된 도구의 조회 조건을 판단합니다.',
+    reasoning:'모델이 확보한 자료를 보고 추가 조회와 답변 생성 중 다음 동작을 결정합니다.',
+    retrieving:'도구별 조회 입력과 반환 결과입니다.',
+    final_answer:'조회한 자료를 답변 모델에 전달하고, 받은 Markdown 답변을 그대로 반환합니다.'
+  }[stage];
+}
+function describeEvent(e) {
+  const tool=toolNames[e.tool]||e.tool;
+  const count=e.count??e.rowCount;
+  const why=reasons[e.errorCode]||e.errorCode;
+  switch(e.kind) {
+    case 'tool_start': return (tool||'자료')+' 조회 요청을 실행했습니다'+(e.argsSummary?' ('+e.argsSummary+')':'')+'.';
+    case 'tool_result':
+      if(e.status!=='ready')return label(e.status)+(why?' / '+why:'')+'.';
+      return e.argsSummary||((count??'집계되지 않은')+'개 '+(units[e.tool]||'결과')+'를 반환했습니다.');
+    case 'model_attempt': return [e.model||'모델',e.provider,roles[e.argsSummary]].filter(Boolean).join(' / ');
+    case 'model_success': return (e.model||'모델')+' 응답을 받아 현재 단계에서 처리했습니다.';
+    case 'model_error': return [e.model,why,e.failurePhase&&'실패 구간 '+e.failurePhase,
+      e.causeCode&&'원래 코드 '+e.causeCode,e.httpStatus&&'HTTP '+e.httpStatus].filter(Boolean).join(' / ');
+    case 'check_model_response': return failed(e)?why:'도구 선택을 위한 구조화 응답을 읽었습니다.';
+    case 'model_plan':
+      if(e.status==='uncertain')return e.argsSummary||'일부 조회 조건이 불확실합니다.';
+      if(e.status==='gemini_sufficient')return '수집된 자료로 답변 생성에 진행하기로 했습니다.';
+      if(e.status==='insufficient_evidence')return '근거가 부족하다고 보고 추가 조회를 종료했습니다.';
+      if(!count)return '추가 도구를 요청하지 않았습니다.';
+      return (e.argsSummary||count+'개 도구')+' 요청'+(e.status==='skipped'?' / 호출 한도로 실행하지 않음':'');
+    case 'terminal':
+      return e.status==='completed'?'모델 답변을 반환하고 실행을 종료했습니다.':
+        '실행을 종료했습니다.'+(why?' '+why+'.':'');
+    default: return [e.argsSummary,why].filter(Boolean).join(' / ');
+  }
+}
+function appendEvent(e) {
+  if(e.kind==='accepted'||e.kind==='stage') {
+    const stage=e.kind==='accepted'?'scope_locked':e.stage;
+    if(stage==='scope_locked'&&laneName===stage)return;
+    if(stage==='retrieving'&&laneName==='overview')return;
+    if(stage==='routed')route=e.argsSummary||route;
+    laneName=stage;
+    const questionCount=['classifying','choosing_options'].includes(stage)&&Number.isInteger(e.count)
+      ? ' Jev 질문 '+e.count+'개.' : '';
+    lane=newStage(label(stage),stageDescription(stage)+questionCount);
+    return;
+  }
+  if(!lane||e.kind==='terminal')lane=newStage(e.kind==='terminal'?'종료':'실행 기록');
+  const entry=node('div','');entry.className='entry';
+  const title=[label(e.kind),toolNames[e.tool]||e.tool,e.status&&e.status!=='running'&&label(e.status)].filter(Boolean).join(' / ');
+  const heading=node('strong',title);
+  heading.className=failed(e)?'failed':e.status==='passed'?'passed':'';
+  entry.append(heading);
+  const description=describeEvent(e);
+  if(description)entry.append(node('p',description));
+  entry.append(node('small',[time(e.at),e.elapsedMs!==undefined&&e.elapsedMs+'ms'].filter(Boolean).join(' / ')));
+  if(e.evidenceIds?.length) {
+    const detail=node('details','');
+    detail.append(node('summary','근거 ID '+e.evidenceIds.length+'개'),node('code',e.evidenceIds.join(', ')));
+    entry.append(detail);
+  }
+  lane.append(entry);
+}
+async function showOriginal() {
+  if(!selected||!original.open||rawSeq===seq)return;
+  const current=generation, cursor=seq;
+  try {
+    const events=await read(path+'/'+selected+'/original');
+    if(current!==generation||cursor!==seq)return;
+    raw.textContent=events.join('\n')||'저장된 이벤트가 없습니다.';
+    rawSeq=cursor;
+  } catch(error) {
+    if(current===generation)raw.textContent=error.message;
+  }
+}
+async function poll() {
+  try {
+    const rows=await read(path);
+    showRuns(rows);
+    if(selected) {
+      const current=generation;
+      const state=await read(path+'/'+selected+'?afterEventSeq='+seq);
+      if(current===generation) {
+        route=state.route||route;
+        const scope=state.scope||{};
+        const filterNames={channel:'매체',source:'출처',campaignId:'캠페인',device:'기기'};
+        const filters=Object.entries(scope.filters||{}).map(([key,value])=>filterNames[key]+' '+(value==='all'?'전체':value));
+        get('scope').textContent=[scope.caseId,scope.snapshot,scope.metric?.toUpperCase(),...filters].filter(Boolean).join(' / ');
+        get('run-status').textContent=status(rows.find(row=>row.runId===selected)||state)+' / '+duration(state)
+          +(state.stopReason?' / '+state.stopReason:'');
+        for(const event of state.events)appendEvent(event);
+        seq=state.lastEventSeq;
+        const answer=state.publishedAnswer;
+        get('published').hidden=!answer;
+        if(get('published-text').textContent!==(answer||''))get('published-text').textContent=answer||'';
+        original.hidden=false;
+        await showOriginal();
+      }
+    }
+    get('connection').textContent='● 로컬 서버 연결됨';
+    get('connection').className='passed';
+  } catch(error) {
+    const missing=error.message==='실행 기록을 찾을 수 없습니다.';
+    if(missing)get('run-status').textContent=error.message;
+    get('connection').textContent=missing?'● 로컬 서버 연결됨':'⚠ 로컬 서버 연결 끊김';
+    get('connection').className=missing?'passed':'warning';
+  } finally {
+    setTimeout(poll,1300);
+  }
+}
+window.addEventListener('message',event=>{
+  if(event.origin!==window.location.origin||event.source!==get('trace-chat').contentWindow)return;
+  const {type,runId}=event.data||{};
+  if(type==='agent-trace-run'&&typeof runId==='string'&&/^[a-f0-9-]{36}$/i.test(runId))select(runId);
+});
+original.addEventListener('toggle',showOriginal);
+async function copyText(button,content) {
+  const normal=button.textContent;
+  button.disabled=true;
+  try {await navigator.clipboard.writeText(content.textContent);button.textContent='복사됨';}
+  catch {button.textContent='직접 선택해 복사';}
+  setTimeout(()=>{button.textContent=normal;button.disabled=false;},1600);
+}
+get('copy').onclick=()=>copyText(get('copy'),raw);
+copyFile.onclick=()=>copyText(copyFile,fileText);
+file.onchange=async()=>{
+  const chosen=file.files[0], current=generation;
+  fileText.hidden=true;copyFile.hidden=true;fileText.textContent='';fileStatus.textContent='';
+  if(!chosen)return;
+  if(!/\.(json|md)$/i.test(chosen.name)||chosen.size>2_000_000) {
+    fileStatus.textContent='2MB 이하의 JSON 또는 Markdown 파일을 선택하세요.';
+    return;
+  }
+  try {
+    const content=await chosen.text();
+    if(current!==generation||file.files[0]!==chosen)return;
+    fileText.textContent=content;fileText.hidden=false;copyFile.hidden=false;
+    fileStatus.textContent=chosen.name;
+  } catch {
+    if(current===generation&&file.files[0]===chosen)fileStatus.textContent='파일을 읽지 못했습니다.';
+  }
+};
+poll();
+</script>
+</body>
+</html>

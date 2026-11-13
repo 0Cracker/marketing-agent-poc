@@ -1,0 +1,11 @@
+body { margin: 0; }
+.trace-chat.wb { min-height: 100dvh; }
+.trace-chat.wb .wb-chat-panel {
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.trace-chat > p { margin: 0; padding: 20px; }

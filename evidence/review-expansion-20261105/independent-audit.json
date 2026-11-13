@@ -1,0 +1,171 @@
+{
+  "ok": true,
+  "reviews": 85,
+  "newReviews": 35,
+  "originalRowsPreservedExceptSourceName": 50,
+  "casePeriodSource": {
+    "S16/baseline/own_store": {
+      "count": 9,
+      "sum": 40,
+      "mean": 4.444444444444445
+    },
+    "S16/baseline/virtual_external_1": {
+      "count": 18,
+      "sum": 45,
+      "mean": 2.5
+    },
+    "S16/current/own_store": {
+      "count": 20,
+      "sum": 80,
+      "mean": 4.0
+    },
+    "S16/current/virtual_external_1": {
+      "count": 13,
+      "sum": 35,
+      "mean": 2.6923076923076925
+    },
+    "S17/baseline/own_store": {
+      "count": 8,
+      "sum": 20,
+      "mean": 2.5
+    },
+    "S17/baseline/virtual_external_1": {
+      "count": 4,
+      "sum": 18,
+      "mean": 4.5
+    },
+    "S17/current/own_store": {
+      "count": 5,
+      "sum": 15,
+      "mean": 3.0
+    },
+    "S17/current/virtual_external_1": {
+      "count": 8,
+      "sum": 32,
+      "mean": 4.0
+    }
+  },
+  "assignments": 106,
+  "sentiments": {
+    "positive": 41,
+    "neutral": 12,
+    "negative": 40,
+    "mixed": 13
+  },
+  "categoryCounts": {
+    "container_packaging": 28,
+    "cleansing_feel": 30,
+    "scent": 16,
+    "volume_usage": 12,
+    "delivery": 8
+  },
+  "experienceCounts": {
+    "pump_operation": 11,
+    "foam": 8,
+    "scent_longevity": 7,
+    "product_packaging": 8,
+    "residue": 10,
+    "after_feel": 7,
+    "scent_intensity": 4,
+    "leakage_residue": 6,
+    "consumption_rate": 5,
+    "scent_preference": 6,
+    "volume_label": 4,
+    "delivery_condition": 4,
+    "container_usability": 5,
+    "tangling": 4,
+    "texture_application": 7,
+    "delivery_timing": 4,
+    "usage_guidance": 3,
+    "remaining_check": 3
+  },
+  "normalizedPairsChecked": 3570,
+  "newRelatedPairs": 2345,
+  "exactDuplicates": 0,
+  "topSimilarityCandidatesForSemanticReview": [
+    {
+      "ids": [
+        "REV-S16-022",
+        "REV-S16-054"
+      ],
+      "trigramJaccard": 0.056074766355140186
+    },
+    {
+      "ids": [
+        "REV-S17-020",
+        "REV-S16-032"
+      ],
+      "trigramJaccard": 0.05434782608695652
+    },
+    {
+      "ids": [
+        "REV-S16-014",
+        "REV-S16-052"
+      ],
+      "trigramJaccard": 0.04854368932038835
+    },
+    {
+      "ids": [
+        "REV-S16-003",
+        "REV-S16-059"
+      ],
+      "trigramJaccard": 0.04807692307692308
+    },
+    {
+      "ids": [
+        "REV-S17-014",
+        "REV-S16-028"
+      ],
+      "trigramJaccard": 0.04807692307692308
+    },
+    {
+      "ids": [
+        "REV-S17-007",
+        "REV-S16-047"
+      ],
+      "trigramJaccard": 0.047619047619047616
+    },
+    {
+      "ids": [
+        "REV-S17-012",
+        "REV-S16-039"
+      ],
+      "trigramJaccard": 0.047058823529411764
+    },
+    {
+      "ids": [
+        "REV-S17-025",
+        "REV-S16-037"
+      ],
+      "trigramJaccard": 0.04672897196261682
+    },
+    {
+      "ids": [
+        "REV-S17-007",
+        "REV-S16-027"
+      ],
+      "trigramJaccard": 0.045454545454545456
+    },
+    {
+      "ids": [
+        "REV-S16-031",
+        "REV-S16-042"
+      ],
+      "trigramJaccard": 0.04504504504504504
+    },
+    {
+      "ids": [
+        "REV-S16-015",
+        "REV-S16-027"
+      ],
+      "trigramJaccard": 0.044444444444444446
+    },
+    {
+      "ids": [
+        "REV-S16-011",
+        "REV-S16-058"
+      ],
+      "trigramJaccard": 0.043859649122807015
+    }
+  ]
+}
