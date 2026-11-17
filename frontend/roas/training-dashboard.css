@@ -382,3 +382,5 @@
 .training-briefing summary{cursor:pointer;color:#59418F}
 .training-briefing details p{margin:4px 0 0}
 .training-section-note{margin:2px 0 0;color:#687487;font-size:12px;line-height:1.6;font-weight:400}
+.training-indicator-basis{margin-left:6px;font-size:11px;font-weight:500;color:#687487}
+.training-funnel-basis{margin:4px 0 12px;color:#566174;font-size:12px;line-height:1.6}
