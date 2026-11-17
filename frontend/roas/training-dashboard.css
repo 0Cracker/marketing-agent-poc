@@ -372,3 +372,12 @@
  .training-event-open{font-size:10px}
 }
 .training-chart-events .training-event-span{display:block;margin-top:2px;font-style:normal;color:#6B5A93;font-size:11px}
+.training-briefing{margin:0 0 16px;padding:14px 16px;background:#fff;border:1px solid #E8E4F0;border-radius:12px;color:#3B4557;font-size:13px;line-height:1.7}
+.training-briefing p{margin:0 0 6px}
+.training-briefing strong{color:#49356F;margin-right:4px}
+.training-briefing ol{margin:0;padding-left:20px;display:grid;gap:2px;color:#566174}
+.training-briefing button{padding:0;border:0;background:none;color:#59418F;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit}
+.training-briefing button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
+.training-briefing details{margin-top:8px;color:#687487}
+.training-briefing summary{cursor:pointer;color:#59418F}
+.training-briefing details p{margin:4px 0 0}

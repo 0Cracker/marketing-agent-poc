@@ -64,6 +64,19 @@ function Delta({before,after,rate=false,metricKey}:{before:number|null;after:num
  return <span className={`training-delta training-delta-${tone}`}>{change(before,after,rate,metricKey)}{tone!=='neutral'&&<small className="training-delta-label">{' '}{tone==='positive'?'개선':'악화'}</small>}</span>;
 }
 
+function scrollToCauseTable(){document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+function CaseBriefing({caseId}:{caseId:string}){
+ return <section className="training-briefing" aria-label="사례 안내와 추천 탐색 순서">
+  <p><strong>추천 탐색 순서</strong>ROAS 변화의 출발점을 아래 순서로 좁혀 보세요.</p>
+  <ol>
+   <li><button type="button" onClick={scrollToCauseTable}>ROAS 원인 분석 표</button>에서 전체 변화 기여가 큰 캠페인이나 기기를 찾습니다.</li>
+   <li>그 행에서 크게 변한 지표(CPC, CVR, AOV)의 상세 화면을 엽니다.</li>
+   <li>추이 아래 운영 이벤트 원문으로 같은 시기의 변경과 장애를 확인합니다. 시점이 겹쳐도 원인으로 확정하지는 않습니다.</li>
+  </ol>
+  <details><summary>사례 {caseId} 설명 보기, 조사 단서 포함</summary><p>{caseDescriptions[caseId]}</p></details>
+ </section>;
+}
+
 function RevenueSpendSummary({before,after}:{before:Total;after:Total}){
  return <div className="training-financial-summary" aria-label="ROAS 산식의 매출과 집행비">{metrics.filter(metric=>['revenue','spend'].includes(metric.key)).map(metric=>
   <div key={metric.key}><h4>{metric.label}</h4><strong>{fmt(metricValue(after,metric.key),false,'원',metric.key)}</strong><span>직전 14일 {fmt(metricValue(before,metric.key),false,'원',metric.key)}</span><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)}/></div>
@@ -296,6 +309,7 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
    <div className="training-scope-notice" role="status" hidden={reviewPage}>{scopeNotice}</div>{analysisScope&&!reviewPage&&<div className="training-analysis-scope"><span>세부 분석 범위: {analysisScope.label}</span><button onClick={()=>{setAnalysisScope(null);setScopeNotice('세부 범위를 해제했습니다.');}}>세부 범위 해제</button></div>}</div>
    <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<><div hidden={!reviewPage}><ReviewAnalysisSection key={caseId+'-'+snapshot} caseId={caseId} asOf={sourceData!.asOf} periods={sourceData!.periods} view={reviewView} onRetry={()=>setReviewRetry(value=>value+1)}/></div>{recordsPage&&<RecordsPage key={caseId} data={data} filters={filters}/>}{!reviewPage&&!recordsPage&&<>
     {!selectedMetric&&<div className="roas-dashboard-heading"><h1>성과 현황</h1></div>}
+    {!selectedMetric&&<CaseBriefing caseId={caseId}/>}
     {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
     {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
      <section className="training-secondary-metrics"><div className="training-section-heading"><h3>보조 지표와 추이</h3></div>
