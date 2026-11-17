@@ -145,8 +145,10 @@ function FunnelComparison({before,after}:{before:Total;after:Total}){
 }
 const detailMetrics=focusMetrics.filter(metric=>metric.key!=='roas'&&metric.key!=='cac');
 
-function MetricCards({data,filters,before,after,onSelect}:{data:TrainingData;filters:Filters;before:Total;after:Total;onSelect:(key:string)=>void}){
- return <div className="training-indicator-grid">{focusMetrics.slice(1).map(metric=><article className="training-indicator" key={metric.key} aria-label={metric.label}><div className="training-indicator-title"><span>{metric.label}</span>{metric.key!=='cac'&&<button onClick={()=>onSelect(metric.key)} aria-label={`${metric.label} 상세 분석`}>상세 분석 ↗</button>}</div><div className="training-indicator-value"><strong><MetricCell value={metricValue(after,metric.key)} metric={metric} rows={selectFacts(data,filters).filter(r=>r.periodId==='current')}/></strong><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)} rate={metric.rate}/></div><PeriodPlot data={data} filters={filters} metric={metric} mini/></article>)}</div>;
+const roasComponentKeys=['aov','cvr','cpc'],referenceMetricKeys=['adCtr','cpa'];
+const metricsByKey=(keys:string[])=>keys.map(key=>focusMetrics.find(metric=>metric.key===key)!);
+function MetricCards({data,filters,before,after,onSelect,keys}:{data:TrainingData;filters:Filters;before:Total;after:Total;onSelect:(key:string)=>void;keys:string[]}){
+ return <div className="training-indicator-grid">{metricsByKey(keys).map(metric=><article className="training-indicator" key={metric.key} aria-label={metric.label}><div className="training-indicator-title"><span>{metric.label}</span>{metric.key!=='cac'&&<button onClick={()=>onSelect(metric.key)} aria-label={`${metric.label} 상세 분석`}>상세 분석 ↗</button>}</div><div className="training-indicator-value"><strong><MetricCell value={metricValue(after,metric.key)} metric={metric} rows={selectFacts(data,filters).filter(r=>r.periodId==='current')}/></strong><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)} rate={metric.rate}/></div><PeriodPlot data={data} filters={filters} metric={metric} mini/></article>)}</div>;
 }
 function CpaRelatedMetrics({before,after,onSelect}:{before:Total;after:Total;onSelect:(key:string)=>void}){
  const related=[{key:'cpc',label:'CPC',unit:'원',rate:false},{key:'cvr',label:'클릭 기준 구매 CVR',unit:'',rate:true}];
@@ -312,8 +314,10 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
     {!selectedMetric&&<CaseBriefing caseId={caseId}/>}
     {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
     {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
-     <section className="training-secondary-metrics"><div className="training-section-heading"><h3>보조 지표와 추이</h3></div>
-      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)}/>
+     <section className="training-secondary-metrics"><div className="training-section-heading"><div><h3>ROAS 구성 지표</h3><p className="training-section-note">ROAS = AOV × CVR ÷ CPC. 세 지표의 변화가 ROAS 변화를 나눠 설명합니다.</p></div></div>
+      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={roasComponentKeys}/>
+      <div className="training-section-heading"><div><h3>참고 지표</h3><p className="training-section-note">CTR은 ROAS 산식에 직접 들어가지 않고, CPA는 CPC ÷ CVR로 계산됩니다. CAC는 신규 고객 수가 집계되지 않아 표시하지 않습니다.</p></div></div>
+      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={referenceMetricKeys}/>
      </section>
      {analysisPanel}
      <details className="roas-card training-table-disclosure"><summary>전체 성과 지표와 기간별 수치</summary><Comparison before={before.total} after={after.total}/></details>

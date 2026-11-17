@@ -1,6 +1,6 @@
 {
     "name": "marketing-agent-poc",
-    "version": "5.0.15",
+    "version": "5.0.16",
     "private": true,
     "engines": {
         "node": ">=22.13.0"
