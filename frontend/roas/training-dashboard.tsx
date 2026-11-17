@@ -20,6 +20,7 @@ import {scopeTrainingData} from './training-analysis';
 import RecordsPage from './operational-records';
 import {groupRelatedRecords,recordCategories,recordHeadline} from './operational-records-model';
 import {trainingEvents} from './training-events';
+import {worstStage} from './training-funnel';
 import type {AnalysisSettings,AnalysisScope,AnalysisGroup,AnalysisDimension} from './training-analysis';
 
 type Index={contract:string;cases:{id:string;label:string}[];snapshots:{id:string;label:string;asOf:string}[]};
@@ -141,7 +142,9 @@ function PlotLegend({daily=false}:{daily?:boolean}){return <div className={`trai
 function FunnelComparison({before,after}:{before:Total;after:Total}){
  const stages=[['sessions','랜딩 세션'],['view','상품 조회'],['cart','장바구니'],['checkout','결제 시작'],['purchases','동일 세션 구매 건수']];
  const maximum=Math.max(before.sessions,after.sessions);
- return <section className="roas-card training-funnel"><h3>랜딩 세션 기준 구매 퍼널<TermInfo label="구매 퍼널" description="같은 세션에서 순차 도달한 집계이며 재방문 구매는 제외합니다. 두 기간은 같은 눈금을 사용합니다. 이탈이 결제 오류를 뜻하지는 않습니다."/></h3><p className="training-funnel-basis">분석 기간 클릭 {fmt(after.clicks)}회 중 랜딩 세션은 {fmt(after.sessions)}회가 기록됐습니다. 이 퍼널은 랜딩 세션 기준이라 위의 클릭 기준 CVR과 분모가 다릅니다.</p><div className="training-funnel-head"><span>단계</span><span>직전 14일</span><span>분석 기간</span></div>{stages.map(([key,label],index)=><div className="training-funnel-step" key={key}><strong>{label}</strong>{[before,after].map((total,i)=>{const count=get(total,key)||0,previous=index?get(total,stages[index-1][0])||0:null;const lost=previous===null?null:previous-count;return <div key={i}><div className="training-bar-track"><i className={i?'current':''} style={{width:`${maximum?count/maximum*100:0}%`}}/></div><b>{fmt(count)}</b>{lost!==null&&<small>이전 단계에서 {fmt(lost)} 이탈 ({fmt(ratio(lost,previous),true)})</small>}</div>;})}</div>)}</section>;
+ const rateKeys=['','viewRate','cartRate','beginRate','checkoutRate'];
+ const worst=worstStage(rateKeys.map(key=>key?[get(before,key),get(after,key)] as [number|null,number|null]:null));
+ return <section className="roas-card training-funnel"><h3>랜딩 세션 기준 구매 퍼널<TermInfo label="구매 퍼널" description="같은 세션에서 순차 도달한 집계이며 재방문 구매는 제외합니다. 두 기간은 같은 눈금을 사용합니다. 이탈이 결제 오류를 뜻하지는 않습니다."/></h3><p className="training-funnel-basis">분석 기간 클릭 {fmt(after.clicks)}회 중 랜딩 세션은 {fmt(after.sessions)}회가 기록됐습니다. 이 퍼널은 랜딩 세션 기준이라 위의 클릭 기준 CVR과 분모가 다릅니다.</p><div className="training-funnel-head"><span>단계</span><span>직전 14일</span><span>분석 기간</span></div>{stages.map(([key,label],index)=><div className={'training-funnel-step'+(index===worst?' is-worst':'')} key={key}><strong>{label}{index>0&&<span className="training-funnel-rate">이전 단계 대비 전환율 {fmt(get(before,rateKeys[index]),true)} → {fmt(get(after,rateKeys[index]),true)} <Delta metricKey={rateKeys[index]} before={get(before,rateKeys[index])} after={get(after,rateKeys[index])} rate/></span>}{index===worst&&<em className="training-funnel-worst">가장 크게 나빠진 단계</em>}</strong>{[before,after].map((total,i)=>{const count=get(total,key)||0,previous=index?get(total,stages[index-1][0])||0:null;const lost=previous===null?null:previous-count;return <div key={i}><div className="training-bar-track"><i className={i?'current':''} style={{width:`${maximum?count/maximum*100:0}%`}}/></div><b>{fmt(count)}</b>{lost!==null&&<small>이전 단계에서 {fmt(lost)} 이탈 ({fmt(ratio(lost,previous),true)})</small>}</div>;})}</div>)}</section>;
 }
 const detailMetrics=focusMetrics.filter(metric=>metric.key!=='roas'&&metric.key!=='cac');
 

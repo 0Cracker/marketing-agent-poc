@@ -384,3 +384,7 @@
 .training-section-note{margin:2px 0 0;color:#687487;font-size:12px;line-height:1.6;font-weight:400}
 .training-indicator-basis{margin-left:6px;font-size:11px;font-weight:500;color:#687487}
 .training-funnel-basis{margin:4px 0 12px;color:#566174;font-size:12px;line-height:1.6}
+.training-funnel-rate{display:block;margin-top:4px;font-size:11px;font-weight:500;color:#566174;line-height:1.6}
+.training-funnel-rate .training-delta{font-size:11px}
+.training-funnel-worst{display:inline-block;margin-top:4px;padding:1px 6px;border-radius:4px;background:#E8EEF9;color:#2F5C9E;font-size:11px;font-style:normal;font-weight:600}
+.training-funnel-step.is-worst{background:#F6F8FD}
