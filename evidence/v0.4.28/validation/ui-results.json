@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "S16 revenue and spend match independent sums for both periods",
+    "CPC increase is explicitly labeled deterioration",
+    "Event opens original mobile payment error and closing restores overview",
+    "Campaign selection refreshes financial amounts from selected facts",
+    "All five review mention changes are neutral",
+    "Scenario switch reloads overview without stale S16 evidence",
+    "Mobile event titles wrap without clipping",
+    "390x844 overview has no page overflow",
+    "Mobile keyboard activation opens date-grouped evidence",
+    "768px overview has no page overflow",
+    "1024px overview has no page overflow",
+    "No uncaught browser errors during these flows"
+  ],
+  "passed": 12,
+  "errors": []
+}

@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import {trainingScreenData} from '../../scripts/roas/training-data.mjs';
 import {selectRecords} from '../../shared/roas/training-dashboard.mjs';
 import {groupRecordsByDate,groupRelatedRecords,recordFieldValue,recordHeadline,recordPreview} from '../../frontend/roas/operational-records-model.ts';
+import {trainingEvents} from '../../frontend/roas/training-events.ts';
+import {trainingCaseIds} from '../../shared/roas/training-dashboard.mjs';
 
 const filters={channel:'all',source:'all',campaignId:'all',device:'all'};
 
@@ -90,8 +92,34 @@ test('sidebar links to chronological records with inline expandable details',()=
  assert.doesNotMatch(ui,/상세 보기|training-records-table|onEvidence/);
 });
 
-test('ROAS chart retains its original shape without operational event markers',()=>{
- const dashboard=fs.readFileSync(new URL('../../frontend/roas/training-dashboard.tsx',import.meta.url),'utf8');
- assert.match(dashboard,/metric=\{focusMetrics\[0\]\}\/>/);
- assert.doesNotMatch(dashboard,/ReferenceLine|recordDates|markRecords|training-record-marker-note/);
+test('ROAS events connect the nine existing S16 records to the correct three analysis days',()=>{
+ const data=trainingScreenData(undefined,'S16','initial');
+ const original=JSON.stringify(data);
+ const events=trainingEvents(data,filters);
+ assert.deepEqual(events.map(({date,day,number,records})=>[date,day,number,records.length]),[
+  ['2026-08-17',1,1,7],['2026-08-21',5,2,1],['2026-08-24',8,3,1],
+ ]);
+ assert(events.flatMap(event=>event.records).every(record=>data.records.includes(record)));
+ assert.equal(JSON.stringify(data),original,'presentation must preserve source data');
+ const desktop=trainingEvents(data,{...filters,device:'desktop'});
+ assert(!desktop.flatMap(event=>event.records).some(record=>record.id==='CASE-S16-11'),'mobile error must not appear in desktop scope');
+ const campaign=trainingEvents(data,{...filters,campaignId:'EDU-C1'}).flatMap(event=>event.records);
+ assert(campaign.some(record=>record.id==='CASE-S16-2'));
+ assert(!campaign.some(record=>record.id==='CASE-S16-4'));
+ assert(campaign.some(record=>record.id==='CASE-S16-13'),'common product changes remain visible');
+});
+
+test('event visibility respects period, report cutoff and existing media filters across all cases',()=>{
+ for(const caseId of trainingCaseIds){
+  const data=trainingScreenData(undefined,caseId,'initial');
+  const current=data.periods.find(period=>period.id==='current');
+  for(const scope of [filters,{...filters,channel:'search'},{...filters,source:'facebook'},{...filters,device:'mobile'}]){
+   const expected=selectRecords(data,scope).filter(record=>record.date>=current.start&&record.date<current.end&&record.date<=data.asOf.slice(0,10));
+   const actual=trainingEvents(data,scope).flatMap(event=>event.records);
+   assert.deepEqual(actual.map(record=>record.id).sort(),expected.map(record=>record.id).sort(),caseId);
+   for(const event of trainingEvents(data,scope))assert(event.day>=1&&event.day<=14);
+  }
+  const atStart={...data,asOf:current.start};
+  assert(trainingEvents(atStart,filters).every(event=>event.date<=current.start));
+ }
 });
