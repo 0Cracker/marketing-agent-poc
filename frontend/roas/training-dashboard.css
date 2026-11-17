@@ -344,3 +344,30 @@
 .training-campaign-parent-details>.training-analysis-detail{padding:12px 0 0;border:0;background:transparent}
 .training-campaign-parent-details>summary:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
 @media(max-width:800px){.training-dashboard .training-analysis-table>tbody>tr.training-campaign-child-row>th[scope=row]{padding-left:24px}.training-campaign-parent-details{padding:12px}}
+
+/* Keep performance direction readable without relying on color alone. */
+.training-delta-label{margin-left:5px;font-size:11px;font-weight:600;white-space:nowrap}
+.training-overview-totals{display:flex;flex-direction:column;gap:12px;min-width:0}
+.training-financial-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px;background:#fff;border:1px solid #E8E4F0;border-radius:12px}
+.training-financial-summary>div{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+.training-financial-summary h4{margin:0;color:#566174;font-size:12px;font-weight:600}
+.training-financial-summary strong{color:#263247;font-size:16px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.training-financial-summary>div>span:not(.training-delta){font-size:11px;color:#687487;overflow-wrap:anywhere}
+.training-financial-summary .training-delta{font-size:12px}
+.training-chart-events{margin-top:14px;border-top:1px solid #ECE8F3;padding-top:10px;color:#687487;font-size:11px}
+.training-chart-events p{margin:0 0 8px;line-height:1.6}
+.training-chart-events ol{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.training-chart-events button{display:flex;align-items:baseline;gap:8px;width:100%;padding:8px;text-align:left;white-space:normal;background:#F8F6FC;border:1px solid #E7E0F1;border-radius:6px;color:#49356F;line-height:1.6;cursor:pointer}
+.training-chart-events button:hover{background:#EFEAF8}
+.training-chart-events button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
+.training-chart-events b{display:inline-grid;place-items:center;min-width:18px;border-radius:4px;background:#E9E1F6}
+.training-chart-events time,.training-event-open{flex-shrink:0;white-space:nowrap}
+.training-chart-events button>span:not(.training-event-open){flex:1;min-width:0;overflow-wrap:anywhere}
+.training-dashboard .training-analysis-link{color:#59418F;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media(max-width:600px){
+ .training-financial-summary{gap:12px;padding:12px}
+ .training-financial-summary strong{font-size:14px}
+ .training-indicator-value{flex-wrap:wrap;row-gap:4px}
+ .training-chart-events button{gap:6px}
+ .training-event-open{font-size:10px}
+}

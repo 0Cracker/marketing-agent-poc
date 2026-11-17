@@ -124,7 +124,7 @@ function ComparisonMarks({before,after,beforeCount,afterCount,beforeTotal,afterT
   </span>
   <strong className="review-period-values">
    {periods.map(({id,rate,count,total})=><span key={id}>{rate===null?'—':'('+count+'/'+total+'건)'}</span>)}
-   <span className={'review-period-change '+(delta===null||delta===0?'':delta>0?'training-delta-positive':'training-delta-negative')}>
+   <span className="review-period-change training-delta-neutral">
     {delta===null?'비교 불가':(delta>0?'+':'')+delta.toFixed(1)+'%p'}
    </span>
   </strong>
@@ -193,6 +193,7 @@ export default function ReviewAnalysisSection({caseId,asOf,periods,view,onRetry}
   </div>
   <section className="roas-card review-chart-card" aria-label="카테고리 분포">
    <header className="review-card-heading"><h3>{display==='distribution'?'카테고리 분포':'카테고리 기간 비교'}</h3><button type="button" onClick={reset}>전체 필터 초기화</button></header>
+   {display==='comparison'&&<p className="review-muted">언급률 증감은 언급 빈도의 변화이며, 긍정 또는 부정 평가를 뜻하지 않습니다.</p>}
    <ReviewSegments label="카테고리 보기" options={[{id:'comparison',label:'기간 비교'},{id:'distribution',label:'전체 분포'}]} value={display} onChange={id=>{setDisplay(id as 'distribution'|'comparison');resetPage();}}/>
    <div className="review-controls" aria-label="리뷰 공통 필터">
     <div className="review-filter-group"><span className="review-filter-label">판매처</span><div className="review-source-options" role="group" aria-label="판매처, 단일 선택">

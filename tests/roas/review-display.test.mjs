@@ -22,6 +22,9 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert(html.indexOf('>기간 비교</button>')<html.indexOf('>전체 분포</button>'));
    assert.doesNotMatch(html,/aria-label="리뷰 작성일 기간"/);
    assert.equal([...html.matchAll(/class="review-bar-track review-period-bar (?:before|after)"/g)].length,10);
+   assert.equal([...html.matchAll(/class="review-period-change training-delta-neutral"/g)].length,5,'mention frequency must remain neutral regardless of direction');
+   assert.doesNotMatch(html,/training-delta-positive|training-delta-negative/,'mention growth does not establish positive sentiment');
+   assert.match(html,/긍정 또는 부정 평가를 뜻하지 않습니다/);
    assert.match(html,caseId==='S16'?/언급률 <\/span>40\.7%<\/span>/ : /언급률 <\/span>\d+\.\d%<\/span>/);
    assert.match(html,caseId==='S16'?/<span>\(11\/27건\)<\/span>/ : /<span>\(\d+\/12건\)<\/span>/);
    assert.doesNotMatch(html,/세부 분류, 평가와 근거/);
