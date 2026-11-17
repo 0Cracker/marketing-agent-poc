@@ -130,7 +130,7 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
    <Line name="직전 14일" dataKey="baseline" stroke="#9BA8B9" strokeWidth={mini?1.5:1.8} strokeDasharray="4 4" dot={false} activeDot={{r:3,stroke:'#FFF',strokeWidth:2}} isAnimationActive={false}/>
    <Line name="분석 기간" dataKey="current" stroke="#7357BA" strokeWidth={mini?2:2.8} dot={false} activeDot={{r:4,stroke:'#FFF',strokeWidth:2}} isAnimationActive={false}/>
   </LineChart></ResponsiveContainer>
- </div>{!mini&&onEventSelect&&<div className="training-chart-events" aria-label="추이와 연결된 운영 기록">
+ </div>{mini&&series.length>0&&<div className="training-sparkline-axis" aria-hidden="true"><span>{series[0].currentDate.slice(5).replace('-','/')}</span><span>{series[series.length-1].currentDate.slice(5).replace('-','/')}</span></div>}{!mini&&onEventSelect&&<div className="training-chart-events" aria-label="추이와 연결된 운영 기록">
   <p>운영 이벤트, 번호를 선택해 원문을 확인하세요. 발생 시점의 일치만으로 원인을 확정할 수는 없습니다.</p>
   {events.length?<ol>{events.map(event=>{
    const titles=groupRelatedRecords(event.records,data.caseId).map(activity=>activity.title||recordHeadline(activity.records[0],data)).join(', ');
@@ -317,7 +317,7 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
     {!selectedMetric&&<CaseBriefing caseId={caseId}/>}
     {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
     {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
-     <section className="training-secondary-metrics"><div className="training-section-heading"><div><h3>ROAS 구성 지표</h3><p className="training-section-note">ROAS = AOV × CVR ÷ CPC. 세 지표의 변화가 ROAS 변화를 나눠 설명합니다.</p></div></div>
+     <section className="training-secondary-metrics"><div className="training-section-heading"><div><h3>ROAS 구성 지표</h3><p className="training-section-note">ROAS = AOV × CVR ÷ CPC. 세 지표의 변화가 ROAS 변화를 나눠 설명합니다.</p><p className="training-section-note">작은 차트: 실선은 분석 기간, 점선은 직전 14일의 같은 요일입니다. 세로축 범위가 지표마다 달라 기울기로 변화 크기를 비교하지 말고 오른쪽 증감 숫자로 비교하세요.</p></div></div>
       <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={roasComponentKeys}/>
       <div className="training-section-heading"><div><h3>참고 지표</h3><p className="training-section-note">CTR은 ROAS 산식에 직접 들어가지 않고, CPA는 CPC ÷ CVR로 계산됩니다. CAC는 신규 고객 수가 집계되지 않아 표시하지 않습니다.</p></div></div>
       <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={referenceMetricKeys}/>
