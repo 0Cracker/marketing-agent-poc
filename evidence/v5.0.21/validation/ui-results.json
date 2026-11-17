@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "S16 card shows -65.3%p below the 350% target",
+    "ROAS chart draws the target line",
+    "S04 card shows target achieved",
+    "Non-ROAS detail has no target line",
+    "No uncaught browser errors"
+  ],
+  "passed": 5,
+  "errors": []
+}

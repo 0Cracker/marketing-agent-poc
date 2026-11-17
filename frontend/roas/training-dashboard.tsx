@@ -21,6 +21,7 @@ import RecordsPage from './operational-records';
 import {groupRelatedRecords,recordCategories,recordHeadline} from './operational-records-model';
 import {trainingEvents} from './training-events';
 import {worstStage} from './training-funnel';
+import {scopeTargetRoas} from './training-target';
 import type {AnalysisSettings,AnalysisScope,AnalysisGroup,AnalysisDimension} from './training-analysis';
 
 type Index={contract:string;cases:{id:string;label:string}[];snapshots:{id:string;label:string;asOf:string}[]};
@@ -84,13 +85,14 @@ function RevenueSpendSummary({before,after}:{before:Total;after:Total}){
  )}</div>;
 }
 
-function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[]}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[]}){
+function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[],target=null}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[];target?:number|null}){
  const tone=deltaTone(metric.key,before,after,metric.rate),visibleDelta=displayedChange(before,after,metric.rate,metricDigits(metric.key,metric.rate)),direction=Math.sign(visibleDelta??0);
  const path=direction===0?'M5 24H49':'M5 8L19 23L29 15L48 38M35 38H48V25';
  return <section className={`roas-primary-kpi training-roas-summary training-delta-${tone}`} aria-labelledby={`training-${metric.key}-title`}>
   <h3 id={`training-${metric.key}-title`} className="training-roas-heading">{metric.key==='cvr'?'클릭 기준 구매 CVR':metric.label} <TermInfo label={metric.label} description={metricDescriptions[metric.key]}/></h3>
   <div className="training-roas-value-row"><strong className="training-roas-current">{after===null?<MetricCell value={after} metric={metric} rows={rows}/>:fmt(after,metric.rate,metric.unit,metric.key)}</strong><span className="training-roas-change" title={metric.rate?'%p는 퍼센트포인트로, 두 비율의 차이입니다.':'직전 14일 대비 상대 증감률입니다.'}>{tone!=='neutral'&&direction!==0&&<svg viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 2H9L5 9Z" transform={direction>0?'translate(0 10) scale(1 -1)':undefined}/></svg>}<Delta metricKey={metric.key} before={before} after={after} rate={metric.rate}/></span></div>
   <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">{before!==null&&after!==null&&direction===0?`직전 14일과 동일 (${fmt(before,metric.rate,metric.unit,metric.key)})`:`직전 14일: ${fmt(before,metric.rate,metric.unit,metric.key)}`}</p></div>
+  {target!==null&&after!==null&&<p className="training-roas-target">목표 ROAS {fmt(target,true,'','roas')} 대비 <b className={after>=target?'training-delta-positive':'training-delta-negative'}>{after>=target?'+':''}{((after-target)*100).toFixed(1)}%p, {after>=target?'목표 달성':'목표 미달'}</b></p>}
  </section>;
 }
 
@@ -114,7 +116,8 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
  const events=!mini&&onEventSelect?trainingEvents(data,filters):[];
  const present=series.some(row=>row.baseline!==null||row.current!==null);
  if(!present){const missing=metricMissingReason(selectFacts(data,filters),metric.key);return <div className={mini?'training-mini-empty':'training-chart-empty'} title={missing.reason} tabIndex={0} aria-label={`${missing.label}: ${missing.reason}`}>{mini?(metric.key==='cac'?'신규 고객 수 미집계':missing.label):missing.reason}</div>;}
- const values=series.flatMap(row=>[row.baseline,row.current]);
+ const target=!mini&&metric.key==='roas'?scopeTargetRoas(data,filters):null;
+ const values=[...series.flatMap(row=>[row.baseline,row.current]),target];
  const [lower,upper]=mini?miniPlotDomain(values):[0,plotUpper(values)];
  return <><div className={mini?'training-sparkline':'training-period-chart'} role="img" aria-label={`${metric.label}, 직전 14일과 분석 기간의 일별 추이, 공통 축 ${fmt(lower,metric.rate,metric.unit,metric.key)}~${fmt(upper,metric.rate,metric.unit,metric.key)}`}>
   <ResponsiveContainer width="100%" height={mini?176:'100%'}><LineChart data={series} margin={mini?{top:12,right:6,bottom:12,left:0}:{top:14,right:18,bottom:6,left:0}}>
@@ -124,6 +127,7 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
    </>}
    <YAxis domain={[lower,upper]} ticks={mini?[lower,upper]:[0,upper/2,upper]} interval={0} tickFormatter={value=>chartTick(Number(value),metric)} width={mini?62:66} axisLine={false} tickLine={false} tick={{fill:mini?'#929BA8':'#8791A2',fontSize:mini?10:11}} tickMargin={mini?6:12}/>
    {mini&&<XAxis dataKey="day" hide/>}
+   {target!==null&&<ReferenceLine y={target} stroke="#C2410C" strokeDasharray="6 4" strokeWidth={1.5} label={{value:`목표 ${fmt(target,true,'','roas')}`,position:'insideBottomRight',fill:'#9A3412',fontSize:11}}/>}
    {events.flatMap(event=>event.spans).map(span=><ReferenceArea key={span.recordId} x1={span.startDay} x2={span.endDay} fill="#A493C6" fillOpacity={0.12} stroke="none" ifOverflow="extendDomain"/>)}
    {events.map(event=><ReferenceLine key={event.date} x={event.day} stroke="#A493C6" strokeDasharray="3 4" label={{value:String(event.number),position:'insideTopRight',fill:'#59418F',fontSize:12}}/>)}
    <Tooltip labelFormatter={day=>{const point=series.find(row=>row.day===Number(day));return point?`${metric.label}, 분석 ${point.currentDate.slice(5)}, 직전 ${point.baselineDate.slice(5)}`:'';}} formatter={(value,name)=>[fmt(Number(value),metric.rate,metric.unit,metric.key),name]} contentStyle={{border:'1px solid #E8E4F0',borderRadius:8,fontSize:12,boxShadow:'0 4px 16px #27354B0A'}} wrapperStyle={{zIndex:100,pointerEvents:'none'}} cursor={{stroke:'#D9D2E7',strokeDasharray:'3 4'}}/>
@@ -321,7 +325,7 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
    <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<><div hidden={!reviewPage}><ReviewAnalysisSection key={caseId+'-'+snapshot} caseId={caseId} asOf={sourceData!.asOf} periods={sourceData!.periods} view={reviewView} onRetry={()=>setReviewRetry(value=>value+1)}/></div>{recordsPage&&<RecordsPage key={caseId} data={data} filters={filters}/>}{!reviewPage&&!recordsPage&&<>
     {!selectedMetric&&<div className="roas-dashboard-heading"><h1>성과 현황</h1></div>}
     {!selectedMetric&&<CaseBriefing caseId={caseId}/>}
-    {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
+    {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas} target={scopeTargetRoas(data,filters)}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
     {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
      <section className="training-secondary-metrics"><div className="training-section-heading"><div><h3>ROAS 구성 지표</h3><p className="training-section-note">ROAS = AOV × CVR ÷ CPC. 세 지표의 변화가 ROAS 변화를 나눠 설명합니다.</p><p className="training-section-note">작은 차트: 실선은 분석 기간, 점선은 직전 14일의 같은 요일입니다. 세로축 범위가 지표마다 달라 기울기로 변화 크기를 비교하지 말고 오른쪽 증감 숫자로 비교하세요.</p></div></div>
       <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={roasComponentKeys}/>
