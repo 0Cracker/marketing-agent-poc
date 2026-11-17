@@ -61,7 +61,7 @@ function MetricCell({value,metric,rows,before=null}:{value:number|null|undefined
 }
 function Delta({before,after,rate=false,metricKey}:{before:number|null;after:number|null;rate?:boolean;metricKey:string}){
  const tone=deltaTone(metricKey,before,after,rate);
- return <span className={`training-delta training-delta-${tone}`}>{change(before,after,rate,metricKey)}{tone!=='neutral'&&<small className="training-delta-label">{tone==='positive'?'개선':'악화'}</small>}</span>;
+ return <span className={`training-delta training-delta-${tone}`}>{change(before,after,rate,metricKey)}{tone!=='neutral'&&<small className="training-delta-label">{' '}{tone==='positive'?'개선':'악화'}</small>}</span>;
 }
 
 function RevenueSpendSummary({before,after}:{before:Total;after:Total}){
@@ -146,13 +146,13 @@ function CpaRelatedMetrics({before,after,onSelect}:{before:Total;after:Total;onS
   <button className="training-cpa-funnel-link" onClick={()=>onSelect('cvr')}>CVR 상세에서 구매 퍼널 보기 ↗</button>
  </section>;
 }
-function MetricDetails({metric,data,filters,onSelect}:{metric:Metric;data:TrainingData;filters:Filters;onSelect:(key:string)=>void}){
+function MetricDetails({metric,data,filters,onSelect,onEventSelect}:{metric:Metric;data:TrainingData;filters:Filters;onSelect:(key:string)=>void;onEventSelect:(evidence:Evidence)=>void}){
  const [before,after]=comparePeriods(data,filters);
  return <div className="training-metric-detail">
    <div className="training-detail-heading"><h1><span tabIndex={0} title={metricDescriptions[metric.key]}>{metric.label}</span> 상세 분석</h1></div>
    <div className="training-metric-hero">
     <MetricSummary metric={metric} before={metricValue(before.total,metric.key)} after={metricValue(after.total,metric.key)} rows={after.rows}/>
-    <section className="roas-card training-metric-hero-chart"><h3>{metric.label} 기간별 추이</h3><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={metric}/></section>
+    <section className="roas-card training-metric-hero-chart"><h3>{metric.label} 기간별 추이</h3><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={metric} onEventSelect={onEventSelect}/></section>
    </div>
    {metric.key==='cvr'&&<FunnelComparison before={before.total} after={after.total}/>}
    {metric.key==='cpa'&&<CpaRelatedMetrics before={before.total} after={after.total} onSelect={onSelect}/>}
@@ -296,7 +296,7 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
    <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<><div hidden={!reviewPage}><ReviewAnalysisSection key={caseId+'-'+snapshot} caseId={caseId} asOf={sourceData!.asOf} periods={sourceData!.periods} view={reviewView} onRetry={()=>setReviewRetry(value=>value+1)}/></div>{recordsPage&&<RecordsPage key={caseId} data={data} filters={filters}/>}{!reviewPage&&!recordsPage&&<>
     {!selectedMetric&&<div className="roas-dashboard-heading"><h1>성과 현황</h1></div>}
     {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
-    {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate}/>:<>
+    {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
      <section className="training-secondary-metrics"><div className="training-section-heading"><h3>보조 지표와 추이</h3></div>
       <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)}/>
      </section>

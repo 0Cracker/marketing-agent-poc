@@ -3,6 +3,7 @@ Requires Python Playwright and Chromium. Writes screenshots and ui-results.json.
 """
 import json
 import math
+import os
 import re
 from pathlib import Path
 from urllib.request import urlopen
@@ -21,7 +22,7 @@ def money(value):
     return f'{math.floor(value + .5):,}원'
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox'])
+    browser = p.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE_PATH') or None, headless=True, args=['--no-sandbox'])
     page = browser.new_page(viewport={'width': 1440, 'height': 1000}, device_scale_factor=1)
     errors = []
     page.on('pageerror', lambda error: errors.append(str(error)))
@@ -34,7 +35,7 @@ with sync_playwright() as p:
         for metric in ['revenue', 'spend']:
             expect(totals).to_contain_text(money(sum(row[metric] for row in rows)))
     check('S16 revenue and spend match independent sums for both periods', True)
-    expect(page.locator('.training-indicator[aria-label="CPC"] .training-delta')).to_have_text('+12.1%악화')
+    expect(page.locator('.training-indicator[aria-label="CPC"] .training-delta')).to_have_text('+12.1% 악화')
     check('CPC increase is explicitly labeled deterioration', True)
     events = page.get_by_label('추이와 연결된 운영 기록')
     expect(events.get_by_role('button')).to_have_count(3)
@@ -50,6 +51,23 @@ with sync_playwright() as p:
     page.get_by_role('button', name='근거 닫기').click()
     expect(page.get_by_role('dialog')).not_to_be_visible()
     check('Event opens original mobile payment error and closing restores overview', True)
+    page.get_by_role('button', name='CVR 상세 분석', exact=True).first.click()
+    hero = page.locator('.training-metric-detail .training-metric-hero')
+    expect(hero.locator('.recharts-reference-line')).to_have_count(3)
+    hero.get_by_role('button', name='08/21').click()
+    page.get_by_role('dialog').locator('summary').click()
+    expect(page.get_by_role('dialog')).to_contain_text('PAYMENT_CALLBACK_TIMEOUT')
+    page.screenshot(path=str(OUT / 'cvr-event-evidence.png'))
+    page.get_by_role('button', name='근거 닫기').click()
+    check('CVR detail has three markers and opens the original payment error', True)
+    page.get_by_label('클릭 기준 구매 CVR 분석 단위', exact=True).select_option('device')
+    page.get_by_role('button', name='PC', exact=True).click()
+    page.get_by_role('button', name='이 대상으로 좁혀 보기', exact=True).click()
+    expect(hero.get_by_role('button', name='08/21')).to_have_count(0)
+    expect(hero.locator('.recharts-reference-line')).to_have_count(2)
+    check('Narrowing CVR detail to PC removes the mobile payment event', True)
+    page.get_by_role('button', name='전체 기기로 보기', exact=True).click()
+    page.get_by_role('button', name='성과 현황', exact=True).first.click()
     page.get_by_role('button', name='분석 대상: 전체 캠페인').click()
     page.locator('button[data-campaign="EDU-C1"]').click()
     scoped = [row for row in data['facts'] if row['campaignId'] == 'EDU-C1' and row['periodId'] == 'current']

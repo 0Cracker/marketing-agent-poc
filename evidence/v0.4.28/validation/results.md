@@ -56,4 +56,15 @@
 - 실제 신입 사용자 테스트, 인과 효과 검증과 실모델 평가는 미실행이다. mock 서버는 외부 모델 API를 호출하지 않는다.
 - 목표 ROAS 기준선과 나머지 중/낮음 QA는 이번 4건 범위 밖이다.
 - 작은 추이에는 마커를 추가하지 않는다. 전체 추이와 펼친 행의 일별 추이에만 연결한다.
-- 원격 push, Vercel 배포, main 병합, 태그와 Release는 실행하지 않았다.
+- 원격 브랜치 `fix/marketing-qa-v0.4.28`을 push하고 dev 대상 [PR #14](https://github.com/0Cracker/marketing-agent-poc/pull/14)를 생성했다. 최초 head `d218fb3`의 GitHub CI와 Vercel 상태는 성공이다. 후속 수정은 같은 PR에서 검증하며 main 병합, 태그와 Release는 수행하지 않는다.
+
+## PR #14 상세 추이 보완 검증
+
+2026-11-17, `d218fb3` 이후 후속 작업 트리에서 ROAS 84개와 Chromium 화면 14개 검사를 통과했다. 타입, 린트, 빌드 종료 코드도 모두 0이다. 린트와 빌드의 기존 경고는 유지된다. 위 초기 83/12개 검증과 구분한다.
+
+- `CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium python evidence/v0.4.28/validation/browser-check.py`: 14개 통과, [결과](ui-results.json).
+- CVR 상세에서 마커 3개를 확인하고 8/21 원문에 PAYMENT_CALLBACK_TIMEOUT이 표시됨을 검사했다. [캡처](../after/cvr-event-evidence.png).
+- 분석 단위를 기기로 변경하고 PC로 좁히면 마커 2개, 8/21 버튼 0개다.
+- 소스 회귀는 MetricDetails와 PeriodPlot 양쪽의 callback 전달을 확인한다.
+- B1 실제 공백을 포함한 `+12.1% 악화`를 브라우저에서 검증했다.
+- B2 환경변수 경로를 사용해 실행했다. 변수 미설정 분기는 Playwright 기본 선택으로 위임하며 해당 다운로드 브라우저는 이번 환경에서 실행하지 않았다.

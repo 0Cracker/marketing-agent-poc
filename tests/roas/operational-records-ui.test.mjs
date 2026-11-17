@@ -123,3 +123,12 @@ test('event visibility respects period, report cutoff and existing media filters
   assert(trainingEvents(atStart,filters).every(event=>event.date<=current.start));
  }
 });
+
+// The detail hero must forward the evidence callback just like the overview.
+test('metric detail hero forwards operational evidence to its period chart',()=>{
+ const dashboard=fs.readFileSync(new URL('../../frontend/roas/training-dashboard.tsx',import.meta.url),'utf8');
+ const detail=dashboard.slice(dashboard.indexOf('function MetricDetails('),dashboard.indexOf('function Comparison('));
+ assert.match(detail,/onEventSelect:/);
+ assert.match(detail,/<PeriodPlot[^>]*onEventSelect=\{onEventSelect\}/);
+ assert.match(dashboard.split('<MetricDetails')[1].split('/>')[0],/onEventSelect=\{setEvidence\}/);
+});
