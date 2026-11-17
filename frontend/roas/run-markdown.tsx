@@ -79,26 +79,20 @@ function CitationDetail({number,citation,onClose}:{number:number;citation:Citati
  </aside>;
 }
 
-export function RunMarkdown({answer}:{answer:string}) {
- const citations=collectCitations(answer);
- const numberOf=(text:string)=>citations.findIndex(item=>item.text===text)+1;
- const [selected,setSelected]=useState<{block:number;number:number}|null>(null);
- const lines=answer.split(/\r?\n/u);
+type BlockContext={citeFor:(owner:number)=>Cite;detail:(owner:number)=>ReactNode;badges:boolean};
+// 관측 사실과 원인 후보를 구분해 보이도록 원인 후보 문장 앞에 표시를 붙인다.
+const hypothesis=/원인 후보|가설|추정/u;
+const badged=(text:string,nodes:ReactNode[],on:boolean)=>on&&hypothesis.test(text)?[<span key="badge" className="wb-run-badge">원인 후보</span>,...nodes]:nodes;
+
+function renderBlocks(lines:string[],offset:number,{citeFor,detail,badges}:BlockContext):ReactNode[]{
  const blocks:ReactNode[]=[];
- let block=0;
- const citeFor=(owner:number):Cite=>(text,index)=>{
-  const number=numberOf(text),open=selected?.block===owner&&selected.number===number;
-  return <button key={index} type="button" className="wb-run-cite" title={text} aria-label={`근거 ${number}: ${text}`} aria-expanded={open}
-   onClick={()=>setSelected(open?null:{block:owner,number})}>{number}</button>;
- };
- const detail=(owner:number)=>selected?.block===owner&&citations[selected.number-1]?
-  <CitationDetail key={'cite-'+owner} number={selected.number} citation={citations[selected.number-1]} onClose={()=>setSelected(null)}/>:null;
+ let block=-1;
+ const flush=()=>{if(block>=0){const open=detail(block);if(open)blocks.push(open);}};
  for(let i=0;i<lines.length;){
-  const line=lines[i],key=i;
-  if(blocks.length&&block!==key){const open=detail(block);if(open)blocks.push(open);}
-  block=key;
-  const cite=citeFor(key);
+  const line=lines[i],key=offset+i;
   if(!line.trim()){i++;continue;}
+  flush();block=key;
+  const cite=citeFor(key);
   const heading=line.match(/^\s{0,3}(#{1,6})\s+(.+)/u);
   if(heading){
    const Tag=heading[1].length<=2?'h3':heading[1].length===3?'h4':'h5';
@@ -114,7 +108,7 @@ export function RunMarkdown({answer}:{answer:string}) {
   if(pattern){
    const List=pattern===bullet?'ul':'ol',items:string[]=[];
    while(i<lines.length&&pattern.test(lines[i]))items.push(lines[i++].replace(pattern,''));
-   blocks.push(<List key={key}>{items.map((item,j)=><li key={j}>{inline(item,cite)}</li>)}</List>);continue;
+   blocks.push(<List key={key}>{items.map((item,j)=><li key={j}>{badged(item,inline(item,cite),badges)}</li>)}</List>);continue;
   }
   const paragraph=[line];i++;
   while(i<lines.length&&lines[i].trim()&&!/^\s{0,3}#{1,6}\s/u.test(lines[i])&&
@@ -122,12 +116,73 @@ export function RunMarkdown({answer}:{answer:string}) {
   const text=paragraph.join(' ');
   // 표 아래처럼 근거 태그만 있는 줄은 본문 문단 대신 작은 출처 줄로 둔다.
   const onlyCitations=!text.replace(new RegExp(citationPattern.source,'gu'),'').trim();
-  blocks.push(onlyCitations?<p key={key} className="wb-run-cite-line"><span>근거</span>{inline(text,cite)}</p>:<p key={key}>{inline(text,cite)}</p>);
+  blocks.push(onlyCitations?<p key={key} className="wb-run-cite-line"><span>근거</span>{inline(text,cite)}</p>:<p key={key}>{badged(text,inline(text,cite),badges)}</p>);
  }
- const last=detail(block);if(last)blocks.push(last);
- return <div className="wb-run-markdown">{blocks}
-  {citations.length>0&&<details className="wb-run-sources"><summary>참고한 자료 {citations.length}개</summary>
-   <ol>{citations.map((citation,i)=><li key={citation.text}><span>{i+1}</span><p>{citation.parts.join(' · ')}</p></li>)}</ol>
-  </details>}
+ flush();
+ return blocks;
+}
+
+// 답변 지침이 정한 Deep 소제목. 이 이름이 하나라도 있으면 예시 답변과 같은 구역 배치로 보여준다.
+const sectionKinds={'핵심 결론':'conclusion','판단 근거':'reasoning','추천 액션':'actions','확인이 필요한 점':'limits'} as const;
+type SectionKind=typeof sectionKinds[keyof typeof sectionKinds];
+type Section={kind:SectionKind|'lead';title?:string;offset:number;lines:string[]};
+const sectionHeading=/^\s{0,3}#{1,2}\s+(?:\d+\.\s*)?(핵심 결론|판단 근거|추천 액션|확인이 필요한 점)\s*$/u;
+export function splitSections(answer:string):Section[]|null{
+ const lines=answer.split(/\r?\n/u),sections:Section[]=[{kind:'lead',offset:0,lines:[]}];
+ lines.forEach((line,index)=>{
+  const match=line.match(sectionHeading);
+  if(match){const title=match[1] as keyof typeof sectionKinds;sections.push({kind:sectionKinds[title],title,offset:index+1,lines:[]});}
+  else sections[sections.length-1].lines.push(line);
+ });
+ if(sections.length===1)return null;
+ const lead=sections[0];
+ if(!lead.lines.some(line=>line.trim()))return sections.slice(1);
+ // 소제목 앞에 쓴 첫 문단은 결론으로 본다. 결론 구역이 따로 있으면 그 앞에 합친다.
+ const conclusion=sections.find(section=>section.kind==='conclusion');
+ if(conclusion){conclusion.lines=[...lead.lines,'',...conclusion.lines];conclusion.offset=0;return sections.slice(1);}
+ return [{kind:'conclusion',title:'핵심 결론',offset:0,lines:lead.lines},...sections.slice(1)];
+}
+
+// 결론의 대표 변화(예: "ROAS는 355.8%에서 284.7%로 71.1%p 하락")를 직전 → 현재 칩으로 보여준다.
+const changePattern=/([A-Za-z가-힣]+)(?:은|는|이|가)\s+(-?[\d,.]+\s*(?:%|원|건)?)에서\s+(-?[\d,.]+\s*(?:%|원|건)?)(?:으로|로)\s+(?:([\d,.]+\s*(?:%p|%|원|건)?)\s*)?(하락|감소|상승|증가)/u;
+export function headlineChange(text:string){
+ const match=text.replace(/\*\*/gu,'').match(changePattern);
+ if(!match)return null;
+ const [,metric,before,after,amount,direction]=match;
+ const sign=/하락|감소/u.test(direction)?-1:1,preference=orientation(metric)??0;
+ const tone=!preference?'neutral':sign*preference>0?'positive':'negative';
+ return {metric,before,after,delta:amount?(sign<0?'−':'+')+amount.trim():undefined,tone};
+}
+
+export function RunMarkdown({answer}:{answer:string}) {
+ const citations=collectCitations(answer);
+ const numberOf=(text:string)=>citations.findIndex(item=>item.text===text)+1;
+ const [selected,setSelected]=useState<{block:number;number:number}|null>(null);
+ const citeFor=(owner:number):Cite=>(text,index)=>{
+  const number=numberOf(text),open=selected?.block===owner&&selected.number===number;
+  return <button key={index} type="button" className="wb-run-cite" title={text} aria-label={`근거 ${number}: ${text}`} aria-expanded={open}
+   onClick={()=>setSelected(open?null:{block:owner,number})}>{number}</button>;
+ };
+ const detail=(owner:number)=>selected?.block===owner&&citations[selected.number-1]?
+  <CitationDetail key={'cite-'+owner} number={selected.number} citation={citations[selected.number-1]} onClose={()=>setSelected(null)}/>:null;
+ const sections=splitSections(answer);
+ const sources=citations.length>0&&<details className="wb-run-sources"><summary>참고한 자료 {citations.length}개</summary>
+  <ol>{citations.map((citation,i)=><li key={citation.text}><span>{i+1}</span><p>{citation.parts.join(' · ')}</p></li>)}</ol>
+ </details>;
+ if(!sections)return <div className="wb-run-markdown">{renderBlocks(answer.split(/\r?\n/u),0,{citeFor,detail,badges:true})}{sources}</div>;
+ return <div className="wb-run-markdown is-structured">
+  {sections.map(section=>{
+   const kind=section.kind==='lead'?'conclusion':section.kind;
+   const change=kind==='conclusion'?headlineChange(section.lines.join(' ')):null;
+   const blocks=renderBlocks(section.lines,section.offset,{citeFor,detail,badges:kind==='reasoning'||kind==='actions'});
+   if(!blocks.length)return null;
+   return <section key={section.offset+'-'+kind} className={'wb-run-section is-'+kind} aria-label={section.title}>
+    {section.title&&<h3 className="wb-run-section-title">{section.title}</h3>}
+    {change&&<p className="wb-run-headline"><span>{change.metric}</span><b>{change.before}</b><span aria-hidden="true">→</span>
+     <b className={'wb-answer-change is-'+change.tone}>{change.after}</b>{change.delta&&<small className={'wb-answer-change is-'+change.tone}>{change.delta}</small>}</p>}
+    {blocks}
+   </section>;
+  })}
+  {sources}
  </div>;
 }

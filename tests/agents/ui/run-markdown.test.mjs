@@ -11,8 +11,8 @@ const {RunMarkdown,cellTone,isNumericCell}=citationModule;
 const render=answer=>renderToStaticMarkup(createElement(RunMarkdown,{answer}));
 
 test('lists keep their own list elements and headings get document levels',()=>{
- const html=render('## 판단 근거\n\n- 첫째\n- 둘째\n\n1. 먼저\n2. 다음\n\n### 세부');
- assert.match(html,/<h3>판단 근거<\/h3>/);
+ const html=render('## 요인\n\n- 첫째\n- 둘째\n\n1. 먼저\n2. 다음\n\n### 세부');
+ assert.match(html,/<h3>요인<\/h3>/);
  assert.match(html,/<ul><li>첫째<\/li><li>둘째<\/li><\/ul>/);
  assert.match(html,/<ol><li>먼저<\/li><li>다음<\/li><\/ol>/);
  assert.match(html,/<h4>세부<\/h4>/);
@@ -57,4 +57,26 @@ test('evidence tags become numbered chips, repeated tags share a number and a so
 test('answers without evidence tags render no chips or source list',()=>{
  const html=render('현재 ROAS는 284.7%입니다.');
  assert.doesNotMatch(html,/wb-run-cite|참고한 자료/);
+});
+
+test('deep headings become answer sections with a headline change, action cards and hypothesis badges',()=>{
+ const {splitSections,headlineChange}=citationModule;
+ const answer='## 핵심 결론\n\n전체 **ROAS는 355.8%에서 284.7%로 71.1%p 하락**했습니다.\n\n## 판단 근거\n\n- 일예산 증액은 원인 후보입니다.\n- 결제 실패율이 올랐습니다.\n\n## 추천 액션\n\n1. **Instagram 피드 타깃 점검** — CVR을 비교합니다.\n\n## 확인이 필요한 점\n\n상품별 주문 자료가 없습니다.';
+ assert.deepEqual(splitSections(answer).map(section=>section.kind),['conclusion','reasoning','actions','limits']);
+ assert.deepEqual(headlineChange('전체 **ROAS는 355.8%에서 284.7%로 71.1%p 하락**'),{metric:'ROAS',before:'355.8%',after:'284.7%',delta:'−71.1%p',tone:'negative'});
+ assert.equal(headlineChange('CPC는 1,200원에서 900원으로 300원 감소')?.tone,'positive');
+ const html=render(answer);
+ assert.match(html,/class="wb-run-markdown is-structured"/);
+ assert.match(html,/<section class="wb-run-section is-conclusion" aria-label="핵심 결론"><h3 class="wb-run-section-title">핵심 결론<\/h3><p class="wb-run-headline">/);
+ assert.match(html,/<section class="wb-run-section is-actions" aria-label="추천 액션">[\s\S]*<ol><li><strong>Instagram 피드 타깃 점검<\/strong>/);
+ assert.match(html,/<li><span class="wb-run-badge">원인 후보<\/span>일예산 증액은 원인 후보입니다.<\/li>/);
+ assert.match(html,/<li>결제 실패율이 올랐습니다.<\/li>/);
+ assert.match(html,/is-limits[\s\S]*상품별 주문 자료가 없습니다./);
+});
+
+test('a lead paragraph before deep headings is shown as the conclusion and other answers stay plain',()=>{
+ const {splitSections}=citationModule;
+ assert.deepEqual(splitSections('ROAS가 하락했습니다.\n\n## 1. 판단 근거\n\n- 근거').map(section=>section.kind),['conclusion','reasoning']);
+ assert.equal(splitSections('## 요약\n\n현재 ROAS는 284.7%입니다.'),null);
+ assert.doesNotMatch(render('현재 ROAS는 284.7%입니다.'),/is-structured|wb-run-section/);
 });
