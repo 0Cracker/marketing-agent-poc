@@ -32,3 +32,8 @@
 .wb .wb-chat-working{flex-wrap:wrap;line-height:1.7}
 .wb .wb-chat-working button{white-space:normal}
 @media(max-width:600px){.wb-run-progress{flex-wrap:wrap}.wb .wb-run-progress button{min-height:36px}}
+/* 실제 실행의 조회 기록과 식별값은 답변 아래 한 곳에 접어 둔다. 실행 중에는 진행 상황을 보도록 펼친다. */
+.wb-run-process{padding-top:12px;border-top:1px solid #F0ECF5}
+.wb-run-process>summary{padding:2px 0}
+.wb-run-process>summary>span{margin-left:8px;font-size:10px;color:#A796B3}
+.wb .wb-run-process>.wb-run-metadata{margin-top:10px;padding-top:10px;border-top:1px dashed #EEE8F4}

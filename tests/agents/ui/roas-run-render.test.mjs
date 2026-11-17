@@ -56,3 +56,11 @@ test('partial, withheld, blocked statuses remain distinct',()=>{
   assert.match(render({state:{runId,executionStatus:status,events:[]}}),new RegExp(label));
  }
 });
+test('run metadata and the call log share one process disclosure that opens only while running',()=>{
+ const done=render({state:{runId,executionStatus:'completed',result:{answer:'답변',evidenceIds:['ev:1']},events:[{seq:1,kind:'tool_result',tool:'overview',count:2}]}});
+ assert.equal((done.match(/<summary>분석 과정 보기/g)||[]).length,1);
+ assert.match(done,/<details class="wb-answer-process wb-run-process"><summary>/);
+ assert.doesNotMatch(done,/실행 정보와 근거|wb-answer-limits/);
+ const running=render({state:{runId,executionStatus:'running',stage:'retrieving',events:[]}});
+ assert.match(running,/<details class="wb-answer-process wb-run-process" open="">/);
+});
