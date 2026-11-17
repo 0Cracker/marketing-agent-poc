@@ -1,9 +1,9 @@
-# v0.4.28 검증 결과
+# v5.0.8 검증 결과
 
 클라우드 개발 트리에서 마케팅 QA 우선 4건의 구현과 회귀 검사를 통과했다. 실제 사용자 과업 성공과 실모델 답변 품질은 평가하지 않았다.
 
 - 날짜: 2026-11-17, 한국 시간
-- 대상: `dev` 시작 SHA `ed88963ccb76615fd83dc8acd9c2fe886e107598` 이후 v0.4.28 변경 트리
+- 대상: `dev` 시작 SHA `ed88963ccb76615fd83dc8acd9c2fe886e107598` 이후 v5.0.8(작업 당시 v0.4.28) 변경 트리
 - 환경: Linux, Node 24.22.1, npm 11.9.0, Chromium, Python Playwright
 - 실행: `npm ci --include=dev --include=optional --cache /tmp/marketing-npm-cache`, `npm run dev:agent:mock`
 - 입력: 기존 S16 초기 보고, 2026-08-03~08-16 대비 08-17~08-30. 화면 사례 전환은 S01도 확인했다.
@@ -18,7 +18,7 @@
 | `npm test` | 83개 통과, 실패 0 | 0 |
 | `npm run test:agents` | 125개 통과, 실패 0, ROAS 검사와 일부 중복 | 0 |
 | `npm run build` | 성공, 기존 폰트 2파일 미포함과 500kB 초과 청크 경고 | 0 |
-| `python evidence/v0.4.28/validation/browser-check.py` | [실제 화면 결과](ui-results.json), 12개 검사 통과 | 0 |
+| `python evidence/v5.0.8/validation/browser-check.py` | [실제 화면 결과](ui-results.json), 12개 검사 통과 | 0 |
 | `git diff --check` | 통과 | 0 |
 
 ### 변경 전후와 시행착오
@@ -62,7 +62,7 @@
 
 2026-11-17, `d218fb3` 이후 후속 작업 트리에서 ROAS 84개와 Chromium 화면 14개 검사를 통과했다. 타입, 린트, 빌드 종료 코드도 모두 0이다. 린트와 빌드의 기존 경고는 유지된다. 위 초기 83/12개 검증과 구분한다.
 
-- `CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium python evidence/v0.4.28/validation/browser-check.py`: 14개 통과, [결과](ui-results.json).
+- `CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium python evidence/v5.0.8/validation/browser-check.py`: 14개 통과, [결과](ui-results.json).
 - CVR 상세에서 마커 3개를 확인하고 8/21 원문에 PAYMENT_CALLBACK_TIMEOUT이 표시됨을 검사했다. [캡처](../after/cvr-event-evidence.png).
 - 분석 단위를 기기로 변경하고 PC로 좁히면 마커 2개, 8/21 버튼 0개다.
 - 소스 회귀는 MetricDetails와 PeriodPlot 양쪽의 callback 전달을 확인한다.
