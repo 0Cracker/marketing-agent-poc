@@ -371,3 +371,4 @@
  .training-chart-events button{gap:6px}
  .training-event-open{font-size:10px}
 }
+.training-chart-events .training-event-span{display:block;margin-top:2px;font-style:normal;color:#6B5A93;font-size:11px}

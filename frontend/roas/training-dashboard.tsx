@@ -4,7 +4,7 @@ import {BarChart3,ChevronDown,FolderOpen,History,Info,Layers,Menu,PanelLeftClose
 import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from './components/ui/tooltip';
 import {RoasConversation} from './roas-conversation';
 import type {RoasAnswer} from './agent-client';
-import {CartesianGrid,Line,LineChart,ReferenceLine,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
+import {CartesianGrid,Line,LineChart,ReferenceArea,ReferenceLine,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
 import {campaignDisplayName,displayTrainingText,changeTrainingMedia,comparePeriods,metricPeriodSeries,metricValue,metricMissingReason,selectFacts,trainingCostDefinition} from '../../shared/roas/training-dashboard.mjs';
 import type {Fact,Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
 import './roas-workbench.css';
@@ -110,6 +110,7 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
    </>}
    <YAxis domain={[lower,upper]} ticks={mini?[lower,upper]:[0,upper/2,upper]} interval={0} tickFormatter={value=>chartTick(Number(value),metric)} width={mini?62:66} axisLine={false} tickLine={false} tick={{fill:mini?'#929BA8':'#8791A2',fontSize:mini?10:11}} tickMargin={mini?6:12}/>
    {mini&&<XAxis dataKey="day" hide/>}
+   {events.flatMap(event=>event.spans).map(span=><ReferenceArea key={span.recordId} x1={span.startDay} x2={span.endDay} fill="#A493C6" fillOpacity={0.12} stroke="none" ifOverflow="extendDomain"/>)}
    {events.map(event=><ReferenceLine key={event.date} x={event.day} stroke="#A493C6" strokeDasharray="3 4" label={{value:String(event.number),position:'insideTopRight',fill:'#59418F',fontSize:12}}/>)}
    <Tooltip labelFormatter={day=>{const point=series.find(row=>row.day===Number(day));return point?`${metric.label}, 분석 ${point.currentDate.slice(5)}, 직전 ${point.baselineDate.slice(5)}`:'';}} formatter={(value,name)=>[fmt(Number(value),metric.rate,metric.unit,metric.key),name]} contentStyle={{border:'1px solid #E8E4F0',borderRadius:8,fontSize:12,boxShadow:'0 4px 16px #27354B0A'}} wrapperStyle={{zIndex:100,pointerEvents:'none'}} cursor={{stroke:'#D9D2E7',strokeDasharray:'3 4'}}/>
    <Line name="직전 14일" dataKey="baseline" stroke="#9BA8B9" strokeWidth={mini?1.5:1.8} strokeDasharray="4 4" dot={false} activeDot={{r:3,stroke:'#FFF',strokeWidth:2}} isAnimationActive={false}/>
@@ -119,7 +120,7 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
   <p>운영 이벤트, 번호를 선택해 원문을 확인하세요. 발생 시점의 일치만으로 원인을 확정할 수는 없습니다.</p>
   {events.length?<ol>{events.map(event=>{
    const titles=groupRelatedRecords(event.records,data.caseId).map(activity=>activity.title||recordHeadline(activity.records[0],data)).join(', ');
-   return <li key={event.date}><button type="button" onClick={()=>onEventSelect({title:event.date+' 운영 기록',rows:event.records})}><b aria-hidden="true">{event.number}</b><time dateTime={event.date}>{event.date.slice(5).replace('-','/')}</time><span>{titles}</span><span className="training-event-open">원문 ↗</span></button></li>;
+   return <li key={event.date}><button type="button" onClick={()=>onEventSelect({title:event.date+' 운영 기록',rows:event.records})}><b aria-hidden="true">{event.number}</b><time dateTime={event.date}>{event.date.slice(5).replace('-','/')}</time><span>{titles}{event.spans.map(span=><em key={span.recordId} className="training-event-span">{span.start.slice(5).replace('-','/')}~{span.end.slice(5).replace('-','/')} 지속, 차트 음영</em>)}</span><span className="training-event-open">원문 ↗</span></button></li>;
   })}</ol>:<p>현재 조회 범위와 분석 기간에 해당하는 운영 이벤트가 없습니다.</p>}
  </div>}</>;
 }
