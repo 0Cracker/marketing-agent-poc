@@ -6,7 +6,8 @@ import {createServer} from 'vite';
 
 const server=await createServer({server:{middlewareMode:true},appType:'custom'});
 after(async()=>await server.close());
-const {RunMarkdown,cellTone,isNumericCell}=await server.ssrLoadModule('/roas/run-markdown.tsx');
+const citationModule=await server.ssrLoadModule('/roas/run-markdown.tsx');
+const {RunMarkdown,cellTone,isNumericCell}=citationModule;
 const render=answer=>renderToStaticMarkup(createElement(RunMarkdown,{answer}));
 
 test('lists keep their own list elements and headings get document levels',()=>{
@@ -34,4 +35,26 @@ test('delta tone uses row, column then table metric and leaves spend neutral',()
  assert.equal(cellTone('+4%','증감','무엇','설명'),'neutral');
  assert.equal(isNumericCell('1,240만 원'),true);
  assert.equal(isNumericCell('Instagram 피드'),false);
+});
+
+test('evidence tags become numbered chips, repeated tags share a number and a source list is added',()=>{
+ const {collectCitations}=citationModule;
+ const answer='ROAS가 하락했습니다. [근거: 캠페인별 성과 / ROAS / 전체 캠페인, 직전·현재 기간]\n\n'+
+  '| 캠페인 | 현재 ROAS |\n| --- | --- |\n| 검색 B | 137% |\n\n[근거: 캠페인별 성과 / ROAS / 전체 캠페인,  직전·현재 기간]\n\n'+
+  '- 결제 실패율이 올랐습니다. [근거: 일별 추이 / 결제 실패율 / 검색 B, 08.21~08.25]';
+ const citations=collectCitations(answer);
+ assert.equal(citations.length,2);
+ assert.deepEqual(citations[1].parts,['일별 추이','결제 실패율','검색 B, 08.21~08.25']);
+ const html=render(answer);
+ assert.doesNotMatch(html,/\[근거:/);
+ assert.equal((html.match(/class="wb-run-cite"/g)||[]).length,3);
+ assert.match(html,/aria-label="근거 1: 캠페인별 성과 \/ ROAS \/ 전체 캠페인, 직전·현재 기간"/);
+ assert.match(html,/<p class="wb-run-cite-line"><span>근거<\/span>/);
+ assert.match(html,/<summary>참고한 자료 (<!-- -->)?2(<!-- -->)?개<\/summary>/);
+ assert.match(html,/일별 추이 · 결제 실패율 · 검색 B, 08.21~08.25/);
+});
+
+test('answers without evidence tags render no chips or source list',()=>{
+ const html=render('현재 ROAS는 284.7%입니다.');
+ assert.doesNotMatch(html,/wb-run-cite|참고한 자료/);
 });
