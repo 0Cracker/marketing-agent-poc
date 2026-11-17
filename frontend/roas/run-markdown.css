@@ -1,0 +1,23 @@
+/* 실제 모델 Markdown 답변. Tailwind preflight가 지운 목록 표시와 문서 위계를 대화 패널 안에서만 복원한다. */
+.wb .wb-run-markdown{display:grid;gap:12px;min-width:0;font-size:14px;line-height:1.75;color:#3B3147;overflow-wrap:anywhere}
+.wb .wb-run-markdown>*{margin:0}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h3{margin-top:14px;padding-top:16px;border-top:1px solid #EEE9F4;font-size:15px;font-weight:650;line-height:1.5;color:#2B2238}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown>h3:first-child{margin-top:0;padding-top:0;border-top:0}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h4{margin-top:6px;font-size:14px;font-weight:600;line-height:1.5;color:#3A2E49}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h5{font-size:13px;font-weight:600;color:#5B4B6B}
+.wb .wb-run-markdown strong{font-weight:650;color:#2B2238}
+.wb .wb-run-markdown code{font-size:12px;padding:1px 5px;border-radius:4px;background:#F4F1F8;color:#5D4A72}
+.wb .wb-run-markdown ul,.wb .wb-run-markdown ol{display:grid;gap:8px;padding-left:20px}
+.wb .wb-run-markdown ul{list-style:disc}
+.wb .wb-run-markdown ol{list-style:decimal}
+.wb .wb-run-markdown li{padding-left:2px}
+.wb .wb-run-markdown li::marker{color:#9C88B6;font-weight:600}
+.wb-run-table{overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #ECE7F2;border-radius:10px}
+.wb .wb-run-table table{width:100%;min-width:100%;border-collapse:collapse;font-size:12px;line-height:1.45}
+.wb .wb-run-table th,.wb .wb-run-table td{height:auto;padding:8px 10px;text-align:left;vertical-align:top;white-space:normal;border-bottom:1px solid #F1EDF6;background:transparent}
+.wb .wb-run-table thead th{font-size:11px;font-weight:500;color:#8A7C98;background:#FAF8FC;white-space:nowrap}
+.wb .wb-run-table tbody th{font-weight:500;color:#3F3350;min-width:88px}
+.wb .wb-run-table tr:last-child>*{border-bottom:0}
+.wb .wb-run-table tr:hover td{background:transparent}
+.wb .wb-run-table .is-numeric{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.wb .wb-run-table td.wb-answer-change{font-weight:600}

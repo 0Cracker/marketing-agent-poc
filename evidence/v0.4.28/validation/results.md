@@ -68,3 +68,5 @@
 - 소스 회귀는 MetricDetails와 PeriodPlot 양쪽의 callback 전달을 확인한다.
 - B1 실제 공백을 포함한 `+12.1% 악화`를 브라우저에서 검증했다.
 - B2 환경변수 경로를 사용해 실행했다. 변수 미설정 분기는 Playwright 기본 선택으로 위임하며 해당 다운로드 브라우저는 이번 환경에서 실행하지 않았다.
+
+- 후속 원격 확인: 최신 head `a5ec465`의 GitHub CI와 Vercel 상태 모두 SUCCESS. PR #14는 2026-11-17 dev에 Squash 병합되었으며 병합 SHA는 `f53a3785f965ee1da561dd39b76a5941171b5272`다.

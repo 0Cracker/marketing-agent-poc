@@ -46,7 +46,7 @@ test('Markdown renders a table and escapes embedded HTML',()=>{
   result:{answer:'**결론**\n\n| 지표 | 값 |\n| --- | --- |\n| 캠페인 \\| ROAS | [EV-sample] |\n\n<img src=x onerror=alert(1)>'}}});
  assert.match(html,/<strong>결론<\/strong>/);
  assert.match(html,/<th scope="col">지표<\/th>/);
- assert.match(html,/<td>캠페인 \| ROAS<\/td>/);
+ assert.match(html,/<th scope="row">캠페인 \| ROAS<\/th>/);
  assert.match(html,/<code>\[EV-sample\]<\/code>/);
  assert.match(html,/&lt;img/);
  assert.doesNotMatch(html,/<img src=x/);
