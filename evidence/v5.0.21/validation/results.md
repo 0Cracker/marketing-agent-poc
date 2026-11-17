@@ -9,7 +9,8 @@
 | --- | --- |
 | `npm test` | 99개 통과(`target-roas.test.ts` 3개 추가) |
 | `npm run test:agents` | 134개 통과 |
-| `npx tsc --noEmit -p .`, `npm run build` | 통과 |
+| `npx tsc --noEmit -p .` | v5.0.21 커밋(`0ae95cb`) 시점에는 `target-roas.test.ts`의 암시적 any 3건으로 실패했다. 커밋 기록에 통과로 잘못 적었으며, 후속 커밋에서 타입을 지정해 통과 |
+| `npm run build` | 통과 |
 | `npm run lint` | 오류 0, 기존 경고 2 |
 | `node evidence/v5.0.21/validation/browser-check.cjs` | [5개 통과](ui-results.json) |
 | `node evidence/v5.0.20/validation/browser-check.cjs` | 24개 통과(회귀 확인, 해당 Evidence 파일은 덮어쓰지 않고 되돌림) |

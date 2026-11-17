@@ -19,10 +19,10 @@ test('existing virtual target ROAS 350% is reused for every case and scope witho
 
 test('mixed or missing targets are not averaged into a single line',()=>{
  const data=trainingScreenData(undefined,'S16','initial');
- const mixed={...data,campaigns:data.campaigns.map((campaign,index)=>index===0?{...campaign,targetRoas:4}:campaign)};
+ const mixed={...data,campaigns:data.campaigns.map((campaign:Record<string,unknown>,index:number)=>index===0?{...campaign,targetRoas:4}:campaign)};
  assert.equal(scopeTargetRoas(mixed,filters),null);
  assert.equal(scopeTargetRoas(mixed,{...filters,campaignId:'EDU-C1'}),4);
- const missing={...data,campaigns:data.campaigns.map(campaign=>({...campaign,targetRoas:undefined}))};
+ const missing={...data,campaigns:data.campaigns.map((campaign:Record<string,unknown>)=>({...campaign,targetRoas:undefined}))};
  assert.equal(scopeTargetRoas(missing,filters),null);
 });
 
