@@ -1,0 +1,30 @@
+{
+  "checks": [
+    "Briefing shows three exploration steps",
+    "Case hint stays folded by default",
+    "Cards follow AOV, CVR, CPC then CTR, CPA without CAC",
+    "CVR card states click basis",
+    "Small charts show start and end dates",
+    "ROAS value appears above the comparison line",
+    "ROAS chart shades one incident span",
+    "Event list states incident duration",
+    "Revenue uses one term on overview",
+    "CVR detail shades the incident span",
+    "Funnel links clicks and sessions denominators",
+    "Funnel marks checkout to purchase as worst step",
+    "AI footnote states connected local substitute mode",
+    "Free question completes in mock mode with folded process log",
+    "Record totals explain split",
+    "Review table hides empty link column",
+    "Review mention changes stay neutral",
+    "S03 shows 0 incident span(s)",
+    "S18 shows 2 incident span(s)",
+    "S13 shows 1 incident span(s)",
+    "390px overview has no page overflow",
+    "768px overview has no page overflow",
+    "1024px overview has no page overflow",
+    "No uncaught browser errors"
+  ],
+  "passed": 24,
+  "errors": []
+}

@@ -57,16 +57,17 @@ function ReviewText({text,search,open,onToggle}:{text:string;search:string;open:
  </div>;
 }
 function ReviewRows({rows,search,sort,onSort,expanded,onToggle}:{rows:ReviewRecord[];search:string;sort:ReviewSort;onSort:(field:ReviewSortField)=>void;expanded:Selection;onToggle:(id:string)=>void}){
+ const hasLinks=rows.some(row=>safeLink(row.url));
  return <div className="review-table-scroll" tabIndex={0} aria-label="리뷰 원문 테이블, 가로 스크롤 가능"><table className="review-table">
-  <caption className="sr-only">분류 카테고리, 평점, 판매처, 리뷰 원문, 작성일, 원문 확인</caption>
-  <colgroup><col style={{width:'18%'}}/><col style={{width:'8%'}}/><col style={{width:'9%'}}/><col style={{width:'43%'}}/><col style={{width:'12%'}}/><col style={{width:'10%'}}/></colgroup>
+  <caption className="sr-only">분류 카테고리, 평점, 판매처, 리뷰 원문, 작성일{hasLinks?', 원문 확인':''}</caption>
+  <colgroup><col style={{width:'18%'}}/><col style={{width:'8%'}}/><col style={{width:'9%'}}/><col style={{width:hasLinks?'43%':'53%'}}/><col style={{width:'12%'}}/>{hasLinks&&<col style={{width:'10%'}}/>}</colgroup>
   <thead><tr>
    <th scope="col">분류 카테고리</th>
    <th scope="col"><SortButton title="평점" field="rating" sort={sort} onChange={onSort}/></th>
    <th scope="col"><SortButton title="판매처" field="sourceName" sort={sort} onChange={onSort}/></th>
    <th scope="col">리뷰 원문</th>
    <th scope="col"><SortButton title="작성일" field="writtenAt" sort={sort} onChange={onSort}/></th>
-   <th scope="col">원문 확인</th>
+   {hasLinks&&<th scope="col">원문 확인</th>}
   </tr></thead>
   <tbody>{rows.map(row=>{
    const link=safeLink(row.url),open=expanded.has(row.id),text=row.text||'';
@@ -76,7 +77,7 @@ function ReviewRows({rows,search,sort,onSort,expanded,onToggle}:{rows:ReviewReco
     <td>{row.sourceName||'—'}</td>
     <td className="review-text-cell">{text?<ReviewText text={text} search={search} open={open} onToggle={()=>onToggle(row.id)}/>:<span className="review-muted review-no-text">원문 없음</span>}</td>
     <td>{date(row.writtenAt)}</td>
-    <td>{link?<a href={link} target="_blank" rel="noopener noreferrer" aria-label="원문 보기, 새 탭 열림">원문 보기 <ExternalLink size={12} aria-hidden="true"/></a>:<span className="review-muted">링크 없음</span>}</td>
+    {hasLinks&&<td>{link?<a href={link} target="_blank" rel="noopener noreferrer" aria-label="원문 보기, 새 탭 열림">원문 보기 <ExternalLink size={12} aria-hidden="true"/></a>:<span className="review-muted">링크 없음</span>}</td>}
    </tr>;
   })}</tbody>
  </table></div>;
