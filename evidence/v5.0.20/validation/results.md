@@ -3,7 +3,7 @@
 v5.0.13~v5.0.20의 QA 후속 변경을 최종 트리에서 한 번에 확인했다. 각 버전의 자동 테스트는 해당 일지에 있다.
 
 - 날짜: 2026-11-17
-- 대상: `claude/gracious-cannon-ebmc8y`, v5.0.20 커밋 직전 작업 트리(v5.0.19 `7e1477c` + v5.0.20 변경)
+- 대상: `claude/gracious-cannon-ebmc8y`, v5.0.20 커밋 직전 작업 트리(v5.0.19 `7c16e1b` + v5.0.20 변경)
 - 환경: Linux, Node 22, Playwright Chromium, `npm run dev:agent:mock`(외부 모델 호출 없음)
 - 입력: 기존 S16 초기 보고, 2026-08-03~08-16 대비 08-17~08-30. 사례 S03, S13, S18 전환 포함. 새 데이터 없음.
 - 실행: `node evidence/v5.0.20/validation/browser-check.cjs` → [24개 검사 통과](ui-results.json), 종료 코드 0

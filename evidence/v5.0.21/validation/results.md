@@ -1,7 +1,7 @@
 # v5.0.21 검증 결과
 
 - 날짜: 2026-11-17
-- 대상: `claude/gracious-cannon-ebmc8y`, v5.0.20 `f89f036` + v5.0.21 작업 트리
+- 대상: `claude/gracious-cannon-ebmc8y`, v5.0.20 `1c58e03` + v5.0.21 작업 트리
 - 환경: Linux, Node 22, Playwright Chromium, `npm run dev:agent:mock`
 - 입력: 기존 18개 사례의 캠페인 `targetRoas` 값(전부 3.5). 새 데이터와 스키마 변경 없음.
 
@@ -9,7 +9,7 @@
 | --- | --- |
 | `npm test` | 99개 통과(`target-roas.test.ts` 3개 추가) |
 | `npm run test:agents` | 134개 통과 |
-| `npx tsc --noEmit -p .` | v5.0.21 커밋(`0ae95cb`) 시점에는 `target-roas.test.ts`의 암시적 any 3건으로 실패했다. 커밋 기록에 통과로 잘못 적었으며, 후속 커밋에서 타입을 지정해 통과 |
+| `npx tsc --noEmit -p .` | v5.0.21 커밋(`fa30fb8`) 시점에는 `target-roas.test.ts`의 암시적 any 3건으로 실패했다. 커밋 기록에 통과로 잘못 적었으며, 후속 커밋에서 타입을 지정해 통과 |
 | `npm run build` | 통과 |
 | `npm run lint` | 오류 0, 기존 경고 2 |
 | `node evidence/v5.0.21/validation/browser-check.cjs` | [5개 통과](ui-results.json) |

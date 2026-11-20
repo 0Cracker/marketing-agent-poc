@@ -1,6 +1,6 @@
 # F001 마케팅 QA 개선
 
-상태: 완료, 구현과 검증, [PR #14](https://github.com/0Cracker/marketing-agent-poc/pull/14) 검토 중, v5.0.8, 기준 dev `ed88963`.
+상태: 완료, 구현과 검증, [PR #14](https://github.com/0Cracker/marketing-agent-poc/pull/14)로 dev 반영(`f53a378`, 작업 당시 v0.4.28), v5.0.8, 기준 dev `ed88963`.
 
 | 항목 | 정본 |
 | --- | --- |
