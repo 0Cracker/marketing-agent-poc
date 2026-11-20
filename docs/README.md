@@ -1,5 +1,7 @@
 # 문서 안내
 
+2026-11-20 실무 판단 보강: [v0.4.28](iterations/v0.4.28.md)에서 첫 화면 규모 지표와 목표 ROAS, 추이 아래 운영 기록, 결제 실패율, 지표 이름 통일, CSV 내보내기를 반영했다. 실사용자 테스트를 대신하는 [AI 시나리오 점검](../scripts/roas/diagnostics/ux-walkthrough.mjs)은 12개 과업을 반복 실행하며, 사람의 사용성 평가를 대체하지 않는다.
+
 2026-11-11 로컬 worktree 통합: 활성 worktree는 1개, 로컬 브랜치는 dev, main만 유지한다. Jev 분류, ROAS 기여도, 운영 기록 UI, 온톨로지 설계, Quick Tunnel 검증, 과거 저장소 정리를 dev 작업 트리에 반영했다. 구형 QA 게이트웨이는 최신 dev 인증 방식과 호환되지 않아 백업에 보존했다. 원격 브랜치에 반영하지 않았으며, 통합 작업은 미커밋 상태다. [통합 기록](iterations/2026-11-11-worktree-consolidation.md).
 
 2026-11-10 QA ?? ?????? dev ??? ?? ??: [v0.4.25](iterations/v0.4.25.md), [?? ? ?? ??](agent-qa-auth-gateway.md).
