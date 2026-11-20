@@ -20,8 +20,8 @@ export function campaignUnitLabel(data:TrainingData,id:string){
 }
 const pairDefinitions:Record<string,[string,string]>={roas:['revenue','spend'],cpc:['spend','clicks'],adCtr:['clicks','impressions'],cvr:['orders','clicks'],cpa:['spend','orders'],aov:['revenue','orders']};
 export const analysisMetrics:AnalysisMetric[]=[
- {key:'roas',label:'ROAS',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'cvr',label:'클릭 기준 구매 CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'aov',label:'AOV',unit:'원'},
- {key:'revenue',label:'귀속 구매 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'clicks',label:'클릭수',unit:'회'},{key:'impressions',label:'광고 노출수',unit:'회'},{key:'orders',label:'귀속 구매 주문수',unit:'건'},
+ {key:'roas',label:'ROAS',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'cvr',label:'구매 CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'aov',label:'AOV',unit:'원'},
+ {key:'revenue',label:'귀속 구매 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'clicks',label:'클릭수',unit:'회'},{key:'impressions',label:'광고 노출수',unit:'회'},{key:'orders',label:'귀속 구매 주문',unit:'건'},
  {key:'adCpm',label:'광고 CPM',unit:'원'},{key:'contentClickRate',label:'콘텐츠 링크 클릭률',rate:true},{key:'contentCpm',label:'조회 1,000회당 비용',unit:'원'},
  {key:'impressionShare',label:'노출 비중',rate:true},{key:'orderShare',label:'주문 비중',rate:true},{key:'spendShare',label:'집행비 비중',rate:true},{key:'clickShare',label:'클릭 비중',rate:true},
  {key:'sessions',label:'랜딩 세션',unit:'회'},{key:'view',label:'상품 조회 세션',unit:'회'},{key:'cart',label:'장바구니 세션',unit:'회'},{key:'checkout',label:'결제 시작 세션',unit:'회'},

@@ -4,9 +4,10 @@ import {selectBreakdowns} from '../../shared/roas/training-dashboard.mjs';
 import type {Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
 import {analysisColumns,analysisDimensions,analysisDisplayKeys,analysisMetric,analysisMissingReason,analysisRows,analysisValue,analyzeGroups,dimensionNames,sortAnalysisGroups} from './training-analysis';
 import type {AnalysisDimension,AnalysisGroup,AnalysisMetric,AnalysisSettings} from './training-analysis';
-import {deltaTone} from './training-presentation';
+import {deltaTone,scopeTargetRoas} from './training-presentation';
+import {csvChange,csvUnit,csvValue,downloadCsv,toCsv} from './training-export';
 import {formatMetricValue,formatMetricAbsoluteDelta,formatComparedMetricDelta} from './training-format';
-import {Info} from 'lucide-react';
+import {Download,Info} from 'lucide-react';
 import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from './components/ui/tooltip';
 
 export function TermInfo({label,description}:{label:string;description?:string}){
@@ -28,10 +29,11 @@ function Value({value,metric,rows}:{value:number|null;metric:AnalysisMetric;rows
  const missing=analysisMissingReason(rows,metric.key);
  return <span className="training-missing-value" title={missing.reason}>{missing.label}</span>;
 }
-function CurrentCell({group,metric,totals,changeFirst=false}:{group:AnalysisGroup;metric:AnalysisMetric;totals:Total[];changeFirst?:boolean}){
+function CurrentCell({group,metric,totals,changeFirst=false,target=null}:{group:AnalysisGroup;metric:AnalysisMetric;totals:Total[];changeFirst?:boolean;target?:number|null}){
  const values=[group.before,group.after].map((t,i)=>group.periodRows[i].length?analysisValue(t,metric.key,totals[i]):null);
  const tone=deltaTone(metric.key,values[0],values[1],metric.rate);
- return <td className="numeric">{changeFirst?<><strong className={`training-delta-${tone}`}>{delta(values[0],values[1],metric)}</strong><small className="training-cell-change">{metric.key==='roas'&&<span className="training-current-label">현재 </span>}<Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></small></>:<><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></>}</td>;
+ const belowTarget=metric.key==='roas'&&target!==null&&values[1]!==null&&values[1]<target;
+ return <td className="numeric">{changeFirst?<><strong className={`training-delta-${tone}`}>{delta(values[0],values[1],metric)}</strong><small className="training-cell-change">{metric.key==='roas'&&<span className="training-current-label">현재 </span>}<Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></small>{belowTarget&&<small className="training-target-badge" title={`목표 ROAS ${format(target,metric)}보다 낮습니다.`}>목표 미달</small>}</>:<><strong className={`training-delta-${tone}`}><Value value={values[1]} metric={metric} rows={group.periodRows[1]}/></strong><small className={`training-cell-change training-delta-${tone}`}>{delta(values[0],values[1],metric)}</small></>}</td>;
 }
 function EvidenceTable({group,keys,totals,content=false}:{group:AnalysisGroup;keys:string[];totals:Total[];content?:boolean}){
  return <div className="wb-table-scroll"><table className="training-calculation-table"><thead><tr><th>지표</th><th className="numeric">직전 14일</th><th className="numeric">분석 기간</th><th className="numeric">증감</th></tr></thead><tbody>{[...new Set(keys)].map(key=>{
@@ -88,6 +90,14 @@ export function KpiAnalysisPanel(props:PanelProps){
  const childGroups=dimension==='campaign'?sortAnalysisGroups(analyzeGroups(data,rows,metricKey,'campaignUnit'),metricKey,effectiveSettings):[];
  const columns=analysisColumns[metricKey];
  const sections=metricKey==='cpc'?['ad_impression','content_view']:['all'];
+ function exportTable(){
+  const keys=analysisDisplayKeys(metricKey,columns).filter(k=>k!=='impact');
+  const header=[dimensionNames[dimension],'구분','전체 변화 기여'+(metric.rate?' (%p)':''),...keys.flatMap(k=>{const m=analysisMetric(k),unit=csvUnit(m.rate,m.unit);return [`${m.label} 직전 14일${unit?' ('+unit+')':''}`,`${m.label} 분석 기간${unit?' ('+unit+')':''}`,`${m.label} 증감 (${m.rate?'%p':'%'})`];})];
+  const line=(item:AnalysisGroup,kind:string)=>[item.label,kind,csvValue(item.impact,metric.rate),...keys.flatMap(k=>{const m=analysisMetric(k),values=[item.before,item.after].map((t,i)=>item.periodRows[i].length?analysisValue(t,k,analysis.totals[i]):null);return [csvValue(values[0],m.rate),csvValue(values[1],m.rate),csvChange(values[0],values[1],m.rate)];})];
+  const body=groups.flatMap(g=>[line(g,'그룹'),...(dimension==='campaign'?childGroups.filter(child=>g.rows.some(row=>row.campaignId===child.key)):[]).filter((_,i,all)=>all.length>1).map(child=>line(child,'하위 캠페인'))]);
+  const scope=[filters.campaignId!=='all'?filters.campaignId:'',filters.device!=='all'?filters.device:''].filter(Boolean).join('-');
+  downloadCsv(`roas-${data.caseId}-${metricKey}-${dimension}${scope?'-'+scope:''}.csv`,toCsv([header,...body]));
+ }
  function toggle(key:string){onSettings({expanded:expanded.includes(key)?expanded.filter(k=>k!==key):[...expanded,key]});}
  function sortHeader(key:string){
   const impact=key==='impact',basis=metricKey==='roas'?'change':'value',active=impact?effectiveSettings.sortBasis!=='value'&&effectiveSettings.sortBasis!=='change':effectiveSettings.sortBasis===basis&&effectiveSettings.sortKey===key;
@@ -99,7 +109,7 @@ export function KpiAnalysisPanel(props:PanelProps){
  }
  return <section className="roas-card training-analysis-panel" id={metricKey==='roas'?'training-campaign-roas':undefined} aria-label={`${metric.label} 원인 분석 표`}>
   <div className="roas-card-heading"><h3>{metric.label} 상세 데이터</h3></div>
-  <div className="training-analysis-controls"><label>분석 단위<select aria-label={`${metric.label} 분석 단위`} value={dimension} onChange={e=>onSettings({dimension:e.target.value as AnalysisDimension,expanded:[]})}>{supported.map(d=><option key={d} value={d}>{dimensionNames[d]}</option>)}</select></label></div>
+  <div className="training-analysis-controls"><label>분석 단위<select aria-label={`${metric.label} 분석 단위`} value={dimension} onChange={e=>onSettings({dimension:e.target.value as AnalysisDimension,expanded:[]})}>{supported.map(d=><option key={d} value={d}>{dimensionNames[d]}</option>)}</select></label><button className="training-csv-button" onClick={exportTable}><Download size={14} aria-hidden="true"/>CSV 내려받기</button></div>
   <p className="training-analysis-total">전체 변화 <strong className={`training-delta-${deltaTone(metricKey,analysis.overall[0],analysis.overall[1],metric.rate)}`}>{signed(analysis.change,metric)}</strong></p>
   {sections.map(section=>{
    const chosen=section==='all'?groups:groups.filter(g=>g.rows.every(r=>r.exposureBasis===section));if(!chosen.length)return null;
@@ -111,7 +121,7 @@ export function KpiAnalysisPanel(props:PanelProps){
     const hasChildren=children.length>1;
     const cells=(item:AnalysisGroup)=>displayKeys.map(k=>k==='impact'
      ?<td key={k} className={'numeric training-impact-value training-delta-'+impactTone(metric,item.impact)}>{signed(item.impact,metric)}</td>
-     :<CurrentCell key={k} group={item} metric={analysisMetric(k)} totals={analysis.totals} changeFirst={metricKey==='roas'}/>);
+     :<CurrentCell key={k} group={item} metric={analysisMetric(k)} totals={analysis.totals} changeFirst={metricKey==='roas'} target={k==='roas'?scopeTargetRoas(data.campaigns,item.rows.map(r=>r.campaignId)):null}/>);
     return <Fragment key={g.key}>
      <tr className={hasChildren?'training-campaign-group-row':undefined}><th scope="row"><button className="training-analysis-expand" aria-expanded={opened} aria-controls={rowId} onClick={()=>toggle(dimension+':'+g.key)}><span aria-hidden="true">{opened?'−':'+'}</span><span className="training-analysis-row-label" title={g.label}>{g.label}</span></button></th>{cells(g)}</tr>
      {hasChildren&&opened&&children.map(child=>{

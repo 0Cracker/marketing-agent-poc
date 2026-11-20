@@ -42,13 +42,13 @@ export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):R
   const declined=comparable.filter(row=>row.after!<row.before!).sort((x,y)=>(x.after!-x.before!)-(y.after!-y.before!));
   const improved=comparable.filter(row=>row.after!>row.before!).sort((x,y)=>(y.after!-y.before!)-(x.after!-x.before!));
   sections.summary=[
-   `구매 전환 매출: ${chatValue(before.total.revenue,'revenue')} → ${chatValue(after.total.revenue,'revenue')}, 집행비: ${chatValue(before.total.spend,'spend')} → ${chatValue(after.total.spend,'spend')}. ${citations}`,
+   `귀속 구매 매출: ${chatValue(before.total.revenue,'revenue')} → ${chatValue(after.total.revenue,'revenue')}, 집행비: ${chatValue(before.total.spend,'spend')} → ${chatValue(after.total.spend,'spend')}. ${citations}`,
    `비교 가능한 캠페인 ${comparable.length}개 중 ROAS 하락 ${declined.length}개, 상승 ${improved.length}개, 동일 ${comparable.length-declined.length-improved.length}개입니다.`,
    ...chatHighlights(comparison,['largest_decline','largest_increase','lowest_current']),
   ];
   sections.reasoning=[
    b.roas<a.roas?'선택 범위에서는 매출 대비 집행비 부담이 커졌습니다. 매출이 늘었더라도 집행비가 더 빠르게 늘면 ROAS는 하락합니다.':'선택 범위의 ROAS는 하락하지 않았습니다. 매출과 집행비가 변한 비율을 함께 확인하세요.',
-   '전체 ROAS는 캠페인별 ROAS의 단순 평균이 아니라 전체 구매 전환 매출 ÷ 전체 집행비입니다. 캠페인 자체의 효율 변화와 집행비 배분 변화를 함께 봐야 합니다.',
+   '전체 ROAS는 캠페인별 ROAS의 단순 평균이 아니라 전체 귀속 구매 매출 ÷ 전체 집행비입니다. 캠페인 자체의 효율 변화와 집행비 배분 변화를 함께 봐야 합니다.',
    '현재 ROAS가 가장 낮은 캠페인과 하락 폭이 가장 큰 캠페인은 다를 수 있습니다. 위 순위와 그래프는 캠페인 자체의 ROAS 비교이며, 전체 하락에 대한 인과적 기여도 순위는 아닙니다.',
   ];
   sections.actions=[
@@ -67,7 +67,7 @@ export function roasExampleAnswer(data:TrainingData,filters:Filters,id:string):R
   sections.actions=[worsened.length?`${worsened[0].label} 구간을 캠페인과 기기별로 나눠 확인하세요.`:'이탈률 외에 CPC, AOV와 재방문 구매 변화를 확인하세요.','결제 실패율, 페이지 로딩과 운영 변경 기록을 같은 기간으로 비교해 원인 후보를 좁히세요.'];
  }else{
   const from=[a.aov,a.cvr,a.cpc],to=[b.aov,b.cvr,b.cpc];
-  sections.reasoning=['ROAS = AOV × CVR ÷ CPC입니다. 여기서 AOV는 구매 전환 매출 ÷ 주문, CVR은 주문 ÷ 클릭, CPC는 집행비 ÷ 클릭으로, 같은 기간과 범위의 합계를 사용합니다.'];
+  sections.reasoning=['ROAS = AOV × CVR ÷ CPC입니다. 여기서 AOV는 귀속 구매 매출 ÷ 주문, CVR은 주문 ÷ 클릭, CPC는 집행비 ÷ 클릭으로, 같은 기간과 범위의 합계를 사용합니다.'];
   sections.summary=names.map((name,i)=>`${name}: ${chatValue(from[i],name.toLowerCase())} → ${chatValue(to[i],name.toLowerCase())}. ${citations}`);
   if(from.every(value=>value!==null&&Number.isFinite(value))&&to.every(value=>value!==null&&Number.isFinite(value))&&(a.cpc??0)>0&&(b.cpc??0)>0){
    const impact=factorEffects('roas',a,b)!.map(row=>row.impact);

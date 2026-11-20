@@ -344,3 +344,33 @@
 .training-campaign-parent-details>.training-analysis-detail{padding:12px 0 0;border:0;background:transparent}
 .training-campaign-parent-details>summary:focus-visible{outline:2px solid #7357BA;outline-offset:3px}
 @media(max-width:800px){.training-dashboard .training-analysis-table>tbody>tr.training-campaign-child-row>th[scope=row]{padding-left:24px}.training-campaign-parent-details{padding:12px}}
+
+/* 2026-11-20 실무 판단 보강: 규모 지표, 목표 ROAS, 운영 기록 요약, CSV */
+.training-scale-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.training-scale-kpi{min-width:0;padding:16px 20px;border:1px solid #E4E8EF;border-radius:8px;background:#FFF;color:#27354B;font-variant-numeric:tabular-nums}
+.training-scale-kpi h3{display:flex;align-items:center;gap:4px;margin:0 0 8px;font-size:13px;font-weight:600;color:#4A5568}
+.training-scale-kpi>strong{display:block;font-size:24px;line-height:32px;font-weight:600;overflow-wrap:anywhere}
+.training-scale-kpi p{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:6px 0 2px;font-size:14px;font-weight:600}
+.training-scale-diff{font-size:12px;font-weight:400;color:#687487}
+.training-scale-kpi small{display:block;font-size:12px;line-height:18px;color:#8791A2}
+.training-target-note{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:14px 0 0;padding-top:12px;border-top:1px solid #EEF1F5;font-size:13px;line-height:20px;color:#687487}
+.training-target-note strong{font-weight:600}
+.training-target-badge{display:inline-block;margin-top:4px;padding:1px 6px;border-radius:4px;background:#EAF2FB;color:#236AB9;font-size:11px;line-height:16px;font-weight:600;white-space:nowrap}
+.training-chart-events{margin-top:10px;padding-top:10px;border-top:1px solid #EEF1F5;font-size:12px;line-height:18px;color:#4A5568}
+.training-chart-events-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;color:#687487}
+.training-chart-events-head button{padding:2px 4px;border:0;background:none;color:#6941C6;font:inherit;cursor:pointer}
+.training-chart-events-head button:hover{text-decoration:underline}
+.training-chart-events ol{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none}
+.training-chart-event{display:flex;gap:6px;max-width:100%;padding:3px 8px;border:1px solid #E4E8EF;border-radius:999px;background:#F8F9FB}
+.training-chart-event time{flex:none;font-weight:600;font-variant-numeric:tabular-nums;color:#27354B}
+.training-chart-event span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.training-chart-event-incident,.training-chart-event-inventory{border-color:#F3D3D5;background:#FDF5F5}
+.training-chart-events p{margin:0;color:#8791A2}
+.training-csv-button{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:5px 10px;border:1px solid #DDE2EB;border-radius:5px;background:#FFF;color:#354156;font:inherit;font-size:12px;cursor:pointer}
+.training-csv-button:hover{border-color:#7357BA;color:#6941C6}
+.training-csv-button:focus-visible,.training-chart-events-head button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
+.training-analysis-controls .training-csv-button{margin-left:auto}
+.training-table-actions{display:flex;justify-content:flex-end;margin:4px 0 8px}
+/* 고정된 AI 버튼이 페이지 마지막 표의 값을 가리지 않도록 아래 여백을 둔다. */
+.training-dashboard #training-content{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+@media(max-width:800px){.training-scale-kpis{grid-template-columns:1fr;gap:10px}.training-scale-kpi{display:grid;grid-template-columns:1fr auto;align-items:baseline;column-gap:12px;padding:14px 16px}.training-scale-kpi h3{grid-column:1/-1}.training-scale-kpi>strong{font-size:21px;line-height:28px}.training-scale-kpi p{justify-content:flex-end;margin:0}.training-scale-kpi small{grid-column:1/-1}}

@@ -30,7 +30,9 @@ test('review initial render shows all 60/25 reviews and explicit writing dates',
    assert.match(html,/aria-label="판매처, 단일 선택"/);
    const header=html.match(/<thead><tr>([\s\S]*?)<\/tr><\/thead>/)[1];
    const columns=[...header.matchAll(/<th scope="col">(.*?)<\/th>/g)].map(([,cell])=>cell.match(/aria-label="([^"]+) 정렬"/)?.[1]??cell);
-   assert.deepEqual(columns,['분류 카테고리','평점','판매처','리뷰 원문','작성일','원문 확인']);
+   // 현재 가상 리뷰에는 원문 링크가 없으므로 빈 '원문 확인' 열을 표시하지 않는다.
+   assert.deepEqual(columns,['분류 카테고리','평점','판매처','리뷰 원문','작성일']);
+   assert.doesNotMatch(html,/링크 없음/);
    assert.match(html,/selection-button/,'filters use the shared selection button');
   }
  }finally{await server.close();}

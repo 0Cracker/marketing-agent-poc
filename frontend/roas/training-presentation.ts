@@ -27,11 +27,15 @@ export function plotUpper(values:(number|null)[]){
 }
 
 // 작은 추이는 두 기간의 실제 값 범위를 함께 감싼다. 큰 추이의 0 기준 축과 구분한다.
+// 축 범위는 최댓값의 일정 비율 이상으로 넓혀, 작은 변동이 급등락처럼 보이지 않게 한다.
+export const miniPlotMinimumSpan=0.4;
 export function miniPlotDomain(values:(number|null)[]):[number,number]{
  const present=values.filter((value):value is number=>value!==null&&Number.isFinite(value));
  if(!present.length)return [0,1];
- const minimum=Math.min(...present),maximum=Math.max(...present);
+ let minimum=Math.min(...present),maximum=Math.max(...present);
  if(minimum===maximum){const padding=Math.abs(maximum)*0.1||1;return [Math.max(0,minimum-padding),maximum+padding];}
+ const required=Math.abs(maximum)*miniPlotMinimumSpan;
+ if(maximum-minimum<required){const middle=(maximum+minimum)/2;minimum=Math.max(0,middle-required/2);maximum=minimum+required;}
  const span=maximum-minimum,power=10**Math.floor(Math.log10(span));
  const step=([1,2,2.5,5,10].find(value=>value>=span/power)||10)*power;
  return [Math.max(0,Math.floor(minimum/step)*step),Math.ceil(maximum/step)*step];
@@ -42,4 +46,13 @@ export function prioritizeColumns<T extends {key:string}>(items:T[],metricKey:st
  if(!items.some(item=>item.key===metricKey))return items;
  const priority=[metricKey,...(relatedColumns[metricKey]||[])];
  return [...priority.flatMap(key=>items.filter(item=>item.key===key)),...items.filter(item=>!priority.includes(item.key))];
+}
+
+/** 조회 범위의 캠페인 목표 ROAS가 하나로 같을 때만 그 값을 돌려준다. */
+export function scopeTargetRoas(campaigns:{id:string;targetRoas?:number|null}[],campaignIds:Iterable<string>):number|null{
+ const ids=new Set(campaignIds);
+ const targets=new Set(campaigns.filter(campaign=>ids.has(campaign.id)).map(campaign=>campaign.targetRoas));
+ if(targets.size!==1)return null;
+ const [target]=targets;
+ return typeof target==='number'&&Number.isFinite(target)&&target>0?target:null;
 }
