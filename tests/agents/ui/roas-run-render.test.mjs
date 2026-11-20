@@ -46,7 +46,7 @@ test('Markdown renders a table and escapes embedded HTML',()=>{
   result:{answer:'**결론**\n\n| 지표 | 값 |\n| --- | --- |\n| 캠페인 \\| ROAS | [EV-sample] |\n\n<img src=x onerror=alert(1)>'}}});
  assert.match(html,/<strong>결론<\/strong>/);
  assert.match(html,/<th scope="col">지표<\/th>/);
- assert.match(html,/<td>캠페인 \| ROAS<\/td>/);
+ assert.match(html,/<th scope="row">캠페인 \| ROAS<\/th>/);
  assert.match(html,/<code>\[EV-sample\]<\/code>/);
  assert.match(html,/&lt;img/);
  assert.doesNotMatch(html,/<img src=x/);
@@ -55,4 +55,12 @@ test('partial, withheld, blocked statuses remain distinct',()=>{
  for(const [status,label] of [['partial','일부 분석 완료'],['withheld','결과 보류'],['blocked','분석 차단']]){
   assert.match(render({state:{runId,executionStatus:status,events:[]}}),new RegExp(label));
  }
+});
+test('run metadata and the call log share one process disclosure that opens only while running',()=>{
+ const done=render({state:{runId,executionStatus:'completed',result:{answer:'답변',evidenceIds:['ev:1']},events:[{seq:1,kind:'tool_result',tool:'overview',count:2}]}});
+ assert.equal((done.match(/<summary>분석 과정 보기/g)||[]).length,1);
+ assert.match(done,/<details class="wb-answer-process wb-run-process"><summary>/);
+ assert.doesNotMatch(done,/실행 정보와 근거|wb-answer-limits/);
+ const running=render({state:{runId,executionStatus:'running',stage:'retrieving',events:[]}});
+ assert.match(running,/<details class="wb-answer-process wb-run-process" open="">/);
 });

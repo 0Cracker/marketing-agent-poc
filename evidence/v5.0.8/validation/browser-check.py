@@ -10,7 +10,7 @@ from urllib.request import urlopen
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / 'evidence/v0.4.28/after'
+OUT = ROOT / 'evidence/v5.0.8/after'
 checks = []
 Path(__file__).with_name('ui-results.json').unlink(missing_ok=True)
 

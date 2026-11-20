@@ -1,0 +1,58 @@
+/* 실제 모델 Markdown 답변. Tailwind preflight가 지운 목록 표시와 문서 위계를 대화 패널 안에서만 복원한다. */
+.wb .wb-run-markdown{display:grid;gap:12px;min-width:0;font-size:14px;line-height:1.75;color:#3B3147;overflow-wrap:anywhere}
+.wb .wb-run-markdown>*{margin:0}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h3{margin-top:14px;padding-top:16px;border-top:1px solid #EEE9F4;font-size:15px;font-weight:650;line-height:1.5;color:#2B2238}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown>h3:first-child{margin-top:0;padding-top:0;border-top:0}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h4{margin-top:6px;font-size:14px;font-weight:600;line-height:1.5;color:#3A2E49}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown h5{font-size:13px;font-weight:600;color:#5B4B6B}
+.wb .wb-run-markdown strong{font-weight:650;color:#2B2238}
+.wb .wb-run-markdown code{font-size:12px;padding:1px 5px;border-radius:4px;background:#F4F1F8;color:#5D4A72}
+.wb .wb-run-markdown ul,.wb .wb-run-markdown ol{display:grid;gap:8px;padding-left:20px}
+.wb .wb-run-markdown ul{list-style:disc}
+.wb .wb-run-markdown ol{list-style:decimal}
+.wb .wb-run-markdown li{padding-left:2px}
+.wb .wb-run-markdown li::marker{color:#9C88B6;font-weight:600}
+.wb-run-table{overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #ECE7F2;border-radius:10px}
+.wb .wb-run-table table{width:100%;min-width:100%;border-collapse:collapse;font-size:12px;line-height:1.45}
+.wb .wb-run-table th,.wb .wb-run-table td{height:auto;padding:8px 10px;text-align:left;vertical-align:top;white-space:normal;border-bottom:1px solid #F1EDF6;background:transparent}
+.wb .wb-run-table thead th{font-size:11px;font-weight:500;color:#8A7C98;background:#FAF8FC;white-space:nowrap}
+.wb .wb-run-table tbody th{font-weight:500;color:#3F3350;min-width:88px}
+.wb .wb-run-table tr:last-child>*{border-bottom:0}
+.wb .wb-run-table tr:hover td{background:transparent}
+.wb .wb-run-table .is-numeric{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.wb .wb-run-table td.wb-answer-change{font-weight:600}
+.wb .wb-run-markdown .wb-run-cite{display:inline-grid;place-items:center;vertical-align:1px;min-width:18px;min-height:18px;height:18px;margin:0 1px 0 3px;padding:0 4px;border:0;border-radius:5px;background:#F0EBF8;color:#6941C6;font-size:10px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.wb .wb-run-markdown .wb-run-cite:hover,.wb .wb-run-markdown .wb-run-cite[aria-expanded=true]{background:#6941C6;color:#FFF}
+.wb .wb-run-markdown .wb-run-cite-line{display:flex;align-items:center;gap:2px;margin-top:-6px;font-size:11px;color:#9A8BA8}
+.wb .wb-run-markdown .wb-run-cite-line>span{margin-right:2px}
+.wb-run-cite-detail{padding:10px 12px;border:1px solid #E5DCEC;border-radius:10px;background:#FAF9FC}
+.wb-run-cite-detail>header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;font-size:11px;font-weight:600;color:#7A5FA0}
+.wb .wb-run-cite-detail>header>button{min-height:24px;padding:2px;border:0;background:transparent;color:#9E8AAA}
+.wb-run-cite-detail dl{display:grid;gap:4px;margin:0}
+.wb-run-cite-detail dl>div{display:grid;grid-template-columns:84px minmax(0,1fr);gap:8px;font-size:12px;line-height:1.55}
+.wb-run-cite-detail dt{color:#9A8BA8}
+.wb-run-cite-detail dd{margin:0;color:#45394F}
+.wb .wb-run-cite-detail>p{font-size:12px;color:#45394F}
+.wb-run-sources{margin-top:4px;font-size:12px;color:#7D6A91}
+.wb-run-sources>summary{cursor:pointer;padding:2px 0}
+.wb .wb-run-markdown .wb-run-sources ol{list-style:none;padding:8px 0 0;gap:6px}
+.wb-run-sources li{display:flex;gap:8px;align-items:baseline}
+.wb-run-sources li>span{flex-shrink:0;display:inline-grid;place-items:center;min-width:18px;height:18px;border-radius:5px;background:#F0EBF8;color:#6941C6;font-size:10px;font-weight:600}
+.wb .wb-run-sources li>p{font-size:12px;line-height:1.6;color:#5C4E69}
+/* Deep 답변 구역. 예시 답변(RoasAnswerView)과 같은 순서와 위계를 쓴다. */
+.wb .wb-run-markdown.is-structured{gap:22px}
+.wb-run-section{display:grid;gap:10px;min-width:0}
+.wb .wb-chat-thread .wb-agent-result .wb-run-markdown .wb-run-section-title{margin:0;padding:0;border:0;font-size:12px;font-weight:600;line-height:1.4;color:#7D6A91;letter-spacing:.01em}
+.wb-run-section.is-conclusion{padding:14px 16px;border-radius:12px;background:#F8F5FD;border:1px solid #ECE4F7}
+.wb .wb-run-section.is-conclusion>p{font-size:15px;line-height:1.75;color:#2B2238}
+.wb .wb-run-headline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin:0;font-variant-numeric:tabular-nums}
+.wb .wb-run-headline>span{font-size:12px;color:#7D6A91}
+.wb .wb-run-headline>b{font-size:20px;font-weight:650;color:#5D4C70}
+.wb .wb-run-headline>b:first-of-type{font-size:15px;font-weight:500;color:#8A7B98}
+.wb .wb-run-headline>small{font-size:12px;font-weight:600}
+.wb .wb-run-section.is-actions ol{list-style:none;padding:0;gap:8px;counter-reset:wb-action}
+.wb .wb-run-section.is-actions ol>li{position:relative;padding:11px 12px 11px 42px;border:1px solid #ECE6F3;border-radius:10px;background:#FFF;counter-increment:wb-action}
+.wb .wb-run-section.is-actions ol>li::before{content:counter(wb-action);position:absolute;left:12px;top:12px;display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:#6941C6;color:#FFF;font-size:11px;font-weight:600;line-height:1}
+.wb-run-section.is-limits{padding:12px 14px;border-radius:10px;background:#F7F7F9}
+.wb .wb-run-section.is-limits,.wb .wb-run-section.is-limits p,.wb .wb-run-section.is-limits li{font-size:12px;line-height:1.7;color:#6F6679}
+.wb .wb-run-badge{display:inline-block;margin-right:6px;padding:1px 6px;border-radius:4px;background:#FFF4E5;color:#A15C07;font-size:10px;font-weight:600;line-height:1.6;vertical-align:1px;white-space:nowrap}

@@ -147,7 +147,7 @@ test('Jev Quick and Deep send the route, data and matching answer guidance',asyn
   await runEngine('jev','캠페인별 ROAS를 분석해줘','compact-jev-deep',(input,instruction)=>{
     assert.equal(input.route,'deep');
     assert.equal(input.results.find(item=>item.name==='metric_breakdown').result.groups.length,6);
-    assert.match(instruction,/route가 deep이면[\s\S]*주요 요인과 판단 근거[\s\S]*개선 우선순위와 확인 방법/);
+    assert.match(instruction,/route가 deep이면[\s\S]*## 핵심 결론[\s\S]*## 판단 근거[\s\S]*주요 요인과 판단 근거[\s\S]*## 추천 액션[\s\S]*개선 우선순위와 확인 방법/);
     assert.match(instruction,/개선 여부를\s*판단할 지표와 비교 기준/);
     assert.match(instruction,/직접적 인과 증거 없이 원인을 확정하지 않는다/);
   });

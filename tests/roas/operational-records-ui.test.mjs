@@ -132,3 +132,13 @@ test('metric detail hero forwards operational evidence to its period chart',()=>
  assert.match(detail,/<PeriodPlot[^>]*onEventSelect=\{onEventSelect\}/);
  assert.match(dashboard.split('<MetricDetails')[1].split('/>')[0],/onEventSelect=\{setEvidence\}/);
 });
+
+test('incident duration becomes a chart span clipped to the analysis period and report cutoff',()=>{
+ const spans=caseId=>trainingEvents(trainingScreenData(undefined,caseId,'initial'),filters).flatMap(event=>event.spans);
+ assert.deepEqual(spans('S16').map(({recordId,start,end,startDay,endDay})=>[recordId,start,end,startDay,endDay]),[['CASE-S16-11','2026-08-21','2026-08-24',5,8]],'8/25 00:00 end is exclusive');
+ assert.deepEqual(spans('S18').map(span=>[span.recordId,span.end]),[['CASE-S18-7','2026-08-27'],['CASE-S18-9','2026-08-30']],'end after the report cutoff is clipped');
+ assert.deepEqual(spans('S13').map(span=>[span.start,span.end]),[['2026-08-17','2026-08-30']]);
+ assert.equal(spans('S03').length,0);
+ const dashboard=fs.readFileSync(new URL('../../frontend/roas/training-dashboard.tsx',import.meta.url),'utf8');
+ assert.match(dashboard,/<ReferenceArea key=\{span\.recordId\}/);
+});

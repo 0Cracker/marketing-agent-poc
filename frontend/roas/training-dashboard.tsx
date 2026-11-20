@@ -4,7 +4,7 @@ import {BarChart3,ChevronDown,FolderOpen,History,Info,Layers,Menu,PanelLeftClose
 import {Tooltip as InfoTooltip,TooltipContent,TooltipProvider,TooltipTrigger} from './components/ui/tooltip';
 import {RoasConversation} from './roas-conversation';
 import type {RoasAnswer} from './agent-client';
-import {CartesianGrid,Line,LineChart,ReferenceLine,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
+import {CartesianGrid,Line,LineChart,ReferenceArea,ReferenceLine,ResponsiveContainer,Tooltip,XAxis,YAxis} from 'recharts';
 import {campaignDisplayName,displayTrainingText,changeTrainingMedia,comparePeriods,metricPeriodSeries,metricValue,metricMissingReason,selectFacts,trainingCostDefinition} from '../../shared/roas/training-dashboard.mjs';
 import type {Fact,Filters,Total,TrainingData} from '../../shared/roas/training-dashboard.mjs';
 import './roas-workbench.css';
@@ -20,6 +20,8 @@ import {scopeTrainingData} from './training-analysis';
 import RecordsPage from './operational-records';
 import {groupRelatedRecords,recordCategories,recordHeadline} from './operational-records-model';
 import {trainingEvents} from './training-events';
+import {worstStage} from './training-funnel';
+import {scopeTargetRoas} from './training-target';
 import type {AnalysisSettings,AnalysisScope,AnalysisGroup,AnalysisDimension} from './training-analysis';
 
 type Index={contract:string;cases:{id:string;label:string}[];snapshots:{id:string;label:string;asOf:string}[]};
@@ -47,7 +49,7 @@ const caseDescriptions:Record<string,string>={
  S18:'품절, 소개 상품 변경, 모바일 로딩 지연이 겹친 사례입니다. 정상 상품과 경로를 함께 비교합니다.',
 };
 const names:Record<string,string>={all:'전체',search:'검색',social:'소셜',content:'콘텐츠',mobile:'모바일',desktop:'PC',google:'구글',facebook:'페이스북',instagram:'인스타그램',naver_blog:'네이버 블로그',search_ads:'검색광고',feed_ads:'피드광고',blog_affiliate:'블로그 클릭 제휴',creator_affiliate:'크리에이터 클릭 제휴',core:'기존 타깃',extended:'확장 타깃',baseline:'직전 14일',current:'분석 기간'};
-const metrics:Metric[]=[{key:'roas',label:'ROAS',rate:true},{key:'revenue',label:'구매 전환 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'orders',label:'구매 주문',unit:'건'},{key:'cpc',label:'CPC',unit:'원'},{key:'cvr',label:'클릭 기준 구매 CVR',rate:true},{key:'aov',label:'AOV',unit:'원'},{key:'cpa',label:'구매 CPA',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'contentClickRate',label:'콘텐츠 링크 클릭률',rate:true},{key:'adCpm',label:'광고 CPM',unit:'원'},{key:'contentCpm',label:'조회 1,000회당 비용',unit:'원'}];
+const metrics:Metric[]=[{key:'roas',label:'ROAS',rate:true},{key:'revenue',label:'귀속 구매 매출',unit:'원'},{key:'spend',label:'유료 마케팅 집행비',unit:'원'},{key:'orders',label:'구매 주문',unit:'건'},{key:'cpc',label:'CPC',unit:'원'},{key:'cvr',label:'클릭 기준 구매 CVR',rate:true},{key:'aov',label:'AOV',unit:'원'},{key:'cpa',label:'구매 CPA',unit:'원'},{key:'adCtr',label:'광고 CTR',rate:true},{key:'contentClickRate',label:'콘텐츠 링크 클릭률',rate:true},{key:'adCpm',label:'광고 CPM',unit:'원'},{key:'contentCpm',label:'조회 1,000회당 비용',unit:'원'}];
 const get=(total:Total,key:string):number|null=>{const pairs:Record<string,[number,number]>={viewRate:[total.view,total.sessions],cartRate:[total.cart,total.view],beginRate:[total.checkout,total.cart],unitPrice:[total.listRevenue,total.units],discountRate:[total.discount,total.listRevenue]};if(key in pairs){const [a,b]=pairs[key];return b?a/b:null;}return key in total.rates?total.rates[key as keyof Total['rates']]:total[key as keyof typeof total] as number;};
 const fmt=(value:number|null|undefined,rate=false,unit='',key='')=>formatMetricValue(value,key,rate,unit);
 const chartTick=(value:number,metric:Metric)=>metric.rate?(value*100).toLocaleString('ko-KR',{maximumFractionDigits:metricDigits(metric.key,true)})+'%':fmt(value,false,metric.unit,metric.key);
@@ -64,19 +66,33 @@ function Delta({before,after,rate=false,metricKey}:{before:number|null;after:num
  return <span className={`training-delta training-delta-${tone}`}>{change(before,after,rate,metricKey)}{tone!=='neutral'&&<small className="training-delta-label">{' '}{tone==='positive'?'개선':'악화'}</small>}</span>;
 }
 
+function scrollToCauseTable(){document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+function CaseBriefing({caseId}:{caseId:string}){
+ return <section className="training-briefing" aria-label="사례 안내와 추천 탐색 순서">
+  <p><strong>추천 탐색 순서</strong>ROAS 변화의 출발점을 아래 순서로 좁혀 보세요.</p>
+  <ol>
+   <li><button type="button" onClick={scrollToCauseTable}>ROAS 원인 분석 표</button>에서 전체 변화 기여가 큰 캠페인이나 기기를 찾습니다.</li>
+   <li>그 행에서 크게 변한 지표(CPC, CVR, AOV)의 상세 화면을 엽니다.</li>
+   <li>추이 아래 운영 이벤트 원문으로 같은 시기의 변경과 장애를 확인합니다. 시점이 겹쳐도 원인으로 확정하지는 않습니다.</li>
+  </ol>
+  <details><summary>사례 {caseId} 설명 보기, 조사 단서 포함</summary><p>{caseDescriptions[caseId]}</p></details>
+ </section>;
+}
+
 function RevenueSpendSummary({before,after}:{before:Total;after:Total}){
  return <div className="training-financial-summary" aria-label="ROAS 산식의 매출과 집행비">{metrics.filter(metric=>['revenue','spend'].includes(metric.key)).map(metric=>
   <div key={metric.key}><h4>{metric.label}</h4><strong>{fmt(metricValue(after,metric.key),false,'원',metric.key)}</strong><span>직전 14일 {fmt(metricValue(before,metric.key),false,'원',metric.key)}</span><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)}/></div>
  )}</div>;
 }
 
-function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[]}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[]}){
+function MetricSummary({before,after,metric={key:'roas',label:'ROAS',rate:true},rows=[],target=null}:{before:number|null;after:number|null;metric?:Metric;rows?:Fact[];target?:number|null}){
  const tone=deltaTone(metric.key,before,after,metric.rate),visibleDelta=displayedChange(before,after,metric.rate,metricDigits(metric.key,metric.rate)),direction=Math.sign(visibleDelta??0);
  const path=direction===0?'M5 24H49':'M5 8L19 23L29 15L48 38M35 38H48V25';
  return <section className={`roas-primary-kpi training-roas-summary training-delta-${tone}`} aria-labelledby={`training-${metric.key}-title`}>
   <h3 id={`training-${metric.key}-title`} className="training-roas-heading">{metric.key==='cvr'?'클릭 기준 구매 CVR':metric.label} <TermInfo label={metric.label} description={metricDescriptions[metric.key]}/></h3>
-  <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">{before!==null&&after!==null&&direction===0?`직전 14일과 동일 (${fmt(before,metric.rate,metric.unit,metric.key)})`:`직전 14일: ${fmt(before,metric.rate,metric.unit,metric.key)}`}</p></div>
   <div className="training-roas-value-row"><strong className="training-roas-current">{after===null?<MetricCell value={after} metric={metric} rows={rows}/>:fmt(after,metric.rate,metric.unit,metric.key)}</strong><span className="training-roas-change" title={metric.rate?'%p는 퍼센트포인트로, 두 비율의 차이입니다.':'직전 14일 대비 상대 증감률입니다.'}>{tone!=='neutral'&&direction!==0&&<svg viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M1 2H9L5 9Z" transform={direction>0?'translate(0 10) scale(1 -1)':undefined}/></svg>}<Delta metricKey={metric.key} before={before} after={after} rate={metric.rate}/></span></div>
+  <div className="training-roas-direction">{before!==null&&after!==null&&<svg viewBox="0 0 56 48" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} transform={direction>0?'translate(0 48) scale(1 -1)':undefined}/></svg>}<p className="training-roas-reference">{before!==null&&after!==null&&direction===0?`직전 14일과 동일 (${fmt(before,metric.rate,metric.unit,metric.key)})`:`직전 14일: ${fmt(before,metric.rate,metric.unit,metric.key)}`}</p></div>
+  {target!==null&&after!==null&&<p className="training-roas-target">목표 ROAS {fmt(target,true,'','roas')} 대비 <b className={after>=target?'training-delta-positive':'training-delta-negative'}>{after>=target?'+':''}{((after-target)*100).toFixed(1)}%p, {after>=target?'목표 달성':'목표 미달'}</b></p>}
  </section>;
 }
 
@@ -94,13 +110,14 @@ function EvidenceFields({row,data}:{row:object;data:TrainingData|null}){
 }
 
 const focusMetrics:Metric[]=[{key:'roas',label:'ROAS',rate:true},{key:'adCtr',label:'CTR',rate:true},{key:'cpc',label:'CPC',unit:'원'},{key:'cvr',label:'CVR',rate:true},{key:'cpa',label:'CPA',unit:'원'},{key:'cac',label:'CAC',unit:'원'},{key:'aov',label:'AOV',unit:'원'}];
-const metricDescriptions:Record<string,string>={roas:'구매 전환 매출 / 유료 마케팅 집행비',adCtr:'광고 클릭 / 광고 노출, 콘텐츠 조회 제외',cpc:'유료 마케팅 집행비 / 클릭',cvr:'광고 귀속 구매 주문수 / 클릭수',cpa:'유료 마케팅 집행비 / 구매 주문',cac:'신규 고객 획득 비용, 신규 고객 수 미집계',aov:'구매 전환 매출 / 구매 주문'};
+const metricDescriptions:Record<string,string>={roas:'귀속 구매 매출 / 유료 마케팅 집행비',adCtr:'광고 클릭 / 광고 노출, 콘텐츠 조회 제외',cpc:'유료 마케팅 집행비 / 클릭',cvr:'광고 귀속 구매 주문수 / 클릭수',cpa:'유료 마케팅 집행비 / 구매 주문',cac:'신규 고객 획득 비용, 신규 고객 수 미집계',aov:'귀속 구매 매출 / 구매 주문'};
 function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:TrainingData;filters:Filters;metric:Metric;mini?:boolean;onEventSelect?:(evidence:Evidence)=>void}){
  const series=metricPeriodSeries(data,filters,metric.key);
  const events=!mini&&onEventSelect?trainingEvents(data,filters):[];
  const present=series.some(row=>row.baseline!==null||row.current!==null);
  if(!present){const missing=metricMissingReason(selectFacts(data,filters),metric.key);return <div className={mini?'training-mini-empty':'training-chart-empty'} title={missing.reason} tabIndex={0} aria-label={`${missing.label}: ${missing.reason}`}>{mini?(metric.key==='cac'?'신규 고객 수 미집계':missing.label):missing.reason}</div>;}
- const values=series.flatMap(row=>[row.baseline,row.current]);
+ const target=!mini&&metric.key==='roas'?scopeTargetRoas(data,filters):null;
+ const values=[...series.flatMap(row=>[row.baseline,row.current]),target];
  const [lower,upper]=mini?miniPlotDomain(values):[0,plotUpper(values)];
  return <><div className={mini?'training-sparkline':'training-period-chart'} role="img" aria-label={`${metric.label}, 직전 14일과 분석 기간의 일별 추이, 공통 축 ${fmt(lower,metric.rate,metric.unit,metric.key)}~${fmt(upper,metric.rate,metric.unit,metric.key)}`}>
   <ResponsiveContainer width="100%" height={mini?176:'100%'}><LineChart data={series} margin={mini?{top:12,right:6,bottom:12,left:0}:{top:14,right:18,bottom:6,left:0}}>
@@ -110,29 +127,41 @@ function PeriodPlot({data,filters,metric,mini=false,onEventSelect}:{data:Trainin
    </>}
    <YAxis domain={[lower,upper]} ticks={mini?[lower,upper]:[0,upper/2,upper]} interval={0} tickFormatter={value=>chartTick(Number(value),metric)} width={mini?62:66} axisLine={false} tickLine={false} tick={{fill:mini?'#929BA8':'#8791A2',fontSize:mini?10:11}} tickMargin={mini?6:12}/>
    {mini&&<XAxis dataKey="day" hide/>}
+   {target!==null&&<ReferenceLine y={target} stroke="#C2410C" strokeDasharray="6 4" strokeWidth={1.5} label={{value:`목표 ${fmt(target,true,'','roas')}`,position:'insideBottomRight',fill:'#9A3412',fontSize:11}}/>}
+   {events.flatMap(event=>event.spans).map(span=><ReferenceArea key={span.recordId} x1={span.startDay} x2={span.endDay} fill="#A493C6" fillOpacity={0.12} stroke="none" ifOverflow="extendDomain"/>)}
    {events.map(event=><ReferenceLine key={event.date} x={event.day} stroke="#A493C6" strokeDasharray="3 4" label={{value:String(event.number),position:'insideTopRight',fill:'#59418F',fontSize:12}}/>)}
    <Tooltip labelFormatter={day=>{const point=series.find(row=>row.day===Number(day));return point?`${metric.label}, 분석 ${point.currentDate.slice(5)}, 직전 ${point.baselineDate.slice(5)}`:'';}} formatter={(value,name)=>[fmt(Number(value),metric.rate,metric.unit,metric.key),name]} contentStyle={{border:'1px solid #E8E4F0',borderRadius:8,fontSize:12,boxShadow:'0 4px 16px #27354B0A'}} wrapperStyle={{zIndex:100,pointerEvents:'none'}} cursor={{stroke:'#D9D2E7',strokeDasharray:'3 4'}}/>
    <Line name="직전 14일" dataKey="baseline" stroke="#9BA8B9" strokeWidth={mini?1.5:1.8} strokeDasharray="4 4" dot={false} activeDot={{r:3,stroke:'#FFF',strokeWidth:2}} isAnimationActive={false}/>
    <Line name="분석 기간" dataKey="current" stroke="#7357BA" strokeWidth={mini?2:2.8} dot={false} activeDot={{r:4,stroke:'#FFF',strokeWidth:2}} isAnimationActive={false}/>
   </LineChart></ResponsiveContainer>
- </div>{!mini&&onEventSelect&&<div className="training-chart-events" aria-label="추이와 연결된 운영 기록">
+ </div>{mini&&series.length>0&&<div className="training-sparkline-axis" aria-hidden="true"><span>{series[0].currentDate.slice(5).replace('-','/')}</span><span>{series[series.length-1].currentDate.slice(5).replace('-','/')}</span></div>}{!mini&&onEventSelect&&<div className="training-chart-events" aria-label="추이와 연결된 운영 기록">
   <p>운영 이벤트, 번호를 선택해 원문을 확인하세요. 발생 시점의 일치만으로 원인을 확정할 수는 없습니다.</p>
   {events.length?<ol>{events.map(event=>{
    const titles=groupRelatedRecords(event.records,data.caseId).map(activity=>activity.title||recordHeadline(activity.records[0],data)).join(', ');
-   return <li key={event.date}><button type="button" onClick={()=>onEventSelect({title:event.date+' 운영 기록',rows:event.records})}><b aria-hidden="true">{event.number}</b><time dateTime={event.date}>{event.date.slice(5).replace('-','/')}</time><span>{titles}</span><span className="training-event-open">원문 ↗</span></button></li>;
+   return <li key={event.date}><button type="button" onClick={()=>onEventSelect({title:event.date+' 운영 기록',rows:event.records})}><b aria-hidden="true">{event.number}</b><time dateTime={event.date}>{event.date.slice(5).replace('-','/')}</time><span>{titles}{event.spans.map(span=><em key={span.recordId} className="training-event-span">{span.start.slice(5).replace('-','/')}~{span.end.slice(5).replace('-','/')} 지속, 차트 음영</em>)}</span><span className="training-event-open">원문 ↗</span></button></li>;
   })}</ol>:<p>현재 조회 범위와 분석 기간에 해당하는 운영 이벤트가 없습니다.</p>}
  </div>}</>;
 }
 function PlotLegend({daily=false}:{daily?:boolean}){return <div className={`training-chart-legend ${daily?'':'training-bar-legend'}`}><span><i/>직전 14일</span><span><i/>분석 기간</span><TermInfo label="기간 비교" description={daily?'가로축은 분석 날짜이며 직전 14일의 같은 요일과 비교합니다.':'각 기간의 전체 집계값을 비교합니다.'}/></div>;}
+// Step rates are compared at one decimal %p, so rounding noise is not labeled as a change.
+function StageRate({before,after}:{before:number|null;after:number|null}){
+ if(before===null||after===null)return null;
+ const change=Math.round((after-before)*1000)/10;
+ return <span className="training-funnel-rate">단계 전환율 {(before*100).toFixed(1)}% → {(after*100).toFixed(1)}%<br/>{change===0?<span className="training-delta training-delta-neutral">변화 없음</span>:<span className={`training-delta training-delta-${change>0?'positive':'negative'}`}>{change>0?'+':''}{change.toFixed(1)}%p<small className="training-delta-label"> {change>0?'개선':'악화'}</small></span>}</span>;
+}
 function FunnelComparison({before,after}:{before:Total;after:Total}){
  const stages=[['sessions','랜딩 세션'],['view','상품 조회'],['cart','장바구니'],['checkout','결제 시작'],['purchases','동일 세션 구매 건수']];
  const maximum=Math.max(before.sessions,after.sessions);
- return <section className="roas-card training-funnel"><h3>랜딩 세션 기준 구매 퍼널<TermInfo label="구매 퍼널" description="같은 세션에서 순차 도달한 집계이며 재방문 구매는 제외합니다. 두 기간은 같은 눈금을 사용합니다. 이탈이 결제 오류를 뜻하지는 않습니다."/></h3><div className="training-funnel-head"><span>단계</span><span>직전 14일</span><span>분석 기간</span></div>{stages.map(([key,label],index)=><div className="training-funnel-step" key={key}><strong>{label}</strong>{[before,after].map((total,i)=>{const count=get(total,key)||0,previous=index?get(total,stages[index-1][0])||0:null;const lost=previous===null?null:previous-count;return <div key={i}><div className="training-bar-track"><i className={i?'current':''} style={{width:`${maximum?count/maximum*100:0}%`}}/></div><b>{fmt(count)}</b>{lost!==null&&<small>이전 단계에서 {fmt(lost)} 이탈 ({fmt(ratio(lost,previous),true)})</small>}</div>;})}</div>)}</section>;
+ const rateKeys=['','viewRate','cartRate','beginRate','checkoutRate'];
+ const worst=worstStage(rateKeys.map(key=>key?[get(before,key),get(after,key)] as [number|null,number|null]:null));
+ return <section className="roas-card training-funnel"><h3>랜딩 세션 기준 구매 퍼널<TermInfo label="구매 퍼널" description="같은 세션에서 순차 도달한 집계이며 재방문 구매는 제외합니다. 두 기간은 같은 눈금을 사용합니다. 이탈이 결제 오류를 뜻하지는 않습니다."/></h3><p className="training-funnel-basis">분석 기간 클릭 {fmt(after.clicks)}회 중 랜딩 세션은 {fmt(after.sessions)}회가 기록됐습니다. 이 퍼널은 랜딩 세션 기준이라 위의 클릭 기준 CVR과 분모가 다릅니다.</p><div className="training-funnel-head"><span>단계</span><span>직전 14일</span><span>분석 기간</span></div>{stages.map(([key,label],index)=><div className={'training-funnel-step'+(index===worst?' is-worst':'')} key={key}><strong>{label}{index>0&&<StageRate before={get(before,rateKeys[index])} after={get(after,rateKeys[index])}/>}{index===worst&&<em className="training-funnel-worst">가장 크게 나빠진 단계</em>}</strong>{[before,after].map((total,i)=>{const count=get(total,key)||0,previous=index?get(total,stages[index-1][0])||0:null;const lost=previous===null?null:previous-count;return <div key={i}><div className="training-bar-track"><i className={i?'current':''} style={{width:`${maximum?count/maximum*100:0}%`}}/></div><b>{fmt(count)}</b>{lost!==null&&<small>이전 단계에서 {fmt(lost)} 이탈 ({fmt(ratio(lost,previous),true)})</small>}</div>;})}</div>)}</section>;
 }
 const detailMetrics=focusMetrics.filter(metric=>metric.key!=='roas'&&metric.key!=='cac');
 
-function MetricCards({data,filters,before,after,onSelect}:{data:TrainingData;filters:Filters;before:Total;after:Total;onSelect:(key:string)=>void}){
- return <div className="training-indicator-grid">{focusMetrics.slice(1).map(metric=><article className="training-indicator" key={metric.key} aria-label={metric.label}><div className="training-indicator-title"><span>{metric.label}</span>{metric.key!=='cac'&&<button onClick={()=>onSelect(metric.key)} aria-label={`${metric.label} 상세 분석`}>상세 분석 ↗</button>}</div><div className="training-indicator-value"><strong><MetricCell value={metricValue(after,metric.key)} metric={metric} rows={selectFacts(data,filters).filter(r=>r.periodId==='current')}/></strong><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)} rate={metric.rate}/></div><PeriodPlot data={data} filters={filters} metric={metric} mini/></article>)}</div>;
+const roasComponentKeys=['aov','cvr','cpc'],referenceMetricKeys=['adCtr','cpa'];
+const metricsByKey=(keys:string[])=>keys.map(key=>focusMetrics.find(metric=>metric.key===key)!);
+function MetricCards({data,filters,before,after,onSelect,keys}:{data:TrainingData;filters:Filters;before:Total;after:Total;onSelect:(key:string)=>void;keys:string[]}){
+ return <div className="training-indicator-grid">{metricsByKey(keys).map(metric=><article className="training-indicator" key={metric.key} aria-label={metric.label}><div className="training-indicator-title"><span>{metric.label}{metric.key==='cvr'&&<small className="training-indicator-basis">클릭 기준</small>}</span>{metric.key!=='cac'&&<button onClick={()=>onSelect(metric.key)} aria-label={`${metric.label} 상세 분석`}>상세 분석 ↗</button>}</div><div className="training-indicator-value"><strong><MetricCell value={metricValue(after,metric.key)} metric={metric} rows={selectFacts(data,filters).filter(r=>r.periodId==='current')}/></strong><Delta metricKey={metric.key} before={metricValue(before,metric.key)} after={metricValue(after,metric.key)} rate={metric.rate}/></div><PeriodPlot data={data} filters={filters} metric={metric} mini/></article>)}</div>;
 }
 function CpaRelatedMetrics({before,after,onSelect}:{before:Total;after:Total;onSelect:(key:string)=>void}){
  const related=[{key:'cpc',label:'CPC',unit:'원',rate:false},{key:'cvr',label:'클릭 기준 구매 CVR',unit:'',rate:true}];
@@ -291,14 +320,17 @@ export default function TrainingDashboard({active=true}:{active?:boolean}){
   {navOpen&&<button className="wb-nav-shade" aria-label="메뉴 닫기" onClick={()=>setNavOpen(false)}/>}
   <div className="wb-main"><div className="training-query-context"><header className="wb-header training-navigation-header"><button ref={sidebarExpand} className="training-sidebar-expand" aria-label="사이드바 펼치기" title="사이드바 펼치기" aria-controls="training-sidebar" aria-expanded="false" onClick={()=>{setSidebarCollapsed(false);requestAnimationFrame(()=>sidebarCollapse.current?.focus());}}><PanelLeftOpen size={18}/></button><button className="wb-mobile" aria-label="메뉴 열기" aria-controls="training-sidebar" aria-expanded={navOpen} onClick={()=>setNavOpen(true)}><Menu size={18}/></button><nav className="training-breadcrumb" aria-label="탐색 경로"><button onClick={()=>navigate(null)} aria-current={!selectedMetric&&!reviewPage&&!recordsPage?'page':undefined}>성과 현황</button>{recordsPage&&<><span aria-hidden="true">/</span><span aria-current="page">운영 기록</span></>}{reviewPage&&<><span aria-hidden="true">/</span><span aria-current="page">리뷰 분석</span></>}{selectedMetric&&<><span aria-hidden="true">/</span><span aria-current="page">{focusMetrics.find(item=>item.key===selectedMetric)?.label} 상세</span></>}</nav><div className="training-color-legend" aria-label="증감 색상 의미" hidden={reviewPage||recordsPage}><span className="training-delta-positive">빨강: 개선</span><span className="training-delta-negative">파랑: 악화</span><span>회색: 중립</span></div><span className="wb-synthetic">가상 데이터</span></header>
    {before&&after&&!reviewPage&&<div className="training-analysis-context"><div><span>분석 기간</span><strong>{periodLabel(after.period.start,after.period.end)}</strong></div><div><span>비교</span><strong>직전 14일</strong><small>{periodLabel(before.period.start,before.period.end)}</small></div><div><span>사례</span><strong>{data?.caseId}</strong><span>보고 기준</span><strong>{data&&new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(data.asOf))}</strong></div></div>}
-   <div className="roas-dashboard-filters" style={reviewPage?{display:'none'}:undefined}><TrainingScopePicker data={data} filters={filters} onCampaign={id=>{setAnalysisScope(null);setFilters(current=>({...current,channel:'all',source:'all',campaignId:id}));setScopeNotice('');}} onMedia={changeMedia}/>{filters.device!=='all'&&<span className="training-device-context">조회 기기: {names[filters.device]}<button onClick={()=>filter('device','all')}>전체 기기로 보기</button></span>}<TooltipProvider delayDuration={150}><InfoTooltip><TooltipTrigger className="training-measure-info" aria-label="집계 기준 안내">집계 기준<Info size={13} aria-hidden="true"/></TooltipTrigger><TooltipContent side="bottom" align="end" sideOffset={8} className="training-measure-tooltip">매출은 7일 내 마지막 유료 클릭에 기록한 구매 전환 매출입니다. 광고 접점일 기준이며 환불, 세금과 배송비는 제외합니다.<br/>{trainingCostDefinition}</TooltipContent></InfoTooltip></TooltipProvider></div>
+   <div className="roas-dashboard-filters" style={reviewPage?{display:'none'}:undefined}><TrainingScopePicker data={data} filters={filters} onCampaign={id=>{setAnalysisScope(null);setFilters(current=>({...current,channel:'all',source:'all',campaignId:id}));setScopeNotice('');}} onMedia={changeMedia}/>{filters.device!=='all'&&<span className="training-device-context">조회 기기: {names[filters.device]}<button onClick={()=>filter('device','all')}>전체 기기로 보기</button></span>}<TooltipProvider delayDuration={150}><InfoTooltip><TooltipTrigger className="training-measure-info" aria-label="집계 기준 안내">집계 기준<Info size={13} aria-hidden="true"/></TooltipTrigger><TooltipContent side="bottom" align="end" sideOffset={8} className="training-measure-tooltip">매출은 7일 내 마지막 유료 클릭에 기록한 귀속 구매 매출입니다. 광고 접점일 기준이며 환불, 세금과 배송비는 제외합니다.<br/>{trainingCostDefinition}</TooltipContent></InfoTooltip></TooltipProvider></div>
    <div className="training-scope-notice" role="status" hidden={reviewPage}>{scopeNotice}</div>{analysisScope&&!reviewPage&&<div className="training-analysis-scope"><span>세부 분석 범위: {analysisScope.label}</span><button onClick={()=>{setAnalysisScope(null);setScopeNotice('세부 범위를 해제했습니다.');}}>세부 범위 해제</button></div>}</div>
    <main ref={content} id="training-content" aria-busy={!data&&!error}>{error?<section className="wb-empty" role="alert"><h2>{error}</h2><button onClick={()=>{resetRequest();setRetry(v=>v+1);}}>다시 불러오기</button></section>:!data||!before||!after?<section className="wb-empty" role="status">성과 데이터 불러오는 중</section>:<><div hidden={!reviewPage}><ReviewAnalysisSection key={caseId+'-'+snapshot} caseId={caseId} asOf={sourceData!.asOf} periods={sourceData!.periods} view={reviewView} onRetry={()=>setReviewRetry(value=>value+1)}/></div>{recordsPage&&<RecordsPage key={caseId} data={data} filters={filters}/>}{!reviewPage&&!recordsPage&&<>
     {!selectedMetric&&<div className="roas-dashboard-heading"><h1>성과 현황</h1></div>}
-    {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
+    {!selectedMetric&&<CaseBriefing caseId={caseId}/>}
+    {!selectedMetric&&<div className="training-metric-hero training-overview-hero"><div className="training-overview-totals"><MetricSummary before={before.total.rates.roas} after={after.total.rates.roas} target={scopeTargetRoas(data,filters)}/><RevenueSpendSummary before={before.total} after={after.total}/></div><section className="roas-card training-roas-overview training-metric-hero-chart"><div className="roas-card-heading"><h3>ROAS 기간별 추이</h3><button className="training-analysis-link" onClick={()=>document.getElementById('training-campaign-roas')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}>ROAS 원인 분석 표 ↗</button></div><PlotLegend daily/><PeriodPlot data={data} filters={filters} metric={focusMetrics[0]} onEventSelect={setEvidence}/></section></div>}
     {(selectedMetric?<MetricDetails metric={focusMetrics.find(m=>m.key===selectedMetric)!} data={data} filters={filters} onSelect={navigate} onEventSelect={setEvidence}/>:<>
-     <section className="training-secondary-metrics"><div className="training-section-heading"><h3>보조 지표와 추이</h3></div>
-      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)}/>
+     <section className="training-secondary-metrics"><div className="training-section-heading"><div><h3>ROAS 구성 지표</h3><p className="training-section-note">ROAS = AOV × CVR ÷ CPC. 세 지표의 변화가 ROAS 변화를 나눠 설명합니다.</p><p className="training-section-note">작은 차트: 실선은 분석 기간, 점선은 직전 14일의 같은 요일입니다. 세로축 범위가 지표마다 달라 기울기로 변화 크기를 비교하지 말고 오른쪽 증감 숫자로 비교하세요.</p></div></div>
+      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={roasComponentKeys}/>
+      <div className="training-section-heading"><div><h3>참고 지표</h3><p className="training-section-note">CTR은 ROAS 산식에 직접 들어가지 않고, CPA는 CPC ÷ CVR로 계산됩니다. CAC는 신규 고객 수가 집계되지 않아 표시하지 않습니다.</p></div></div>
+      <MetricCards data={data} filters={filters} before={before.total} after={after.total} onSelect={key=>navigate(key)} keys={referenceMetricKeys}/>
      </section>
      {analysisPanel}
      <details className="roas-card training-table-disclosure"><summary>전체 성과 지표와 기간별 수치</summary><Comparison before={before.total} after={after.total}/></details>

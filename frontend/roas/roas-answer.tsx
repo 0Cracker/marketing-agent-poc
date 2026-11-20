@@ -21,7 +21,7 @@ export function RoasAnswerView({result,data,filters}:{result:RoasAnswer;data:Tra
  const conclusions=(sections?.conclusion||result.answer).split(/\n+/).filter(text=>text.trim());
  const comparison=result.comparison??(!sections?chatComparison(result.sources.filter(s=>s.kind==='summary'),'roas'):null);
  return <section className="wb-agent-result wb-structured-answer">
-  <h2><Sparkles size={15}/>마케팅 AI<span>{result.mode==='example'?'예시 답변':result.mode==='remote_model'?'분석 완료':'오프라인 연결 확인'}</span></h2>
+  <h2><Sparkles size={15}/>마케팅 AI<span>{result.mode==='example'?'예시 답변':result.mode==='remote_model'?'분석 완료':'로컬 대체 응답'}</span></h2>
   <div className="wb-answer-conclusion"><h3>핵심 결론</h3><ul>{conclusions.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul></div>
   {(sections?.summary.length||comparison)&&<section className="wb-answer-section"><h3>결과 정리</h3>{sections?.summary.length&&<ul>{sections.summary.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul>}{comparison&&<Comparison values={comparison} onSource={setSelected}/>}</section>}
   <section className="wb-answer-section"><h3>판단 근거</h3>{sections?.reasoning.length?<ul>{sections.reasoning.map((text,i)=><li key={i}>{reference(text)}</li>)}</ul>:<p>답변에 연결된 집계와 운영 기록을 확인하세요.</p>}<details className="wb-answer-references"><summary>참고한 자료 {result.sources.length}개</summary><div>{result.sources.map((row,i)=><button key={row.id} onClick={()=>setSelected(row.id)}><span>{i+1}</span>{sourceTitle(row)}</button>)}</div></details>
@@ -100,6 +100,7 @@ export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;on
  const answer=state.result?.answer;
  const evidences=state.result?.evidenceIds||[];
  const events=state.events||[];
+ const limitations=[...(sections?.limitations||[]),...(state.result?.limitations||[])];
  return <section className="wb-agent-result wb-structured-answer wb-run-answer" aria-label="비동기 분석 결과">
   <h2><Sparkles size={15}/>마케팅 AI<span role="status">{runStatusLabel(state)}</span></h2>
   {!done&&<div className="wb-run-progress"><p>{stageLabel(state.stage)}{state.route?' ('+(state.route==='deep'?'심층 조사':'빠른 조회')+')':''}</p>
@@ -111,8 +112,10 @@ export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;on
   {done&&sections?.reasoning?.length?<section className="wb-answer-section"><h3>판단 근거</h3><ul>{sections.reasoning.map((item,i)=><li key={i}>{item}</li>)}</ul></section>:null}
   {done&&sections?.actions?.length?<section className="wb-answer-section wb-answer-actions"><h3>최종 추천 액션</h3><ol>{sections.actions.map((item,i)=><li key={i}>{item}</li>)}</ol></section>:null}
   {done&&!(sections?.conclusion||answer)&&<p className="wb-run-unavailable">답변을 받지 못했습니다. {state.stopReason&&'종료 사유: '+state.stopReason}</p>}
-  {done&&<div className="wb-answer-limits">{sections?.limitations?.map((text,i)=><p key={i}>{text}</p>)}{state.result?.limitations?.map((text,i)=><p key={'limit'+i}>{text}</p>)}</div>}
-  <details className="wb-answer-references"><summary>실행 정보와 근거 {evidences.length}개</summary>
+  {done&&limitations.length>0&&<div className="wb-answer-limits">{limitations.map((text,i)=><p key={i}>{text}</p>)}</div>}
+  <details className="wb-answer-process wb-run-process" open={!done}>
+   <summary>분석 과정 보기<span>조회·모델 호출 {events.length}건{evidences.length>0&&`, 근거 ID ${evidences.length}개`}</span></summary>
+   {events.length?<ol>{events.map((event,i)=><RunLogEntry key={event.seq??i} event={event} fallback={wasModelFallback(events,i)} fallbackReason={wasModelFallback(events,i)?events.slice(0,i).reverse().find(entry=>entry.kind==='model_error')?.errorCode:undefined}/>)}</ol>:<p>아직 서버에서 전달한 실행 기록이 없습니다.</p>}
    <div className="wb-run-metadata"><p>실행 ID: <code>{state.runId}</code></p>
     {state.route&&<p>조사 유형: {state.route==='deep'?'심층 조사':'빠른 조회'}</p>}
     {state.scopeFingerprint&&<p>조회 범위 식별값: {state.scopeFingerprint}</p>}
@@ -121,9 +124,6 @@ export function RoasRunView({state,onCancel,cancelling=false}:{state:RunState;on
     {evidences.length>0&&<p>조회 근거 ID: {evidences.join(', ')}</p>}
     {state.sourceHashes&&Object.keys(state.sourceHashes).length>0&&<p>원천 버전 해시: {Object.entries(state.sourceHashes).map(([name,hash])=>name+' '+hash).join(', ')}</p>}
    </div>
-  </details>
-  <details className="wb-answer-process" open={!done}><summary>실제 조회, 모델 호출 기록 {events.length}건</summary>
-   {events.length?<ol>{events.map((event,i)=><RunLogEntry key={event.seq??i} event={event} fallback={wasModelFallback(events,i)} fallbackReason={wasModelFallback(events,i)?events.slice(0,i).reverse().find(entry=>entry.kind==='model_error')?.errorCode:undefined}/>)}</ol>:<p>아직 서버에서 전달한 실행 기록이 없습니다.</p>}
   </details>
  </section>;
 }

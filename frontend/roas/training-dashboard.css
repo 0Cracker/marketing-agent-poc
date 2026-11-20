@@ -371,3 +371,23 @@
  .training-chart-events button{gap:6px}
  .training-event-open{font-size:10px}
 }
+.training-chart-events .training-event-span{display:block;margin-top:2px;font-style:normal;color:#6B5A93;font-size:11px}
+.training-briefing{margin:0 0 16px;padding:14px 16px;background:#fff;border:1px solid #E8E4F0;border-radius:12px;color:#3B4557;font-size:13px;line-height:1.7}
+.training-briefing p{margin:0 0 6px}
+.training-briefing strong{color:#49356F;margin-right:4px}
+.training-briefing ol{margin:0;padding-left:20px;display:grid;gap:2px;color:#566174;list-style:decimal}
+.training-briefing button{padding:0;border:0;background:none;color:#59418F;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit}
+.training-briefing button:focus-visible{outline:2px solid #7357BA;outline-offset:2px}
+.training-briefing details{margin-top:8px;color:#687487}
+.training-briefing summary{cursor:pointer;color:#59418F}
+.training-briefing details p{margin:4px 0 0}
+.training-section-note{margin:2px 0 0;color:#687487;font-size:12px;line-height:1.6;font-weight:400}
+.training-indicator-basis{margin-left:6px;font-size:11px;font-weight:500;color:#687487}
+.training-funnel-basis{margin:4px 0 12px;color:#566174;font-size:12px;line-height:1.6}
+.training-funnel-rate{display:block;margin-top:4px;font-size:11px;font-weight:500;color:#566174;line-height:1.6}
+.training-funnel-rate .training-delta{font-size:11px}
+.training-funnel-worst{display:inline-block;margin-top:4px;padding:1px 6px;border-radius:4px;background:#E8EEF9;color:#2F5C9E;font-size:11px;font-style:normal;font-weight:600}
+.training-funnel-step.is-worst{background:#F6F8FD}
+.training-sparkline-axis{display:flex;justify-content:space-between;padding:0 6px 0 62px;margin-top:-8px;color:#929BA8;font-size:10px;font-variant-numeric:tabular-nums}
+.training-roas-target{margin:10px 0 0;color:#566174;font-size:12px}
+.training-roas-target b{font-weight:600}

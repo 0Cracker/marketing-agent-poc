@@ -69,13 +69,14 @@ export default function RecordsPage({data,filters}:{data:TrainingData;filters:Fi
   (!term||(JSON.stringify(record)+' '+recordHeadline(record,data)+' '+recordSubject(record,data)).toLocaleLowerCase().includes(term)));
  const baselineDate=data.periods.find(period=>period.id==='baseline')?.start;
  const initial=activeFilter?[]:visible.filter(record=>record.date===baselineDate);
+ const startRecords=records.filter(record=>record.date===baselineDate).length;
  const events=activeFilter?visible:visible.filter(record=>record.date!==baselineDate);
  const groups=groupRecordsByDate(events);
  const categories=Object.entries(recordCategories).filter(([id])=>records.some(record=>record.category===id));
  return <section className="training-records-page">
   <div className="training-records-page-heading">
    <div><h1>운영 기록</h1><p>운영 변경과 장애 이력을 날짜순으로 확인합니다.</p></div>
-   <span className="training-records-overall">연결 기록 <strong>{records.length.toLocaleString('ko-KR')}건</strong></span>
+   <span className="training-records-overall">연결 기록 <strong>{records.length.toLocaleString('ko-KR')}건</strong><small>{`기간 중 변경 ${(records.length-startRecords).toLocaleString('ko-KR')}건 + 시작 시점 설정 ${startRecords.toLocaleString('ko-KR')}건`}</small></span>
   </div>
   <section className="roas-card training-records-surface">
    <header className="training-records-surface-heading">

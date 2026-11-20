@@ -1,6 +1,6 @@
 # 문서 안내
 
-2026-11-17 마케팅 QA 우선 4건: [v0.4.28](iterations/v0.4.28.md), [SDLC 변경 진입점](../specs/F001-marketing-qa/index.md), [검증과 화면](../evidence/v0.4.28/validation/results.md). 기존 데이터로 구현했으며 후속 요청에 따라 dev 대상 원격 PR을 준비한다.
+2026-11-17 마케팅 QA 우선 4건: [v5.0.8](iterations/v5.0.8.md), [SDLC 변경 진입점](../specs/F001-marketing-qa/index.md), [검증과 화면](../evidence/v5.0.8/validation/results.md). 기존 데이터로 구현했다. #14로 dev에 반영됐고(`f53a378`), v5.0.8~v5.0.21 후속은 [버전 대응표](iterations/version-history.md#v50x-전환-2026-11-17)를 따른다.
 
 2026-11-11 로컬 worktree 통합: 활성 worktree는 1개, 로컬 브랜치는 dev, main만 유지한다. Jev 분류, ROAS 기여도, 운영 기록 UI, 온톨로지 설계, Quick Tunnel 검증, 과거 저장소 정리를 dev 작업 트리에 반영했다. 구형 QA 게이트웨이는 최신 dev 인증 방식과 호환되지 않아 백업에 보존했다. 원격 브랜치에 반영하지 않았으며, 통합 작업은 미커밋 상태다. [통합 기록](iterations/2026-11-11-worktree-consolidation.md).
 
