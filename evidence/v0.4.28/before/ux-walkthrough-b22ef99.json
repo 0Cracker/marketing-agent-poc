@@ -1,0 +1,83 @@
+{
+ "url": "http://127.0.0.1:5174/workbench",
+ "date": "2026-11-20T07:41:09.778Z",
+ "viewport": "1440x900, iPhone 13",
+ "loadMs": 927,
+ "jsBytes": 238928,
+ "passed": 3,
+ "total": 12,
+ "results": [
+  {
+   "id": "T01",
+   "task": "첫 화면(1440×900)에서 매출, 집행비, 주문, ROAS와 목표를 스크롤 없이 확인",
+   "ok": false,
+   "detail": "locator.boundingBox: Timeout 30000ms exceeded."
+  },
+  {
+   "id": "T02",
+   "task": "ROAS 추이와 같은 화면에서 분석 기간 운영 기록의 날짜 확인",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "id": "T03",
+   "task": "목표 ROAS 미달 캠페인 찾기",
+   "ok": false,
+   "detail": "목표 미달 행: "
+  },
+  {
+   "id": "T04",
+   "task": "캠페인별 ROAS 표를 CSV로 내려받아 엑셀용 형식 확인",
+   "ok": false,
+   "detail": "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\""
+  },
+  {
+   "id": "T05",
+   "task": "결제 실패율 카드에서 구매 퍼널로 이동",
+   "ok": false,
+   "detail": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+   "id": "T06",
+   "task": "지표 이름이 메뉴, 카드, 상세 제목에서 일치",
+   "ok": true,
+   "detail": "메뉴 CTR, CPC, CVR, CPA, AOV"
+  },
+  {
+   "id": "T07",
+   "task": "페이지 끝에서 AI 버튼이 마지막 콘텐츠를 가리지 않음",
+   "ok": false,
+   "detail": "겹침"
+  },
+  {
+   "id": "T08",
+   "task": "AI 서버가 없을 때 입력창이 이유를 안내하고 예시 답변은 사용 가능",
+   "ok": false,
+   "detail": "입력 비활성=false, 안내=\"데이터에 대해 무엇이 궁금하세요?\", 예시 사용 가능=true"
+  },
+  {
+   "id": "T09",
+   "task": "18개 사례 전환 시 오류 없이 첫 화면 표시",
+   "ok": false,
+   "detail": "18개 사례, 실패 S16, S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S17, S18"
+  },
+  {
+   "id": "T10",
+   "task": "이름 없는 버튼과 입력 요소 없음(스크린리더)",
+   "ok": true,
+   "detail": "모두 이름 있음"
+  },
+  {
+   "id": "T11",
+   "task": "휴대폰(390px)에서 가로 스크롤 없이 첫 화면과 지표 상세 표시",
+   "ok": false,
+   "detail": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+   "id": "T12",
+   "task": "콘솔 오류 없음",
+   "ok": true,
+   "detail": "없음"
+  }
+ ]
+}
